@@ -125,7 +125,7 @@ export default function AboutUsection() {
             className="relative w-full isolate   bg-[#050505] text-white pt-10 md:pt-24 pb-10 md:pb-40 overflow-hidden"
         >
             <Container>
-                <div className="relative  max-w-7xl mx-auto z-10">
+                <div className="relative   z-10">
 
                     {/* ===== TOP ROW ===== */}
                     <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-12 mb-16">

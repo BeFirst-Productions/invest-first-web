@@ -6,6 +6,7 @@ import LicenseCategoryMobile from "./LicenseCategoryMobile";
 import { licenseData } from "@/data/LicenseData";
 import Container from "../Common/Layout/Contianer";
 import Image from "next/image";
+import Banner from "./Banner";
 
 const LicenseCategorySection = () => {
     const containerRef = useRef(null);
@@ -87,7 +88,7 @@ const LicenseCategorySection = () => {
                 <LicenseCategoryMobile data={licenseData} />
 
                 {/* Desktop View (lg+) */}
-                <div ref={containerRef} className="hidden lg:flex flex-col gap-6 max-w-7xl mx-auto relative z-10">
+                <div ref={containerRef} className="hidden lg:flex flex-col gap-6  relative z-10">
                     {licenseData.map((item) => (
                         <div
                             key={item.id}
@@ -142,6 +143,7 @@ const LicenseCategorySection = () => {
                 </svg>
             </div>
 
+            <Banner />
             <style jsx>{`
                 @keyframes pulseSlow {
                     0%, 100% { transform: scale(1); opacity: 1; }

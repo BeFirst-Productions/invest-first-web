@@ -118,7 +118,7 @@ export default function ProjectileCarousel({ logos, speed = 2 }) {
 
           <div
             ref={containerRef}
-            className="relative w-full max-w-7xl h-full flex items-center justify-center"
+            className="relative w-full  h-full flex items-center justify-center"
             style={{ perspective: "2000px" }}
           >
             {displayLogos.map((logo, i) => (
