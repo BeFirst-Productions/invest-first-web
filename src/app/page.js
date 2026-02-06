@@ -9,7 +9,8 @@ import ProjectileCarousel from "@/Components/HomePage/ProjectileCarousel";
 import VisaServices from "@/Components/HomePage/VisaServices";
 import FAQSection from "@/Components/HomePage/FAQSection";
 import { logos } from "@/data/CarouselData";
-
+import ServicesSection from "@/Components/HomePage/ServicesSection";
+import WhyChooseUsSection from "@/Components/HomePage/WhyChooseUsSection";
 
 
 export default function Home() {
@@ -19,6 +20,8 @@ export default function Home() {
         <HomeHeroSection />
         <FormationandMeeting />
         <AboutUsection />
+        <ServicesSection />
+        <WhyChooseUsSection />
         <LicenseCategorySection />
         <ProjectileCarousel logos={logos} speed={0.8} />
         <VisaServices />
