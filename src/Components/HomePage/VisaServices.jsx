@@ -98,12 +98,12 @@ const VisaServices = () => {
     };
 
     return (
-        <section ref={sectionRef} className="w-full py-16 md:py-24 bg-[#00040F] text-white">
+        <section ref={sectionRef} className="w-full py-16 md:py-24  ">
             <Container>
                 {/* Header- Centered */}
                 <div className="text-center mb-12 space-y-4 visa-header">
                     <h2 className="text-3xl md:text-4xl font-bold">{visaSectionData.heading}</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
+                    <p className=" max-w-2xl mx-auto text-base md:text-lg">
                         {visaSectionData.description}
                     </p>
                 </div>
@@ -128,7 +128,7 @@ const VisaServices = () => {
                                 className="relative w-[300px] md:w-[350px] shrink-0 flex flex-col group select-none"
                             >
                                 {/* 1. Top Image Section */}
-                                <div className="relative h-64 w-full rounded-t-3xl overflow-hidden z-0">
+                                <div className="relative h-80 w-full rounded-3xl overflow-hidden z-0">
                                     <Image
                                         src={visa.image}
                                         alt={visa.title}
@@ -142,23 +142,23 @@ const VisaServices = () => {
                                 </div>
 
                                 {/* 2. The Shape Connector (Hump) */}
-                                <div className="relative w-full h-[60px] -mt-[100px] -mb-[2px] z-30 flex items-end justify-center">
+                                <div className="relative w-full h-[35px] -mt-[100px] -mb-[2px] z-30 flex items-end justify-center">
                                     {/* Center Hump SVG */}
-                                    <div className="relative w-[280px] h-[60px] shrink-0">
+                                    <div className="relative w-[280px] h-[35px] shrink-0">
                                         <svg
                                             width="100%"
                                             height="100%"
-                                            viewBox="0 0 280 60"
+                                            viewBox="0 0 280 35"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="absolute bottom-0 left-0 w-full h-full"
                                         >
                                             <path
-                                                d="M0,60 Q40,60 40,30 Q40,1 70,1 H210 Q240,1 240,30 Q240,60 280,60 V65 H0 Z"
+                                                d="M0,35 Q40,35 40,17.5 Q40,1 70,1 H210 Q240,1 240,17.5 Q240,35 280,35 V40 H0 Z"
                                                 fill="#030F26"
                                             />
                                             <path
-                                                d="M0,59.25 Q40,59.25 40,29.25 Q40,0.75 70,0.75 H210 Q240,0.75 240,29.25 Q240,59.25 280,59.25"
+                                                d="M0,34.25 Q40,34.25 40,16.75 Q40,0.75 70,0.75 H210 Q240,0.75 240,16.75 Q240,34.25 280,34.25"
                                                 stroke="#0099CC"
                                                 strokeWidth="1.5"
                                                 fill="none"
@@ -166,7 +166,7 @@ const VisaServices = () => {
                                         </svg>
 
                                         {/* Title */}
-                                        <div className="absolute inset-0 flex items-center justify-center pt-2">
+                                        <div className="absolute inset-0 flex items-start justify-center pt-1">
                                             <h3 className="text-xl font-semibold text-white whitespace-nowrap">{visa.title}</h3>
                                         </div>
                                     </div>
