@@ -29,7 +29,7 @@ const SocialMediaPromo = () => {
     ];
 
     return (
-        <section className="py-10 md:py-20 relative bg-[#020617] overflow-hidden">
+        <section className="py-10 md:py-20 relative overflow-hidden">
             <Container>
                 {/* Header */}
                 <div className="flex flex-col items-start mb-10 md:mb-16 z-10 relative pl-4 md:pl-0">

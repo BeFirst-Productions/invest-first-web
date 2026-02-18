@@ -118,13 +118,17 @@ const NewsletterSection = () => {
                         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ overflow: 'visible' }}>
                             <defs>
                                 <linearGradient id="newsletterBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="#007CC4" />
+                                    <stop offset="0%" stopColor="#0099CC" />
                                     <stop offset="100%" stopColor="#00335a" />
                                 </linearGradient>
                                 <linearGradient id="newsletterBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stopColor="#010b14" />
                                     <stop offset="100%" stopColor="#001833" />
                                 </linearGradient>
+                                <radialGradient id="topRightGlow" cx="100%" cy="0%" r="15%" gradientTransform="scale(1, 2.5)">
+                                    <stop offset="0%" stopColor="#0099CC" stopOpacity="0.4" />
+                                    <stop offset="100%" stopColor="#0099CC" stopOpacity="0" />
+                                </radialGradient>
                             </defs>
 
                             {/* Fill Background */}
@@ -134,11 +138,14 @@ const NewsletterSection = () => {
                                 stroke="url(#newsletterBorderGrad)"
                                 strokeWidth="2"
                             />
+                            {/* Glow Overlay */}
+                            <path
+                                d={borderPath}
+                                fill="url(#topRightGlow)"
+                                stroke="none"
+                            />
                         </svg>
                     )}
-
-                    {/* Glowing effect */}
-                    <div className="absolute top-10 right-10 w-64 h-64 bg-[#007CC4]/10 blur-[100px] rounded-full pointer-events-none -z-10" />
 
 
                     <div className="relative z-10 flex flex-col lg:flex-row gap-10 mt-8 items-center">
@@ -162,7 +169,7 @@ const NewsletterSection = () => {
                                         if (errors.name) setErrors({ ...errors, name: null });
                                     }}
                                     className={`w-full px-6 py-4 bg-[#E5E7EB] text-gray-800 rounded-2xl focus:outline-none focus:ring-2 transition-all placeholder-gray-500
-                                        ${errors.name ? "ring-2 ring-red-500 focus:ring-red-500" : "focus:ring-[#007CC4]"}`}
+                                        ${errors.name ? "ring-2 ring-red-500 focus:ring-red-500" : "focus:ring-[#0099CC]"}`}
                                 />
                                 {errors.name && <p className="text-red-500 text-sm pl-4">{errors.name}</p>}
                             </div>
@@ -177,7 +184,7 @@ const NewsletterSection = () => {
                                         if (errors.email) setErrors({ ...errors, email: null });
                                     }}
                                     className={`w-full px-6 py-4 bg-[#E5E7EB] text-gray-800 rounded-2xl focus:outline-none focus:ring-2 transition-all placeholder-gray-500
-                                        ${errors.email ? "ring-2 ring-red-500 focus:ring-red-500" : "focus:ring-[#007CC4]"}`}
+                                        ${errors.email ? "ring-2 ring-red-500 focus:ring-red-500" : "focus:ring-[#0099CC]"}`}
                                 />
                                 {errors.email && <p className="text-red-500 text-sm pl-4">{errors.email}</p>}
                             </div>

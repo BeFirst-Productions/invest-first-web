@@ -3,7 +3,7 @@ export const pricingData = [
         id: 1,
         title: "meydan PACKAGES",
         logo: "meydan FZ",
-        logoSrc: "/next.svg",
+        logoSrc: "/assets/images/plans/meydan.png",
         options: [
             {
                 name: "Visa 1",
@@ -26,7 +26,7 @@ export const pricingData = [
         id: 2,
         title: "IFZA PACKAGES",
         logo: "IFZA",
-        logoSrc: "/next.svg",
+        logoSrc: "/assets/images/plans/ifza.png",
         options: [
             {
                 name: "Visa 1",
@@ -49,7 +49,7 @@ export const pricingData = [
         id: 3,
         title: "Rakez PACKAGES",
         logo: "rakez",
-        logoSrc: "/next.svg",
+        logoSrc: "/assets/images/plans/rakez.png",
         options: [
             {
                 name: "Visa 1",
@@ -72,7 +72,7 @@ export const pricingData = [
         id: 4,
         title: "Shams PACKAGES",
         logo: "Shams",
-        logoSrc: "/next.svg",
+        logoSrc: "/assets/images/plans/shams.png",
         options: [
             {
                 name: "Visa 1",

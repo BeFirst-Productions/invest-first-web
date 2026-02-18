@@ -1,7 +1,9 @@
+import AboutCompanySection from '@/Components/AboutUs/AboutCompanySection';
 import CommonBanner from '@/Components/Common/Banner/CommonBanner'
 import CommonHerosection from '@/Components/Common/Banner/CommonHerosection'
 import ScheduleMeetingSection from '@/Components/Common/Meeting/ScheduleMeeting'
 import MissionVision from '@/Components/AboutUs/MissionVision';
+import CoreValues from '@/Components/AboutUs/CoreValues';
 import React from 'react'
 
 const page = () => {
@@ -11,6 +13,7 @@ const page = () => {
                 title="About Us"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             />
+            <AboutCompanySection />
             <CommonBanner
                 title="Yorem ipsum dolor sit 
 amet, consectetur"
@@ -21,6 +24,7 @@ amet, consectetur"
                 imageAlt="Contact Us"
             />
             <MissionVision />
+            <CoreValues />
             <ScheduleMeetingSection />
         </>
     )
