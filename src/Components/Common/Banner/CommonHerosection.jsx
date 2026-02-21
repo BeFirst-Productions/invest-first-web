@@ -79,7 +79,7 @@ const CommonHerosection = ({ title, description }) => {
                     </div>
 
                     {/* RIGHT COLUMN: Text */}
-                    <div className="flex flex-col justify-center items-start lg:items-start order-1 lg:order-2">
+                    <div className="flex flex-col justify-center items-start lg:items-start order-1 lg:order-2 pt-28 lg:pt-0">
                         <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
                             {title}
                         </h1>
