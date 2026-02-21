@@ -1,0 +1,35 @@
+<svg width="800" height="1066" viewBox="0 0 800 1066" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="800" height="1066" fill="url(#gradient1)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="400" cy="350" r="120" fill="rgba(6, 182, 212, 0.1)"/>
+  <circle cx="400" cy="350" r="100" fill="rgba(6, 182, 212, 0.15)"/>
+  
+  <!-- Icon/Avatar placeholder -->
+  <circle cx="400" cy="350" r="80" fill="rgba(6, 182, 212, 0.2)"/>
+  <path d="M400 310 C420 310 440 330 440 350 C440 370 420 390 400 390 C380 390 360 370 360 350 C360 330 380 310 400 310 Z" fill="rgba(6, 182, 212, 0.4)"/>
+  <path d="M320 480 C320 440 355 410 400 410 C445 410 480 440 480 480 L480 500 L320 500 Z" fill="rgba(6, 182, 212, 0.4)"/>
+  
+  <!-- Text -->
+  <text x="400" y="600" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#06B6D4" text-anchor="middle">
+    Mr. Rasheeq Abdurahman
+  </text>
+  <text x="400" y="650" font-family="Arial, sans-serif" font-size="24" fill="rgba(6, 182, 212, 0.8)" text-anchor="middle">
+    Founder
+  </text>
+  <text x="400" y="720" font-family="Arial, sans-serif" font-size="18" fill="rgba(255, 255, 255, 0.6)" text-anchor="middle">
+    Replace with actual photo
+  </text>
+  <text x="400" y="750" font-family="Arial, sans-serif" font-size="16" fill="rgba(255, 255, 255, 0.4)" text-anchor="middle">
+    (rasheeq.jpg)
+  </text>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(15, 23, 42);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(30, 41, 59);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
