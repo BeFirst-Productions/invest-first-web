@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import Container from "../Common/Layout/Contianer"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HomeHeroSection() {
   const titleRef = useRef(null)
@@ -115,10 +116,12 @@ export default function HomeHeroSection() {
               <p className="text-gray-300 text-base font-medium mt-3 max-w-[200px]">
                 Let Invest First take care of the legal work while you focus on growth.            </p>
 
-              <button className="mt-6 flex items-center gap-3  text-lg md:text-xl rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-white font-medium shadow-lg">
-                Cost Calculator
-                <span className="text-lg md:text-xl">→</span>
-              </button>
+              <Link href="/cost-calculator">
+                <button className="mt-6 flex items-center gap-3  text-lg md:text-xl rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-white font-medium shadow-lg">
+                  Cost Calculator
+                  <span className="text-lg md:text-xl">→</span>
+                </button>
+              </Link>
 
               {/* WhatsApp */}
               {/* WhatsApp */}

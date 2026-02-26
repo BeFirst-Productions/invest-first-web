@@ -2,8 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import Container from '../Layout/Contianer';
 import FloatingLines from '@/Components/Animations/FloatingLines';
+import Link from 'next/link';
 
-const CommonHerosection = ({ title, description }) => {
+const CommonHerosection = ({
+    title,
+    description,
+    cardTitle = "Lorem ipsum dolor sit amet",
+    cardDescription = "adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}) => {
     return (
         <section className="relative min-h-[80vh] overflow-hidden bg-[#05030f] flex items-center">
             {/* Background Effects */}
@@ -34,17 +40,19 @@ const CommonHerosection = ({ title, description }) => {
                     <div className="flex items-end justify-center lg:justify-start order-2 lg:order-1 pb-10">
                         <div className="relative w-[320px]  rounded-[24px] bg-gradient-to-b from-[#001b3f] to-[#000b1f] p-6 py-8 border-2 border-[#0099CC]">
                             <h3 className="text-white text-xl md:text-2xl leading-snug font-semibold">
-                                Lorem ipsum dolor sit amet
+                                {cardTitle}
                             </h3>
 
                             <p className="text-gray-300 text-sm font-medium mt-3 max-w-[200px]">
-                                adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                {cardDescription}
                             </p>
 
-                            <button className="mt-6 flex items-center gap-3 text-sm md:text-base rounded-xl bg-gradient-to-r from-[#14293A] to-[#0B223E] border border-[#0099CC] px-5 py-3 text-white font-medium shadow-lg hover:brightness-110 transition-all">
-                                COST CALCULATOR
-                                <span>→</span>
-                            </button>
+                            <Link href="/cost-calculator">
+                                <button className="mt-6 flex items-center gap-3 text-sm md:text-base rounded-xl bg-gradient-to-r from-[#14293A] to-[#0B223E] border border-[#0099CC] px-5 py-3 text-white font-medium shadow-lg hover:brightness-110 transition-all">
+                                    COST CALCULATOR
+                                    <span>→</span>
+                                </button>
+                            </Link>
 
                             {/* WhatsApp Icon - Floating */}
                             <div className="absolute right-[-11px] top-[85px]">

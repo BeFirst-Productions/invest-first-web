@@ -139,7 +139,7 @@ export default function ScheduleMeetingSection() {
 ${formData.purpose}
 `;
 
-    const phoneNumber = "9947695010"; // 🔴 replace
+    const phoneNumber = "+971588773753"; // 🔴 replace
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");

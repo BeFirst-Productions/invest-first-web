@@ -108,43 +108,40 @@ const FreezoneSection = () => {
                                         </div>
 
                                         {/* 2. The Shape Connector (Hump) */}
-                                        <div className="relative w-full h-[60px] -mt-[105px] -mb-[2px] z-30 flex items-end justify-center">
+                                        <div className="relative w-full h-[126px] -mt-[105px] -mb-[2px] z-30 flex items-end justify-center">
                                             {/* Center Hump SVG */}
-                                            <div className="relative w-full h-[60px] shrink-0">
+                                            <div className="relative w-full h-[126px] shrink-0">
                                                 <svg
                                                     width="100%"
                                                     height="100%"
-                                                    viewBox="0 0 320 60"
+                                                    viewBox="0 0 335 126"
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     preserveAspectRatio="none"
                                                     className="absolute bottom-0 left-0 w-full h-full"
                                                 >
-                                                    <path
-                                                        d="M10,60 Q60,60 60,30 Q60,1 90,1 H230 Q260,1 260,30 Q260,60 310,60 V65 H10 Z"
-                                                        fill="#030F26"
-                                                    />
-                                                    <path
-                                                        d="M10,59.25 Q60,59.25 60,29.25 Q60,0.75 90,0.75 H230 Q260,0.75 260,29.25 Q260,59.25 310,59.25"
-                                                        stroke="#0099CC"
-                                                        strokeWidth="1.5"
-                                                        fill="none"
-                                                    />
+                                                    <mask id={`path-1-inside-1_2757_8992_${item.id}`} fill="white">
+                                                        <path d="M28.667 45C37.5035 45 44.667 37.8366 44.667 29V16C44.667 7.16344 51.8304 0 60.667 0H274.333C283.17 0 290.333 7.16344 290.333 16V29C290.333 37.8366 297.496 45 306.333 45H319C327.837 45 335 52.1634 335 61V110C335 118.837 327.837 126 319 126H16C7.16345 126 0 118.837 0 110V61C0 52.1634 7.16344 45 16 45H28.667Z" />
+                                                    </mask>
+                                                    <path d="M28.667 45C37.5035 45 44.667 37.8366 44.667 29V16C44.667 7.16344 51.8304 0 60.667 0H274.333C283.17 0 290.333 7.16344 290.333 16V29C290.333 37.8366 297.496 45 306.333 45H319C327.837 45 335 52.1634 335 61V110C335 118.837 327.837 126 319 126H16C7.16345 126 0 118.837 0 110V61C0 52.1634 7.16344 45 16 45H28.667Z" fill="#000F2B" />
+                                                    <path d="M44.667 29H45.167V16H44.667H44.167V29H44.667ZM60.667 0V0.5H274.333V0V-0.5H60.667V0ZM290.333 16H289.833V29H290.333H290.833V16H290.333ZM306.333 45V45.5H319V45V44.5H306.333V45ZM335 61H334.5V110H335H335.5V61H335ZM319 126V125.5H16V126V126.5H319V126ZM0 110H0.5V61H0H-0.5V110H0ZM16 45V45.5H28.667V45V44.5H16V45ZM0 61H0.5C0.5 52.4396 7.43959 45.5 16 45.5V45V44.5C6.8873 44.5 -0.5 51.8873 -0.5 61H0ZM16 126V125.5C7.43959 125.5 0.5 118.56 0.5 110H0H-0.5C-0.5 119.113 6.8873 126.5 16 126.5V126ZM335 110H334.5C334.5 118.56 327.56 125.5 319 125.5V126V126.5C328.113 126.5 335.5 119.113 335.5 110H335ZM319 45V45.5C327.56 45.5 334.5 52.4396 334.5 61H335H335.5C335.5 51.8873 328.113 44.5 319 44.5V45ZM290.333 29H289.833C289.833 38.1127 297.22 45.5 306.333 45.5V45V44.5C297.773 44.5 290.833 37.5604 290.833 29H290.333ZM274.333 0V0.5C282.893 0.5 289.833 7.43959 289.833 16H290.333H290.833C290.833 6.8873 283.446 -0.5 274.333 -0.5V0ZM44.667 16H45.167C45.167 7.43958 52.1066 0.5 60.667 0.5V0V-0.5C51.5543 -0.5 44.167 6.8873 44.167 16H44.667ZM44.667 29H44.167C44.167 37.5604 37.2274 44.5 28.667 44.5V45V45.5C37.7797 45.5 45.167 38.1127 45.167 29H44.667Z" fill="#0099CC" mask={`url(#path-1-inside-1_2757_8992_${item.id})`} />
                                                 </svg>
 
-                                                {/* Title */}
-                                                <div className="absolute inset-0 flex items-center justify-center pt-2 px-4">
-                                                    <h3 className="text-sm md:text-base font-semibold text-center text-white leading-tight w-full max-w-[150px]">{item.title}</h3>
+                                                {/* Title and Description */}
+                                                {/* Title and Description */}
+                                                <div className="absolute inset-0 flex flex-col items-center justify-between pt-5 pb-6 px-10 text-center">
+                                                    <h3 className="text-sm md:text-base font-semibold text-white leading-tight w-full max-w-[250px] line-clamp-2">
+                                                        {item.title}
+                                                    </h3>
+                                                    <p className="text-gray-300 text-xs md:text-sm text-center leading-tight font-light font-outfit line-clamp-2 w-full">
+                                                        {item.description}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
 
                                         {/* 3. Bottom Text Content */}
-                                        <div className="relative z-20 bg-[#030F26] p-6 pt-2 rounded-3xl border-[1.5px] border-[#0099CC] grow">
-                                            <p className="text-gray-300 text-sm text-center leading-relaxed font-light font-outfit">
-                                                {item.description}
-                                            </p>
-                                        </div>
+
                                     </div>
                                 ))}
                             </div>

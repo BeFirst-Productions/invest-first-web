@@ -4,141 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react"
 import Container from "../Layout/Contianer"
-
-const companyFormationItems = [
-  {
-    name: "Mainland",
-    href: "#",
-    children: [
-      { name: "Dubai", href: "#" },
-      { name: "Abu Dhabi", href: "#" },
-    ]
-  },
-  {
-    name: "Free Zones",
-    href: "#",
-    children: [
-      {
-        name: "Dubai",
-        href: "#",
-        children: [
-          { name: "Meydan Free Zone", href: "#" },
-          { name: "IFZA Free Zone", href: "#" },
-          { name: "DMCC Free Zone", href: "#" },
-          { name: "Jebel Ali (JAFZA)", href: "#" },
-          { name: "DDA Free Zones", href: "#" },
-          { name: "Dubai Airport (DAFZA)", href: "#" },
-          { name: "DIFC", href: "#" },
-          { name: "Dubai South", href: "#" },
-          { name: "Dubai Healthcare City", href: "#" },
-        ]
-      },
-      {
-        name: "Abu Dhabi",
-        href: "#",
-        children: [
-          { name: "Masdar City", href: "#" },
-          { name: "Abu Dhabi Airport Free Zone", href: "#" },
-        ]
-      },
-      {
-        name: "Sharjah",
-        href: "#",
-        children: [
-          { name: "Sharjah Media City (SHAMS)", href: "#" },
-          { name: "Sharjah Publishing City (SPCFZ)", href: "#" },
-          { name: "SRTIP Free Zone", href: "#" },
-          { name: "Hamriyah Free Zone", href: "#" },
-        ]
-      },
-      { name: "Ajman", href: "#" },
-      { name: "Umm Al Quwain", href: "#" },
-      { name: "Ras Al Khaimah", href: "#" },
-    ]
-  },
-  {
-    name: "Offshore",
-    href: "#"
-  }
-]
-
-const navItems = [
-  { name: "Home", href: "/" },
-  {
-    name: "About Us",
-    href: "/about-us",
-    children: [
-      { name: "About the Company", href: "/about-us" },
-      { name: "The Founders", href: "#" },
-      { name: "Why UAE?", href: "/why-uae" }
-    ]
-  },
-  { name: "Company Formation", href: "#", children: companyFormationItems },
-  {
-    name: "Services",
-    href: "/services",
-    children: [
-      {
-        name: "PRO Services",
-        href: "#",
-        children: [
-          { name: "Virtual PRO", href: "#" },
-          { name: "Local Sponsorships", href: "#" },
-          { name: "License Renewals", href: "#" },
-          { name: "Visa Renewals", href: "#" },
-          { name: "Banking Assistance", href: "#" },
-          { name: "Office Solutions", href: "#" },
-        ]
-      },
-      {
-        name: "Visa Services",
-        href: "#",
-        children: [
-          { name: "Investor Visa", href: "#" },
-          { name: "Employment Visa", href: "#" },
-          { name: "Dependent Visa", href: "#" },
-          { name: "Golden Visa", href: "#" },
-          { name: "Green Visa", href: "#" },
-          { name: "Blue Visa", href: "#" },
-          { name: "Remote Work Visa", href: "#" },
-          { name: "Tourist/Visit Visa", href: "#" },
-        ]
-      },
-      { name: "Government Approvals", href: "#" },
-      {
-        name: "Document Services",
-        href: "#",
-        children: [
-          { name: "Attestation Services", href: "#" },
-          { name: "Legal Translation", href: "#" },
-          { name: "Typing Services", href: "#" },
-        ]
-      },
-      {
-        name: "Value-Added Services",
-        href: "#",
-        children: [
-          { name: "VAT & Corporate Tax Assistance", href: "#" },
-          { name: "Medical Insurance Assistance", href: "#" },
-          { name: "Trademark Registration", href: "#" },
-          { name: "Branding and Design Services", href: "#" },
-          { name: "Digital Marketing Services", href: "#" },
-          { name: "Web Design & Development", href: "#" },
-        ]
-      },
-    ]
-  },
-  {
-    name: "Resources",
-    href: "#",
-    children: [
-      { name: "News & Updates", href: "#" },
-      { name: "Blogs & Articles", href: "/blog" },
-      { name: "Downloads", href: "#" }
-    ]
-  },
-  { name: "Contact Us", href: "/contact-us" },
-]
+import { navItems } from "@/data/NavbarData"
 
 export default function Navbar() {
   const [active, setActive] = useState(null)
@@ -147,20 +13,22 @@ export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  // Lock page scroll when mobile menu is open
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
+
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== "undefined") {
         if (window.scrollY > lastScrollY && window.scrollY > 50) {
-          // if scroll down and not at top, hide
           setIsVisible(false)
         } else {
-          // if scroll up or at top, show
           setIsVisible(true)
         }
-
-        // Add background if scrolled more than 20px
         setIsScrolled(window.scrollY > 20)
-
         setLastScrollY(window.scrollY)
       }
     }
@@ -182,9 +50,16 @@ export default function Navbar() {
         }`}
     >
       <Container>
-        <div className="flex items-center justify-between  py-4 gap-4">
+        <div className="flex items-center justify-between py-4 gap-4">
+          {/* Logo — always at the far left */}
           <Logo />
-          <DesktopNav active={active} setActive={setActive} />
+
+          {/* Desktop Nav — floated to the right */}
+          <div className="hidden md:flex items-center gap-4">
+            <DesktopNav active={active} setActive={setActive} />
+          </div>
+
+          {/* Mobile Hamburger */}
           <MobileToggle open={mobileOpen} setOpen={setMobileOpen} />
         </div>
       </Container>
@@ -198,13 +73,13 @@ export default function Navbar() {
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center">
-      <div className="relative h-15 w-[160px]  lg:w-[220px] flex-shrink-0">
+    <Link href="/" className="flex items-center flex-shrink-0">
+      <div className="relative h-12 w-[150px] md:w-[160px] lg:w-[190px] xl:w-[220px] 2xl:w-[260px] 2xl:h-14">
         <Image
           src="/assets/images/logo/invest-first.png"
           alt="Invest First Logo"
           fill
-          className=" object-contain md:object-cover"
+          className="object-contain object-left"
           priority
         />
       </div>
@@ -216,8 +91,7 @@ function Logo() {
 
 function DesktopNav({ active, setActive }) {
   return (
-    <nav className="hidden md:flex max-w-full items-center gap-4 lg:gap-8 xl:gap-12 rounded-xl border border-[#0099CC] bg-white/5 px-4 lg:px-6 py-3 backdrop-blur-md">
-
+    <nav className="flex items-center gap-2 lg:gap-5 xl:gap-10 rounded-xl border border-[#0099CC] bg-white/5 px-3 lg:px-6 py-3 backdrop-blur-md">
       {navItems.map((item) => (
         <NavItem
           key={item.name}
@@ -234,7 +108,6 @@ function DesktopNav({ active, setActive }) {
 
 function NavItem({ item, active, setActive }) {
   const hasDropdown = item.children && item.children.length > 0
-  const isCompanyFormation = item.name === "Company Formation"
 
   return (
     <div
@@ -244,7 +117,7 @@ function NavItem({ item, active, setActive }) {
     >
       <Link
         href={item.href}
-        className={`flex items-center gap-1 text-sm lg:text-base transition py-2
+        className={`flex items-center gap-0.5 text-xs lg:text-sm xl:text-base whitespace-nowrap transition py-2
           ${active === item.name ? "text-[#0099CC]" : "text-white hover:text-[#0099CC]"}`}
       >
         {item.name}
@@ -329,22 +202,45 @@ function MobileToggle({ open, setOpen }) {
 
 /* ---------------- MOBILE MENU ---------------- */
 
-/* ---------------- MOBILE MENU ---------------- */
-
 function MobileMenu({ open, setOpen }) {
   return (
     <div
-      className={`fixed inset-0 z-40 bg-black transition-transform duration-300 md:hidden overflow-y-auto h-screen ${open ? "translate-x-0" : "translate-x-full"
+      className={`fixed inset-0 z-60 md:hidden transition-transform duration-300 flex flex-col ${open ? 'translate-x-0' : 'translate-x-full'
         }`}
+      style={{ background: '#060614', height: '100dvh' }}
     >
-      <div className="p-8 pb-24 space-y-4">
-        <div className="flex justify-end mb-6">
-          {/* Close button is handled by MobileToggle but we can add another one or just rely on the fixed header toggle */}
-        </div>
+      {/* Top header — logo + X close button */}
+      <div
+        className="flex items-center justify-between px-6 py-5 border-b border-gray-800 shrink-0"
+        style={{ background: '#060614' }}
+      >
+        <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
+          <div className="relative h-10 w-[130px]">
+            <Image
+              src="/assets/images/logo/invest-first.png"
+              alt="Invest First"
+              fill
+              className="object-contain object-left"
+              priority
+            />
+          </div>
+        </Link>
+        <button
+          onClick={() => setOpen(false)}
+          className="text-white hover:text-[#0099CC] transition-colors p-2 rounded-lg hover:bg-white/10"
+          aria-label="Close menu"
+        >
+          <X size={26} />
+        </button>
+      </div>
 
-        {navItems.map((item, idx) => (
-          <MobileNavItem key={idx} item={item} setOpen={setOpen} />
-        ))}
+      {/* Scrollable nav content */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="px-6 py-6 space-y-2 pb-16">
+          {navItems.map((item, idx) => (
+            <MobileNavItem key={idx} item={item} setOpen={setOpen} />
+          ))}
+        </div>
       </div>
     </div>
   )

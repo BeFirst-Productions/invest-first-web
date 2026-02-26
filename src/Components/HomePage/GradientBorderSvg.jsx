@@ -40,7 +40,7 @@ const GradientBorderSvg = () => {
                        H 100
                        V 900"
                     stroke="url(#baseGradient)"
-                    strokeWidth="2"
+                    strokeWidth="1"
                     fill="none"
                     vectorEffect="non-scaling-stroke"
                 />
@@ -54,7 +54,7 @@ const GradientBorderSvg = () => {
                        H 100
                        V 900"
                     stroke="url(#rayGradient)"
-                    strokeWidth="4"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     fill="none"
                     vectorEffect="non-scaling-stroke"

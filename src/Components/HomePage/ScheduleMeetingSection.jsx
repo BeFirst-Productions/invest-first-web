@@ -2,7 +2,6 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import Container from "../Common/Layout/Contianer";
-import GradientBorderSvg from "./GradientBorderSvg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scheduleContent } from "@/data/MeetingData";
@@ -140,7 +139,7 @@ export default function ScheduleMeetingSection() {
 ${formData.purpose}
 `;
 
-    const phoneNumber = "9947695010"; // 🔴 replace
+    const phoneNumber = "+971588773753"; // 🔴 replace
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
@@ -166,7 +165,6 @@ ${formData.purpose}
     <section className=" relative w-full py-10 md:py-20">
       <Container>
         <div className="relative ">
-          <GradientBorderSvg />
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-1 rounded-3xl items-stretch">
 
             {/* ================= LEFT CARD ================= */}

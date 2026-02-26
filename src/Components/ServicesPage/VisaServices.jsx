@@ -169,7 +169,11 @@ const VisaServices = () => {
                             </div>
                         ))}
                     </div>
-
+                    <div className="mt-16 text-center">
+                        <p className="max-w-2xl mx-auto text-base md:text-lg  leading-relaxed">
+                            Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+                        </p>
+                    </div>
                     <style jsx>{`
                         .no-scrollbar::-webkit-scrollbar {
                             display: none;

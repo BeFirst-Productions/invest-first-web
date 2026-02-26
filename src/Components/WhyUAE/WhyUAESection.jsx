@@ -25,7 +25,7 @@ const WhyUAESection = () => {
                         {/* Title positioned in the cutout space */}
                         <div className="absolute top-[10%] right-0 pr-4 lg:pr-6 z-20 whitespace-nowrap">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-none">
-                                Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0099CC] to-[#006699]">UAE?</span>
+                                Why <span className="text-transparent bg-clip-text bg-linear-to-r from-[#0099CC] to-[#006699]">UAE?</span>
                             </h2>
                         </div>
 
@@ -81,7 +81,7 @@ const WhyUAESection = () => {
                                 href="#shapePath"
                                 fill="none"
                                 stroke="url(#borderGradient)"
-                                strokeWidth="4"
+                                strokeWidth="2"
                             />
                         </svg>
                     </div>
