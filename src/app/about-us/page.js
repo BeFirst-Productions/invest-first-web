@@ -2,13 +2,8 @@ import AboutCompanySection from '@/Components/AboutUs/AboutCompanySection';
 import CommonBanner from '@/Components/Common/Banner/CommonBanner'
 import CommonHerosection from '@/Components/Common/Banner/CommonHerosection'
 import ScheduleMeetingSection from '@/Components/Common/Meeting/ScheduleMeeting'
-<<<<<<< HEAD
-import MissionVision from '@/Components/AboutUs/MissionVision'
-
-=======
 import MissionVision from '@/Components/AboutUs/MissionVision';
 import CoreValues from '@/Components/AboutUs/CoreValues';
->>>>>>> c774cee830211560faf09f1a9797117c42c11d30
 import React from 'react'
 import CoreValues from '@/Components/AboutUs/CoreValues'
 
@@ -30,11 +25,7 @@ amet, consectetur"
                 imageAlt="Contact Us"
             />
             <MissionVision />
-<<<<<<< HEAD
-            <CoreValues/>
-=======
             <CoreValues />
->>>>>>> c774cee830211560faf09f1a9797117c42c11d30
             <ScheduleMeetingSection />
         </>
     )
