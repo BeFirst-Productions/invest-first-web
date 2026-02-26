@@ -5,6 +5,7 @@ import ScheduleMeetingSection from '@/Components/Common/Meeting/ScheduleMeeting'
 import MissionVision from '@/Components/AboutUs/MissionVision';
 import CoreValues from '@/Components/AboutUs/CoreValues';
 import React from 'react'
+import CoreValues from '@/Components/AboutUs/CoreValues'
 
 const page = () => {
     return (

@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GradientCard from "../Animations/GradientCard";
+import GradientCard from "../cards/GradientCard";
 import Container from "../Common/Layout/Contianer";
 import ImageCard from "../cards/ImageCard";
 import PrimaryButton from "../Common/Buttons/PrimaryButton";

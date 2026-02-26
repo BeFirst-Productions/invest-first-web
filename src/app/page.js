@@ -15,7 +15,9 @@ import NewsUpdateSection from "@/Components/HomePage/NewsUpdateSection";
 import NewsletterSection from "@/Components/HomePage/NewsletterSection";
 import SocialMediaPromo from "@/Components/HomePage/SocialMediaPromo";
 import { logos } from "@/data/CarouselData";
-
+import ServicesSection from "@/Components/HomePage/ServicesSection";
+import WhyChooseUsSection from "@/Components/HomePage/WhyChooseUsSection";
+import BusinessSetupProcess from "@/Components/HomePage/BusinessSetupProcess";
 
 
 export default function Home() {
@@ -24,10 +26,13 @@ export default function Home() {
       <div>
         <HomeHeroSection />
         <FormationandMeeting />
-        <AboutUsection />
-        <LicenseCategorySection />
         <ProjectileCarousel logos={logos} speed={0.8} />
+        <AboutUsection />
+        <ServicesSection />
+        <LicenseCategorySection />
         <VisaServices />
+        <WhyChooseUsSection />
+        <BusinessSetupProcess />
         <FreezoneSection />
         <PricingPlanSection />
         <MarqueeSection />
