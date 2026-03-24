@@ -52,11 +52,11 @@ export const companyFormationItems = [
     {
         name: "Offshore",
         href: "/offshore",
-        children: [
-            { name: "JAFZA Offshore", href: "/offshore/jafza-offshore" },
-            { name: "RAKICC Offshore", href: "/offshore/rakicc-offshore" },
-            { name: "Ajman Offshore", href: "/offshore/ajman-offshore" },
-        ]
+        // children: [
+        //     { name: "JAFZA Offshore", href: "/offshore/jafza-offshore" },
+        //     { name: "RAKICC Offshore", href: "/offshore/rakicc-offshore" },
+        //     { name: "Ajman Offshore", href: "/offshore/ajman-offshore" },
+        // ]
     }
 ];
 
