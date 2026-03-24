@@ -122,6 +122,34 @@ Z
                 />
             </svg>
 
+            {/* === DECORATIVE SVG === */}
+            <svg
+                width="1377"
+                height="616"
+                viewBox="0 0 1377 616"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute right-0 2xl:-bottom-20 xl:-bottom-10 lg:-bottom-10 md:-bottom-10 w-[60%] h-auto pointer-events-none z-0"
+            >
+                <line x1="1087" y1="371" x2="1.31134e-07" y2="371" stroke="url(#paint0_linear_3046_9133)" strokeWidth="3" />
+                <path d="M1131.9 616C1131.9 591.874 1131.9 517.721 1131.9 517.721C1131.79 514.828 1133.84 508.766 1142.93 507.656H1196.12C1199.04 507.656 1204.88 505.781 1204.88 498.285V465.66V433.639C1205.42 429.114 1204.43 420.344 1196.12 421.457H1094.92C1091.67 421.457 1087 419.619 1087 406.741V369.5" stroke="url(#paint1_linear_3046_9133)" strokeWidth="3" />
+                <path d="M1040 615.5V495.77C1040.5 489.8 1045.2 477.964 1060 478.373H1207C1212.67 477.691 1223.8 472.439 1223 456.885V18.8967C1223.17 13.6095 1226.8 2.728 1240 1.5H1377" stroke="url(#paint2_linear_3046_9133)" strokeWidth="3" />
+                <defs>
+                    <linearGradient id="paint0_linear_3046_9133" x1="1087" y1="368.952" x2="4.55437e-07" y2="368.976" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#780343" />
+                        <stop offset="1" stopColor="#00335A" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_3046_9133" x1="1087" y1="481.023" x2="1205" y2="481.023" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#780343" />
+                        <stop offset="1" stopColor="#00335A" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_3046_9133" x1="1040" y1="337.711" x2="1377" y2="337.711" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#780343" />
+                        <stop offset="1" stopColor="#00335A" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
             {/* === LOGO IN NOTCH === */}
             <div
                 className="absolute top-0    flex items-center justify-center z-10"

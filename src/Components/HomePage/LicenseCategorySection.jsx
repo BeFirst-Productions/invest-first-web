@@ -1,5 +1,5 @@
 "use client"
-import { useLayoutEffect, useRef } from "react"; // Changed useEffect to useLayoutEffect for better GSAP init
+import { useLayoutEffect, useRef,React, useState, useEffect } from "react"; // Changed useEffect to useLayoutEffect for better GSAP init
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LicenseCategoryMobile from "./LicenseCategoryMobile";
@@ -11,8 +11,18 @@ import SectionTag from "../Common/SectionTag";
 
 const LicenseCategorySection = () => {
     const containerRef = useRef(null);
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsVisible(entry.isIntersecting);
+        }, { threshold: 0.05 });
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         if (containerRef.current) {
@@ -32,10 +42,11 @@ const LicenseCategorySection = () => {
                         x: 0,
                         duration: 1.5, // Slower duration
                         ease: "power4.out", // Smoother easing
+                        willChange: "transform, opacity",
                         scrollTrigger: {
                             trigger: card,
                             start: "top 85%",
-                            toggleActions: "play none none reverse",
+                            once: true
                         },
                     }
                 );
@@ -44,7 +55,7 @@ const LicenseCategorySection = () => {
     }, []);
 
     return (
-        <section className="relative w-full py-10 md:py-20   overflow-hidden">
+        <section ref={sectionRef} className="relative w-full py-10 md:py-20   overflow-hidden">
             {/* Decorative Top-Left Shape - Hidden on sm/md */}
             <div className="absolute inset-0 pointer-events-none hidden lg:block overflow-hidden">
                 {/* Top-Left Big Circle */}
@@ -130,18 +141,35 @@ const LicenseCategorySection = () => {
                 </div>
             </Container>
 
-            {/* Decorative SVG Line Bottom Right (Desktop Only) */}
-            <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block">
-                <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+            <div className="absolute right-0 bottom-0 pointer-events-none hidden xl:block">
+                <svg width="182" height="800" viewBox="0 0 182 930" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M185.5 928.5H100.577C94.848 927.503 83.5923 919.824 84.4011 897.082V256.708C84.2326 248.978 80.5593 233.068 67.2143 231.273H1.49999V306.846H122.819C126.863 307.61 134.951 305.014 134.951 288.525V178.601C135.793 169.186 133.232 150.356 116.247 150.356H43.456C36.5476 149.847 22.7308 142.875 22.7308 119.058C22.7308 95.2413 22.7308 46.0297 22.7308 24.401C21.8883 16.7673 23.7417 1.5 37.8956 1.5H184.489" stroke="url(#paint0_linear_2284_8598)" strokeWidth="3" />
+
+                    {/* Animated Ray */}
                     <path
-                        d="M 400 0 V 100 C 400 150 400 150 350 150 H 100 C 50 150 50 150 50 200 V 400"
-                        stroke="url(#decGradient)"
-                        strokeWidth="1.5"
+                        d="M185.5 928.5H100.577C94.848 927.503 83.5923 919.824 84.4011 897.082V256.708C84.2326 248.978 80.5593 233.068 67.2143 231.273H1.49999V306.846H122.819C126.863 307.61 134.951 305.014 134.951 288.525V178.601C135.793 169.186 133.232 150.356 116.247 150.356H43.456C36.5476 149.847 22.7308 142.875 22.7308 119.058C22.7308 95.2413 22.7308 46.0297 22.7308 24.401C21.8883 16.7673 23.7417 1.5 37.8956 1.5H184.489"
+                        stroke="url(#rayGradient)"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        filter="url(#rayBlur)"
+                        className="animate-license-ray"
                     />
+
                     <defs>
-                        <linearGradient id="decGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop stopColor="#3b82f6" />
-                            <stop offset="1" stopColor="#ec4899" />
+                        <linearGradient id="paint0_linear_2284_8598" x1="185.5" y1="509.102" x2="1.5" y2="509.102" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#780343" />
+                            <stop offset="1" stopColor="#00335A" />
+                        </linearGradient>
+
+                        <filter id="rayBlur" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" />
+                        </filter>
+
+                        <linearGradient id="rayGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#780343" stopOpacity="0" />
+                            <stop offset="40%" stopColor="#780343" />
+                            <stop offset="60%" stopColor="#00335A" />
+                            <stop offset="100%" stopColor="#00335A" stopOpacity="0" />
                         </linearGradient>
                     </defs>
                 </svg>
@@ -149,12 +177,24 @@ const LicenseCategorySection = () => {
 
             <Banner />
             <style jsx>{`
+                @keyframes licenseRay {
+                    0% { stroke-dashoffset: -2000; }
+                    100% { stroke-dashoffset: 2000; }
+                }
+                .animate-license-ray {
+                    stroke-dasharray: 200 1800;
+                    animation: licenseRay 6s linear infinite;
+                    animation-play-state: ${isVisible ? 'running' : 'paused'};
+                    will-change: stroke-dashoffset;
+                }
                 @keyframes pulseSlow {
                     0%, 100% { transform: scale(1); opacity: 1; }
                     50% { transform: scale(1.05); opacity: 0.8; }
                 }
                 .animate-pulse-slow {
                     animation: pulseSlow 2s ease-in-out infinite;
+                    animation-play-state: ${isVisible ? 'running' : 'paused'};
+                    will-change: transform, opacity;
                 }
                 @keyframes flexPulseLeft {
                     0% { flex: 0.3; }

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import Container from "../Common/Layout/Contianer"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HomeHeroSection() {
   const titleRef = useRef(null)
@@ -12,68 +13,73 @@ export default function HomeHeroSection() {
 
   useEffect(() => {
     const titles = [
-      "Business Setup Services  UAE | Invest First",
-      "Invest first| Business Setup Consultant UAE"
+      "Business Setup Services UAE | Invest First",
+      "Invest first | Business Setup Consultant UAE"
     ]
 
     const descriptions = [
       "We are Providing Business setup services UAE with Invest First. Expert company formation, licensing, visas, and compliance services customized to your needs.",
-      " We are best Business setup consultant UAE,offering expert guidance for company formation, licensing, compliance, and hassle-free business growth."
+      "We are best Business setup consultant UAE, offering expert guidance for company formation, licensing, compliance, and hassle-free business growth."
     ]
 
     let index = 0
-    const offscreen = () => window.innerWidth * 1.2
+    const getOffscreen = () => window.innerWidth * 1.2
 
-    const animate = () => {
-      if (timelineRef.current) {
-        timelineRef.current.kill()
-      }
+    const tl = gsap.timeline({
+      repeat: -1,
+      paused: true // Start paused, let IntersectionObserver handle it
+    })
+    timelineRef.current = tl
 
-      const tl = gsap.timeline()
-      timelineRef.current = tl
-
-      tl.set(titleRef.current, { x: -offscreen() })
-      tl.set(descRef.current, { x: -offscreen() })
-
-      tl.to(titleRef.current, {
-        x: 0,
-        duration: 1,
-        ease: "power4.out"
-      })
-
-      tl.to(descRef.current, {
-        x: 0,
-        duration: 1,
-        ease: "power4.out"
-      }, "-=0.5")
-
-      tl.to({}, { duration: 1 })
-
-      tl.to(titleRef.current, {
-        x: -offscreen(),
-        duration: 1,
-        ease: "power4.in"
-      })
-
-      tl.to(descRef.current, {
-        x: -offscreen(),
-        duration: 1,
-        ease: "power4.in"
-      }, "-=0.6")
-
-      tl.call(() => {
-        index = (index + 1) % titles.length
-        titleRef.current.textContent = titles[index]
-        descRef.current.textContent = descriptions[index]
-      })
+    const updateContent = () => {
+      index = (index + 1) % titles.length
+      if (titleRef.current) titleRef.current.textContent = titles[index]
+      if (descRef.current) descRef.current.textContent = descriptions[index]
     }
 
-    animate()
-    const interval = setInterval(animate, 4200)
+    // Animation Step 1: In
+    tl.set([titleRef.current, descRef.current], { x: -2000 }) // Use a large fixed value for initial set to avoid calculating every time if possible, or use a responsive calc in the to()
+    
+    tl.to(titleRef.current, {
+      x: 0,
+      duration: 1,
+      ease: "power4.out"
+    })
+    tl.to(descRef.current, {
+      x: 0,
+      duration: 1,
+      ease: "power4.out"
+    }, "-=0.5")
+
+    tl.to({}, { duration: 2.2 }) // Pause while visible
+
+    // Animation Step 2: Out
+    tl.to(titleRef.current, {
+      x: -2000,
+      duration: 1,
+      ease: "power4.in"
+    })
+    tl.to(descRef.current, {
+      x: -2000,
+      duration: 1,
+      ease: "power4.in",
+      onComplete: updateContent
+    }, "-=0.6")
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        tl.resume()
+      } else {
+        tl.pause()
+      }
+    }, { threshold: 0.1 })
+
+    const currentSection = titleRef.current?.closest('section')
+    if (currentSection) observer.observe(currentSection)
 
     return () => {
-      clearInterval(interval)
-      if (timelineRef.current) timelineRef.current.kill()
+      if (tl) tl.kill()
+      if (observer) observer.disconnect()
     }
   }, [])
 
@@ -106,7 +112,7 @@ export default function HomeHeroSection() {
 
           {/* LEFT COLUMN */}
           <div className="flex items-center lg:items-end  pb-0 lg:pb-24 order-2 lg:order-1">
-            <div className="relative w-[320px] rounded-[24px] bg-gradient-to-b from-[#001b3f] to-[#000b1f] p-6 py-8 border-2 border-[#0099CC]">
+            <div className="relative w-[320px] rounded-[24px] bg-linear-to-b from-[#001b3f] to-[#000b1f] p-6 py-8 border-2 border-[#0099CC]">
 
               <h3 className="text-white text-xl md:text-2xl leading-snug font-semibold">
                 Thinking of Starting a Company?
@@ -115,10 +121,12 @@ export default function HomeHeroSection() {
               <p className="text-gray-300 text-base font-medium mt-3 max-w-[200px]">
                 Let Invest First take care of the legal work while you focus on growth.            </p>
 
-              <button className="mt-6 flex items-center gap-3  text-lg md:text-xl rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-white font-medium shadow-lg">
-                Cost Calculator
-                <span className="text-lg md:text-xl">→</span>
-              </button>
+              <Link href="/cost-calculator">
+                <button className="mt-6 flex items-center gap-3  text-lg md:text-xl rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 px-5 py-3 text-white font-medium shadow-lg">
+                  Cost Calculator
+                  <span className="text-lg md:text-xl">→</span>
+                </button>
+              </Link>
 
               {/* WhatsApp */}
               {/* WhatsApp */}
@@ -158,7 +166,7 @@ export default function HomeHeroSection() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="flex items-end lg:items-center order-1 lg:order-2 px-0 px-2 lg:px-4">
+          <div className="flex items-end lg:items-center order-1 lg:order-2 px-2 lg:px-4">
             <div className="relative text-left overflow-hidden">
               <h1 ref={titleRef} className="text-4xl lg:text-6xl font-bold text-white leading-tight">
                 Business Setup Services UAE | Invest First

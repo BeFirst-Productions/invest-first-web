@@ -222,12 +222,20 @@ const BottomRightCutoutSVG = ({ className, mainColor }) => {
 };
 
 export default function CompanyFormation() {
-  const cardsRef = useRef([]);
-  const containerRef = useRef(null);
+    const cardsRef = useRef([]);
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = React.useState(false);
 
-  useEffect(() => {
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsVisible(entry.isIntersecting);
+        }, { threshold: 0.05 });
+        if (containerRef.current) observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
     let mm = gsap.matchMedia();
-
     const ctx = gsap.context(() => {
       mm.add("(min-width: 768px)", () => {
         // Desktop Animation: Synchronized
@@ -235,7 +243,7 @@ export default function CompanyFormation() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 85%",
-            toggleActions: "restart none none reverse",
+            once: true,
           },
         });
 
@@ -254,6 +262,7 @@ export default function CompanyFormation() {
               y: 0,
               duration: 2.5,
               ease: "power3.out",
+              willChange: "transform, opacity"
             },
             "<" // Position parameter: Insert at start of previous animation (sync all)
           );
@@ -264,6 +273,7 @@ export default function CompanyFormation() {
         // Mobile Animation: Wave from Right (using batch for staggered reveal)
         ScrollTrigger.batch(cardsRef.current.filter(Boolean), {
           start: "top 85%",
+          once: true,
           onEnter: (elements) => {
             gsap.fromTo(
               elements,
@@ -275,19 +285,10 @@ export default function CompanyFormation() {
                 ease: "power3.out",
                 stagger: 0.2, // Wave effect
                 overwrite: true,
+                willChange: "transform, opacity"
               }
             );
           },
-          onLeave: (elements) => {
-            // Reset for replay
-            gsap.set(elements, { opacity: 0, x: 100 });
-          },
-          onEnterBack: (elements) => {
-            gsap.fromTo(elements, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1.5, stagger: 0.2, ease: "power3.out", overwrite: true });
-          },
-          onLeaveBack: (elements) => {
-            gsap.set(elements, { opacity: 0, x: 100 });
-          }
         });
       });
     });
@@ -305,6 +306,7 @@ export default function CompanyFormation() {
         .animate-ray {
           animation: moveRay 8s linear infinite;
           will-change: stroke-dashoffset;
+          animation-play-state: ${isVisible ? 'running' : 'paused'};
         }
       `}</style>
       <Container>

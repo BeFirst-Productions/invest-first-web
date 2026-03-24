@@ -8,7 +8,7 @@ const AboutCompanySection = () => {
             <Container>
                 {/* Left Content */}
                 <div className="w-full lg:w-1/2 text-left z-10 relative">
-                    <h2 className="text-3xl md:text-[4rem] font-bold mb-8">
+                    <h2 className="text-3xl md:text-[2.5rem] font-semibold mb-8">
                         <span className="text-[#0099CC]">About</span>{" "}
                         <span className="text-white">The Company</span>
                     </h2>

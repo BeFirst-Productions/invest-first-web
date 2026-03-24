@@ -60,45 +60,24 @@ const SocialMediaPromo = () => {
                                     )}
                                     <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors" />
                                 </div>
-
-                                {/* 2. The Shape Connector (Hump) */}
-                                <div className="relative w-full h-[60px] -mt-[70px] -mb-[2px] z-30 flex items-end justify-center pointer-events-none">
-                                    {/* Center Hump SVG */}
-                                    <div className="relative w-full h-[60px] shrink-0">
+                                {/* 2. Bottom Shape and Text Content */}
+                                <div className="absolute bottom-0 left-0 w-full z-30 pointer-events-none">
+                                    <div className="relative w-full h-full flex flex-col items-center justify-end pointer-events-auto">
                                         <svg
                                             width="100%"
-                                            height="100%"
-                                            viewBox="0 0 320 60"
+                                            viewBox="0 0 251 77"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
-                                            preserveAspectRatio="none"
-                                            className="absolute bottom-0 left-0 w-full h-full overflow-visible"
+                                            className="w-full h-auto drop-shadow-xl"
                                         >
-                                            <path
-                                                d="M-10,59.25 L10,59.25 Q40,59.25 40,29.25 Q40,0.75 70,0.75 H250 Q280,0.75 280,29.25 Q280,59.25 310,59.25 L330,59.25"
-                                                stroke="#000000"
-                                                strokeWidth="12"
-                                                fill="none"
-                                            />
-                                            <path
-                                                d="M0,60 L10,60 Q40,60 40,30 Q40,1 70,1 H250 Q280,1 280,30 Q280,60 310,60 L320,60 V65 H0 Z"
-                                                fill="#030F26"
-                                            />
-                                            <path
-                                                d="M0,59.25 L10,59.25 Q40,59.25 40,29.25 Q40,0.75 70,0.75 H250 Q280,0.75 280,29.25 Q280,59.25 310,59.25 L320,59.25"
-                                                stroke="#0099CC"
-                                                strokeWidth="1.5"
-                                                fill="none"
-                                            />
+                                            <path d="M10.3345 52C16.042 52 20.6689 47.3731 20.6689 41.6655V16C20.6689 7.16344 27.8324 0 36.6689 0H205.984C214.821 0 221.984 7.16344 221.984 16V35.4922C221.984 43.5046 228.48 50 236.492 50H237.5C244.956 50 251 56.0442 251 63.5C251 70.9558 244.956 77 237.5 77H12.5C5.59645 77 0 71.4036 0 64.5V62.3345C0 56.6269 4.6269 52 10.3345 52Z" fill="#000F2B" />
                                         </svg>
+                                        <div className="absolute inset-0 flex items-center justify-center p-4 pt-6">
+                                            <p className="text-white text-xs sm:text-base text-center leading-[1.6] font-normal font-outfit max-w-[90%] tracking-wide">
+                                                {card.description}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                {/* 3. Bottom Text Content */}
-                                <div className="relative z-20 bg-[#030F26] p-6 pt-2 rounded-b-3xl rounded-t-none border-[1.5px] border-t-0 border-[#0099CC] grow">
-                                    <p className="text-gray-300 text-sm text-center leading-relaxed font-light font-outfit">
-                                        {card.description}
-                                    </p>
                                 </div>
                             </div>
                         ))}
