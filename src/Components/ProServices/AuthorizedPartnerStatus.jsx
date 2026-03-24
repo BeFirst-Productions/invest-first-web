@@ -62,11 +62,27 @@ function buildCardPath(W, H, notchCenters) {
     return d;
 }
 
-const FreezonePartnerStatus = () => {
+const AuthorizedPartnerStatus = ({ data }) => {
     const cardRef = useRef(null);
     const itemRefs = useRef([]);
     const [iconTops, setIconTops] = useState([]);
     const [cardSize, setCardSize] = useState({ w: 0, h: 0 });
+
+    if (!data) return null;
+
+    const {
+        titleHighlight = "Why",
+        titleRest = "Our Authorized Partner Status Matters",
+        description = "As an authorized channel partner of 20 UAE authorities, Invest First provides unmatched advantages during company formation UAE:",
+        bulletPoints = [
+            'Direct access to authorities without intermediaries',
+            'Faster company registration and license issuance',
+            'Preferential pricing and cost-effective setup packages',
+            'Accurate activity approvals aligned with regulations',
+            'Expert guidance on visas, offices, and operational requirements',
+        ],
+        footerNote = "This partnership strength allows us to recommend the right jurisdiction based on your business activity, budget, visa needs, and long-term scalability — not just the cheapest option."
+    } = data;
 
     useEffect(() => {
         const calculate = () => {
@@ -93,7 +109,7 @@ const FreezonePartnerStatus = () => {
             cancelAnimationFrame(raf);
             window.removeEventListener('resize', calculate);
         };
-    }, []);
+    }, [bulletPoints]); // Recalculate if bulletPoints change
 
     const cardPath = buildCardPath(cardSize.w, cardSize.h, iconTops);
 
@@ -130,44 +146,41 @@ const FreezonePartnerStatus = () => {
 
                     {/* Content */}
                     <div className="relative z-10  py-8 md:py-14">
-<div className="px-6 md:px-10 lg:px-12">
-                        {/* Heading */}
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold max-w-base md:max-w-lg text-white leading-snug mb-4">
-                            <span className="text-[#0099CC]">Why</span>{' '}
-                            Our Authorized Freezone Partner Status Matters
-                        </h2>                       
-                        {/* Subtitle */}
-                        <p className="  text-base md:text-lg leading-relaxed mb-8 max-w-3xl">
-                            As an authorized channel partner of 20 UAE Freezones, Invest First provides
-                            unmatched advantages during company formation UAE:
-                        </p>
-</div>
+                        <div className="px-6 md:px-10 lg:px-12">
+                            {/* Heading */}
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold max-w-base md:max-w-lg text-white leading-snug mb-4">
+                                <span className="text-[#0099CC]">{titleHighlight}</span>{' '}
+                                {titleRest}
+                            </h2>
+                            {/* Subtitle */}
+                            <p className="  text-base md:text-lg leading-relaxed mb-8 max-w-3xl text-gray-300">
+                                {description}
+                            </p>
+                        </div>
                         {/* Bullet points */}
-                      <div className="px-10 md:px-14">
-                          <ul className="mb-10">
-                            {bulletPoints.map((point, index) => (
-                                <li
-                                    key={index}
-                                    ref={(el) => { itemRefs.current[index] = el; }}
-                                    className="flex items-center gap-3 py-3 "
-                                >
-                                    <span className="text-base md:text-lg leading-relaxed">
-                                        {point}
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="px-10 md:px-14">
+                            <ul className="mb-10">
+                                {bulletPoints.map((point, index) => (
+                                    <li
+                                        key={index}
+                                        ref={(el) => { itemRefs.current[index] = el; }}
+                                        className="flex items-center gap-3 py-3 "
+                                    >
+                                        <span className="text-base md:text-lg leading-relaxed text-gray-200">
+                                            {point}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
 
-                      </div>
+                        </div>
                         {/* Footer note */}
-                      <div className="px-6 md:px-8 lg:px-12">
-                          <p className=" text-base md:text-lg leading-relaxed max-w-3xl pt-0 ">
-                            This partnership strength allows us to recommend the right Freezone based on your
-                            business activity, budget, visa needs, and long-term scalability — not just the
-                            cheapest option.
-                        </p>
+                        <div className="px-6 md:px-8 lg:px-12">
+                            <p className=" text-base md:text-lg leading-relaxed max-w-3xl pt-0 text-gray-300">
+                                {footerNote}
+                            </p>
 
-                      </div>
+                        </div>
                     </div>
                 </div>
             </Container>
@@ -175,4 +188,4 @@ const FreezonePartnerStatus = () => {
     );
 };
 
-export default FreezonePartnerStatus;
+export default AuthorizedPartnerStatus;

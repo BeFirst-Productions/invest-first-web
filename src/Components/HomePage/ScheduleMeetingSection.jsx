@@ -30,7 +30,7 @@ export default function ScheduleMeetingSection() {
               scrollTrigger: {
                 trigger: ref.current,
                 start: "top 85%",
-                toggleActions: "play reverse play reverse",
+                once: true,
               },
             }
           );

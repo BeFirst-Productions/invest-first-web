@@ -1,11 +1,12 @@
 export const visaSectionData = {
     heading: "Visa Services",
-    description: "Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec",
+    description: "Expert residency and visa solutions in the UAE. From investor visas to employment and family sponsorships, we handle all your immigration requirements with precision and speed.",
     visaList: [
         {
             id: 1,
             title: "Investor Visa",
-            description: "Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie.",
+            slug: "investor-visa",
+            description: "Secure long-term residency in the UAE through business setup or investment. We manage the entire process from licensing to visa stamping.",
             image: "/assets/images/visa/investor-visa.png"
         },
         {
@@ -35,7 +36,8 @@ export const visaSectionData = {
         {
             id: 6,
             title: "Golden Visa",
-            description: "Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie.",
+            slug: "golden-visa",
+            description: "A prestigious 10-year residency for top-tier investors, entrepreneurs, and outstanding talent. Unlock unparalleled benefits and stability.",
             image: "/assets/images/visa/golden-visa.png"
         },
         {

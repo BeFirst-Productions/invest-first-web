@@ -28,14 +28,12 @@ const PricingCard = ({ item }) => {
                 {/* Dark Blue Part (Left) - SVG Version */}
                 <div className="z-20 relative h-full w-[30%] md:w-[170px] shrink-0">
                     {/* Increased viewBox width/height and extended negative origin to prevent stroke clipping */}
-                    <svg width="100%" height="100%" viewBox="-2 -2 176 196" preserveAspectRatio="none" className="drop-shadow-lg" style={{ overflow: 'visible' }}>
-                        {/* Main Fill Shape with Rounded Corners and Full Border */}
-                        <path
-                            d="M30,0 H90 Q110,0 110,20 V36 Q110,56 130,56 H140 Q160,56 160,76 V116 Q160,136 140,136 H130 Q110,136 110,156 V172 Q110,192 90,192 H30 Q0,192 0,162 V30 Q0,0 30,0 Z"
-                            fill="#000F2B"
-                            stroke="#0099CC"
-                            strokeWidth="1.5"
-                        />
+                    <svg width="100%" height="100%" viewBox="0 -10 138 197" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="drop-shadow-lg">
+                        <mask id={`path-1-inside-1_2942_9548_${item.id}`} fill="white">
+                            <path d="M93 32C93 40.8366 100.163 48 109 48H122C130.837 48 138 55.1634 138 64V104C138 112.837 130.837 120 122 120H109C100.163 120 93 127.163 93 136V161C93 169.837 85.8366 177 77 177H16C7.16345 177 0 169.837 0 161V16C0 7.16344 7.16344 0 16 0H77C85.8366 0 93 7.16344 93 16V32Z" />
+                        </mask>
+                        <path d="M93 32C93 40.8366 100.163 48 109 48H122C130.837 48 138 55.1634 138 64V104C138 112.837 130.837 120 122 120H109C100.163 120 93 127.163 93 136V161C93 169.837 85.8366 177 77 177H16C7.16345 177 0 169.837 0 161V16C0 7.16344 7.16344 0 16 0H77C85.8366 0 93 7.16344 93 16V32Z" fill="#000F2B" />
+                        <path d="M109 48V48.5H122V48V47.5H109V48ZM138 64H137.5V104H138H138.5V64H138ZM122 120V119.5H109V120V120.5H122V120ZM93 136H92.5V161H93H93.5V136H93ZM77 177V176.5H16V177V177.5H77V177ZM0 161H0.5V16H0H-0.5V161H0ZM16 0V0.5H77V0V-0.5H16V0ZM93 16H92.5V32H93H93.5V16H93ZM77 0V0.5C85.5604 0.5 92.5 7.43959 92.5 16H93H93.5C93.5 6.8873 86.1127 -0.5 77 -0.5V0ZM0 16H0.5C0.5 7.43958 7.43959 0.5 16 0.5V0V-0.5C6.8873 -0.5 -0.5 6.8873 -0.5 16H0ZM16 177V176.5C7.43959 176.5 0.5 169.56 0.5 161H0H-0.5C-0.5 170.113 6.8873 177.5 16 177.5V177ZM93 161H92.5C92.5 169.56 85.5604 176.5 77 176.5V177V177.5C86.1127 177.5 93.5 170.113 93.5 161H93ZM109 120V119.5C99.8873 119.5 92.5 126.887 92.5 136H93H93.5C93.5 127.44 100.44 120.5 109 120.5V120ZM138 104H137.5C137.5 112.56 130.56 119.5 122 119.5V120V120.5C131.113 120.5 138.5 113.113 138.5 104H138ZM122 48V48.5C130.56 48.5 137.5 55.4396 137.5 64H138H138.5C138.5 54.8873 131.113 47.5 122 47.5V48ZM109 48V47.5C100.44 47.5 93.5 40.5604 93.5 32H93H92.5C92.5 41.1127 99.8873 48.5 109 48.5V48Z" fill="#0099CC" mask={`url(#path-1-inside-1_2942_9548_${item.id})`} />
                     </svg>
 
                     {/* Content Overlay */}
@@ -64,128 +62,24 @@ const PricingCard = ({ item }) => {
                 </div>
 
                 {/* White/Grey Part (Right) - SVG Version with Cutout */}
-                <div className="grow relative h-full -ml-[55px] z-10">
-                    {/* Negative margin set to -55px for tighter overlap */}
-                    {/* SVG for MD/LG screens (Deeper Cutout) */}
-                    <svg
-                        width="100%"
-                        height="100%"
-                        viewBox="-55 0 500 192"
-                        preserveAspectRatio="none"
-                        className="drop-shadow-lg xl:hidden"
-                    >
-                        <path
-                            d="
-      M-25,0
-      H420
-      Q440,0 440,20
-      V22
-      Q440,26 432,26
-      H390
-      Q380,26 380,36
-      V156
-      Q380,166 390,166
-      H432
-      Q440,166 440,172
-      Q440,192 420,192
-      H-25
-      Q-45,192 -45,172
-      V165
-      Q-45,145 -22,145
-      H-14
-      Q-8,145 -10,130
-      V70
-      Q-8,50 -14,50
-      H-22
-      Q-45,50 -45,30
-      V20
-      Q-45,0 -25,0
-      Z
-    "
-                            fill="#ffffff"
-                        />
+                <div className="grow relative h-full -ml-[45px] 2xl:-ml-[65px] z-10">
+                    <svg width="100%" height="100%" viewBox="0 0 544 197" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                        <g filter={`url(#filter0_d_2942_9552_${item.id})`}>
+                            <path d="M522 10C528.627 10 534 15.3726 534 22V30C534 38.8366 526.837 46 518 46H508C499.163 46 492 53.1634 492 62V135C492 143.837 499.163 151 508 151H518C526.837 151 534 158.163 534 167V175C534 181.627 528.627 187 522 187H22C15.3726 187 10 181.627 10 175V153C10 144.163 17.1634 137 26 137H40C48.8366 137 56 129.837 56 121V66C56 57.1634 48.8366 50 40 50H26C17.1634 50 10 42.8366 10 34V22C10 15.3726 15.3726 10 22 10H522Z" fill="#F9F9F9" />
+                        </g>
+                        <defs>
+                            <filter id={`filter0_d_2942_9552_${item.id}`} x="0" y="0" width="544" height="197" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset />
+                                <feGaussianBlur stdDeviation="5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2942_9552" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2942_9552" result="shape" />
+                            </filter>
+                        </defs>
                     </svg>
-
-                    {/* SVG for XL screens (Shallower Cutout, New Left) */}
-                    <svg
-                        width="100%"
-                        height="100%"
-                        viewBox="-55 0 500 192"
-                        preserveAspectRatio="none"
-                        className="drop-shadow-lg hidden xl:block 2xl:hidden"
-                    >
-                        <path
-                            d="
-      M-25,0
-      H420
-      Q440,0 440,20
-      V22
-      Q440,26 432,26
-      H405
-      Q395,26 395,36
-      V156
-      Q395,166 405,166
-      H432
-      Q440,166 440,172
-      Q440,192 420,192
-      H-25
-      Q-45,192 -45,172
-      V165
-      Q-45,145 -22,145
-      H-14
-      Q-8,145 -10,130
-      V70
-      Q-8,50 -14,50
-      H-22
-      Q-45,50 -45,30
-      V20
-      Q-45,0 -25,0
-      Z
-    "
-                            fill="#ffffff"
-                        />
-                    </svg>
-
-                    {/* SVG for 2XL screens (Shallower Cutout, Original Left) */}
-                    <svg
-                        width="100%"
-                        height="100%"
-                        viewBox="-55 0 500 192"
-                        preserveAspectRatio="none"
-                        className="drop-shadow-lg hidden 2xl:block"
-                    >
-                        <path
-                            d="
-      M-35,0
-      H420
-      Q440,0 440,20
-      V22
-      Q440,26 432,26
-      H405
-      Q395,26 395,36
-      V156
-      Q395,166 405,166
-      H432
-      Q440,166 440,172
-      Q440,192 420,192
-      H-35
-      Q-55,192 -55,172
-      V165
-      Q-55,145 -32,145
-      H-24
-      Q-18,145 -20,130
-      V70
-      Q-18,50 -24,50
-      H-32
-      Q-55,50 -55,30
-      V20
-      Q-55,0 -35,0
-      Z
-    "
-                            fill="#ffffff"
-                        />
-                    </svg>
-
 
                     {/* Content Overlay */}
                     <div className="absolute inset-0 flex flex-row items-center justify-center p-4 pl-24 md:pl-0 pr-16 w-full h-full gap-8 xl:gap-28">
@@ -219,9 +113,9 @@ const PricingCard = ({ item }) => {
 
                         {/* Vertical Button on Far Right */}
                         <div
-                            className="absolute right-1 top-1/2 -translate-y-1/2 h-[124px] w-12 md:w-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-[#281549] transition-colors overflow-hidden group/btn shadow-lg"
+                            className="absolute right-1 2xl:right-3 top-1/2 -translate-y-1/2 h-[124px] w-12 md:w-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-[#281549] transition-colors overflow-hidden group/btn shadow-lg"
                         >
-                            <div className="transform -rotate-90">
+                            <div className="transform -rotate-90 ">
                                 <PrimaryButton
                                     text="Button"
                                     className="!mt-0 !px-6 !py-2 !bg-[linear-gradient(90deg,rgba(120,3,67,1)_0%,rgba(0,51,90,1)_100%)]"

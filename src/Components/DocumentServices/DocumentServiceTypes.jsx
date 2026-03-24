@@ -10,22 +10,22 @@ const DocumentServiceTypes = ({ data }) => {
             {/* Background Decorations - Hidden on md/sm screens */}
             <div className="absolute top-0 right-0 hidden lg:block opacity-60 pointer-events-none animate-pulse duration-[3000ms]">
                 <svg width="263" height="144" viewBox="0 0 263 144" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="190.675" cy="71.9988" r="36" transform="rotate(48.3829 190.675 71.9988)" fill="#1C7998" fill-opacity="0.6" />
-                    <circle cx="190.674" cy="71.9992" r="49.5" transform="rotate(48.3829 190.674 71.9992)" stroke="url(#paint0_linear_2861_9031)" stroke-width="3" />
-                    <circle cx="110.941" cy="114.745" r="14" transform="rotate(48.3829 110.941 114.745)" fill="#1C7998" fill-opacity="0.6" />
-                    <circle cx="110.941" cy="114.745" r="13.5" transform="rotate(48.3829 110.941 114.745)" stroke="#1C7998" stroke-opacity="0.6" />
-                    <ellipse cx="43.8461" cy="87.4037" rx="21" ry="23" transform="rotate(48.3829 43.8461 87.4037)" fill="#1C7998" fill-opacity="0.6" />
-                    <path d="M66.6468 67.1469C77.041 78.8471 75.4357 97.4611 62.7733 108.71C50.1109 119.959 31.4375 119.36 21.0432 107.66C10.649 95.9598 12.2544 77.3458 24.9168 66.0968C37.5791 54.8479 56.2526 55.4466 66.6468 67.1469Z" stroke="url(#paint1_linear_2861_9031)" stroke-width="3" />
-                    <circle cx="111.879" cy="26.9666" r="14" transform="rotate(48.3829 111.879 26.9666)" fill="#1C7998" fill-opacity="0.6" />
-                    <circle cx="111.879" cy="26.9666" r="13.5" transform="rotate(48.3829 111.879 26.9666)" stroke="#1C7998" stroke-opacity="0.6" />
+                    <circle cx="190.675" cy="71.9988" r="36" transform="rotate(48.3829 190.675 71.9988)" fill="#1C7998" fillOpacity="0.6" />
+                    <circle cx="190.674" cy="71.9992" r="49.5" transform="rotate(48.3829 190.674 71.9992)" stroke="url(#paint0_linear_2861_9031)" strokeWidth="3" />
+                    <circle cx="110.941" cy="114.745" r="14" transform="rotate(48.3829 110.941 114.745)" fill="#1C7998" fillOpacity="0.6" />
+                    <circle cx="110.941" cy="114.745" r="13.5" transform="rotate(48.3829 110.941 114.745)" stroke="#1C7998" strokeOpacity="0.6" />
+                    <ellipse cx="43.8461" cy="87.4037" rx="21" ry="23" transform="rotate(48.3829 43.8461 87.4037)" fill="#1C7998" fillOpacity="0.6" />
+                    <path d="M66.6468 67.1469C77.041 78.8471 75.4357 97.4611 62.7733 108.71C50.1109 119.959 31.4375 119.36 21.0432 107.66C10.649 95.9598 12.2544 77.3458 24.9168 66.0968C37.5791 54.8479 56.2526 55.4466 66.6468 67.1469Z" stroke="url(#paint1_linear_2861_9031)" strokeWidth="3" />
+                    <circle cx="111.879" cy="26.9666" r="14" transform="rotate(48.3829 111.879 26.9666)" fill="#1C7998" fillOpacity="0.6" />
+                    <circle cx="111.879" cy="26.9666" r="13.5" transform="rotate(48.3829 111.879 26.9666)" stroke="#1C7998" strokeOpacity="0.6" />
                     <defs>
                         <linearGradient id="paint0_linear_2861_9031" x1="139.674" y1="76.8518" x2="241.674" y2="76.8518" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#780343" />
-                            <stop offset="1" stop-color="#00335A" />
+                            <stop stopColor="#780343" />
+                            <stop offset="1" stopColor="#00335A" />
                         </linearGradient>
                         <linearGradient id="paint1_linear_2861_9031" x1="21.6443" y1="66.9976" x2="61.4933" y2="111.854" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#780343" />
-                            <stop offset="1" stop-color="#00335A" />
+                            <stop stopColor="#780343" />
+                            <stop offset="1" stopColor="#00335A" />
                         </linearGradient>
                     </defs>
                 </svg>

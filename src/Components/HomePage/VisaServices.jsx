@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "../Common/Layout/Contianer";
 import { visaSectionData } from "@/data/VisaData";
 import { gsap } from "gsap";
@@ -23,7 +24,7 @@ const VisaServices = () => {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 75%",
-                    toggleActions: "play reverse play reverse"
+                    once: true
                 }
             });
 
@@ -36,7 +37,7 @@ const VisaServices = () => {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 75%",
-                    toggleActions: "play reverse play reverse"
+                    once: true
                 }
             });
         }, sectionRef);
@@ -49,6 +50,19 @@ const VisaServices = () => {
     const startX = React.useRef(0);
     const scrollLeftStart = React.useRef(0);
 
+    const isInView = React.useRef(true);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                isInView.current = entry.isIntersecting;
+            },
+            { threshold: 0.1 }
+        );
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     React.useEffect(() => {
         const slider = sliderRef.current;
         if (!slider) return;
@@ -56,7 +70,7 @@ const VisaServices = () => {
         let animationId;
 
         const animate = () => {
-            if (!isPaused) {
+            if (!isPaused && isInView.current) {
                 // If we've scrolled past the first set of items (halfway), reset to 0
                 if (slider.scrollLeft >= slider.scrollWidth / 2) {
                     slider.scrollLeft = 0;
@@ -123,9 +137,10 @@ const VisaServices = () => {
                     >
                         {/* Duplicate data for seamless looping */}
                         {[...visaSectionData.visaList, ...visaSectionData.visaList].map((visa, index) => (
-                            <div
+                            <Link
                                 key={`${visa.id}-${index}`}
-                                className="relative w-[300px] md:w-[350px] shrink-0 flex flex-col group select-none"
+                                href={visa.slug ? `/visa-services/${visa.slug}` : "/visa-services"}
+                                className="relative w-[300px] md:w-[350px] shrink-0 flex flex-col group select-none cursor-pointer"
                             >
                                 {/* 1. Top Image Section */}
                                 <div className="relative h-80 w-full rounded-3xl overflow-hidden z-0">
@@ -164,9 +179,7 @@ const VisaServices = () => {
                                         </div>
                                     </div>
                                 </div>
-
-
-                            </div>
+                            </Link>
                         ))}
                     </div>
 

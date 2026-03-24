@@ -65,7 +65,7 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="md:py-20 py-10 bg-[#050505] text-white">
+        <section className="md:py-20 py-10  text-white">
             <Container>
                 {/* Row 1: Heading Section */}
                 <div className="mb-12">

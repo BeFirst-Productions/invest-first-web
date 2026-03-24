@@ -19,11 +19,10 @@ export default function AboutUsection() {
         if (!el) return;
 
         const ctx = gsap.context(() => {
-
-
             const q = gsap.utils.selector(el);
 
             /* ================= DECOR LINE RAY ANIMATION ================= */
+            const rayAnimations = [];
             q(".line-ray").forEach((path, i) => {
                 const length = path.getTotalLength();
                 const raySize = length * 0.35;
@@ -32,15 +31,18 @@ export default function AboutUsection() {
                     strokeDasharray: `${raySize} ${length}`,
                     strokeDashoffset: raySize,
                     fill: "none",
+                    willChange: "stroke-dashoffset"
                 });
 
-                gsap.to(path, {
+                const anim = gsap.to(path, {
                     strokeDashoffset: -length,
                     duration: 5,
                     ease: "none",
                     repeat: -1,
                     delay: i * 1.5,
+                    paused: true // Handled by observer
                 });
+                rayAnimations.push(anim);
             });
 
             /* ================= CARD ANIMATIONS ================= */
@@ -53,12 +55,11 @@ export default function AboutUsection() {
                     duration: 1.2,
                     stagger: 0.2,
                     ease: "power3.out",
+                    willChange: "transform, opacity",
                     scrollTrigger: {
                         trigger: el,
                         start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play reset play reset",
-                        invalidateOnRefresh: true,
+                        once: true
                     },
                 }
             );
@@ -73,12 +74,11 @@ export default function AboutUsection() {
                     duration: 0.8,
                     delay: 0.2,
                     ease: "power3.out",
+                    willChange: "transform, opacity",
                     scrollTrigger: {
                         trigger: el,
                         start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play reset play reset",
-                        invalidateOnRefresh: true,
+                        once: true
                     },
                 }
             );
@@ -91,7 +91,7 @@ export default function AboutUsection() {
                 text.innerHTML = words
                     .map(
                         (word, i) =>
-                            `<span class="fill-word">${word}</span>${i < words.length - 1 ? " " : ""}`
+                            `<span class="fill-word" style="will-change: color">${word}</span>${i < words.length - 1 ? " " : ""}`
                     )
                     .join("");
                 text.dataset.split = "true";
@@ -108,14 +108,23 @@ export default function AboutUsection() {
                     trigger: text,
                     start: "top 85%",
                     end: "bottom 40%",
-                    scrub: true,
+                    scrub: 1, // Slight smoothing for performance
                     invalidateOnRefresh: true,
                 },
             });
 
+            // Observer to pause/play infinite animations
+            const observer = new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting) {
+                    rayAnimations.forEach(a => a.play());
+                } else {
+                    rayAnimations.forEach(a => a.pause());
+                }
+            }, { threshold: 0.01 });
+
+            observer.observe(el);
+
         }, el);
-
-
 
         return () => ctx.revert();
     }, []);
@@ -123,7 +132,7 @@ export default function AboutUsection() {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full isolate   bg-[#050505] text-white pt-10 md:pt-24 pb-10 md:pb-40 overflow-hidden"
+            className="relative w-full isolate    text-white pt-10 md:pt-24 pb-10 md:pb-40 overflow-hidden"
         >
             <Container>
                 <div className="relative   z-10">
@@ -186,10 +195,10 @@ export default function AboutUsection() {
                 </div>
             </Container>
             {/* RIGHT SIDE DECORATIVE LINES */}
-            <div className="hidden md:inline-block absolute  bottom-0 lg:bottom-[-90px] xl:bottom-0 right-0 lg:right-[100px] xl:right-0 xl:rotate-0 lg:-rotate-90 rotate-0 overflow-hidden pointer-events-none z-0">
+            <div className="hidden xl:inline-block absolute bottom-0 right-0 xl:w-[300px] 2xl:w-[450px] pointer-events-none z-0 overflow-hidden">
                 <svg
-                    width="239"
-                    height="390"
+                    width="100%"
+                    height="100%"
                     viewBox="0 0 339 590"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,7 @@ const companyFormation = {
         description1: "Starting a business in Dubai or anywhere in the UAE offers unmatched access to global markets, tax advantages, and a stable regulatory environment. However, successful company formation UAE requires expert navigation through licensing authorities, Freezone regulations, and banking procedures.",
         description2: "Invest First simplifies this journey by offering end-to-end <span class='font-bold'>business setup services UAE</span>, supported by our status as an authorized channel partner of 20 UAE Freezones. This allows us to secure faster approvals, accurate licensing, competitive packages, and direct coordination with Freezone authorities—reducing delays, costs, and risks for our clients.",
         description3: "From jurisdiction selection and activity classification to approvals, documentation, and license issuance, our Dubai-based consultants ensure every step of your company formation is structured, compliant, and growth-ready.",
-        image: "/assets/images/services/proServices/pro-services.png"
+        image: "/assets/images/pro-services/pro-services.png"
     },
     bannerTitle: "PRO Services",
     bannerDescription: "Expert government relations and business setup solutions in the UAE.",
@@ -109,11 +109,11 @@ const companyFormation = {
 const virtualPRO = {
     slug: 'virtual-pro',
     intro: {
-        title: "Professional <span class='text-[#0099CC]'>Virtual PRO</span> Services in Dubai & UAE",
-        description1: "A Virtual PRO service allows businesses to outsource their government relations and compliance work to experienced professionals — without the overhead of an in-house PRO team.",
-        description2: "Invest First's <span class='font-bold'>Virtual PRO services</span> cover all UAE government interactions: visa applications, labor card renewals, trade license renewals, attestations, and more. We ensure your business stays fully compliant while you focus on growth.",
-        description3: "Our dedicated PRO officers liaise with DED, MOHRE, ICA, courts, and other authorities on your behalf — giving you reliable, cost-effective government relations support across all Emirates.",
-        image: "/assets/images/services/proServices/virtual-pro.png"
+        title: "Step-by-Step Process of <span class='text-[#0099CC]'>Visa Processing</span> Through Virtual PRO",
+        description1: "Virtual PRO services support businesses by handling all government documentation and approvals without the need for an in-house PRO. These services cover trade license processing, employment visas, Emirates ID coordination, labour and immigration applications, medical typing, and document attestation.",
+        description2: "By working with authorities such as the General Directorate of Residency and Foreigners Affairs and the Ministry of Human Resources and Emiratisation, Virtual PRO providers ensure accurate submissions, faster approvals, and full regulatory compliance.",
+        description3: "This helps startups, SMEs, and foreign investors save time, reduce operational costs, and focus on core business activities while professionals manage all administrative procedures efficiently.",
+        image: "/assets/images/pro-services/virtual-pro.png"
     },
     bannerTitle: "Virtual PRO",
     bannerDescription: "Streamline your government transactions with our professional Virtual PRO services.",
@@ -124,7 +124,7 @@ const virtualPRO = {
         description: "Outsource your government relations with our Virtual PRO services. We handle visa processing, trade license renewals, and labor card renewals across all Emirates.",
         keywords: "virtual PRO Dubai, PRO services UAE, government relations Dubai, visa processing UAE, trade license renewal Dubai",
         canonical: "https://investfirst.ae/pro-services/virtual-pro",
-        image: "/assets/images/services/proServices/virtual-pro.png"
+        image: "/assets/image/pro-services/virtual-pro.png"
     },
     companyFormationTypes: {
         headingRest: "Virtual PRO Services We Offer",
@@ -132,72 +132,86 @@ const virtualPRO = {
         items: [
             {
                 id: "01",
-                title: "Visa & Entry Permit Processing",
-                description: "We handle employment visas, investor visas, family sponsorships, and all entry permit applications with authorities including ICA and GDRFA."
+                title: "Trade License Services",
+                description: "New license application, renewals, amendments, and activity additions with mainland and free zone authorities."
             },
             {
                 id: "02",
-                title: "Trade License Renewals",
-                description: "Timely renewal of mainland and Freezone trade licenses across all Emirates, ensuring your business stays compliant and avoiding penalties."
+                title: "Visa Processing Services",
+                description: "Employment visas, investor visas, family visas, visa renewals, cancellations, and status change support."
             },
             {
                 id: "03",
-                title: "Government Document Attestation",
-                description: "Attestation of corporate and personal documents including MOAs, certificates, and agreements with MOFA, embassies, and notaries."
+                title: "Labour & Immigration Approvals",
+                description: "Work permits, labour quota approvals, offer letters, and coordination with the Ministry of Human Resources and Emiratisation and General Directorate of Residency and Foreigners Affairs."
             },
             {
                 id: "04",
-                title: "Labor & MOHRE Services",
-                description: "Labor card issuance and renewals, MOHRE contract approvals, work permit processing, and employment-related government submissions."
+                title: "Emirates ID Services",
+                description: "Application typing, biometric appointments, renewals, and replacements."
             },
             {
                 id: "05",
-                title: "Court & Notary Filings",
-                description: "Preparation and submission of legal documents, power of attorney, and court-required filings across Dubai and other Emirates."
+                title: "Company Formation PRO Support",
+                description: "End-to-end PRO assistance for mainland, free zone, and offshore company setup."
             }
         ]
     },
     whyChoose: {
-        headingRest: "Virtual PRO Services from Invest First",
-        cardTitle: "How Our Virtual PRO Service Works for Your Business",
+        headingRest: "a Virtual Office in the UAE?",
+        cardTitle: "Why Invest First Is a Leading Virtual PRO Service Provider in the UAE?",
         cardTitleHighlight: "Virtual PRO",
         paragraphs: [
-            "Managing government relations in the UAE can be time-consuming and complex. Our dedicated Virtual PRO officers handle all submissions, follow-ups, and renewals on your behalf.",
-            "With Invest First, you get a reliable, experienced PRO team at a fraction of the cost of an in-house hire — with full transparency, fast turnaround, and zero compliance gaps."
+            "A virtual office is an ideal solution for startups, freelancers, and international businesses that want to establish a presence in the UAE without the cost of a physical office. It provides a registered business address, mail handling, and access to meeting rooms while keeping operational expenses low.",
+            "InvestFirst provides cost-effective virtual office services that eliminate the need for physical office rentals while giving your business a prestigious Dubai address. Our solutions help reduce expenses related to utilities, maintenance, and staffing, making them ideal for startups, SMEs, and international entrepreneurs entering the UAE market.",
         ],
         points: [
-            'Experienced PRO officers for all UAE Emirates',
-            'Fast processing with proactive deadline management',
-            'Fully transparent status updates throughout the process',
-            'Complete visa, labor, and licensing compliance coverage',
-            'Dedicated account manager for all your PRO needs',
-            'Cost-effective — no in-house PRO hiring required',
+            "Handles all government documentation without an in-house PRO",
+            "Trade license application, renewal, and amendments",
+            "Employment, investor, and family visa processing",
+            "Emirates ID typing, biometrics, and renewals",
+            "Labour approvals through the Ministry of Human Resources and Emiratisation",
+            "Immigration services with the General Directorate of Residency and Foreigners Affairs",
+        
         ]
     },
     faq: {
         headingRest: "Virtual PRO Services",
         items: [
             {
-                question: "What is a Virtual PRO service?",
-                answer: "A Virtual PRO service means outsourcing all your government relations and document processing tasks to experienced PRO officers who work on your behalf with UAE authorities — without you needing to hire and manage an in-house PRO team."
+                question: "What are Virtual PRO services in the UAE?",
+                answer: "Virtual PRO services are remote government liaison and documentation support services that handle visas, labour approvals, license renewals, Emirates ID processing, and other compliance tasks without the need for a physical PRO at your office. They act as your official representative with UAE authorities."
             },
             {
-                question: "Which companies benefit most from Virtual PRO?",
-                answer: "SMEs, startups, and foreign companies entering the UAE benefit greatly. It is also ideal for businesses that have a small team but need consistent government compliance support without the cost of full-time PRO staff."
+                question: "What is the role of a PRO in the UAE?",
+                answer: "A PRO (Public Relations Officer) manages all government-related paperwork, including visa applications, labour contracts, immigration approvals, and trade license processes, ensuring your business stays compliant with UAE regulations."
             },
             {
-                question: "Can Virtual PRO handle all Emirates?",
-                answer: "Yes. Invest First's Virtual PRO officers operate across Dubai, Abu Dhabi, Sharjah, and other Emirates, handling submissions with DED, MOHRE, ICA, GDRFA, and associated authorities."
+                question: "Who needs Virtual PRO services?",
+                answer: "Virtual PRO services are ideal for: Startups and SMEs, Free zone and mainland companies, Foreign investors and NRI business owners, Freelancers and remote businesses, and Companies without an in-house PRO. They help businesses operate smoothly without handling complex government procedures themselves."
             },
             {
-                question: "How long does visa processing take with Virtual PRO?",
-                answer: "Processing times vary depending on the visa type and authority. Employment visas typically take 5–10 business days, while investor visas may take slightly longer. Our team tracks every submission to avoid unnecessary delays."
+                question: "How is a Virtual PRO different from an in-house PRO?",
+                answer: "A Virtual PRO works remotely and on demand, while an in-house PRO is a full-time employee. Virtual PRO services are more cost-effective for startups and SMEs because you only pay for the services you use."
             },
             {
-                question: "Is my business data secure with a Virtual PRO provider?",
-                answer: "Absolutely. Invest First operates under strict confidentiality agreements. All documents and business information are handled securely and shared only with the relevant government authorities."
+                question: "Is Virtual PRO service cost-effective?",
+                answer: "Yes. It eliminates the need for hiring a full-time PRO, reduces internal HR workload, and helps avoid penalties caused by missed renewals or incorrect submissions."
             }
         ]
+    },
+    authorizedPartnerStatus: {
+        titleHighlight: "Why",
+        titleRest: "Our Virtual PRO Solutions Are the Right Choice",
+        description: "Invest First delivers faster and fully compliant Virtual PRO services across the UAE. Our direct coordination with free zone authorities eliminates intermediaries, reduces delays, and ensures accurate submission of all government documentation.",
+        bulletPoints: [
+            'Direct access to free zone and government authorities',
+            'Faster visa, license, and immigration processing',
+            'Accurate document clearing aligned with regulations',
+            'Cost-effective PRO solutions with transparent pricing',
+            'Expert guidance on quotas, approvals, and compliance',
+        ],
+        footerNote: "This strong partnership allows us to manage your trade licenses, visas, Emirates ID, labour, and immigration processes efficiently while helping you avoid penalties and operational delays."
     }
 };
 
@@ -205,11 +219,11 @@ const virtualPRO = {
 const localSponsorships = {
     slug: 'local-sponsorships',
     intro: {
-        title: "Trusted <span class='text-[#0099CC]'>Local Sponsorship</span> Solutions in UAE for Foreign Investors",
-        description1: "Setting up a mainland business in the UAE has traditionally required a local UAE national sponsor or service agent for certain business activities. Invest First connects you with reliable, legally structured local sponsorship arrangements.",
-        description2: "Our <span class='font-bold'>local sponsorship services</span> are built on clear contractual frameworks that protect your operational rights, profit shares, and business control — ensuring peace of mind for foreign investors.",
-        description3: "We advise on whether a local sponsor, service agent, or an alternative ownership structure such as a Freezone or 100% mainland ownership (under the 2021 Commercial Companies Law amendment) is the most appropriate solution for your business activity.",
-        image: "/assets/images/services/proServices/local-sponsorship.png"
+        title: "Local Sponsorship Services in THE <span class='text-[#0099CC]'>UAE</span>",
+        description1: "Local sponsorship services in the UAE enable foreign investors to establish mainland companies by appointing a UAE national as a local sponsor or service agent, in accordance with regulatory requirements.",
+        description2: "These services ensure full legal compliance, smooth license approvals, and seamless coordination with government authorities—allowing business owners to operate confidently without administrative complexity.",
+        description3: "By working with authorities such as the Department of Economic Development, Ministry of Human Resources and Emiratisation, and General Directorate of Residency and Foreigners Affairs, local sponsorship providers facilitate trade license issuance, immigration file opening, labour quotas, and regulatory approvals.This structured support helps startups, SMEs, and international investors save time, reduce risk, and focus on business growth while all legal formalities are managed professionally.",
+        image: "/assets/images/pro-services/local-sponsorship.png"
     },
     bannerTitle: "Local Sponsorships",
     bannerDescription: "Reliable and legally secure local sponsorship solutions for your mainland business.",
@@ -220,80 +234,93 @@ const localSponsorships = {
         description: "Secure reliable local sponsorship solutions for your mainland business in the UAE. Legally structured arrangements that protect your control and profitability.",
         keywords: "local sponsorship UAE, UAE national sponsor, local service agent Dubai, mainland company sponsor UAE, business partnership Dubai",
         canonical: "https://investfirst.ae/pro-services/local-sponsorships",
-        image: "/assets/images/services/proServices/local-sponsorship.png"
+        image: "/assets/images/pro-services/local-sponsorship.png"
     },
     companyFormationTypes: {
-        headingRest: "Local Sponsorship Structures We Facilitate",
-        description: "We guide you through the right local partnership model for your activity and goals:",
+        headingRest: "Local Sponsorship Services We Offer",
+        description: "We provide comprehensive local sponsorship support across all UAE mainland jurisdictions:",
         items: [
             {
                 id: "01",
-                title: "Local Sponsor (Sleeping Partner)",
-                description: "A UAE national holds the required shareholding percentage while you retain full operational and financial control through a side agreement."
+                title: "Individual Local Sponsorship",
+                description: "UAE national sponsor for mainland companies as per activity requirements, ensuring compliant company registration and license approvals."
             },
             {
                 id: "02",
-                title: "Local Service Agent",
-                description: "Required for certain professional licenses. The service agent represents you with government departments without participating in business operations or profits."
+                title: "Corporate Local Sponsorship",
+                description: "UAE-owned corporate entity acting as a sponsor to provide higher security, structured agreements, and professional representation."
             },
             {
                 id: "03",
-                title: "100% Foreign Ownership Options",
-                description: "Under the 2021 Commercial Companies Law, many business activities now allow 100% foreign ownership on the mainland — we assess your eligibility and guide the process."
+                title: "Local Service Agent (LSA) Support",
+                description: "For professional license holders (consultancy, services, freelancers) who require a UAE national service agent without ownership involvement."
             },
             {
                 id: "04",
-                title: "Nominee Shareholder Structures",
-                description: "Legally documented nominee arrangements with side agreements that fully protect your investment, control, and profitability as the operating partner."
+                title: "Trade License Processing",
+                description: "New mainland license applications, renewals, amendments, and activity additions through the Department of Economic Development."
             },
             {
                 id: "05",
-                title: "Partnership Agreement Drafting",
-                description: "We draft and notarise robust side agreements and MOAs that clearly define all rights, responsibilities, and exit provisions between all parties."
+                title: "Immigration & Labour File Setup",
+                description: "Company establishment card, labour file opening, quota approvals, and employee eligibility processing."
             }
         ]
     },
     whyChoose: {
-        headingRest: "Invest First for Local Sponsorship in UAE",
-        cardTitle: "Protecting Your Investment Through Structured Sponsorship",
-        cardTitleHighlight: "Structured Sponsorship",
+        headingRest: "Invest First for Local Sponsorship in THE UAE",
+        cardTitle: "Trusted UAE national sponsors and corporate sponsorship options",
+        cardTitleHighlight: "Local Sponsorship",
         paragraphs: [
-            "A poorly structured local sponsorship arrangement can expose your business to serious legal and operational risks. Invest First ensures all sponsorship agreements are legally sound and independently verified.",
-            "We source reputable local sponsors, draft clear contractual protections, and structure arrangements that genuinely serve your long-term business interests in the UAE."
+            "Our structured approach ensures your business remains protected, compliant, and operational without delays.",
+            "We provide full coordination with Ministry of Human Resources and Emiratisation and General Directorate of Residency and Foreigners Affairs for end-to-end compliance."
         ],
         points: [
-            'Vetted and reputable local sponsors across all UAE sectors',
-            'Legally binding side agreements for full operational protection',
-            'Advice on 100% ownership eligibility for your activity',
-            'Clear profit distribution and exit clause documentation',
-            'Guidance on switching from sponsored to owned structures',
-            'Ongoing support throughout the sponsorship relationship',
+            '100% mainland business ownership eligibility (for approved activities)',
+            'Legal compliance with UAE commercial laws',
+            'Ability to operate anywhere in the UAE market',
+            'Access to government projects and corporate clients',
+            'Smooth visa and labour processing',
+            'No administrative burden on business owners',
         ]
     },
     faq: {
         headingRest: "Local Sponsorship Services",
         items: [
             {
-                question: "Do I still need a local sponsor for a UAE mainland company?",
-                answer: "Not always. Since the 2021 amendment to the UAE Commercial Companies Law, many business activities allow 100% foreign ownership on the mainland. However, certain regulated activities still require a local partner. We assess your specific activity to advise the right structure."
+                question: "What is a local sponsor in the UAE?",
+                answer: "A local sponsor is a UAE national or UAE-owned company appointed to meet mainland licensing requirements, enabling foreign investors to legally operate their business."
             },
             {
-                question: "What rights does a local sponsor have over my business?",
-                answer: "A sleeping local sponsor holds no operational rights. A separate side agreement (MOU) defines that all management, profits, and decisions belong to you. This side agreement is legally binding and fully protects your interests."
+                question: "Do local sponsors control the business?",
+                answer: "No. With proper legal agreements, the foreign investor retains full operational and financial control while the sponsor fulfills regulatory requirements."
             },
             {
-                question: "How is the sponsor fee structured?",
-                answer: "Sponsor fees are negotiated privately and can be structured as a fixed annual fee or a small percentage of profits. Invest First helps you negotiate fair and transparent terms before any agreement is signed."
+                question: "Is local sponsorship required for all businesses?",
+                answer: "Local sponsorship is required for certain mainland activities. Many sectors now allow 100% foreign ownership, but some regulated activities still require a UAE national sponsor or service agent."
             },
             {
-                question: "Can I change my local sponsor later?",
-                answer: "Yes, but it requires formal legal steps including updating the MOA and trade license. Invest First manages this transition smoothly with full legal documentation and authority filings."
+                question: "What is the difference between a local sponsor and a local service agent?",
+                answer: "A local sponsor is linked to commercial licenses, while a local service agent is required for professional licenses and has no ownership or control."
             },
             {
-                question: "What happens if my local sponsor passes away or becomes unavailable?",
-                answer: "This is addressed in the side agreement and MOA. We recommend including succession and exit clauses that protect your business continuity in such scenarios."
+                question: "Can the local sponsor be changed?",
+                answer: "Yes. Local sponsorship can be transferred or amended through legal procedures and approvals from the Department of Economic Development."
             }
         ]
+    },
+    authorizedPartnerStatus: {
+        titleHighlight: "Why",
+        titleRest: "Our Local Sponsorship Solutions Are the Right Choice",
+        description: "Invest First provides reliable and compliant local sponsorship solutions across the UAE. Our direct coordination with mainland authorities ensures faster processing, accurate documentation, and legally secure agreements.",
+        bulletPoints: [
+            'Professionally drafted and notarized sponsorship contracts',
+            'No interference in daily business operations',
+            'Complete legal transparency and protection',
+            'Fast license, immigration, and labour approvals',
+            'Dedicated account manager for renewals and compliance',
+        ],
+        footerNote: "With our support, you can establish and operate your mainland business with confidence while we handle all sponsorship formalities."
     }
 };
 
@@ -301,11 +328,11 @@ const localSponsorships = {
 const licenseRenewals = {
     slug: 'license-renewals',
     intro: {
-        title: "Hassle-Free <span class='text-[#0099CC]'>License Renewal</span> Services Across UAE",
-        description1: "Keeping your UAE trade license current is a legal requirement — and missing renewal deadlines can result in fines, license cancellation, and disruption to your banking and visa services.",
-        description2: "Invest First's <span class='font-bold'>license renewal services</span> proactively manage your renewal timelines, document preparation, authority submissions, and payment processing — so your business never faces avoidable compliance gaps.",
-        description3: "We handle renewals for mainland DED licenses, Freezone licenses across 20+ authorities, and offshore entities — ensuring accurate submissions with zero down time for your operations.",
-        image: "/assets/images/services/proServices/license-renewals.png"
+        title: "Trade License Renewal Services in Dubai, <span class='text-[#0099CC]'>UAE</span>",
+        description1: "Trade license renewal services in the UAE ensure your business remains legally active and fully compliant with government regulations. Timely renewal is mandatory to avoid penalties, visa blocks, and operational disruptions.",
+        description2: "By coordinating with authorities such as the Department of Economic Development, Ministry of Human Resources and Emiratisation, and General Directorate of Residency and Foreigners Affairs, trade license renewal providers ensure accurate processing, quick approvals, and full regulatory compliance.",
+        description3: "This structured approach helps startups, SMEs, and foreign investors avoid fines, maintain visa eligibility, and operate smoothly in the UAE market.",
+        image: "/assets/images/pro-services/license-renewals.png"
     },
     bannerTitle: "License Renewals",
     bannerDescription: "Timely and hassle-free trade license renewals across all UAE jurisdictions.",
@@ -316,80 +343,93 @@ const licenseRenewals = {
         description: "Proactive trade license renewal services for mainland and Freezone businesses across the UAE. Avoid fines and ensure continuous compliance with Invest First.",
         keywords: "trade license renewal Dubai, UAE license renewal, DED license renewal, freezone license renewal UAE, business license renewal Dubai",
         canonical: "https://investfirst.ae/pro-services/license-renewals",
-        image: "/assets/images/services/proServices/license-renewals.png"
+        image: "/assets/images/pro-services/license-renewals.png"
     },
     companyFormationTypes: {
-        headingRest: "License Renewal Services We Handle",
+        headingRest: "Trade License Renewal Services We Offer",
         description: "We manage the full renewal cycle for all UAE license types:",
         items: [
             {
                 id: "01",
-                title: "DED Mainland License Renewal",
-                description: "Renewal of commercial, professional, and industrial licenses issued by Dubai Economy and Tourism (DED) and equivalent authorities across UAE Emirates."
+                title: "Mainland License Renewal",
+                description: "Complete renewal processing through the Department of Economic Development, including document verification and government fee submission."
             },
             {
                 id: "02",
-                title: "Freezone License Renewal",
-                description: "We manage renewals across 20+ Freezones including DIFC, DMCC, JAFZA, RAKEZ, and more — handling all documentation and authority submissions."
+                title: "Free Zone License Renewal",
+                description: "End-to-end renewal support with all UAE free zones, including lease agreement updates and authority approvals."
             },
             {
                 id: "03",
-                title: "Activity Amendment & Upgrade",
-                description: "Adding or modifying business activities during renewal to ensure your license accurately reflects your current operations and future plans."
+                title: "Tenancy Contract (Ejari) Assistance",
+                description: "Preparation and renewal of office lease agreements required for mainland license renewal."
             },
             {
                 id: "04",
-                title: "Tenancy Contract & Ejari Renewal",
-                description: "Coordinating registered office address renewals and Ejari contract submissions required for mainland license renewals."
+                title: "Activity Amendment During Renewal",
+                description: "Add, remove, or modify business activities at the time of renewal."
             },
             {
                 id: "05",
-                title: "Partner & Shareholder Updates",
-                description: "Processing MOA amendments, shareholder changes, and manager updates during or alongside the renewal process with all relevant authorities."
+                title: "Immigration & Labour Card Renewal",
+                description: "Renewal of establishment cards and labour files to maintain employee visa eligibility."
             }
         ]
     },
     whyChoose: {
-        headingRest: "Invest First for Your License Renewals",
-        cardTitle: "Never Miss a Renewal Deadline Again",
-        cardTitleHighlight: "Renewal Deadline",
+        headingRest: "Invest First for Trade License Renewal in the UAE",
+        cardTitle: "Timely renewal reminders and compliance tracking",
+        cardTitleHighlight: "License Renewal",
         paragraphs: [
-            "Expired licenses create cascading compliance problems — blocked bank accounts, visa processing delays, and authority fines. Invest First's proactive renewal tracking eliminates these risks.",
-            "We monitor your renewal calendar, gather all required documents, and submit to the relevant authority well before deadlines — keeping your business fully operational at all times."
+            "Our proactive approach ensures your license is renewed before expiry, protecting your business from penalties and operational risks.",
+            "We provide full coordination with mainland and free zone authorities for Ejari and lease coordination support."
         ],
         points: [
-            'Proactive deadline tracking and advance notifications',
-            'Document collection and authority submissions managed end-to-end',
-            'Renewals handled across all mainland and Freezone authorities',
-            'Activity amendments and license upgrades during renewal',
-            'Fast-track processing options for urgent renewals',
-            'Ongoing post-renewal compliance confirmations issued',
+            'Avoid late renewal penalties and fines',
+            'Maintain active visa quota and employee processing',
+            'Ensure legal compliance with UAE regulations',
+            'Save time and administrative effort',
+            'Fast and error-free documentation',
+            'Continuous business operations without interruption',
         ]
     },
     faq: {
         headingRest: "License Renewal Services",
         items: [
             {
-                question: "When should I start the license renewal process?",
-                answer: "We recommend starting at least 30–45 days before your expiry date for standard renewals. Some Freezones and activities require additional lead time for inspections or document attestation."
+                question: "When should I renew my trade license in the UAE?",
+                answer: "Trade licenses must be renewed annually before the expiry date to avoid penalties and business suspension."
             },
             {
-                question: "What documents are typically needed for renewal?",
-                answer: "Requirements vary by authority and license type but commonly include the previous trade license, tenancy contract/Ejari, shareholder passport copies, Emirates ID copies, and any regulatory approvals specific to your activity."
+                question: "What happens if I don’t renew my license on time?",
+                answer: "Late renewal may result in fines, visa blocks, blacklisting of the company, and possible business closure."
             },
             {
-                question: "What are the penalties for late license renewal?",
-                answer: "Fines vary by authority. DED charges AED 250 per month for delays, while Freezones have their own penalty structures. Beyond fines, an expired license can lead to bank account freezes and visa issuance blocks."
+                question: "Is Ejari mandatory for mainland license renewal?",
+                answer: "Yes. A valid tenancy contract (Ejari) is required for mainland trade license renewal."
             },
             {
-                question: "Can I add new business activities during renewal?",
-                answer: "Yes, renewal is an ideal time to update your licensed activities. Invest First assesses whether the new activities require additional approvals and handles all necessary amendments with the relevant authority."
+                question: "Can I renew my license if I have fines?",
+                answer: "Yes, but fines must be cleared before the renewal is approved."
             },
             {
-                question: "Can Invest First manage renewals for multiple entities?",
-                answer: "Absolutely. We serve groups and holding companies with multiple entities across mainland and Freezone jurisdictions, maintaining a unified renewal calendar and coordinating all submissions centrally."
+                question: "Does license renewal affect employee visas?",
+                answer: "Yes. An expired license can block visa renewals, new visa applications, and labour quota approvals."
             }
         ]
+    },
+    authorizedPartnerStatus: {
+        titleHighlight: "Why",
+        titleRest: "Our License Renewal Solutions Are the Right Choice",
+        description: "Invest First delivers reliable and compliant trade license renewal services across the UAE. Our direct coordination with government authorities ensures faster approvals, accurate submissions, and complete regulatory compliance.",
+        bulletPoints: [
+            'Early renewal alerts and document checklist',
+            'Quick processing with Department of Economic Development and free zones',
+            'Integrated labour and immigration renewal support',
+            'Error-free documentation and compliance checks',
+            'Cost-effective renewal packages for startups and SMEs',
+        ],
+        footerNote: "With our expert support, your business remains legally active, visa-eligible, and fully compliant year after year."
     }
 };
 
@@ -397,11 +437,11 @@ const licenseRenewals = {
 const visaRenewals = {
     slug: 'visa-renewals',
     intro: {
-        title: "Expert <span class='text-[#0099CC]'>Visa Renewal</span> Services for Residents & Investors in UAE",
-        description1: "UAE residence visas require timely renewal to maintain legal residency status, banking access, and uninterrupted business operations. Missing a renewal can result in overstay fines and residency complications.",
-        description2: "Invest First manages the complete <span class='font-bold'>UAE visa renewal process</span> — from medical fitness tests and Emirates ID renewals to ICA submissions and status activation — for employees, investors, and their families.",
-        description3: "Our PRO team handles every renewal with ICA, GDRFA, MOHRE, and Freezone visa authorities, ensuring your entire workforce and family remain legally compliant in the UAE.",
-        image: "/assets/images/services/proServices/visa-renewals.png"
+        title: "Visa Renewal <span class='text-[#0099CC]'>UAE ,Dubai</span>",
+        description1: "Visa renewal in the UAE is essential to maintain legal residency and avoid fines, overstay penalties, or immigration blocks. Our visa renewal UAE, Dubai service ensures timely processing of employment visas, investor visas, partner visas, and family visas with complete coordination across government authorities.",
+        description2: "By working with the General Directorate of Residency and Foreigners Affairs, Ministry of Human Resources and Emiratisation, and Emirates ID authorities, we manage the full renewal process—document verification, medical testing, Emirates ID renewal, and visa stamping—so you remain compliant without delays.",
+        description3: "We ensure your UAE residence visa is renewed on time without disruptions to employment, business operations, or family residency.",
+        image: "/assets/images/pro-services/visa-renewals.png"
     },
     bannerTitle: "Visa Renewals",
     bannerDescription: "Efficient visa renewal services for investors, employees, and families in the UAE.",
@@ -412,80 +452,93 @@ const visaRenewals = {
         description: "Expert UAE visa renewal management for investors, employees, and families. We handle medical tests, Emirates ID, and authority submissions end-to-end.",
         keywords: "visa renewal UAE, resonance visa renewal Dubai, investor visa renewal UAE, employment visa renewal Dubai, Emirates ID renewal UAE",
         canonical: "https://investfirst.ae/pro-services/visa-renewals",
-        image: "/assets/images/services/proServices/visa-renewals.png"
+        image: "/assets/images/pro-services/visa-renewals.png"
     },
     companyFormationTypes: {
         headingRest: "Visa Renewal Services We Manage",
-        description: "We handle all UAE visa renewal types for individuals, families, and businesses:",
+        description: "Types of Visa Renewal Services in the UAE:",
         items: [
             {
                 id: "01",
                 title: "Employment Visa Renewal",
-                description: "Full renewal management for employee resident visas including medical fitness, Emirates ID renewal, and MOHRE/ICA submissions."
+                description: "Complete renewal processing including labour contract update, medical test, Emirates ID renewal, and visa stamping."
             },
             {
                 id: "02",
                 title: "Investor & Partner Visa Renewal",
-                description: "Renewal of investor and partner visas for mainland and Freezone company owners, coordinated directly with the relevant licensing authority."
+                description: "Renewal of investor and partner residence visas linked to mainland and free zone companies."
             },
             {
                 id: "03",
-                title: "Family Sponsorship Visa Renewal",
-                description: "Renewal of spouse, children, and dependent residence visas with ICA — including all document preparation and status tracking."
+                title: "Family Visa Renewal",
+                description: "Dependent visa renewal for spouses, children, and parents with medical, insurance, and Emirates ID coordination."
             },
             {
                 id: "04",
-                title: "Golden Visa Renewal",
-                description: "Management of 10-year Golden Visa renewal applications for qualifying investors, entrepreneurs, and skilled professionals."
+                title: "Domestic Worker Visa Renewal",
+                description: "Renewal of visas for housemaids, drivers, and other domestic staff in compliance with UAE regulations."
             },
             {
                 id: "05",
-                title: "Emirates ID Renewal",
-                description: "Coordinated Emirates ID renewal with ICA alongside visa renewal, ensuring both documents remain aligned and valid for the same period."
+                title: "Free Zone Visa Renewal",
+                description: "End-to-end renewal support with all UAE free zones, including establishment card and quota validation."
             }
         ]
     },
     whyChoose: {
-        headingRest: "Invest First for Your UAE Visa Renewals",
-        cardTitle: "Complete Visa Renewal Management for Peace of Mind",
-        cardTitleHighlight: "Visa Renewal Management",
+        headingRest: "Invest First Your Trusted for Visa Renewal in Dubai?",
+        cardTitle: "Why Choose Visa Renewal Services in UAE",
+        cardTitleHighlight: "Visa Renewal Services",
         paragraphs: [
-            "Visa expiry creates legal and practical complications for businesses and individuals. Invest First tracks all visa expiry dates and initiates renewals well in advance to avoid fines.",
-            "Our experienced PRO team coordinates every stage — from medical fitness bookings and document collection to authority submissions — ensuring on-time renewal with zero stress."
+            "Renewing your visa in the UAE is essential to maintain your legal residency and avoid fines or disruptions. Whether you hold an employment visa, investor visa, or family visa, timely visa renewal in Dubai ensures smooth living and business operations.",
+            "The UAE visa renewal process involves multiple steps, including document verification, medical fitness tests, Emirates ID renewal, and approvals from immigration authorities. Managing this process on your own can be time-consuming and complex."
         ],
         points: [
-            'Proactive visa expiry tracking and renewal initiation',
-            'Medical fitness test coordination and booking',
-            'Emirates ID renewal submitted alongside residence visa',
-            'All authorities covered: ICA, GDRFA, MOHRE, and Freezones',
-            'Family and dependant visa renewals managed centrally',
-            'Transparent fee breakdown with no hidden charges',
+            'Dedicated visa renewal UAE specialists',
+            'Direct processing with General Directorate of Residency and Foreigners Affairs',
+            'Labour approvals via Ministry of Human Resources and Emiratisation',
+            'Support for mainland and free zone visas',
+            'Transparent pricing with no hidden costs',
+            'Express visa renewal options available',
         ]
     },
     faq: {
-        headingRest: "UAE Visa Renewal Services",
+        headingRest: "Visa Renewal UAE, Dubai",
         items: [
             {
-                question: "How early should I renew my UAE residence visa?",
-                answer: "We recommend initiating the renewal process at least 30 days before expiry. For employee visas, starting 45 days ahead accounts for the medical fitness test, MOHRE submissions, and biometrics appointments."
+                question: "When should I renew my UAE visa?",
+                answer: "Visa renewal should be initiated at least 30 days before the expiry date to avoid fines."
             },
             {
-                question: "What is the fine for an expired UAE residence visa?",
-                answer: "Overstaying an expired UAE residence visa incurs fines that accumulate daily. ICA fines for overstaying can reach AED 25 per day with additional service charges. Invest First ensures renewals are processed on time to avoid any penalties."
+                question: "What happens if my visa expires?",
+                answer: "You may incur daily overstay fines and face immigration restrictions until the visa is renewed or status is changed."
+            },
+            {
+                question: "Is medical testing required for visa renewal?",
+                answer: "Yes. A medical fitness test is mandatory for most residence visa renewals."
+            },
+            {
+                question: "Do I need to renew my Emirates ID with my visa?",
+                answer: "Yes. Emirates ID renewal is processed together with your visa renewal."
             },
             {
                 question: "Can I renew my visa while outside the UAE?",
-                answer: "Visa renewals typically require the individual to be present in the UAE for biometrics and medical testing. However, entry permits can be arranged for those who need to enter specifically for renewal. Our team advises the best approach for your situation."
-            },
-            {
-                question: "Does visa renewal affect Emirates ID?",
-                answer: "Yes, Emirates ID must be renewed concurrently with or immediately after your residence visa. Invest First synchronises both renewals to ensure your documents are consistently valid."
-            },
-            {
-                question: "Can Invest First handle visa renewals for large teams?",
-                answer: "Yes. We manage bulk visa renewals for companies with large UAE workforces, maintaining a renewal schedule and processing batches to minimise administrative burden for HR teams."
+                answer: "This depends on visa type and entry status. In many cases, you must be inside the UAE for renewal processing."
             }
         ]
+    },
+    authorizedPartnerStatus: {
+        titleHighlight: "Why",
+        titleRest: "Our Visa Renewal Solutions Are the Right Choice",
+        description: "Invest First provides reliable and compliant visa renewal UAE, Dubai services for individuals and companies. Our proactive tracking system, fast processing, and accurate documentation help you avoid fines, maintain legal residency, and continue your activities without interruption.",
+        bulletPoints: [
+            'Automated expiry alerts and renewal planning',
+            'Medical, insurance, and Emirates ID coordination',
+            'Fast-track visa stamping options',
+            'Compliance with latest UAE immigration rules',
+            'End-to-end PRO support',
+        ],
+        footerNote: "With our expert team handling your visa renewal, you can stay focused on your work and business while we manage the entire process."
     }
 };
 
@@ -493,95 +546,107 @@ const visaRenewals = {
 const bankingAssistance = {
     slug: 'banking-assistance',
     intro: {
-        title: "Seamless <span class='text-[#0099CC]'>Banking Assistance</span> for UAE Company Formation & Business Operations",
-        description1: "Opening a corporate bank account in the UAE has become increasingly complex due to enhanced KYC requirements, compliance checks, and individual bank policies — especially for newly formed companies and foreign-owned entities.",
-        description2: "Invest First offers expert <span class='font-bold'>UAE banking assistance</span> — helping you select the right bank, prepare compliant documentation packages, and present your business case effectively to maximise account approval chances.",
-        description3: "We maintain established relationships with UAE's leading banks and financial institutions, giving your application direct visibility with the right decision-makers and reducing approval timelines significantly.",
-        image: "/assets/images/services/proServices/banking-assistance.png"
+        title: "Banking Assistance Services in <span class='text-[#0099CC]'>Dubai, UAE</span>",
+        description1: "Opening a bank account in the UAE requires proper documentation, compliance checks, and coordination with local and international banks. Our banking assistance services in Dubai, UAE help businesses and individuals open corporate and personal bank accounts smoothly while meeting all regulatory and KYC requirements.",
+        description2: "We coordinate with leading UAE banks and ensure your application meets compliance standards set by the Central Bank of the UAE, reducing rejection risks and processing delays. From document preparation to bank meetings and follow-ups, we manage the entire process for faster approvals.",
+        image: "/assets/images/pro-services/banking-assistance.png"
     },
     bannerTitle: "Banking Assistance",
     bannerDescription: "Expert guidance for smooth corporate bank account opening and compliance in the UAE.",
     cardTitle: "Strategic Banking Support",
     cardDescription: "Optimizing your chances for bank account approval with professional assistance.",
     seo: {
-        title: "Corporate Banking Assistance UAE | Business Bank Account Opening",
-        description: "Hassle-free corporate bank account opening in the UAE. Expert guidance on KYC, documentation, and relationships with leading UAE banks.",
+        title: "Banking Assistance Services in Dubai, UAE | Business & Personal Bank Accounts",
+        description: "Hassle-free corporate and personal bank account opening in the UAE. Expert guidance on KYC, documentation, and relationships with leading UAE banks.",
         keywords: "corporate banking UAE, business bank account Dubai, UAE bank account opening, banking assistance Dubai, KYC support UAE",
         canonical: "https://investfirst.ae/pro-services/banking-assistance",
-        image: "/assets/images/services/proServices/banking-assistance.png"
+        image: "/assets/images/pro-services/banking-assistance.png"
     },
     companyFormationTypes: {
-        headingRest: "Banking Assistance Services We Provide",
-        description: "We support businesses with complete UAE banking setup and compliance:",
+        headingRest: "Banking Assistance Services We Offer",
+        description: "Types of Banking Assistance Services We Offer:",
         items: [
             {
                 id: "01",
-                title: "Corporate Account Opening",
-                description: "Guidance on selecting the right bank, preparing KYC documents, and submitting a strong banking application for newly formed and established UAE companies."
+                title: "Corporate Bank Account Opening",
+                description: "Support for mainland, free zone, and offshore companies with document structuring, KYC preparation, and bank coordination."
             },
             {
                 id: "02",
-                title: "Bank Introduction & Relationships",
-                description: "Direct introductions to relationship managers at leading UAE banks including Emirates NBD, FAB, ADCB, Mashreq, and RAKBANK."
+                title: "Personal Bank Account Opening",
+                description: "Account opening assistance for UAE residents, investors, employees, and freelancers."
             },
             {
                 id: "03",
-                title: "Document Package Preparation",
-                description: "Compilation and review of all required banking documents — memorandum of association, business plans, source of funds declarations, and corporate structure charts."
+                title: "High-Risk & Startup Account Support",
+                description: "Specialized assistance for startups, new companies, and businesses with complex activities."
             },
             {
                 id: "04",
-                title: "Alternative Banking Solutions",
-                description: "Advice on Freezone-linked bank accounts, EMI accounts, and alternative financial solutions for businesses that face challenges with traditional banking."
+                title: "Multi-Currency & International Banking",
+                description: "Setup of accounts with multi-currency facilities, online banking, and international transaction capability."
             },
             {
                 id: "05",
-                title: "Ongoing Banking Compliance",
-                description: "Support with periodic KYC updates, account maintenance requirements, and communication with your bank's compliance team as your business evolves."
+                title: "Compliance & KYC Documentation",
+                description: "Preparation of business plans, source of funds, shareholder profiles, and transaction forecasts required by UAE banks."
             }
         ]
     },
     whyChoose: {
-        headingRest: "Invest First for UAE Banking Assistance",
-        cardTitle: "Maximise Your UAE Bank Account Approval Chances",
-        cardTitleHighlight: "Bank Account Approval",
+        headingRest: "Banking Assistance in Dubai?UAE",
+        cardTitle: "Why Invest First Leading for Banking Assistance in Dubai, UAE?",
+        cardTitleHighlight: "Banking Assistance",
         paragraphs: [
-            "UAE banks conduct thorough due diligence on all applicants. A poorly prepared application or the wrong bank selection can result in weeks of delays or outright rejection. Invest First removes this uncertainty.",
-            "Our banking specialists know what each bank looks for, prepare compelling application packages, and position your business case effectively to significantly increase your chances of a successful account opening."
+            "Banking assistance in Dubai is crucial for startups, entrepreneurs, and international investors who want to open a bank account easily and without delays. The UAE banking system involves strict compliance regulations, detailed documentation, and comprehensive verification procedures, making expert support highly valuable.",
+            "With professional banking assistance, you get expert guidance in selecting the right bank, preparing accurate documents, and meeting all regulatory requirements. This helps reduce rejection risks and speeds up the approval process."
         ],
         points: [
-            'Access to established relationships with 10+ UAE banks',
-            'Expert guidance on the right bank for your business activity',
-            'Compliant KYC and document package preparation',
-            'Direct introductions to relationship managers',
-            'Alternative EMI and Freezone banking options available',
-            'Support throughout the full application and approval process',
+            'Strong relationships with leading UAE banks',
+            'Compliance aligned with Central Bank of the UAE regulations',
+            'Support for mainland, free zone, and offshore companies',
+            'Assistance for new businesses and high-risk activities',
+            'Transparent process with no hidden charges',
+            'End-to-end documentation and interview preparation',
         ]
     },
     faq: {
-        headingRest: "UAE Banking Assistance",
+        headingRest: "Banking Assistance Services in Dubai, UAE",
         items: [
             {
-                question: "Why is opening a corporate bank account difficult in the UAE?",
-                answer: "UAE banks have stringent KYC and AML compliance requirements. Newly formed companies, certain business activities, and non-resident shareholders often require detailed documentation and explanations. Banks each have their own internal risk policies, making the right match critical."
+                question: "Is it difficult to open a bank account in the UAE?",
+                answer: "Yes. UAE banks have strict compliance and KYC requirements, especially for new companies and foreign shareholders. Professional assistance improves approval chances."
             },
             {
-                question: "Which UAE banks does Invest First work with?",
-                answer: "We have working relationships with major UAE banks including Emirates NBD, First Abu Dhabi Bank, ADCB, Mashreq, RAKBank, ENBD, and several others, as well as select international EMI options for businesses requiring alternatives."
+                question: "How long does corporate bank account opening take?",
+                answer: "Typically 2–6 weeks, depending on the bank, business activity, and documentation."
             },
             {
-                question: "How long does UAE corporate bank account opening take?",
-                answer: "With a well-prepared application and the right bank match, accounts can be opened in 2–4 weeks. Complex structures or certain nationalities may take longer. Invest First manages the process to minimise unnecessary delays."
+                question: "Can startups open a corporate bank account in Dubai?",
+                answer: "Yes. With proper documentation, business plans, and compliance support, startups can successfully open accounts."
             },
             {
-                question: "Can a Freezone company open a UAE bank account?",
-                answer: "Yes. Freezone companies can open accounts with UAE banks, though each bank has its own policies on which Freezones it works with. Some Freezones also have linked banking partners. We advise on the best option for your specific Freezone."
+                question: "Do I need to be physically present in the UAE?",
+                answer: "Most banks require the shareholder or authorized signatory to be present for the interview."
             },
             {
-                question: "What if my bank account application is rejected?",
-                answer: "Invest First analyses the reasons for rejection and advises on an amended approach — whether that means reapplying to the same bank with stronger documentation, approaching a different bank, or exploring alternative financial solutions."
+                question: "Can you help with multi-currency accounts?",
+                answer: "Yes. We assist in opening multi-currency and international transaction-enabled bank accounts."
             }
         ]
+    },
+    authorizedPartnerStatus: {
+        titleHighlight: "Why",
+        titleRest: "Our Banking Solutions Are the Right Choice",
+        description: "Invest First delivers reliable banking assistance services in Dubai, UAE with a structured and compliant approach. Our team prepares your profile to meet strict UAE banking requirements, ensuring faster approvals and long-term banking stability.",
+        bulletPoints: [
+            'Bank matching based on business activity',
+            'KYC and compliance document structuring',
+            'Business plan and transaction profile preparation',
+            'Direct coordination with bank relationship managers',
+            'Post-account support and upgrade assistance',
+        ],
+        footerNote: "We prepare and strengthen your business profile to meet strict UAE banking standards, reducing the chances of delays or rejections."
     }
 };
 
@@ -589,95 +654,107 @@ const bankingAssistance = {
 const officeSolutions = {
     slug: 'office-solutions',
     intro: {
-        title: "Flexible <span class='text-[#0099CC]'>Office Solutions</span> for UAE Businesses — Virtual, Flexi & Dedicated Spaces",
-        description1: "Having the right registered office address is a legal requirement for UAE trade licensing and visa issuance. Invest First provides a full range of UAE office solutions tailored to your business size, activity, and budget.",
-        description2: "From <span class='font-bold'>registered service addresses and flexi-desks</span> for startups and Freezone companies, to dedicated private offices for established businesses, we source and arrange ideal workspaces across Dubai and key UAE Emirates.",
-        description3: "Our office solutions are fully integrated with your licensing and visa requirements — ensuring your address satisfies authority requirements, supports the number of visas you need, and scales as your business grows.",
-        image: "/assets/images/services/proServices/office-solutions.png"
+        title: "Office Solutions <span class='text-[#0099CC]'>UAE ,Dubai</span>",
+        description1: "Office solutions in the UAE provide businesses with flexible workspace options, registered business addresses, and fully equipped office facilities without long-term lease commitments. Our office solutions UAE service helps startups, SMEs, and international companies establish a professional presence while reducing operational costs.",
+        description2: "We coordinate with mainland and free zone authorities, including the Department of Economic Development, to ensure your office space meets licensing requirements for trade license issuance and renewal. From virtual offices to serviced workspaces, we deliver compliant and cost-effective office setups tailored to your business needs.",
+        image: "/assets/images/pro-services/office-solutions.png"
     },
     bannerTitle: "Office Solutions",
     bannerDescription: "Flexible workspace options tailored to your business license and visa requirements.",
     cardTitle: "Ideal Business Workspaces",
     cardDescription: "Finding the right office setup to support your operations and visa quota.",
     seo: {
-        title: "Flexible Office Solutions UAE | Virtual & Serviced Workspaces",
+        title: "Office Solutions UAE, Dubai | Virtual & Serviced Workspaces",
         description: "Find the perfect office space for your UAE business. Virtual addresses, flexi-desks, and dedicated private offices aligned with your licensing needs.",
         keywords: "office solutions Dubai, virtual office UAE, flexi desk Dubai, serviced office UAE, registered business address Dubai",
         canonical: "https://investfirst.ae/pro-services/office-solutions",
-        image: "/assets/images/services/proServices/office-solutions.png"
+        image: "/assets/images/pro-services/office-solutions.png"
     },
     companyFormationTypes: {
         headingRest: "Office Solutions We Offer",
-        description: "We provide a range of UAE workspace options to match your business needs:",
+        description: "Types of Office Solutions We Offer in the UAE:",
         items: [
             {
                 id: "01",
-                title: "Registered Service Address",
-                description: "A UAE registered business address for your trade license — ideal for Freezone companies and businesses that operate remotely or from client sites."
+                title: "Virtual Office Solutions",
+                description: "Registered business address, mail handling, call answering, and access to meeting rooms without renting a physical office."
             },
             {
                 id: "02",
-                title: "Flexi-Desk & Hot-Desking",
-                description: "Shared workspace memberships in professional business centres across Dubai and UAE Freezones — perfect for startups and small teams needing a physical presence."
+                title: "Flexi Desk Solutions",
+                description: "Shared workspace options that meet free zone and mainland licensing requirements at minimal cost."
             },
             {
                 id: "03",
-                title: "Private Serviced Offices",
-                description: "Fully fitted, private office spaces in premium business centres with receptionist services, meeting rooms, and all utilities included."
+                title: "Serviced Office Spaces",
+                description: "Fully furnished private offices with utilities, internet, reception services, and meeting room access."
             },
             {
                 id: "04",
-                title: "Executive Suites",
-                description: "High-specification executive offices in prestigious Dubai locations for companies requiring premium professional environments for leadership teams."
+                title: "Co-Working Spaces",
+                description: "Flexible coworking environments for freelancers, startups, and remote teams."
             },
             {
                 id: "05",
-                title: "Warehouse & Industrial Space",
-                description: "Sourcing of commercial and industrial units in approved UAE zones for businesses with storage, manufacturing, or logistics requirements."
+                title: "Dedicated Office for License Requirements",
+                description: "Physical office spaces that comply with mainland trade license regulations and Ejari requirements."
             }
         ]
     },
     whyChoose: {
-        headingRest: "Invest First for UAE Office Solutions",
-        cardTitle: "Office Spaces Aligned to Your Licensing & Visa Needs",
-        cardTitleHighlight: "Licensing & Visa Needs",
+        headingRest: "Invest First for Office Solutions UAE?",
+        cardTitle: "Why Invest First is a Leading Choice for Office Solutions in Dubai, UAE",
+        cardTitleHighlight: "Office Solutions",
         paragraphs: [
-            "Choosing the wrong office type can limit the number of visas your company can obtain, or fail authority requirements during license renewal. Invest First ensures your office solution is correctly aligned with your licensing and visa quota.",
-            "We source, negotiate, and arrange the right workspace — from a simple registered address to a fully equipped private office — at competitive rates across all UAE Emirates."
+            "Invest First offers reliable and flexible office solutions across the UAE, tailored to meet the needs of startups, entrepreneurs, and growing businesses. Whether you require a virtual office, serviced workspace, or a prestigious business address, we provide cost-effective options without the burden of long-term commitments.",
+            "Our team ensures a smooth setup process with professional support, helping you establish your presence quickly and efficiently. With access to prime locations, meeting facilities, and administrative services, you can focus on growing your business while we handle the rest. We help you establish a professional UAE presence without the burden of high rental expenses."
         ],
         points: [
-            'Office solutions matched to your visa quota requirements',
-            'Addresses accepted by all UAE licensing authorities',
-            'Access to business centres across 15+ UAE locations',
-            'Ejari registration and tenancy contract management included',
-            'Scalable options as your team and business grow',
-            'Pro-rated and flexible tenancy periods available',
+            'Strong partnerships with top business centers and commercial property providers across the UAE',
+            'Fully compliant office solutions aligned with UAE licensing and regulatory requirements',
+            'Flexible options including virtual offices, co-working spaces, and physical office setups',
+            'Tailored solutions for mainland, free zone, and offshore companies',
+            'Ideal for startups, SMEs, and expanding international businesses',
+            'Complete support from office selection to Ejari registration and documentation',
         ]
     },
     faq: {
-        headingRest: "UAE Office Solutions",
+        headingRest: "Office Solutions UAE",
         items: [
             {
-                question: "Do I need a physical office for a UAE trade license?",
-                answer: "It depends on your license type and jurisdiction. Mainland DED licenses require a registered tenancy contract (Ejari). Most Freezones offer flexi-desk or shared workspace options that satisfy their licensing requirements at lower cost."
+                question: "Is a physical office required to start a business in the UAE?",
+                answer: "It depends on the license type. Mainland companies require a physical office, while many free zones allow flexi desk or virtual office options."
             },
             {
-                question: "How does office type affect my visa quota?",
-                answer: "In the UAE, the size and type of your office space directly affects how many employee visas your company is eligible for. Larger, dedicated offices support higher visa quotas. Invest First helps you select an office that matches your intended team size."
+                question: "Can I use a virtual office for trade license renewal?",
+                answer: "Yes, in many free zones. Mainland businesses usually need an Ejari-registered office."
             },
             {
-                question: "Can I use a registered address for my UAE company?",
-                answer: "Certain Freezone licenses support registered service addresses without the need for a physical desk or office. Mainland DED licenses typically require a physical registered tenancy contract. We advise based on your specific license type."
+                question: "What is Ejari and why is it important?",
+                answer: "Ejari is the official tenancy registration system required for mainland trade licenses and renewals."
             },
             {
-                question: "What is an Ejari and why do I need it?",
-                answer: "Ejari is the official Dubai tenancy registration system managed by RERA. All mainland commercial tenancy contracts must be registered in Ejari and submitted for DED license renewal. Invest First manages this process on your behalf."
+                question: "Can I upgrade from a virtual office to a physical office later?",
+                answer: "Yes. Most businesses start with a virtual or flexi desk and upgrade as they grow."
             },
             {
-                question: "Can Invest First help if I need office space urgently?",
-                answer: "Yes. Through our business centre network we can arrange immediate flexi-desk access and registered addresses within 24–48 hours in most cases, allowing you to meet urgent licensing or banking requirements."
+                question: "Do your office solutions include meeting room access?",
+                answer: "Yes. Virtual and serviced office packages include meeting room usage based on the selected plan."
             }
         ]
+    },
+    authorizedPartnerStatus: {
+        titleHighlight: "Why",
+        titleRest: "Our Office Solutions Are the Right Choice",
+        description: "Invest First provides compliant and flexible office solutions UAE tailored to your business structure and licensing needs. Our direct coordination with mainland and free zone authorities ensures faster approvals and seamless office setup.",
+        bulletPoints: [
+            'Registered address for trade license',
+            'Meeting room and reception services',
+            'Ejari support for mainland companies',
+            'Upgrade options from virtual to private office',
+            'Cost-effective packages for startups and SMEs',
+        ],
+        footerNote: "With our office solutions, you can operate legally, enhance your brand image, and scale your workspace as your business grows."
     }
 };
 

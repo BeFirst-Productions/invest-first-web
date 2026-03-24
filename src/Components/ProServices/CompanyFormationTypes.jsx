@@ -31,7 +31,7 @@ const Card = ({ id, title, description, align = 'left' }) => (
         <h4 className="text-sm lg:text-base xl:text-lg font-bold text-white mb-3 leading-snug">
             {title}
         </h4>
-        <p className="text-xs xl:text-sm text-gray-400 leading-relaxed">
+        <p className="text-xs xl:text-sm leading-relaxed">
             {description}
         </p>
     </div>

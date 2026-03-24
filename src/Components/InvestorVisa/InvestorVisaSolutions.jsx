@@ -3,31 +3,43 @@ import React from 'react';
 import Image from 'next/image';
 import Container from '../Common/Layout/Contianer';
 
-const InvestorVisaSolutions = () => {
+const InvestorVisaSolutions = ({ data }) => {
+    if (!data) return null;
+
+    const {
+        title = "UAE Investor Visa solutions aligned with business setup & residency regulations.",
+        description1 = "The UAE Investor Visa is a long-term residency option designed for entrepreneurs, shareholders, and business owners who establish or invest in licensed entities.",
+        description2 = "Invest First provides professional UAE investor visa services that align business licensing, ownership structure, and immigration approvals under one regulated framework.",
+        label = "Investor Visa"
+    } = data;
+
     return (
-        <section className="relative py-12 md:py-24 overflow-hidden bg-black">
+        <section className="relative py-10 md:py-20 overflow-hidden  ">
             {/* Background Gradient / Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-[#003366]/20 to-transparent blur-[120px] pointer-events-none" />
 
             <Container>
                 {/* Heading */}
                 <div className="text-center mb-16 md:mb-24 px-4 relative z-10">
-                    <h2 className="text-3xl md:text-5xl lg:text-[48px] font-bold text-white max-w-5xl mx-auto leading-[1.2] tracking-tight">
-                        <span className="text-[#00AEEF]">UAE Investor Visa</span> solutions aligned <br className="hidden md:block" /> with business setup & residency regulations.
-                    </h2>
+                    <h2
+                        className="text-3xl md:text-4xl font-semibold text-white max-w-5xl mx-auto leading-[1.2] tracking-tight"
+                        dangerouslySetInnerHTML={{ __html: title }}
+                    />
                 </div>
 
                 {/* Main Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  items-center relative z-10">
 
                     {/* Left: Description Text */}
                     <div className="space-y-8 px-2 lg:px-0">
-                        <p className="text-gray-300 text-base md:text-[18px] leading-[1.8] font-normal">
-                            The UAE Investor Visa is a long-term residency option designed for entrepreneurs, shareholders, and business owners who establish or invest in licensed entities. As the UAE continues to strengthen its position as a global business hub in 2026, investor visa regulations have become more structured, digitally monitored, and compliance-driven.
-                        </p>
-                        <p className="text-gray-300 text-base md:text-[18px] leading-[1.8] font-normal">
-                            Invest First provides professional UAE investor visa services that align business licensing, ownership structure, and immigration approvals under one regulated framework. Our solutions are designed for individuals seeking legal residency, operational stability, and long-term growth opportunities in the UAE.
-                        </p>
+                        <p
+                            className="text-gray-300 text-base md:text-lg font-normal leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: description1 }}
+                        />
+                        <p
+                            className="text-gray-300 text-base md:text-lg font-normal leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: description2 }}
+                        />
                     </div>
 
                     {/* Right: Technical Card Visual */}
@@ -55,7 +67,7 @@ const InvestorVisaSolutions = () => {
                                         <div className="p-6 h-full flex flex-col justify-between">
                                             <div className="flex justify-between items-start">
                                                 <div className="space-y-1">
-                                                    <div className="text-[10px] text-[#00AEEF] font-bold tracking-widest uppercase">Investor Visa</div>
+                                                    <div className="text-[10px] text-[#00AEEF] font-bold tracking-widest uppercase">{label}</div>
                                                     <div className="text-[8px] text-gray-500 uppercase">Residency Document 2026</div>
                                                 </div>
                                                 <div className="w-10 h-6 bg-white/10 rounded border border-white/10" />

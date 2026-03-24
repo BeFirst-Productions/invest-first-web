@@ -275,8 +275,19 @@ export default function FloatingLines({
   const middleLineDistance = enabledWaves.includes('middle') ? getLineDistance('middle') * 0.01 : 0.01;
   const bottomLineDistance = enabledWaves.includes('bottom') ? getLineDistance('bottom') * 0.01 : 0.01;
 
+  const isInViewRef = useRef(true);
+
   useEffect(() => {
     if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(containerRef.current);
 
     const scene = new Scene();
 
@@ -364,6 +375,7 @@ export default function FloatingLines({
 
     const setSize = () => {
       const el = containerRef.current;
+      if (!el) return;
       const width = el.clientWidth || 1;
       const height = el.clientHeight || 1;
 
@@ -383,6 +395,7 @@ export default function FloatingLines({
     }
 
     const handlePointerMove = event => {
+      if (!isInViewRef.current) return;
       const rect = renderer.domElement.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -405,12 +418,16 @@ export default function FloatingLines({
     };
 
     if (interactive) {
-      renderer.domElement.addEventListener('pointermove', handlePointerMove);
-      renderer.domElement.addEventListener('pointerleave', handlePointerLeave);
+      renderer.domElement.addEventListener('pointermove', handlePointerMove, { passive: true });
+      renderer.domElement.addEventListener('pointerleave', handlePointerLeave, { passive: true });
     }
 
     let raf = 0;
     const renderLoop = () => {
+      raf = requestAnimationFrame(renderLoop);
+      
+      if (!isInViewRef.current) return;
+
       uniforms.iTime.value = clock.getElapsedTime();
 
       if (interactive) {
@@ -427,12 +444,12 @@ export default function FloatingLines({
       }
 
       renderer.render(scene, camera);
-      raf = requestAnimationFrame(renderLoop);
     };
     renderLoop();
 
     return () => {
       cancelAnimationFrame(raf);
+      observer.disconnect();
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if (ro && containerRef.current) {
         ro.disconnect();

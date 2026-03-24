@@ -2,7 +2,7 @@ import React from 'react';
 import ProServicesIntro from '@/Components/ProServices/ProServicesIntro';
 import CompanyFormationTypes from '@/Components/ProServices/CompanyFormationTypes';
 import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import FreezonePartnerStatus from '@/Components/ProServices/FreezonePartnerStatus';
+import AuthorizedPartnerStatus from '@/Components/ProServices/AuthorizedPartnerStatus';
 import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/Components/Common/FAQAccordion';
 import { proServicesData } from '@/data/ProServicesData';
@@ -46,7 +46,7 @@ const ProServicesPage = () => {
             <ProServicesIntro data={proServicesData.intro} />
             <CompanyFormationTypes data={proServicesData.companyFormationTypes} />
             <WhyChooseDubai data={proServicesData.whyChoose} />
-            <FreezonePartnerStatus />
+            <AuthorizedPartnerStatus data={proServicesData.authorizedPartnerStatus} />
             <FAQAccordion
                 title={proServicesData.faq.headingRest}
                 faqItems={proServicesData.faq.items}

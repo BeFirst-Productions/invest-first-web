@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react"
@@ -10,8 +10,8 @@ export default function Navbar() {
   const [active, setActive] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [isScrolled, setIsScrolled] = useState(false)
+  const scrollRef = useRef(0);
 
   // Lock page scroll when mobile menu is open
   useEffect(() => {
@@ -21,25 +21,32 @@ export default function Navbar() {
   }, [mobileOpen])
 
   useEffect(() => {
-    const controlNavbar = () => {
-      if (typeof window !== "undefined") {
-        if (window.scrollY > lastScrollY && window.scrollY > 50) {
-          setIsVisible(false)
-        } else {
-          setIsVisible(true)
-        }
-        setIsScrolled(window.scrollY > 20)
-        setLastScrollY(window.scrollY)
-      }
-    }
+    let ticking = false;
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar)
-      return () => {
-        window.removeEventListener("scroll", controlNavbar)
+    const controlNavbar = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          
+          if (currentScrollY > scrollRef.current && currentScrollY > 50) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+          
+          setIsScrolled(currentScrollY > 20);
+          scrollRef.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-    }
-  }, [lastScrollY])
+    };
+
+    window.addEventListener("scroll", controlNavbar, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
 
   return (
     <div

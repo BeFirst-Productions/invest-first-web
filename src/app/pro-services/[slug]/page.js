@@ -3,7 +3,7 @@ import React from 'react';
 import ProServicesIntro from '@/Components/ProServices/ProServicesIntro';
 import CompanyFormationTypes from '@/Components/ProServices/CompanyFormationTypes';
 import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import FreezonePartnerStatus from '@/Components/ProServices/FreezonePartnerStatus';
+import AuthorizedPartnerStatus from '@/Components/ProServices/AuthorizedPartnerStatus';
 import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/Components/Common/FAQAccordion';
 import { serviceDataMap } from '@/data/ProServicesData';
@@ -73,7 +73,7 @@ const ProServiceDetailPage = async ({ params }) => {
             <ProServicesIntro data={service.intro} />
             <CompanyFormationTypes data={service.companyFormationTypes} />
             <WhyChooseDubai data={service.whyChoose} />
-            <FreezonePartnerStatus />
+            <AuthorizedPartnerStatus data={service.authorizedPartnerStatus} />
             <FAQAccordion
                 title={service.faq.headingRest}
                 faqItems={service.faq.items}

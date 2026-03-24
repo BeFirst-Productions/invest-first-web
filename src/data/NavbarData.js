@@ -1,15 +1,15 @@
 export const companyFormationItems = [
     {
         name: "Mainland",
-        href: "#",
+        href: "/mainland",
         children: [
-            { name: "Dubai", href: "#" },
-            { name: "Abu Dhabi", href: "#" },
+            { name: "Dubai", href: "/mainland/dubai" },
+            { name: "Abu Dhabi", href: "/mainland/abu-dhabi" },
         ]
     },
     {
         name: "Free Zones",
-        href: "#",
+        href: "/freezone",
         children: [
             {
                 name: "Dubai",
@@ -51,7 +51,12 @@ export const companyFormationItems = [
     },
     {
         name: "Offshore",
-        href: "#"
+        href: "/offshore",
+        children: [
+            { name: "JAFZA Offshore", href: "/offshore/jafza-offshore" },
+            { name: "RAKICC Offshore", href: "/offshore/rakicc-offshore" },
+            { name: "Ajman Offshore", href: "/offshore/ajman-offshore" },
+        ]
     }
 ];
 
@@ -62,7 +67,7 @@ export const navItems = [
         href: "/about-us",
         children: [
             { name: "About the Company", href: "/about-us" },
-            { name: "The Founders", href: "#" },
+            { name: "The Founders", href: "/founders" },
             { name: "Why UAE?", href: "/why-uae" }
         ]
     },
@@ -87,10 +92,10 @@ export const navItems = [
                 name: "Visa Services",
                 href: "#",
                 children: [
-                    { name: "Investor Visa", href: "#" },
+                    { name: "Investor Visa", href: "/visa-services/investor-visa" },
                     { name: "Employment Visa", href: "#" },
                     { name: "Dependent Visa", href: "#" },
-                    { name: "Golden Visa", href: "#" },
+                    { name: "Golden Visa", href: "/visa-services/golden-visa" },
                     { name: "Green Visa", href: "#" },
                     { name: "Blue Visa", href: "#" },
                     { name: "Remote Work Visa", href: "#" },
@@ -120,14 +125,14 @@ export const navItems = [
             },
             {
                 name: "Value-Added Services",
-                href: "#",
+                href: "/value-added-services",
                 children: [
-                    { name: "VAT & Corporate Tax Assistance", href: "#" },
-                    { name: "Medical Insurance Assistance", href: "#" },
-                    { name: "Trademark Registration", href: "#" },
-                    { name: "Branding and Design Services", href: "#" },
-                    { name: "Digital Marketing Services", href: "#" },
-                    { name: "Web Design & Development", href: "#" },
+                    { name: "VAT & Corporate Tax Assistance", href: "/value-added-services/vat-corporate-tax" },
+                    { name: "Medical Insurance Assistance", href: "/value-added-services/medical-insurance" },
+                    { name: "Trademark Registration", href: "/value-added-services/trademark-registration" },
+                    { name: "Branding and Design Services", href: "/value-added-services/branding-design" },
+                    { name: "Digital Marketing Services", href: "/value-added-services/digital-marketing" },
+                    { name: "Web Design & Development", href: "/value-added-services/web-development" },
                 ]
             },
         ]
@@ -137,7 +142,7 @@ export const navItems = [
         href: "#",
         children: [
             { name: "News & Updates", href: "#" },
-            { name: "Blogs & Articles", href: "/blog" },
+            { name: "Blogs & Articles", href: "/blogs" },
             { name: "Downloads", href: "#" }
         ]
     },
