@@ -1,0 +1,97 @@
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+
+  background: rgba(12, 85, 145, 0.95); /* Deep ocean blue */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+
+  padding: 14px 32px;
+  width: max-content;
+  max-width: 95vw;
+
+  will-change: transform, opacity;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+}
+
+.navLink:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.chevron {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  transform: rotate(45deg);
+  margin-top: -3px; /* shift up to optically center */
+  margin-left: 2px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 12px;
+    padding: 6px 14px; /* Reduced vertical padding from 8px to 6px */
+    top: 12px;         /* Move slightly higher */
+    min-width: 90vw;   /* Slightly narrower */
+  }
+
+  .logoImage {
+    height: 32px !important; /* Scale down logo on mobile */
+  }
+
+  .navLinks {
+    display: none; /* collapse nav links on mobile */
+  }
+}
