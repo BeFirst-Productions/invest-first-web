@@ -127,47 +127,64 @@ export default function LicenseCategory() {
               div { --wrap-height: clamp(340px, 44vw, 419px); }
             }
           `}</style>
-          {licenses.map((license, index) => (
-            <div
-              key={license.id}
-              ref={(el) => { cardsRef.current[index] = el; }}
-              className="absolute inset-0 will-change-transform"
-              style={{ zIndex: index + 1 }}
-            >
-              <div className="relative w-full h-full bg-[#6B0F3A] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] p-[24px] sm:p-[32px] md:p-[48px] lg:p-[56px] flex flex-col">
-                
-                {/* ── Top Header ── */}
-                <div className="flex items-start justify-between w-full mb-[16px] md:mb-[10px]">
-                  <h3 className="font-sans text-[22px] md:text-[36px] lg:text-[44px] font-bold text-white leading-[1.2] max-w-[75%]">
-                    {license.title}
-                  </h3>
-                  <div className="font-sans font-extrabold text-white/[0.18] leading-none select-none mt-[-4px]"
-                    style={{ fontSize: 'clamp(40px, 8vw, 84px)' }}>
-                    {license.number}
-                  </div>
-                </div>
-
-                {/* ── Body ── */}
-                <div className="flex-1 flex flex-col md:flex-row items-stretch justify-between gap-[20px] md:gap-[48px] overflow-hidden">
+          {licenses.map((license, index) => {
+            const cardColors = ['#8A1A62', '#111D59'];
+            const currentBg = cardColors[index % cardColors.length];
+            
+            return (
+              <div
+                key={license.id}
+                ref={(el) => { cardsRef.current[index] = el; }}
+                className="absolute inset-0 will-change-transform"
+                style={{ zIndex: index + 1 }}
+              >
+                <div 
+                  className="relative w-full h-full rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] p-[24px] sm:p-[32px] md:p-[48px] lg:p-[56px] flex flex-col"
+                  style={{ backgroundColor: currentBg }}
+                >
                   
-                  {/* Left: Description & Button */}
-                  <div className="w-full md:w-[55%] flex flex-col justify-between h-full">
-                    <p className="font-sans text-[12px] md:text-[14px] lg:text-[16px] text-white/70 leading-[1.6] md:leading-[1.7] max-w-[480px]">
-                      {license.description}
-                    </p>
-
-                    <button className="group flex items-center gap-[12px] md:gap-[16px] w-fit transition-all duration-300 mt-[12px] md:mt-auto">
-                      <span className="font-sans text-[14px] md:text-[18px] font-bold text-white tracking-tight">
-                        View Details
-                      </span>
-                      <div className="w-[36px] h-[36px] md:w-[52px] md:h-[52px] bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-500 group-hover:bg-[#f5f5f5] group-hover:scale-110 flex-shrink-0">
-                        <ArrowUpRight
-                          className="text-[#6B0F3A] transition-transform duration-500 group-hover:rotate-[45deg]"
-                          style={{ width: 18, height: 18 }}
-                        />
-                      </div>
-                    </button>
+                  {/* ── Top Header ── */}
+                  <div className="flex items-start justify-between w-full mb-[16px] md:mb-[10px]">
+                    <h3 className="font-sans text-[22px] md:text-[36px] lg:text-[44px] font-bold text-white leading-[1.2] max-w-[75%]">
+                      {license.title}
+                    </h3>
+                    <div className="font-sans font-extrabold text-white/[0.18] leading-none select-none mt-[-4px]"
+                      style={{ fontSize: 'clamp(40px, 8vw, 84px)' }}>
+                      {license.number}
+                    </div>
                   </div>
+
+                  {/* ── Body ── */}
+                  <div className="flex-1 flex flex-col md:flex-row items-stretch justify-between gap-[20px] md:gap-[48px] overflow-hidden">
+                    
+                    {/* Left: Description & Button */}
+                    <div className="w-full md:w-[55%] flex flex-col justify-between h-full">
+                      <p className="font-sans text-[12px] md:text-[14px] lg:text-[16px] text-white/70 leading-[1.6] md:leading-[1.7] max-w-[480px]">
+                        {license.description}
+                      </p>
+
+                      <button className="group flex items-center gap-[12px] md:gap-[16px] w-fit transition-all duration-300 mt-[12px] md:mt-auto">
+                        <span className="font-sans text-[14px] md:text-[18px] font-bold text-white tracking-tight">
+                          View Details
+                        </span>
+                        {/* Dynamic Button Circle & Arrow Colors */}
+                        <div 
+                          className="w-[36px] h-[36px] md:w-[52px] md:h-[52px] rounded-full flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 flex-shrink-0"
+                          style={{ 
+                            backgroundColor: currentBg === '#111D59' ? '#8A1A62' : '#FFFFFF' 
+                          }}
+                        >
+                          <ArrowUpRight
+                            className="transition-transform duration-500 group-hover:rotate-[45deg]"
+                            style={{ 
+                              width: 18, 
+                              height: 18, 
+                              color: currentBg === '#111D59' ? '#FFFFFF' : '#8A1A62' 
+                            }}
+                          />
+                        </div>
+                      </button>
+                    </div>
 
                   {/* Right: Image */}
                   <div className="w-full md:w-[45%] flex h-full">
@@ -183,12 +200,11 @@ export default function LicenseCategory() {
                       />
                     </div>
                   </div>
-
+                  </div>
                 </div>
-
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </SectionContainer>
     </section>

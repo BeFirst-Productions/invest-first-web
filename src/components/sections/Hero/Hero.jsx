@@ -10,27 +10,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-/**
- * Hero — Cinematic 3-stage scroll sequence
- *
- * INITIAL  : Sky + clouds + buildings peeking from bottom + hero text
- *
- * STAGE 1  (0 → 0.38)
- *   Buildings rise, clouds exit, text + navbar fade
- *
- * STAGE 2a (0.38 → 0.68)  WHITE DOME GROWS
- *   Solid white half-ellipse dome grows from bottom-centre upward
- *
- * STAGE 2b (0.68 → 1.0)   WHITE FADES → IMAGE REVEALS
- *   White overlay fades out, hero-img2 de-zooms into view
- *   At end: full-screen arch filled with hero-img2
- *
- * CRITICAL CENTERING FIX:
- *   Never mix CSS transform (translateX) with GSAP transforms on the
- *   same element. GSAP owns ALL transforms via xPercent, scaleX, scaleY.
- *   The arch wrapper uses left:50% + xPercent:-50 (both via GSAP.set)
- *   so GSAP's matrix is the single source of truth.
- */
+
 
 export default function Hero() {
   const containerRef  = useRef(null);
@@ -109,8 +89,8 @@ export default function Hero() {
 
       master.fromTo(
         buildingRef.current,
-        { y: '30vh' },
-        { y: '0vh', duration: 0.38, ease: 'power2.out' },
+        { y: '30vh', scale: 1 },
+        { y: '-18vh', scale: 1.05, duration: 0.38, ease: 'power2.out' },
         0
       );
 
@@ -242,7 +222,7 @@ export default function Hero() {
                 {/* Buildings */}
                 <div
                   ref={buildingRef}
-                  className="absolute bottom-[clamp(-250px,-12vh,-180px)] left-[14vw] w-[85vw] z-[2] origin-bottom transform-gpu will-change-transform"
+                  className="absolute bottom-[clamp(-380px,-20vh,-280px)] left-[14vw] w-[85vw] z-[2] origin-bottom transform-gpu will-change-transform"
                 >
                   <img
                     src="/images/hero/building.png"
@@ -252,33 +232,7 @@ export default function Hero() {
                   />
                 </div>
 
-                {/*
-                  ══════════════════════════════════════════════════════
-                  ARCH WRAPPER
-                  ──────────────────────────────────────────────────────
-                  • width: 120vw — bleeds past viewport edges on both sides
-                  • height: 108vh — tall enough to cover screen at scaleY=1
-                  • left: 50% — the pivot point; xPercent:-50 (via gsap.set)
-                    keeps it perfectly centred without any CSS transform
-                  • bottom: 0 — anchored to bottom edge
-                  • transformOrigin: 50% 100% — scales upward from bottom
-                  • GSAP controls: xPercent, scaleY, scaleX
-                    (NO CSS translate/transform on this element)
-
-                  ARCH CLIP DIV (inside wrapper)
-                  ──────────────────────────────────────────────────────
-                  • border-radius: "50% 50% 0 0 / 60% 60% 0 0"
-                    → horizontal radius 50% each side (full width)
-                    → vertical radius 60% (dome height relative to own height)
-                    → produces a wide, shallow dome arch
-                  • overflow: hidden clips children to the arch shape
-                  • inset box-shadow = thin white border ring
-
-                  LAYERS inside clip div (bottom to top):
-                  1. archImgRef  — hero-img2, always present
-                  2. whiteRef    — solid white, fades in stage 2b
-                  ══════════════════════════════════════════════════════
-                */}
+              
                 <div
                   ref={archWrapRef}
                   className="absolute z-[6] transform-gpu will-change-transform pointer-events-none"
@@ -333,12 +287,12 @@ export default function Hero() {
             {/* Hero Text */}
             <div
               ref={heroTextRef}
-              className="relative w-full pt-[clamp(90px,12vh,140px)] z-10 will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
+              className="relative w-full pt-[clamp(140px,20vh,220px)] z-10 will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
             >
               <h1 className="font-sans text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] font-bold leading-[1.1] tracking-tight text-[#333333] max-w-[90vw] md:max-w-full">
-                Porem <span className="text-[#c1121f]">ipsum dolor</span>{' '}sit&nbsp;consectetur
+                Porem <span className="text-[#660033]">ipsum dolor</span>{' '}sit&nbsp;consectetur
               </h1>
-              <p className="mt-[clamp(5px,1vh,12px)] font-sans text-[clamp(14px,1.6vw,20px)] font-medium text-[#333333] tracking-wide max-w-[800px] leading-relaxed">
+              <p className="mt-[clamp(12px,2vh,24px)] font-sans text-[clamp(14px,1.6vw,20px)] font-medium text-[#333333] tracking-wide max-w-[800px] leading-relaxed">
                 Horem ipsum dolor sit libero et velit interdum, ac aliquet odio mattis.
               </p>
             </div>
