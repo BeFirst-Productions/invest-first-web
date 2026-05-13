@@ -46,7 +46,6 @@ const ContactPage = () => {
             />
             <ContactInfo />
             <ContactFormMap />
-            <ContactBottomCTA />
             <CommonBanner
                 title="Yorem ipsum dolor sit 
 amet, consectetur"

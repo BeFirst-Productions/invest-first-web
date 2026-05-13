@@ -6,7 +6,7 @@ const ContactFormMap = () => {
     return (
         <SectionContainer
             id="contact-form"
-            className="py-[60px] lg:py-[100px] bg-white overflow-hidden"
+            className="py-[60px] lg:py-[100px] overflow-hidden"
             containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
         >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

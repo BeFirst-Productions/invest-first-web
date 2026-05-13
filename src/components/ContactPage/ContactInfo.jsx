@@ -8,7 +8,6 @@ const ContactInfo = () => {
         <SectionContainer
             id="contact-info"
             className="py-[60px] lg:py-[100px] bg-white overflow-hidden"
-            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
         >
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row  md:items-end  md:justify-between gap-10 mb-12">
