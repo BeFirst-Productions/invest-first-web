@@ -68,7 +68,7 @@ export default function About() {
   return (
     <SectionContainer
       id="about"
-      className="py-[60px] lg:py-[100px] bg-white overflow-hidden"
+      className="py-[60px] lg:py-[100px] bg-white overflow-hidden "
       containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
       sectionRef={sectionRef}
       background={
