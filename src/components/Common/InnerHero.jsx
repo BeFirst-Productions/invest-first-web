@@ -16,7 +16,7 @@ const InnerHero = ({
             background={
                 <>
                     {/* Background Image with Overlay */}
-                    <div 
+                    <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${bgImage})` }}
                     />
