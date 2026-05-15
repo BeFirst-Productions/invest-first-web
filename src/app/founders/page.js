@@ -1,35 +1,40 @@
-// import MeetFounders from '@/Components/AboutUs/Founders/MeetFounders'
-// import OurTeamsSection from '@/Components/AboutUs/Founders/OurTeamsSection'
-// import CommonBanner from '@/Components/Common/Banner/CommonBanner'
-// import CommonHerosection from '@/Components/Common/Banner/CommonHerosection'
-// import ScheduleMeetingSection from '@/Components/Common/Meeting/ScheduleMeeting'
-// import NewsletterSection from '@/Components/HomePage/NewsletterSection'
 
-// import React from 'react'
+import CommonBanner from '@/components/Common/Banner/CommonBanner'
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection'
 
-// const page = () => {
-//     return (
-//         <>
-//             <CommonHerosection
-//                 title="Founders"
-//                 description="Invest First is led by visionary leaders committed to transforming the business setup landscape in the UAE. Our founders bring decades of expertise and a passion for entrepreneurial success."
-//             />
-//             <MeetFounders />
-//             <CommonBanner
-//                 title="Yorem ipsum dolor sit 
-// amet, consectetur"
-//                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-//                 buttonLink="#"
-//                 buttonText="Cost Calculator "
-//                 imageSrc="/assets/images/common/uae.png"
-//                 imageAlt="Contact Us"
-//             />
-//             <OurTeamsSection />
-//             <ScheduleMeetingSection />
-//             <NewsletterSection />
+import { MeetFounders, OurTeamsSection } from '@/components/sections/About'
+import Schedule from '@/components/sections/Schedule'
+import React from 'react'
 
-//         </>
-//     )
-// }
+const page = () => {
+    return (
+        <>
+            <CommonHeroSection
+                highlightedTitle="About"
+                plainTitle="Us"
+                description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                imageUrl="/images/about/about-banner.jpg"
+                imageAlt="Our team at Meydan Free Zone"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'About Us' },
+                ]}
+            />
+            <MeetFounders />
+            <CommonBanner
+                title="Yorem ipsum dolor sit 
+amet, consectetur"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+                buttonLink="#"
+                buttonText="Cost Calculator "
+                imageSrc="/images/about/uae.png"
+                imageAlt="Contact Us"
+            />
+            <OurTeamsSection />
+            <Schedule />
 
-// export default page
+        </>
+    )
+}
+
+export default page

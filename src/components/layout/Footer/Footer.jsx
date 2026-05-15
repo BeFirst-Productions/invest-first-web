@@ -8,10 +8,10 @@ import { useState } from 'react';
 /* ─── Data ─── */
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Who are we', href: '/about' },
-  { label: 'Mission & Vision', href: '/mission' },
-  { label: 'News/Blog', href: '/blog' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Who are we', href: '/about-us' },
+  { label: 'Mission & Vision', href: '/about-us#mission' },
+  { label: 'News/Blog', href: '#' },
+  { label: 'Contact Us', href: '/contact-us' },
 ];
 
 const trendingServices = [
