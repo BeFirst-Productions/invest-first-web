@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-export default function PrimaryButton({ text = "Button", url, onClick, className }) {
+export default function PrimaryButton({ text = "Button", url, onClick, className, type = "button" }) {
   const content = (
     <button
+      type={type}
       onClick={onClick}
       className={`
           mt-4 w-fit flex items-center gap-3 rounded-full

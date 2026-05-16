@@ -13,7 +13,7 @@ export default function SetupCost() {
       >
         {/* ── Main Banner Container ── */}
         <div className="relative w-full rounded-[32px] md:rounded-[48px] overflow-hidden min-h-[480px] lg:h-[520px] flex items-stretch shadow-[0_40px_100px_rgba(0,0,0,0.2)] bg-[#3D0823]">
-          
+
           {/* ── Background Layer ── */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -27,7 +27,7 @@ export default function SetupCost() {
 
           {/* ── Content Layout ── */}
           <div className="relative z-10 w-full flex flex-col md:flex-row items-center">
-            
+
             {/* Left Side: Visual Elements */}
             <div className="w-full md:w-[50%] h-full relative flex items-center justify-center p-[40px] md:p-[60px] overflow-hidden min-h-[380px] md:min-h-full">
               <div className="relative w-[100%] h-[100%] md:scale-[0.95] lg:scale-[1.05] md:translate-x-[-2%]">
@@ -43,24 +43,24 @@ export default function SetupCost() {
 
             {/* Right Side: Information & Action */}
             <div className="w-full md:w-[50%] flex flex-col justify-center px-[32px] md:px-[60px] lg:pr-[80px] py-[40px] md:py-0 text-center md:text-left">
-              
+
               <h2 className="font-sans font-semibold text-white tracking-normal mb-[16px] md:mb-[24px]"
-                  style={{ 
-                    fontSize: 'clamp(28px, 3.2vw, 40px)',
-                    lineHeight: 'clamp(34px, 3.8vw, 46px)'
-                  }}>
+                style={{
+                  fontSize: 'clamp(28px, 3.2vw, 40px)',
+                  lineHeight: 'clamp(34px, 3.8vw, 46px)'
+                }}>
                 Estimate Your UAE <br className="hidden md:block" /> Business Setup Costs
               </h2>
-              
+
               <p className="font-sans font-normal text-white/80 mb-[32px] md:mb-[40px] max-w-[541px] mx-auto md:mx-0"
-                 style={{ 
-                    fontSize: 'clamp(14px, 1.1vw, 16px)',
-                    lineHeight: 'clamp(20px, 1.4vw, 22px)'
-                  }}>
-                Invest First's cost calculator helps entrepreneurs estimate Dubai 
-                and UAE business setup expenses accurately. Understand licensing, 
-                visa, office, and government fees instantly. Make informed 
-                decisions, compare options, plan budgets confidently, and choose 
+                style={{
+                  fontSize: 'clamp(14px, 1.1vw, 16px)',
+                  lineHeight: 'clamp(20px, 1.4vw, 22px)'
+                }}>
+                Invest First's cost calculator helps entrepreneurs estimate Dubai
+                and UAE business setup expenses accurately. Understand licensing,
+                visa, office, and government fees instantly. Make informed
+                decisions, compare options, plan budgets confidently, and choose
                 the right company structure.
               </p>
 
