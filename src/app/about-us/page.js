@@ -1,9 +1,8 @@
-import { AboutCompanySection } from '@/components/sections/About';
-import CommonBanner from '@/components/sections/Common/CommonBanner';
-
-import CommonHerosection from '@/components/sections/Common/CommonHerosection';
-
 import React from 'react'
+import CommonBanner from '@/components/Common/Banner/CommonBanner';
+import CommonHerosection from '@/components/Common/Banner/CommonHerosection';
+import { AboutCompanySection,MissionVision, CoreValues } from '@/components/sections/About';
+import Schedule from '@/components/sections/Schedule';
 
 
 const page = () => {
@@ -24,10 +23,12 @@ const page = () => {
                 imageSrc="/images/about/uae.png"
                 imageAlt="Contact Us"
             />
-            {/* <MissionVision />
+            <MissionVision />
             <CoreValues />
-            <ScheduleMeetingSection />
-            <Newsletter title='Join the Invest First Community' description='Subscribe to receive updates, news, and exclusive business insights that help you stay ahead in the UAE market.' /> */}
+            <Schedule />
+
+            {/* <ScheduleMeetingSection /> */}
+            {/* <Newsletter title='Join the Invest First Community' description='Subscribe to receive updates, news, and exclusive business insights that help you stay ahead in the UAE market.' /> */}
         </>
     )
 }

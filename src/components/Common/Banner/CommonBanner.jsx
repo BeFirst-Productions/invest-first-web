@@ -1,10 +1,12 @@
 "use client";
-// "use client"; // Already at top
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import SectionContainer from "../../layout/SectionContainer";
+import SectionContainer from "@/components/layout/SectionContainer";
+
+
 
 const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, imageAlt }) => {
     return (
@@ -21,7 +23,7 @@ const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, im
                             <h2 className="text-2xl max-w-3xl md:text-[30px] font-semibold text-white mb-4 leading-tight">
                                 {title}
                             </h2>
-                            <p className="text-base leading-relaxed max-w-4xl opacity-90">
+                            <p className="text-base leading-relaxed max-w-4xl opacity-90 text-white">
                                 {description}
                             </p>
                         </div>
@@ -42,7 +44,7 @@ const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, im
                     <div className="absolute bottom-0 right-0 w-full md:w-1/2 lg:w-3/5 h-36 md:h-40 pointer-events-none z-0">
                         <div className="relative w-full h-full">
                             <Image
-                                src={imageSrc || "/assets/images/common/uae.png"}
+                                src={imageSrc || "/images/about/uae.png"}
                                 alt={imageAlt || "Banner image"}
                                 fill
                                 className="object-cover md:object-contain object-bottom md:object-bottom-right"
@@ -52,7 +54,8 @@ const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, im
                     </div>
 
                 </div>
-        </SectionContainer>
+            </SectionContainer>
+        // </section>
     );
 };
 

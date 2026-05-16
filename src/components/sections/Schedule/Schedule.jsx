@@ -117,7 +117,7 @@ export default function Schedule() {
                 Schedule Meeting
               </h2>
               <p className="text-white/75 text-[14px] md:text-[15px] leading-[1.65] max-w-[420px]">
-                Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per  accumsan 
+                Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per  accumsan
               </p>
             </div>
 
@@ -128,8 +128,8 @@ export default function Schedule() {
                   key={idx}
                   onClick={() => setSelectedDate(item.date)}
                   className={`min-w-[52px] md:w-[58px] h-[60px] md:h-[66px] rounded-[14px] flex flex-col items-center justify-center transition-all cursor-pointer ${selectedDate === item.date
-                      ? 'bg-[#D9F1F7] shadow-lg scale-105'
-                      : 'bg-white hover:bg-[#F0F0F0]'
+                    ? 'bg-[#D9F1F7] shadow-lg scale-105'
+                    : 'bg-white hover:bg-[#F0F0F0]'
                     }`}
                 >
                   <span className={`text-[16px] md:text-[18px] font-bold leading-none ${selectedDate === item.date ? 'text-[#081131]' : 'text-[#111D51]'}`}>
@@ -141,7 +141,7 @@ export default function Schedule() {
                 </div>
               ))}
             </div>
-            
+
             {/* Action Button for Mobile/Tablet - Inside the flex flow */}
             <div className="flex md:hidden justify-center pb-[20px]">
               <button

@@ -1,2 +1,10 @@
 export { default } from './About';
 export { default as AboutCompanySection } from './AboutCompanySection';
+export {default as MissionVision} from './MissionVision';
+export {default as CoreValues} from './CoreValues';
+export {default as MeetFounders} from './MeetFounders';
+export {default as FounderImageCard} from './FounderImageCard';
+export {default as FounderDecorativeDecor} from './FounderDecorativeDecor';
+export {default as FounderCardShape} from './FounderCardShape';
+export {default as TeamMemberCard} from './TeamMemberCard';
+export {default as OurTeamsSection} from './OurTeamsSection';

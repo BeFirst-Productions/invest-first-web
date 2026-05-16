@@ -7,7 +7,7 @@ const AboutCompanySection = () => {
     return (
         <section className="py-16 md:py-24  overflow-hidden relative">
              <SectionContainer
-                id="about"
+                id="about-company"
                 className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
                 containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
               >
