@@ -11,7 +11,6 @@ const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, im
         <SectionContainer
             id="common-banner"
             className="py-[60px] lg:py-[100px] bg-white overflow-hidden "
-            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
         >
                 <div className="relative  rounded-3xl bg-[#660033] overflow-hidden">
 
