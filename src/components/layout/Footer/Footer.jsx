@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import SectionContainer from '../SectionContainer';
 
 
 /* ─── Data ─── */
@@ -38,7 +37,7 @@ export default function Footer() {
   };
 
   return (
-    <SectionContainer as="footer" className="bg-white pb-[24px]">
+    <footer className="px-[16px] sm:px-[24px] md:px-[40px] lg:px-[60px] pb-[24px] bg-white">
       <div
         className="rounded-[24px] overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #660033 0%, #3a0020 35%, #1a000e 65%, #000000 100%)' }}
@@ -195,6 +194,6 @@ export default function Footer() {
         </div>
 
       </div>
-    </SectionContainer>
+    </footer>
   );
 }
