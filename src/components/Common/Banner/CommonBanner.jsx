@@ -10,10 +10,8 @@ import SectionContainer from "@/components/layout/SectionContainer";
 
 const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, imageAlt }) => {
     return (
-        <SectionContainer
-            id="common-banner"
-            className="py-[60px] lg:py-[100px] bg-white overflow-hidden "
-        >
+        // <section className="w-full py-10 md:py-20 lg:py-0">
+            <SectionContainer>
                 <div className="relative  rounded-3xl bg-[#660033] overflow-hidden">
 
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-6 md:p-10 gap-6">
