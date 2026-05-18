@@ -32,8 +32,8 @@ const FAQAccordion = ({
         <section className={`py-10 md:py-20  ${className}`}>
             <SectionContainer>
                 {/* Heading */}
-                <div className="mb-10 md:mb-12 ">
-                    <h2 className="text-2xl text-black md:text-4xl font-semibold leading-snug max-w-sm md:max-w-xl">
+                <div className="mb-10 md:mb-12">
+                    <h2 className="text-2xl md:text-4xl font-semibold text-black leading-snug max-w-sm md:max-w-xl">
                         {/* "Frequently Asked Questions –" is always static */}
                         Frequently Asked{" "}
                         <span className="text-[#0099CC]">Questions –</span>
@@ -49,7 +49,7 @@ const FAQAccordion = ({
                         return (
                             <div
                                 key={index}
-                                className={`rounded-xl overflow-hidden border transition-all duration-300`}
+                                className="rounded-xl overflow-hidden border transition-all duration-300"
                                 style={{ backgroundColor: '#780343', borderColor: '#780343' }}
                             >
                                 <button
@@ -81,7 +81,7 @@ const FAQAccordion = ({
                                     style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
                                 >
                                     <div className="overflow-hidden">
-                                        <div className="px-5 pb-8 pt-4 text-white/90 text-sm md:text-base leading-relaxed border-t border-white/5">
+                                        <div className="px-5 pb-8 pt-2 text-white/90 text-sm md:text-base leading-relaxed border-t border-white/5">
                                             {item.answer}
                                         </div>
                                     </div>

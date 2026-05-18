@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import SectionContainer from '@/components/layout/SectionContainer';
+import SectionContainer from '../layout/SectionContainer';
 
 const DocumentServiceBenefits = ({ data }) => {
     if (!data) return null;
@@ -19,7 +19,7 @@ const DocumentServiceBenefits = ({ data }) => {
                     {data.items?.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-black border border-[#0099CC] rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 transition-all duration-300 hover:border-[#0099CC] hover:bg-[#0E1B31] group"
+                            className="bg-[#0A1221] border border-[#0099CC] rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 transition-all duration-300 hover:border-[#0099CC] hover:bg-[#0E1B31] group"
                         >
                             {/* Number and Title */}
                             <div className="flex-1">

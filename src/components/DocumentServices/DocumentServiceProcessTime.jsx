@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import SectionContainer from '@/components/layout/SectionContainer';
+import SectionContainer from '../layout/SectionContainer';
 import * as LucideIcons from 'lucide-react';
 
 const DocumentServiceProcessTime = ({ data }) => {
@@ -53,7 +53,7 @@ const DocumentServiceProcessTime = ({ data }) => {
                                         <h4 className="text-[#0099CC] font-semibold text-lg md:text-xl leading-tight">
                                             {item.title}
                                         </h4>
-                                        <p className=" text-sm text-white    md:text-base leading-relaxed font-medium">
+                                        <p className=" text-sm md:text-base leading-relaxed font-medium">
                                             {item.description}
                                         </p>
                                     </div>

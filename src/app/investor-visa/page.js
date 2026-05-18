@@ -1,5 +1,5 @@
 import CommonHerosection from '@/Components/Common/Banner/CommonHerosection'
-import InvestorVisaSolutions from '@/Components/InvestorVisa/InvestorVisaSolutions'
+import InvestorVisaSolutions from '@/Components/VisaServices/InvestorVisaSolutions'
 import React from 'react'
 
 const page = () => {

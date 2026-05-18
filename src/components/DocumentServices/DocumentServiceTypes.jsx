@@ -6,7 +6,10 @@ const DocumentServiceTypes = ({ data }) => {
     if (!data) return null;
 
     return (
-        <section className="py-10 md:py-20 relative overflow-hidden">
+        <SectionContainer 
+            className="py-10 md:py-20 relative overflow-hidden"
+            background={
+                <>
             {/* Background Decorations - Hidden on md/sm screens */}
             <div className="absolute top-0 right-0 hidden lg:block opacity-60 pointer-events-none animate-pulse duration-[3000ms]">
                 <svg width="263" height="144" viewBox="0 0 263 144" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,13 +34,15 @@ const DocumentServiceTypes = ({ data }) => {
                 </svg>
             </div>
 
-            <SectionContainer>
+                </>
+            }
+        >
                 {/* Header */}
                 <div className="max-w-4xl mb-16 space-y-4">
-                    <h2 className="text-3xl md:text-4xl text-black font-semibold leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-black">
                         {data.title} <span className="text-[#0099CC]">{data.highlight}</span>
                     </h2>
-                    <p className="text-base text-black  md:text-lg leading-relaxed font-light">
+                    <p className="text-base md:text-lg leading-relaxed font-light text-gray-700">
                         {data.description}
                     </p>
                 </div>
@@ -65,8 +70,7 @@ const DocumentServiceTypes = ({ data }) => {
                         </div>
                     ))}
                 </div>
-            </SectionContainer>
-        </section>
+        </SectionContainer>
     );
 };
 

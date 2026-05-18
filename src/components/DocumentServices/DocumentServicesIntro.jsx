@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import SectionContainer from '@/components/layout/SectionContainer';
+import SectionContainer from '../layout/SectionContainer';
 
 const DocumentServicesIntro = ({ data }) => {
     if (!data) return null;
@@ -29,7 +29,7 @@ const DocumentServicesIntro = ({ data }) => {
                             dangerouslySetInnerHTML={{ __html: data.title }}>
                         </h2>
 
-                        <div className="space-y-4 text-base md:text-lg text-black leading-relaxed font-light">
+                        <div className="space-y-4 text-base md:text-lg text-gray-700 leading-relaxed font-light">
                             {data.description1 && (
                                 <p dangerouslySetInnerHTML={{ __html: data.description1 }}></p>
                             )}
