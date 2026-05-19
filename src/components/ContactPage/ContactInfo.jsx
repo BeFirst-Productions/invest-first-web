@@ -8,7 +8,6 @@ const ContactInfo = () => {
         <SectionContainer
             id="contact-info"
             className="py-[60px] lg:py-[100px] bg-white overflow-hidden"
-            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
         >
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row  md:items-end  md:justify-between gap-10 mb-12">
@@ -24,7 +23,7 @@ const ContactInfo = () => {
                 </div>
 
                 {/* Contact Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-36">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Phone Card */}
                     <div className="bg-[#000F2B] border border-[#1e293b] p-6 rounded-2xl flex items-center gap-4 hover:border-[#0099CC] transition-colors group">
                         <div className="h-12 w-12 rounded-full bg-[#0099CC]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0099CC] transition-colors">
@@ -32,7 +31,7 @@ const ContactInfo = () => {
                         </div>
                         <div>
                             <p className="text-sm text-gray-400">Have Question ?</p>
-                            <p className="text-white font-medium">+92 333 555 11</p>
+                            <p className="text-white font-medium">+971 58 877 3753</p>
                         </div>
                     </div>
 
@@ -43,7 +42,7 @@ const ContactInfo = () => {
                         </div>
                         <div>
                             <p className="text-sm text-gray-400">Email</p>
-                            <p className="text-white font-medium">info@investfirst.ae</p>
+                            <p className="text-white font-medium break-all">info@investfirst.ae</p>
                         </div>
                     </div>
 
@@ -54,7 +53,8 @@ const ContactInfo = () => {
                         </div>
                         <div>
                             <p className="text-sm text-gray-400">Our Location</p>
-                            <p className="text-white font-medium">Dubai ..............</p>
+                            <p className="text-white font-medium">Al Qusais, Dubai
+3rd Floor-Arzoo Building</p>
                         </div>
                     </div>
                 </div>
