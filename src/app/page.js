@@ -42,7 +42,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
-     
+
       <Hero />
       <About />
       <Partners />
@@ -58,8 +58,6 @@ export default function HomePage() {
       <SetupCost />
       <FAQ />
       <SocialMedia />
-
-
 
     </main>
   );

@@ -73,13 +73,15 @@ export default function Navbar() {
           <Image
             src="/images/logos/invest-first-logo.png"
             alt="InvestFirst Business Services"
-            width={180}
-            height={40}
+            width={360}
+            height={80}
+            quality={100}
             priority
             className={styles.logoImage}
             style={{ width: 'auto', height: '40px' }}
           />
         </a>
+
 
         {/* Desktop Nav Links */}
         <ul className={styles.navLinks} role="list">

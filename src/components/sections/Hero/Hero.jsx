@@ -10,7 +10,27 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-
+/**
+ * LAYER STACK (bottom → top):
+ *   z-[0]  Sky
+ *   z-[2]  Buildings (hero-building.png) — parallax
+ *   z-[3]  Clouds — parallax
+ *   z-[5]  hero-img2.png — full screen, clipped to arch-hole shape via clip-path
+ *   z-[6]  Arch ring — white CSS border only, hollow/transparent interior
+ *   z-[10] Hero text / scroll hint
+ *
+ * HOW THE REVEAL WORKS:
+ *   hero-img2.png starts with clip-path: circle(0vw at 50vw 100vh) → invisible.
+ *   The arch ring (white frame) and clip-path circle grow together in perfect sync.
+ *   Outside the ring  → original sky + building shows (hero-img2 is clipped away).
+ *   Inside the hole   → hero-img2 shows (clip-path circle matches inner arch radius).
+ *   Stage 3 end       → circle grows to 150vw, covering full screen. Arch ring fades.
+ *
+ * SCROLL STAGES:
+ *   0%  → 30%   Stage 1 : Hero UI exits, parallax (sky / buildings / clouds)
+ *   30% → 60%   Stage 2 : Arch + clip-path grow together (window reveal)
+ *   60% → 100%  Stage 3 : Both expand → ring exits screen → hero-img2 fills viewport
+ */
 
 export default function Hero() {
   const containerRef  = useRef(null);
@@ -20,9 +40,15 @@ export default function Hero() {
   const scrollHintRef = useRef(null);
   const cloudRightRef = useRef(null);
   const cloudLeftRef  = useRef(null);
+
+  /** Full-screen reveal image — clipped to arch hole via CSS clip-path */
+  const bgImgRef      = useRef(null);
+
+  /** Arch wrapper — GSAP scales this from bottom-center */
   const archWrapRef   = useRef(null);
-  const archImgRef    = useRef(null);
-  const whiteRef      = useRef(null);
+
+  /** White ring frame — CSS borders only, interior is transparent */
+  const archFrameRef  = useRef(null);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -30,120 +56,146 @@ export default function Hero() {
 
     const ctx = gsap.context(() => {
 
-      // ── Initial arch state — GSAP owns every transform property ──
-      // xPercent: -50 centres the 120vw element (like translateX(-50%))
-      // scaleY/scaleX: 0 hides it; transformOrigin bottom-centre grows upward
+      // ── Initial states ────────────────────────────────────────
+
+      // Arch starts fully collapsed — invisible
       gsap.set(archWrapRef.current, {
-        xPercent: -50,
-        scaleY: 0,
-        scaleX: 0.28,
-        transformOrigin: '50% 100%',
-        force3D: true,
+        xPercent       : -50,
+        scale          : 0,
+        transformOrigin: '50% 100%', // grow upward from bottom-center
+        force3D        : true,
       });
 
-      gsap.set(archImgRef.current, {
-        scale: 1.18,
-        yPercent: 6,
+      // hero-img2: full screen but FULLY CLIPPED to a zero-radius circle
+      // centered at screen bottom-center (matches arch transform-origin).
+      // This keeps it invisible until Stage 2 starts growing the clip circle.
+      gsap.set(bgImgRef.current, {
+        clipPath: 'circle(0vw at 50% 100%)',
       });
 
-      gsap.set(whiteRef.current, {
-        opacity: 1,
-      });
-
-      // ── Master scroll-driven timeline ────────────────────────────
+      // ── Master scroll timeline ─────────────────────────────────
       const master = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 2,
+          trigger            : containerRef.current,
+          start              : 'top top',
+          end                : 'bottom bottom',
+          scrub              : 2,
           invalidateOnRefresh: true,
         },
       });
 
-      /* ═══════════════════════════════════════════
-         STAGE 1  (0 → 0.38)
-      ═══════════════════════════════════════════ */
+      /* ──────────────────────────────────────────────────────────
+         STAGE 1  (0 → 0.30)
+         Hero UI exits. Clouds / sky / buildings parallax.
+         hero-img2 clip-path stays at 0 — still invisible.
+      ────────────────────────────────────────────────────────── */
       const navbar = document.getElementById('global-navbar');
       if (navbar) {
         master.to(navbar, {
-          y: -14, scale: 0.96, opacity: 0,
-          duration: 0.30, ease: 'power2.inOut',
+          y: -16, scale: 0.95, opacity: 0,
+          duration: 0.25, ease: 'power2.inOut',
         }, 0);
       }
 
       master.to(heroTextRef.current, {
-        y: -110, opacity: 0,
-        duration: 0.30, ease: 'power2.inOut',
+        y: -80, opacity: 0,
+        duration: 0.25, ease: 'power2.inOut',
       }, 0);
 
       master.to(scrollHintRef.current, {
-        opacity: 0, y: 10,
-        duration: 0.13, ease: 'power1.in',
+        opacity: 0, y: 6,
+        duration: 0.10, ease: 'power1.in',
+      }, 0);
+
+      master.to(cloudLeftRef.current, {
+        x: '-20%', y: '-10%', opacity: 0,
+        duration: 0.30, ease: 'power1.inOut',
+      }, 0);
+
+      master.to(cloudRightRef.current, {
+        x: '20%', y: '-8%', opacity: 0,
+        duration: 0.30, ease: 'power1.inOut',
       }, 0);
 
       master.to(skyRef.current, {
-        y: '-15%', scale: 1.12,
-        duration: 0.38, ease: 'none',
+        y: '-10%', scale: 1.08,
+        duration: 0.30, ease: 'none',
       }, 0);
 
       master.fromTo(
         buildingRef.current,
-        { y: '30vh', scale: 1 },
-        { y: '-18vh', scale: 1.05, duration: 0.38, ease: 'power2.out' },
+        { y: '26vh', scale: 1 },
+        { y: '-14vh', scale: 1.03, duration: 0.30, ease: 'power2.out' },
         0
       );
 
-      master.to(cloudLeftRef.current, {
-        x: '-20%', y: '-14%', opacity: 0,
-        duration: 0.38, ease: 'power1.inOut',
-      }, 0);
+      /* ──────────────────────────────────────────────────────────
+         STAGE 2  (0.30 → 0.60)
+         Arch ring and clip-path circle grow together in sync.
 
-      master.to(cloudRightRef.current, {
-        x: '20%', y: '-12%', opacity: 0,
-        duration: 0.38, ease: 'power1.inOut',
-      }, 0);
+         Arch inner radius at scale 1:
+           archWrap = 140vw wide → half = 70vw
+           border thickness = 20.3vw
+           inner radius = 70vw − 20.3vw = 49.7vw
+         So clip-path circle radius = 49.7vw at scale 1.
 
-      /* ═══════════════════════════════════════════
-         STAGE 2a  (0.38 → 0.68)
-         White dome grows from bottom
-      ═══════════════════════════════════════════ */
+         Outside the arch ring  → sky + building still visible
+         Inside the arch hole   → hero-img2 reveals through clip-path
+      ────────────────────────────────────────────────────────── */
       master.to(archWrapRef.current, {
-        scaleY: 1,
-        scaleX: 1,
-        // xPercent stays -50 — never change it, it's our centering anchor
+        scale   : 1,
         duration: 0.30,
-        ease: 'power3.out',
-      }, 0.38);
+        ease    : 'power3.out',
+      }, 0.30);
+
+      // Clip-path grows to match inner arch hole radius (49.7vw)
+      master.to(bgImgRef.current, {
+        clipPath: 'circle(49.7vw at 50% 100%)',
+        duration: 0.30,
+        ease    : 'power3.out',
+      }, 0.30);
 
       master.to(buildingRef.current, {
-        y: '-5vh',
-        duration: 0.30,
-        ease: 'power1.inOut',
-      }, 0.38);
-
-      /* ═══════════════════════════════════════════
-         STAGE 2b  (0.68 → 1.0)
-         White fades → hero-img2 reveals
-      ═══════════════════════════════════════════ */
-      master.to(whiteRef.current, {
-        opacity: 0,
-        duration: 0.32,
-        ease: 'power2.inOut',
-      }, 0.68);
-
-      master.to(archImgRef.current, {
-        scale: 1.0,
-        yPercent: 0,
-        duration: 0.32,
-        ease: 'power2.out',
-      }, 0.68);
+        y: '-4vh', duration: 0.30, ease: 'power1.inOut',
+      }, 0.30);
 
       master.to(skyRef.current, {
-        y: '-22%',
-        duration: 0.32,
-        ease: 'none',
-      }, 0.68);
+        y: '-15%', duration: 0.30, ease: 'none',
+      }, 0.30);
+
+      /* ──────────────────────────────────────────────────────────
+         STAGE 3  (0.60 → 1.0)
+         Both arch and clip-path expand until ring exits screen.
+
+         At arch scale 3.0:
+           inner radius = 49.7vw × 3 = 149.1vw ≈ 150vw
+           A circle of radius 150vw centered at bottom covers the full viewport.
+         → White ring borders move off all screen edges.
+         → hero-img2 fills entire screen.
+         → Arch ring fades at ~82% for a clean dissolve.
+      ────────────────────────────────────────────────────────── */
+      master.to(archWrapRef.current, {
+        scale   : 3.0,
+        duration: 0.40,
+        ease    : 'power1.inOut',
+      }, 0.60);
+
+      master.to(bgImgRef.current, {
+        clipPath: 'circle(150vw at 50% 100%)',
+        duration: 0.40,
+        ease    : 'power1.inOut',
+      }, 0.60);
+
+      // Fade the ring just before it completely exits screen
+      master.to(archFrameRef.current, {
+        opacity : 0,
+        duration: 0.15,
+        ease    : 'power2.in',
+      }, 0.82);
+
+      master.to(skyRef.current, {
+        y: '-28%', duration: 0.40, ease: 'none',
+      }, 0.60);
 
     }, containerRef);
 
@@ -165,14 +217,13 @@ export default function Hero() {
         aria-label="Hero section"
       >
         <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
-
           <SectionContainer
             as="div"
             className="h-full bg-transparent"
             containerClassName="h-full flex flex-col items-center justify-start pointer-events-none"
             background={
               <>
-                {/* Sky */}
+                {/* ── z-[0] Sky ── */}
                 <div
                   ref={skyRef}
                   className="absolute z-0 transform-gpu will-change-transform"
@@ -180,16 +231,12 @@ export default function Hero() {
                 >
                   <Image
                     src="/images/hero/sky.jpg"
-                    alt=""
-                    fill
-                    priority
-                    quality={85}
-                    sizes="100vw"
+                    alt="" fill priority quality={85} sizes="100vw"
                     className="object-cover object-top"
                   />
                 </div>
 
-                {/* Left Cloud */}
+                {/* ── z-[3] Left Cloud ── */}
                 <div
                   ref={cloudLeftRef}
                   className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-auto z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
@@ -197,14 +244,12 @@ export default function Hero() {
                 >
                   <Image
                     src="/images/hero/cloud-left.svg"
-                    alt=""
-                    fill
-                    unoptimized
+                    alt="" fill unoptimized
                     className="object-contain object-center"
                   />
                 </div>
 
-                {/* Right Cloud */}
+                {/* ── z-[3] Right Cloud ── */}
                 <div
                   ref={cloudRightRef}
                   className="absolute right-[-8%] md:right-[-2%] top-[6%] md:top-[8%] w-[72%] md:w-[58%] lg:w-[44%] aspect-auto z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
@@ -212,109 +257,116 @@ export default function Hero() {
                 >
                   <Image
                     src="/images/hero/cloud-right.svg"
-                    alt=""
-                    fill
-                    unoptimized
+                    alt="" fill unoptimized
                     className="object-contain object-center"
                   />
                 </div>
 
-                {/* Buildings */}
+                {/* ── z-[2] Buildings ── */}
                 <div
                   ref={buildingRef}
-                  className="absolute bottom-[clamp(-380px,-20vh,-280px)] left-[14vw] w-[85vw] z-[2] origin-bottom transform-gpu will-change-transform"
+                  className="absolute bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom transform-gpu will-change-transform"
                 >
                   <img
-                    src="/images/hero/building.png"
+                    src="/images/hero/hero-building.png"
                     alt="City skyline with modern skyscrapers"
                     className="block w-full h-auto min-h-[480px] object-cover object-bottom"
                     loading="eager"
                   />
                 </div>
 
-              
+                {/* ── z-[5] Reveal image ───────────────────────────────────
+                    Full viewport. Starts fully clipped (circle 0vw).
+                    GSAP grows clip-path in sync with arch inner hole.
+                    Only visible through the arch hollow — never bleeds outside.
+                ──────────────────────────────────────────────────────────── */}
+                <div
+                  ref={bgImgRef}
+                  className="absolute z-[5] pointer-events-none will-change-[clip-path]"
+                  style={{
+                    top      : 0,
+                    left     : '50%',
+                    transform: 'translateX(-50%)',
+                    width    : '100vw',
+                    height   : '100vh',
+                  }}
+                  aria-hidden="true"
+                >
+                  <Image
+                    src="/images/hero/hero-img2.png"
+                    alt="Luxury residential towers at dusk"
+                    fill priority quality={90} sizes="100vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+
+                {/* ══════════════════════════════════════════════════════════
+                    z-[6] ARCH WRAPPER
+                    width: 140vw, height: 70vw → perfect semicircle box.
+                    Contains ONLY the white CSS border ring.
+                    Interior is transparent — no image, no background.
+                    clip-path on bgImgRef ensures image only shows through hole.
+                ═══════════════════════════════════════════════════════════ */}
                 <div
                   ref={archWrapRef}
                   className="absolute z-[6] transform-gpu will-change-transform pointer-events-none"
                   style={{
-                    width: '120vw',
-                    height: '108vh',
-                    bottom: 0,
-                    left: '50%',
-                    // NO CSS transform here — GSAP owns it via gsap.set xPercent:-50
+                    width          : '140vw',
+                    height         : '70vw',
+                    bottom         : 0,
+                    left           : '50%',
+                    transform      : 'translateX(-50%) scale(0)',
+                    transformOrigin: '50% 100%',
                   }}
                   aria-hidden="true"
                 >
                   <div
                     className="absolute inset-0 overflow-hidden"
-                    style={{
-                      borderRadius: '50% 50% 0 0 / 60% 60% 0 0',
-                      boxShadow: 'inset 0 0 0 3px rgba(255,255,255,0.85)',
-                    }}
+                    style={{ borderRadius: '50% 50% 0 0 / 100% 100% 0 0' }}
                   >
-                    {/* hero-img2 — behind white overlay */}
+                    {/* White ring — CSS borders only, background: transparent */}
                     <div
-                      ref={archImgRef}
-                      className="absolute inset-0 transform-gpu will-change-transform"
-                    >
-                      <Image
-                        src="/images/hero/hero-img2.jpg"
-                        alt="Luxury residential towers at dusk"
-                        fill
-                        priority
-                        quality={90}
-                        sizes="120vw"
-                        className="object-cover object-top"
-                      />
-                    </div>
-
-                    {/* White overlay — fades out in stage 2b revealing image */}
-                    <div
-                      ref={whiteRef}
+                      ref={archFrameRef}
                       className="absolute inset-0 will-change-[opacity]"
                       style={{
-                        backgroundColor: '#ffffff',
-                        zIndex: 2,
+                        borderTop   : '20.3vw solid #ffffff',
+                        borderLeft  : '20.3vw solid #ffffff',
+                        borderRight : '20.3vw solid #ffffff',
+                        borderBottom: 'none',
+                        borderRadius: '50% 50% 0 0 / 100% 100% 0 0',
+                        background  : 'transparent',
                       }}
                     />
                   </div>
                 </div>
                 {/* End Arch */}
-
               </>
             }
           >
-            {/* Hero Text */}
+            {/* ── Hero Text ── */}
             <div
               ref={heroTextRef}
               className="relative w-full pt-[clamp(140px,20vh,220px)] z-10 will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
             >
               <h1 className="font-sans text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] font-bold leading-[1.1] tracking-tight text-[#333333] max-w-[90vw] md:max-w-full">
-                Porem <span className="text-[#660033]">ipsum dolor</span>{' '}sit&nbsp;consectetur
+                Business <span className="text-[#660033]">Setup Services</span>{' '}in Dubai &amp; UAE
               </h1>
               <p className="mt-[clamp(12px,2vh,24px)] font-sans text-[clamp(14px,1.6vw,20px)] font-medium text-[#333333] tracking-wide max-w-[800px] leading-relaxed">
-                Horem ipsum dolor sit libero et velit interdum, ac aliquet odio mattis.
+               Business setup in Dubai made it simple for startups& entrepreneurs.
               </p>
             </div>
 
-            {/* Scroll Hint */}
+            {/* ── Scroll hint ── */}
             <div
               ref={scrollHintRef}
-              className="absolute bottom-[clamp(20px,4vh,40px)] left-1/2 -translate-x-1/2 z-[20] flex flex-col items-center gap-2 will-change-[opacity,transform] pointer-events-none"
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
               aria-hidden="true"
             >
-              <span className="text-[10px] font-semibold tracking-[3px] uppercase text-white/65 font-sans">
-                Scroll
-              </span>
-              <span
-                className="block w-[1.5px] h-[44px] origin-top opacity-35"
-                style={{
-                  background: 'linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0))',
-                  animation: 'scrollPulse 2s ease-in-out infinite',
-                }}
+              <div
+                className="w-[2px] h-10 bg-[#333333] origin-top"
+                style={{ animation: 'scrollPulse 1.6s ease-in-out infinite' }}
               />
             </div>
-
           </SectionContainer>
         </div>
       </section>

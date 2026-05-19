@@ -1,18 +1,23 @@
 import React from 'react'
 import CommonBanner from '@/components/Common/Banner/CommonBanner';
-import CommonHerosection from '@/components/Common/Banner/CommonHerosection';
 import { AboutCompanySection,MissionVision, CoreValues } from '@/components/sections/About';
 import Schedule from '@/components/sections/Schedule';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 
 
 const page = () => {
     return (
         <>
-            <CommonHerosection
-                title="About Us"
-                description="Invest First is a Business Setup Consultant UAE, authorized channel partner of 20 freezones, helping entrepreneurs establish compliant, scalable businesses through corporate guidance."
-                cardTitle='Calculate Your Business Setup Cost'
-                cardDescription='Get instant UAE business setup cost estimates.'
+           <CommonHeroSection
+                highlightedTitle="About"
+                plainTitle="Us"
+                description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                imageUrl="/images/about/about-banner.jpg"
+                imageAlt="Our team at Meydan Free Zone"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'About Us' },
+                ]}
             />
             <AboutCompanySection />
             <CommonBanner

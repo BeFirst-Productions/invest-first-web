@@ -1,32 +1,11 @@
 'use client';
 
+import { quickLinks, socialLinks, trendingServices } from '@/data/footerData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
 
-/* ─── Data ─── */
-const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Who are we', href: '/about-us' },
-  { label: 'Mission & Vision', href: '/about-us#mission' },
-  { label: 'News/Blog', href: '#' },
-  { label: 'Contact Us', href: '/contact-us' },
-];
-
-const trendingServices = [
-  { label: 'Company Formation', href: '/services/company-formation' },
-  { label: 'PRO Services', href: '/services/pro-services' },
-  { label: 'Family visa for the UAE', href: '/services/family-visa' },
-  { label: 'View All Services', href: '/services' },
-];
-
-const socialLinks = [
-  { id: 'footer-facebook',  src: '/images/footer/facebook-icon.svg',  href: 'https://facebook.com',            label: 'Facebook' },
-  { id: 'footer-linkedin',  src: '/images/footer/linkedin-icon.svg',  href: 'https://linkedin.com',            label: 'LinkedIn' },
-  { id: 'footer-instagram', src: '/images/footer/instagram-icon.svg', href: 'https://instagram.com',           label: 'Instagram' },
-  { id: 'footer-whatsapp',  src: '/images/footer/whatsapp-icon.svg',  href: 'https://wa.me/971588773753',      label: 'WhatsApp' },
-];
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -43,15 +22,13 @@ export default function Footer() {
         style={{ background: 'linear-gradient(180deg, #660033 0%, #3a0020 35%, #1a000e 65%, #000000 100%)' }}
       >
 
-        {/* ════════════════════════════════════════════════
-            TOP SECTION — Newsletter  +  Nav Links
-        ════════════════════════════════════════════════ */}
+
         <div className="px-[30px] sm:px-[50px] md:px-[70px] lg:px-[90px] pt-[50px] md:pt-[60px] pb-[30px] md:pb-[40px] flex flex-col lg:flex-row gap-[40px] lg:gap-0">
 
-          {/* LEFT ─ Newsletter + Contact */}
+
           <div className="flex flex-col gap-[40px] lg:flex-1 lg:pr-[40px]">
 
-            {/* Newsletter */}
+
             <div>
               <p className="text-white text-[15px] font-semibold mb-[16px]">
                 Subscribe to Our Newsletter!
@@ -97,9 +74,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT ─ Quick Links + Trending Services */}
+
           <div className="flex gap-[50px] sm:gap-[80px] lg:gap-[60px] flex-shrink-0">
-            {/* Quick Links */}
+
             <div>
               <p className="text-white/50 text-[11px] font-semibold uppercase tracking-[0.12em] mb-[20px]">
                 Quick Links
@@ -115,7 +92,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Trending Services */}
+
             <div>
               <p className="text-white/50 text-[11px] font-semibold uppercase tracking-[0.12em] mb-[20px]">
                 Trending Services
@@ -133,17 +110,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ════════════════════════════════════════════════
-            BOTTOM SECTION — Brand + Asterisk + Divider + Bar
-        ════════════════════════════════════════════════ */}
-        <div className="relative px-[30px] sm:px-[50px] md:px-[70px] lg:px-[100px] pt-[30px] md:pt-[40px]">
- 
-          {/* Brand Branding Section — Unified Logo with Specific Design Properties */}
+
+        <div className="relative px-[30px] sm:px-[50px] md:px-[70px] lg:px-[100px] pt-[30px] md:pt-[5px]">
+
+
           <div className="relative z-10 flex flex-col items-start mb-[40px] md:mb-[60px]">
-            {/* Logo Image (411x326 property applied) */}
+
             <div className="relative w-[240px] h-[190px] sm:w-[300px] sm:h-[238px] md:w-[360px] md:h-[285px] lg:w-[411px] lg:h-[326px]">
               <Image
-                src="/images/footer/investfirst-logo.png"
+                src="/images/logos/investfirst-logo.png"
                 alt="Invest First Business Services"
                 fill
                 className="object-contain object-left-bottom"
@@ -152,22 +127,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Blue Asterisk Vector — absolute right */}
-          <div className="absolute right-[-20px] sm:right-[50px] md:right-[70px] lg:right-[90px] bottom-[60px] sm:bottom-[100px] md:bottom-[150px] w-[80px] h-[50px] sm:w-[150px] sm:h-[150px] md:w-[90px] md:h-[90px] lg:w-[187px] lg:h-[187px] pointer-events-none opacity-80 z-0">
-            <Image
-              src="/images/footer/blue-ring-vector.svg"
-              alt="Decorative star"
-              fill
-              className="object-contain"
-            />
+
+          <div className="hidden sm:block absolute sm:right-[50px] md:right-[70px] lg:right-[90px] sm:bottom-[100px] md:bottom-[150px] sm:w-[150px] sm:h-[150px] md:w-[90px] md:h-[90px] lg:w-[187px] lg:h-[187px] pointer-events-none opacity-80 z-0">
+            <div className="relative w-full h-full animate-spin-ring">
+              <Image
+                src="/images/footer/blue-ring-vector.svg"
+                alt="Decorative ring"
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
 
-          {/* Full-width Divider */}
           <div className="w-full h-[1px] bg-white/10 mb-0" />
 
-          {/* Bottom Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between py-[20px] gap-[12px]">
-            {/* Social Icons — centered on mobile, left on desktop matches reference (centered overall) */}
             <div className="flex items-center gap-[10px] sm:flex-1 sm:justify-center">
               {socialLinks.map((social) => (
                 <a
@@ -179,7 +153,7 @@ export default function Footer() {
                   aria-label={social.label}
                   className="w-[36px] h-[36px] rounded-[8px] bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all"
                 >
-                  <div className="relative w-[18px] h-[18px]">
+                  <div className="relative w-[18px] h-[18px] md:w-[28px] md:h-[28px]">
                     <Image src={social.src} alt={social.label} fill className="object-contain" />
                   </div>
                 </a>

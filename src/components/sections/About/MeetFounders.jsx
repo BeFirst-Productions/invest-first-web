@@ -90,7 +90,7 @@ const MeetFounders = () => {
                             <div className="h-[1px] w-8 bg-[#0099CC]" /> */}
                         </div>
                         <h2 className="text-4xl md:text-6xl lg:text-5xl font-black text-[#000000] leading-[0.9]">
-                            <span className="text-[#000000]">MEET</span>  <span className="text-[#0099CC]">THE</span>  <span className="text-[#000000]">FOUNDERS</span>
+                            <span className="text-[#000000]">Meet</span>  <span className="text-[#0099CC]">The</span>  <span className="text-[#000000]">Founders</span>
                         </h2>
                     </div>
                 </div>

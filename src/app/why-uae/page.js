@@ -1,16 +1,24 @@
 
 import CommonBanner from '@/components/Common/Banner/CommonBanner'
-import CommonHerosection from '@/components/Common/Banner/CommonHerosection'
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection'
 import Schedule from '@/components/sections/Schedule'
 import { WhyUAEPoints, WhyUAESection } from '@/components/sections/WhyUAE'
 import React from 'react'
 
+
 const page = () => {
     return (
         <div>
-            <CommonHerosection
-                title="Why UAE"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+            <CommonHeroSection
+                highlightedTitle="Why"
+                plainTitle="UAE"
+                description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                imageUrl="/images/about/why-uae-banner.jpg"
+                imageAlt="Our team at Meydan Free Zone"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Why UAE' },
+                ]}
             />
             <WhyUAESection />
             <CommonBanner
@@ -23,7 +31,7 @@ amet, consectetur"
                 imageAlt="Contact Us"
             />
             <WhyUAEPoints />
-            <Schedule/>
+            <Schedule />
         </div>
     )
 }

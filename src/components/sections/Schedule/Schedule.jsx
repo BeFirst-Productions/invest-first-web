@@ -54,7 +54,7 @@ export default function Schedule() {
               Schedule a Call
             </h2>
             <p className="text-white/80 text-[14px] md:text-[15px] leading-[1.6] max-w-[440px]">
-              Invest First's expert consultants are available for personalized guidance. Whether you're starting a new venture or expanding an existing one, we're here to help you navigate the UAE business landscape.
+              Consult us for your Business Set Up, Visa Processing & PRO services in Dubai. We will be happy to guide you with the reliable experts per your Business requirements.
             </p>
           </div>
 

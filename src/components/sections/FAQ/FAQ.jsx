@@ -2,41 +2,9 @@
 
 import React, { useState } from 'react';
 import SectionBadge from '@/components/ui/SectionBadge';
+import { faqs } from '@/data/faqData';
 
-const faqs = [
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  },
-  {
-    question: "Yorem ipsum dolor sit amet consectetur dictum",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad"
-  }
-];
+
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
