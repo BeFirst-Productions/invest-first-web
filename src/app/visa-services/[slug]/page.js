@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import InvestorVisaSolutions from '@/Components/VisaServices/InvestorVisaSolutions';
-import InvestorVisaOverview from '@/Components/VisaServices/InvestorVisaOverview';
-import InvestorVisaEligibility from '@/Components/VisaServices/InvestorVisaEligibility';
-import InvestorVisaProcess from '@/Components/VisaServices/InvestorVisaProcess';
-import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
+import InvestorVisaSolutions from '@/components/VisaServices/InvestorVisaSolutions';
+import InvestorVisaOverview from '@/components/VisaServices/InvestorVisaOverview';
+import InvestorVisaEligibility from '@/components/VisaServices/InvestorVisaEligibility';
+import InvestorVisaProcess from '@/components/VisaServices/InvestorVisaProcess';
+import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
+import FAQAccordion from '@/components/Common/FAQAccordion';
 import { visaServiceDataMap } from '@/data/VisaServicesData';
 import InnerHero from '@/components/Common/InnerHero';
 

@@ -1,13 +1,13 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
 import InnerHero from '@/components/Common/InnerHero';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
+import FAQAccordion from '@/components/Common/FAQAccordion';
 import { documentDataMap } from '@/data/DocumentServicesData';
-import DocumentServicesIntro from '@/Components/DocumentServices/DocumentServicesIntro';
-import DocumentServiceTypes from '@/Components/DocumentServices/DocumentServiceTypes';
-import DocumentServiceBenefits from '@/Components/DocumentServices/DocumentServiceBenefits';
-import DocumentServiceProcessTime from '@/Components/DocumentServices/DocumentServiceProcessTime';
-import DocumentServiceWhyChoose from '@/Components/DocumentServices/DocumentServiceWhyChoose';
+import DocumentServicesIntro from '@/components/DocumentServices/DocumentServicesIntro';
+import DocumentServiceTypes from '@/components/DocumentServices/DocumentServiceTypes';
+import DocumentServiceBenefits from '@/components/DocumentServices/DocumentServiceBenefits';
+import DocumentServiceProcessTime from '@/components/DocumentServices/DocumentServiceProcessTime';
+import DocumentServiceWhyChoose from '@/components/DocumentServices/DocumentServiceWhyChoose';
 
 /* -- Static params - tells Next.js which slugs to pre-render -- */
 export async function generateStaticParams() {

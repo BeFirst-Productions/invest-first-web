@@ -1,11 +1,11 @@
 
 import React from 'react';
 import InnerHero from '@/components/Common/InnerHero';
-import ProServicesSection from '@/Components/ServicesPage/ProServicesSection';
-import LicenseCategorySection from '@/Components/ServicesPage/LicenseCategorySection';
-import DocumentServices from '@/Components/ServicesPage/DocumentServices';
-import ValueAddedServices from '@/Components/ServicesPage/ValueAddedServices';
-import VisaServices from '@/Components/ServicesPage/VisaServices';
+import ProServicesSection from '@/components/ServicesPage/ProServicesSection';
+import LicenseCategorySection from '@/components/ServicesPage/LicenseCategorySection';
+import DocumentServices from '@/components/ServicesPage/DocumentServices';
+import ValueAddedServices from '@/components/ServicesPage/ValueAddedServices';
+import VisaServices from '@/components/ServicesPage/VisaServices';
 
 export const metadata = {
     title: "Services | Invest First",

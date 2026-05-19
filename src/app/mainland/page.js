@@ -1,6 +1,6 @@
 import React from 'react';
-import { mainlandDetailedData } from '@/data/MainlandData';
-import CommonHeroSection from '@/Components/Common/Banner/CommonHerosection';
+import { mainlandDetailedData } from '@/data/mainlandData';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { MainlandFeatures, MainlandOverview } from '@/components/sections/Mainland';
 
 

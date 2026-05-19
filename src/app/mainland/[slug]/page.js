@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { mainlandDetailedData } from '@/data/MainlandData';
-import CommonHeroSection from '@/Components/Common/Banner/CommonHerosection';
+import { mainlandDetailedData } from '@/data/mainlandData';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 
 // Define the valid slugs for dynamic routes
 const VALID_SLUGS = ['dubai', 'abu-dhabi'];

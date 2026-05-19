@@ -68,8 +68,13 @@ export default function PageLoader() {
       0.35
     );
 
+    let timeoutId;
+
     // ── EXIT on window.load ───────────────────────────────────
     const exit = () => {
+      if (!bloomRef.current || !logoRef.current || !tagRef.current || !barWrapRef.current || !topRef.current || !botRef.current) {
+        return;
+      }
       const et = gsap.timeline({ onComplete: () => setMounted(false) });
 
       // 5. Bar to 100%
@@ -93,12 +98,18 @@ export default function PageLoader() {
     };
 
     if (document.readyState === 'complete') {
-      setTimeout(exit, 900);
+      timeoutId = setTimeout(exit, 900);
     } else {
       window.addEventListener('load', exit, { once: true });
-      const safety = setTimeout(exit, 5000);
-      return () => { window.removeEventListener('load', exit); clearTimeout(safety); };
+      timeoutId = setTimeout(exit, 5000);
     }
+
+    return () => {
+      window.removeEventListener('load', exit);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   if (!mounted) return null;

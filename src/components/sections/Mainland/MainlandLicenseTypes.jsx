@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import Container from '../Common/Layout/Contianer';
 import SectionContainer from '@/components/layout/SectionContainer';
 
 const MainlandLicenseTypes = ({ data }) => {

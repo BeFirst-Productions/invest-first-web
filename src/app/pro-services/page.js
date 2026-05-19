@@ -1,10 +1,10 @@
 import React from 'react';
-import ProServicesIntro from '@/Components/ProServices/ProServicesIntro';
-import CompanyFormationTypes from '@/Components/ProServices/CompanyFormationTypes';
-import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import AuthorizedPartnerStatus from '@/Components/ProServices/AuthorizedPartnerStatus';
+import ProServicesIntro from '@/components/ProServices/ProServicesIntro';
+import CompanyFormationTypes from '@/components/ProServices/CompanyFormationTypes';
+import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
+import AuthorizedPartnerStatus from '@/components/ProServices/AuthorizedPartnerStatus';
 import InnerHero from '@/components/Common/InnerHero';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
+import FAQAccordion from '@/components/Common/FAQAccordion';
 import { proServicesData } from '@/data/ProServicesData';
 
 export const metadata = {
