@@ -1,21 +1,21 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
 import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
-import ScheduleMeetingSection from '@/Components/Common/Meeting/ScheduleMeeting';
-import Newsletter from '@/Components/Common/Newsletter/Newsletter';
 import { valueAddedServicesMap } from '@/data/ValueAddedServicesData';
-import Container from '@/Components/Common/Layout/Contianer';
 import VATRegistration from '@/Components/ValueAddedServices/VATRegistration';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
-import WhyChoose from '@/Components/Common/WhyChoose';
-import VATServiceProcess from '@/Components/ValueAddedServices/VATServiceProcess';
 
-/* ── Static params — tells Next.js which slugs to pre-render ── */
+import VATServiceProcess from '@/Components/ValueAddedServices/VATServiceProcess';
+import FAQAccordion from '@/components/Common/FAQAccordion';
+import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
+import InnerHero from '@/components/Common/InnerHero';
+import LicenseWhyChoose from '@/components/LicenseServices/LicenseWhyChoose';
+
+/* -- Static params - tells Next.js which slugs to pre-render -- */
 export async function generateStaticParams() {
     return Object.keys(valueAddedServicesMap).map((slug) => ({ slug }));
 }
 
-/* ── Dynamic metadata per service ── */
+/* -- Dynamic metadata per service -- */
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const service = valueAddedServicesMap[slug];
@@ -42,7 +42,7 @@ const ValueAddedServiceDetailPage = async ({ params }) => {
 
     return (
         <main>
-            <CommonHerosection
+            <InnerHero
                 title={service.bannerTitle}
                 description={service.bannerDescription}
             />
@@ -52,7 +52,7 @@ const ValueAddedServiceDetailPage = async ({ params }) => {
             
             <VATServiceProcess data={service.process.tabs} />
 
-            <WhyChoose data={service.whyChoose} />
+            <LicenseWhyChoose data={service.whyChoose} />
 
             <FAQAccordion 
                 title={service.faqs.title}

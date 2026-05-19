@@ -9,12 +9,12 @@ import DocumentServiceBenefits from '@/Components/DocumentServices/DocumentServi
 import DocumentServiceProcessTime from '@/Components/DocumentServices/DocumentServiceProcessTime';
 import DocumentServiceWhyChoose from '@/Components/DocumentServices/DocumentServiceWhyChoose';
 
-/* ── Static params — tells Next.js which slugs to pre-render ── */
+/* -- Static params - tells Next.js which slugs to pre-render -- */
 export async function generateStaticParams() {
     return Object.keys(documentDataMap).map((slug) => ({ slug }));
 }
 
-/* ── Dynamic metadata per service ── */
+/* -- Dynamic metadata per service -- */
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const service = documentDataMap[slug];
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }) {
     };
 }
 
-/* ── Page component ── */
+/* -- Page component -- */
 const DocumentServiceDetailPage = async ({ params }) => {
     const { slug } = await params;
     const service = documentDataMap[slug];

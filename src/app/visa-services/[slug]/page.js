@@ -1,24 +1,20 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import ProServicesIntro from '@/Components/ProServices/ProServicesIntro';
 import InvestorVisaSolutions from '@/Components/VisaServices/InvestorVisaSolutions';
 import InvestorVisaOverview from '@/Components/VisaServices/InvestorVisaOverview';
 import InvestorVisaEligibility from '@/Components/VisaServices/InvestorVisaEligibility';
 import InvestorVisaProcess from '@/Components/VisaServices/InvestorVisaProcess';
-import CompanyFormationTypes from '@/Components/ProServices/CompanyFormationTypes';
 import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import AuthorizedPartnerStatus from '@/Components/ProServices/AuthorizedPartnerStatus';
-import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/Components/Common/FAQAccordion';
 import { visaServiceDataMap } from '@/data/VisaServicesData';
 import InnerHero from '@/components/Common/InnerHero';
 
-/* ── Static params — tells Next.js which slugs to pre-render ── */
+/* -- Static params - tells Next.js which slugs to pre-render -- */
 export async function generateStaticParams() {
     return Object.keys(visaServiceDataMap).map((slug) => ({ slug }));
 }
 
-/* ── Dynamic metadata per service ── */
+/* -- Dynamic metadata per service -- */
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const service = visaServiceDataMap[slug];
@@ -59,7 +55,7 @@ export async function generateMetadata({ params }) {
     };
 }
 
-/* ── Page component ── */
+/* -- Page component -- */
 const VisaServiceDetailPage = async ({ params }) => {
     const { slug } = await params;
     const service = visaServiceDataMap[slug];

@@ -46,7 +46,7 @@ const LicenseBenefits = ({ data }) => {
                                     <h3 className="text-white text-xl md:text-2xl font-bold mb-4 leading-tight">
                                         {item.title}
                                     </h3>
-                                    <p className=" text-sm md:text-base leading-relaxed">
+                                    <p className=" text-white text-sm md:text-base leading-relaxed">
                                         {item.description}
                                     </p>
                                 </div>

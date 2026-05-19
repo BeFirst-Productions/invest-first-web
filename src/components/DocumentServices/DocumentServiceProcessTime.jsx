@@ -53,7 +53,7 @@ const DocumentServiceProcessTime = ({ data }) => {
                                         <h4 className="text-[#0099CC] font-semibold text-lg md:text-xl leading-tight">
                                             {item.title}
                                         </h4>
-                                        <p className=" text-sm md:text-base leading-relaxed font-medium">
+                                        <p className=" text-white text-sm md:text-base leading-relaxed font-medium">
                                             {item.description}
                                         </p>
                                     </div>

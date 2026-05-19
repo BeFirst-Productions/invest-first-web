@@ -4,35 +4,35 @@ export const licenses = [
     number: '01',
     title: 'Professional License',
     description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/licenses/professional.png'
+    image: '/images/license/professional.png'
   },
   {
     id: 2,
     number: '02',
     title: 'Commercial License',
     description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/licenses/commercial.png'
+    image: '/images/license/commercial.png'
   },
   {
     id: 3,
     number: '03',
     title: 'Industrial License',
     description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/licenses/industrial.png'
+    image: '/images/license/industrial.png'
   },
   {
     id: 4,
     number: '04',
     title: 'Tourism License',
     description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/licenses/tourism.png'
+    image: '/images/license/tourism.png'
   },
   {
     id: 5,
     number: '05',
     title: 'Freelance License',
     description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/licenses/freelance.png'
+    image: '/images/license/freelance.png'
   }
 ];
 
@@ -45,35 +45,35 @@ export const licenseSectionData = {
             title: "Professional License",
             description:
                 "Invest First assists with UAE professional license services for consultants and service providers operating legally in Dubai with full regulatory compliance.",
-            image: "/assets/images/license/professional-license-dubai.png",
+            image: "/images/license/professional-license-dubai.png",
         },
         {
             id: 2,
             title: "Commercial License",
             description:
                 "Invest First provides UAE commercial license services enabling trading, import, export, retail, and wholesale businesses across Dubai and other Emirates.",
-            image: "/assets/images/license/commercial-license.png",
+            image: "/images/license/commercial-license.png",
         },
         {
             id: 3,
             title: "Industrial License",
             description:
                 "Invest First supports UAE industrial license services for manufacturing, production, and factory operations meeting Dubai industrial regulations and safety standards.",
-            image: "/assets/images/license/industrial-license.png",
+            image: "/images/license/industrial-license.png",
         },
         {
             id: 4,
             title: "E-Trader License",
             description:
                 "Invest First offers UAE E-Trader license services for online businesses, freelancers, and social media sellers operating legally in Dubai.",
-            image: "/assets/images/license/e-trader-license.png",
+            image: "/images/license/e-trader-license.png",
         },
         {
             id: 5,
             title: "Tourism / Travel License",
             description:
                 "Invest First delivers UAE tourism and travel license services for agencies, tour operators, and hospitality businesses compliant with Dubai regulations.",
-            image: "/assets/images/license/travel-tourism-license.png",
+            image: "/images/license/travel-tourism-license.png",
         },
     ]
 };

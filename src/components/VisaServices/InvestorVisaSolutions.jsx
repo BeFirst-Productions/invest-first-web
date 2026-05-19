@@ -14,7 +14,7 @@ const InvestorVisaSolutions = ({ data }) => {
     } = data;
 
     return (
-        <SectionContainer 
+        <SectionContainer
             className="py-10 md:py-20"
             background={
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-[#003366]/20 to-transparent blur-[120px] pointer-events-none" />
@@ -23,7 +23,7 @@ const InvestorVisaSolutions = ({ data }) => {
             {/* Heading */}
             <div className="text-center mb-16 md:mb-24 px-4 relative z-10">
                 <h2
-                    className="text-3xl md:text-4xl font-semibold text-white max-w-5xl mx-auto leading-[1.2] tracking-tight"
+                    className="text-3xl md:text-4xl font-semibold text-black max-w-5xl mx-auto leading-[1.2] tracking-tight"
                     dangerouslySetInnerHTML={{ __html: title }}
                 />
             </div>
