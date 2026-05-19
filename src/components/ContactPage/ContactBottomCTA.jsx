@@ -6,7 +6,6 @@ const ContactBottomCTA = () => {
         <SectionContainer
             id="contact-cta"
             className="py-[60px] lg:py-[100px] bg-[#020617] overflow-hidden"
-            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
         >
                 <div className="relative w-full rounded-[40px] overflow-hidden bg-gradient-to-r from-[#BE185D] to-[#831843] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
                     {/* Content */}

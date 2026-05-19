@@ -23,7 +23,7 @@ const page = () => {
             <CommonBanner
                 title="Yorem ipsum dolor sit amet, consectetur"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-                buttonLink="#"
+                buttonLink="/cost-calculator"
                 buttonText="Cost Calculator "
                 imageSrc="/images/about/uae.png"
                 imageAlt="Contact Us"

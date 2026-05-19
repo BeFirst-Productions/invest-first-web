@@ -2,10 +2,11 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { licenses } from '@/data/licenseData';
 import SectionBadge from '@/components/ui/SectionBadge';
 import SectionContainer from '@/components/layout/SectionContainer';
 import { ArrowUpRight } from 'lucide-react';
+import { licenses } from '@/data/licenseData';
+
 
 export default function LicenseCategory() {
   const sectionRef = useRef(null);

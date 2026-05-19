@@ -16,12 +16,6 @@
   --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
@@ -67,3 +61,4 @@ body {
   animation: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Tailwind v4 cache invalidation trigger */
