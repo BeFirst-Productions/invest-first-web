@@ -1,29 +1,29 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import InvestorVisaSolutions from '@/Components/VisaServices/InvestorVisaSolutions';
-import InvestorVisaOverview from '@/Components/VisaServices/InvestorVisaOverview';
-import InvestorVisaEligibility from '@/Components/VisaServices/InvestorVisaEligibility';
-import InvestorVisaProcess from '@/Components/VisaServices/InvestorVisaProcess';
-import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
-import { visaServiceDataMap } from '@/data/VisaServicesData';
 import InnerHero from '@/components/Common/InnerHero';
+import FAQAccordion from '@/components/Common/FAQAccordion';
+import { documentDataMap } from '@/data/DocumentServicesData';
+import DocumentServicesIntro from '@/components/DocumentServices/DocumentServicesIntro';
+import DocumentServiceTypes from '@/components/DocumentServices/DocumentServiceTypes';
+import DocumentServiceBenefits from '@/components/DocumentServices/DocumentServiceBenefits';
+import DocumentServiceProcessTime from '@/components/DocumentServices/DocumentServiceProcessTime';
+import DocumentServiceWhyChoose from '@/components/DocumentServices/DocumentServiceWhyChoose';
 
 /* -- Static params - tells Next.js which slugs to pre-render -- */
 export async function generateStaticParams() {
-    return Object.keys(visaServiceDataMap).map((slug) => ({ slug }));
+    return Object.keys(documentDataMap).map((slug) => ({ slug }));
 }
 
 /* -- Dynamic metadata per service -- */
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const service = visaServiceDataMap[slug];
+    const service = documentDataMap[slug];
 
     // Fallback if service or SEO data is missing
     if (!service || !service.seo) {
         return {
-            title: 'Visa Services | Invest First',
-            description: 'Expert residency and visa services in Dubai and UAE.',
+            title: 'Document Services | Invest First',
+            description: 'Professional document services in Dubai and UAE.',
         };
     }
 
@@ -56,9 +56,9 @@ export async function generateMetadata({ params }) {
 }
 
 /* -- Page component -- */
-const VisaServiceDetailPage = async ({ params }) => {
+const DocumentServiceDetailPage = async ({ params }) => {
     const { slug } = await params;
-    const service = visaServiceDataMap[slug];
+    const service = documentDataMap[slug];
 
     // 404 for unknown slugs
     if (!service) notFound();
@@ -67,15 +67,13 @@ const VisaServiceDetailPage = async ({ params }) => {
         <main>
             <InnerHero
                 title={service.bannerTitle}
-                description={service.bannerDescription}
-               
+                subtitle={service.bannerDescription}
             />
-            {/* Using the specialized Visa intro component */}
-            <InvestorVisaSolutions data={service.intro} />
-            <InvestorVisaOverview data={service.overview} />
-            <InvestorVisaEligibility data={service.eligibilityRequirements} />
-            <InvestorVisaProcess data={service.applicationProcess} />
-            <WhyChooseDubai data={service.whyChoose} />
+            <DocumentServicesIntro data={service.intro} />
+            <DocumentServiceTypes data={service.serviceTypes} />
+            <DocumentServiceBenefits data={service.benefits} />
+            <DocumentServiceProcessTime data={service.processTime} />
+            <DocumentServiceWhyChoose data={service.whyInvestFirst} />
             <FAQAccordion
                 title={service.faq.headingRest}
                 faqItems={service.faq.items}
@@ -84,4 +82,4 @@ const VisaServiceDetailPage = async ({ params }) => {
     );
 };
 
-export default VisaServiceDetailPage;
+export default DocumentServiceDetailPage;

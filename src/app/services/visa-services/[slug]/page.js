@@ -1,28 +1,29 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import ProServicesIntro from '@/Components/ProServices/ProServicesIntro';
-import CompanyFormationTypes from '@/Components/ProServices/CompanyFormationTypes';
-import WhyChooseDubai from '@/Components/ProServices/WhyChooseDubai';
-import AuthorizedPartnerStatus from '@/Components/ProServices/AuthorizedPartnerStatus';
+import InvestorVisaSolutions from '@/components/VisaServices/InvestorVisaSolutions';
+import InvestorVisaOverview from '@/components/VisaServices/InvestorVisaOverview';
+import InvestorVisaEligibility from '@/components/VisaServices/InvestorVisaEligibility';
+import InvestorVisaProcess from '@/components/VisaServices/InvestorVisaProcess';
+import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
+import FAQAccordion from '@/components/Common/FAQAccordion';
+import { visaServiceDataMap } from '@/data/VisaServicesData';
 import InnerHero from '@/components/Common/InnerHero';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
-import { serviceDataMap } from '@/data/ProServicesData';
 
 /* -- Static params - tells Next.js which slugs to pre-render -- */
 export async function generateStaticParams() {
-    return Object.keys(serviceDataMap).map((slug) => ({ slug }));
+    return Object.keys(visaServiceDataMap).map((slug) => ({ slug }));
 }
 
 /* -- Dynamic metadata per service -- */
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const service = serviceDataMap[slug];
+    const service = visaServiceDataMap[slug];
 
     // Fallback if service or SEO data is missing
     if (!service || !service.seo) {
         return {
-            title: 'PRO Services | Invest First',
-            description: 'Expert PRO services in Dubai and UAE.',
+            title: 'Visa Services | Invest First',
+            description: 'Expert residency and visa services in Dubai and UAE.',
         };
     }
 
@@ -54,10 +55,10 @@ export async function generateMetadata({ params }) {
     };
 }
 
-/* ── Page component ── */
-const ProServiceDetailPage = async ({ params }) => {
+/* -- Page component -- */
+const VisaServiceDetailPage = async ({ params }) => {
     const { slug } = await params;
-    const service = serviceDataMap[slug];
+    const service = visaServiceDataMap[slug];
 
     // 404 for unknown slugs
     if (!service) notFound();
@@ -66,12 +67,15 @@ const ProServiceDetailPage = async ({ params }) => {
         <main>
             <InnerHero
                 title={service.bannerTitle}
-                subtitle={service.bannerDescription}
+                description={service.bannerDescription}
+
             />
-            <ProServicesIntro data={service.intro} />
-            <CompanyFormationTypes data={service.companyFormationTypes} />
+            {/* Using the specialized Visa intro component */}
+            <InvestorVisaSolutions data={service.intro} />
+            <InvestorVisaOverview data={service.overview} />
+            <InvestorVisaEligibility data={service.eligibilityRequirements} />
+            <InvestorVisaProcess data={service.applicationProcess} />
             <WhyChooseDubai data={service.whyChoose} />
-            <AuthorizedPartnerStatus data={service.authorizedPartnerStatus} />
             <FAQAccordion
                 title={service.faq.headingRest}
                 faqItems={service.faq.items}
@@ -80,4 +84,4 @@ const ProServiceDetailPage = async ({ params }) => {
     );
 };
 
-export default ProServiceDetailPage;
+export default VisaServiceDetailPage;

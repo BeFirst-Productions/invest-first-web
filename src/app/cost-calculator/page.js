@@ -1,5 +1,5 @@
 
-import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
+import CommonHerosection from '@/components/Common/Banner/CommonHerosection';
 import InnerHero from '@/components/Common/InnerHero';
 import CostCalculator from '@/components/CostCalculator/CostCalculator';
 import Schedule from '@/components/sections/Schedule';
@@ -14,7 +14,7 @@ export default function CostCalculatorPage() {
         <main className="">
             <InnerHero title="Cost Calculator" description="Calculate your business setup cost in UAE with Invest First." />
             <CostCalculator />
-            <Schedule/>
+            <Schedule />
         </main>
     );
 }

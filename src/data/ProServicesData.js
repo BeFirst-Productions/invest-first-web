@@ -9,12 +9,12 @@
 // ── 1. Company Formation (default / main page) ──────────────────────
 const companyFormation = {
     slug: 'company-formation',
-    intro: {
+intro: {
         title: "Seamless <span class='text-[#0099CC]'>Company Formation</span> in Dubai & UAE Backed by Authorized Freezone Partnerships",
         description1: "Starting a business in Dubai or anywhere in the UAE offers unmatched access to global markets, tax advantages, and a stable regulatory environment. However, successful company formation UAE requires expert navigation through licensing authorities, Freezone regulations, and banking procedures.",
         description2: "Invest First simplifies this journey by offering end-to-end <span class='font-bold'>business setup services UAE</span>, supported by our status as an authorized channel partner of 20 UAE Freezones. This allows us to secure faster approvals, accurate licensing, competitive packages, and direct coordination with Freezone authorities—reducing delays, costs, and risks for our clients.",
         description3: "From jurisdiction selection and activity classification to approvals, documentation, and license issuance, our Dubai-based consultants ensure every step of your company formation is structured, compliant, and growth-ready.",
-        image: "/assets/images/pro-services/pro-services.png"
+        image: "/images/proServices/pro-services.png"
     },
     bannerTitle: "PRO Services",
     bannerDescription: "Expert government relations and business setup solutions in the UAE.",
@@ -24,7 +24,7 @@ const companyFormation = {
         title: "Company Formation in Dubai & UAE | Expert Business Setup Services",
         description: "Start your business in Dubai with Invest First. Authorized channel partner of 20 UAE Freezones providing seamless company formation, trade licensing, and banking support.",
         keywords: "company formation UAE, business setup Dubai, Dubai company registration, UAE freezone company formation, mainland business setup UAE",
-        canonical: "https://investfirst.ae/pro-services/company-formation",
+        canonical: "https://investfirst.ae/services/pro-services/company-formation",
         image: "/assets/images/proServices/pro-services.png"
     },
     companyFormationTypes: {
@@ -113,7 +113,7 @@ const virtualPRO = {
         description1: "Virtual PRO services support businesses by handling all government documentation and approvals without the need for an in-house PRO. These services cover trade license processing, employment visas, Emirates ID coordination, labour and immigration applications, medical typing, and document attestation.",
         description2: "By working with authorities such as the General Directorate of Residency and Foreigners Affairs and the Ministry of Human Resources and Emiratisation, Virtual PRO providers ensure accurate submissions, faster approvals, and full regulatory compliance.",
         description3: "This helps startups, SMEs, and foreign investors save time, reduce operational costs, and focus on core business activities while professionals manage all administrative procedures efficiently.",
-        image: "/assets/images/pro-services/virtual-pro.png"
+        image: "/images/proServices/virtual-pro.png"
     },
     bannerTitle: "Virtual PRO",
     bannerDescription: "Streamline your government transactions with our professional Virtual PRO services.",
@@ -123,8 +123,8 @@ const virtualPRO = {
         title: "Virtual PRO Services Dubai | Professional Government Relations UAE",
         description: "Outsource your government relations with our Virtual PRO services. We handle visa processing, trade license renewals, and labor card renewals across all Emirates.",
         keywords: "virtual PRO Dubai, PRO services UAE, government relations Dubai, visa processing UAE, trade license renewal Dubai",
-        canonical: "https://investfirst.ae/pro-services/virtual-pro",
-        image: "/assets/image/pro-services/virtual-pro.png"
+        canonical: "https://investfirst.ae/services/pro-services/virtual-pro",
+        image: "/images/proServices/virtual-pro.png"
     },
     companyFormationTypes: {
         headingRest: "Virtual PRO Services We Offer",
@@ -223,7 +223,7 @@ const localSponsorships = {
         description1: "Local sponsorship services in the UAE enable foreign investors to establish mainland companies by appointing a UAE national as a local sponsor or service agent, in accordance with regulatory requirements.",
         description2: "These services ensure full legal compliance, smooth license approvals, and seamless coordination with government authorities—allowing business owners to operate confidently without administrative complexity.",
         description3: "By working with authorities such as the Department of Economic Development, Ministry of Human Resources and Emiratisation, and General Directorate of Residency and Foreigners Affairs, local sponsorship providers facilitate trade license issuance, immigration file opening, labour quotas, and regulatory approvals.This structured support helps startups, SMEs, and international investors save time, reduce risk, and focus on business growth while all legal formalities are managed professionally.",
-        image: "/assets/images/pro-services/local-sponsorship.png"
+        image: "/images/proServices/local-sponsorship.png"
     },
     bannerTitle: "Local Sponsorships",
     bannerDescription: "Reliable and legally secure local sponsorship solutions for your mainland business.",
@@ -233,7 +233,7 @@ const localSponsorships = {
         title: "Local Sponsorship UAE | Trusted Mainland Business Partnership",
         description: "Secure reliable local sponsorship solutions for your mainland business in the UAE. Legally structured arrangements that protect your control and profitability.",
         keywords: "local sponsorship UAE, UAE national sponsor, local service agent Dubai, mainland company sponsor UAE, business partnership Dubai",
-        canonical: "https://investfirst.ae/pro-services/local-sponsorships",
+        canonical: "https://investfirst.ae/services/pro-services/local-sponsorships",
         image: "/assets/images/pro-services/local-sponsorship.png"
     },
     companyFormationTypes: {
@@ -332,7 +332,7 @@ const licenseRenewals = {
         description1: "Trade license renewal services in the UAE ensure your business remains legally active and fully compliant with government regulations. Timely renewal is mandatory to avoid penalties, visa blocks, and operational disruptions.",
         description2: "By coordinating with authorities such as the Department of Economic Development, Ministry of Human Resources and Emiratisation, and General Directorate of Residency and Foreigners Affairs, trade license renewal providers ensure accurate processing, quick approvals, and full regulatory compliance.",
         description3: "This structured approach helps startups, SMEs, and foreign investors avoid fines, maintain visa eligibility, and operate smoothly in the UAE market.",
-        image: "/assets/images/pro-services/license-renewals.png"
+        image: "/images/proServices/license-renewals.png"
     },
     bannerTitle: "License Renewals",
     bannerDescription: "Timely and hassle-free trade license renewals across all UAE jurisdictions.",
@@ -342,7 +342,7 @@ const licenseRenewals = {
         title: "Trade License Renewal UAE | Fast & Compliant Renewal Services",
         description: "Proactive trade license renewal services for mainland and Freezone businesses across the UAE. Avoid fines and ensure continuous compliance with Invest First.",
         keywords: "trade license renewal Dubai, UAE license renewal, DED license renewal, freezone license renewal UAE, business license renewal Dubai",
-        canonical: "https://investfirst.ae/pro-services/license-renewals",
+        canonical: "https://investfirst.ae/services/pro-services/license-renewals",
         image: "/assets/images/pro-services/license-renewals.png"
     },
     companyFormationTypes: {
@@ -441,7 +441,7 @@ const visaRenewals = {
         description1: "Visa renewal in the UAE is essential to maintain legal residency and avoid fines, overstay penalties, or immigration blocks. Our visa renewal UAE, Dubai service ensures timely processing of employment visas, investor visas, partner visas, and family visas with complete coordination across government authorities.",
         description2: "By working with the General Directorate of Residency and Foreigners Affairs, Ministry of Human Resources and Emiratisation, and Emirates ID authorities, we manage the full renewal process—document verification, medical testing, Emirates ID renewal, and visa stamping—so you remain compliant without delays.",
         description3: "We ensure your UAE residence visa is renewed on time without disruptions to employment, business operations, or family residency.",
-        image: "/assets/images/pro-services/visa-renewals.png"
+        image: "/images/proServices/visa-renewals.png"
     },
     bannerTitle: "Visa Renewals",
     bannerDescription: "Efficient visa renewal services for investors, employees, and families in the UAE.",
@@ -451,7 +451,7 @@ const visaRenewals = {
         title: "Visa Renewal Services UAE | Investor, Employment & Family Visas",
         description: "Expert UAE visa renewal management for investors, employees, and families. We handle medical tests, Emirates ID, and authority submissions end-to-end.",
         keywords: "visa renewal UAE, resonance visa renewal Dubai, investor visa renewal UAE, employment visa renewal Dubai, Emirates ID renewal UAE",
-        canonical: "https://investfirst.ae/pro-services/visa-renewals",
+        canonical: "https://investfirst.ae/services/pro-services/visa-renewals",
         image: "/assets/images/pro-services/visa-renewals.png"
     },
     companyFormationTypes: {
@@ -549,7 +549,7 @@ const bankingAssistance = {
         title: "Banking Assistance Services in <span class='text-[#0099CC]'>Dubai, UAE</span>",
         description1: "Opening a bank account in the UAE requires proper documentation, compliance checks, and coordination with local and international banks. Our banking assistance services in Dubai, UAE help businesses and individuals open corporate and personal bank accounts smoothly while meeting all regulatory and KYC requirements.",
         description2: "We coordinate with leading UAE banks and ensure your application meets compliance standards set by the Central Bank of the UAE, reducing rejection risks and processing delays. From document preparation to bank meetings and follow-ups, we manage the entire process for faster approvals.",
-        image: "/assets/images/pro-services/banking-assistance.png"
+        image: "/images/proServices/banking-assistance.png"
     },
     bannerTitle: "Banking Assistance",
     bannerDescription: "Expert guidance for smooth corporate bank account opening and compliance in the UAE.",
@@ -559,7 +559,7 @@ const bankingAssistance = {
         title: "Banking Assistance Services in Dubai, UAE | Business & Personal Bank Accounts",
         description: "Hassle-free corporate and personal bank account opening in the UAE. Expert guidance on KYC, documentation, and relationships with leading UAE banks.",
         keywords: "corporate banking UAE, business bank account Dubai, UAE bank account opening, banking assistance Dubai, KYC support UAE",
-        canonical: "https://investfirst.ae/pro-services/banking-assistance",
+        canonical: "https://investfirst.ae/services/pro-services/banking-assistance",
         image: "/assets/images/pro-services/banking-assistance.png"
     },
     companyFormationTypes: {
@@ -657,7 +657,7 @@ const officeSolutions = {
         title: "Office Solutions <span class='text-[#0099CC]'>UAE ,Dubai</span>",
         description1: "Office solutions in the UAE provide businesses with flexible workspace options, registered business addresses, and fully equipped office facilities without long-term lease commitments. Our office solutions UAE service helps startups, SMEs, and international companies establish a professional presence while reducing operational costs.",
         description2: "We coordinate with mainland and free zone authorities, including the Department of Economic Development, to ensure your office space meets licensing requirements for trade license issuance and renewal. From virtual offices to serviced workspaces, we deliver compliant and cost-effective office setups tailored to your business needs.",
-        image: "/assets/images/pro-services/office-solutions.png"
+        image: "/images/proServices/office-solutions.png"
     },
     bannerTitle: "Office Solutions",
     bannerDescription: "Flexible workspace options tailored to your business license and visa requirements.",
@@ -667,7 +667,7 @@ const officeSolutions = {
         title: "Office Solutions UAE, Dubai | Virtual & Serviced Workspaces",
         description: "Find the perfect office space for your UAE business. Virtual addresses, flexi-desks, and dedicated private offices aligned with your licensing needs.",
         keywords: "office solutions Dubai, virtual office UAE, flexi desk Dubai, serviced office UAE, registered business address Dubai",
-        canonical: "https://investfirst.ae/pro-services/office-solutions",
+        canonical: "https://investfirst.ae/services/pro-services/office-solutions",
         image: "/assets/images/pro-services/office-solutions.png"
     },
     companyFormationTypes: {
@@ -776,12 +776,12 @@ export const serviceDataMap = {
 
 /** Sidebar / navbar listing */
 export const proServicesList = [
-    { id: 1, title: "Virtual PRO", slug: "virtual-pro", href: "/pro-services/virtual-pro", image: "/assets/images/services/proServices/virtual-pro.png" },
-    { id: 2, title: "Local Sponsorships", slug: "local-sponsorships", href: "/pro-services/local-sponsorships", image: "/assets/images/services/proServices/local-sponsorship.png" },
-    { id: 3, title: "License Renewals", slug: "license-renewals", href: "/pro-services/license-renewals", image: "/assets/images/services/proServices/license-renewals.png" },
-    { id: 4, title: "Visa Renewals", slug: "visa-renewals", href: "/pro-services/visa-renewals", image: "/assets/images/services/proServices/visa-renewals.png" },
-    { id: 5, title: "Banking Assistance", slug: "banking-assistance", href: "/pro-services/banking-assistance", image: "/assets/images/services/proServices/banking-assistance.png" },
-    { id: 6, title: "Office Solutions", slug: "office-solutions", href: "/pro-services/office-solutions", image: "/assets/images/services/proServices/office-solutions.png" },
+    { id: 1, title: "Virtual PRO", slug: "virtual-pro", href: "/services/pro-services/virtual-pro", image: "/images/proServices/virtual-pro.png" },
+    { id: 2, title: "Local Sponsorships", slug: "local-sponsorships", href: "/services/pro-services/local-sponsorships", image: "/images/proServices/local-sponsorship.png" },
+    { id: 3, title: "License Renewals", slug: "license-renewals", href: "/services/pro-services/license-renewals", image: "/images/proServices/license-renewals.png" },
+    { id: 4, title: "Visa Renewals", slug: "visa-renewals", href: "/services/pro-services/visa-renewals", image: "/images/proServices/visa-renewals.png" },
+    { id: 5, title: "Banking Assistance", slug: "banking-assistance", href: "/services/pro-services/banking-assistance", image: "/images/proServices/banking-assistance.png" },
+    { id: 6, title: "Office Solutions", slug: "office-solutions", href: "/services/pro-services/office-solutions", image: "/images/proServices/office-solutions.png" },
 ];
 
 /** Overview data used by the main services page listing section */

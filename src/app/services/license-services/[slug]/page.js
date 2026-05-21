@@ -1,12 +1,12 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { licenseDetailedData } from '@/data/LicenseData';
-import LicenseIntro from '@/Components/LicenseServices/LicenseIntro';
-import LicenseDocuments from '@/Components/LicenseServices/LicenseDocuments';
-import LicenseTypes from '@/Components/LicenseServices/LicenseTypes';
-import LicenseBenefits from '@/Components/LicenseServices/LicenseBenefits';
-import LicenseWhyChoose from '@/Components/LicenseServices/LicenseWhyChoose';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
+import LicenseIntro from '@/components/LicenseServices/LicenseIntro';
+import LicenseDocuments from '@/components/LicenseServices/LicenseDocuments';
+import LicenseTypes from '@/components/LicenseServices/LicenseTypes';
+import LicenseBenefits from '@/components/LicenseServices/LicenseBenefits';
+import LicenseWhyChoose from '@/components/LicenseServices/LicenseWhyChoose';
+import FAQAccordion from '@/components/Common/FAQAccordion';
 import InnerHero from '@/components/Common/InnerHero';
 
 // List of valid slugs for license services

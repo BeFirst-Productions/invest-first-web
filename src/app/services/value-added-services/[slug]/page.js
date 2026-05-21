@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
+import CommonHerosection from '@/components/Common/Banner/CommonHerosection';
 import { valueAddedServicesMap } from '@/data/ValueAddedServicesData';
-import VATRegistration from '@/Components/ValueAddedServices/VATRegistration';
+import VATRegistration from '@/components/ValueAddedServices/VATRegistration';
 
-import VATServiceProcess from '@/Components/ValueAddedServices/VATServiceProcess';
+import VATServiceProcess from '@/components/ValueAddedServices/VATServiceProcess';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
 import InnerHero from '@/components/Common/InnerHero';
@@ -49,12 +49,12 @@ const ValueAddedServiceDetailPage = async ({ params }) => {
 
             {/* Dynamic Service Components */}
             <VATRegistration data={service.intro} />
-            
+
             <VATServiceProcess data={service.process.tabs} />
 
             <LicenseWhyChoose data={service.whyChoose} />
 
-            <FAQAccordion 
+            <FAQAccordion
                 title={service.faqs.title}
                 faqItems={service.faqs.items}
             />
