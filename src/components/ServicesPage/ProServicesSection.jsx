@@ -44,7 +44,7 @@ const ProServicesSection = () => {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-xl md:text-2xl font-semibold text-[#0099CC] group-hover:text-white transition-colors duration-300 text-center">
+                            <h3 className="text-xl md:text-2xl font-semibold text-[#0099CC] group-hover:text-black transition-colors duration-300 text-center">
                                 {service.title}
                             </h3>
                         </Link>

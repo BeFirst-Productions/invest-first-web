@@ -1,6 +1,6 @@
 
 import React from 'react';
-import InnerHero from '@/components/Common/InnerHero';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import ProServicesSection from '@/components/ServicesPage/ProServicesSection';
 import LicenseCategorySection from '@/components/ServicesPage/LicenseCategorySection';
 import DocumentServices from '@/components/ServicesPage/DocumentServices';
@@ -15,9 +15,16 @@ export const metadata = {
 const ServicesPage = () => {
     return (
         <main>
-            <InnerHero
-                title="Our Comprehensive Services"
-                subtitle="From licensing to visa processing, we provide end-to-end solutions for your business setup in the UAE."
+            <CommonHeroSection
+                highlightedTitle="Our"
+                plainTitle="Services"
+                description="From licensing to visa processing, we provide end-to-end solutions for your business setup in the UAE."
+                imageUrl="/images/services/service-banner.png"
+                imageAlt="Comprehensive business setup services"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' }
+                ]}
             />
             <ProServicesSection />
             <LicenseCategorySection />

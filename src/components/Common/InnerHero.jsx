@@ -13,7 +13,7 @@ const InnerHero = ({
         <SectionContainer
             id="inner-hero"
             className="relative min-h-[400px] md:min-h-[500px] flex items-center pt-[120px] pb-[80px] md:pt-[160px] md:pb-[100px] overflow-hidden"
-            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
+            containerClassName="w-full px-[20px] md:px-[60px] lg:px-[100px]"
             background={
                 <>
                     {/* Background Image with Overlay */}

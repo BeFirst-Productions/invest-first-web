@@ -14,7 +14,7 @@ const attestationServices = {
         title: "<span class='text-[#0099CC]'>Attestation Services</span> Professional Document Legalization in Dubai",
         description1: "Attesting your personal and commercial documents is a critical step for legalizing your status in the UAE. Whether it's for an employment visa, company formation, or school registration, we ensure your documents are correctly processed by the relevant authorities.",
         description2: "Invest First provides end-to-end attestation services UAE, covering educational certificates, marriage certificates, birth certificates, and corporate documents (MOAs, Powers of Attorney, etc.).",
-        image: "/assets/images/document-services/typing-service.png"
+        image: "/images/documentServices/attestation-services.png"
     },
     serviceTypes: {
         title: "Types of Attestation Services",
@@ -82,8 +82,8 @@ const attestationServices = {
         title: "Document Attestation Services Dubai | MOFA & Embassy Attestation UAE",
         description: "Get your certificates and legal documents attested in Dubai quickly. We handle MOFA, embassy, and notary attestation for personal and commercial documents.",
         keywords: "document attestation Dubai, MOFA attestation UAE, certificate attestation Dubai, marriage certificate attestation UAE, degree attestation Dubai",
-        canonical: "https://investfirst.ae/document-services/attestation-services",
-        image: "/assets/images/services/documentServices/attestation.png"
+        canonical: "https://investfirst.ae/services/document-services/attestation-services",
+        image: "/images/documentServices/attestation-services.png"
     },
     details: {
         headingRest: "Attestation Services We Provide",
@@ -214,7 +214,7 @@ const legalTranslation = {
         title: "<span class='text-[#0099CC]'>Legal Translation</span> Certified Arabic & Multi-language Experts",
         description1: "Official documents in the UAE must often be translated into Arabic for submission to government departments, courts, and ministries. Our certified translators ensure accuracy and compliance with legal standards.",
         description2: "Invest First provides legal translation services UAE that are recognized by the Ministry of Justice, DED, and all Freezone authorities. From legal contracts and court judgments to personal identification and marketing materials, we bridge the language gap with precision and speed.",
-        image: "/assets/images/document-services/typing-service.png"
+        image: "/images/documentServices/legal-translation.png"
     },
     serviceTypes: {
         title: "Types of Legal Translation",
@@ -282,8 +282,8 @@ const legalTranslation = {
         title: "Legal Translation Services Dubai | Certified Arabic Translation UAE",
         description: "Professional legal translation in Dubai. Certified Arabic to English and English to Arabic translations for contracts, certificates, and legal filings.",
         keywords: "legal translation Dubai, certified translator UAE, Arabic translation Dubai, document translation UAE, official translation services Dubai",
-        canonical: "https://investfirst.ae/document-services/legal-translation",
-        image: "/assets/images/services/documentServices/translation.png"
+        canonical: "https://investfirst.ae/services/document-services/legal-translation",
+        image: "/images/documentServices/legal-translation.png"
     },
     details: {
         headingRest: "Translation Services We Offer",
@@ -414,7 +414,7 @@ const typingServices = {
         title: "<span class='text-[#0099CC]'>Typing Services</span> UAE Professional Typing Center in Dubai",
         description1: "Our typing services UAE are designed to help individuals and businesses complete government documentation accurately and efficiently. As a trusted business setup service provider in Dubai, we offer reliable typing solutions that comply with UAE authority requirements. From visa applications to Emirates ID and labor card processing, our typing center ensures every document is prepared correctly and submitted on time.",
         description2: "As part of our complete business setup services in the UAE, our typing center supports entrepreneurs at every stage of their journey. From initial company formation documentation to ongoing PRO and administrative needs, we act as a single point of contact for efficient processing. Our goal is to reduce your administrative burden so you can focus on growing your business with confidence.",
-        image: "/assets/images/document-services/typing-service.png"
+        image: "/images/documentServices/typing-services.png"
     },
     serviceTypes: {
         title: "Types of Typing Services",
@@ -482,8 +482,8 @@ const typingServices = {
         title: "Government Typing Services Dubai | Emirates ID & Visa Typing UAE",
         description: "Professional typing services for Emirates ID, visa applications, and labor contracts in Dubai. Fast, accurate, and compliant government form processing.",
         keywords: "typing services Dubai, Emirates ID typing, visa application typing UAE, labor contract typing Dubai, government form typing Dubai",
-        canonical: "https://investfirst.ae/document-services/typing-services",
-        image: "/assets/images/services/documentServices/typing.png"
+        canonical: "https://investfirst.ae/services/document-services/typing-services",
+        image: "/images/documentServices/typing-services.png"
     },
     details: {
         headingRest: "Typing Services We Handle",
@@ -609,9 +609,9 @@ const typingServices = {
 ───────────────────────────────────────────────────────────────────── */
 
 export const documentServicesList = [
-    { id: '01', title: "Typing Services", slug: "typing-services", href: "/document-services/typing-services", image: "/assets/images/services/documentServices/typing.png", description: "Professional typing for Emirates ID, Visas, and Labor contracts." },
-    { id: '02', title: "Legal Translation", slug: "legal-translation", href: "/document-services/legal-translation", image: "/assets/images/services/documentServices/translation.png", description: "Certified translations recognized by all UAE ministries." },
-    { id: '03', title: "Attestation Services", slug: "attestation-services", href: "/document-services/attestation-services", image: "/assets/images/services/documentServices/attestation.png", description: "Reliable document attestation from MOFA and embassies." },
+    { id: '01', title: "Typing Services", slug: "typing-services", href: "/services/document-services/typing-services", image: "/images/documentServices/typing-services.png", description: "Professional typing for Emirates ID, Visas, and Labor contracts." },
+    { id: '02', title: "Legal Translation", slug: "legal-translation", href: "/services/document-services/legal-translation", image: "/images/documentServices/legal-translation.png", description: "Certified translations recognized by all UAE ministries." },
+    { id: '03', title: "Attestation Services", slug: "attestation-services", href: "/services/document-services/attestation-services", image: "/images/documentServices/attestation-services.png", description: "Reliable document attestation from MOFA and embassies." },
 ];
 
 export const documentDataMap = {
