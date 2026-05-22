@@ -141,21 +141,62 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
+        {/* Mobile Menu Header */}
+        <div className={styles.mobileMenuHeader}>
+          <a href="/" className={styles.logo} onClick={() => setIsMenuOpen(false)} aria-label="InvestFirst home">
+            <Image
+              src="/images/logos/invest-first-logo.png"
+              alt="InvestFirst Business Services"
+              width={360}
+              height={80}
+              quality={100}
+              priority
+              className={styles.logoImage}
+              style={{ width: 'auto', height: '32px' }}
+            />
+          </a>
+          <button
+            type="button"
+            className={styles.closeButton}
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <span className={styles.closeIcon}></span>
+          </button>
+        </div>
+
         <div className={styles.mobileMenuContent}>
           <ul className={styles.mobileNavLinks} role="list">
             {navLinks.map((item) => (
               <li key={item.name} className={styles.mobileNavItem}>
-                <div
-                  className={`${styles.mobileLinkWrapper} ${expandedItems[item.name] ? styles.activeWrapper : ''}`}
-                  onClick={() => item.children && toggleAccordion(item.name)}
-                >
-                  <span className={styles.mobileNavLink}>{item.name}</span>
-                  {item.children && (
-                    <span
-                      className={`${styles.mobileChevron} ${expandedItems[item.name] ? styles.mobileChevronActive : ''}`}
-                    />
-                  )}
-                </div>
+                {item.children ? (
+                  <div
+                    className={`${styles.mobileLinkWrapper} ${expandedItems[item.name] ? styles.activeWrapper : ''}`}
+                    onClick={(!item.href || item.href === '#') ? () => toggleAccordion(item.name) : undefined}
+                  >
+                    {item.href && item.href !== '#' ? (
+                      <a href={item.href} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>
+                        {item.name}
+                      </a>
+                    ) : (
+                      <span className={styles.mobileNavLink}>{item.name}</span>
+                    )}
+                    <button
+                      type="button"
+                      className={styles.mobileChevronBtn}
+                      onClick={(item.href && item.href !== '#') ? () => toggleAccordion(item.name) : undefined}
+                      aria-label={`Toggle ${item.name} submenu`}
+                    >
+                      <span
+                        className={`${styles.mobileChevron} ${expandedItems[item.name] ? styles.mobileChevronActive : ''}`}
+                      />
+                    </button>
+                  </div>
+                ) : (
+                  <a href={item.href} className={styles.mobileLinkWrapper} onClick={() => setIsMenuOpen(false)}>
+                    <span className={styles.mobileNavLink}>{item.name}</span>
+                  </a>
+                )}
 
                 {/* Mobile Accordion Level 2 */}
                 {item.children && (
@@ -165,17 +206,34 @@ export default function Navbar() {
                     <ul className={styles.mobileLevel2List}>
                       {item.children.map((subItem) => (
                         <li key={subItem.name} className={styles.mobileLevel2Item}>
-                          <div
-                            className={`${styles.mobileLevel2LinkWrapper} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.activeWrapper : ''}`}
-                            onClick={() => subItem.children && toggleAccordion(`${item.name}-${subItem.name}`)}
-                          >
-                            <span className={styles.mobileLevel2Link}>{subItem.name}</span>
-                            {subItem.children && (
-                              <span
-                                className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.mobileChevronActive : ''}`}
-                              />
-                            )}
-                          </div>
+                          {subItem.children ? (
+                            <div
+                              className={`${styles.mobileLevel2LinkWrapper} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.activeWrapper : ''}`}
+                              onClick={(!subItem.href || subItem.href === '#') ? () => toggleAccordion(`${item.name}-${subItem.name}`) : undefined}
+                            >
+                              {subItem.href && subItem.href !== '#' ? (
+                                <a href={subItem.href} className={styles.mobileLevel2Link} onClick={() => setIsMenuOpen(false)}>
+                                  {subItem.name}
+                                </a>
+                              ) : (
+                                <span className={styles.mobileLevel2Link}>{subItem.name}</span>
+                              )}
+                              <button
+                                type="button"
+                                className={styles.mobileChevronBtn}
+                                onClick={(subItem.href && subItem.href !== '#') ? () => toggleAccordion(`${item.name}-${subItem.name}`) : undefined}
+                                aria-label={`Toggle ${subItem.name} submenu`}
+                              >
+                                <span
+                                  className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.mobileChevronActive : ''}`}
+                                />
+                              </button>
+                            </div>
+                          ) : (
+                            <a href={subItem.href} className={styles.mobileLevel2LinkWrapper} onClick={() => setIsMenuOpen(false)}>
+                              <span className={styles.mobileLevel2Link}>{subItem.name}</span>
+                            </a>
+                          )}
 
                           {/* Mobile Accordion Level 3 */}
                           {subItem.children && (
@@ -185,17 +243,34 @@ export default function Navbar() {
                               <ul className={styles.mobileLevel3List}>
                                 {subItem.children.map((nested) => (
                                   <li key={nested.name} className={styles.mobileLevel3Item}>
-                                    <div
-                                      className={`${styles.mobileLevel3LinkWrapper} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.activeWrapper : ''}`}
-                                      onClick={() => nested.children && toggleAccordion(`${item.name}-${subItem.name}-${nested.name}`)}
-                                    >
-                                      <span className={styles.mobileLevel3Link}>{nested.name}</span>
-                                      {nested.children && (
-                                        <span
-                                          className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.mobileChevronActive : ''}`}
-                                        />
-                                      )}
-                                    </div>
+                                    {nested.children ? (
+                                      <div
+                                        className={`${styles.mobileLevel3LinkWrapper} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.activeWrapper : ''}`}
+                                        onClick={(!nested.href || nested.href === '#') ? () => toggleAccordion(`${item.name}-${subItem.name}-${nested.name}`) : undefined}
+                                      >
+                                        {nested.href && nested.href !== '#' ? (
+                                          <a href={nested.href} className={styles.mobileLevel3Link} onClick={() => setIsMenuOpen(false)}>
+                                            {nested.name}
+                                          </a>
+                                        ) : (
+                                          <span className={styles.mobileLevel3Link}>{nested.name}</span>
+                                        )}
+                                        <button
+                                          type="button"
+                                          className={styles.mobileChevronBtn}
+                                          onClick={(nested.href && nested.href !== '#') ? () => toggleAccordion(`${item.name}-${subItem.name}-${nested.name}`) : undefined}
+                                          aria-label={`Toggle ${nested.name} submenu`}
+                                        >
+                                          <span
+                                            className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.mobileChevronActive : ''}`}
+                                          />
+                                        </button>
+                                      </div>
+                                    ) : (
+                                      <a href={nested.href} className={styles.mobileLevel3LinkWrapper} onClick={() => setIsMenuOpen(false)}>
+                                        <span className={styles.mobileLevel3Link}>{nested.name}</span>
+                                      </a>
+                                    )}
 
                                     {/* Mobile Accordion Level 4 */}
                                     {nested.children && (
