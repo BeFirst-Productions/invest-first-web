@@ -1,10 +1,9 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { offshoreData } from '@/data/OffshoreData';
-import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
-import WhyChoose from '@/Components/Common/WhyChoose';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
-import CommonHeroSection from '@/Components/Common/Banner/CommonHerosection';
+import WhyChoose from '@/components/Common/WhyChoose';
+import FAQAccordion from '@/components/Common/FAQAccordion';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 
 // Define the valid slugs for dynamic routes from OffshoreData
 const VALID_SLUGS = offshoreData.categories.map(cat => cat.id);
