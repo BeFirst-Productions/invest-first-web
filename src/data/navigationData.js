@@ -13,40 +13,40 @@ export const companyFormationItems = [
         children: [
             {
                 name: "Dubai",
-                href: "#",
+                href: "/freezone/dubai",
                 children: [
-                    { name: "Meydan Free Zone", href: "#" },
-                    { name: "IFZA Free Zone", href: "#" },
-                    { name: "DMCC Free Zone", href: "#" },
-                    { name: "Jebel Ali (JAFZA)", href: "#" },
-                    { name: "DDA Free Zones", href: "#" },
-                    { name: "Dubai Airport (DAFZA)", href: "#" },
-                    { name: "DIFC", href: "#" },
-                    { name: "Dubai South", href: "#" },
-                    { name: "Dubai Healthcare City", href: "#" },
+                    { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-free-zone" },
+                    { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-free-zone" },
+                    { name: "DMCC Free Zone", href: "/freezone/dubai/dmcc-free-zone" },
+                    { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jebel-ali-jafza" },
+                    { name: "DDA Free Zones", href: "/freezone/dubai/dda-free-zones" },
+                    { name: "Dubai Airport (DAFZA)", href: "/freezone/dubai/dubai-airport-dafza" },
+                    { name: "DIFC", href: "/freezone/dubai/difc" },
+                    { name: "Dubai South", href: "/freezone/dubai/dubai-south" },
+                    { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city" },
                 ]
             },
             {
                 name: "Abu Dhabi",
-                href: "#",
+                href: "/freezone/abu-dhabi",
                 children: [
-                    { name: "Masdar City", href: "#" },
-                    { name: "Abu Dhabi Airport Free Zone", href: "#" },
+                    { name: "Masdar City", href: "/freezone/abu-dhabi/masdar-city" },
+                    { name: "Abu Dhabi Airport Free Zone", href: "/freezone/abu-dhabi/abu-dhabi-airport-free-zone" },
                 ]
             },
             {
                 name: "Sharjah",
-                href: "#",
+                href: "/freezone/sharjah",
                 children: [
-                    { name: "Sharjah Media City (SHAMS)", href: "#" },
-                    { name: "Sharjah Publishing City (SPCFZ)", href: "#" },
-                    { name: "SRTIP Free Zone", href: "#" },
-                    { name: "Hamriyah Free Zone", href: "#" },
+                    { name: "Sharjah Media City (SHAMS)", href: "/freezone/sharjah/sharjah-media-city-shams" },
+                    { name: "Sharjah Publishing City (SPCFZ)", href: "/freezone/sharjah/sharjah-publishing-city-spcfz" },
+                    { name: "SRTIP Free Zone", href: "/freezone/sharjah/srtip-free-zone" },
+                    { name: "Hamriyah Free Zone", href: "/freezone/sharjah/hamriyah-free-zone" },
                 ]
             },
-            { name: "Ajman", href: "#" },
-            { name: "Umm Al Quwain", href: "#" },
-            { name: "Ras Al Khaimah", href: "#" },
+            { name: "Ajman", href: "/freezone/ajman" },
+            { name: "Umm Al Quwain", href: "/freezone/umm-al-quwain" },
+            { name: "Ras Al Khaimah", href: "/freezone/ras-al-khaimah" },
         ]
     },
     {

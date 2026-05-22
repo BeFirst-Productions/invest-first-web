@@ -10,7 +10,7 @@ const GovernmentApprovalsIntro = ({ data }) => {
         <SectionContainer
             className="py-10 md:py-20 text-black"
             background={
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-[#0099CC]/10 to-transparent blur-[120px] pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none" />
             }
         >
             <div className="relative z-10">

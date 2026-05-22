@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { licenseDetailedData } from '@/data/LicenseData';
+import { licenseDetailedData } from '@/data/licenseData';
 import LicenseIntro from '@/components/LicenseServices/LicenseIntro';
 import LicenseDocuments from '@/components/LicenseServices/LicenseDocuments';
 import LicenseTypes from '@/components/LicenseServices/LicenseTypes';

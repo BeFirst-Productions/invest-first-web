@@ -13,7 +13,7 @@ const InvestorVisaEligibility = ({ data }) => {
     } = data;
 
     return (
-        <SectionContainer className="py-10 md:py-20">
+        <SectionContainer className="py-10 md:py-20 ">
             {/* Header */}
             <div className="text-center mb-12 md:mb-16 max-w-7xl mx-auto ">
                 <h2
@@ -26,7 +26,7 @@ const InvestorVisaEligibility = ({ data }) => {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-8xl mx-auto px-4">
                 {cards.map((cardText, index) => (
                     <div
                         key={index}

@@ -18,7 +18,7 @@ const InvestorVisaSolutions = ({ data }) => {
         <SectionContainer
             className="py-10 md:py-20"
             background={
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-[#003366]/20 to-transparent blur-[120px] pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px]  blur-[120px] pointer-events-none" />
             }
         >
             {/* Heading */}

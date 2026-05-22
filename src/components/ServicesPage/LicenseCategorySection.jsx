@@ -2,7 +2,7 @@
 import { useLayoutEffect, useRef } from "react"; // Changed useEffect to useLayoutEffect for better GSAP init
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { licenseSectionData } from "@/data/LicenseData";
+import { licenseSectionData } from "@/data/licenseData";
 import SectionContainer from '../layout/SectionContainer';
 import Image from "next/image";
 import SectionTag from "../Common/SectionTag";

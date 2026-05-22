@@ -7,11 +7,11 @@ import SectionContainer from '@/components/layout/SectionContainer';
 const FreezoneOverview = () => {
     return (
         <section className="py-5 md:py-0 overflow-hidden">
-                        <SectionContainer
-                            id="about-company"
-                            className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
-                            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
-                          >
+            <SectionContainer
+                id="about-company"
+                className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
+                containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
+            >
                 {/* Outer Card with Theme Border */}
                 <div className="relative group overflow-hidden rounded-[30px] md:rounded-[40px] border-2 border-[#0099CC] bg-[#030B1B] shadow-2xl flex flex-col lg:flex-row items-stretch">
 
