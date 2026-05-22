@@ -557,6 +557,29 @@ export const freezoneDetailedData = {
             faqItems: [
                 { question: "Can I get an investor visa through Meydan?", answer: "Yes, Meydan Free Zone packages include visa quotas, allowing you to sponsor yourself, employees, and family members." }
             ]
+        },
+        costSection: {
+            titleHighlight: "Meydan Free Zone",
+            titleRest: "Company Setup",
+            description: "Meydan Free Zone is a highly popular, modern hub located near Downtown Dubai, offering cost-effective and highly flexible setup options. The overall cost of formation depends on the number of visa allocations, the business activities selected, and any additional services like bank account opening support or VIP medical tests.",
+            cards: [
+                "License fees vary based on the number of activities selected (up to 3 included).",
+                "Visa allocation slots directly affect the total licensing and registration price.",
+                "No physical office space is required, reducing initial capital layout.",
+                "Additional support services and processing fees may apply based on requirements."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: "Meydan Free Zone",
+            documentsText: "Meydan Free Zone setup is highly simplified and requires minimal documentation. Entrepreneurs need to submit clear passport copies, proof of residence (such as a utility bill or bank statement), and a current UAE visa copy (if resident). For corporate shareholders, a certificate of incorporation, board resolution, and constitutional documents are required. All applications can be submitted and signed entirely electronically.",
+            benefitsList: [
+                "100% digital setup process from anywhere in the world",
+                "Access to Meydan Pay - instant business banking solutions",
+                "Combination of up to 3 business groups in a single license",
+                "Premium location next to Meydan Racecourse and Downtown Dubai",
+                "No paid-up share capital or physical office lease required",
+                "Option for multiple residency visas under a single company"
+            ]
         }
     },
 
@@ -603,6 +626,29 @@ export const freezoneDetailedData = {
             title: "IFZA Dubai FAQ",
             faqItems: [
                 { question: "Do I need to visit Dubai to set up an IFZA company?", answer: "No, the entire setup process is managed remotely by Invest First." }
+            ]
+        },
+        costSection: {
+            titleHighlight: "IFZA Free Zone",
+            titleRest: "Company Setup",
+            description: "International Free Zone Authority (IFZA) in Dubai is known for its highly competitive pricing and dynamic package structures suitable for startups. The startup costs are affected by office spaces selected (flexi-desks to dedicated offices) and the quantity of investor or employee visas requested.",
+            cards: [
+                "Flexible package tiers combine incorporation, business license, and visa options.",
+                "Requirement for a physical office can be fulfilled via smart-desk options to save cost.",
+                "No paid-up share capital requirement makes initial setup highly accessible.",
+                "Cost is optimized for single-shareholder startups and professional consultants."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: "IFZA Dubai",
+            documentsText: "IFZA company setup requires passport copies of all shareholders, directors, and managers, along with a passport-size photo with a white background. If the investor is a UAE resident, a copy of the residence visa and Emirates ID must be provided. Corporate entities require attested corporate documents including certificate of incorporation, memorandum of association, and board resolution. No business plan is typically required.",
+            benefitsList: [
+                "Very competitive setup prices and visa package deals",
+                "Ability to combine commercial, professional, and service activities",
+                "Fast-track remote incorporation with no physical visit required",
+                "No minimum share capital or audit requirement",
+                "Modern co-working spaces and virtual office solutions available",
+                "Convenient and flexible corporate bank account opening assistance"
             ]
         }
     },
@@ -651,6 +697,29 @@ export const freezoneDetailedData = {
             faqItems: [
                 { question: "Is a physical office mandatory in DMCC?", answer: "Yes, DMCC requires either a flexi-desk package (Smart Office) or a physical rented office in Jumeirah Lakes Towers." }
             ]
+        },
+        costSection: {
+            titleHighlight: "DMCC Free Zone",
+            titleRest: "Company Setup",
+            description: "Dubai Multi Commodities Centre (DMCC) is a world-renowned commodity trading hub. Setup costs reflect the premium nature of the free zone, including mandatory physical office space/flexi-desk registration in JLT, minimum share capital requirements, and specialized registration fees depending on license type.",
+            cards: [
+                "License fees depend heavily on business activities (commodities, services, or trading).",
+                "Office rental (flexi-desk or physical office in Jumeirah Lakes Towers) is mandatory.",
+                "Minimum share capital must be deposited in a UAE bank and verified by an auditor.",
+                "Additional fees for portal registration, medical tests, and Emirates ID apply."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: "DMCC Dubai",
+            documentsText: "DMCC requires comprehensive documentation due to its status as a premium regulated free zone. Individual shareholders must provide passport copies, proof of address (less than 3 months old), and a detailed curriculum vitae (CV) alongside a brief business plan. A third-party reference letter is also needed. For corporate shareholders, parent company registration and constitutional documents must be notarized and legalized.",
+            benefitsList: [
+                "Voted Global Free Zone of the Year multiple times",
+                "Premium JLT location with top-tier commercial office spaces",
+                "Ideal for commodities trading, crypto, technology, and finance",
+                "Access to proprietary commodity platforms like DMCC Tradeflow",
+                "Strong networking ecosystem with over 20,000 active companies",
+                "Excellent logistics connections and dual-license options"
+            ]
         }
     },
 
@@ -673,13 +742,17 @@ export const freezoneDetailedData = {
             "Access to a vast network of logistics and customs clearing partners"
         ],
         setupProcess: {
-            titleHighlight: "Process for",
-            titleRest: "JAFZA Company Setup",
+            titleHighlight: "Jebel Ali Free Zone Company",
+            titleRest: "Setup Process",
             steps: [
-                { id: 1, title: "Activity Verification", description: "Verify business activities with DP World / JAFZA regulations." },
-                { id: 2, title: "Submit Corporate Profiles", description: "Submit corporate structures, audits (if corporate shareholder), and passport copies." },
-                { id: 3, title: "Lease Execution", description: "Execute lease contracts for warehouse, office space, or industrial plot." },
-                { id: 4, title: "License Issuance", description: "Collect final trade license and start operations." }
+                { id: 1, title: "Select Business Activity", description: "Choose the right activity such as trading, logistics, manufacturing, or services to match your operations and ensure correct JAFZA license approval." },
+                { id: 2, title: "Choose Legal Structure", description: "Select FZE for a single owner, FZCO for multiple shareholders, or a branch of an existing company based on your ownership and expansion plans." },
+                { id: 3, title: "Reserve Company Name", description: "Submit compliant name options and obtain JAFZA approval to secure your company identity and proceed with registration smoothly." },
+                { id: 4, title: "Choose License Type", description: "Pick trading, industrial, logistics, or service license according to your approved business activity and operational requirements." },
+                { id: 5, title: "Select Facility", description: "Choose office space, warehouse, industrial unit, or land based on storage, staffing, and visa eligibility needs for your business." },
+                { id: 6, title: "Submit Documents", description: "Provide shareholder passports, application forms, business plan (if required), and corporate documents." },
+                { id: 7, title: "Sign Incorporation & Lease Agreements", description: "Sign MOA, lease agreement, and incorporation documents to finalize company formation and facility allocation in JAFZA." },
+                { id: 8, title: "Pay Fees & Receive License", description: "Pay registration and license fees to obtain your JAFZA trade license, company documents, and begin visa and bank processes." }
             ]
         },
         licenseTypes: [
@@ -697,6 +770,29 @@ export const freezoneDetailedData = {
             title: "JAFZA FAQ",
             faqItems: [
                 { question: "Is JAFZA suitable for service startups?", answer: "JAFZA supports services, but because of its premium infrastructure and office requirements, it is best suited for medium-to-large trade, logistics, and industrial enterprises." }
+            ]
+        },
+        costSection: {
+            titleHighlight: "JAFZA Free Zone",
+            titleRest: "Company Setup",
+            description: "JAFZA is a premium free zone suited for medium and large businesses needing warehouses, port access, and advanced logistics infrastructure. The company setup cost depends on business activity, license type, and facility selection such as office, warehouse, or land. Visa quota, share capital requirements, and additional services like PRO support and banking assistance also influence the total investment required.",
+            cards: [
+                "License, office, product range, and visa quota determine setup cost.",
+                "Warehouse size, storage needs, and port access impact pricing.",
+                "Unit size, power load, and machinery approvals affect investment.",
+                "Flexi-desk, fewer visas, and no warehouse keep costs lower."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: "Jebel Ali Free Zone",
+            documentsText: "Jebel Ali Free Zone company formation requires passport copies of all shareholders and the appointed manager, along with recent passport-size photographs and a UAE entry stamp or residence visa copy if applicable. Corporate shareholders must submit a board resolution, Certificate of Incorporation, and Memorandum and Articles of Association. A business plan may be requested for regulated activities. Applicants must also provide proposed company name options and complete the official JAFZA application forms for authority review and approval.",
+            benefitsList: [
+                "Ideal for import, export, and large trading operations",
+                "Direct access to seaport and logistics hub",
+                "On-site warehouses and industrial facilities",
+                "Strong global business reputation",
+                "100% foreign ownership with full profit repatriation",
+                "Scalable infrastructure for regional distribution and growth"
             ]
         }
     }
@@ -779,6 +875,29 @@ export function getFreezoneData(slug) {
             faqItems: [
                 { question: `What is the setup time at ${formattedTitle}?`, answer: `Standard company registration and license issuance at ${formattedTitle} typically takes between 3 to 5 business days once all required documents are submitted.` },
                 { question: "Do I need a local UAE sponsor?", answer: `No. Company setup at ${formattedTitle} grants you 100% foreign ownership without requiring a local UAE national partner.` }
+            ]
+        },
+        costSection: {
+            titleHighlight: `${formattedTitle}`,
+            titleRest: "Company Setup",
+            description: `${formattedTitle} company setup costs are influenced by your chosen license category, the facility or office space required, and the number of visa slots needed. Understanding these variables ensures a cost-effective and streamlined formation process tailored to your budget.`,
+            cards: [
+                "License and registration fees vary based on commercial, service, or industrial activities.",
+                "Facility options, ranging from co-working desks to physical offices, impact setup cost.",
+                "Visa quotas and processing fees represent a key factor in the total initial investment.",
+                "Additional costs include government fees, corporate channel registration, and service charges."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: `${formattedTitle}`,
+            documentsText: `Company formation in ${formattedTitle} requires passport copies of all shareholders and managers, alongside passport-sized photographs and UAE entry stamps. For corporate entities, certificate of incorporation, board resolutions, and articles of association are required. The registry review process ensures compliance and aligns company activities with approved categories before trade license issuance.`,
+            benefitsList: [
+                "100% foreign ownership and full profit repatriation",
+                "Exemption from personal and corporate tax regimes",
+                "Flexible office desk solutions and premium business setups",
+                "Fast-track registration and digital document filings",
+                "Direct support for residency visas and corporate bank accounts",
+                "Strategic geographical access to regional UAE and international markets"
             ]
         }
     };
