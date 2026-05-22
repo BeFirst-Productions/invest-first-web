@@ -19,23 +19,17 @@ import { ScrollTrigger } from '@/lib/gsap';
 export default function SmoothScroller() {
   useEffect(() => {
     const lenis = new Lenis({
-      // ─── Slippery momentum feel ────────────────────────────────────────────
-      // duration controls how long the deceleration "tail" lasts.
-      // Higher = more slippery coasting before stopping.
-      duration: 1.8,
-
-      // Quintic-out: accelerates instantly, then decelerates veeery slowly.
-      // This creates the "ice-skating" / slippery glide effect you want.
-      easing: (t) => 1 - Math.pow(1 - t, 5),
-
-      // lerp (linear interpolation) — lower = more floaty lag behind cursor.
-      // 0.075 gives a silky smooth, slightly delayed response.
-      lerp: 0.075,
+      // ─── Silky momentum glide feel ─────────────────────────────────────────
+      // lerp (linear interpolation) — lower = smoother, floatier lag behind scroll.
+      // 0.05 provides a beautiful, modern momentum tail that continues coasting
+      // and gently slows down after the user stops scrolling.
+      // (Note: when lerp is set, duration and easing parameters are ignored by Lenis)
+      lerp: 0.05,
 
       smoothWheel: true,        // smooth mouse-wheel scrolling
       smoothTouch: false,       // keep native inertia on mobile (already slippery)
-      wheelMultiplier: 0.9,     // slightly slower scroll = feels heavier / premium
-      touchMultiplier: 2,
+      wheelMultiplier: 1.1,     // slightly higher multiplier gives more momentum/distance
+      touchMultiplier: 1.5,
     });
 
     // Keep GSAP ScrollTrigger in sync with Lenis
