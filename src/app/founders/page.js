@@ -21,15 +21,14 @@ const page = () => {
                 ]}
             />
             <MeetFounders />
-            <CommonBanner
-                title="Yorem ipsum dolor sit 
-amet, consectetur"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-                buttonLink="/cost-calculator"
-                buttonText="Cost Calculator "
-                imageSrc="/images/about/uae.png"
-                imageAlt="Contact Us"
-            />
+        <CommonBanner
+                     title="UAE Business Setup Cost Calculator"
+                     description="Estimate your UAE company formation expenses with our easy business setup cost calculator. Get quick insights into trade license fees, visa costs, office requirements, and company registration expenses for starting your business in Dubai and across the UAE."
+                     buttonLink="/cost-calculator"
+                     buttonText="Cost Calculator "
+                     imageSrc="/images/about/uae.png"
+                     imageAlt="Contact Us"
+                 />
             <OurTeamsSection />
             <Schedule />
 

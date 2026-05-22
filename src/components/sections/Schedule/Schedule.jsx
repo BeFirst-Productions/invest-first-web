@@ -117,7 +117,9 @@ export default function Schedule() {
                 Schedule Meeting
               </h2>
               <p className="text-white/75 text-[14px] md:text-[15px] leading-[1.65] max-w-[420px]">
-                Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per  accumsan
+                Schedule a meeting with our UAE business setup consultants for expert guidance on company formation, trade license renewal, visa services, and PRO support.
+We provide reliable and hassle-free solutions to help you start and manage your business smoothly across the UAE. Book your meeting today and get professional grow, and manage your business successfully in UAE.
+
               </p>
             </div>
 

@@ -113,7 +113,7 @@ export default function LicenseCategory() {
             <SectionBadge label="License category" />
           </div>
           <h2 className="font-sans text-[28px] md:text-[32px] lg:text-[40px] font-bold leading-[1.15] text-[#111111] tracking-[-0.02em]">
-            Porem ipsum dolor sit <br className="hidden md:block" /> amet, consectetur adipiscing elit.
+            Choose Business License <br className="hidden md:block" /> Leading UAE Company Setup Experts
           </h2>
         </div>
 

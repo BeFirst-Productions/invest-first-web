@@ -2,6 +2,8 @@ import React from 'react';
 import { mainlandDetailedData } from '@/data/mainlandData';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { MainlandFeatures, MainlandOverview } from '@/components/sections/Mainland';
+import WhyChooseSection from '@/components/Common/WhyChoose';
+import FAQAccordion from '@/components/Common/FAQAccordion';
 
 
 export const metadata = {
@@ -27,11 +29,11 @@ const MainlandPage = () => {
             />
             <MainlandOverview />
             <MainlandFeatures data={service} />
-            {/* <WhyChoose data={service.whyChoose} /> */}
-            {/* <FAQAccordion 
+            <WhyChooseSection data={service.whyChoose} />
+            <FAQAccordion 
                 title={service.faqs.title}
                 faqItems={service.faqs.faqItems}
-            /> */}
+            />
          
         </main>
     );

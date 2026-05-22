@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import SectionContainer from '@/components/layout/SectionContainer';
 
 export default function SetupCost() {
@@ -65,9 +66,9 @@ export default function SetupCost() {
               </p>
 
               <div className="flex justify-center md:justify-start">
-                <button className="bg-white text-[#3D0823] px-[36px] md:px-[48px] py-[14px] md:py-[16px] rounded-[10px] font-sans font-bold text-[14px] md:text-[16px] transition-all duration-300 hover:bg-[#f8f8f8] hover:shadow-2xl active:scale-[0.98] whitespace-nowrap">
+                <Link href="/cost-calculator" className="bg-white text-[#3D0823] px-[36px] md:px-[48px] py-[14px] md:py-[16px] rounded-[10px] font-sans font-bold text-[14px] md:text-[16px] transition-all duration-300 hover:bg-[#f8f8f8] hover:shadow-2xl active:scale-[0.98] whitespace-nowrap">
                   Cost Calculator
-                </button>
+                </Link>
               </div>
             </div>
 

@@ -8,7 +8,7 @@ const MainlandLocationIntro = ({ data }) => {
     if (!data) return null;
 
     return (
-        <section className="py-12 md:py-28 overflow-hidden">
+        <section className="py-5 md:py-2 overflow-hidden">
                   <SectionContainer
                             id="about-company"
                             className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
@@ -34,15 +34,15 @@ const MainlandLocationIntro = ({ data }) => {
 
                     {/* Right Side: Content */}
                     <div className="flex flex-col justify-start space-y-8 h-full pt-4">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight">
+                        <h2 className="text-3xl md:text-4xl font-semibold text-[#000000] leading-tight">
                             {data.titleHighlight} <span className="text-[#0099CC]">{data.titleRest}</span>
                         </h2>
                         
                         <div className="space-y-6">
-                            <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium">
+                            <p className="text-[#000000] text-base md:text-lg leading-relaxed font-medium">
                                 {data.description1}
                             </p>
-                            <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium border-l-4 border-[#841257] pl-6 py-2 bg-white/5 rounded-r-xl">
+                            <p className="text-[#000000] text-base md:text-lg leading-relaxed font-medium border-l-4 border-[#841257] pl-6 py-2 bg-white/5 rounded-r-xl">
                                 {data.description2}
                             </p>
                         </div>

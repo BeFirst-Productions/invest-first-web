@@ -239,11 +239,11 @@ export default function Hero() {
                 {/* ── z-[3] Left Cloud ── */}
                 <div
                   ref={cloudLeftRef}
-                  className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-auto z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-[529/309] z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
                   aria-hidden="true"
                 >
                   <Image
-                    src="/images/hero/cloud-left.svg"
+                    src="/images/hero/clouds-png-.png"
                     alt="" fill unoptimized
                     className="object-contain object-center"
                   />
@@ -252,11 +252,11 @@ export default function Hero() {
                 {/* ── z-[3] Right Cloud ── */}
                 <div
                   ref={cloudRightRef}
-                  className="absolute right-[-8%] md:right-[-2%] top-[6%] md:top-[8%] w-[72%] md:w-[58%] lg:w-[44%] aspect-auto z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute right-[-8%] md:right-[-2%] top-[6%] md:top-[8%] w-[72%] md:w-[58%] lg:w-[44%] aspect-[472/276] z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
                   aria-hidden="true"
                 >
                   <Image
-                    src="/images/hero/cloud-right.svg"
+                    src="/images/hero/clouds-png-.png"
                     alt="" fill unoptimized
                     className="object-contain object-center"
                   />

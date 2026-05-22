@@ -9,14 +9,14 @@ const MainlandSetupProcess = ({ data }) => {
     const { titleHighlight, titleRest, steps } = data;
 
     return (
-        <section className="py-12 md:py-28">
+        <section className="py-5 md:py-0">
                   <SectionContainer
                             id="about-company"
                             className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
                             containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
                           >
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 leading-snug">
+                <h2 className="text-3xl md:text-4xl font-semibold text-[#000000] mb-12 leading-snug">
                     <span className="text-[#0099CC]">{titleHighlight}</span>{' '}{titleRest}
                 </h2>
 
@@ -29,7 +29,7 @@ const MainlandSetupProcess = ({ data }) => {
                                 {idx + 1}.
                             </span>
                             {/* Step text */}
-                            <span className="text-[#0099CC] text-base md:text-xl font-medium leading-relaxed group-hover:text-white transition-colors duration-200">
+                            <span className="text-[#0099CC] text-base md:text-xl font-medium leading-relaxed group-hover:text-[#000000] transition-colors duration-200">
                                 {step}
                             </span>
                         </li>

@@ -8,7 +8,7 @@ const MainlandLicenseTypes = ({ data }) => {
     const { titleHighlight, titleRest, typesOfLicenses } = data;
 
     return (
-        <section className="py-10 md:py-20">
+        <section className="py-5 md:py-0">
                  <SectionContainer
                             id="about-company"
                             className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
@@ -31,7 +31,7 @@ const MainlandLicenseTypes = ({ data }) => {
                 >
                     <div className="px-8 md:px-12 py-8 md:py-10">
                         {/* Title */}
-                        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl font-semibold text-[#ffffff] mb-6">
                             <span className="text-[#0099CC]">{titleHighlight || 'Types of'}</span>{' '}
                             {titleRest || 'Mainland Licenses'}
                         </h2>
@@ -46,7 +46,7 @@ const MainlandLicenseTypes = ({ data }) => {
                                     <h3 className="text-[#0099CC] text-sm md:text-base font-bold">
                                         {license.title}
                                     </h3>
-                                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                                    <p className="text-[#ffffff] text-sm md:text-base leading-relaxed">
                                         {license.description}
                                     </p>
                                 </div>

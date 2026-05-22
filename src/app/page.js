@@ -13,6 +13,8 @@ import Testimonials from '@/components/sections/Testimonials/index';
 import SocialMedia from '@/components/sections/SocialMedia/index';
 import Blog from '@/components/sections/Blog/index';
 import ScrollWordReveal from '@/components/sections/scroll';
+import { ZoneCards } from '@/components/sections/Zonecards';
+
 
 
 
@@ -46,6 +48,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <Partners />
+      <ZoneCards/>
       <ScrollWordReveal />
       <OurServices />
       <QuoteSection />

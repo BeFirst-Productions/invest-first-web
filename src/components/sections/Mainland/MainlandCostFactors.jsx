@@ -8,14 +8,14 @@ const MainlandCostFactors = ({ data }) => {
     const { titlePart1, titleHighlight, titlePart2, subtitle, items, footerNote } = data;
 
     return (
-        <section className="py-12 md:py-28">
+        <section className="py-5 md:py-0">
                  <SectionContainer
                             id="about-company"
                             className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
                             containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
                           >
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3 leading-snug">
+                <h2 className="text-3xl md:text-4xl font-semibold text-[#000000] mb-3 leading-snug">
                     {titlePart1}{' '}
                     <span className="text-[#0099CC]">{titleHighlight}</span>{' '}
                     {titlePart2}

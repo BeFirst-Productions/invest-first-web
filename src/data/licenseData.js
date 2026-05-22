@@ -3,36 +3,36 @@ export const licenses = [
     id: 1,
     number: '01',
     title: 'Professional License',
-    description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/license/professional.png'
+    description: 'Start your professional business setup in the UAE with complete support for licensing, approvals, and legal documentation. Ideal for consultants, freelancers, and service providers looking for reliable and hassle-free company formation solutions in Dubai and across the UAE.',
+    image: '/images/licenses/professional.png'
   },
   {
     id: 2,
     number: '02',
     title: 'Commercial License',
-    description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/license/commercial.png'
+    description: 'Set up your trading business in Dubai with a commercial license designed for import, export, retail, and general trading activities. We provide fast company formation, trade license approvals, and complete UAE business setup support for entrepreneurs and investors.',
+    image: '/images/licenses/commercial.png'
   },
   {
     id: 3,
     number: '03',
     title: 'Industrial License',
-    description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/license/industrial.png'
+    description: 'Establish your manufacturing and industrial business in the UAE with expert assistance for industrial licensing, approvals, and documentation. We help businesses complete the setup process efficiently with reliable support for factory and production-based company formation.',
+    image: '/images/licenses/industrial.png'
   },
   {
     id: 4,
     number: '04',
     title: 'Tourism License',
-    description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/license/tourism.png'
+    description: 'Start your travel and tourism business in Dubai with complete assistance for tourism licenses, approvals, and company registration. We provide professional UAE business setup solutions for travel agencies, tour operators, and tourism-related business activities',
+    image: '/images/licenses/tourism.png'
   },
   {
     id: 5,
     number: '05',
     title: 'Freelance License',
     description: 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
-    image: '/images/license/freelance.png'
+    image: '/images/licenses/freelance.png'
   }
 ];
 
@@ -83,7 +83,7 @@ export const licenseDetailedData = {
         slug: 'professional-license',
         bannerTitle: "Professional License",
         intro: {
-            image: "/assets/images/license/professional-license-dubai.png", // Using existing as placeholder
+            image: "/images/license/professional-license-dubai.png", // Using existing as placeholder
             titleHighlight: "Professional License",
             titleRest: "in Dubai | Business Licensing Services UAE",
             description1: "We have a Professional license in Dubai allows individuals and companies to offer specialized services based on expertise, qualifications, and skills. Our professional license services in Dubai are designed to help entrepreneurs, consultants, and service providers legally establish and operate their businesses in compliance with UAE regulations. As a trusted business setup service provider in the UAE, we offer complete support to ensure a smooth and hassle-free licensing process.",
@@ -269,7 +269,7 @@ export const licenseDetailedData = {
         slug: 'commercial-license',
         bannerTitle: "Commercial License",
         intro: {
-            image: "/assets/images/license/commercial-license.png",
+            image: "/images/license/commercial-license.png",
             titleHighlight: "Commercial License",
             titleRest: "in Dubai | Business Licensing Services UAE",
             description1: "A Commercial License in Dubai is required for businesses engaged in trading activities, including the import, export, and sale of goods. It enables companies to operate across the UAE mainland and international markets with ease.",
@@ -418,7 +418,7 @@ export const licenseDetailedData = {
         slug: 'industrial-license',
         bannerTitle: "Industrial License",
         intro: {
-            image: "/assets/images/license/industrial-license.png",
+            image: "/images/license/industrial-license.png",
             titleHighlight: "Industrial License",
             titleRest: "in Dubai | Business Licensing Services UAE",
             description1: "Industrial Licenses are essential for companies involved in manufacturing, production, or processing activities. This license ensures compliance with UAE safety standards and environmental regulations for factory operations.",
@@ -548,7 +548,7 @@ export const licenseDetailedData = {
         slug: 'e-trader-license',
         bannerTitle: "E-Trader License",
         intro: {
-            image: "/assets/images/license/e-trader-license.png",
+            image: "/images/license/e-trader-license.png",
             titleHighlight: "E-Trader License",
             titleRest: "in Dubai | Business Licensing Services UAE",
             description1: "The E-Trader License allows freelancers and home-based business owners to sell products and services legally through social media platforms and websites in Dubai.",
@@ -668,7 +668,7 @@ export const licenseDetailedData = {
         slug: 'tourism-travel-license',
         bannerTitle: "Tourism / Travel License",
         intro: {
-            image: "/assets/images/license/travel-tourism-license.png",
+            image: "/images/license/travel-tourism-license.png",
             titleHighlight: "Tourism / Travel License",
             titleRest: "in Dubai | Business Licensing Services UAE",
             description1: "Travel and Tourism Licenses are required for agencies, inbound/outbound tour operators, and hotel management firms operating in the vibrant UAE hospitality sector.",

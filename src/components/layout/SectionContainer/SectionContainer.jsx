@@ -4,10 +4,12 @@ export default function SectionContainer({
   className = '', 
   containerClassName = '', 
   id,
-  as: Component = 'section'
+  as: Component = 'section',
+  sectionRef
 }) {
   return (
     <Component 
+      ref={sectionRef}
       id={id} 
       className={`relative w-full overflow-hidden ${className}`}
     >
