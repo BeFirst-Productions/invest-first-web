@@ -7,22 +7,22 @@ import SectionContainer from '@/components/layout/SectionContainer';
 const FreezoneLicenseTypes = () => {
     return (
         <section className="py-5 md:py-0 relative overflow-hidden">
-                      <SectionContainer
-                            id="about-company"
-                            className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
-                            containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
-                          >
+            <SectionContainer
+                id="about-company"
+                className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
+                containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
+            >
                 {/* Section Title with teal highlight */}
                 <h2 className="text-3xl md:text-4xl font-semibold text-black mb-12 flex flex-col md:flex-row gap-2 leading-tight">
-                    <span className="text-[#0099CC]">Types of</span> 
+                    <span className="text-[#0099CC]">Types of</span>
                     <span>Free Zone Licenses in UAE</span>
                 </h2>
-                
+
                 {/* Horizontal Licenses Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 w-full">
                     {freezoneData.licenseTypes.map((license) => (
-                        <div 
-                            key={license.id} 
+                        <div
+                            key={license.id}
                             className="group flex flex-col bg-[#F9F9F9] rounded-[24px] md:rounded-[30px] overflow-hidden shadow-2xl transition-all duration-500 hover:translate-y-[-8px]"
                         >
                             {/* Visual Header: Image with Badge Overlay */}
@@ -35,11 +35,11 @@ const FreezoneLicenseTypes = () => {
                                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                                 />
                                 {/* Blue Title Badge Overlay on top of image */}
-                               
+
                                 {/* Dark overlay for better badge readability */}
                                 <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:opacity-0"></div>
                             </div>
-                            
+
                             {/* Descriptive Section below the image */}
                             <div className="p-6 md:p-8 flex flex-col grow min-h-[140px] md:min-h-[160px]">
                                 <h3 className="text-[#AA0256] text-lg md:text-xl font-semibold mb-4 tracking-normal">

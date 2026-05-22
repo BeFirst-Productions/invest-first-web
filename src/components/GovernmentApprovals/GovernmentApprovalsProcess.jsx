@@ -7,9 +7,9 @@ const GovernmentApprovalsProcess = ({ data }) => {
 
     return (
         <SectionContainer
-            className="py-10 md:py-20 bg-gray-50 text-black relative"
+            className="py-10 md:py-20  text-black relative"
             background={
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0099CC]/5 to-transparent pointer-events-none" />
+                <div className="absolute inset-0  pointer-events-none" />
             }
         >
             <div className="relative z-10">

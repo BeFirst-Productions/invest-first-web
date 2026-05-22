@@ -11,42 +11,49 @@ export const freezoneData = {
                 {
                     id: "d1",
                     title: "Jebel Ali Free Zone (JAFZA)",
+                    slug: "jebel-ali-jafza",
                     description: "The UAE's largest logistics and trade hub.",
                     image: "/images/freezone/dubai-freezone/jafza-freezone.png"
                 },
                 {
                     id: "d2",
                     title: "Dubai Multi Commodities Centre (DMCC)",
+                    slug: "dmcc-free-zone",
                     description: "Ideal for trade, technology, and service firms.",
                     image: "/images/freezone/dubai-freezone/dubai-multi-commodities.png"
                 },
                 {
                     id: "d3",
                     title: "Dubai Airport Freezone (DAFZA)",
+                    slug: "dubai-airport-dafza",
                     description: "Premier free zone near Dubai International Airport.",
                     image: "/images/freezone/dubai-freezone/dafza.png"
                 },
                 {
                     id: "d4",
                     title: "Dubai South (DWC)",
+                    slug: "dubai-south",
                     description: "Strategic hub near Al Maktoum International Airport.",
                     image: "/images/freezone/dubai-freezone/dubai-south.png"
                 },
                 {
                     id: "d5",
                     title: "Dubai Internet City",
+                    slug: "dubai-internet-city",
                     description: "Region's largest information and communications technology hub.",
                     image: "/images/freezone/dubai-freezone/dubai-internet.png"
                 },
                 {
                     id: "d6",
                     title: "IFZA (International Free Zone Authority)",
+                    slug: "ifza-free-zone",
                     description: "Cost-effective free zone with quick setup.",
                     image: "/images/freezone/dubai-freezone/ifza.png"
                 },
                 {
                     id: "d7",
                     title: "Meydan Free Zone",
+                    slug: "meydan-free-zone",
                     description: "Dynamic free zone located near the racecourse hotel.",
                     image: "/images/freezone/dubai-freezone/meydan.png"
                 }
@@ -59,24 +66,28 @@ export const freezoneData = {
                 {
                     id: "ad1",
                     title: "Abu Dhabi Global Market (ADGM)",
+                    slug: "abu-dhabi-global-market-adgm",
                     description: "International financial centre in the capital.",
                     image: "/images/freezone/abu-dhabi-freezone/adgm.png"
                 },
                 {
                     id: "ad2",
                     title: "Khalifa Industrial Zone (KIZAD)",
+                    slug: "khalifa-industrial-zone-kizad",
                     description: "Integrated trade, logistics, and industrial hub.",
                     image: "/images/freezone/abu-dhabi-freezone/kizad.png"
                 },
                 {
                     id: "ad3",
                     title: "Masdar City Freezone",
+                    slug: "masdar-city",
                     description: "Pioneer in sustainability and renewable energy.",
                     image: "/images/freezone/abu-dhabi-freezone/masdar.png"
                 },
                 {
                     id: "ad4",
                     title: "twofour54",
+                    slug: "twofour54",
                     description: "Media and entertainment hub.",
                     image: "/images/freezone/abu-dhabi-freezone/two-four.png"
                 }
@@ -89,24 +100,28 @@ export const freezoneData = {
                 {
                     id: "sh1",
                     title: "Sharjah Airport International Free Zone (SAIF)",
+                    slug: "sharjah-airport-international-free-zone-saif",
                     description: "Fast and efficient business setup near the airport.",
                     image: "/images/freezone/Sharjah Airport International Free Zone (SAIF).jpg"
                 },
                 {
                     id: "sh2",
                     title: "Hamriyah Free Zone",
+                    slug: "hamriyah-free-zone",
                     description: "Industrial and commercial free zone.",
                     image: "/images/freezone/Hamriyah Free Zone.jpg"
                 },
                 {
                     id: "sh3",
                     title: "Sharjah Media City (SHAMS)",
+                    slug: "sharjah-media-city-shams",
                     description: "Innovative free zone for creative industries.",
                     image: "/images/freezone/Sharjah Media City (SHAMS).jpg"
                 },
                 {
                     id: "sh4",
                     title: "Sharjah Publishing City (SPCFZ)",
+                    slug: "sharjah-publishing-city-spcfz",
                     description: "Dedicated to the publishing and printing industry.",
                     image: "/images/freezone/Sharjah Publishing City (SPCFZ).jpg"
                 }
@@ -119,12 +134,14 @@ export const freezoneData = {
                 {
                     id: "rk1",
                     title: "Ras Al Khaimah Economic Zone (RAKEZ)",
+                    slug: "ras-al-khaimah-economic-zone-rakez",
                     description: "Solution for different business needs.",
                     image: "/images/freezone/Ras Al Khaimah Economic Zone (RAKEZ).jpg"
                 },
                 {
                     id: "rk2",
                     title: "RAK Maritime City",
+                    slug: "rak-maritime-city",
                     description: "Maritime and industrial hub.",
                     image: "/images/freezone/RAK Maritime City.jpg"
                 }
@@ -137,12 +154,14 @@ export const freezoneData = {
                 {
                     id: "aj1",
                     title: "Ajman Free Zone (AFZ)",
+                    slug: "ajman-free-zone-afz",
                     description: "Accessible and affordable business hub.",
                     image: "/images/freezone/Ajman Free Zone (AFZ).jpg"
                 },
                 {
                     id: "aj2",
                     title: "Ajman Media City Free Zone (AMCFZ)",
+                    slug: "ajman-media-city-free-zone-amcfz",
                     description: "Designed for media and creative businesses.",
                     image: "/images/freezone/Ajman Media City Free Zone (AMCFZ).jpg"
                 }
@@ -155,18 +174,21 @@ export const freezoneData = {
                 {
                     id: "fj1",
                     title: "Fujairah Free Zone",
+                    slug: "fujairah-free-zone",
                     description: "Strategic location near the port.",
                     image: "/images/freezone/Fujairah Free Zone.jpg"
                 },
                 {
                     id: "fj2",
                     title: "Fujairah Creative City",
+                    slug: "fujairah-creative-city",
                     description: "Media, consulting, and education hub.",
                     image: "/images/freezone/Fujairah Creative City.jpg"
                 },
                 {
                     id: "uq1",
                     title: "Umm Al Quwain Free Trade Zone (UAQFTZ)",
+                    slug: "umm-al-quwain-free-trade-zone-uaqftz",
                     description: "Cost-effective and user-friendly free zone.",
                     image: "/images/freezone/Umm Al Quwain Free Trade Zone (UAQFTZ).jpg"
                 }

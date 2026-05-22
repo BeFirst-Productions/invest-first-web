@@ -14,17 +14,17 @@ const FreezoneCategorySection = () => {
 
     return (
         <section className="py-5 md:py-0  bg-[#000F2B]">
-                       <SectionContainer
-                                       id="about-company"
-                                       className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
-                                       containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
-                                     >
+            <SectionContainer
+                id="about-company"
+                className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
+                containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
+            >
                 <div className="flex flex-col items-center">
                     {/* Section Title */}
                     <h2 className="text-3xl md:text-4xl  font-semibold text-white mb-12 text-center">
                         Freezones Services
                     </h2>
-                    
+
                     {/* Tab Navigation Row */}
                     <div className="flex flex-wrap justify-center items-center gap-y-4 mb-16 bg-[#030B1B]/50 p-1.5 rounded-2xl border border-white/5">
                         {freezoneData.categories.map((cat, idx) => (
@@ -32,8 +32,8 @@ const FreezoneCategorySection = () => {
                                 <button
                                     onClick={() => setActiveTab(cat.id)}
                                     className={`px-5 py-2.5 rounded-xl transition-all duration-300 text-sm md:text-base font-medium
-                                        ${activeTab === cat.id 
-                                            ? 'bg-[#0099CC] text-white shadow-lg shadow-[#0099CC]/20' 
+                                        ${activeTab === cat.id
+                                            ? 'bg-[#0099CC] text-white shadow-lg shadow-[#0099CC]/20'
                                             : 'text-white/60 hover:text-white'}`}
                                 >
                                     {cat.name}
@@ -49,8 +49,8 @@ const FreezoneCategorySection = () => {
                     {/* Individual Freezone Cards Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1440px] mx-auto">
                         {activeCategory?.items.map((item) => (
-                            <div 
-                                key={item.id} 
+                            <div
+                                key={item.id}
                                 className="group flex flex-col bg-[#660033] rounded-[30px] overflow-hidden shadow-2xl transition-all duration-500 hover:translate-y-[-8px]"
                             >
                                 {/* Top Image Section */}
@@ -65,7 +65,7 @@ const FreezoneCategorySection = () => {
                                     {/* Subtle gradient overlay to blend image with bottom area */}
                                     <div className="absolute inset-0 bg-linear-to-t from-[#660033]/30 to-transparent"></div>
                                 </div>
-                                
+
                                 {/* Bottom Text Content */}
                                 <div className="p-6 md:p-7 flex flex-col grow min-h-[160px]">
                                     <h3 className="text-white text-lg md:text-xl  mb-3 leading-tight tracking-wide">
