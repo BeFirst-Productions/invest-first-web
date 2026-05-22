@@ -2,10 +2,10 @@
 
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { blogPosts } from '@/data/blogData';
 import SectionBadge from '@/components/ui/SectionBadge';
 import SectionContainer from '@/components/layout/SectionContainer';
+import ViewMoreButton from '@/components/ui/ViewMoreButton';
 
 const ArrowLeft = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,11 +19,6 @@ const ArrowRight = () => (
   </svg>
 );
 
-const ViewAllArrow = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
 
 export default function Blog() {
   const scrollRef = useRef(null);
@@ -95,19 +90,15 @@ export default function Blog() {
         <div>
           <SectionBadge label="Blog & News" className="mb-[16px] md:mb-[20px]" />
           <h2 className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px]">
-            Porem ipsum dolor sit
+            Expert Insights & Business Tips 
           </h2>
         </div>
 
-        <Link
+        <ViewMoreButton
+          label="View All"
           href="/blog"
-          className="group flex items-center gap-[10px] md:gap-[12px] font-sans font-semibold text-[14px] md:text-[16px] text-[#111111] hover:text-[#660033] transition-colors flex-shrink-0"
-        >
-          View All
-          <div className="w-[36px] h-[36px] md:w-[44px] md:h-[44px] rounded-full bg-[#660033] flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
-            <ViewAllArrow />
-          </div>
-        </Link>
+          wrapperClassName="!mt-0 !justify-end"
+        />
       </div>
 
       {/* ── Cards Slider ── */}

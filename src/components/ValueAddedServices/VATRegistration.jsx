@@ -18,15 +18,17 @@ const VATRegistration = ({ data }) => {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
                         {/* Left Side: Normal Image */}
-                        <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 group">
-                            <Image
-                                src={data.image || "/assets/images/about/about.webp"}
-                                alt={data.title.highlight || "VAT Registration"}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
+                        <div className="relative group mx-auto lg:mr-auto w-full max-w-[550px]">
+                            <div className="rounded-[29px] overflow-hidden relative aspect-[1.4/1] shadow-2xl border border-gray-200">
+                                <Image
+                                    src={data.image || "/images/valueAddedServices/vat-cooperate.png"}
+                                    alt={data.title.highlight || "VAT Registration"}
+                                    fill
+                                    className="object-cover scale-[1.08] transition-transform duration-700 group-hover:scale-[1.15]"
+                                />
+                            </div>
                         </div>
 
                         {/* Right Side: Text Content */}

@@ -3,7 +3,7 @@ import ProServicesIntro from '@/components/ProServices/ProServicesIntro';
 import CompanyFormationTypes from '@/components/ProServices/CompanyFormationTypes';
 import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
 import AuthorizedPartnerStatus from '@/components/ProServices/AuthorizedPartnerStatus';
-import InnerHero from '@/components/Common/InnerHero';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import { proServicesData } from '@/data/ProServicesData';
 
@@ -37,9 +37,17 @@ export const metadata = {
 const ProServicesPage = () => {
     return (
         <main>
-            <InnerHero
-                title={proServicesData.bannerTitle}
-                subtitle={proServicesData.bannerDescription}
+            <CommonHeroSection
+                highlightedTitle="PRO"
+                plainTitle="Services"
+                description={proServicesData.bannerDescription}
+                imageUrl="/images/services/service-banner.png"
+                imageAlt="PRO Services"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' },
+                    { label: 'PRO Services', href: '/services/pro-services' }
+                ]}
             />
             <ProServicesIntro data={proServicesData.intro} />
             <CompanyFormationTypes data={proServicesData.companyFormationTypes} />

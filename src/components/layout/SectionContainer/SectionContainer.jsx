@@ -15,7 +15,8 @@ export default function SectionContainer({
       {background}
 
       {/* Main Content (inside max-w constrained container) */}
-<div className={`relative w-full max-w-[1980px] mx-auto px-[14px] md:px-[24px] xl:px-[120px] 2xl:px-[220px] z-10 ${containerClassName}`}>        {children}
+      <div className={`relative max-w-[1990px] mx-auto px-[24px] md:px-[32px] lg:px-[120px] 4xl:px-[220px] z-10 ${containerClassName}`}>
+        {children}
       </div>
     </Component>
   );

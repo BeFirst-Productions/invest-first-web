@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import InnerHero from '@/components/Common/InnerHero';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import { documentDataMap } from '@/data/DocumentServicesData';
 import DocumentServicesIntro from '@/components/DocumentServices/DocumentServicesIntro';
@@ -63,11 +63,33 @@ const DocumentServiceDetailPage = async ({ params }) => {
     // 404 for unknown slugs
     if (!service) notFound();
 
+    const bannerImageMap = {
+        'attestation-services': '/images/documentServices/attestation-services-banner.png',
+        'legal-translation': '/images/documentServices/legal-translation-banner.png',
+        'typing-services': '/images/documentServices/typing-services-banner.png',
+    };
+
+    const imageUrl = bannerImageMap[slug] || '/images/documentServices/attestation-services-banner.png';
+
+    // Split title by first word to highlight the first word
+    const titleParts = service.bannerTitle ? service.bannerTitle.trim().split(/\s+/) : [];
+    const highlightedTitle = titleParts[0] || '';
+    const plainTitle = titleParts.slice(1).join(' ') || '';
+
     return (
         <main>
-            <InnerHero
-                title={service.bannerTitle}
-                subtitle={service.bannerDescription}
+            <CommonHeroSection
+                highlightedTitle={highlightedTitle}
+                plainTitle={plainTitle}
+                description={service.bannerDescription}
+                imageUrl={imageUrl}
+                imageAlt={service.bannerTitle}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' },
+                    { label: 'Document Services', href: '/services' },
+                    { label: service.bannerTitle }
+                ]}
             />
             <DocumentServicesIntro data={service.intro} />
             <DocumentServiceTypes data={service.serviceTypes} />

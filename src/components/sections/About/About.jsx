@@ -3,6 +3,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 import SectionContainer from '@/components/layout/SectionContainer';
+import ViewMoreButton from '@/components/ui/ViewMoreButton';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -49,6 +50,30 @@ export default function About() {
       });
 
 
+      // --- Counter Animation ---
+      const statsElements = document.querySelectorAll('.stat-number');
+      statsElements.forEach((el) => {
+        const targetValue = parseInt(el.getAttribute('data-target'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        
+        gsap.fromTo(el, 
+          { innerText: 0 },
+          {
+            innerText: targetValue,
+            duration: 2.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 90%',
+            },
+            snap: { innerText: 1 },
+            onUpdate: function() {
+              el.innerText = Math.floor(el.innerText) + suffix;
+            }
+          }
+        );
+      });
+
       gsap.from('.about-reveal', {
         y: 30,
         opacity: 0,
@@ -60,6 +85,7 @@ export default function About() {
           start: 'top 80%',
         }
       });
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -97,24 +123,22 @@ export default function About() {
 
           {/* Row 1 Col 2: Heading Area */}
           <div className="flex flex-col items-start pt-0 space-y-[30px] md:space-y-[45px] pl-0 lg:pl-[5%] about-reveal">
-            <h2 className="font-sans text-[22px] lg:text-[25px] xl:text-[40px] font-medium leading-[1.3] text-black tracking-tight max-w-[800px]">
+            {/* <h2 className="font-sans text-[22px] lg:text-[25px] xl:text-[40px] font-medium leading-[1.3] text-black tracking-tight max-w-[800px]">
               Porem ipsum dolor sit amet, consectetur <br className="hidden lg:block" />
               adipiscing elit. <span className="text-[#008ebf]">Nunc vulputate libero</span> et <br className="hidden lg:block" />
               velit interdum, ac aliquet odio mattis. <br className="hidden lg:block" />
               Class aptent taciti sociosqu.
+            </h2> */}
+                   <h2 className="font-sans text-[22px] lg:text-[25px] xl:text-[40px] font-medium leading-[1.3] text-black tracking-tight max-w-[800px]">
+             Invest First provides trusted business setup in Dubai, <span className="text-[#008ebf]">company formation in UAE</span>, visa services, PRO support, for Startups  and investors.
+
             </h2>
 
-            <div className="pl-[2%] lg:pl-[12%]">
-              <a href="#about" className="group flex items-center gap-[14px] no-underline">
-                <span className="text-[16px] md:text-[18px] font-medium text-black font-sans transition-colors group-hover:text-[#6a0d37]">View About</span>
-                <div className="w-[44px] h-[44px] md:w-[50px] md:h-[50px] bg-[#6a0d37] text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:rotate-[360deg] shadow-md">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </a>
-            </div>
+            <ViewMoreButton
+              label="View About"
+              href="/about"
+              wrapperClassName="!mt-0 !justify-start pl-[2%] lg:pl-[12%]"
+            />
           </div>
         </div>
 
@@ -124,7 +148,11 @@ export default function About() {
           <div className="flex flex-col md:flex-row overflow-visible items-center md:items-end gap-[30px] md:gap-[30px] lg:gap-[20px] xl:gap-[35px] about-reveal">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col gap-[3px] md:gap-[6px] ">
-                <span className="font-sans text-xl md:text-4xl lg:text-[30px] xl:text-5xl font-semibold text-black leading-none tracking-tighter text-center">
+                <span 
+                  className="stat-number font-sans text-xl md:text-4xl lg:text-[30px] xl:text-5xl font-semibold text-black leading-none tracking-tighter text-center"
+                  data-target={stat.number.replace('+', '')}
+                  data-suffix={stat.number.includes('+') ? '+' : ''}
+                >
                   {stat.number}
                 </span>
                 <span className="text-[11px] md:text-[12px] lg:text-[8px] xl:text-[12px] font-bold text-[#888888] uppercase tracking-widest font-sans">
@@ -133,6 +161,7 @@ export default function About() {
               </div>
             ))}
           </div>
+
 
           {/* Row 2 Col 2: Images Area */}
           <div className="flex justify-center lg:justify-center gap-[12px] md:gap-[24px] items-start lg:pl-[60px]">

@@ -1,7 +1,7 @@
 export const testimonialsData = [
   {
     id: 1,
-    text: "Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    text: "Excellent support for our UAE business setup process. The team handled everything professionally and made the licensing process smooth and stress-free.",
     name: "Darrell Steward",
     role: "Director",
     image: "/images/testimonial/person1.1.png",
@@ -9,7 +9,7 @@ export const testimonialsData = [
   },
   {
     id: 2,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    text: "Fast and reliable visa services in UAE. Their guidance helped us complete all documentation without delays.Highly recommended for trade license renewal and PRO services. Very responsive team with affordable solutions.",
     name: "Jane Doe",
     role: "CEO",
     image: "/images/testimonial/person2.2.jpeg",
@@ -17,7 +17,7 @@ export const testimonialsData = [
   },
   {
     id: 3,
-    text: "Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    text: "We received outstanding support for our trade license, visa processing, and PRO services. Their professional guidance helped us start our business in the UAE smoothly and efficiently.",
     name: "John Smith",
     role: "Founder",
     image: "/images/testimonial/person3.3.png",
@@ -25,7 +25,7 @@ export const testimonialsData = [
   },
   {
     id: 4,
-    text: "Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere. Etiam eu turpis molestie, dictum est a, mattis tellus sed dignissim.",
+    text: "One of the best company formation consultants in the UAE. From document clearing to visa services, everything was handled professionally with quick approvals and reliable support.",
     name: "Alice Johnson",
     role: "Manager",
     image: "/images/testimonial/person4.4.png",

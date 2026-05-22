@@ -1,22 +1,22 @@
 export const visaServices = [
   {
     title: 'Investor Visa',
-    description: 'Gorem ipsum dolor sit amet, consecte dipiscing elit. Etiam eu turpis dipiscing elit. Nunc vulputate libero et velit',
+    description: 'UAE Visa solutions end to end for investor professional employees and family with quick and dependable processing support.',
     image: '/images/services/visa-services.png'
   },
   {
     title: 'Employment Visa',
-    description: 'Gorem ipsum dolor sit amet, consecte dipiscing elit. Etiam eu turpis dipiscing elit. Nunc vulputate libero et velit',
+    description: 'Business and Employee friendly employment visa services with hassle free application, renewal and compliance support.',
     image: '/images/services/business-setup.png'
   },
   {
     title: 'Green Visa',
-    description: 'Gorem ipsum dolor sit amet, consecte dipiscing elit. Etiam eu turpis dipiscing elit. Nunc vulputate libero et velit',
+    description: 'Enjoy Abu Dhabi residency and Dubai residence benefits with Green Visa programs specialized visa services created for entrepreneurs freelancers investors, skilled individuals, and IT professionals.',
     image: '/images/services/pro-services.png'
   },
   {
     title: 'Blue Visa',
-    description: 'Gorem ipsum dolor sit amet, consecte dipiscing elit. Etiam eu turpis dipiscing elit. Nunc vulputate libero et velit',
+    description: 'Dedicated support for claim services for all the services under obtaining UAE Blue Visa with expert support & approval.',
     image: '/images/services/trade-license.png'
   },
 ];
@@ -25,31 +25,31 @@ export const services = [
   {
     id: 1,
     title: 'Business Setup',
-    description: 'Horem ipsum dolor sit Nunc vulputate libero et velit interdum, ac aliquetodi mattis.',
+    description: 'Complete UAE business setup solutions including company formation, trade licensing, visa processing, PRO services, and corporate support for entrepreneurs and investors.',
     image: '/images/services/business-setup.png'
   },
   {
     id: 2,
     title: 'PRO Services',
-    description: 'Horem ipsum dolor sit Nunc vulputate libero et velit interdum, ac aliquetodi mattis.',
+    description: 'Reliable PRO services in the UAE for visa processing, document clearance, trade license approvals, Emirates ID applications, and government-related business support.',
     image: '/images/services/pro-services.png'
   },
   {
     id: 3,
     title: 'Visa Services',
-    description: 'Horem ipsum dolor sit Nunc vulputate libero et velit interdum, ac aliquetodi mattis.',
+    description: 'Fast and reliable UAE visa services for investors, employees, families, and business owners with complete documentation and approval support.',
     image: '/images/services/visa-services.png'
   },
   {
     id: 4,
     title: 'Trade License Renewal',
-    description: 'Horem ipsum dolor sit Nunc vulputate libero et velit interdum, ac aliquetodi mattis.',
+    description: 'Quick and hassle-free trade license renewal services in the UAE with complete documentation, compliance, and government approval support.',
     image: '/images/services/trade-license.png'
   },
   {
     id: 5,
     title: 'Document Clearing & Attestation',
-    description: 'Horem ipsum dolor sit Nunc vulputate libero et velit interdum, ac aliquetodi mattis.',
+    description: 'Trusted document clearing and attestation services in the UAE for certificates, legal documents, embassy approvals, and government verification processes.',
     image: '/images/services/document-clearing.png'
   }
 ];

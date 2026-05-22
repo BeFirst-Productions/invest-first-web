@@ -6,11 +6,7 @@ import { services } from '@/data/serviceData';
 import SectionBadge from '@/components/ui/SectionBadge';
 import SectionContainer from '@/components/layout/SectionContainer';
 
-const ArrowDiagonal = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+import ViewMoreButton from '@/components/ui/ViewMoreButton';
 
 export default function OurServices() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -27,8 +23,8 @@ export default function OurServices() {
           <SectionBadge label="Our Services" />
         </div>
         <h2 className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px]">
-          Porem ipsum dolor sit <br className="hidden md:block" />
-          amet, consecteturadipiscing elit.
+          Complete Business Setup<br className="hidden md:block" />
+           Solutions in Dubai.
         </h2>
       </div>
 
@@ -92,15 +88,7 @@ export default function OurServices() {
         ))}
       </div>
 
-      {/* ── View More Button ── */}
-      <div className="flex justify-center mt-[48px] md:mt-[64px] lg:mt-[80px]">
-        <button className="group flex items-center gap-[12px] md:gap-[16px] no-underline">
-          <span className="text-[16px] md:text-[18px] font-bold text-[#111111] font-sans uppercase tracking-wider">View More</span>
-          <div className="w-[44px] h-[44px] md:w-[54px] md:h-[54px] bg-[#660033] text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-[360deg] shadow-[0_8px_24px_rgba(102,0,51,0.2)]">
-            <ArrowDiagonal />
-          </div>
-        </button>
-      </div>
+      <ViewMoreButton label="View More" href="/services" />
     </SectionContainer>
   );
 }

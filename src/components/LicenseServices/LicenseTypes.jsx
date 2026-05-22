@@ -67,7 +67,7 @@ const LicenseTypes = ({ data }) => {
             <div className="">
                 {/* Section Header */}
                 <div className="text-center mb-16 md:mb-20">
-                    <h2 className="text-3xl md:text-4xl  font-semibold text-white leading-tight">
+                    <h2 className="text-3xl md:text-4xl  font-semibold text-black leading-tight">
                         <span className="text-[#0099CC]">{data.titleHighlight}</span> {data.titleRest}
                     </h2>
                 </div>
@@ -86,7 +86,7 @@ const LicenseTypes = ({ data }) => {
                                 </h3>
 
                                 {/* Description */}
-                                <p className=" text-base md:text-lg mb-10 leading-relaxed max-w-5xl">
+                                <p className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed max-w-5xl">
                                     {type.description}
                                 </p>
 

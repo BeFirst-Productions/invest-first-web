@@ -7,7 +7,7 @@ import LicenseTypes from '@/components/LicenseServices/LicenseTypes';
 import LicenseBenefits from '@/components/LicenseServices/LicenseBenefits';
 import LicenseWhyChoose from '@/components/LicenseServices/LicenseWhyChoose';
 import FAQAccordion from '@/components/Common/FAQAccordion';
-import InnerHero from '@/components/Common/InnerHero';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 
 // List of valid slugs for license services
 const VALID_SLUGS = Object.keys(licenseDetailedData);
@@ -41,11 +41,37 @@ const LicenseServiceDetailPage = async ({ params }) => {
         notFound();
     }
 
+    const bannerImageMap = {
+        'professional-license': '/images/licenseServices/professional-license-banner.png',
+        'commercial-license': '/images/licenseServices/commercial-license-banner.png',
+        'industrial-license': '/images/licenseServices/industrial-license-banner.png',
+        'e-trader-license': '/images/licenseServices/e-trader-license-banner.png',
+        'tourism-travel-license': '/images/licenseServices/tour-travel-license-banner.png',
+    };
+
+    const imageUrl = bannerImageMap[slug] || '/images/licenseServices/professional-license-banner.png';
+
+    // Split title by first word to highlight the first word
+    const titleParts = service.bannerTitle ? service.bannerTitle.trim().split(/\s+/) : [];
+    const highlightedTitle = titleParts[0] || '';
+    const plainTitle = titleParts.slice(1).join(' ') || '';
+
+    const description = service.bannerDescription || `Expert assistance in obtaining your ${service.bannerTitle} in Dubai and across the UAE.`;
+
     return (
         <main className="">
-            <InnerHero
-                title={service.bannerTitle}
-                subtitle={`Expert assistance in obtaining your ${service.bannerTitle} in Dubai and across the UAE.`}
+            <CommonHeroSection
+                highlightedTitle={highlightedTitle}
+                plainTitle={plainTitle}
+                description={description}
+                imageUrl={imageUrl}
+                imageAlt={service.bannerTitle}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' },
+                    { label: 'License Services', href: '/services' },
+                    { label: service.bannerTitle }
+                ]}
             />
             <LicenseIntro data={service.intro} />
             <LicenseDocuments data={service.requiredDocuments} />

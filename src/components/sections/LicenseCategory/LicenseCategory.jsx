@@ -7,6 +7,7 @@ import SectionContainer from '@/components/layout/SectionContainer';
 import { ArrowUpRight } from 'lucide-react';
 import { licenses } from '@/data/LicenseData';
 
+
 export default function LicenseCategory() {
   const sectionRef = useRef(null);
   const cardsWrapRef = useRef(null);

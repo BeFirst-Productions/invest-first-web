@@ -7,6 +7,7 @@ import ContactBottomCTA from './ContactBottomCTA';
 import ContactFormMap from './ContactFormMap';
 import CommonBanner from '../Common/Banner/CommonBanner';
 import InnerHero from '../Common/InnerHero';
+import CommonHeroSection from '../Common/Banner/CommonHerosection';
 
 const ContactPage = () => {
     const mainRef = useRef(null);
@@ -40,10 +41,17 @@ const ContactPage = () => {
 
     return (
         <div ref={mainRef} className="">
-            <InnerHero 
-                title="Contact Us" 
-                subtitle="Get in touch with our expert consulting team for business setup and legal services in Dubai."
-            />
+           <CommonHeroSection
+                          highlightedTitle="Contact"
+                          plainTitle="Us"
+                          description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                          imageUrl="/images/about/about-banner.jpg"
+                          imageAlt="Our team at Meydan Free Zone"
+                          breadcrumbs={[
+                              { label: 'Home', href: '/' },
+                              { label: 'Contact Us' },
+                          ]}
+                      />
             <ContactInfo />
             <ContactFormMap />
             <CommonBanner

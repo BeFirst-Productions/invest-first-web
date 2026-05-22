@@ -4,7 +4,7 @@ import ProServicesIntro from '@/components/ProServices/ProServicesIntro';
 import CompanyFormationTypes from '@/components/ProServices/CompanyFormationTypes';
 import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
 import AuthorizedPartnerStatus from '@/components/ProServices/AuthorizedPartnerStatus';
-import InnerHero from '@/components/Common/InnerHero';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import { serviceDataMap } from '@/data/ProServicesData';
 
@@ -62,11 +62,37 @@ const ProServiceDetailPage = async ({ params }) => {
     // 404 for unknown slugs
     if (!service) notFound();
 
+    const bannerImageMap = {
+        'company-formation': '/images/services/service-banner.png',
+        'virtual-pro': '/images/visaServices/virtual-pro-banner.png',
+        'local-sponsorships': '/images/visaServices/local-sponsorship-banner.png',
+        'license-renewals': '/images/visaServices/licnense-renewals-banner.png',
+        'visa-renewals': '/images/visaServices/visa-renewals-banner.png',
+        'banking-assistance': '/images/visaServices/banking-assistance-banner.png',
+        'office-solutions': '/images/visaServices/office-solutions-banner.png',
+    };
+
+    const imageUrl = bannerImageMap[slug] || '/images/services/service-banner.png';
+
+    // Split title by first word to highlight the first word
+    const titleParts = service.bannerTitle ? service.bannerTitle.trim().split(/\s+/) : [];
+    const highlightedTitle = titleParts[0] || '';
+    const plainTitle = titleParts.slice(1).join(' ') || '';
+
     return (
         <main>
-            <InnerHero
-                title={service.bannerTitle}
-                subtitle={service.bannerDescription}
+            <CommonHeroSection
+                highlightedTitle={highlightedTitle}
+                plainTitle={plainTitle}
+                description={service.bannerDescription}
+                imageUrl={imageUrl}
+                imageAlt={service.bannerTitle}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' },
+                    { label: 'PRO Services', href: '/services/pro-services' },
+                    { label: service.bannerTitle }
+                ]}
             />
             <ProServicesIntro data={service.intro} />
             <CompanyFormationTypes data={service.companyFormationTypes} />

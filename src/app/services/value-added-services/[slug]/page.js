@@ -1,13 +1,12 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import CommonHerosection from '@/components/Common/Banner/CommonHerosection';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { valueAddedServicesMap } from '@/data/ValueAddedServicesData';
 import VATRegistration from '@/components/ValueAddedServices/VATRegistration';
 
 import VATServiceProcess from '@/components/ValueAddedServices/VATServiceProcess';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import WhyChooseDubai from '@/components/ProServices/WhyChooseDubai';
-import InnerHero from '@/components/Common/InnerHero';
 import LicenseWhyChoose from '@/components/LicenseServices/LicenseWhyChoose';
 
 /* -- Static params - tells Next.js which slugs to pre-render -- */
@@ -40,11 +39,36 @@ const ValueAddedServiceDetailPage = async ({ params }) => {
     // 404 for unknown slugs
     if (!service) notFound();
 
+    const bannerImageMap = {
+        'vat-corporate-tax': '/images/valueAddedServices/vat-corporate-banner.png',
+        'medical-insurance': '/images/valueAddedServices/medical-banner.png',
+        'trademark-registration': '/images/valueAddedServices/trademark-banner.png',
+        'branding-design': '/images/valueAddedServices/branding-design-banner.png',
+        'digital-marketing': '/images/valueAddedServices/digital-marketing-banner.png',
+        'web-development': '/images/valueAddedServices/web-design-banner.png',
+    };
+
+    const imageUrl = bannerImageMap[slug] || '/images/valueAddedServices/vat-corporate-banner.png';
+
+    // Split title by first word to highlight the first word
+    const titleParts = service.bannerTitle ? service.bannerTitle.trim().split(/\s+/) : [];
+    const highlightedTitle = titleParts[0] || '';
+    const plainTitle = titleParts.slice(1).join(' ') || '';
+
     return (
         <main>
-            <InnerHero
-                title={service.bannerTitle}
+            <CommonHeroSection
+                highlightedTitle={highlightedTitle}
+                plainTitle={plainTitle}
                 description={service.bannerDescription}
+                imageUrl={imageUrl}
+                imageAlt={service.bannerTitle}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' },
+                    { label: 'Value Added Services', href: '/services' },
+                    { label: service.bannerTitle }
+                ]}
             />
 
             {/* Dynamic Service Components */}

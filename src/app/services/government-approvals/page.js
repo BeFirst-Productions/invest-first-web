@@ -1,5 +1,5 @@
 import React from 'react';
-import InnerHero from '@/components/Common/InnerHero';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import GovernmentApprovalsIntro from '@/components/GovernmentApprovals/GovernmentApprovalsIntro';
 import GovernmentApprovalsTypes from '@/components/GovernmentApprovals/GovernmentApprovalsTypes';
 import GovernmentApprovalsProcess from '@/components/GovernmentApprovals/GovernmentApprovalsProcess';
@@ -15,11 +15,27 @@ export const metadata = {
 };
 
 const GovernmentApprovalsPage = () => {
+    // Split title by first word to highlight the first word
+    const titleParts = governmentApprovalsData.bannerTitle ? governmentApprovalsData.bannerTitle.trim().split(/\s+/) : [];
+    const highlightedTitle = titleParts[0] || '';
+    const plainTitle = titleParts.slice(1).join(' ') || '';
+
+    const imageUrl = '/images/governmentApprovals/government-approvals-banner.png';
+
     return (
         <main>
-            <InnerHero
-                title={governmentApprovalsData.bannerTitle}
-                subtitle={governmentApprovalsData.bannerDescription}
+            <CommonHeroSection
+                highlightedTitle={highlightedTitle}
+                plainTitle={plainTitle}
+                description={governmentApprovalsData.bannerDescription}
+                imageUrl={imageUrl}
+                imageAlt={governmentApprovalsData.bannerTitle}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services' },
+                    { label: 'PRO Services', href: '/services/pro-services' },
+                    { label: governmentApprovalsData.bannerTitle }
+                ]}
             />
             <GovernmentApprovalsIntro data={governmentApprovalsData.intro} />
             <GovernmentApprovalsTypes data={governmentApprovalsData.types} />

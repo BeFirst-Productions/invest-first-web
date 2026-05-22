@@ -4,12 +4,14 @@ import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { organizationSchema } from '@/lib/schema';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import PageLoader from '@/components/ui/PageLoader';
+import SmoothScroller from '@/components/ui/SmoothScroller';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',           // prevents invisible text during font load
+  display: 'swap',           
   variable: '--font-inter',
 });
 
@@ -21,13 +23,15 @@ const montserrat = Montserrat({
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  // ...default metadata
+
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <SmoothScroller />
+        <PageLoader />
         <SchemaOrg schema={organizationSchema} />
         <Navbar />
         {children}
