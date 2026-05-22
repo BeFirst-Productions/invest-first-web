@@ -124,8 +124,8 @@ export default function Hero() {
 
       master.fromTo(
         buildingRef.current,
-        { y: '26vh', scale: 1 },
-        { y: '-14vh', scale: 1.03, duration: 0.30, ease: 'power2.out' },
+        { y: () => window.innerWidth <= 768 ? '8vh' : '26vh', scale: 1 },
+        { y: () => window.innerWidth <= 768 ? '-5vh' : '-14vh', scale: 1.03, duration: 0.30, ease: 'power2.out' },
         0
       );
 
@@ -143,20 +143,20 @@ export default function Hero() {
          Inside the arch hole   → hero-img2 reveals through clip-path
       ────────────────────────────────────────────────────────── */
       master.to(archWrapRef.current, {
-        scale   : 1,
+        scale   : () => window.innerWidth <= 768 ? 1.5 : 1.0,
         duration: 0.30,
         ease    : 'power3.out',
       }, 0.30);
 
-      // Clip-path grows to match inner arch hole radius (49.7vw)
+      // Clip-path grows to match inner arch hole radius
       master.to(bgImgRef.current, {
-        clipPath: 'circle(49.7vw at 50% 100%)',
+        clipPath: () => window.innerWidth <= 768 ? 'circle(74.6vw at 50% 100%)' : 'circle(49.7vw at 50% 100%)',
         duration: 0.30,
         ease    : 'power3.out',
       }, 0.30);
 
       master.to(buildingRef.current, {
-        y: '-4vh', duration: 0.30, ease: 'power1.inOut',
+        y: () => window.innerWidth <= 768 ? '-2vh' : '-4vh', duration: 0.30, ease: 'power1.inOut',
       }, 0.30);
 
       master.to(skyRef.current, {
@@ -175,13 +175,13 @@ export default function Hero() {
          → Arch ring fades at ~82% for a clean dissolve.
       ────────────────────────────────────────────────────────── */
       master.to(archWrapRef.current, {
-        scale   : 3.0,
+        scale   : () => window.innerWidth <= 768 ? 6.0 : 3.0,
         duration: 0.40,
         ease    : 'power1.inOut',
       }, 0.60);
 
       master.to(bgImgRef.current, {
-        clipPath: 'circle(150vw at 50% 100%)',
+        clipPath: () => window.innerWidth <= 768 ? 'circle(250vw at 50% 100%)' : 'circle(150vw at 50% 100%)',
         duration: 0.40,
         ease    : 'power1.inOut',
       }, 0.60);
@@ -265,7 +265,7 @@ export default function Hero() {
                 {/* ── z-[2] Buildings ── */}
                 <div
                   ref={buildingRef}
-                  className="absolute bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom transform-gpu will-change-transform"
+                  className="absolute bottom-[clamp(-200px,-15vh,-150px)] md:bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom transform-gpu will-change-transform"
                 >
                   <img
                     src="/images/hero/hero-building.png"
