@@ -18,11 +18,11 @@ export default function OurServices() {
       containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
     >
       {/* ── Header ── */}
-      <div className="mb-[48px] md:mb-[64px] lg:mb-[80px]">
-        <div className="flex mb-[16px] md:mb-[24px]">
+      <div className="mb-[48px] md:mb-[64px] lg:mb-[80px] flex flex-col items-center text-center">
+        <div className="flex mb-[16px] md:mb-[24px] justify-center">
           <SectionBadge label="Our Services" />
         </div>
-        <h2 className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px]">
+        <h2 className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px] mx-auto">
           Complete Business Setup<br className="hidden md:block" />
            Solutions in Dubai.
         </h2>
