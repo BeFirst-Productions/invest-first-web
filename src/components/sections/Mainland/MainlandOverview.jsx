@@ -4,7 +4,7 @@ import SectionContainer from '@/components/layout/SectionContainer';
 
 const MainlandOverview = () => {
     return (
-        <section className="py-10 md:py-20">
+        <section className="py-5 md:py-0">
                  <SectionContainer
                             id="about-company"
                             className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"

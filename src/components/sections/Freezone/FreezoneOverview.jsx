@@ -18,7 +18,7 @@ const FreezoneOverview = () => {
                     {/* Left Side: Image and Overlay */}
                     <div className="lg:w-[45%] relative min-h-[300px] md:min-h-[400px] lg:min-h-full overflow-hidden">
                         <Image
-                            src="/assets/images/freezone/freezone.png"
+                            src="/images/freezone/freezone.png"
                             alt="Freezone Company Setup"
                             fill
                             className="object-cover  transition-transform duration-700 group-hover:scale-105"
@@ -35,7 +35,7 @@ const FreezoneOverview = () => {
                             <span className="text-[#0099CC]">About</span> Free Zone Company Formation
                         </h2>
 
-                        <div className="space-y-2  text-lg md:text-xl leading-relaxed font-outfit">
+                        <div className="space-y-2  text-lg md:text-xl leading-relaxed font-outfit text-white">
                             <p>
                                 Free zone company formation in Dubai provides 100% foreign ownership, full profit
                                 repatriation, and exemption from import and export duties within the free zone.

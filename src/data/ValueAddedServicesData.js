@@ -53,7 +53,7 @@ export const valueAddedServicesMap = {
                 "VAT registration is the vital step for a business to be able to operate in a fully legal manner under the tax laws of the UAE. VAT corporate tax registration UAE, is basically the first step to keep a business in line with the tax law in the UAE. A company or an individual, if their turnover goes beyond the limit set by law or they make taxable supplies, must register for VAT with the Federal Tax Authority (FTA).",
                 "Corporate Tax or CT is a type of direct tax that is imposed on the net profit of businesses and corporations in the UAE. It will be mandatory for companies in the UAE to register for the corporate tax starting from 1 June 2023."
             ],
-            image: "/assets/images/about/about.webp"
+            image: "/images/valueAddedServices/vat-cooperate.png"
         },
         process: {
             tabs: [
@@ -127,7 +127,7 @@ export const valueAddedServicesMap = {
                 "Securing the right medical insurance is not just a regulatory requirement in the UAE; it's a vital part of protecting your well-being and that of your employees. We provide expert assistance in navigating the vast array of insurance options available in the market.",
                 "Whether you're looking for basic DHA-compliant plans or premium international coverage, our team helps you find the most cost-effective solution tailored to your specific needs."
             ],
-            image: "/assets/images/about/about.webp"
+            image: "/images/valueAddedServices/medical-insurance.png"
         },
         process: {
             tabs: [
@@ -199,7 +199,7 @@ export const valueAddedServicesMap = {
                 "Your brand is one of your most valuable assets. Trademark registration in the UAE ensures that your business identity, logo, and slogans are legally protected from unauthorized use and infringement.",
                 "We manage the entire lifecycle of trademark registration, from preliminary searches to final publication in the Ministry of Economy's trademark journal."
             ],
-            image: "/assets/images/about/about.webp"
+            image: "/images/valueAddedServices/trademark.png"
         },
         process: {
             tabs: [
@@ -271,7 +271,7 @@ export const valueAddedServicesMap = {
                 "Modern branding is more than just a logo; it's the emotional connection your customers have with your business. We craft visual identities that bridge that gap and tell your story effectively.",
                 "From color palettes to typography and marketing collateral, our design team ensures your brand projects professionalism and innovation at every touchpoint."
             ],
-            image: "/assets/images/about/about.webp"
+            image: "/images/valueAddedServices/branding-design.png"
         },
         process: {
             tabs: [
@@ -343,7 +343,7 @@ export const valueAddedServicesMap = {
                 "In today's digital landscape, being 'online' isn't enough. You need to be visible. Our data-driven marketing strategies are designed to put your brand in front of the right eyes at the right time.",
                 "We combine SEO, PPC, and social media management into a cohesive engine that drives traffic, engagement, and most importantly, conversions."
             ],
-            image: "/assets/images/about/about.webp"
+            image: "/images/valueAddedServices/digital-marketig.png"
         },
         process: {
             tabs: [
@@ -415,7 +415,7 @@ export const valueAddedServicesMap = {
                 "Your website is your storefront to the world. We build platforms that are fast, secure, and intuitive, ensuring a friction-less experience for your users regardless of their device.",
                 "Using modern stacks like Next.js and high-performance hosting, we create web experiences that don't just look good—they perform at the highest level."
             ],
-            image: "/assets/images/about/about.webp"
+            image: "/images/valueAddedServices/web-design-development.png"
         },
         process: {
             tabs: [

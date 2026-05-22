@@ -45,35 +45,35 @@ export const licenseSectionData = {
             title: "Professional License",
             description:
                 "Invest First assists with UAE professional license services for consultants and service providers operating legally in Dubai with full regulatory compliance.",
-            image: "/images/license/professional-license-dubai.png",
+            image: "/images/licenseServices/professional-license.png",
         },
         {
             id: 2,
             title: "Commercial License",
             description:
                 "Invest First provides UAE commercial license services enabling trading, import, export, retail, and wholesale businesses across Dubai and other Emirates.",
-            image: "/images/license/commercial-license.png",
+            image: "/images/licenseServices/commercial-license.png",
         },
         {
             id: 3,
             title: "Industrial License",
             description:
                 "Invest First supports UAE industrial license services for manufacturing, production, and factory operations meeting Dubai industrial regulations and safety standards.",
-            image: "/images/license/industrial-license.png",
+            image: "/images/licenseServices/industrail-license.png",
         },
         {
             id: 4,
             title: "E-Trader License",
             description:
                 "Invest First offers UAE E-Trader license services for online businesses, freelancers, and social media sellers operating legally in Dubai.",
-            image: "/images/license/e-trader-license.png",
+            image: "/images/licenseServices/e-trader-license.png",
         },
         {
             id: 5,
             title: "Tourism / Travel License",
             description:
                 "Invest First delivers UAE tourism and travel license services for agencies, tour operators, and hospitality businesses compliant with Dubai regulations.",
-            image: "/images/license/travel-tourism-license.png",
+            image: "/images/licenseServices/travel-tourism-license.png",
         },
     ]
 };

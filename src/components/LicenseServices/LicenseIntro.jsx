@@ -12,7 +12,7 @@ const LicenseIntro = ({ data }) => {
                     {/* Top Image Container with Rounded Corners */}
                     <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] rounded-[2rem] overflow-hidden">
                         <Image
-                            src={data.image || '/images/license/professional-license-dubai.png'}
+                            src={data.image || '/images/licenseServices/professional-license.png'}
                             alt={data.titleHighlight}
                             fill
                             className="object-cover"

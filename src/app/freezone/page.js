@@ -1,13 +1,9 @@
 import React from 'react';
 import { freezoneData } from '@/data/FreezoneData';
-import CommonHerosection from '@/Components/Common/Banner/CommonHerosection';
 import WhyChoose from '@/Components/Common/WhyChoose';
 import FAQAccordion from '@/Components/Common/FAQAccordion';
-import FreezoneOverview from '@/Components/Freezone/FreezoneOverview';
-import FreezoneFeatures from '@/Components/Freezone/FreezoneFeatures';
-import FreezoneCategorySection from '@/Components/Freezone/FreezoneCategorySection';
-import FreezoneSetupProcess from '@/Components/Freezone/FreezoneSetupProcess';
-import FreezoneLicenseTypes from '@/Components/Freezone/FreezoneLicenseTypes';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
+import { FreezoneCategorySection, FreezoneFeatures, FreezoneLicenseTypes, FreezoneOverview,FreezoneSetupProcess } from '@/components/sections/Freezone';
 
 export const metadata = {
     title: "Freezone Company Formation UAE | Invest First",
@@ -19,12 +15,17 @@ const FreezonePage = () => {
     
     return (
         <main className="">
-            <CommonHerosection
-                title="Freezone Company Formation"
-                description="Expert assistance in setting up your business in UAE's premier free zones, offering 100% ownership and tax-efficient structures."
-                cardTitle="Freezone Setup Support"
-                cardDescription="We help you navigate the diverse free zone options to find the perfect fit for your business goals."
-            />
+               <CommonHeroSection
+                       highlightedTitle="Freezone"
+                       plainTitle=""
+                       description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                       imageUrl="/images/about/about-banner.jpg"
+                       imageAlt="Our team at Meydan Free Zone"
+                       breadcrumbs={[
+                           { label: 'Home', href: '/' },
+                           { label: 'Freezone' },
+                       ]}
+                   />
             
             <FreezoneOverview />
             <FreezoneFeatures />

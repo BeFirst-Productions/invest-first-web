@@ -58,7 +58,7 @@ const MainlandLocationDetailPage = async ({ params }) => {
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Mainland" },
-          { label: "About Us" },
+          { label: service.bannerTitle },
         ]}
       />
 

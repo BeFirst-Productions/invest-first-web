@@ -17,14 +17,14 @@ const MainlandPage = () => {
     return (
         <main className="">
                  <CommonHeroSection
-                highlightedTitle="About"
-                plainTitle="Us"
+                highlightedTitle="Mainland"
+                plainTitle=""
                 description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
                 imageUrl="/images/about/about-banner.jpg"
                 imageAlt="Our team at Meydan Free Zone"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
-                    { label: 'About Us' },
+                    { label: 'Mainland' },
                 ]}
             />
             <MainlandOverview />

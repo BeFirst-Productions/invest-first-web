@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-
 import { freezoneData } from '@/data/FreezoneData';
 import SectionContainer from '@/components/layout/SectionContainer';
 
@@ -14,7 +13,7 @@ const FreezoneLicenseTypes = () => {
                             containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
                           >
                 {/* Section Title with teal highlight */}
-                <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 flex flex-col md:flex-row gap-2 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-semibold text-black mb-12 flex flex-col md:flex-row gap-2 leading-tight">
                     <span className="text-[#0099CC]">Types of</span> 
                     <span>Free Zone Licenses in UAE</span>
                 </h2>

@@ -8,16 +8,15 @@ const DocumentServicesIntro = ({ data }) => {
 
     return (
         <SectionContainer className="py-10 md:py-20  overflow-hidden">
-                <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-                    {/* Left side: Image - Maintaining aspect ratio to prevent cropping */}
-                    <div className="w-full lg:w-5/12 group">
-                        <div className="rounded-3xl overflow-hidden">
+                <div className="flex flex-col lg:flex-row lg:items-stretch items-start gap-12 lg:gap-16">
+                    {/* Left side: Image - Self-adjusts to match right side text height on desktop */}
+                    <div className="w-full lg:w-5/12 group flex">
+                        <div className="rounded-3xl overflow-hidden relative w-full min-h-[300px] lg:min-h-full aspect-[4/3] lg:aspect-auto">
                             <Image
                                 src={data.image || "/assets/images/document-services/typing-service.png"}
                                 alt={data.alt || "Document Service Image"}
-                                width={800}
-                                height={600}
-                                className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 priority
                             />
                         </div>
