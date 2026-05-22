@@ -9,7 +9,10 @@ import {
     FreezoneLicenseTypes, 
     FreezoneSetupProcess,
     FreezoneCategorySection,
-    FreezoneInnerOverview
+    FreezoneInnerOverview,
+    FreezoneSetupProcessGrid,
+    FreezoneCostSection,
+    FreezoneDocsAndBenefits
 } from '@/components/sections/Freezone';
 import { getFreezoneData } from '@/data/freezoneDetailedData';
 
@@ -135,22 +138,32 @@ const FreezoneLocationDetailPage = async ({ params }) => {
             )} */}
 
             {/* Dynamic Setup Process */}
-            {/* {pageData.setupProcess && (
-                <FreezoneSetupProcess data={pageData.setupProcess} />
-            )} */}
+            {pageData.setupProcess && (
+                <FreezoneSetupProcessGrid data={pageData.setupProcess} />
+            )}
+
+            {/* Dynamic Cost Section */}
+            {pageData.costSection && (
+                <FreezoneCostSection data={pageData.costSection} />
+            )}
+
+            {/* Dynamic Docs and Benefits Section */}
+            {pageData.docsAndBenefits && (
+                <FreezoneDocsAndBenefits data={pageData.docsAndBenefits} />
+            )}
 
             {/* Dynamic Why Choose Section */}
-            {/* {pageData.whyChoose && (
+            {pageData.whyChoose && (
                 <WhyChooseSection data={pageData.whyChoose} />
-            )} */}
+            )}
 
             {/* Dynamic FAQ Accordion */}
-            {/* {pageData.faqs && (
+            {pageData.faqs && (
                 <FAQAccordion
                     title={pageData.faqs.title}
                     faqItems={pageData.faqs.faqItems}
                 />
-            )} */}
+            )}
         </main>
     );
 };
