@@ -43,7 +43,7 @@ export default function ViewMoreButton({
         bg-[#660033] text-white rounded-full
         flex items-center justify-center
         transition-all duration-500
-        group-hover:scale-110 group-hover:rotate-[360deg]
+        group-hover:scale-110 group-hover:rotate-[45deg]
         shadow-[0_8px_24px_rgba(102,0,51,0.2)]
         flex-shrink-0
       ">
