@@ -17,6 +17,29 @@ const stats = [
   { number: '50+', label: 'Services' },
 ];
 
+const headingWords = [
+  { text: 'Invest', highlight: false },
+  { text: 'First', highlight: false },
+  { text: 'provides', highlight: false },
+  { text: 'trusted', highlight: false },
+  { text: 'business', highlight: false },
+  { text: 'setup', highlight: false },
+  { text: 'in', highlight: false },
+  { text: 'Dubai,', highlight: false },
+  { text: 'company', highlight: true },
+  { text: 'formation', highlight: true },
+  { text: 'in', highlight: true },
+  { text: 'UAE,', highlight: true },
+  { text: 'visa', highlight: false },
+  { text: 'services,', highlight: false },
+  { text: 'PRO', highlight: false },
+  { text: 'support,', highlight: false },
+  { text: 'for', highlight: false },
+  { text: 'Startups', highlight: false },
+  { text: 'and', highlight: false },
+  { text: 'investors.', highlight: false },
+];
+
 export default function About() {
   const sectionRef = useRef(null);
   const imageContainersRef = useRef([]);
@@ -86,6 +109,40 @@ export default function About() {
         }
       });
 
+      // --- Heading Text Wave & Ray Animation ---
+      const headingTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        }
+      });
+
+      gsap.set('.char-span', {
+        color: '#d1d5db',
+      });
+
+      headingTl.to('.char-span', {
+        color: (index, target) => target.classList.contains('text-[#008ebf]') ? '#008ebf' : '#000000',
+        duration: 1.2,
+        stagger: 0.04,
+        ease: 'power2.inOut',
+      });
+
+      headingTl.fromTo('.about-button',
+        {
+          opacity: 0,
+          y: 15,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+        },
+        '-=0.4'
+      );
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -122,23 +179,32 @@ export default function About() {
           </div>
 
           {/* Row 1 Col 2: Heading Area */}
-          <div className="flex flex-col items-start pt-0 space-y-[30px] md:space-y-[45px] pl-0 lg:pl-[5%] about-reveal">
-            {/* <h2 className="font-sans text-[22px] lg:text-[25px] xl:text-[40px] font-medium leading-[1.3] text-black tracking-tight max-w-[800px]">
-              Porem ipsum dolor sit amet, consectetur <br className="hidden lg:block" />
-              adipiscing elit. <span className="text-[#008ebf]">Nunc vulputate libero</span> et <br className="hidden lg:block" />
-              velit interdum, ac aliquet odio mattis. <br className="hidden lg:block" />
-              Class aptent taciti sociosqu.
-            </h2> */}
-                   <h2 className="font-sans text-[22px] lg:text-[25px] xl:text-[40px] font-medium leading-[1.3] text-black tracking-tight max-w-[800px]">
-             Invest First provides trusted business setup in Dubai, <span className="text-[#008ebf]">company formation in UAE</span>, visa services, PRO support, for Startups  and investors.
-
+          <div className="flex flex-col items-start pt-0 space-y-[30px] md:space-y-[45px] pl-0 lg:pl-[5%]">
+            <h2 className="font-sans text-[22px] lg:text-[25px] xl:text-[40px] font-medium leading-[1.3] text-black tracking-tight max-w-[800px] overflow-visible">
+              {headingWords.map((word, wIdx) => (
+                <span key={wIdx} className="inline-block whitespace-nowrap mr-[0.25em] overflow-visible">
+                  {word.text.split('').map((char, cIdx) => (
+                    <span
+                      key={cIdx}
+                      className={`inline-block char-span ${
+                        word.highlight ? 'text-[#008ebf]' : 'text-black'
+                      }`}
+                      style={{ willChange: 'color, filter, text-shadow' }}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+              ))}
             </h2>
 
-            <ViewMoreButton
-              label="View About"
-              href="/about"
-              wrapperClassName="!mt-0 !justify-start pl-[2%] lg:pl-[12%]"
-            />
+            <div className="about-button opacity-0">
+              <ViewMoreButton
+                label="View About"
+                href="/about"
+                wrapperClassName="!mt-0 !justify-start pl-[2%] lg:pl-[12%]"
+              />
+            </div>
           </div>
         </div>
 
