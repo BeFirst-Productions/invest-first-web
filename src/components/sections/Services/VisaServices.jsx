@@ -1,13 +1,32 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { visaServices } from '@/data/serviceData';
 import SectionBadge from '@/components/ui/SectionBadge';
 
 export default function VisaServices() {
   const wrapperRef = useRef(null);
+  const trackRef = useRef(null);
+  const animFrameRef = useRef(null);
+  const offsetRef = useRef(0);
+  const speedRef = useRef(0.5); // px per frame, positive = left
+  const isPausedRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartOffsetRef = useRef(0);
+  const lastDragXRef = useRef(0);
+  const dragVelocityRef = useRef(0);
+  const halfWidthRef = useRef(0);
   const [viewportWidth, setViewportWidth] = useState(null);
+
+  // Measure the scrollable half-width (one set of items) for seamless loop
+  const measureHalf = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    // We duplicate items 4x; half = 2x = one loop unit
+    halfWidthRef.current = track.scrollWidth / 2;
+  }, []);
 
   useEffect(() => {
     const update = () => {
@@ -21,32 +40,122 @@ export default function VisaServices() {
     return () => window.removeEventListener('resize', update);
   }, []);
 
+  useEffect(() => {
+    measureHalf();
+    window.addEventListener('resize', measureHalf);
+    return () => window.removeEventListener('resize', measureHalf);
+  }, [measureHalf]);
+
+  // Main RAF loop
+  useEffect(() => {
+    const tick = () => {
+      if (!isPausedRef.current && !isDraggingRef.current) {
+        offsetRef.current += speedRef.current;
+      }
+
+      const half = halfWidthRef.current;
+      if (half > 0) {
+        // Wrap offset to stay within [0, half)
+        offsetRef.current = ((offsetRef.current % half) + half) % half;
+      }
+
+      if (trackRef.current) {
+        trackRef.current.style.transform = `translateX(${-offsetRef.current}px)`;
+      }
+
+      animFrameRef.current = requestAnimationFrame(tick);
+    };
+
+    animFrameRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animFrameRef.current);
+  }, []);
+
+  // ── Pointer / Touch handlers ──────────────────────────────────────────────
+
+  const onDragStart = useCallback((clientX) => {
+    isDraggingRef.current = true;
+    dragStartXRef.current = clientX;
+    dragStartOffsetRef.current = offsetRef.current;
+    lastDragXRef.current = clientX;
+    dragVelocityRef.current = 0;
+  }, []);
+
+  const onDragMove = useCallback((clientX) => {
+    if (!isDraggingRef.current) return;
+    const delta = dragStartXRef.current - clientX;
+    dragVelocityRef.current = clientX - lastDragXRef.current;
+    lastDragXRef.current = clientX;
+    offsetRef.current = dragStartOffsetRef.current + delta;
+  }, []);
+
+  const onDragEnd = useCallback(() => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    // Resume auto-scroll in the direction the user was flicking
+    // velocity is positive = dragging right = scrolling backward (negative speed)
+    if (Math.abs(dragVelocityRef.current) > 1) {
+      speedRef.current = dragVelocityRef.current > 0 ? -0.5 : 0.5;
+    }
+    // Always settle back to a positive forward direction after a moment
+    // (optional: remove the setTimeout to keep reversed direction)
+    setTimeout(() => { speedRef.current = 0.5; }, 2000);
+  }, []);
+
+  // Mouse events
+  const onMouseDown = useCallback((e) => {
+    e.preventDefault();
+    onDragStart(e.clientX);
+  }, [onDragStart]);
+
+  const onMouseMove = useCallback((e) => {
+    onDragMove(e.clientX);
+  }, [onDragMove]);
+
+  const onMouseUp = useCallback(() => {
+    onDragEnd();
+  }, [onDragEnd]);
+
+  // Touch events
+  const onTouchStart = useCallback((e) => {
+    onDragStart(e.touches[0].clientX);
+  }, [onDragStart]);
+
+  const onTouchMove = useCallback((e) => {
+    onDragMove(e.touches[0].clientX);
+  }, [onDragMove]);
+
+  const onTouchEnd = useCallback(() => {
+    onDragEnd();
+  }, [onDragEnd]);
+
+  const onMouseEnter = useCallback(() => {
+    if (!isDraggingRef.current) isPausedRef.current = true;
+  }, []);
+
+  const onMouseLeave = useCallback(() => {
+    isPausedRef.current = false;
+    if (isDraggingRef.current) onDragEnd();
+  }, [onDragEnd]);
+
+  // Attach global mousemove/mouseup so drag works outside the element
+  useEffect(() => {
+    const move = (e) => onMouseMove(e);
+    const up = () => onMouseUp();
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+    return () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+  }, [onMouseMove, onMouseUp]);
+
+  const items = [...visaServices, ...visaServices, ...visaServices, ...visaServices];
+
   return (
     <div
       className="py-[48px] md:py-[60px] lg:py-[100px] bg-white"
       style={{ overflowX: 'clip' }}
     >
-      <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-infinite-scroll {
-          animation: scroll 40s linear infinite;
-        }
-        .animate-infinite-scroll:hover {
-          animation-play-state: paused;
-        }
-        .services-carousel-viewport {
-          -webkit-mask-image: linear-gradient(to right, transparent 0px, black 0px);
-          mask-image: linear-gradient(to right, transparent 0px, black 0px);
-          visibility: hidden;
-        }
-        .services-carousel-viewport.ready {
-          visibility: visible;
-        }
-      `}</style>
-
       {/* ── Header ── */}
       <div className="px-[20px] md:px-[60px] lg:px-[100px] xl:px-[calc((100vw-1440px)/2+100px)] mb-[32px] md:mb-[40px] lg:mb-[25px] pr-[20px] md:pr-0">
         <SectionBadge label="Visa Services" className="mb-[24px]" />
@@ -59,17 +168,32 @@ export default function VisaServices() {
       {/* ── Carousel ── */}
       <div
         ref={wrapperRef}
-        className="
-          pl-[20px] md:pl-[60px] lg:pl-[100px]
-          xl:pl-[calc((100vw-1440px)/2+100px)]
-        "
+        className="pl-[20px] md:pl-[60px] lg:pl-[100px] xl:pl-[calc((100vw-1440px)/2+100px)]"
       >
         <div
           className={`services-carousel-viewport${viewportWidth ? ' ready' : ''}`}
-          style={viewportWidth ? { width: viewportWidth } : undefined}
+          style={{
+            ...(viewportWidth ? { width: viewportWidth } : undefined),
+            overflow: 'hidden',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0px, black 0px)',
+            maskImage: 'linear-gradient(to right, transparent 0px, black 0px)',
+            visibility: viewportWidth ? 'visible' : 'hidden',
+            cursor: isDraggingRef.current ? 'grabbing' : 'grab',
+            userSelect: 'none',
+          }}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onMouseDown={onMouseDown}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
         >
-          <div className="flex w-max animate-infinite-scroll py-[20px] md:py-[30px]">
-            {[...visaServices, ...visaServices, ...visaServices, ...visaServices].map((service, index) => (
+          <div
+            ref={trackRef}
+            className="flex w-max py-[20px] md:py-[30px]"
+            style={{ willChange: 'transform' }}
+          >
+            {items.map((service, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 mr-[12px] md:mr-[25px]"
@@ -83,6 +207,7 @@ export default function VisaServices() {
                       fill
                       className="object-cover transition-transform duration-1000 group-hover:scale-105"
                       sizes="(max-width: 768px) 220px, 310px"
+                      draggable={false}
                     />
                   </div>
 

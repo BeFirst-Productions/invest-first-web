@@ -4,7 +4,7 @@ export const ZONES = [
     label : 'Mainland',
     icon  : '/images/main/mainland-icon.png',
     href  : '/mainland',
-    desc  : 'Vorem ipsum dolor sit amet, consect adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Nunc vulputate libero et',
+    desc  : 'Set up your mainland business in Dubai with complete UAE market access, flexible business activities, and seamless company formation support for long-term growth.',
     active: false,
   },
   {
@@ -12,7 +12,7 @@ export const ZONES = [
     label : 'Freezone',
     icon  : '/images/main/freezone-icon.png',
     href  : '/freezone',
-    desc  : 'Vorem ipsum dolor sit amet, consect adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Nunc vulputate libero et',
+    desc  : 'Launch your freezone company in the UAE with 100% foreign ownership, affordable setup packages, tax benefits, and fast business registration solutions.',
     active: true,
   },
   {
@@ -20,7 +20,7 @@ export const ZONES = [
     label : 'Offshore',
     icon  : '/images/main/offshore-icon.png',
     href  : '/offshore',
-    desc  : 'Vorem ipsum dolor sit amet, consect adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Nunc vulputate libero et',
+    desc  : 'Establish an offshore company in Dubai for international business, asset protection, and tax-efficient operations with a secure and simplified setup process.',
     active: false,
   },
 ];

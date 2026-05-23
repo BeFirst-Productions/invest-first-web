@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
 import { navLinks } from '@/data/navigationData';
@@ -9,6 +9,41 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState({});
+  const [isVisible, setIsVisible] = useState(true);
+
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
+
+  // ── Scroll direction detection ──────────────────────────────────────────
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ticking.current) return;
+      ticking.current = true;
+
+      requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY.current;
+
+        if (currentScrollY < 60) {
+          // Always show at very top of page
+          setIsVisible(true);
+        } else if (diff > 4) {
+          // Scrolling down — hide
+          setIsVisible(false);
+          setActiveDropdown(null);
+        } else if (diff < -4) {
+          // Scrolling up — show
+          setIsVisible(true);
+        }
+
+        lastScrollY.current = currentScrollY;
+        ticking.current = false;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMouseEnter = (name) => {
     if (window.innerWidth > 768) setActiveDropdown(name);
@@ -27,48 +62,47 @@ export default function Navbar() {
     }));
   };
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768 && isMenuOpen) {
-        setIsMenuOpen(false);
-      }
+      if (window.innerWidth > 768 && isMenuOpen) setIsMenuOpen(false);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen]);
 
-  // Prevent scroll when mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
   }, [isMenuOpen]);
 
-  // Recursive Desktop Dropdown Component
-  const DesktopDropdown = ({ items, level = 1 }) => {
-    return (
-      <div className={level === 1 ? styles.dropdown : styles.subDropdown}>
-        <ul className={level === 1 ? styles.dropdownList : styles.subDropdownList} role="list">
-          {items.map((item) => (
-            <li key={item.name} className={styles.dropdownItem}>
-              <a href={item.href} className={styles.dropdownLink}>
-                {item.name}
-                {item.children && <span className={styles.subChevron} />}
-              </a>
-              {item.children && <DesktopDropdown items={item.children} level={level + 1} />}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
+  const DesktopDropdown = ({ items, level = 1 }) => (
+    <div className={level === 1 ? styles.dropdown : styles.subDropdown}>
+      <ul className={level === 1 ? styles.dropdownList : styles.subDropdownList} role="list">
+        {items.map((item) => (
+          <li key={item.name} className={styles.dropdownItem}>
+            <a href={item.href} className={styles.dropdownLink}>
+              {item.name}
+              {item.children && <span className={styles.subChevron} />}
+            </a>
+            {item.children && <DesktopDropdown items={item.children} level={level + 1} />}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 
   return (
     <>
-      <nav id="global-navbar" className={styles.navbar} aria-label="Main navigation">
+      <nav
+        id="global-navbar"
+        className={styles.navbar}
+        aria-label="Main navigation"
+        style={{
+          transform: isVisible
+            ? 'translateX(-50%) translateY(0)'
+            : 'translateX(-50%) translateY(calc(-100% - 40px))',
+          transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
         <a href="/" className={styles.logo} aria-label="InvestFirst home">
           <Image
             src="/images/logos/invest-first-logo.png"
@@ -81,7 +115,6 @@ export default function Navbar() {
             style={{ width: 'auto', height: '40px' }}
           />
         </a>
-
 
         {/* Desktop Nav Links */}
         <ul className={styles.navLinks} role="list">
@@ -102,11 +135,8 @@ export default function Navbar() {
                 )}
               </a>
 
-              {/* Dropdown Menu */}
               {item.children && (
-                <div
-                  className={`${styles.dropdown} ${activeDropdown === item.name ? styles.dropdownActive : ''}`}
-                >
+                <div className={`${styles.dropdown} ${activeDropdown === item.name ? styles.dropdownActive : ''}`}>
                   <ul className={styles.dropdownList} role="list">
                     {item.children.map((subItem) => (
                       <li key={subItem.name} className={styles.dropdownItem}>
@@ -114,8 +144,6 @@ export default function Navbar() {
                           {subItem.name}
                           {subItem.children && <span className={styles.subChevron} />}
                         </a>
-
-                        {/* Level 3 & Deep Dropdowns */}
                         {subItem.children && <DesktopDropdown items={subItem.children} level={2} />}
                       </li>
                     ))}
@@ -126,7 +154,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Hamburger Button */}
+        {/* Hamburger */}
         <button
           className={`${styles.hamburger} ${isMenuOpen ? styles.hamburgerActive : ''}`}
           onClick={toggleMenu}
@@ -141,7 +169,6 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
-        {/* Mobile Menu Header */}
         <div className={styles.mobileMenuHeader}>
           <a href="/" className={styles.logo} onClick={() => setIsMenuOpen(false)} aria-label="InvestFirst home">
             <Image
@@ -187,9 +214,7 @@ export default function Navbar() {
                       onClick={(item.href && item.href !== '#') ? () => toggleAccordion(item.name) : undefined}
                       aria-label={`Toggle ${item.name} submenu`}
                     >
-                      <span
-                        className={`${styles.mobileChevron} ${expandedItems[item.name] ? styles.mobileChevronActive : ''}`}
-                      />
+                      <span className={`${styles.mobileChevron} ${expandedItems[item.name] ? styles.mobileChevronActive : ''}`} />
                     </button>
                   </div>
                 ) : (
@@ -198,11 +223,8 @@ export default function Navbar() {
                   </a>
                 )}
 
-                {/* Mobile Accordion Level 2 */}
                 {item.children && (
-                  <div
-                    className={`${styles.mobileAccordion} ${expandedItems[item.name] ? styles.mobileAccordionOpen : ''}`}
-                  >
+                  <div className={`${styles.mobileAccordion} ${expandedItems[item.name] ? styles.mobileAccordionOpen : ''}`}>
                     <ul className={styles.mobileLevel2List}>
                       {item.children.map((subItem) => (
                         <li key={subItem.name} className={styles.mobileLevel2Item}>
@@ -224,9 +246,7 @@ export default function Navbar() {
                                 onClick={(subItem.href && subItem.href !== '#') ? () => toggleAccordion(`${item.name}-${subItem.name}`) : undefined}
                                 aria-label={`Toggle ${subItem.name} submenu`}
                               >
-                                <span
-                                  className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.mobileChevronActive : ''}`}
-                                />
+                                <span className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.mobileChevronActive : ''}`} />
                               </button>
                             </div>
                           ) : (
@@ -235,11 +255,8 @@ export default function Navbar() {
                             </a>
                           )}
 
-                          {/* Mobile Accordion Level 3 */}
                           {subItem.children && (
-                            <div
-                              className={`${styles.mobileLevel3Accordion} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.mobileLevel3AccordionOpen : ''}`}
-                            >
+                            <div className={`${styles.mobileLevel3Accordion} ${expandedItems[`${item.name}-${subItem.name}`] ? styles.mobileLevel3AccordionOpen : ''}`}>
                               <ul className={styles.mobileLevel3List}>
                                 {subItem.children.map((nested) => (
                                   <li key={nested.name} className={styles.mobileLevel3Item}>
@@ -261,9 +278,7 @@ export default function Navbar() {
                                           onClick={(nested.href && nested.href !== '#') ? () => toggleAccordion(`${item.name}-${subItem.name}-${nested.name}`) : undefined}
                                           aria-label={`Toggle ${nested.name} submenu`}
                                         >
-                                          <span
-                                            className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.mobileChevronActive : ''}`}
-                                          />
+                                          <span className={`${styles.mobileChevronSmall} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.mobileChevronActive : ''}`} />
                                         </button>
                                       </div>
                                     ) : (
@@ -272,19 +287,12 @@ export default function Navbar() {
                                       </a>
                                     )}
 
-                                    {/* Mobile Accordion Level 4 */}
                                     {nested.children && (
-                                      <div
-                                        className={`${styles.mobileLevel4Accordion} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.mobileLevel4AccordionOpen : ''}`}
-                                      >
+                                      <div className={`${styles.mobileLevel4Accordion} ${expandedItems[`${item.name}-${subItem.name}-${nested.name}`] ? styles.mobileLevel4AccordionOpen : ''}`}>
                                         <ul className={styles.mobileLevel4List}>
                                           {nested.children.map((deepItem) => (
                                             <li key={deepItem.name}>
-                                              <a
-                                                href={deepItem.href}
-                                                className={styles.mobileLevel4Link}
-                                                onClick={() => setIsMenuOpen(false)}
-                                              >
+                                              <a href={deepItem.href} className={styles.mobileLevel4Link} onClick={() => setIsMenuOpen(false)}>
                                                 {deepItem.name}
                                               </a>
                                             </li>

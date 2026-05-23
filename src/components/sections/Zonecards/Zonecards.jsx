@@ -22,7 +22,7 @@ export default function ZoneCards() {
         {ZONES.map((zone) => (
           <div
             key={zone.id}
-            className={zone.id === 'offshore' ? 'sm:col-span-2 lg:col-span-1' : ''}
+            className={`h-full ${zone.id === 'offshore' ? 'sm:col-span-2 lg:col-span-1' : ''}`}
           >
             <ZoneCard zone={zone} />
           </div>

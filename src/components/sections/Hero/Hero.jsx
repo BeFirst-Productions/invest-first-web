@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SectionContainer from '@/components/layout/SectionContainer';
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SectionContainer from "@/components/layout/SectionContainer";
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
@@ -33,59 +33,68 @@ if (typeof window !== 'undefined') {
  */
 
 export default function Hero() {
-  const containerRef  = useRef(null);
-  const skyRef        = useRef(null);
-  const buildingRef   = useRef(null);
-  const heroTextRef   = useRef(null);
+  const containerRef = useRef(null);
+  const skyRef = useRef(null);
+  const buildingRef = useRef(null);
+  const heroTextRef = useRef(null);
   const scrollHintRef = useRef(null);
   const cloudRightRef = useRef(null);
-  const cloudLeftRef  = useRef(null);
+  const cloudLeftRef = useRef(null);
 
   /** Full-screen reveal image — clipped to arch hole via CSS clip-path */
-  const bgImgRef      = useRef(null);
+  const bgImgRef = useRef(null);
 
   /** Arch wrapper — GSAP scales this from bottom-center */
-  const archWrapRef   = useRef(null);
+  const archWrapRef = useRef(null);
 
   /** White ring frame — CSS borders only, interior is transparent */
-  const archFrameRef  = useRef(null);
+  const archFrameRef = useRef(null);
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReduced) return;
 
     let playEntranceFn;
 
     const ctx = gsap.context(() => {
-
       // ── Initial states ────────────────────────────────────────
 
       // Arch starts fully collapsed — invisible
       gsap.set(archWrapRef.current, {
-        xPercent       : -50,
-        scale          : 0,
-        transformOrigin: '50% 100%', // grow upward from bottom-center
-        force3D        : true,
+        xPercent: -50,
+        scale: 0,
+        transformOrigin: "50% 100%",
+        force3D: true,
       });
 
       // hero-img2: full screen but FULLY CLIPPED to a zero-radius circle
       // centered at screen bottom-center (matches arch transform-origin).
       // This keeps it invisible until Stage 2 starts growing the clip circle.
       gsap.set(bgImgRef.current, {
-        clipPath: 'circle(0vw at 50% 100%)',
+        clipPath: "circle(0vw at 50% 100%)",
       });
 
       // ── Initial states for Entrance Animation (SEO-friendly via JS set) ──
-      const textElements = heroTextRef.current ? heroTextRef.current.children : [];
+      const textElements = heroTextRef.current
+        ? heroTextRef.current.children
+        : [];
       gsap.set(textElements, { y: 120, opacity: 0 });
 
-      const buildingImg = buildingRef.current ? buildingRef.current.querySelector('img') : null;
+      const buildingImg = buildingRef.current
+        ? buildingRef.current.querySelector("img")
+        : null;
       if (buildingImg) {
         gsap.set(buildingImg, { y: 320, opacity: 0, scale: 1.03 });
       }
 
-      const cloudLeftImg = cloudLeftRef.current ? cloudLeftRef.current.querySelector('img') : null;
-      const cloudRightImg = cloudRightRef.current ? cloudRightRef.current.querySelector('img') : null;
+      const cloudLeftImg = cloudLeftRef.current
+        ? cloudLeftRef.current.querySelector("img")
+        : null;
+      const cloudRightImg = cloudRightRef.current
+        ? cloudRightRef.current.querySelector("img")
+        : null;
       if (cloudLeftImg) gsap.set(cloudLeftImg, { y: 160, opacity: 0 });
       if (cloudRightImg) gsap.set(cloudRightImg, { y: 160, opacity: 0 });
 
@@ -94,59 +103,75 @@ export default function Hero() {
         // Start timeline after 0.35s delay, perfectly syncing with the loader fade
         const tl = gsap.timeline({ delay: 0.35 });
 
-        tl.to(buildingImg, {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1.8,
-          ease: 'power3.out'
-        }, 0);
-
-        tl.to(textElements, {
-          y: 0,
-          opacity: 1,
-          duration: 1.4,
-          stagger: 0.15,
-          ease: 'power3.out'
-        }, 0.25);
-
-        if (cloudLeftImg) {
-          tl.to(cloudLeftImg, {
+        tl.to(
+          buildingImg,
+          {
             y: 0,
             opacity: 1,
-            duration: 1.6,
-            ease: 'power2.out'
-          }, 0.45);
+            scale: 1,
+            duration: 1.8,
+            ease: "power3.out",
+          },
+          0,
+        );
+
+        tl.to(
+          textElements,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.4,
+            stagger: 0.15,
+            ease: "power3.out",
+          },
+          0.25,
+        );
+
+        if (cloudLeftImg) {
+          tl.to(
+            cloudLeftImg,
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.6,
+              ease: "power2.out",
+            },
+            0.45,
+          );
         }
 
         if (cloudRightImg) {
-          tl.to(cloudRightImg, {
-            y: 0,
-            opacity: 1,
-            duration: 1.6,
-            ease: 'power2.out'
-          }, 0.55);
+          tl.to(
+            cloudRightImg,
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.6,
+              ease: "power2.out",
+            },
+            0.55,
+          );
         }
       };
 
       playEntranceFn = playEntrance;
 
       // Event listener trigger for entrance
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
         if (window.__loaderExit) {
           setTimeout(playEntrance, 100);
         } else {
-          window.addEventListener('loaderExit', playEntrance);
+          window.addEventListener("loaderExit", playEntrance);
         }
       }
 
       // ── Master scroll timeline ─────────────────────────────────
       const master = gsap.timeline({
         scrollTrigger: {
-          trigger            : containerRef.current,
-          start              : 'top top',
-          end                : 'bottom bottom',
-          scrub              : 2,
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
           invalidateOnRefresh: true,
         },
       });
@@ -156,44 +181,88 @@ export default function Hero() {
          Hero UI exits. Clouds / sky / buildings parallax.
          hero-img2 clip-path stays at 0 — still invisible.
       ────────────────────────────────────────────────────────── */
-      const navbar = document.getElementById('global-navbar');
+      const navbar = document.getElementById("global-navbar");
       if (navbar) {
-        master.to(navbar, {
-          y: -16, scale: 0.95, opacity: 0,
-          duration: 0.25, ease: 'power2.inOut',
-        }, 0);
+        master.to(
+          navbar,
+          {
+            y: -16,
+            scale: 0.95,
+            opacity: 0,
+            duration: 0.25,
+            ease: "power2.inOut",
+          },
+          0,
+        );
       }
 
-      master.to(heroTextRef.current, {
-        y: -120, opacity: 0,
-        duration: 0.32, ease: 'power1.inOut',
-      }, 0);
+      master.to(
+        heroTextRef.current,
+        {
+          y: -120,
+          opacity: 0,
+          duration: 0.32,
+          ease: "power1.inOut",
+        },
+        0,
+      );
 
-      master.to(scrollHintRef.current, {
-        opacity: 0, y: 6,
-        duration: 0.10, ease: 'power1.in',
-      }, 0);
+      master.to(
+        scrollHintRef.current,
+        {
+          opacity: 0,
+          y: 6,
+          duration: 0.1,
+          ease: "power1.in",
+        },
+        0,
+      );
 
-      master.to(cloudLeftRef.current, {
-        x: '-20%', y: '-10%', opacity: 0,
-        duration: 0.30, ease: 'power1.inOut',
-      }, 0);
+      master.to(
+        cloudLeftRef.current,
+        {
+          x: "-20%",
+          y: "-10%",
+          opacity: 0,
+          duration: 0.3,
+          ease: "power1.inOut",
+        },
+        0,
+      );
 
-      master.to(cloudRightRef.current, {
-        x: '20%', y: '-8%', opacity: 0,
-        duration: 0.30, ease: 'power1.inOut',
-      }, 0);
+      master.to(
+        cloudRightRef.current,
+        {
+          x: "20%",
+          y: "-8%",
+          opacity: 0,
+          duration: 0.3,
+          ease: "power1.inOut",
+        },
+        0,
+      );
 
-      master.to(skyRef.current, {
-        y: '-10%', scale: 1.08,
-        duration: 0.30, ease: 'none',
-      }, 0);
+      master.to(
+        skyRef.current,
+        {
+          y: "-10%",
+          scale: 1.08,
+          duration: 0.3,
+          ease: "none",
+        },
+        0,
+      );
 
       master.fromTo(
         buildingRef.current,
-        { y: () => window.innerWidth <= 768 ? '8vh' : '26vh', scale: 1 },
-        { y: () => window.innerWidth <= 768 ? '-5vh' : '-14vh', scale: 1.03, duration: 0.30, ease: 'power2.out' },
-        0
+        { y: () => (window.innerWidth <= 768 ? "8vh" : "26vh"), scale: 1 },
+        {
+          y: () => (window.innerWidth <= 768 ? "-5vh" : "-14vh"),
+          scale: 1.03,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        0,
       );
 
       /* ──────────────────────────────────────────────────────────
@@ -209,26 +278,49 @@ export default function Hero() {
          Outside the arch ring  → sky + building still visible
          Inside the arch hole   → hero-img2 reveals through clip-path
       ────────────────────────────────────────────────────────── */
-      master.to(archWrapRef.current, {
-        scale   : () => window.innerWidth <= 768 ? 1.5 : 1.0,
-        duration: 0.30,
-        ease    : 'power3.out',
-      }, 0.30);
+      master.to(
+        archWrapRef.current,
+        {
+          scale: () => (window.innerWidth <= 768 ? 1.5 : 1.0),
+          duration: 0.3,
+          ease: "power3.out",
+        },
+        0.3,
+      );
 
       // Clip-path grows to match inner arch hole radius
-      master.to(bgImgRef.current, {
-        clipPath: () => window.innerWidth <= 768 ? 'circle(74.6vw at 50% 100%)' : 'circle(49.7vw at 50% 100%)',
-        duration: 0.30,
-        ease    : 'power3.out',
-      }, 0.30);
+      master.to(
+        bgImgRef.current,
+        {
+          clipPath: () =>
+            window.innerWidth <= 768
+              ? "circle(74.6vw at 50% 100%)"
+              : "circle(49.7vw at 50% 100%)",
+          duration: 0.3,
+          ease: "power3.out",
+        },
+        0.3,
+      );
 
-      master.to(buildingRef.current, {
-        y: () => window.innerWidth <= 768 ? '-2vh' : '-4vh', duration: 0.30, ease: 'power1.inOut',
-      }, 0.30);
+      master.to(
+        buildingRef.current,
+        {
+          y: () => (window.innerWidth <= 768 ? "-2vh" : "-4vh"),
+          duration: 0.3,
+          ease: "power1.inOut",
+        },
+        0.3,
+      );
 
-      master.to(skyRef.current, {
-        y: '-15%', duration: 0.30, ease: 'none',
-      }, 0.30);
+      master.to(
+        skyRef.current,
+        {
+          y: "-15%",
+          duration: 0.3,
+          ease: "none",
+        },
+        0.3,
+      );
 
       /* ──────────────────────────────────────────────────────────
          STAGE 3  (0.60 → 1.0)
@@ -241,35 +333,55 @@ export default function Hero() {
          → hero-img2 fills entire screen.
          → Arch ring fades at ~82% for a clean dissolve.
       ────────────────────────────────────────────────────────── */
-      master.to(archWrapRef.current, {
-        scale   : () => window.innerWidth <= 768 ? 6.0 : 3.0,
-        duration: 0.40,
-        ease    : 'power1.inOut',
-      }, 0.60);
+      master.to(
+        archWrapRef.current,
+        {
+          scale: () => (window.innerWidth <= 768 ? 6.0 : 3.0),
+          duration: 0.4,
+          ease: "power1.inOut",
+        },
+        0.6,
+      );
 
-      master.to(bgImgRef.current, {
-        clipPath: () => window.innerWidth <= 768 ? 'circle(250vw at 50% 100%)' : 'circle(150vw at 50% 100%)',
-        duration: 0.40,
-        ease    : 'power1.inOut',
-      }, 0.60);
+      master.to(
+        bgImgRef.current,
+        {
+          clipPath: () =>
+            window.innerWidth <= 768
+              ? "circle(250vw at 50% 100%)"
+              : "circle(150vw at 50% 100%)",
+          duration: 0.4,
+          ease: "power1.inOut",
+        },
+        0.6,
+      );
 
       // Fade the ring just before it completely exits screen
-      master.to(archFrameRef.current, {
-        opacity : 0,
-        duration: 0.15,
-        ease    : 'power2.in',
-      }, 0.82);
+      master.to(
+        archFrameRef.current,
+        {
+          opacity: 0,
+          duration: 0.15,
+          ease: "power2.in",
+        },
+        0.82,
+      );
 
-      master.to(skyRef.current, {
-        y: '-28%', duration: 0.40, ease: 'none',
-      }, 0.60);
-
+      master.to(
+        skyRef.current,
+        {
+          y: "-28%",
+          duration: 0.4,
+          ease: "none",
+        },
+        0.6,
+      );
     }, containerRef);
 
     return () => {
       ctx.revert();
-      if (typeof window !== 'undefined' && playEntranceFn) {
-        window.removeEventListener('loaderExit', playEntranceFn);
+      if (typeof window !== "undefined" && playEntranceFn) {
+        window.removeEventListener("loaderExit", playEntranceFn);
       }
     };
   }, []);
@@ -317,11 +429,15 @@ export default function Hero() {
                 <div
                   ref={skyRef}
                   className="absolute z-0 transform-gpu will-change-transform"
-                  style={{ inset: '-10% 0 -10% 0' }}
+                  style={{ inset: "-10% 0 -10% 0" }}
                 >
                   <Image
                     src="/images/hero/sky.jpg"
-                    alt="" fill priority quality={85} sizes="100vw"
+                    alt=""
+                    fill
+                    priority
+                    quality={85}
+                    sizes="100vw"
                     className="object-cover object-top"
                   />
                 </div>
@@ -332,10 +448,14 @@ export default function Hero() {
                   className="absolute left-0 top-0 w-full pt-[clamp(140px,20vh,220px)] z-[1] will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
                 >
                   <h1 className="hero-title text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] leading-[1.1] tracking-tight max-w-[90vw] md:max-w-full">
-                    Business Setup Services <span className="hero-title-gradient">in Dubai &amp; UAE</span>
+                    Business Setup Services{" "}
+                    <span className="hero-title-gradient">
+                      in Dubai &amp; UAE
+                    </span>
                   </h1>
                   <p className="hero-desc mt-[clamp(12px,2vh,24px)] text-[clamp(14px,1.6vw,20px)] font-medium tracking-wide max-w-[800px] leading-relaxed">
-                    Business setup in Dubai made it simple for startups &amp; entrepreneurs.
+                    Business setup in Dubai made it simple for startups &amp;
+                    entrepreneurs.
                   </p>
                 </div>
 
@@ -347,7 +467,9 @@ export default function Hero() {
                 >
                   <Image
                     src="/images/hero/clouds-png-.png"
-                    alt="" fill unoptimized
+                    alt=""
+                    fill
+                    unoptimized
                     className="object-contain object-center"
                   />
                 </div>
@@ -360,7 +482,9 @@ export default function Hero() {
                 >
                   <Image
                     src="/images/hero/clouds-png-.png"
-                    alt="" fill unoptimized
+                    alt=""
+                    fill
+                    unoptimized
                     className="object-contain object-center"
                   />
                 </div>
@@ -387,18 +511,21 @@ export default function Hero() {
                   ref={bgImgRef}
                   className="absolute z-[5] pointer-events-none will-change-[clip-path]"
                   style={{
-                    top      : 0,
-                    left     : '50%',
-                    transform: 'translateX(-50%)',
-                    width    : '100vw',
-                    height   : '100vh',
+                    top: 0,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "100vw",
+                    height: "100vh",
                   }}
                   aria-hidden="true"
                 >
                   <Image
                     src="/images/hero/hero-img2.png"
                     alt="Luxury residential towers at dusk"
-                    fill priority quality={90} sizes="100vw"
+                    fill
+                    priority
+                    quality={90}
+                    sizes="100vw"
                     className="object-cover object-center"
                   />
                 </div>
@@ -414,30 +541,30 @@ export default function Hero() {
                   ref={archWrapRef}
                   className="absolute z-[6] transform-gpu will-change-transform pointer-events-none"
                   style={{
-                    width          : '140vw',
-                    height         : '70vw',
-                    bottom         : 0,
-                    left           : '50%',
-                    transform      : 'translateX(-50%) scale(0)',
-                    transformOrigin: '50% 100%',
+                    width: "140vw",
+                    height: "70vw",
+                    bottom: 0,
+                    left: "50%",
+                    transform: "translateX(-50%) scale(0)",
+                    transformOrigin: "50% 100%",
                   }}
                   aria-hidden="true"
                 >
                   <div
                     className="absolute inset-0 overflow-hidden"
-                    style={{ borderRadius: '50% 50% 0 0 / 100% 100% 0 0' }}
+                    style={{ borderRadius: "50% 50% 0 0 / 100% 100% 0 0" }}
                   >
                     {/* White ring — CSS borders only, background: transparent */}
                     <div
                       ref={archFrameRef}
                       className="absolute inset-0 will-change-[opacity]"
                       style={{
-                        borderTop   : '20.3vw solid #ffffff',
-                        borderLeft  : '20.3vw solid #ffffff',
-                        borderRight : '20.3vw solid #ffffff',
-                        borderBottom: 'none',
-                        borderRadius: '50% 50% 0 0 / 100% 100% 0 0',
-                        background  : 'transparent',
+                        borderTop: "20.3vw solid #ffffff",
+                        borderLeft: "20.3vw solid #ffffff",
+                        borderRight: "20.3vw solid #ffffff",
+                        borderBottom: "none",
+                        borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
+                        background: "transparent",
                       }}
                     />
                   </div>
@@ -456,7 +583,7 @@ export default function Hero() {
             >
               <div
                 className="w-[2px] h-10 bg-[#333333] origin-top"
-                style={{ animation: 'scrollPulse 1.6s ease-in-out infinite' }}
+                style={{ animation: "scrollPulse 1.6s ease-in-out infinite" }}
               />
             </div>
           </SectionContainer>
