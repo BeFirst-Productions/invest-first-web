@@ -54,6 +54,8 @@ export default function Hero() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
+    let playEntranceFn;
+
     const ctx = gsap.context(() => {
 
       // ── Initial states ────────────────────────────────────────
@@ -72,6 +74,71 @@ export default function Hero() {
       gsap.set(bgImgRef.current, {
         clipPath: 'circle(0vw at 50% 100%)',
       });
+
+      // ── Initial states for Entrance Animation (SEO-friendly via JS set) ──
+      const textElements = heroTextRef.current ? heroTextRef.current.children : [];
+      gsap.set(textElements, { y: 120, opacity: 0 });
+
+      const buildingImg = buildingRef.current ? buildingRef.current.querySelector('img') : null;
+      if (buildingImg) {
+        gsap.set(buildingImg, { y: 320, opacity: 0, scale: 1.03 });
+      }
+
+      const cloudLeftImg = cloudLeftRef.current ? cloudLeftRef.current.querySelector('img') : null;
+      const cloudRightImg = cloudRightRef.current ? cloudRightRef.current.querySelector('img') : null;
+      if (cloudLeftImg) gsap.set(cloudLeftImg, { y: 160, opacity: 0 });
+      if (cloudRightImg) gsap.set(cloudRightImg, { y: 160, opacity: 0 });
+
+      // Play the entrance animation smoothly
+      const playEntrance = () => {
+        // Start timeline after 0.35s delay, perfectly syncing with the loader fade
+        const tl = gsap.timeline({ delay: 0.35 });
+
+        tl.to(buildingImg, {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.8,
+          ease: 'power3.out'
+        }, 0);
+
+        tl.to(textElements, {
+          y: 0,
+          opacity: 1,
+          duration: 1.4,
+          stagger: 0.15,
+          ease: 'power3.out'
+        }, 0.25);
+
+        if (cloudLeftImg) {
+          tl.to(cloudLeftImg, {
+            y: 0,
+            opacity: 1,
+            duration: 1.6,
+            ease: 'power2.out'
+          }, 0.45);
+        }
+
+        if (cloudRightImg) {
+          tl.to(cloudRightImg, {
+            y: 0,
+            opacity: 1,
+            duration: 1.6,
+            ease: 'power2.out'
+          }, 0.55);
+        }
+      };
+
+      playEntranceFn = playEntrance;
+
+      // Event listener trigger for entrance
+      if (typeof window !== 'undefined') {
+        if (window.__loaderExit) {
+          setTimeout(playEntrance, 100);
+        } else {
+          window.addEventListener('loaderExit', playEntrance);
+        }
+      }
 
       // ── Master scroll timeline ─────────────────────────────────
       const master = gsap.timeline({
@@ -98,8 +165,8 @@ export default function Hero() {
       }
 
       master.to(heroTextRef.current, {
-        y: -80, opacity: 0,
-        duration: 0.25, ease: 'power2.inOut',
+        y: -120, opacity: 0,
+        duration: 0.32, ease: 'power1.inOut',
       }, 0);
 
       master.to(scrollHintRef.current, {
@@ -124,8 +191,8 @@ export default function Hero() {
 
       master.fromTo(
         buildingRef.current,
-        { y: '26vh', scale: 1 },
-        { y: '-14vh', scale: 1.03, duration: 0.30, ease: 'power2.out' },
+        { y: () => window.innerWidth <= 768 ? '8vh' : '26vh', scale: 1 },
+        { y: () => window.innerWidth <= 768 ? '-5vh' : '-14vh', scale: 1.03, duration: 0.30, ease: 'power2.out' },
         0
       );
 
@@ -143,20 +210,20 @@ export default function Hero() {
          Inside the arch hole   → hero-img2 reveals through clip-path
       ────────────────────────────────────────────────────────── */
       master.to(archWrapRef.current, {
-        scale   : 1,
+        scale   : () => window.innerWidth <= 768 ? 1.5 : 1.0,
         duration: 0.30,
         ease    : 'power3.out',
       }, 0.30);
 
-      // Clip-path grows to match inner arch hole radius (49.7vw)
+      // Clip-path grows to match inner arch hole radius
       master.to(bgImgRef.current, {
-        clipPath: 'circle(49.7vw at 50% 100%)',
+        clipPath: () => window.innerWidth <= 768 ? 'circle(74.6vw at 50% 100%)' : 'circle(49.7vw at 50% 100%)',
         duration: 0.30,
         ease    : 'power3.out',
       }, 0.30);
 
       master.to(buildingRef.current, {
-        y: '-4vh', duration: 0.30, ease: 'power1.inOut',
+        y: () => window.innerWidth <= 768 ? '-2vh' : '-4vh', duration: 0.30, ease: 'power1.inOut',
       }, 0.30);
 
       master.to(skyRef.current, {
@@ -175,13 +242,13 @@ export default function Hero() {
          → Arch ring fades at ~82% for a clean dissolve.
       ────────────────────────────────────────────────────────── */
       master.to(archWrapRef.current, {
-        scale   : 3.0,
+        scale   : () => window.innerWidth <= 768 ? 6.0 : 3.0,
         duration: 0.40,
         ease    : 'power1.inOut',
       }, 0.60);
 
       master.to(bgImgRef.current, {
-        clipPath: 'circle(150vw at 50% 100%)',
+        clipPath: () => window.innerWidth <= 768 ? 'circle(250vw at 50% 100%)' : 'circle(150vw at 50% 100%)',
         duration: 0.40,
         ease    : 'power1.inOut',
       }, 0.60);
@@ -199,7 +266,12 @@ export default function Hero() {
 
     }, containerRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      if (typeof window !== 'undefined' && playEntranceFn) {
+        window.removeEventListener('loaderExit', playEntranceFn);
+      }
+    };
   }, []);
 
   return (
@@ -208,6 +280,24 @@ export default function Hero() {
         @keyframes scrollPulse {
           0%, 100% { opacity: 0.35; transform: scaleY(0.85); }
           50%       { opacity: 1;    transform: scaleY(1.1);  }
+        }
+        .hero-title {
+          font-family: var(--font-instrument-sans), sans-serif !important;
+          font-stretch: 85%; /* Semi-Condensed width axis */
+          color: #0B1F3A;
+          font-weight: 750;
+          letter-spacing: -0.01em;
+        }
+        .hero-title-gradient {
+          background-image: linear-gradient(90deg, rgba(226,3,132,1.00) 0%, rgba(109,3,74,1.00) 100%);
+          background-position: center center;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline;
+        }
+        .hero-desc {
+          font-family: var(--font-inter), sans-serif;
+          color: rgba(11, 31, 58, 0.85);
         }
       `}</style>
 
@@ -236,6 +326,19 @@ export default function Hero() {
                   />
                 </div>
 
+                {/* ── z-[1] Hero Text (Behind Buildings, Behind Clouds) ── */}
+                <div
+                  ref={heroTextRef}
+                  className="absolute left-0 top-0 w-full pt-[clamp(140px,20vh,220px)] z-[1] will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
+                >
+                  <h1 className="hero-title text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] leading-[1.1] tracking-tight max-w-[90vw] md:max-w-full">
+                    Business Setup Services <span className="hero-title-gradient">in Dubai &amp; UAE</span>
+                  </h1>
+                  <p className="hero-desc mt-[clamp(12px,2vh,24px)] text-[clamp(14px,1.6vw,20px)] font-medium tracking-wide max-w-[800px] leading-relaxed">
+                    Business setup in Dubai made it simple for startups &amp; entrepreneurs.
+                  </p>
+                </div>
+
                 {/* ── z-[3] Left Cloud ── */}
                 <div
                   ref={cloudLeftRef}
@@ -252,7 +355,7 @@ export default function Hero() {
                 {/* ── z-[3] Right Cloud ── */}
                 <div
                   ref={cloudRightRef}
-                  className="absolute right-[-8%] md:right-[-2%] top-[6%] md:top-[8%] w-[72%] md:w-[58%] lg:w-[44%] aspect-[472/276] z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute right-[-14%] md:right-[-9%] lg:right-[-5%] top-[11%] md:top-[14%] lg:top-[16%] w-[60%] md:w-[48%] lg:w-[35%] aspect-[472/276] z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
                   aria-hidden="true"
                 >
                   <Image
@@ -265,7 +368,7 @@ export default function Hero() {
                 {/* ── z-[2] Buildings ── */}
                 <div
                   ref={buildingRef}
-                  className="absolute bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom transform-gpu will-change-transform"
+                  className="absolute bottom-[clamp(-200px,-15vh,-150px)] md:bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom transform-gpu will-change-transform"
                 >
                   <img
                     src="/images/hero/hero-building.png"
@@ -343,18 +446,7 @@ export default function Hero() {
               </>
             }
           >
-            {/* ── Hero Text ── */}
-            <div
-              ref={heroTextRef}
-              className="relative w-full pt-[clamp(140px,20vh,220px)] z-10 will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
-            >
-              <h1 className="font-sans text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] font-bold leading-[1.1] tracking-tight text-[#333333] max-w-[90vw] md:max-w-full">
-                Business <span className="text-[#660033]">Setup Services</span>{' '}in Dubai &amp; UAE
-              </h1>
-              <p className="mt-[clamp(12px,2vh,24px)] font-sans text-[clamp(14px,1.6vw,20px)] font-medium text-[#333333] tracking-wide max-w-[800px] leading-relaxed">
-               Business setup in Dubai made it simple for startups& entrepreneurs.
-              </p>
-            </div>
+            {/* Hero Text is placed in background layer at z-[2] to scroll behind buildings */}
 
             {/* ── Scroll hint ── */}
             <div

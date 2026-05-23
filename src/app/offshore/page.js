@@ -1,7 +1,7 @@
 import React from 'react';
 import { offshoreData } from '@/data/OffshoreData';
 import { OffshoreBenefits, OffshoreFeatures, OffshoreOverview } from '@/components/sections/Offshore';
-import WhyChooseSection from '@/Components/Common/WhyChoose';
+import WhyChooseSection from '@/components/Common/WhyChoose';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 

@@ -34,7 +34,8 @@ const FreezoneInnerOverview = ({ data }) => {
                         <div className="w-full lg:w-1/2 p-5 md:p-6 flex items-center justify-center">
                             <div className="relative w-full h-[280px] sm:h-[350px] md:h-[400px] rounded-[18px] md:rounded-[24px] overflow-hidden shadow-md">
                                 <Image
-                                    src={image}
+                                    // src={image}
+                                    src="/images/freezone/zone-img.jpg"
                                     alt={`About ${titleHighlight}`}
                                     fill
                                     className="object-cover transition-transform duration-700 hover:scale-105"

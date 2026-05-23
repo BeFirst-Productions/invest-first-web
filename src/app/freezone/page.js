@@ -1,7 +1,7 @@
 import React from 'react';
 import { freezoneData } from '@/data/FreezoneData';
-import WhyChoose from '@/Components/Common/WhyChoose';
-import FAQAccordion from '@/Components/Common/FAQAccordion';
+import WhyChoose from '@/components/Common/WhyChoose';
+import FAQAccordion from '@/components/Common/FAQAccordion';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { FreezoneCategorySection, FreezoneFeatures, FreezoneLicenseTypes, FreezoneOverview,FreezoneSetupProcess } from '@/components/sections/Freezone';
 
