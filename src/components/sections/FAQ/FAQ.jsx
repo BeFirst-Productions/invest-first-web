@@ -69,9 +69,9 @@ export default function FAQ() {
       </div>
 
       {/* FAQ Grid */}
-      <div className="w-full max-w-[1000px] flex flex-col md:flex-row gap-[16px] md:gap-[24px] items-start">
+      <div className="w-full max-w-[1300px] flex flex-col md:flex-row gap-[16px] md:gap-[30px] items-start">
         {/* Left Column */}
-        <div className="w-full md:w-1/2 flex flex-col gap-[16px] md:gap-[20px]">
+        <div className="w-full md:w-1/2  flex flex-col gap-[16px] md:gap-[20px]">
           {leftColFaqs.map((faq, index) => (
             <FAQItem
               key={index}

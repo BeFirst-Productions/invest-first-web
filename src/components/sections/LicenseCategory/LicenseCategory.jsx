@@ -119,7 +119,7 @@ export default function LicenseCategory() {
 
         <div
           ref={cardsWrapRef}
-          className="relative w-full max-w-[938px] mx-auto rounded-[24px] md:rounded-[32px] h-[540px] md:h-[419px]"
+          className="relative w-full max-w-[1200px] mx-auto rounded-[24px] md:rounded-[32px] h-[540px] md:h-[419px]"
           style={{ height: 'var(--wrap-height)' }}
         >
           <style jsx>{`
