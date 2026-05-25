@@ -790,7 +790,7 @@ export const proServicesData = {
         highlight: "PRO",
         rest: "Services"
     },
-    description: "Expert government relations and business setup solutions in the UAE. From visa processing to trade license renewals, we handle all your technical and legal requirements.",
+    description: "We provide professional PRO services in Dubai, including visa renewals, local sponsorship, banking assistance, and business support for smooth UAE operations.",
     services: proServicesList,
     footerText: "Invest First provides comprehensive PRO support to ensure your business remains compliant and operational without the need for an in-house government relations team.",
     // Include the default intro/seo for the main pro-services page

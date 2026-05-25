@@ -20,20 +20,10 @@ const AboutCompanySection = () => {
 
                     <div className="space-y-6  text-sm md:text-lg  font-normal">
                         <p>
-                           Invest First is a professional business setup and corporate services consultancy in the UAE, dedicated to supporting entrepreneurs, SMEs, and multinational companies in establishing and growing their businesses confidently. With years of experience in company formation, PRO services, and UAE government relations, our experts ensure a seamless and efficient business setup experience from start to finish.
+                            Invest First is a professional business setup and corporate services consultancy in the UAE, dedicated to supporting entrepreneurs, SMEs, and multinational companies in establishing and growing their businesses confidently. With years of experience in company formation, PRO services, and UAE government relations, our experts ensure a seamless and efficient business setup experience from start to finish.
                         </p>
                         <p>
-                            Starting a business in the UAE can be complex if you are unfamiliar
-                            with local regulations, licensing requirements, and government
-                            procedures. At Invest First, we simplify this journey. Our mission
-                            is to make company formation in Dubai and across the UAE clear,
-                            fast, and stress-free, providing complete transparency and
-                            professional guidance every step of the way.
-                        
-                            Whether you are an individual entrepreneur, a corporate investor, or
-                            an expanding global enterprise, we tailor our services to meet your
-                            needs and help you build a strong, legally compliant foundation for
-                            success.
+                            Starting a business in the UAE can be complex if you are unfamiliar with local regulations, licensing requirements, and government procedures. At Invest First, we simplify this journey. Our mission is to make company formation in Dubai and across the UAE clear, fast, and stress-free, providing complete transparency and professional guidance every step of the way. Whether you are an individual entrepreneur, a corporate investor, or an expanding global enterprise, we tailor our services to meet your needs and help you build a strong, legally compliant foundation for success.
                         </p>
                     </div>
                 </div>

@@ -625,7 +625,7 @@ export const documentServicesOverview = {
         highlight: "Document",
         rest: "Services"
     },
-    description: "Efficient handling of all your official paperwork. From legal translations to government attestations, we ensure your documents are legally compliant in the UAE.",
+    description: "We provide professional document services in the UAE, including document clearing, attestation, translation, notarization, and government approvals.",
     services: documentServicesList,
     footerText: "Invest First streamlines the paperwork process, providing accurate translations and fast attestations to keep your personal and professional affairs on track.",
     ...attestationServices // default

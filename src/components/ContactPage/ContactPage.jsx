@@ -41,22 +41,22 @@ const ContactPage = () => {
 
     return (
         <div ref={mainRef} className="">
-           <CommonHeroSection
-                          highlightedTitle="Contact"
-                          plainTitle="Us"
-                          description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
-                          imageUrl="/images/about/about-banner.jpg"
-                          imageAlt="Our team at Meydan Free Zone"
-                          breadcrumbs={[
-                              { label: 'Home', href: '/' },
-                              { label: 'Contact Us' },
-                          ]}
-                      />
+            <CommonHeroSection
+                highlightedTitle="Contact"
+                plainTitle="Us"
+                description="Get in touch with our experts for reliable business setup in Dubai, mainland company formation in UAE, investor visa assistance, and professional PRO services tailored to your business needs."
+                imageUrl="/images/contact/contact-banner.png"
+                imageAlt="Contact Us - Get in Touch with Our Team"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Contact Us' },
+                ]}
+            />
             <ContactInfo />
             <ContactFormMap />
-          <CommonBanner
-                title="UAE Business Setup Cost Calculator"
-                description="Estimate your UAE company formation expenses with our easy business setup cost calculator. Get quick insights into trade license fees, visa costs, office requirements, and company registration expenses for starting your business in Dubai and across the UAE."
+            <CommonBanner
+                title="Get Connected Today with Trusted Experts in Business Setup in Dubai"
+                description="Connect with our business setup experts in Dubai for reliable support with company formation, investor visa services, mainland company setup in UAE, and professional PRO services tailored to your business goals."
                 buttonLink="/cost-calculator"
                 buttonText="Cost Calculator "
                 imageSrc="/images/about/uae.png"

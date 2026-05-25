@@ -84,7 +84,7 @@ export const navLinks = [
             },
             {
                 name: "Visa Services",
-                href: "#",
+                href: "/services/visa-services/investor-visa",
                 children: [
                     { name: "Investor Visa", href: "/services/visa-services/investor-visa" },
                     { name: "Employment Visa", href: "/services/visa-services/employment-visa" },
@@ -99,7 +99,7 @@ export const navLinks = [
             { name: "Government Approvals", href: "/services/government-approvals" },
             {
                 name: "Document Services",
-                href: "#",
+                href: "/services/document-services/attestation-services",
                 children: [
                     { name: "Attestation Services", href: "/services/document-services/attestation-services" },
                     { name: "Legal Translation", href: "/services/document-services/legal-translation" },
@@ -108,7 +108,7 @@ export const navLinks = [
             },
             {
                 name: "License Services",
-                href: "#",
+                href: "/services/license-services/professional-license",
                 children: [
                     { name: "Professional License", href: "/services/license-services/professional-license" },
                     { name: "Commercial License", href: "/services/license-services/commercial-license" },

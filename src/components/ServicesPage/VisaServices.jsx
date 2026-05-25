@@ -171,7 +171,9 @@ const VisaServices = () => {
                     </div>
                     <div className="mt-16 text-center">
                         <p className="max-w-2xl mx-auto text-base md:text-lg  leading-relaxed">
-                            Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+
+We provide UAE visa services, including applications, renewals, and approvals for investors, employees, and families with smooth processing and support. 
+
                         </p>
                     </div>
                     <style jsx>{`

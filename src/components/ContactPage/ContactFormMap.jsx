@@ -83,10 +83,9 @@ const ContactFormMap = () => {
     };
 
     const inputClass = (field) =>
-        `w-full px-5 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 ${
-            errors[field]
-                ? 'ring-2 ring-red-400 focus:ring-red-400'
-                : 'focus:ring-[#0099CC]'
+        `w-full px-5 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 ${errors[field]
+            ? 'ring-2 ring-red-400 focus:ring-red-400'
+            : 'focus:ring-[#0099CC]'
         }`;
 
     return (
@@ -111,114 +110,114 @@ const ContactFormMap = () => {
                 {/* RIGHT COLUMN: Form */}
                 <div className="bg-linear-to-b from-[#14293A] to-[#0B223E] p-8 md:p-10 rounded-3xl border border-[#1e293b]">
                     <form className="space-y-6" onSubmit={handleSubmit} noValidate>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* Name */}
-                                <div className="space-y-1">
-                                    <label className="text-white text-sm font-medium ml-2">
-                                        Your Name <span className="text-red-400">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={form.name}
-                                        onChange={handleChange}
-                                        placeholder="Enter name"
-                                        className={inputClass('name')}
-                                    />
-                                    {errors.name && (
-                                        <p className="text-red-400 text-xs ml-2 mt-1">{errors.name}</p>
-                                    )}
-                                </div>
-
-                                {/* Email */}
-                                <div className="space-y-1">
-                                    <label className="text-white text-sm font-medium ml-2">
-                                        Your Email <span className="text-red-400">*</span>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={form.email}
-                                        onChange={handleChange}
-                                        placeholder="info@Example.ae"
-                                        className={inputClass('email')}
-                                    />
-                                    {errors.email && (
-                                        <p className="text-red-400 text-xs ml-2 mt-1">{errors.email}</p>
-                                    )}
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* Phone */}
-                                <div className="space-y-1">
-                                    <label className="text-white text-sm font-medium ml-2">
-                                        Phone No <span className="text-red-400">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="phone"
-                                        value={form.phone}
-                                        onChange={handleChange}
-                                        placeholder="+97150......"
-                                        className={inputClass('phone')}
-                                    />
-                                    {errors.phone && (
-                                        <p className="text-red-400 text-xs ml-2 mt-1">{errors.phone}</p>
-                                    )}
-                                </div>
-
-                                {/* Visa Option */}
-                                <div className="space-y-1">
-                                    <label className="text-white text-sm font-medium ml-2">
-                                        Visa Option <span className="text-red-400">*</span>
-                                    </label>
-                                    <div className="relative">
-                                        <select
-                                            name="visaOption"
-                                            value={form.visaOption}
-                                            onChange={handleChange}
-                                            className={`${inputClass('visaOption')} appearance-none cursor-pointer`}
-                                        >
-                                            <option value="">Select Option</option>
-                                            <option value="Investor Visa">Investor Visa</option>
-                                            <option value="Employment Visa">Employment Visa</option>
-                                            <option value="Freelance Visa">Freelance Visa</option>
-                                        </select>
-                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 1.5L6 6.5L11 1.5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    {errors.visaOption && (
-                                        <p className="text-red-400 text-xs ml-2 mt-1">{errors.visaOption}</p>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Message */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {/* Name */}
                             <div className="space-y-1">
                                 <label className="text-white text-sm font-medium ml-2">
-                                    Write Message <span className="text-red-400">*</span>
+                                    Your Name <span className="text-red-400">*</span>
                                 </label>
-                                <textarea
-                                    name="message"
-                                    value={form.message}
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={form.name}
                                     onChange={handleChange}
-                                    placeholder="Messages..."
-                                    rows={5}
-                                    className={`${inputClass('message')} resize-none`}
-                                ></textarea>
-                                {errors.message && (
-                                    <p className="text-red-400 text-xs ml-2 mt-1">{errors.message}</p>
+                                    placeholder="Enter name"
+                                    className={inputClass('name')}
+                                />
+                                {errors.name && (
+                                    <p className="text-red-400 text-xs ml-2 mt-1">{errors.name}</p>
                                 )}
                             </div>
 
-                            {/* Submit */}
-                            <div className="pt-2">
-                                <PrimaryButton text="Submit Now" onClick={handleSubmit} />
+                            {/* Email */}
+                            <div className="space-y-1">
+                                <label className="text-white text-sm font-medium ml-2">
+                                    Your Email <span className="text-red-400">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    placeholder="info@Example.ae"
+                                    className={inputClass('email')}
+                                />
+                                {errors.email && (
+                                    <p className="text-red-400 text-xs ml-2 mt-1">{errors.email}</p>
+                                )}
                             </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {/* Phone */}
+                            <div className="space-y-1">
+                                <label className="text-white text-sm font-medium ml-2">
+                                    Phone No <span className="text-red-400">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                    placeholder="+97150......"
+                                    className={inputClass('phone')}
+                                />
+                                {errors.phone && (
+                                    <p className="text-red-400 text-xs ml-2 mt-1">{errors.phone}</p>
+                                )}
+                            </div>
+
+                            {/* Visa Option */}
+                            <div className="space-y-1">
+                                <label className="text-white text-sm font-medium ml-2">
+                                    Visa Option <span className="text-red-400">*</span>
+                                </label>
+                                <div className="relative">
+                                    <select
+                                        name="visaOption"
+                                        value={form.visaOption}
+                                        onChange={handleChange}
+                                        className={`${inputClass('visaOption')} appearance-none cursor-pointer`}
+                                    >
+                                        <option value="">Select Option</option>
+                                        <option value="Investor Visa">Investor Visa</option>
+                                        <option value="Employment Visa">Employment Visa</option>
+                                        <option value="Freelance Visa">Freelance Visa</option>
+                                    </select>
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1.5L6 6.5L11 1.5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                {errors.visaOption && (
+                                    <p className="text-red-400 text-xs ml-2 mt-1">{errors.visaOption}</p>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Message */}
+                        <div className="space-y-1">
+                            <label className="text-white text-sm font-medium ml-2">
+                                Write Message <span className="text-red-400">*</span>
+                            </label>
+                            <textarea
+                                name="message"
+                                value={form.message}
+                                onChange={handleChange}
+                                placeholder="Messages..."
+                                rows={5}
+                                className={`${inputClass('message')} resize-none`}
+                            ></textarea>
+                            {errors.message && (
+                                <p className="text-red-400 text-xs ml-2 mt-1">{errors.message}</p>
+                            )}
+                        </div>
+
+                        {/* Submit */}
+                        <div className="pt-2">
+                            <PrimaryButton text="Submit Now" onClick={handleSubmit} />
+                        </div>
                     </form>
                 </div>
             </div>
