@@ -18,7 +18,7 @@ const ServicesPage = () => {
             <CommonHeroSection
                 highlightedTitle="Our"
                 plainTitle="Services"
-                description="From licensing to visa processing, we provide end-to-end solutions for your business setup in the UAE."
+                description="We provide complete business setup services in Dubai, including company formation, trade licenses, PRO services,visa support for smooth business growth in the UAE     "
                 imageUrl="/images/services/service-banner.png"
                 imageAlt="Comprehensive business setup services"
                 breadcrumbs={[

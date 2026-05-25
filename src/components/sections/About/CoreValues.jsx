@@ -96,21 +96,21 @@ const CoreValues = () => {
                                 <ValueCard
                                     icon={<Shield className="w-8 h-8 text-white" />}
                                     title="Integrity"
-                                    description="Integrity is the cornerstone of our operations. We maintain the highest ethical standards in all our interactions, ensuring that our clients can trust us implicitly. Our commitment to honesty and transparency forms the foundation of every relationship we build."
+                                    description="We are committed to honesty, transparency and establishment of long-term professionalism and client relationship."
                                 />
 
                                 {/* Card 3: Excellence */}
                                 <ValueCard
                                     icon={<Award className="w-8 h-8 text-white" />}
                                     title="Excellence"
-                                    description="We strive for excellence in everything we do. From the initial consultation to the final delivery, our team is dedicated to providing superior quality service and achieving the best possible results for our clients. We never settle for anything less than exceptional."
+                                    description="We are related to a dedicated team that ensures timely and accurate services to the clients, concerned about providing quality business formation in Dubai."
                                 />
 
                                 {/* Card 4: Innovation */}
                                 <ValueCard
                                     icon={<Lightbulb className="w-8 h-8 text-white" />}
                                     title="Innovation"
-                                    description="In a rapidly evolving market, innovation is key. We continuously explore new ideas, technologies, and strategies to stay ahead of the curve. Our innovative approach allows us to provide cutting-edge solutions that drive growth and efficiency for our clients."
+                                    description="We embrace innovation by delivering smart, modern, and efficient business setup solutions in Dubai, helping entrepreneurs simplify processes, improve growth, and achieve long-term success in the UAE."
                                 />
 
                                 {/* Card 5: Transparency */}

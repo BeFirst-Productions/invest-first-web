@@ -38,7 +38,7 @@ export const licenses = [
 
 export const licenseSectionData = {
     heading: "Explore UAE Business License Categories Choose a license that fits your business objectives",
-    description: "Explore the different types of business licenses available in the UAE to find the perfect match for your company's activities and goals.",
+    description: "We provide professional PRO services in Dubai, including visa renewals, local sponsorship, banking assistance, and business support for smooth UAE operations.",
     licenseList: [
         {
             id: 1,

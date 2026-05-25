@@ -1,6 +1,6 @@
 export const visaSectionData = {
     heading: "Visa Services",
-    description: "Expert residency and visa solutions in the UAE. From investor visas to employment and family sponsorships, we handle all your immigration requirements with precision and speed.",
+    description: "We offer complete UAE visa services, including Investor Visa, Employment Visa, Green Visa, and Blue Visa. Our expert team handles documentation, approvals, and renewals to ensure a smooth and hassle-free visa process in Dubai and across the UAE. ",
     visaList: [
         {
             id: 1,

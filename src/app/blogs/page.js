@@ -5,8 +5,18 @@ import Image from 'next/image';
 import Schedule from '@/components/sections/Schedule';
 
 export const metadata = {
-    title: "Blogs & Articles | Invest First",
-    description: "Stay updated with the latest business trends, regulations, and insights in the UAE.",
+    title: "Business Setup Blogs in Dubai | UAE Company Formation",
+    description: "Explore expert blogs on business setup in Dubai, UAE company formation, trade licences, free zone vs mainland setup, and startup guidance with Invest First.",
+    keywords: "business setup in dubai, business setup in uae, company formation in uae, mainland company setup uae, freezone business setup, start a business uae",
+    alternates: {
+        canonical: "https://investfirst.ae/blogs",
+    },
+    openGraph: {
+        title: "Business Setup Blogs in Dubai | UAE Company Formation",
+        description: "Explore expert blogs on business setup in Dubai, UAE company formation, trade licences, free zone vs mainland setup, and startup guidance with Invest First.",
+        url: "https://investfirst.ae/blogs",
+        type: "website",
+    },
 };
 
 export default function BlogsPage() {
@@ -15,7 +25,7 @@ export default function BlogsPage() {
             <CommonHeroSection
                 highlightedTitle="Blogs &"
                 plainTitle="Articles"
-                description="Stay updated with the latest business trends, regulations, and insights in the UAE."
+                description="UAE Business Growth Insights experts in Dubai business setup, mainland company formation, and UAE investor visa services."
                 imageUrl="/images/blog/blog-banner.png"
                 imageAlt="Blogs and Articles"
                 breadcrumbs={[
@@ -23,7 +33,7 @@ export default function BlogsPage() {
                     { label: 'Blogs & Articles', href: '/blogs' }
                 ]}
             />
-            
+
             <section className="px-[20px] md:px-[60px] lg:px-[100px] py-[48px] md:py-[80px] lg:py-[120px] bg-white">
                 <div className="max-w-[1400px] mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[24px] gap-y-[48px] md:gap-y-[64px]">

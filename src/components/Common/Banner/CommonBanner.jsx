@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import ViewMoreButton from "@/components/ui/ViewMoreButton";
 import SectionContainer from "@/components/layout/SectionContainer";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 
 
@@ -26,8 +27,8 @@ const CommonBanner = ({ title, description, buttonLink, buttonText, imageSrc, im
                     </div>
 
                     {/* Button Side - Moved to right */}
-                    <div className="w-full md:w-auto flex justify-start md:justify-end shrink-0 z-20 mt-4 md:mt-0">
-                        <Link
+                   <div className="w-full md:w-auto flex justify-start md:justify-end shrink-0 z-20 mt-4 md:mt-0">
+                        <Link 
                             href={buttonLink || "#"}
                             className="inline-flex items-center gap-2 bg-[#0F172A] hover:bg-[#1E293B] text-white px-6 py-3 rounded-2xl transition-all duration-300 group shadow-lg"
                         >

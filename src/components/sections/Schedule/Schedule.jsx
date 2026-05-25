@@ -54,7 +54,7 @@ export default function Schedule() {
               Schedule a Call
             </h2>
             <p className="text-white/80 text-[14px] md:text-[15px] leading-[1.6] max-w-[440px]">
-              Consult us for your Business Set Up, Visa Processing & PRO services in Dubai. We will be happy to guide you with the reliable experts per your Business requirements.
+              Make an appointment for a call with our company formation business setup specialists Dubai for guidance. If you are also interested in our mainland company formation in UAE, investor visa services and PRO services in Dubai. We can provide all these services and we are ready to help you!
             </p>
           </div>
 
@@ -118,9 +118,7 @@ export default function Schedule() {
                 Schedule Meeting
               </h2>
               <p className="text-white/75 text-[14px] md:text-[15px] leading-[1.65] max-w-[420px]">
-                Schedule a meeting with our UAE business setup consultants for expert guidance on company formation, trade license renewal, visa services, and PRO support.
-We provide reliable and hassle-free solutions to help you start and manage your business smoothly across the UAE. Book your meeting today and get professional grow, and manage your business successfully in UAE.
-
+                Book an appointment with our professional consultants to get expert advice on company formation in Dubai, mainland company registration in UAE, investor visa services, and best PRO services you may require for your enterprise.
               </p>
             </div>
 
