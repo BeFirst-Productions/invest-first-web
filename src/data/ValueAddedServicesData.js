@@ -2,37 +2,37 @@ export const valueAddedServicesData = [
     {
         id: 1,
         title: "VAT & Corporate Tax Assistance",
-        description: "Expert guidance for VAT registration and corporate tax compliance in the UAE. Stay compliant with the latest tax laws and regulations.",
+        description: "We provide expert VAT and Corporate Tax assistance in the UAE, including registration, filing, compliance support, and advisory services, ensuring your business meets all tax regulations smoothly and efficiently.",
         icon: "FileText"
     },
     {
         id: 2,
         title: "Medical Insurance Assistance",
-        description: "Comprehensive medical insurance solutions for individuals and businesses. We help you navigate the complex health insurance landscape in the UAE.",
+        description: "We offer complete medical insurance assistance in the UAE, helping individuals and businesses choose the right coverage, manage documentation, and ensure smooth policy activation and renewals.",
         icon: "BriefcaseMedical"
     },
     {
         id: 3,
         title: "Trademark Registration",
-        description: "Protect your brand and intellectual property in the UAE market. Professional trademark filing and monitoring services.",
+        description: "Professional trademark registration services in the UAE, including name search, filing, documentation, and approval support to protect and secure your brand legally in the market.",
         icon: "UserCheck"
     },
     {
         id: 4,
         title: "Branding and Design Services",
-        description: "Elevate your brand with premium design and creative strategy. From logo design to full brand identity development.",
+        description: "Full Business support services in the UAE for startups and established companies, providing branding, design & print, digital marketing and web design & development services.",
         icon: "PenTool"
     },
     {
         id: 5,
         title: "Digital Marketing Services",
-        description: "Grow your online presence and reach your target audience effectively. Comprehensive SEO, PPC, and social media management.",
+        description: " Boost your online visibility and connect with the right audience through result-driven digital marketing solutions. ",
         icon: "Settings"
     },
     {
         id: 6,
         title: "Web Design & Development",
-        description: "High-performance websites and custom web applications. Responsive, fast, and user-centric web development.",
+        description: "Create high-performance, responsive websites and custom web applications with a user-focused design for seamless and modern digital experiences.",
         icon: "Globe"
     }
 ];

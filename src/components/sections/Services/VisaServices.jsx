@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { visaServices } from '@/data/serviceData';
 import SectionBadge from '@/components/ui/SectionBadge';
+import SplitText from '@/components/ui/SplitText';
 
 export default function VisaServices() {
   const wrapperRef = useRef(null);
@@ -159,10 +160,25 @@ export default function VisaServices() {
       {/* ── Header ── */}
       <div className="px-[20px] md:px-[60px] lg:px-[100px] xl:px-[calc((100vw-1440px)/2+100px)] mb-[32px] md:mb-[40px] lg:mb-[25px] pr-[20px] md:pr-0">
         <SectionBadge label="Visa Services" className="mb-[24px]" />
-        <h2 className="font-sans text-[26px] md:text-[36px] lg:text-[40px] font-semibold leading-[1.3] md:leading-[46px] text-black tracking-tight max-w-[636px]">
-          Expert Visa Solutions for <br className="hidden md:block" />
-          Your Global Ambitions
-        </h2>
+        <SplitText
+          tag="h2"
+          className="font-sans text-[26px] md:text-[36px] lg:text-[40px] font-semibold leading-[1.3] md:leading-[46px] text-black tracking-tight max-w-[636px]"
+          text={
+            <>
+              Expert Visa Solutions for <br className="hidden md:block" />
+              Your Global Ambitions
+            </>
+          }
+          delay={80}
+          duration={1.25}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="left"
+        />
       </div>
 
       {/* ── Carousel ── */}

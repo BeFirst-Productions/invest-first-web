@@ -18,7 +18,7 @@ const page = () => {
             <CommonHeroSection
                 highlightedTitle="Founders"
                 plainTitle=""
-                description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                description="Meet the founders behind our trusted UAE business setup company, helping entrepreneurs with company formation,across Dubai and the UAE."
                 imageUrl="/images/about/founders-banner.jpg"
                 imageAlt="Our team at Meydan Free Zone"
                 breadcrumbs={[

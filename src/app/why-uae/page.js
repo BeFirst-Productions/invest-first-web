@@ -18,7 +18,7 @@ const page = () => {
             <CommonHeroSection
                 highlightedTitle="Why"
                 plainTitle="UAE"
-                description="The UAE offers a strategic business location, tax-friendly environment, global connectivity, and excellent opportunities for entrepreneurs, startups, and investors looking to expand internationally."
+                description="The UAE offers a strategic location, tax-friendly environment, and excellent opportunities for entrepreneurs and investors to grow globally."
                 imageUrl="/images/about/why-uae-banner.jpg"
                 imageAlt="Our team at Meydan Free Zone"
                 breadcrumbs={[

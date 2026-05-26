@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import SectionContainer from '@/components/layout/SectionContainer';
 import ViewMoreButton from '@/components/ui/ViewMoreButton';
@@ -34,6 +34,8 @@ export default function About() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const imageContainersRef = useRef([]);
+  
+  const [imagesLoaded, setImagesLoaded] = useState([false, false]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -57,14 +59,15 @@ export default function About() {
       // --- SET INITIAL STATE: Light gray and semi-transparent ---
       gsap.set('.char-span', { color: '#d1d5db', opacity: 0.6 });
 
-      // 2. Animate all lines Slower
-      lines.forEach((lineWords) => {
+      // 2. Animate all lines slightly faster
+      lines.forEach((lineWords, lineIndex) => {
         const chars = lineWords.flatMap(w => Array.from(w.querySelectorAll('.char-span')));
         gsap.to(chars, {
           color: (i, target) => target.classList.contains('highlight') ? '#008ebf' : '#000000',
           opacity: 1,
-          duration: 2.2, // Slower duration
-          stagger: 0.04, // Slower stagger
+          duration: 1.5, // Faster transition
+          delay: 0.4 + (lineIndex * 0.10), // Tighter gap between lines
+          stagger: 0.03, // Faster letter reveal
           ease: 'power2.out',
           scrollTrigger: { 
             trigger: sectionRef.current, 
@@ -100,6 +103,14 @@ export default function About() {
     }, sectionRef);
     return () => ctx.revert();
   }, []);
+
+  const handleImageLoad = (index) => {
+    setImagesLoaded((prev) => {
+      const newStatus = [...prev];
+      newStatus[index] = true;
+      return newStatus;
+    });
+  };
 
   return (
     <SectionContainer
@@ -156,18 +167,22 @@ export default function About() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center lg:justify-start gap-[24px]">
+          
+          <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-[24px] w-full">
             {[0, 1].map((i) => (
               <div 
                 key={i} 
                 ref={(el) => (imageContainersRef.current[i] = el)} 
-                className="relative w-[38px] md:w-[54px] lg:w-[68px] h-[100px] md:h-[180px] lg:h-[300px] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-gray-50 transition-all duration-700 hover:translate-y-[-5px]"
+                className="relative w-[38px] md:w-[54px] lg:w-[68px] h-[100px] md:h-[180px] lg:h-[300px] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-gray-100 transition-transform duration-700 hover:translate-y-[-5px]"
               >
                 <Image 
                   src={`/images/about/about-img${i + 1}.jpg`} 
                   alt="Business" 
                   fill 
-                  className="object-cover" 
+                  className={`object-cover transition-opacity duration-700 ease-in-out ${
+                    imagesLoaded[i] ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={() => handleImageLoad(i)}
                   sizes="(max-width: 1024px) 300px, 320px" 
                 />
               </div>
