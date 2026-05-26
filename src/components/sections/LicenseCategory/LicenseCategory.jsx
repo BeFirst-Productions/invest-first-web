@@ -80,7 +80,6 @@ export default function LicenseCategory() {
           tl.to(prev, {
             scale: 0.92,
             y: isDesktop ? -30 : -20,
-            opacity: 0.4,
             duration: 1, 
             ease: 'none',
           }, offset);
