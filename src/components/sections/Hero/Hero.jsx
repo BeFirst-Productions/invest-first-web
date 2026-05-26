@@ -136,12 +136,16 @@ export default function Hero() {
         force3D: true,
       });
 
+      // A plain object to hold the animated radius value
+      const clipProgress = { radius: 0 };
+
       // hero-img2: full screen but FULLY CLIPPED to a zero-radius circle
       // centered at screen bottom-center (matches arch transform-origin).
       // This keeps it invisible until Stage 2 starts growing the clip circle.
-      gsap.set(bgImgRef.current, {
-        "--clip-radius": "0px",
-      });
+      if (bgImgRef.current) {
+        bgImgRef.current.style.clipPath = "circle(0px at 50% 100%)";
+        bgImgRef.current.style.webkitClipPath = "circle(0px at 50% 100%)";
+      }
 
       // Overlay starts hidden
       gsap.set(overlayRef.current, { opacity: 0, pointerEvents: "none" });
@@ -362,14 +366,21 @@ export default function Hero() {
 
       // Clip-path grows to match inner arch hole radius
       master.to(
-        bgImgRef.current,
+        clipProgress,
         {
-          "--clip-radius": () =>
+          radius: () =>
             window.innerWidth <= 768
-              ? `${window.innerWidth * 0.746}px`
-              : `${window.innerWidth * 0.497}px`,
+              ? window.innerWidth * 0.746
+              : window.innerWidth * 0.497,
           duration: 0.3,
           ease: "power3.out",
+          onUpdate: () => {
+            if (bgImgRef.current) {
+              const val = `${clipProgress.radius}px`;
+              bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
+              bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
+            }
+          },
         },
         0.3,
       );
@@ -416,14 +427,21 @@ export default function Hero() {
       );
 
       master.to(
-        bgImgRef.current,
+        clipProgress,
         {
-          "--clip-radius": () =>
+          radius: () =>
             window.innerWidth <= 768
-              ? `${window.innerWidth * 2.5}px`
-              : `${window.innerWidth * 1.5}px`,
+              ? window.innerWidth * 2.5
+              : window.innerWidth * 1.5,
           duration: 0.4,
           ease: "power1.inOut",
+          onUpdate: () => {
+            if (bgImgRef.current) {
+              const val = `${clipProgress.radius}px`;
+              bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
+              bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
+            }
+          },
         },
         0.6,
       );
@@ -675,8 +693,8 @@ export default function Hero() {
                   ref={bgImgRef}
                   className="absolute inset-0 z-[5] pointer-events-none"
                   style={{
-                    clipPath: "circle(var(--clip-radius, 0px) at 50% 100%)",
-                    WebkitClipPath: "circle(var(--clip-radius, 0px) at 50% 100%)",
+                    clipPath: "circle(0px at 50% 100%)",
+                    WebkitClipPath: "circle(0px at 50% 100%)",
                   }}
                   aria-hidden="true"
                 >
