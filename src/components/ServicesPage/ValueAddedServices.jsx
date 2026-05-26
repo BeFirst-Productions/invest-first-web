@@ -21,7 +21,7 @@ const ValueAddedServices = () => {
                         <span className="text-[#0099CC]">Value</span>-Added Services
                     </h2>
                     <p className="text-black max-w-2xl mx-auto text-base md:text-lg  leading-relaxed">
-                        Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+                        Explore our value-added services designed to support smooth business operations, compliance, and growth for companies across Dubai and the UAE.
                     </p>
                 </div>
 
@@ -79,7 +79,7 @@ const ValueAddedServices = () => {
                 {/* Footer Text */}
                 <div className="mt-16 text-center">
                     <p className="max-w-2xl mx-auto text-base md:text-lg  leading-relaxed">
-                        Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
+                        Enhance your business setup in UAE with our value-added services, including business support, compliance solutions, and operational assistance across Dubai and the UAE.
                     </p>
                 </div>
             </SectionContainer>

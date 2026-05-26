@@ -6,6 +6,7 @@ import { services } from "@/data/serviceData";
 import SectionBadge from "@/components/ui/SectionBadge";
 import SectionContainer from "@/components/layout/SectionContainer";
 import ViewMoreButton from "@/components/ui/ViewMoreButton";
+import SplitText from "@/components/ui/SplitText";
 
 export default function OurServices() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -21,11 +22,26 @@ export default function OurServices() {
         <div className="flex mb-[16px] md:mb-[24px] justify-center">
           <SectionBadge label="Our Services" />
         </div>
-        <h2 className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px] mx-auto">
-          Complete Business Setup
-          <br className="hidden md:block" />
-          Solutions in Dubai.
-        </h2>
+        <SplitText
+          tag="h2"
+          className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px] mx-auto"
+          text={
+            <>
+              Complete Business Setup
+              <br className="hidden md:block" />
+              Solutions in Dubai.
+            </>
+          }
+          delay={50}
+          duration={1.25}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
       </div>
 
       {/* ── Services Rows ── */}

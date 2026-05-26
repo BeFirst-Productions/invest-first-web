@@ -109,8 +109,18 @@ export const seoData = {
     },
   },
   '/services': {
-    title: "Services | Invest First",
-    description: "Explore our comprehensive business setup and visa services in the UAE.",
+    title: "Business Setup Services in Dubai & UAE",
+    description: "Explore our professional business setup services in Dubai and the UAE, including company formation, trade licences, visa services, PRO support, and corporate solutions.",
+   keywords: "business setup services Dubai, company formation UAE, trade licence Dubai, UAE visa services, PRO services UAE, free zone company setup, mainland company formation, business consultants Dubai, corporate services UAE, Invest First services",
+    alternates: {
+        canonical: "https://investfirst.ae/services",
+    },
+    openGraph: {
+        title: "Business Setup Services in Dubai & UAE",
+        description: "Explore our professional business setup services in Dubai and the UAE, including company formation, trade licences, visa services, PRO support, and corporate solutions.",
+        url: "https://investfirst.ae/services",
+        type: "website",
+    },
   },
   '/blogs': {
     title: "Business Setup Blogs in Dubai | UAE Company Formation",

@@ -5,6 +5,7 @@ import SectionBadge from "@/components/ui/SectionBadge";
 import PricingCard from "@/components/ui/PricingCard";
 import { pricingPlans } from "@/data/pricingData";
 import { gsap } from "@/lib/gsap";
+import SplitText from "@/components/ui/SplitText";
 
 export default function Pricing() {
   const containerRef = useRef(null);
@@ -100,9 +101,20 @@ export default function Pricing() {
       {/* Section Header — centred */}
       <div className="flex flex-col items-center text-center mb-[48px] md:mb-[64px]">
         <SectionBadge label="Pricing Plan" className="mb-[20px]" />
-        <h2 className="font-sans text-[28px] md:text-[36px] lg:text-[40px] font-semibold leading-[1.25] text-[#111111] tracking-tight max-w-[620px]">
-          License Packages dolor sit amet, consecteturadipiscing elit.
-        </h2>
+        <SplitText
+          tag="h2"
+          className="font-sans text-[28px] md:text-[36px] lg:text-[40px] font-semibold leading-[1.25] text-[#111111] tracking-tight max-w-[620px]"
+          text="License Packages dolor sit amet, consecteturadipiscing elit."
+          delay={50}
+          duration={1.25}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
       </div>
 
       {/* Cards grid — 1 col on mobile, 3 cols on lg+ */}

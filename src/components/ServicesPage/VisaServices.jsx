@@ -172,8 +172,7 @@ const VisaServices = () => {
                     <div className="mt-16 text-center">
                         <p className="max-w-2xl mx-auto text-base md:text-lg  leading-relaxed">
 
-We provide UAE visa services, including applications, renewals, and approvals for investors, employees, and families with smooth processing and support. 
-
+                            We provide UAE visa services, including applications, renewals, and approvals for investors, employees, and families with smooth processing and support.
                         </p>
                     </div>
                     <style jsx>{`

@@ -6,6 +6,7 @@ import SectionBadge from '@/components/ui/SectionBadge';
 import SectionContainer from '@/components/layout/SectionContainer';
 import { ArrowUpRight } from 'lucide-react';
 import { licenses } from '@/data/licenseData';
+import SplitText from '@/components/ui/SplitText';
 
 
 export default function LicenseCategory() {
@@ -110,9 +111,24 @@ export default function LicenseCategory() {
           <div className="flex justify-center mb-[12px] md:mb-[20px]">
             <SectionBadge label="License category" />
           </div>
-          <h2 className="font-sans text-[20px] md:text-[32px] lg:text-[40px] font-bold leading-[1.15] text-[#111111] tracking-[-0.02em]">
-            Choose Business License <br className="hidden md:block" /> Leading UAE Company Setup Experts
-          </h2>
+          <SplitText
+            tag="h2"
+            className="font-sans text-[20px] md:text-[32px] lg:text-[40px] font-bold leading-[1.15] text-[#111111] tracking-[-0.02em]"
+            text={
+              <>
+                Choose Business License <br className="hidden md:block" /> Leading UAE Company Setup Experts
+              </>
+            }
+            delay={50}
+            duration={1.25}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
         </div>
 
         {/* ── Cards Wrapper ── */}
