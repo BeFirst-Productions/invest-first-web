@@ -44,10 +44,11 @@ const validateHeroForm = (fields) => {
 // level so it's available synchronously in the component.
 const isIOS = () => {
   if (typeof window === "undefined") return false;
+  const ua = navigator.userAgent;
   return (
-    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-    // iPad on iOS 13+ reports as macOS — check for touch + no mouse
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    /iPad|iPhone|iPod/.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+    (navigator.vendor && navigator.vendor.includes('Apple') && 'ontouchend' in document)
   );
 };
 
@@ -138,17 +139,11 @@ export default function Hero() {
       bgImgRef.current.style.webkitClipPath = "circle(0px at 50% 100%)";
     }
 
-    // ── FIX C: arch transformOrigin in pixels, not percent ───────────────
-    // GSAP force3D on iOS Safari misresolves percentage transformOrigin.
-    // We compute the pixel centre-bottom of the arch element instead.
-    const archW = window.innerWidth * 1.4;
-    const archH = window.innerWidth * 0.7;
-
     // ── Set initial states ────────────────────────────────────────────────
     gsap.set(archWrapRef.current, {
       xPercent: -50,
       scale: 0,
-      transformOrigin: `${archW / 2}px ${archH}px`,
+      transformOrigin: "50% 100%",
       force3D: true,
     });
 
@@ -213,6 +208,8 @@ export default function Hero() {
 
       const clipProgress = { radius: 0 };
 
+      const navbar = document.getElementById("global-navbar");
+
       const master = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -220,13 +217,24 @@ export default function Hero() {
           end: "bottom bottom",
           scrub: 2,
           invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            const p = self.progress;
+            const isPast = p >= 1.0;
+            if (navbar) {
+              if (isPast) {
+                navbar.style.opacity = "";
+                navbar.style.transform = "";
+              } else {
+                const s1 = Math.max(0, Math.min(1, p / 0.30));
+                const ns1 = Math.min(1, s1 / 0.83);
+                navbar.style.transform = `translateX(-50%) translateY(${-16 * ns1}px) scale(${1 - 0.05 * ns1}) translateZ(0)`;
+                navbar.style.opacity   = `${1 - ns1}`;
+              }
+            }
+          }
         },
       });
 
-      const navbar = document.getElementById("global-navbar");
-      if (navbar) {
-        master.to(navbar, { y: -16, scale: 0.95, opacity: 0, duration: 0.25, ease: "power2.inOut" }, 0);
-      }
       master.to(heroTextRef.current,   { y: -120, opacity: 0, duration: 0.32, ease: "power1.inOut" }, 0);
       master.to(scrollHintRef.current, { opacity: 0, y: 6, duration: 0.1, ease: "power1.in" }, 0);
       master.to(cloudLeftRef.current,  { x: "-20%", y: "-10%", opacity: 0, duration: 0.3, ease: "power1.inOut" }, 0);
@@ -370,9 +378,15 @@ export default function Hero() {
         buildingRef.current.style.transform = `translateY(${buildingY}px) scale(${buildingScale}) translateZ(0)`;
       }
       if (navbar) {
-        const ns1 = Math.min(1, s1 / 0.83);
-        navbar.style.transform = `translateY(${-16 * ns1}px) scale(${1 - 0.05 * ns1}) translateZ(0)`;
-        navbar.style.opacity   = `${1 - ns1}`;
+        const isPast = p >= 1.0;
+        if (isPast) {
+          navbar.style.opacity = "";
+          navbar.style.transform = "";
+        } else {
+          const ns1 = Math.min(1, s1 / 0.83);
+          navbar.style.transform = `translateX(-50%) translateY(${-16 * ns1}px) scale(${1 - 0.05 * ns1}) translateZ(0)`;
+          navbar.style.opacity   = `${1 - ns1}`;
+        }
       }
 
       // ── STAGE 2: 0.30 → 0.60 ─────────────────────────────────────────
@@ -817,7 +831,7 @@ export default function Hero() {
                 </div>
 
                 {/* ── z-[6] Arch Wrapper ── */}
-                {/* transformOrigin set in JS with pixel values (FIX C) */}
+                {/* Centered at bottom natively via percent transform-origin */}
                 <div
                   ref={archWrapRef}
                   className="absolute z-[6] pointer-events-none"
@@ -828,6 +842,8 @@ export default function Hero() {
                     left: "50%",
                     transform: "translateX(-50%) scale(0) translateZ(0)",
                     WebkitTransform: "translateX(-50%) scale(0) translateZ(0)",
+                    transformOrigin: "50% 100%",
+                    WebkitTransformOrigin: "50% 100%",
                     willChange: "transform",
                   }}
                   aria-hidden="true"
