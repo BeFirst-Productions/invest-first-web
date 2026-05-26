@@ -714,7 +714,7 @@ export default function Hero() {
                   style={{ opacity: 0, pointerEvents: "none" }}
                 >
                   {/* Dark overlay for readability */}
-                  <div className="fixed inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 pointer-events-none" />
 
                   <div className="relative w-full min-h-full flex flex-col justify-center lg:flex-row lg:items-center py-20 lg:py-0">
                     <div className="w-full max-w-[1990px] mx-auto px-[24px] md:px-[32px] lg:px-[120px] 2xl:px-[180px]">
