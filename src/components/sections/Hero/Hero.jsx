@@ -141,6 +141,7 @@ export default function Hero() {
       // This keeps it invisible until Stage 2 starts growing the clip circle.
       gsap.set(bgImgRef.current, {
         clipPath: "circle(0vw at 50% 100%)",
+        webkitClipPath: "circle(0vw at 50% 100%)",
       });
 
       // Overlay starts hidden
@@ -368,6 +369,10 @@ export default function Hero() {
             window.innerWidth <= 768
               ? "circle(74.6vw at 50% 100%)"
               : "circle(49.7vw at 50% 100%)",
+          webkitClipPath: () =>
+            window.innerWidth <= 768
+              ? "circle(74.6vw at 50% 100%)"
+              : "circle(49.7vw at 50% 100%)",
           duration: 0.3,
           ease: "power3.out",
         },
@@ -419,6 +424,10 @@ export default function Hero() {
         bgImgRef.current,
         {
           clipPath: () =>
+            window.innerWidth <= 768
+              ? "circle(250vw at 50% 100%)"
+              : "circle(150vw at 50% 100%)",
+          webkitClipPath: () =>
             window.innerWidth <= 768
               ? "circle(250vw at 50% 100%)"
               : "circle(150vw at 50% 100%)",
@@ -582,7 +591,7 @@ export default function Hero() {
         className="relative h-[500vh] w-full"
         aria-label="Hero section"
       >
-        <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
+        <div className="sticky top-0 left-0 w-full h-[100dvh] overflow-hidden">
           <SectionContainer
             as="div"
             className="h-full bg-transparent"
@@ -592,7 +601,7 @@ export default function Hero() {
                 {/* ── z-[0] Sky ── */}
                 <div
                   ref={skyRef}
-                  className="absolute z-0 transform-gpu will-change-transform"
+                  className="absolute z-0"
                   style={{ inset: "-10% 0 -10% 0" }}
                 >
                   <Image
@@ -609,7 +618,7 @@ export default function Hero() {
                 {/* ── z-[1] Hero Text (Behind Buildings, Behind Clouds) ── */}
                 <div
                   ref={heroTextRef}
-                  className="absolute left-0 top-0 w-full pt-[clamp(140px,20vh,220px)] z-[1] will-change-[transform,opacity] flex flex-col items-center text-center pointer-events-auto px-4"
+                  className="absolute left-0 top-0 w-full pt-[clamp(140px,20vh,220px)] z-[1] flex flex-col items-center text-center pointer-events-auto px-4"
                 >
                   <h1 className="hero-title text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] leading-[1.1] tracking-tight max-w-[90vw] md:max-w-full">
                     Business Setup Services{" "}
@@ -626,7 +635,7 @@ export default function Hero() {
                 {/* ── z-[3] Left Cloud ── */}
                 <div
                   ref={cloudLeftRef}
-                  className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-[529/309] z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-[529/309] z-[3] pointer-events-none bg-transparent [isolation:isolate] overflow-visible"
                   aria-hidden="true"
                 >
                   <Image
@@ -641,7 +650,7 @@ export default function Hero() {
                 {/* ── z-[3] Right Cloud ── */}
                 <div
                   ref={cloudRightRef}
-                  className="absolute right-[-14%] md:right-[-9%] lg:right-[-5%] top-[11%] md:top-[14%] lg:top-[16%] w-[60%] md:w-[48%] lg:w-[35%] aspect-[472/276] z-[3] pointer-events-none will-change-transform bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute right-[-14%] md:right-[-9%] lg:right-[-5%] top-[11%] md:top-[14%] lg:top-[16%] w-[60%] md:w-[48%] lg:w-[35%] aspect-[472/276] z-[3] pointer-events-none bg-transparent [isolation:isolate] overflow-visible"
                   aria-hidden="true"
                 >
                   <Image
@@ -656,7 +665,7 @@ export default function Hero() {
                 {/* ── z-[2] Buildings ── */}
                 <div
                   ref={buildingRef}
-                  className="absolute bottom-[clamp(-200px,-15vh,-150px)] md:bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom transform-gpu will-change-transform"
+                  className="absolute bottom-[clamp(-200px,-15vh,-150px)] md:bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom"
                 >
                   <img
                     src="/images/hero/hero-building.png"
@@ -673,11 +682,11 @@ export default function Hero() {
                 ──────────────────────────────────────────────────────────── */}
                 <div
                   ref={bgImgRef}
-                  className="absolute z-[5] pointer-events-none will-change-[clip-path]"
+                  className="absolute z-[5] pointer-events-none"
                   style={{
                     top: 0,
                     left: "50%",
-                    transform: "translateX(-50%)",
+                    transform: "translateX(-50%) translateZ(0)",
                     width: "100vw",
                     height: "100vh",
                   }}
@@ -866,7 +875,7 @@ export default function Hero() {
                 ═══════════════════════════════════════════════════════════ */}
                 <div
                   ref={archWrapRef}
-                  className="absolute z-[6] transform-gpu will-change-transform pointer-events-none"
+                  className="absolute z-[6] pointer-events-none"
                   style={{
                     width: "140vw",
                     height: "70vw",
@@ -884,7 +893,7 @@ export default function Hero() {
                     {/* White ring — CSS borders only, background: transparent */}
                     <div
                       ref={archFrameRef}
-                      className="absolute inset-0 will-change-[opacity]"
+                      className="absolute inset-0"
                       style={{
                         borderTop: "20.3vw solid #ffffff",
                         borderLeft: "20.3vw solid #ffffff",
