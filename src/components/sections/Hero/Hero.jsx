@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionContainer from "@/components/layout/SectionContainer";
@@ -40,22 +39,34 @@ const validateHeroForm = (fields) => {
   return errors;
 };
 
+// ─── iOS Safari detection ────────────────────────────────────────────────────
+// We need this to switch the scroll engine. Detection is done once at module
+// level so it's available synchronously in the component.
+const isIOS = () => {
+  if (typeof window === "undefined") return false;
+  return (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    // iPad on iOS 13+ reports as macOS — check for touch + no mouse
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  );
+};
+
 export default function Hero() {
-  const containerRef = useRef(null);
-  const skyRef = useRef(null);
-  const buildingRef = useRef(null);
-  const heroTextRef = useRef(null);
+  const containerRef  = useRef(null);
+  const skyRef        = useRef(null);
+  const buildingRef   = useRef(null);
+  const heroTextRef   = useRef(null);
   const scrollHintRef = useRef(null);
   const cloudRightRef = useRef(null);
-  const cloudLeftRef = useRef(null);
-  const bgImgRef = useRef(null);
-  const archWrapRef = useRef(null);
-  const archFrameRef = useRef(null);
-  const overlayRef = useRef(null);
-  const overlayLeftRef = useRef(null);
+  const cloudLeftRef  = useRef(null);
+  const bgImgRef      = useRef(null);
+  const archWrapRef   = useRef(null);
+  const archFrameRef  = useRef(null);
+  const overlayRef    = useRef(null);
+  const overlayLeftRef  = useRef(null);
   const overlayRightRef = useRef(null);
 
-  const [form, setForm] = useState(initialForm);
+  const [form, setForm]     = useState(initialForm);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -86,20 +97,14 @@ export default function Hero() {
     setErrors({});
   };
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // FIX 1 — iOS viewport height
-  //
-  // iOS Safari does NOT reliably support `100dvh`. The browser chrome
-  // (address bar, tab bar) causes the real viewport height to differ from
-  // what CSS thinks it is, producing a collapsed or overflowing sticky
-  // section. We create a custom `--vh` CSS property from window.innerHeight
-  // and update it on every resize/orientationchange. All full-height rules
-  // in this component use `calc(var(--vh, 1vh) * 100)` instead of `100dvh`.
-  // ─────────────────────────────────────────────────────────────────────────
+  // ── FIX A: --vh custom property ─────────────────────────────────────────
+  // 100dvh is unreliable on iOS Safari (browser chrome changes real height).
+  // We set --vh from window.innerHeight and keep it updated.
   useEffect(() => {
     const setVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      document.documentElement.style.setProperty(
+        '--vh', `${window.innerHeight * 0.01}px`
+      );
     };
     setVh();
     window.addEventListener('resize', setVh);
@@ -112,121 +117,101 @@ export default function Hero() {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReduced) return;
 
+    const ios = isIOS();
     let playEntranceFn;
 
-    const ctx = gsap.context(() => {
+    // ── FIX B: Pre-promote clip-path layer BEFORE any animation ─────────
+    // iOS Safari promotes elements to composited layers lazily. If GSAP
+    // starts animating clip-path on a non-promoted layer, iOS does a full
+    // repaint mid-animation causing a flash or collapse. Forcing
+    // will-change + translateZ(0) at mount promotes it immediately so the
+    // layer is ready before the first scroll event fires.
+    if (bgImgRef.current) {
+      bgImgRef.current.style.willChange     = "clip-path, transform";
+      bgImgRef.current.style.transform      = "translateZ(0)";
+      bgImgRef.current.style.webkitTransform = "translateZ(0)";
+      bgImgRef.current.style.clipPath       = "circle(0px at 50% 100%)";
+      bgImgRef.current.style.webkitClipPath = "circle(0px at 50% 100%)";
+    }
 
-      // ─────────────────────────────────────────────────────────────────────
-      // FIX 4 — GSAP transformOrigin with force3D on iOS
-      //
-      // Using percentage strings like "50% 100%" for transformOrigin breaks
-      // on iOS Safari when force3D:true is set, causing the arch to either
-      // snap to the wrong position or not animate at all. We calculate the
-      // pixel-based origin at runtime so GSAP doesn't have to resolve it.
-      // archWrap is 140vw wide × 70vw tall; origin is center-bottom.
-      // ─────────────────────────────────────────────────────────────────────
-      const archW = window.innerWidth * 1.4;
-      const archH = window.innerWidth * 0.7;
-      const archOriginX = archW / 2;   // pixel X of transform origin within element
-      const archOriginY = archH;        // pixel Y = full height (bottom)
+    // ── FIX C: arch transformOrigin in pixels, not percent ───────────────
+    // GSAP force3D on iOS Safari misresolves percentage transformOrigin.
+    // We compute the pixel centre-bottom of the arch element instead.
+    const archW = window.innerWidth * 1.4;
+    const archH = window.innerWidth * 0.7;
 
-      gsap.set(archWrapRef.current, {
-        xPercent: -50,
-        scale: 0,
-        // Use px-based string so iOS Safari computes it correctly
-        transformOrigin: `${archOriginX}px ${archOriginY}px`,
-        force3D: true,
-      });
+    // ── Set initial states ────────────────────────────────────────────────
+    gsap.set(archWrapRef.current, {
+      xPercent: -50,
+      scale: 0,
+      transformOrigin: `${archW / 2}px ${archH}px`,
+      force3D: true,
+    });
+
+    gsap.set(overlayRef.current, { opacity: 0, pointerEvents: "none" });
+    gsap.set(overlayLeftRef.current,  { x: -60, opacity: 0 });
+    gsap.set(overlayRightRef.current, { x: 60,  opacity: 0 });
+
+    const textElements = heroTextRef.current
+      ? Array.from(heroTextRef.current.children)
+      : [];
+    gsap.set(textElements, { y: 120, opacity: 0 });
+
+    const buildingImg = buildingRef.current?.querySelector("img");
+    if (buildingImg) gsap.set(buildingImg, { y: 320, opacity: 0, scale: 1.03 });
+
+    const cloudLeftImg  = cloudLeftRef.current?.querySelector("img");
+    const cloudRightImg = cloudRightRef.current?.querySelector("img");
+    if (cloudLeftImg)  gsap.set(cloudLeftImg,  { y: 160, opacity: 0 });
+    if (cloudRightImg) gsap.set(cloudRightImg, { y: 160, opacity: 0 });
+
+    // ── Entrance animation (unchanged — not scroll-driven) ────────────────
+    const playEntrance = () => {
+      const tl = gsap.timeline({ delay: 0.35 });
+      tl.to(buildingImg, { y: 0, opacity: 1, scale: 1, duration: 1.8, ease: "power3.out" }, 0);
+      tl.to(textElements, { y: 0, opacity: 1, duration: 1.4, stagger: 0.15, ease: "power3.out" }, 0.25);
+      if (cloudLeftImg)  tl.to(cloudLeftImg,  { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.45);
+      if (cloudRightImg) tl.to(cloudRightImg, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.55);
+    };
+    playEntranceFn = playEntrance;
+
+    if (window.__loaderExit) {
+      setTimeout(playEntrance, 100);
+    } else {
+      window.addEventListener("loaderExit", playEntrance);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // THE CORE FIX — two separate scroll engines:
+    //
+    // DESKTOP  → GSAP ScrollTrigger (original approach, works perfectly)
+    // iOS      → Manual RAF loop reading window.pageYOffset directly
+    //
+    // WHY iOS ScrollTrigger scrub FAILS:
+    //   iOS Safari does NOT fire scroll events during momentum/kinetic
+    //   scrolling (the coasting phase after you lift your finger). GSAP
+    //   ScrollTrigger is entirely event-driven — if no scroll events fire,
+    //   the scrub value freezes. The user can scroll 1000px and the
+    //   animation stays frozen until the momentum fully stops, then it
+    //   jumps to the final position all at once.
+    //
+    // WHY RAF WORKS:
+    //   requestAnimationFrame fires every frame regardless of scroll events.
+    //   window.pageYOffset is always current — it updates continuously even
+    //   during momentum scrolling. Reading it in RAF gives us true real-time
+    //   scroll position that we can map to animation progress.
+    // ─────────────────────────────────────────────────────────────────────
+
+    if (!ios) {
+      // ── DESKTOP PATH: GSAP ScrollTrigger (original) ───────────────────
+      // DO NOT call ScrollTrigger.normalizeScroll(true) — it fights iOS
+      // even on desktop by intercepting pointer events globally.
 
       const clipProgress = { radius: 0 };
-
-      // ─────────────────────────────────────────────────────────────────────
-      // FIX 2 — clip-path on a div containing Next/Image on iOS Safari
-      //
-      // iOS Safari has a known compositing bug where -webkit-clip-path on a
-      // container div with a child <img> / Next/Image can collapse to zero
-      // height or flicker during scroll. The fix is to:
-      //   a) Add `will-change: clip-path` so the browser promotes the layer
-      //      before the animation starts (avoids mid-animation promotion).
-      //   b) Add `transform: translateZ(0)` to force GPU compositing from
-      //      the initial paint, not just when GSAP starts animating.
-      // ─────────────────────────────────────────────────────────────────────
-      if (bgImgRef.current) {
-        bgImgRef.current.style.clipPath = "circle(0px at 50% 100%)";
-        bgImgRef.current.style.webkitClipPath = "circle(0px at 50% 100%)";
-        bgImgRef.current.style.willChange = "clip-path";
-        bgImgRef.current.style.transform = "translateZ(0)";
-        bgImgRef.current.style.webkitTransform = "translateZ(0)";
-      }
-
-      gsap.set(overlayRef.current, { opacity: 0, pointerEvents: "none" });
-      gsap.set(overlayLeftRef.current, { x: -60, opacity: 0 });
-      gsap.set(overlayRightRef.current, { x: 60, opacity: 0 });
-
-      const textElements = heroTextRef.current
-        ? heroTextRef.current.children
-        : [];
-      gsap.set(textElements, { y: 120, opacity: 0 });
-
-      const buildingImg = buildingRef.current
-        ? buildingRef.current.querySelector("img")
-        : null;
-      if (buildingImg) {
-        gsap.set(buildingImg, { y: 320, opacity: 0, scale: 1.03 });
-      }
-
-      const cloudLeftImg = cloudLeftRef.current
-        ? cloudLeftRef.current.querySelector("img")
-        : null;
-      const cloudRightImg = cloudRightRef.current
-        ? cloudRightRef.current.querySelector("img")
-        : null;
-      if (cloudLeftImg) gsap.set(cloudLeftImg, { y: 160, opacity: 0 });
-      if (cloudRightImg) gsap.set(cloudRightImg, { y: 160, opacity: 0 });
-
-      const playEntrance = () => {
-        const tl = gsap.timeline({ delay: 0.35 });
-
-        tl.to(buildingImg, {
-          y: 0, opacity: 1, scale: 1, duration: 1.8, ease: "power3.out",
-        }, 0);
-
-        tl.to(textElements, {
-          y: 0, opacity: 1, duration: 1.4, stagger: 0.15, ease: "power3.out",
-        }, 0.25);
-
-        if (cloudLeftImg) {
-          tl.to(cloudLeftImg, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.45);
-        }
-        if (cloudRightImg) {
-          tl.to(cloudRightImg, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.55);
-        }
-      };
-
-      playEntranceFn = playEntrance;
-
-      if (typeof window !== "undefined") {
-        if (window.__loaderExit) {
-          setTimeout(playEntrance, 100);
-        } else {
-          window.addEventListener("loaderExit", playEntrance);
-        }
-      }
-
-      // ─────────────────────────────────────────────────────────────────────
-      // FIX 3 — ScrollTrigger scrub + iOS momentum scrolling
-      //
-      // iOS Safari uses momentum ("rubber-band") scrolling which can cause
-      // ScrollTrigger's scrub to jump ahead of the actual scroll position,
-      // producing a broken arch/reveal sequence. Setting `overscroll-behavior`
-      // and using `normalizeScroll` on ScrollTrigger suppresses the rubber-
-      // band effect for this scroll container and keeps scrub in sync.
-      // ─────────────────────────────────────────────────────────────────────
-      ScrollTrigger.normalizeScroll(true);
 
       const master = gsap.timeline({
         scrollTrigger: {
@@ -238,127 +223,265 @@ export default function Hero() {
         },
       });
 
-      // STAGE 1 ──────────────────────────────────────────────────────────────
       const navbar = document.getElementById("global-navbar");
       if (navbar) {
-        master.to(navbar, {
-          y: -16, scale: 0.95, opacity: 0, duration: 0.25, ease: "power2.inOut",
-        }, 0);
+        master.to(navbar, { y: -16, scale: 0.95, opacity: 0, duration: 0.25, ease: "power2.inOut" }, 0);
       }
-
-      master.to(heroTextRef.current, {
-        y: -120, opacity: 0, duration: 0.32, ease: "power1.inOut",
-      }, 0);
-
-      master.to(scrollHintRef.current, {
-        opacity: 0, y: 6, duration: 0.1, ease: "power1.in",
-      }, 0);
-
-      master.to(cloudLeftRef.current, {
-        x: "-20%", y: "-10%", opacity: 0, duration: 0.3, ease: "power1.inOut",
-      }, 0);
-
-      master.to(cloudRightRef.current, {
-        x: "20%", y: "-8%", opacity: 0, duration: 0.3, ease: "power1.inOut",
-      }, 0);
-
-      master.to(skyRef.current, {
-        y: "-10%", scale: 1.08, duration: 0.3, ease: "none",
-      }, 0);
-
-      master.fromTo(
-        buildingRef.current,
-        { y: () => (window.innerWidth <= 768 ? "8vh" : "26vh"), scale: 1 },
-        { y: () => (window.innerWidth <= 768 ? "-5vh" : "-14vh"), scale: 1.03, duration: 0.3, ease: "power2.out" },
-        0,
+      master.to(heroTextRef.current,   { y: -120, opacity: 0, duration: 0.32, ease: "power1.inOut" }, 0);
+      master.to(scrollHintRef.current, { opacity: 0, y: 6, duration: 0.1, ease: "power1.in" }, 0);
+      master.to(cloudLeftRef.current,  { x: "-20%", y: "-10%", opacity: 0, duration: 0.3, ease: "power1.inOut" }, 0);
+      master.to(cloudRightRef.current, { x: "20%",  y: "-8%",  opacity: 0, duration: 0.3, ease: "power1.inOut" }, 0);
+      master.to(skyRef.current,        { y: "-10%", scale: 1.08, duration: 0.3, ease: "none" }, 0);
+      master.fromTo(buildingRef.current,
+        { y: () => window.innerWidth <= 768 ? "8vh" : "26vh", scale: 1 },
+        { y: () => window.innerWidth <= 768 ? "-5vh" : "-14vh", scale: 1.03, duration: 0.3, ease: "power2.out" },
+        0
       );
 
-      // STAGE 2 ──────────────────────────────────────────────────────────────
-      master.to(archWrapRef.current, {
-        scale: () => (window.innerWidth <= 768 ? 1.5 : 1.0),
-        duration: 0.3,
-        ease: "power3.out",
-      }, 0.3);
-
+      master.to(archWrapRef.current, { scale: () => window.innerWidth <= 768 ? 1.5 : 1.0, duration: 0.3, ease: "power3.out" }, 0.3);
       master.to(clipProgress, {
-        radius: () =>
-          window.innerWidth <= 768
-            ? window.innerWidth * 0.746
-            : window.innerWidth * 0.497,
+        radius: () => window.innerWidth <= 768 ? window.innerWidth * 0.746 : window.innerWidth * 0.497,
         duration: 0.3,
         ease: "power3.out",
         onUpdate: () => {
           if (bgImgRef.current) {
             const val = `${clipProgress.radius}px`;
-            bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
+            bgImgRef.current.style.clipPath       = `circle(${val} at 50% 100%)`;
             bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
           }
         },
       }, 0.3);
+      master.to(buildingRef.current, { y: () => window.innerWidth <= 768 ? "-2vh" : "-4vh", duration: 0.3, ease: "power1.inOut" }, 0.3);
+      master.to(skyRef.current,      { y: "-15%", duration: 0.3, ease: "none" }, 0.3);
 
-      master.to(buildingRef.current, {
-        y: () => (window.innerWidth <= 768 ? "-2vh" : "-4vh"),
-        duration: 0.3,
-        ease: "power1.inOut",
-      }, 0.3);
-
-      master.to(skyRef.current, {
-        y: "-15%", duration: 0.3, ease: "none",
-      }, 0.3);
-
-      // STAGE 3 ──────────────────────────────────────────────────────────────
-      master.to(archWrapRef.current, {
-        scale: () => (window.innerWidth <= 768 ? 6.0 : 3.0),
-        duration: 0.4,
-        ease: "power1.inOut",
-      }, 0.6);
-
+      master.to(archWrapRef.current, { scale: () => window.innerWidth <= 768 ? 6.0 : 3.0, duration: 0.4, ease: "power1.inOut" }, 0.6);
       master.to(clipProgress, {
-        radius: () =>
-          window.innerWidth <= 768
-            ? window.innerWidth * 2.5
-            : window.innerWidth * 1.5,
+        radius: () => window.innerWidth <= 768 ? window.innerWidth * 2.5 : window.innerWidth * 1.5,
         duration: 0.4,
         ease: "power1.inOut",
         onUpdate: () => {
           if (bgImgRef.current) {
             const val = `${clipProgress.radius}px`;
-            bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
+            bgImgRef.current.style.clipPath       = `circle(${val} at 50% 100%)`;
             bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
           }
         },
       }, 0.6);
+      master.to(archFrameRef.current, { opacity: 0, duration: 0.15, ease: "power2.in" }, 0.82);
+      master.to(skyRef.current,       { y: "-28%", duration: 0.4, ease: "none" }, 0.6);
+      master.to(overlayRef.current,   { opacity: 1, pointerEvents: "auto", duration: 0.18, ease: "power2.out" }, 0.82);
+      master.to(overlayLeftRef.current,  { x: 0, opacity: 1, duration: 0.18, ease: "power3.out" }, 0.84);
+      master.to(overlayRightRef.current, { x: 0, opacity: 1, duration: 0.18, ease: "power3.out" }, 0.86);
 
-      master.to(archFrameRef.current, {
-        opacity: 0, duration: 0.15, ease: "power2.in",
-      }, 0.82);
+      return () => {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+        if (playEntranceFn) window.removeEventListener("loaderExit", playEntranceFn);
+      };
+    }
 
-      master.to(skyRef.current, {
-        y: "-28%", duration: 0.4, ease: "none",
-      }, 0.6);
+    // ── iOS PATH: Manual RAF scroll engine ───────────────────────────────
+    //
+    // We replicate the exact same 4-stage animation logic but driven by
+    // window.pageYOffset read inside requestAnimationFrame instead of
+    // GSAP ScrollTrigger's scroll event listener.
+    //
+    // The section is 500vh tall. The sticky panel is vh tall.
+    // Scroll range = containerTop to (containerTop + 400vh).
+    // progress = scrollY from 0.0 → 1.0 over that range.
+    //
+    // We apply lerp (linear interpolation with a smoothing factor) to
+    // replicate the scrub:2 feel — smooth lag that chases the real scroll.
 
-      // STAGE 4 ──────────────────────────────────────────────────────────────
-      master.to(overlayRef.current, {
-        opacity: 1, pointerEvents: "auto", duration: 0.18, ease: "power2.out",
-      }, 0.82);
+    let rafId = null;
+    let currentProgress = 0;    // lerped progress (what we animate to)
+    let targetProgress  = 0;    // raw scroll-mapped progress
+    let lastArchScale   = 0;
+    let overlayShown    = false;
 
-      master.to(overlayLeftRef.current, {
-        x: 0, opacity: 1, duration: 0.18, ease: "power3.out",
-      }, 0.84);
+    // Lerp factor: lower = more lag (smoother), higher = snappier.
+    // scrub:2 in GSAP is roughly equivalent to ~0.06 lerp factor at 60fps.
+    const LERP = 0.06;
 
-      master.to(overlayRightRef.current, {
-        x: 0, opacity: 1, duration: 0.18, ease: "power3.out",
-      }, 0.86);
+    // Helper: linear interpolate
+    const lerp = (a, b, t) => a + (b - a) * t;
 
-    }, containerRef);
+    // Helper: map progress [0..1] through a sub-range [start..end] → [0..1]
+    const mapRange = (p, start, end) => Math.max(0, Math.min(1, (p - start) / (end - start)));
+
+    // Helper: ease functions matching GSAP eases
+    const easeOut3  = t => 1 - Math.pow(1 - t, 3);   // power3.out
+    const easeOut1  = t => 1 - (1 - t);               // linear (power1)
+    const easeIn2   = t => t * t;                      // power2.in
+    const easeInOut1 = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // power1.inOut
+
+    // Cache the navbar element
+    const navbar = document.getElementById("global-navbar");
+
+    // We need the section's scroll range. We read it in the RAF loop
+    // so it's always fresh after any reflow.
+    const getScrollRange = () => {
+      if (!containerRef.current) return { start: 0, total: 1 };
+      const rect  = containerRef.current.getBoundingClientRect();
+      const start = window.pageYOffset + rect.top;
+      const total = containerRef.current.offsetHeight - window.innerHeight;
+      return { start, total: Math.max(total, 1) };
+    };
+
+    // Apply all animation values for a given lerped progress (0→1)
+    const applyProgress = (p) => {
+      const isMobile = window.innerWidth <= 768;
+
+      // ── STAGE 1: 0 → 0.30 ───────────────────────────────────────────
+      const s1 = mapRange(p, 0, 0.30);
+
+      if (heroTextRef.current) {
+        heroTextRef.current.style.transform = `translateY(${-120 * s1}px) translateZ(0)`;
+        heroTextRef.current.style.opacity   = `${1 - s1}`;
+      }
+      if (scrollHintRef.current) {
+        scrollHintRef.current.style.opacity = `${1 - Math.min(1, s1 / 0.33)}`;
+      }
+      if (cloudLeftRef.current) {
+        const t1 = easeInOut1(s1);
+        cloudLeftRef.current.style.transform = `translate(${-20 * t1}%, ${-10 * t1}%) translateZ(0)`;
+        cloudLeftRef.current.style.opacity   = `${1 - t1}`;
+      }
+      if (cloudRightRef.current) {
+        const t1 = easeInOut1(s1);
+        cloudRightRef.current.style.transform = `translate(${20 * t1}%, ${-8 * t1}%) translateZ(0)`;
+        cloudRightRef.current.style.opacity   = `${1 - t1}`;
+      }
+      if (skyRef.current) {
+        const skyS1 = s1;
+        const skyS2 = mapRange(p, 0.30, 0.60);
+        const skyS3 = mapRange(p, 0.60, 1.0);
+        const skyY = -10 * skyS1 + (-5) * skyS2 + (-13) * skyS3;
+        const skyScale = 1 + 0.08 * skyS1;
+        skyRef.current.style.transform = `translateY(${skyY}%) scale(${skyScale}) translateZ(0)`;
+      }
+      if (buildingRef.current) {
+        const startY = isMobile ? window.innerHeight * 0.08 : window.innerHeight * 0.26;
+        const mid1Y  = isMobile ? window.innerHeight * -0.05 : window.innerHeight * -0.14;
+        const mid2Y  = isMobile ? window.innerHeight * -0.02 : window.innerHeight * -0.04;
+        const bs1 = easeInOut1(s1);
+        const bs2 = mapRange(p, 0.30, 0.60);
+        const buildingY = startY + (mid1Y - startY) * bs1 + (mid2Y - mid1Y) * bs2;
+        const buildingScale = 1 + 0.03 * bs1;
+        buildingRef.current.style.transform = `translateY(${buildingY}px) scale(${buildingScale}) translateZ(0)`;
+      }
+      if (navbar) {
+        const ns1 = Math.min(1, s1 / 0.83);
+        navbar.style.transform = `translateY(${-16 * ns1}px) scale(${1 - 0.05 * ns1}) translateZ(0)`;
+        navbar.style.opacity   = `${1 - ns1}`;
+      }
+
+      // ── STAGE 2: 0.30 → 0.60 ─────────────────────────────────────────
+      const s2     = mapRange(p, 0.30, 0.60);
+      const s2ease = easeOut3(s2);
+
+      // Arch scale
+      const archTargetS2 = isMobile ? 1.5 : 1.0;
+      const archScaleS2  = s2ease * archTargetS2;
+
+      // Clip radius (matches arch inner hole)
+      const clipTargetS2 = isMobile
+        ? window.innerWidth * 0.746
+        : window.innerWidth * 0.497;
+      const clipRadiusS2 = s2ease * clipTargetS2;
+
+      // ── STAGE 3: 0.60 → 1.0 ──────────────────────────────────────────
+      const s3     = mapRange(p, 0.60, 1.0);
+      const s3ease = easeInOut1(s3);
+
+      const archTargetS3 = isMobile ? 6.0 : 3.0;
+      // Stage 3 arch adds on top of stage 2 final value
+      const archFinalScale = (s2 >= 1 ? archTargetS2 : archScaleS2) + s3ease * (archTargetS3 - archTargetS2);
+
+      const clipTargetS3 = isMobile
+        ? window.innerWidth * 2.5
+        : window.innerWidth * 1.5;
+      const clipFinalRadius = (s2 >= 1 ? clipTargetS2 : clipRadiusS2) + s3ease * (clipTargetS3 - clipTargetS2);
+
+      // Apply arch transform (only if changed to avoid thrashing)
+      const newArchScale = p <= 0.30 ? 0 : archFinalScale;
+      if (Math.abs(newArchScale - lastArchScale) > 0.0001 && archWrapRef.current) {
+        lastArchScale = newArchScale;
+        // xPercent:-50 + scale from bottom-center
+        archWrapRef.current.style.transform =
+          `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
+        archWrapRef.current.style.webkitTransform =
+          `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
+      }
+
+      // Apply clip-path
+      const finalRadius = p <= 0.30 ? 0 : clipFinalRadius;
+      if (bgImgRef.current) {
+        const val = `${finalRadius}px`;
+        bgImgRef.current.style.clipPath       = `circle(${val} at 50% 100%)`;
+        bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
+      }
+
+      // Arch frame fade (0.82 → 0.97)
+      if (archFrameRef.current) {
+        const fadeP = mapRange(p, 0.82, 0.97);
+        archFrameRef.current.style.opacity = `${1 - easeIn2(fadeP)}`;
+      }
+
+      // ── STAGE 4: 0.82 → 1.0 — overlay fade in ────────────────────────
+      if (p >= 0.82 && !overlayShown) {
+        overlayShown = true;
+        if (overlayRef.current) {
+          overlayRef.current.style.opacity      = "0";
+          overlayRef.current.style.pointerEvents = "auto";
+        }
+      }
+      if (overlayRef.current) {
+        const op = mapRange(p, 0.82, 1.0);
+        overlayRef.current.style.opacity = `${easeOut3(op)}`;
+        if (op > 0) overlayRef.current.style.pointerEvents = "auto";
+        else overlayRef.current.style.pointerEvents = "none";
+      }
+      if (overlayLeftRef.current) {
+        const op = mapRange(p, 0.84, 1.0);
+        const e  = easeOut3(op);
+        overlayLeftRef.current.style.transform = `translateX(${-60 * (1 - e)}px) translateZ(0)`;
+        overlayLeftRef.current.style.opacity   = `${e}`;
+      }
+      if (overlayRightRef.current) {
+        const op = mapRange(p, 0.86, 1.0);
+        const e  = easeOut3(op);
+        overlayRightRef.current.style.transform = `translateX(${60 * (1 - e)}px) translateZ(0)`;
+        overlayRightRef.current.style.opacity   = `${e}`;
+      }
+    };
+
+    // The RAF loop — runs every frame, reads pageYOffset directly
+    const tick = () => {
+      const { start, total } = getScrollRange();
+      const scrollY = window.pageYOffset;
+
+      // Map raw scroll to 0→1
+      targetProgress = Math.max(0, Math.min(1, (scrollY - start) / total));
+
+      // Lerp toward target (smooth lag = scrub feel)
+      currentProgress = lerp(currentProgress, targetProgress, LERP);
+
+      // Only apply if meaningfully different (perf: skip micro updates)
+      if (Math.abs(currentProgress - targetProgress) < 0.0001) {
+        currentProgress = targetProgress; // snap when close enough
+      }
+
+      applyProgress(currentProgress);
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    // Start the loop
+    rafId = requestAnimationFrame(tick);
 
     return () => {
-      ctx.revert();
-      // Clean up normalizeScroll when component unmounts
-      ScrollTrigger.normalizeScroll(false);
-      if (typeof window !== "undefined" && playEntranceFn) {
-        window.removeEventListener("loaderExit", playEntranceFn);
-      }
+      if (rafId) cancelAnimationFrame(rafId);
+      if (playEntranceFn) window.removeEventListener("loaderExit", playEntranceFn);
     };
   }, []);
 
@@ -367,25 +490,18 @@ export default function Hero() {
       <style>{`
         @keyframes scrollPulse {
           0%, 100% { opacity: 0.35; transform: scaleY(0.85) translateZ(0); }
-          50%       { opacity: 1;    transform: scaleY(1.1) translateZ(0);  }
+          50%       { opacity: 1;    transform: scaleY(1.1)  translateZ(0); }
         }
-
-        /* ── FIX 6 — font-stretch keyword fallback for iOS Safari < 16.4 ──
-           font-stretch: 85% (numeric value) is a level-4 spec feature;
-           iOS Safari before 16.4 only recognises keyword values such as
-           'condensed'. We declare the keyword first so older versions pick
-           it up, then the numeric value for modern engines that support it. */
         .hero-title {
           font-family: var(--font-instrument-sans), sans-serif !important;
-          font-stretch: condensed;   /* keyword fallback (iOS < 16.4)    */
-          font-stretch: 85%;         /* numeric override (iOS 16.4+)      */
+          font-stretch: condensed;
+          font-stretch: 85%;
           color: #0B1F3A;
           font-weight: 750;
           letter-spacing: -0.01em;
         }
         .hero-title-gradient {
           background-image: linear-gradient(90deg, rgba(226,3,132,1.00) 0%, rgba(109,3,74,1.00) 100%);
-          background-position: center center;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           display: inline;
@@ -394,7 +510,6 @@ export default function Hero() {
           font-family: var(--font-inter), sans-serif;
           color: rgba(11, 31, 58, 0.85);
         }
-
         .hero-overlay-title {
           font-family: var(--font-instrument-sans), sans-serif;
           font-weight: 700;
@@ -405,12 +520,6 @@ export default function Hero() {
           font-family: var(--font-inter), sans-serif;
           line-height: 1.7;
         }
-
-        /* ── FIX 5 — backdrop-filter compositing on iOS Safari ───────────
-           iOS requires isolation:isolate + a GPU layer for backdrop-filter
-           to composite correctly against the content behind it. Without
-           translateZ(0), iOS paints the blur against the wrong layer,
-           producing a black or transparent backdrop instead of the blur. */
         .hero-form-glass {
           background: rgba(11, 34, 62, 0.75);
           backdrop-filter: blur(24px);
@@ -431,30 +540,23 @@ export default function Hero() {
           font-family: var(--font-inter), sans-serif;
           transition: all 0.2s ease;
           outline: none;
-          /* iOS Safari renders inputs with its own system styling by default */
           -webkit-appearance: none;
           appearance: none;
         }
-        .hero-form-input::placeholder {
-          color: rgba(255, 255, 255, 0.45);
-        }
+        .hero-form-input::placeholder { color: rgba(255,255,255,0.45); }
         .hero-form-input:focus {
-          border-color: rgba(27, 124, 156, 0.7);
-          background: rgba(255, 255, 255, 0.15);
-          box-shadow: 0 0 0 3px rgba(27, 124, 156, 0.15);
+          border-color: rgba(27,124,156,0.7);
+          background: rgba(255,255,255,0.15);
+          box-shadow: 0 0 0 3px rgba(27,124,156,0.15);
         }
         .hero-form-input.has-error {
-          border-color: rgba(248, 113, 113, 0.6);
-          box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1);
+          border-color: rgba(248,113,113,0.6);
+          box-shadow: 0 0 0 3px rgba(248,113,113,0.1);
         }
-        .hero-form-select {
-          appearance: none;
-          -webkit-appearance: none;
-          cursor: pointer;
-        }
+        .hero-form-select { appearance: none; -webkit-appearance: none; cursor: pointer; }
         .hero-form-label {
           display: block;
-          color: rgba(255, 255, 255, 0.85);
+          color: rgba(255,255,255,0.85);
           font-size: 13px;
           font-weight: 500;
           margin-bottom: 6px;
@@ -462,29 +564,16 @@ export default function Hero() {
         }
       `}</style>
 
-      {/*
-        ── FIX 3 cont. — overscroll-behavior on iOS ─────────────────────────
-        Adding overscroll-behavior:none via Tailwind/inline on the section
-        prevents iOS's rubber-band elastic scroll from causing ScrollTrigger's
-        scrub value to temporarily exceed 0–1, which would make the arch snap
-        to an incorrect scale mid-animation. Combined with
-        ScrollTrigger.normalizeScroll() above, this fully suppresses the issue.
-      */}
       <section
         ref={containerRef}
         className="relative h-[500vh] w-full"
-        style={{ overscrollBehavior: 'none' }}
+        style={{ overscrollBehavior: "none" }}
         aria-label="Hero section"
       >
-        {/*
-          ── FIX 1 cont. — sticky child viewport height ────────────────────
-          Replace `h-[100dvh]` with a `calc(var(--vh) * 100)` expression.
-          --vh is set in JS above from window.innerHeight and accounts for
-          the iOS browser chrome correctly. The `100dvh` class is removed.
-        */}
+        {/* ── FIX A cont.: use --vh instead of 100dvh ── */}
         <div
           className="sticky top-0 left-0 w-full overflow-hidden"
-          style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
+          style={{ height: "calc(var(--vh, 1vh) * 100)" }}
         >
           <SectionContainer
             as="div"
@@ -496,7 +585,12 @@ export default function Hero() {
                 <div
                   ref={skyRef}
                   className="absolute z-0"
-                  style={{ inset: "-10% 0 -10% 0" }}
+                  style={{
+                    inset: "-10% 0 -10% 0",
+                    willChange: "transform",
+                    transform: "translateZ(0)",
+                    WebkitTransform: "translateZ(0)",
+                  }}
                 >
                   <Image
                     src="/images/hero/sky.jpg"
@@ -513,6 +607,11 @@ export default function Hero() {
                 <div
                   ref={heroTextRef}
                   className="absolute left-0 top-0 w-full pt-[clamp(140px,20vh,220px)] z-[1] flex flex-col items-center text-center pointer-events-auto px-4"
+                  style={{
+                    willChange: "transform, opacity",
+                    transform: "translateZ(0)",
+                    WebkitTransform: "translateZ(0)",
+                  }}
                 >
                   <h1 className="hero-title text-[clamp(24px,7vw,48px)] md:text-[clamp(22px,5.2vw,64px)] leading-[1.1] tracking-tight max-w-[90vw] md:max-w-full">
                     Business Setup Services{" "}
@@ -529,7 +628,13 @@ export default function Hero() {
                 {/* ── z-[3] Left Cloud ── */}
                 <div
                   ref={cloudLeftRef}
-                  className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-[529/309] z-[3] pointer-events-none bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute left-[-5%] md:left-[-3%] top-[14%] md:top-[18%] w-[54%] md:w-[42%] lg:w-[30%] aspect-[529/309] z-[3] pointer-events-none bg-transparent overflow-visible"
+                  style={{
+                    isolation: "isolate",
+                    willChange: "transform, opacity",
+                    transform: "translateZ(0)",
+                    WebkitTransform: "translateZ(0)",
+                  }}
                   aria-hidden="true"
                 >
                   <Image
@@ -544,7 +649,13 @@ export default function Hero() {
                 {/* ── z-[3] Right Cloud ── */}
                 <div
                   ref={cloudRightRef}
-                  className="absolute right-[-14%] md:right-[-9%] lg:right-[-5%] top-[11%] md:top-[14%] lg:top-[16%] w-[60%] md:w-[48%] lg:w-[35%] aspect-[472/276] z-[3] pointer-events-none bg-transparent [isolation:isolate] overflow-visible"
+                  className="absolute right-[-14%] md:right-[-9%] lg:right-[-5%] top-[11%] md:top-[14%] lg:top-[16%] w-[60%] md:w-[48%] lg:w-[35%] aspect-[472/276] z-[3] pointer-events-none bg-transparent overflow-visible"
+                  style={{
+                    isolation: "isolate",
+                    willChange: "transform, opacity",
+                    transform: "translateZ(0)",
+                    WebkitTransform: "translateZ(0)",
+                  }}
                   aria-hidden="true"
                 >
                   <Image
@@ -560,6 +671,11 @@ export default function Hero() {
                 <div
                   ref={buildingRef}
                   className="absolute bottom-[clamp(-200px,-15vh,-150px)] md:bottom-[clamp(-380px,-20vh,-280px)] left-0 w-full z-[2] origin-bottom"
+                  style={{
+                    willChange: "transform",
+                    transform: "translateZ(0)",
+                    WebkitTransform: "translateZ(0)",
+                  }}
                 >
                   <img
                     src="/images/hero/hero-building.png"
@@ -569,21 +685,16 @@ export default function Hero() {
                   />
                 </div>
 
-                {/*
-                  ── z-[5] Reveal image ──────────────────────────────────────
-                  FIX 2: will-change and translateZ(0) are applied in the
-                  useEffect above (after mount) rather than as inline styles,
-                  because Next.js hydration can strip or override inline
-                  styles set before mount. The initial clip-path is set
-                  both here (for SSR/hydration) and in JS (to ensure GSAP
-                  reads the correct starting value).
-                */}
+                {/* ── z-[5] Reveal image (clip-path animated) ── */}
                 <div
                   ref={bgImgRef}
                   className="absolute inset-0 z-[5] pointer-events-none"
                   style={{
                     clipPath: "circle(0px at 50% 100%)",
                     WebkitClipPath: "circle(0px at 50% 100%)",
+                    willChange: "clip-path, transform",
+                    transform: "translateZ(0)",
+                    WebkitTransform: "translateZ(0)",
                   }}
                   aria-hidden="true"
                 >
@@ -605,22 +716,23 @@ export default function Hero() {
                   style={{ opacity: 0, pointerEvents: "none" }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 pointer-events-none" />
-
                   <div className="relative w-full min-h-full flex flex-col justify-center lg:flex-row lg:items-center py-20 lg:py-0">
                     <div className="w-full max-w-[1990px] mx-auto px-[24px] md:px-[32px] lg:px-[120px] 2xl:px-[180px]">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
 
-                        {/* ── LEFT ── */}
-                        <div ref={overlayLeftRef} className="flex flex-col gap-5 lg:gap-7 items-center text-center lg:items-start lg:text-left">
+                        {/* LEFT */}
+                        <div
+                          ref={overlayLeftRef}
+                          className="flex flex-col gap-5 lg:gap-7 items-center text-center lg:items-start lg:text-left"
+                          style={{ willChange: "transform, opacity" }}
+                        >
                           <h2 className="hero-overlay-title text-white text-[clamp(26px,5vw,52px)]">
                             Start Your Business{" "}
-                            <span
-                              style={{
-                                backgroundImage: "linear-gradient(90deg, #1B7C9C 0%, #00D4FF 100%)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                              }}
-                            >
+                            <span style={{
+                              backgroundImage: "linear-gradient(90deg, #1B7C9C 0%, #00D4FF 100%)",
+                              WebkitBackgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                            }}>
                               in Dubai
                             </span>
                           </h2>
@@ -630,12 +742,8 @@ export default function Hero() {
                             your entrepreneurial journey with confidence.
                           </p>
                           <div>
-                            <RedHoverButton
-                              url="/cost-calculator"
-                              text="cost calculator"
-                            />
+                            <RedHoverButton url="/cost-calculator" text="cost calculator" />
                           </div>
-
                           <div className="flex items-center gap-6 mt-2">
                             <div className="flex items-center gap-2">
                               <div className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -648,64 +756,36 @@ export default function Hero() {
                           </div>
                         </div>
 
-                        {/* ── RIGHT: Contact Form ── */}
-                        <div ref={overlayRightRef} className="hidden lg:block">
+                        {/* RIGHT: Contact Form */}
+                        <div ref={overlayRightRef} className="hidden lg:block" style={{ willChange: "transform, opacity" }}>
                           <div className="hero-form-glass rounded-3xl p-6 md:p-8 max-w-[560px] lg:ml-auto">
                             <h3 className="text-white text-xl font-semibold mb-1" style={{ fontFamily: 'var(--font-instrument-sans), sans-serif' }}>
                               Get Free Consultation
                             </h3>
                             <p className="text-white/50 text-sm mb-6">Fill in your details and we&apos;ll reach out within 24 hours.</p>
-
                             <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
                                   <label className="hero-form-label">Full Name <span className="text-red-400">*</span></label>
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    value={form.name}
-                                    onChange={handleChange}
-                                    placeholder="John Doe"
-                                    className={`hero-form-input ${errors.name ? 'has-error' : ''}`}
-                                  />
+                                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" className={`hero-form-input ${errors.name ? 'has-error' : ''}`} />
                                   {errors.name && <p className="text-red-400 text-xs mt-1 ml-1">{errors.name}</p>}
                                 </div>
                                 <div>
                                   <label className="hero-form-label">Email <span className="text-red-400">*</span></label>
-                                  <input
-                                    type="email"
-                                    name="email"
-                                    value={form.email}
-                                    onChange={handleChange}
-                                    placeholder="you@example.com"
-                                    className={`hero-form-input ${errors.email ? 'has-error' : ''}`}
-                                  />
+                                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@example.com" className={`hero-form-input ${errors.email ? 'has-error' : ''}`} />
                                   {errors.email && <p className="text-red-400 text-xs mt-1 ml-1">{errors.email}</p>}
                                 </div>
                               </div>
-
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
                                   <label className="hero-form-label">Phone <span className="text-red-400">*</span></label>
-                                  <input
-                                    type="text"
-                                    name="phone"
-                                    value={form.phone}
-                                    onChange={handleChange}
-                                    placeholder="+971 50 XXX XXXX"
-                                    className={`hero-form-input ${errors.phone ? 'has-error' : ''}`}
-                                  />
+                                  <input type="text" name="phone" value={form.phone} onChange={handleChange} placeholder="+971 50 XXX XXXX" className={`hero-form-input ${errors.phone ? 'has-error' : ''}`} />
                                   {errors.phone && <p className="text-red-400 text-xs mt-1 ml-1">{errors.phone}</p>}
                                 </div>
                                 <div>
                                   <label className="hero-form-label">Service <span className="text-red-400">*</span></label>
                                   <div className="relative">
-                                    <select
-                                      name="service"
-                                      value={form.service}
-                                      onChange={handleChange}
-                                      className={`hero-form-input hero-form-select ${errors.service ? 'has-error' : ''}`}
-                                    >
+                                    <select name="service" value={form.service} onChange={handleChange} className={`hero-form-input hero-form-select ${errors.service ? 'has-error' : ''}`}>
                                       <option value="" style={{ background: '#0B223E' }}>Select Service</option>
                                       <option value="Company Formation" style={{ background: '#0B223E' }}>Company Formation</option>
                                       <option value="PRO Services" style={{ background: '#0B223E' }}>PRO Services</option>
@@ -722,24 +802,11 @@ export default function Hero() {
                                   {errors.service && <p className="text-red-400 text-xs mt-1 ml-1">{errors.service}</p>}
                                 </div>
                               </div>
-
                               <div>
                                 <label className="hero-form-label">Message <span className="text-white/30 text-xs">(optional)</span></label>
-                                <textarea
-                                  name="message"
-                                  value={form.message}
-                                  onChange={handleChange}
-                                  placeholder="Tell us about your project..."
-                                  rows={3}
-                                  className="hero-form-input resize-none"
-                                />
+                                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={3} className="hero-form-input resize-none" />
                               </div>
-
-                              <RedHoverButton
-                                type="submit"
-                                text="get free consultation"
-                                className="w-fit mt-2"
-                              />
+                              <RedHoverButton type="submit" text="get free consultation" className="w-fit mt-2" />
                             </form>
                           </div>
                         </div>
@@ -749,11 +816,8 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/*
-                  ── z-[6] Arch Wrapper ────────────────────────────────────
-                  The transformOrigin is set in JS using pixel values (FIX 4).
-                  The inline transform here is overridden by GSAP on mount.
-                */}
+                {/* ── z-[6] Arch Wrapper ── */}
+                {/* transformOrigin set in JS with pixel values (FIX C) */}
                 <div
                   ref={archWrapRef}
                   className="absolute z-[6] pointer-events-none"
@@ -762,9 +826,9 @@ export default function Hero() {
                     height: "70vw",
                     bottom: 0,
                     left: "50%",
-                    transform: "translateX(-50%) scale(0)",
-                    // transformOrigin intentionally NOT set here — GSAP sets
-                    // it with pixel values in useEffect (FIX 4)
+                    transform: "translateX(-50%) scale(0) translateZ(0)",
+                    WebkitTransform: "translateX(-50%) scale(0) translateZ(0)",
+                    willChange: "transform",
                   }}
                   aria-hidden="true"
                 >
@@ -776,12 +840,12 @@ export default function Hero() {
                       ref={archFrameRef}
                       className="absolute inset-0"
                       style={{
-                        borderTop: "20.3vw solid #ffffff",
-                        borderLeft: "20.3vw solid #ffffff",
-                        borderRight: "20.3vw solid #ffffff",
+                        borderTop:    "20.3vw solid #ffffff",
+                        borderLeft:   "20.3vw solid #ffffff",
+                        borderRight:  "20.3vw solid #ffffff",
                         borderBottom: "none",
                         borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
-                        background: "transparent",
+                        background:   "transparent",
                       }}
                     />
                   </div>
@@ -789,17 +853,7 @@ export default function Hero() {
               </>
             }
           >
-            {/*
-              ── FIX 7 — CSS animation inside sticky on iOS ────────────────
-              CSS animations on elements inside a `position:sticky` container
-              can stall or render at wrong positions on iOS Safari because the
-              browser does not always promote sticky containers to their own
-              compositor layer. Adding `translateZ(0)` to the animated element
-              forces it onto its own GPU layer independent of the sticky
-              container, so the animation runs correctly.
-              The keyframe itself also includes `translateZ(0)` (see CSS above)
-              to prevent iOS from dropping the layer between animation frames.
-            */}
+            {/* Scroll hint */}
             <div
               ref={scrollHintRef}
               className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
