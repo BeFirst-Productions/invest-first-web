@@ -140,8 +140,8 @@ export default function Hero() {
       // centered at screen bottom-center (matches arch transform-origin).
       // This keeps it invisible until Stage 2 starts growing the clip circle.
       gsap.set(bgImgRef.current, {
-        clipPath: "circle(0vw at 50% 100%)",
-        webkitClipPath: "circle(0vw at 50% 100%)",
+        clipPath: "circle(0px at 50% 100%)",
+        webkitClipPath: "circle(0px at 50% 100%)",
       });
 
       // Overlay starts hidden
@@ -367,12 +367,12 @@ export default function Hero() {
         {
           clipPath: () =>
             window.innerWidth <= 768
-              ? "circle(74.6vw at 50% 100%)"
-              : "circle(49.7vw at 50% 100%)",
+              ? `circle(${window.innerWidth * 0.746}px at 50% 100%)`
+              : `circle(${window.innerWidth * 0.497}px at 50% 100%)`,
           webkitClipPath: () =>
             window.innerWidth <= 768
-              ? "circle(74.6vw at 50% 100%)"
-              : "circle(49.7vw at 50% 100%)",
+              ? `circle(${window.innerWidth * 0.746}px at 50% 100%)`
+              : `circle(${window.innerWidth * 0.497}px at 50% 100%)`,
           duration: 0.3,
           ease: "power3.out",
         },
@@ -425,12 +425,12 @@ export default function Hero() {
         {
           clipPath: () =>
             window.innerWidth <= 768
-              ? "circle(250vw at 50% 100%)"
-              : "circle(150vw at 50% 100%)",
+              ? `circle(${window.innerWidth * 2.5}px at 50% 100%)`
+              : `circle(${window.innerWidth * 1.5}px at 50% 100%)`,
           webkitClipPath: () =>
             window.innerWidth <= 768
-              ? "circle(250vw at 50% 100%)"
-              : "circle(150vw at 50% 100%)",
+              ? `circle(${window.innerWidth * 2.5}px at 50% 100%)`
+              : `circle(${window.innerWidth * 1.5}px at 50% 100%)`,
           duration: 0.4,
           ease: "power1.inOut",
         },
@@ -682,14 +682,7 @@ export default function Hero() {
                 ──────────────────────────────────────────────────────────── */}
                 <div
                   ref={bgImgRef}
-                  className="absolute z-[5] pointer-events-none"
-                  style={{
-                    top: 0,
-                    left: "50%",
-                    transform: "translateX(-50%) translateZ(0)",
-                    width: "100vw",
-                    height: "100vh",
-                  }}
+                  className="absolute inset-0 z-[5] pointer-events-none"
                   aria-hidden="true"
                 >
                   <Image
