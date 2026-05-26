@@ -36,30 +36,31 @@ export default function LicenseCategory() {
         const wrapper = cardsWrapRef.current;
         if (!wrapper || cards.length < 2) return;
 
-        const wh = wrapper.offsetHeight;
+        // Reset inline styles in case of resize
+        gsap.set(cards, { clearProps: "all" });
 
         cards.forEach((card, i) => {
           if (i === 0) return;
           gsap.set(card, {
-            y: isDesktop ? (wh + 100) : 800,
-            scale: 0.9,
-            opacity: 0
+            y: "100vh",
+            scale: 1,
+            opacity: 1
           });
         });
 
-        const SCROLL_PER_CARD = isDesktop ? 150 : 80;
+        // Increase scroll distance based on number of cards to make it smoother
+        const endDistance = cards.length * 100;
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top top',
-            end: () => `+=${(cards.length - 1) * SCROLL_PER_CARD}vh`,
+            end: () => `+=${endDistance}%`,
             pin: true,
             pinSpacing: true,
-            scrub: 1.2,
+            scrub: 1,
             anticipatePin: 1,
             invalidateOnRefresh: true,
-            refreshPriority: 1,
           },
         });
 
@@ -68,18 +69,25 @@ export default function LicenseCategory() {
           const prev = cards[i - 1];
           const offset = i - 1;
 
+          // New card slides up from the bottom
           tl.to(card, {
-            y: 0, scale: 1, opacity: 1,
-            duration: 1, ease: 'power2.inOut',
+            y: 0, 
+            duration: 1, 
+            ease: 'none',
           }, offset);
 
+          // Previous card scales down and moves up slightly to look pushed back
           tl.to(prev, {
-            scale: 0.95,
-            y: isDesktop ? -12 : -10,
-            opacity: isDesktop ? 0.4 : 0.3,
-            duration: 1, ease: 'power2.inOut',
+            scale: 0.92,
+            y: isDesktop ? -30 : -20,
+            opacity: 0.4,
+            duration: 1, 
+            ease: 'none',
           }, offset);
         });
+
+        // Add a small empty tween at the end so the last card stays pinned for a moment
+        tl.to({}, { duration: 0.2 });
 
         if (!isDesktop) ScrollTrigger.refresh();
       }, sectionRef);
