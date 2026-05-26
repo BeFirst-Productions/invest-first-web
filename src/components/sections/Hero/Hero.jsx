@@ -12,30 +12,30 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const WHATSAPP_NUMBER = '971588773753';
+const WHATSAPP_NUMBER = "971588773753";
 
 const initialForm = {
-  name: '',
-  email: '',
-  phone: '',
-  service: '',
-  message: '',
+  name: "",
+  email: "",
+  phone: "",
+  service: "",
+  message: "",
 };
 
 const validateHeroForm = (fields) => {
   const errors = {};
-  if (!fields.name.trim()) errors.name = 'Name is required.';
+  if (!fields.name.trim()) errors.name = "Name is required.";
   if (!fields.email.trim()) {
-    errors.email = 'Email is required.';
+    errors.email = "Email is required.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
-    errors.email = 'Enter a valid email.';
+    errors.email = "Enter a valid email.";
   }
   if (!fields.phone.trim()) {
-    errors.phone = 'Phone is required.';
+    errors.phone = "Phone is required.";
   } else if (!/^\+?[\d\s\-()]{7,15}$/.test(fields.phone)) {
-    errors.phone = 'Enter a valid phone.';
+    errors.phone = "Enter a valid phone.";
   }
-  if (!fields.service) errors.service = 'Please select a service.';
+  if (!fields.service) errors.service = "Please select a service.";
   return errors;
 };
 
@@ -47,27 +47,29 @@ const isIOS = () => {
   const ua = navigator.userAgent;
   return (
     /iPad|iPhone|iPod/.test(ua) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
-    (navigator.vendor && navigator.vendor.includes('Apple') && 'ontouchend' in document)
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1) ||
+    (navigator.vendor &&
+      navigator.vendor.includes("Apple") &&
+      "ontouchend" in document)
   );
 };
 
 export default function Hero() {
-  const containerRef  = useRef(null);
-  const skyRef        = useRef(null);
-  const buildingRef   = useRef(null);
-  const heroTextRef   = useRef(null);
+  const containerRef = useRef(null);
+  const skyRef = useRef(null);
+  const buildingRef = useRef(null);
+  const heroTextRef = useRef(null);
   const scrollHintRef = useRef(null);
   const cloudRightRef = useRef(null);
-  const cloudLeftRef  = useRef(null);
-  const bgImgRef      = useRef(null);
-  const archWrapRef   = useRef(null);
-  const archFrameRef  = useRef(null);
-  const overlayRef    = useRef(null);
-  const overlayLeftRef  = useRef(null);
+  const cloudLeftRef = useRef(null);
+  const bgImgRef = useRef(null);
+  const archWrapRef = useRef(null);
+  const archFrameRef = useRef(null);
+  const overlayRef = useRef(null);
+  const overlayLeftRef = useRef(null);
   const overlayRightRef = useRef(null);
 
-  const [form, setForm]     = useState(initialForm);
+  const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -90,10 +92,12 @@ export default function Hero() {
       `Email: ${form.email}`,
       `Phone: ${form.phone}`,
       `Service: ${form.service}`,
-      form.message ? `Message: ${form.message}` : '',
-    ].filter(Boolean).join('\n');
+      form.message ? `Message: ${form.message}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    window.open(waUrl, "_blank", "noopener,noreferrer");
     setForm(initialForm);
     setErrors({});
   };
@@ -104,21 +108,22 @@ export default function Hero() {
   useEffect(() => {
     const setVh = () => {
       document.documentElement.style.setProperty(
-        '--vh', `${window.innerHeight * 0.01}px`
+        "--vh",
+        `${window.innerHeight * 0.01}px`,
       );
     };
     setVh();
-    window.addEventListener('resize', setVh);
-    window.addEventListener('orientationchange', setVh);
+    window.addEventListener("resize", setVh);
+    window.addEventListener("orientationchange", setVh);
     return () => {
-      window.removeEventListener('resize', setVh);
-      window.removeEventListener('orientationchange', setVh);
+      window.removeEventListener("resize", setVh);
+      window.removeEventListener("orientationchange", setVh);
     };
   }, []);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
     if (prefersReduced) return;
 
@@ -132,10 +137,10 @@ export default function Hero() {
     // will-change + translateZ(0) at mount promotes it immediately so the
     // layer is ready before the first scroll event fires.
     if (bgImgRef.current) {
-      bgImgRef.current.style.willChange     = "clip-path, transform";
-      bgImgRef.current.style.transform      = "translateZ(0)";
+      bgImgRef.current.style.willChange = "clip-path, transform";
+      bgImgRef.current.style.transform = "translateZ(0)";
       bgImgRef.current.style.webkitTransform = "translateZ(0)";
-      bgImgRef.current.style.clipPath       = "circle(0px at 50% 100%)";
+      bgImgRef.current.style.clipPath = "circle(0px at 50% 100%)";
       bgImgRef.current.style.webkitClipPath = "circle(0px at 50% 100%)";
     }
 
@@ -148,8 +153,8 @@ export default function Hero() {
     });
 
     gsap.set(overlayRef.current, { opacity: 0, pointerEvents: "none" });
-    gsap.set(overlayLeftRef.current,  { x: -60, opacity: 0 });
-    gsap.set(overlayRightRef.current, { x: 60,  opacity: 0 });
+    gsap.set(overlayLeftRef.current, { x: -60, opacity: 0 });
+    gsap.set(overlayRightRef.current, { x: 60, opacity: 0 });
 
     const textElements = heroTextRef.current
       ? Array.from(heroTextRef.current.children)
@@ -159,18 +164,36 @@ export default function Hero() {
     const buildingImg = buildingRef.current?.querySelector("img");
     if (buildingImg) gsap.set(buildingImg, { y: 320, opacity: 0, scale: 1.03 });
 
-    const cloudLeftImg  = cloudLeftRef.current?.querySelector("img");
+    const cloudLeftImg = cloudLeftRef.current?.querySelector("img");
     const cloudRightImg = cloudRightRef.current?.querySelector("img");
-    if (cloudLeftImg)  gsap.set(cloudLeftImg,  { y: 160, opacity: 0 });
+    if (cloudLeftImg) gsap.set(cloudLeftImg, { y: 160, opacity: 0 });
     if (cloudRightImg) gsap.set(cloudRightImg, { y: 160, opacity: 0 });
 
     // ── Entrance animation (unchanged — not scroll-driven) ────────────────
     const playEntrance = () => {
       const tl = gsap.timeline({ delay: 0.35 });
-      tl.to(buildingImg, { y: 0, opacity: 1, scale: 1, duration: 1.8, ease: "power3.out" }, 0);
-      tl.to(textElements, { y: 0, opacity: 1, duration: 1.4, stagger: 0.15, ease: "power3.out" }, 0.25);
-      if (cloudLeftImg)  tl.to(cloudLeftImg,  { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.45);
-      if (cloudRightImg) tl.to(cloudRightImg, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, 0.55);
+      tl.to(
+        buildingImg,
+        { y: 0, opacity: 1, scale: 1, duration: 1.8, ease: "power3.out" },
+        0,
+      );
+      tl.to(
+        textElements,
+        { y: 0, opacity: 1, duration: 1.4, stagger: 0.15, ease: "power3.out" },
+        0.25,
+      );
+      if (cloudLeftImg)
+        tl.to(
+          cloudLeftImg,
+          { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" },
+          0.45,
+        );
+      if (cloudRightImg)
+        tl.to(
+          cloudRightImg,
+          { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" },
+          0.55,
+        );
     };
     playEntranceFn = playEntrance;
 
@@ -225,65 +248,165 @@ export default function Hero() {
                 navbar.style.opacity = "";
                 navbar.style.transform = "";
               } else {
-                const s1 = Math.max(0, Math.min(1, p / 0.30));
+                const s1 = Math.max(0, Math.min(1, p / 0.3));
                 const ns1 = Math.min(1, s1 / 0.83);
                 navbar.style.transform = `translateX(-50%) translateY(${-16 * ns1}px) scale(${1 - 0.05 * ns1}) translateZ(0)`;
-                navbar.style.opacity   = `${1 - ns1}`;
+                navbar.style.opacity = `${1 - ns1}`;
               }
             }
-          }
+          },
         },
       });
 
-      master.to(heroTextRef.current,   { y: -120, opacity: 0, duration: 0.32, ease: "power1.inOut" }, 0);
-      master.to(scrollHintRef.current, { opacity: 0, y: 6, duration: 0.1, ease: "power1.in" }, 0);
-      master.to(cloudLeftRef.current,  { x: "-20%", y: "-10%", opacity: 0, duration: 0.3, ease: "power1.inOut" }, 0);
-      master.to(cloudRightRef.current, { x: "20%",  y: "-8%",  opacity: 0, duration: 0.3, ease: "power1.inOut" }, 0);
-      master.to(skyRef.current,        { y: "-10%", scale: 1.08, duration: 0.3, ease: "none" }, 0);
-      master.fromTo(buildingRef.current,
-        { y: () => window.innerWidth <= 768 ? "8vh" : "26vh", scale: 1 },
-        { y: () => window.innerWidth <= 768 ? "-5vh" : "-14vh", scale: 1.03, duration: 0.3, ease: "power2.out" },
-        0
+      master.to(
+        heroTextRef.current,
+        { y: -120, opacity: 0, duration: 0.32, ease: "power1.inOut" },
+        0,
+      );
+      master.to(
+        scrollHintRef.current,
+        { opacity: 0, y: 6, duration: 0.1, ease: "power1.in" },
+        0,
+      );
+      master.to(
+        cloudLeftRef.current,
+        {
+          x: "-20%",
+          y: "-10%",
+          opacity: 0,
+          duration: 0.3,
+          ease: "power1.inOut",
+        },
+        0,
+      );
+      master.to(
+        cloudRightRef.current,
+        { x: "20%", y: "-8%", opacity: 0, duration: 0.3, ease: "power1.inOut" },
+        0,
+      );
+      master.to(
+        skyRef.current,
+        { y: "-10%", scale: 1.08, duration: 0.3, ease: "none" },
+        0,
+      );
+      master.fromTo(
+        buildingRef.current,
+        { y: () => (window.innerWidth <= 768 ? "8vh" : "26vh"), scale: 1 },
+        {
+          y: () => (window.innerWidth <= 768 ? "-5vh" : "-14vh"),
+          scale: 1.03,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        0,
       );
 
-      master.to(archWrapRef.current, { scale: () => window.innerWidth <= 768 ? 1.5 : 1.0, duration: 0.3, ease: "power3.out" }, 0.3);
-      master.to(clipProgress, {
-        radius: () => window.innerWidth <= 768 ? window.innerWidth * 0.746 : window.innerWidth * 0.497,
-        duration: 0.3,
-        ease: "power3.out",
-        onUpdate: () => {
-          if (bgImgRef.current) {
-            const val = `${clipProgress.radius}px`;
-            bgImgRef.current.style.clipPath       = `circle(${val} at 50% 100%)`;
-            bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
-          }
+      master.to(
+        archWrapRef.current,
+        {
+          scale: () => (window.innerWidth <= 768 ? 1.5 : 1.0),
+          duration: 0.3,
+          ease: "power3.out",
         },
-      }, 0.3);
-      master.to(buildingRef.current, { y: () => window.innerWidth <= 768 ? "-2vh" : "-4vh", duration: 0.3, ease: "power1.inOut" }, 0.3);
-      master.to(skyRef.current,      { y: "-15%", duration: 0.3, ease: "none" }, 0.3);
+        0.3,
+      );
+      master.to(
+        clipProgress,
+        {
+          radius: () =>
+            window.innerWidth <= 768
+              ? window.innerWidth * 0.746
+              : window.innerWidth * 0.497,
+          duration: 0.3,
+          ease: "power3.out",
+          onUpdate: () => {
+            if (bgImgRef.current) {
+              const val = `${clipProgress.radius}px`;
+              bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
+              bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
+            }
+          },
+        },
+        0.3,
+      );
+      master.to(
+        buildingRef.current,
+        {
+          y: () => (window.innerWidth <= 768 ? "-2vh" : "-4vh"),
+          duration: 0.3,
+          ease: "power1.inOut",
+        },
+        0.3,
+      );
+      master.to(
+        skyRef.current,
+        { y: "-15%", duration: 0.3, ease: "none" },
+        0.3,
+      );
 
-      master.to(archWrapRef.current, { scale: () => window.innerWidth <= 768 ? 6.0 : 3.0, duration: 0.4, ease: "power1.inOut" }, 0.6);
-      master.to(clipProgress, {
-        radius: () => window.innerWidth <= 768 ? window.innerWidth * 2.5 : window.innerWidth * 1.5,
-        duration: 0.4,
-        ease: "power1.inOut",
-        onUpdate: () => {
-          if (bgImgRef.current) {
-            const val = `${clipProgress.radius}px`;
-            bgImgRef.current.style.clipPath       = `circle(${val} at 50% 100%)`;
-            bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
-          }
+      master.to(
+        archWrapRef.current,
+        {
+          scale: () => (window.innerWidth <= 768 ? 6.0 : 3.0),
+          duration: 0.4,
+          ease: "power1.inOut",
         },
-      }, 0.6);
-      master.to(archFrameRef.current, { opacity: 0, duration: 0.15, ease: "power2.in" }, 0.82);
-      master.to(skyRef.current,       { y: "-28%", duration: 0.4, ease: "none" }, 0.6);
-      master.to(overlayRef.current,   { opacity: 1, pointerEvents: "auto", duration: 0.18, ease: "power2.out" }, 0.82);
-      master.to(overlayLeftRef.current,  { x: 0, opacity: 1, duration: 0.18, ease: "power3.out" }, 0.84);
-      master.to(overlayRightRef.current, { x: 0, opacity: 1, duration: 0.18, ease: "power3.out" }, 0.86);
+        0.6,
+      );
+      master.to(
+        clipProgress,
+        {
+          radius: () =>
+            window.innerWidth <= 768
+              ? window.innerWidth * 2.5
+              : window.innerWidth * 1.5,
+          duration: 0.4,
+          ease: "power1.inOut",
+          onUpdate: () => {
+            if (bgImgRef.current) {
+              const val = `${clipProgress.radius}px`;
+              bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
+              bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
+            }
+          },
+        },
+        0.6,
+      );
+      master.to(
+        archFrameRef.current,
+        { opacity: 0, duration: 0.15, ease: "power2.in" },
+        0.82,
+      );
+      master.to(
+        skyRef.current,
+        { y: "-28%", duration: 0.4, ease: "none" },
+        0.6,
+      );
+      master.to(
+        overlayRef.current,
+        {
+          opacity: 1,
+          pointerEvents: "auto",
+          duration: 0.18,
+          ease: "power2.out",
+        },
+        0.82,
+      );
+      master.to(
+        overlayLeftRef.current,
+        { x: 0, opacity: 1, duration: 0.18, ease: "power3.out" },
+        0.84,
+      );
+      master.to(
+        overlayRightRef.current,
+        { x: 0, opacity: 1, duration: 0.18, ease: "power3.out" },
+        0.86,
+      );
 
       return () => {
-        ScrollTrigger.getAll().forEach(t => t.kill());
-        if (playEntranceFn) window.removeEventListener("loaderExit", playEntranceFn);
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+        if (playEntranceFn)
+          window.removeEventListener("loaderExit", playEntranceFn);
       };
     }
 
@@ -301,10 +424,10 @@ export default function Hero() {
     // replicate the scrub:2 feel — smooth lag that chases the real scroll.
 
     let rafId = null;
-    let currentProgress = 0;    // lerped progress (what we animate to)
-    let targetProgress  = 0;    // raw scroll-mapped progress
-    let lastArchScale   = 0;
-    let overlayShown    = false;
+    let currentProgress = 0; // lerped progress (what we animate to)
+    let targetProgress = 0; // raw scroll-mapped progress
+    let lastArchScale = 0;
+    let overlayShown = false;
 
     // Lerp factor: lower = more lag (smoother), higher = snappier.
     // scrub:2 in GSAP is roughly equivalent to ~0.06 lerp factor at 60fps.
@@ -314,13 +437,14 @@ export default function Hero() {
     const lerp = (a, b, t) => a + (b - a) * t;
 
     // Helper: map progress [0..1] through a sub-range [start..end] → [0..1]
-    const mapRange = (p, start, end) => Math.max(0, Math.min(1, (p - start) / (end - start)));
+    const mapRange = (p, start, end) =>
+      Math.max(0, Math.min(1, (p - start) / (end - start)));
 
     // Helper: ease functions matching GSAP eases
-    const easeOut3  = t => 1 - Math.pow(1 - t, 3);   // power3.out
-    const easeOut1  = t => 1 - (1 - t);               // linear (power1)
-    const easeIn2   = t => t * t;                      // power2.in
-    const easeInOut1 = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // power1.inOut
+    const easeOut3 = (t) => 1 - Math.pow(1 - t, 3); // power3.out
+    const easeOut1 = (t) => 1 - (1 - t); // linear (power1)
+    const easeIn2 = (t) => t * t; // power2.in
+    const easeInOut1 = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t); // power1.inOut
 
     // Cache the navbar element
     const navbar = document.getElementById("global-navbar");
@@ -329,7 +453,7 @@ export default function Hero() {
     // so it's always fresh after any reflow.
     const getScrollRange = () => {
       if (!containerRef.current) return { start: 0, total: 1 };
-      const rect  = containerRef.current.getBoundingClientRect();
+      const rect = containerRef.current.getBoundingClientRect();
       const start = window.pageYOffset + rect.top;
       const total = containerRef.current.offsetHeight - window.innerHeight;
       return { start, total: Math.max(total, 1) };
@@ -340,11 +464,11 @@ export default function Hero() {
       const isMobile = window.innerWidth <= 768;
 
       // ── STAGE 1: 0 → 0.30 ───────────────────────────────────────────
-      const s1 = mapRange(p, 0, 0.30);
+      const s1 = mapRange(p, 0, 0.3);
 
       if (heroTextRef.current) {
         heroTextRef.current.style.transform = `translateY(${-120 * s1}px) translateZ(0)`;
-        heroTextRef.current.style.opacity   = `${1 - s1}`;
+        heroTextRef.current.style.opacity = `${1 - s1}`;
       }
       if (scrollHintRef.current) {
         scrollHintRef.current.style.opacity = `${1 - Math.min(1, s1 / 0.33)}`;
@@ -352,28 +476,35 @@ export default function Hero() {
       if (cloudLeftRef.current) {
         const t1 = easeInOut1(s1);
         cloudLeftRef.current.style.transform = `translate(${-20 * t1}%, ${-10 * t1}%) translateZ(0)`;
-        cloudLeftRef.current.style.opacity   = `${1 - t1}`;
+        cloudLeftRef.current.style.opacity = `${1 - t1}`;
       }
       if (cloudRightRef.current) {
         const t1 = easeInOut1(s1);
         cloudRightRef.current.style.transform = `translate(${20 * t1}%, ${-8 * t1}%) translateZ(0)`;
-        cloudRightRef.current.style.opacity   = `${1 - t1}`;
+        cloudRightRef.current.style.opacity = `${1 - t1}`;
       }
       if (skyRef.current) {
         const skyS1 = s1;
-        const skyS2 = mapRange(p, 0.30, 0.60);
-        const skyS3 = mapRange(p, 0.60, 1.0);
-        const skyY = -10 * skyS1 + (-5) * skyS2 + (-13) * skyS3;
+        const skyS2 = mapRange(p, 0.3, 0.6);
+        const skyS3 = mapRange(p, 0.6, 1.0);
+        const skyY = -10 * skyS1 + -5 * skyS2 + -13 * skyS3;
         const skyScale = 1 + 0.08 * skyS1;
         skyRef.current.style.transform = `translateY(${skyY}%) scale(${skyScale}) translateZ(0)`;
       }
       if (buildingRef.current) {
-        const startY = isMobile ? window.innerHeight * 0.08 : window.innerHeight * 0.26;
-        const mid1Y  = isMobile ? window.innerHeight * -0.05 : window.innerHeight * -0.14;
-        const mid2Y  = isMobile ? window.innerHeight * -0.02 : window.innerHeight * -0.04;
+        const startY = isMobile
+          ? window.innerHeight * 0.08
+          : window.innerHeight * 0.26;
+        const mid1Y = isMobile
+          ? window.innerHeight * -0.05
+          : window.innerHeight * -0.14;
+        const mid2Y = isMobile
+          ? window.innerHeight * -0.02
+          : window.innerHeight * -0.04;
         const bs1 = easeInOut1(s1);
-        const bs2 = mapRange(p, 0.30, 0.60);
-        const buildingY = startY + (mid1Y - startY) * bs1 + (mid2Y - mid1Y) * bs2;
+        const bs2 = mapRange(p, 0.3, 0.6);
+        const buildingY =
+          startY + (mid1Y - startY) * bs1 + (mid2Y - mid1Y) * bs2;
         const buildingScale = 1 + 0.03 * bs1;
         buildingRef.current.style.transform = `translateY(${buildingY}px) scale(${buildingScale}) translateZ(0)`;
       }
@@ -385,17 +516,17 @@ export default function Hero() {
         } else {
           const ns1 = Math.min(1, s1 / 0.83);
           navbar.style.transform = `translateX(-50%) translateY(${-16 * ns1}px) scale(${1 - 0.05 * ns1}) translateZ(0)`;
-          navbar.style.opacity   = `${1 - ns1}`;
+          navbar.style.opacity = `${1 - ns1}`;
         }
       }
 
       // ── STAGE 2: 0.30 → 0.60 ─────────────────────────────────────────
-      const s2     = mapRange(p, 0.30, 0.60);
+      const s2 = mapRange(p, 0.3, 0.6);
       const s2ease = easeOut3(s2);
 
       // Arch scale
       const archTargetS2 = isMobile ? 1.5 : 1.0;
-      const archScaleS2  = s2ease * archTargetS2;
+      const archScaleS2 = s2ease * archTargetS2;
 
       // Clip radius (matches arch inner hole)
       const clipTargetS2 = isMobile
@@ -404,34 +535,39 @@ export default function Hero() {
       const clipRadiusS2 = s2ease * clipTargetS2;
 
       // ── STAGE 3: 0.60 → 1.0 ──────────────────────────────────────────
-      const s3     = mapRange(p, 0.60, 1.0);
+      const s3 = mapRange(p, 0.6, 1.0);
       const s3ease = easeInOut1(s3);
 
       const archTargetS3 = isMobile ? 6.0 : 3.0;
       // Stage 3 arch adds on top of stage 2 final value
-      const archFinalScale = (s2 >= 1 ? archTargetS2 : archScaleS2) + s3ease * (archTargetS3 - archTargetS2);
+      const archFinalScale =
+        (s2 >= 1 ? archTargetS2 : archScaleS2) +
+        s3ease * (archTargetS3 - archTargetS2);
 
       const clipTargetS3 = isMobile
         ? window.innerWidth * 2.5
         : window.innerWidth * 1.5;
-      const clipFinalRadius = (s2 >= 1 ? clipTargetS2 : clipRadiusS2) + s3ease * (clipTargetS3 - clipTargetS2);
+      const clipFinalRadius =
+        (s2 >= 1 ? clipTargetS2 : clipRadiusS2) +
+        s3ease * (clipTargetS3 - clipTargetS2);
 
       // Apply arch transform (only if changed to avoid thrashing)
-      const newArchScale = p <= 0.30 ? 0 : archFinalScale;
-      if (Math.abs(newArchScale - lastArchScale) > 0.0001 && archWrapRef.current) {
+      const newArchScale = p <= 0.3 ? 0 : archFinalScale;
+      if (
+        Math.abs(newArchScale - lastArchScale) > 0.0001 &&
+        archWrapRef.current
+      ) {
         lastArchScale = newArchScale;
         // xPercent:-50 + scale from bottom-center
-        archWrapRef.current.style.transform =
-          `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
-        archWrapRef.current.style.webkitTransform =
-          `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
+        archWrapRef.current.style.transform = `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
+        archWrapRef.current.style.webkitTransform = `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
       }
 
       // Apply clip-path
-      const finalRadius = p <= 0.30 ? 0 : clipFinalRadius;
+      const finalRadius = p <= 0.3 ? 0 : clipFinalRadius;
       if (bgImgRef.current) {
         const val = `${finalRadius}px`;
-        bgImgRef.current.style.clipPath       = `circle(${val} at 50% 100%)`;
+        bgImgRef.current.style.clipPath = `circle(${val} at 50% 100%)`;
         bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
       }
 
@@ -445,7 +581,7 @@ export default function Hero() {
       if (p >= 0.82 && !overlayShown) {
         overlayShown = true;
         if (overlayRef.current) {
-          overlayRef.current.style.opacity      = "0";
+          overlayRef.current.style.opacity = "0";
           overlayRef.current.style.pointerEvents = "auto";
         }
       }
@@ -457,15 +593,15 @@ export default function Hero() {
       }
       if (overlayLeftRef.current) {
         const op = mapRange(p, 0.84, 1.0);
-        const e  = easeOut3(op);
+        const e = easeOut3(op);
         overlayLeftRef.current.style.transform = `translateX(${-60 * (1 - e)}px) translateZ(0)`;
-        overlayLeftRef.current.style.opacity   = `${e}`;
+        overlayLeftRef.current.style.opacity = `${e}`;
       }
       if (overlayRightRef.current) {
         const op = mapRange(p, 0.86, 1.0);
-        const e  = easeOut3(op);
+        const e = easeOut3(op);
         overlayRightRef.current.style.transform = `translateX(${60 * (1 - e)}px) translateZ(0)`;
-        overlayRightRef.current.style.opacity   = `${e}`;
+        overlayRightRef.current.style.opacity = `${e}`;
       }
     };
 
@@ -495,7 +631,8 @@ export default function Hero() {
 
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
-      if (playEntranceFn) window.removeEventListener("loaderExit", playEntranceFn);
+      if (playEntranceFn)
+        window.removeEventListener("loaderExit", playEntranceFn);
     };
   }, []);
 
@@ -733,7 +870,6 @@ export default function Hero() {
                   <div className="relative w-full min-h-full flex flex-col justify-center lg:flex-row lg:items-center py-20 lg:py-0">
                     <div className="w-full max-w-[1990px] mx-auto px-[24px] md:px-[32px] lg:px-[120px] 2xl:px-[180px]">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-
                         {/* LEFT */}
                         <div
                           ref={overlayLeftRef}
@@ -742,89 +878,227 @@ export default function Hero() {
                         >
                           <h2 className="hero-overlay-title text-white text-[clamp(26px,5vw,52px)]">
                             Start Your Business{" "}
-                            <span style={{
-                              backgroundImage: "linear-gradient(90deg, #1B7C9C 0%, #00D4FF 100%)",
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                            }}>
+                            <span
+                              style={{
+                                backgroundImage:
+                                  "linear-gradient(90deg, #1B7C9C 0%, #00D4FF 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                              }}
+                            >
                               in Dubai
                             </span>
                           </h2>
                           <p className="hero-overlay-desc text-white/80 text-[clamp(14px,1.4vw,18px)] max-w-[520px]">
-                            From company formation to visa processing, we handle every step
-                            of your business setup in the UAE. Get expert guidance and start
-                            your entrepreneurial journey with confidence.
+                            From company formation to visa processing, we handle
+                            every step of your business setup in the UAE. Get
+                            expert guidance and start your entrepreneurial
+                            journey with confidence.
                           </p>
                           <div>
-                            <RedHoverButton url="/cost-calculator" text="cost calculator" />
+                            <RedHoverButton
+                              url="/cost-calculator"
+                              text="cost calculator"
+                            />
                           </div>
                           <div className="flex items-center gap-6 mt-2">
                             <div className="flex items-center gap-2">
                               <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                              <span className="text-white/60 text-sm">500+ Companies Formed</span>
+                              <span className="text-white/60 text-sm">
+                                500+ Companies Formed
+                              </span>
                             </div>
                             <div className="flex items-center gap-2">
                               <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                              <span className="text-white/60 text-sm">Expert Team</span>
+                              <span className="text-white/60 text-sm">
+                                Expert Team
+                              </span>
                             </div>
                           </div>
                         </div>
 
                         {/* RIGHT: Contact Form */}
-                        <div ref={overlayRightRef} className="hidden lg:block" style={{ willChange: "transform, opacity" }}>
+                        <div
+                          ref={overlayRightRef}
+                          className="hidden lg:block"
+                          style={{ willChange: "transform, opacity" }}
+                        >
                           <div className="hero-form-glass rounded-3xl p-6 md:p-8 max-w-[560px] lg:ml-auto">
-                            <h3 className="text-white text-xl font-semibold mb-1" style={{ fontFamily: 'var(--font-instrument-sans), sans-serif' }}>
+                            <h3
+                              className="text-white text-xl font-semibold mb-1"
+                              style={{
+                                fontFamily:
+                                  "var(--font-instrument-sans), sans-serif",
+                              }}
+                            >
                               Get Free Consultation
                             </h3>
-                            <p className="text-white/50 text-sm mb-6">Fill in your details and we&apos;ll reach out within 24 hours.</p>
-                            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+                            <p className="text-white/50 text-sm mb-6">
+                              Fill in your details and we&apos;ll reach out
+                              within 24 hours.
+                            </p>
+                            <form
+                              onSubmit={handleSubmit}
+                              noValidate
+                              className="flex flex-col gap-4"
+                            >
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                  <label className="hero-form-label">Full Name <span className="text-red-400">*</span></label>
-                                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" className={`hero-form-input ${errors.name ? 'has-error' : ''}`} />
-                                  {errors.name && <p className="text-red-400 text-xs mt-1 ml-1">{errors.name}</p>}
+                                  <label className="hero-form-label">
+                                    Full Name{" "}
+                                    <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    placeholder="John Doe"
+                                    className={`hero-form-input ${errors.name ? "has-error" : ""}`}
+                                  />
+                                  {errors.name && (
+                                    <p className="text-red-400 text-xs mt-1 ml-1">
+                                      {errors.name}
+                                    </p>
+                                  )}
                                 </div>
                                 <div>
-                                  <label className="hero-form-label">Email <span className="text-red-400">*</span></label>
-                                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@example.com" className={`hero-form-input ${errors.email ? 'has-error' : ''}`} />
-                                  {errors.email && <p className="text-red-400 text-xs mt-1 ml-1">{errors.email}</p>}
+                                  <label className="hero-form-label">
+                                    Email{" "}
+                                    <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    placeholder="you@example.com"
+                                    className={`hero-form-input ${errors.email ? "has-error" : ""}`}
+                                  />
+                                  {errors.email && (
+                                    <p className="text-red-400 text-xs mt-1 ml-1">
+                                      {errors.email}
+                                    </p>
+                                  )}
                                 </div>
                               </div>
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                  <label className="hero-form-label">Phone <span className="text-red-400">*</span></label>
-                                  <input type="text" name="phone" value={form.phone} onChange={handleChange} placeholder="+971 50 XXX XXXX" className={`hero-form-input ${errors.phone ? 'has-error' : ''}`} />
-                                  {errors.phone && <p className="text-red-400 text-xs mt-1 ml-1">{errors.phone}</p>}
+                                  <label className="hero-form-label">
+                                    Phone{" "}
+                                    <span className="text-red-400">*</span>
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="phone"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                    placeholder="+971 50 XXX XXXX"
+                                    className={`hero-form-input ${errors.phone ? "has-error" : ""}`}
+                                  />
+                                  {errors.phone && (
+                                    <p className="text-red-400 text-xs mt-1 ml-1">
+                                      {errors.phone}
+                                    </p>
+                                  )}
                                 </div>
                                 <div>
-                                  <label className="hero-form-label">Service <span className="text-red-400">*</span></label>
+                                  <label className="hero-form-label">
+                                    Service{" "}
+                                    <span className="text-red-400">*</span>
+                                  </label>
                                   <div className="relative">
-                                    <select name="service" value={form.service} onChange={handleChange} className={`hero-form-input hero-form-select ${errors.service ? 'has-error' : ''}`}>
-                                      <option value="" style={{ background: '#0B223E' }}>Select Service</option>
-                                      <option value="Company Formation" style={{ background: '#0B223E' }}>Company Formation</option>
-                                      <option value="PRO Services" style={{ background: '#0B223E' }}>PRO Services</option>
-                                      <option value="Visa Services" style={{ background: '#0B223E' }}>Visa Services</option>
-                                      <option value="Trade License" style={{ background: '#0B223E' }}>Trade License</option>
-                                      <option value="Other" style={{ background: '#0B223E' }}>Other</option>
+                                    <select
+                                      name="service"
+                                      value={form.service}
+                                      onChange={handleChange}
+                                      className={`hero-form-input hero-form-select ${errors.service ? "has-error" : ""}`}
+                                    >
+                                      <option
+                                        value=""
+                                        style={{ background: "#0B223E" }}
+                                      >
+                                        Select Service
+                                      </option>
+                                      <option
+                                        value="Company Formation"
+                                        style={{ background: "#0B223E" }}
+                                      >
+                                        Company Formation
+                                      </option>
+                                      <option
+                                        value="PRO Services"
+                                        style={{ background: "#0B223E" }}
+                                      >
+                                        PRO Services
+                                      </option>
+                                      <option
+                                        value="Visa Services"
+                                        style={{ background: "#0B223E" }}
+                                      >
+                                        Visa Services
+                                      </option>
+                                      <option
+                                        value="Trade License"
+                                        style={{ background: "#0B223E" }}
+                                      >
+                                        Trade License
+                                      </option>
+                                      <option
+                                        value="Other"
+                                        style={{ background: "#0B223E" }}
+                                      >
+                                        Other
+                                      </option>
                                     </select>
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                      <svg
+                                        width="12"
+                                        height="8"
+                                        viewBox="0 0 12 8"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M1 1.5L6 6.5L11 1.5"
+                                          stroke="rgba(255,255,255,0.5)"
+                                          strokeWidth="1.5"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        />
                                       </svg>
                                     </div>
                                   </div>
-                                  {errors.service && <p className="text-red-400 text-xs mt-1 ml-1">{errors.service}</p>}
+                                  {errors.service && (
+                                    <p className="text-red-400 text-xs mt-1 ml-1">
+                                      {errors.service}
+                                    </p>
+                                  )}
                                 </div>
                               </div>
                               <div>
-                                <label className="hero-form-label">Message <span className="text-white/30 text-xs">(optional)</span></label>
-                                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={3} className="hero-form-input resize-none" />
+                                <label className="hero-form-label">
+                                  Message{" "}
+                                  <span className="text-white/30 text-xs">
+                                    (optional)
+                                  </span>
+                                </label>
+                                <textarea
+                                  name="message"
+                                  value={form.message}
+                                  onChange={handleChange}
+                                  placeholder="Tell us about your project..."
+                                  rows={3}
+                                  className="hero-form-input resize-none"
+                                />
                               </div>
-                              <RedHoverButton type="submit" text="get free consultation" className="w-fit mt-2" />
+                              <RedHoverButton
+                                type="submit"
+                                text="get free consultation"
+                                className="w-fit mt-2"
+                              />
                             </form>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -856,12 +1130,12 @@ export default function Hero() {
                       ref={archFrameRef}
                       className="absolute inset-0"
                       style={{
-                        borderTop:    "20.3vw solid #ffffff",
-                        borderLeft:   "20.3vw solid #ffffff",
-                        borderRight:  "20.3vw solid #ffffff",
+                        borderTop: "20.3vw solid #ffffff",
+                        borderLeft: "20.3vw solid #ffffff",
+                        borderRight: "20.3vw solid #ffffff",
                         borderBottom: "none",
                         borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
-                        background:   "transparent",
+                        background: "transparent",
                       }}
                     />
                   </div>
