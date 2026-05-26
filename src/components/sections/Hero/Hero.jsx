@@ -140,8 +140,7 @@ export default function Hero() {
       // centered at screen bottom-center (matches arch transform-origin).
       // This keeps it invisible until Stage 2 starts growing the clip circle.
       gsap.set(bgImgRef.current, {
-        clipPath: "circle(0px at 50% 100%)",
-        webkitClipPath: "circle(0px at 50% 100%)",
+        "--clip-radius": "0px",
       });
 
       // Overlay starts hidden
@@ -365,14 +364,10 @@ export default function Hero() {
       master.to(
         bgImgRef.current,
         {
-          clipPath: () =>
+          "--clip-radius": () =>
             window.innerWidth <= 768
-              ? `circle(${window.innerWidth * 0.746}px at 50% 100%)`
-              : `circle(${window.innerWidth * 0.497}px at 50% 100%)`,
-          webkitClipPath: () =>
-            window.innerWidth <= 768
-              ? `circle(${window.innerWidth * 0.746}px at 50% 100%)`
-              : `circle(${window.innerWidth * 0.497}px at 50% 100%)`,
+              ? `${window.innerWidth * 0.746}px`
+              : `${window.innerWidth * 0.497}px`,
           duration: 0.3,
           ease: "power3.out",
         },
@@ -423,14 +418,10 @@ export default function Hero() {
       master.to(
         bgImgRef.current,
         {
-          clipPath: () =>
+          "--clip-radius": () =>
             window.innerWidth <= 768
-              ? `circle(${window.innerWidth * 2.5}px at 50% 100%)`
-              : `circle(${window.innerWidth * 1.5}px at 50% 100%)`,
-          webkitClipPath: () =>
-            window.innerWidth <= 768
-              ? `circle(${window.innerWidth * 2.5}px at 50% 100%)`
-              : `circle(${window.innerWidth * 1.5}px at 50% 100%)`,
+              ? `${window.innerWidth * 2.5}px`
+              : `${window.innerWidth * 1.5}px`,
           duration: 0.4,
           ease: "power1.inOut",
         },
@@ -683,6 +674,10 @@ export default function Hero() {
                 <div
                   ref={bgImgRef}
                   className="absolute inset-0 z-[5] pointer-events-none"
+                  style={{
+                    clipPath: "circle(var(--clip-radius, 0px) at 50% 100%)",
+                    WebkitClipPath: "circle(var(--clip-radius, 0px) at 50% 100%)",
+                  }}
                   aria-hidden="true"
                 >
                   <Image
