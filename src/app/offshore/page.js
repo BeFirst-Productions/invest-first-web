@@ -6,10 +6,13 @@ import FAQAccordion from '@/components/Common/FAQAccordion';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 
 
-export const metadata = {
-    title: "Offshore Company Formation UAE | Invest First",
-    description: "Incorporate your offshore company in the UAE with Invest First. Expert setup services for JAFZA, RAKICC, and Ajman for asset protection and tax efficiency.",
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/offshore');
+    return seo;
+}
+
 
 const OffshorePage = () => {
     return (

@@ -4,20 +4,13 @@ import CommonHeroSection from '@/components/Common/Banner/CommonHerosection'
 import Schedule from '@/components/sections/Schedule'
 import { WhyUAEPoints, WhyUAESection } from '@/components/sections/WhyUAE'
 import React from 'react'
-export const metadata = {
-    title: "Why Choose UAE for Business Setup | Invest First Dubai",
-    description: "Discover why the UAE is one of the best destinations for business setup, offering tax benefits, 100% foreign ownership, global market access, and investor-friendly policies.",
-    keywords: "why invest in UAE, business setup UAE, company formation Dubai, UAE business benefits, start business in Dubai, UAE free zone setup, mainland company UAE, Dubai investment opportunities, entrepreneur visa UAE, Invest First UAE",
-    alternates: {
-        canonical: "https://investfirst.ae/why-uae",
-    },
-    openGraph: {
-        title: "Why Choose UAE for Business Setup | Invest First Dubai",
-        description: "Discover why the UAE is one of the best destinations for business setup, offering tax benefits, 100% foreign ownership, global market access, and investor-friendly policies.",
-        url: "https://investfirst.ae/why-uae",
-        type: "website",
-    },
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/why-uae');
+    return seo;
+}
+
 
 const page = () => {
     return (

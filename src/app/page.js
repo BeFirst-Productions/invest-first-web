@@ -18,28 +18,12 @@ import { ZoneCards } from '@/components/sections/Zonecards';
 
 
 
-export const metadata = {
-  title: 'InvestFirst Business Services | Company Formation UAE',
-  description:
-    'InvestFirst provides expert company formation and business services. Establish your business in the UAE with confidence.',
-  alternates: {
-    canonical: 'https://yourdomain.com',
-  },
-  openGraph: {
-    title: 'InvestFirst Business Services',
-    description: 'Expert company formation and business services in the UAE.',
-    url: 'https://yourdomain.com',
-    siteName: 'InvestFirst',
-    images: [
-      {
-        url: '/images/og-home.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
-    type: 'website',
-  },
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+  const seo = await getSeoMetadata('/');
+  return seo;
+}
 
 export default function HomePage() {
   return (

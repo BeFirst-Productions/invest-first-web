@@ -7,32 +7,13 @@ import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import { proServicesData } from '@/data/ProServicesData';
 
-export const metadata = {
-    title: proServicesData.seo.title,
-    description: proServicesData.seo.description,
-    keywords: proServicesData.seo.keywords,
-    alternates: {
-        canonical: proServicesData.seo.canonical,
-    },
-    openGraph: {
-        title: proServicesData.seo.title,
-        description: proServicesData.seo.description,
-        images: [
-            {
-                url: proServicesData.seo.image,
-                width: 1200,
-                height: 630,
-                alt: proServicesData.seo.title,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: proServicesData.seo.title,
-        description: proServicesData.seo.description,
-        images: [proServicesData.seo.image],
-    },
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/services/pro-services');
+    return seo;
+}
+
 
 const ProServicesPage = () => {
     return (

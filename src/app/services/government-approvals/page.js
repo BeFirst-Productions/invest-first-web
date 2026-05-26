@@ -8,11 +8,13 @@ import GovernmentApprovalsWhyChoose from '@/components/GovernmentApprovals/Gover
 import FAQAccordion from '@/components/Common/FAQAccordion';
 import { governmentApprovalsData } from '@/data/GovernmentApprovalsData';
 
-export const metadata = {
-    title: governmentApprovalsData.seo.title,
-    description: governmentApprovalsData.seo.description,
-    keywords: governmentApprovalsData.seo.keywords,
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/services/government-approvals');
+    return seo;
+}
+
 
 const GovernmentApprovalsPage = () => {
     // Split title by first word to highlight the first word

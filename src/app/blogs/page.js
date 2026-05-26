@@ -4,20 +4,13 @@ import { blogPosts } from '@/data/blogData';
 import Image from 'next/image';
 import Schedule from '@/components/sections/Schedule';
 
-export const metadata = {
-    title: "Business Setup Blogs in Dubai | UAE Company Formation",
-    description: "Explore expert blogs on business setup in Dubai, UAE company formation, trade licences, free zone vs mainland setup, and startup guidance with Invest First.",
-    keywords: "business setup in dubai, business setup in uae, company formation in uae, mainland company setup uae, freezone business setup, start a business uae",
-    alternates: {
-        canonical: "https://investfirst.ae/blogs",
-    },
-    openGraph: {
-        title: "Business Setup Blogs in Dubai | UAE Company Formation",
-        description: "Explore expert blogs on business setup in Dubai, UAE company formation, trade licences, free zone vs mainland setup, and startup guidance with Invest First.",
-        url: "https://investfirst.ae/blogs",
-        type: "website",
-    },
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/blogs');
+    return seo;
+}
+
 
 export default function BlogsPage() {
     return (

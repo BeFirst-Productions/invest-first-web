@@ -6,10 +6,13 @@ import WhyChooseSection from '@/components/Common/WhyChoose';
 import FAQAccordion from '@/components/Common/FAQAccordion';
 
 
-export const metadata = {
-    title: "Mainland Company Formation Dubai | Invest First",
-    description: "Start your mainland company in Dubai with Invest First. We offer complete business setup services, including 100% ownership and PRO support.",
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/mainland');
+    return seo;
+}
+
 
 const MainlandPage = () => {
     const service = mainlandDetailedData['main-land'];

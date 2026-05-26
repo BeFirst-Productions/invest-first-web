@@ -5,10 +5,13 @@ import FAQAccordion from '@/components/Common/FAQAccordion';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { FreezoneCategorySection, FreezoneFeatures, FreezoneLicenseTypes, FreezoneOverview,FreezoneSetupProcess } from '@/components/sections/Freezone';
 
-export const metadata = {
-    title: "Freezone Company Formation UAE | Invest First",
-    description: "Start your company in a UAE Freezone with Invest First. Explore options across Dubai, Abu Dhabi, Sharjah, and more for 100% ownership and tax benefits.",
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/freezone');
+    return seo;
+}
+
 
 const FreezonePage = () => {
     // The data is imported but we'll use specific parts as needed

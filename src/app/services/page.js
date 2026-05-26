@@ -7,10 +7,13 @@ import DocumentServices from '@/components/ServicesPage/DocumentServices';
 import ValueAddedServices from '@/components/ServicesPage/ValueAddedServices';
 import VisaServices from '@/components/ServicesPage/VisaServices';
 
-export const metadata = {
-    title: "Services | Invest First",
-    description: "Explore our comprehensive business setup and visa services in the UAE.",
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/services');
+    return seo;
+}
+
 
 const ServicesPage = () => {
     return (

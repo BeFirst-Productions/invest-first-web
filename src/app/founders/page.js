@@ -4,20 +4,13 @@ import CommonHeroSection from '@/components/Common/Banner/CommonHerosection'
 import { MeetFounders, OurTeamsSection } from '@/components/sections/About'
 import Schedule from '@/components/sections/Schedule'
 import React from 'react'
-export const metadata = {
-    title: "Founders | Leadership Behind Invest First Business Setup UAE",
-    description: "Meet the founders of Invest First, the experts behind trusted business setup and company formation services in Dubai and across the UAE.",
-    keywords: "Invest First founders, business setup experts UAE, company formation consultants Dubai, UAE business consultants, leadership team Invest First, Dubai business setup company, entrepreneurs UAE, business advisors Dubai, company formation experts UAE",
-    alternates: {
-        canonical: "https://investfirst.ae/founders",
-    },
-    openGraph: {
-        title: "Founders | Leadership Behind Invest First Business Setup UAE",
-        description: "Meet the founders of Invest First, the experts behind trusted business setup and company formation services in Dubai and across the UAE.",
-        url: "https://investfirst.ae/founders",
-        type: "website",
-    },
-};
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/founders');
+    return seo;
+}
+
 
 const page = () => {
     return (
