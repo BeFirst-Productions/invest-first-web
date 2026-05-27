@@ -22,7 +22,7 @@ const FreezonePage = () => {
                        highlightedTitle="Freezone"
                        plainTitle=""
                        description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
-                       imageUrl="/images/about/about-banner.jpg"
+                       imageUrl="/images/freezone/freezone-banner.jpg"
                        imageAlt="Our team at Meydan Free Zone"
                        breadcrumbs={[
                            { label: 'Home', href: '/' },

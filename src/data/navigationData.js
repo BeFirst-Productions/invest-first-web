@@ -135,7 +135,7 @@ export const navLinks = [
         name: "Resources",
         href: "#",
         children: [
-            { name: "News & Updates", href: "#" },
+            // { name: "News & Updates", href: "#" },
             { name: "Blogs & Articles", href: "/blogs" },
             { name: "Downloads", href: "#" }
         ]

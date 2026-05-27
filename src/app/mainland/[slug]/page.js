@@ -53,7 +53,7 @@ const MainlandLocationDetailPage = async ({ params }) => {
         plainTitle=" "
         // description={`Expert assistance in establishing your presence in ${slug.replace('-', ' ')} and across the UAE.`}
         description={service.bannerDescription}
-        imageUrl="/images/about/about-banner.jpg"
+        imageUrl={service.bannerImage}
         imageAlt="Our team at Meydan Free Zone"
         breadcrumbs={[
           { label: "Home", href: "/" },
