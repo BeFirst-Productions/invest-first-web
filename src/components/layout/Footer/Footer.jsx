@@ -57,7 +57,9 @@ export default function Footer() {
               <div>
                 <p className="text-white/50 text-[11px] font-medium mb-[8px] tracking-wide">Location</p>
                 <p className="text-white text-[13px] font-bold leading-[1.6]">
-                  Al Qusais, Dubai<br />3rd Floor-Arzoo Building
+                  313, 3rd Floor, Arzoo Building<br />
+                  Nahda street, Al Qusais, Dubai<br />
+                  United Arab Emirates, P.O. Box 7274
                 </p>
               </div>
               <div>
