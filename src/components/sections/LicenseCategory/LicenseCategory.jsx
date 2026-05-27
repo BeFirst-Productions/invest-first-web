@@ -72,8 +72,8 @@ export default function LicenseCategory() {
 
           // New card slides up from the bottom
           tl.to(card, {
-            y: 0, 
-            duration: 1, 
+            y: 0,
+            duration: 1,
             ease: 'none',
           }, offset);
 
@@ -81,7 +81,7 @@ export default function LicenseCategory() {
           tl.to(prev, {
             scale: 0.92,
             y: isDesktop ? -30 : -20,
-            duration: 1, 
+            duration: 1,
             ease: 'none',
           }, offset);
         });
@@ -119,8 +119,8 @@ export default function LicenseCategory() {
                 Choose Business License <br className="hidden md:block" /> Leading UAE Company Setup Experts
               </>
             }
-            delay={50}
-            duration={1.25}
+            delay={30}
+            duration={0.8}
             ease="power3.out"
             splitType="chars"
             from={{ opacity: 0, y: 40 }}
@@ -134,12 +134,42 @@ export default function LicenseCategory() {
         {/* ── Cards Wrapper ── */}
         <div
           ref={cardsWrapRef}
-          className="license-cards-wrap relative w-full max-w-[938px] mx-auto rounded-[24px] md:rounded-[32px]"
+          className="license-cards-wrap relative w-full max-w-[1300px] mx-auto rounded-[24px] md:rounded-[32px]"
         >
           <style>{`
             .license-cards-wrap {
               height: auto;
               min-height: 420px;
+            }
+            @media (max-width: 374px) {
+              .license-cards-wrap {
+                min-height: 400px;
+              }
+              .license-card-inner {
+                padding: 16px !important;
+              }
+              .license-card-left {
+                gap: 8px !important;
+              }
+              .license-card-img-wrap {
+                height: 120px !important;
+              }
+              .license-card-body {
+                gap: 8px !important;
+              }
+              .license-card-desc {
+                font-size: 11px !important;
+                line-height: 1.4 !important;
+              }
+            }
+            .license-card-inner {
+              padding: clamp(20px, 3vw, 56px);
+            }
+            .license-card-img-wrap {
+              height: clamp(160px, 25vw, 300px);
+            }
+            .license-card-desc {
+              font-size: clamp(12px, 1.3vw, 16px);
             }
             @media (min-width: 480px) {
               .license-cards-wrap { min-height: 440px; }
@@ -157,7 +187,7 @@ export default function LicenseCategory() {
             }
             @media (min-width: 1280px) {
               .license-cards-wrap {
-                height: clamp(380px, 38vw, 460px);
+                height: clamp(420px, 38vw, 500px);
               }
             }
           `}</style>
@@ -174,10 +204,9 @@ export default function LicenseCategory() {
                 style={{ zIndex: index + 1 }}
               >
                 <div
-                  className="relative w-full h-full rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] flex flex-col"
+                  className="license-card-inner relative w-full h-full rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] flex flex-col"
                   style={{
                     backgroundColor: currentBg,
-                    padding: 'clamp(20px, 3vw, 56px)',
                   }}
                 >
                   {/* ── Top Header ── */}
@@ -200,13 +229,12 @@ export default function LicenseCategory() {
                   </div>
 
                   {/* ── Body: mobile = column, desktop = row ── */}
-                  <div className="flex-1 flex flex-col md:flex-row min-h-0 gap-[12px] md:gap-[32px] lg:gap-[48px]">
+                  <div className="license-card-body flex-1 flex flex-col md:flex-row min-h-0 gap-[12px] md:gap-[32px] lg:gap-[48px]">
 
                     {/* Left: Description & Button */}
-                    <div className="md:w-[55%] flex flex-col gap-[10px] md:gap-0 md:justify-between min-h-0">
+                    <div className="license-card-left md:w-[55%] flex flex-col gap-[10px] md:gap-0 md:justify-between min-h-0">
                       <p
-                        className="font-sans text-white/70 leading-[1.6]"
-                        style={{ fontSize: 'clamp(12px, 1.3vw, 16px)' }}
+                        className="license-card-desc font-sans text-white/70 leading-[1.6]"
                       >
                         {license.description}
                       </p>
@@ -241,11 +269,7 @@ export default function LicenseCategory() {
                     {/* Right: Image */}
                     <div className="md:w-[45%] flex-shrink-0">
                       <div
-                        className="relative w-full rounded-[14px] md:rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
-                        style={{
-                          /* Mobile: fixed compact height; desktop: fill available */
-                          height: 'clamp(130px, 22vw, 220px)',
-                        }}
+                        className="license-card-img-wrap relative w-full rounded-[14px] md:rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
                       >
                         <Image
                           src={license.image}

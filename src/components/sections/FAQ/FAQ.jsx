@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import SectionBadge from '@/components/ui/SectionBadge';
 import { faqs } from '@/data/faqData';
+import SplitText from '@/components/ui/SplitText';
 
 
 
@@ -63,9 +64,20 @@ export default function FAQ() {
         <SectionBadge label="FAQs" className="mb-[24px]" />
 
         {/* Title */}
-        <h2 className="font-sans text-[32px] md:text-[36px] lg:text-[40px] font-bold leading-[46px] text-center text-black tracking-tight max-w-[636px]">
-          Your Questions, Answered
-        </h2>
+        <SplitText
+          tag="h2"
+          className="font-sans text-[32px] md:text-[36px] lg:text-[40px] font-bold leading-[46px] text-black tracking-tight max-w-[636px]"
+          text="Your Questions, Answered"
+          delay={30}
+          duration={0.8}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
       </div>
 
       {/* FAQ Grid */}

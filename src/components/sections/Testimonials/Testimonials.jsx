@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import SectionBadge from '@/components/ui/SectionBadge';
 import { testimonialsData } from '@/data/testimonialData';
+import SplitText from '@/components/ui/SplitText';
 
 
 
@@ -17,11 +18,11 @@ export default function Testimonials() {
     if (isAnimating || newIndex === currentIndex) return;
     setIsAnimating(true);
     setFadeState('opacity-0 translate-y-4');
-    
+
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setFadeState('opacity-100 translate-y-0');
-      
+
       setTimeout(() => {
         setIsAnimating(false);
       }, 500); // Transition duration cooldown
@@ -45,10 +46,20 @@ export default function Testimonials() {
         {/* Top Header */}
         <div className="mb-[24px] md:mb-[36px]">
           <SectionBadge label="Testimonials" className="mb-[14px]" />
-          {/* Title */}
-          <h2 className="font-sans text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-[1.2] text-black tracking-tight">
-            What Our Clients Say
-          </h2>
+          <SplitText
+            tag="h2"
+            className="font-sans text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-[1.2] text-black tracking-tight"
+            text="What Our Clients Say"
+            delay={30}
+            duration={0.8}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="left"
+          />
         </div>
 
         {/* Content Layout — image and right col share a row, heights locked via items-stretch */}
@@ -59,9 +70,9 @@ export default function Testimonials() {
             <div className={`relative w-full rounded-[18px] overflow-hidden bg-[#EAEAEA] transition-all duration-500 ease-in-out ${fadeState}`}
               style={{ aspectRatio: '1 / 1' }}
             >
-              <Image 
-                src={activeTestimonial.image} 
-                alt={`${activeTestimonial.name} Testimonial`} 
+              <Image
+                src={activeTestimonial.image}
+                alt={`${activeTestimonial.name} Testimonial`}
                 fill
                 className="object-cover object-bottom"
                 sizes="(max-width: 1024px) 100vw, 340px"
@@ -76,7 +87,7 @@ export default function Testimonials() {
               {/* Track */}
               <div className="absolute inset-0 bg-[#E0E0E0] rounded-full"></div>
               {/* Fill from bottom */}
-              <div 
+              <div
                 className="absolute left-0 bottom-0 w-full bg-[#8B1D41] rounded-full transition-all duration-[800ms] ease-out"
                 style={{ height: `${progressPercentage}%` }}
               ></div>
@@ -87,29 +98,28 @@ export default function Testimonials() {
               <p className="text-[15px] md:text-[17px] lg:text-[18px] text-[#333333] leading-[1.7] md:leading-[1.8] font-medium mb-[28px] md:mb-[40px]">
                 {activeTestimonial.text}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-[16px]">
                 {/* Author Info */}
                 <div>
                   <h4 className="text-[14px] md:text-[15px] font-bold text-[#111111] mb-[3px]">{activeTestimonial.name}</h4>
                   <p className="text-[12px] md:text-[13px] text-[#888888]">{activeTestimonial.role}</p>
                 </div>
-                
+
                 {/* Avatars */}
                 <div className="flex items-center -space-x-3">
                   {testimonialsData.map((t, i) => (
-                    <button 
-                      key={t.id} 
+                    <button
+                      key={t.id}
                       onClick={() => changeSlide(i)}
                       disabled={isAnimating}
-                      className={`relative w-[30px] h-[30px] md:w-[38px] md:h-[38px] rounded-full overflow-hidden bg-[#EBEBEB] transition-all duration-300 ${
-                        currentIndex === i 
-                          ? 'border-[2px] border-[#8B1D41] z-10 scale-110 shadow-md opacity-100' 
+                      className={`relative w-[30px] h-[30px] md:w-[38px] md:h-[38px] rounded-full overflow-hidden bg-[#EBEBEB] transition-all duration-300 ${currentIndex === i
+                          ? 'border-[2px] border-[#8B1D41] z-10 scale-110 shadow-md opacity-100'
                           : 'border-[2px] border-white z-0 opacity-60 hover:opacity-100 hover:z-10 cursor-pointer'
-                      }`}
+                        }`}
                       aria-label={`View testimonial from ${t.name}`}
                     >
-                      <Image 
+                      <Image
                         src={t.avatar}
                         alt={t.name}
                         fill
