@@ -151,6 +151,7 @@ export const mainlandDetailedData = {
     'dubai': {
         slug: 'dubai',
         bannerTitle: "Mainland Company Formation in Dubai",
+        bannerImage:"/images/mainland/dubai-mainland-banner.jpg",
         bannerDescription:"Expert assistance in establishing your presence in and across the UAE.",
         intro: {
             image: "/images/mainland/dubai-mainland-intro.png",
@@ -261,6 +262,7 @@ export const mainlandDetailedData = {
     'abu-dhabi': {
         slug: 'abu-dhabi',
         bannerTitle: "Mainland Company Formation in Abu Dhabi",
+        bannerImage:"/images/mainland/adu-dhabi-mainland-banner.jpg",
         bannerDescription:"Expert assistance in establishing your presence in and across the UAE.",
 
         intro: {

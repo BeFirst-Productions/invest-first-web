@@ -104,7 +104,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
                 highlightedTitle={pageData.bannerTitle}
                 plainTitle=" "
                 description={pageData.bannerDescription}
-                imageUrl="/images/about/about-banner.jpg"
+                imageUrl="/images/freezone/freezone-banner.jpg"
                 imageAlt={`Our team at ${pageData.bannerTitle}`}
                 breadcrumbs={[
                     { label: "Home", href: "/" },

@@ -6,6 +6,7 @@ export const freezoneDetailedData = {
         isEmirate: true,
         bannerTitle: "Dubai Free Zone Company Formation",
         bannerDescription: "Expert assistance in establishing your company in Dubai's premier free zones with 100% ownership and full tax benefits.",
+        bannerImage:"images/freezone/banners/dubai-international-city-banner.jpg",
         intro: {
             image: "/images/freezone/freezone.png",
             titleHighlight: "Dubai Free Zones",
@@ -105,6 +106,7 @@ export const freezoneDetailedData = {
         slug: 'abu-dhabi',
         isEmirate: true,
         bannerTitle: "Abu Dhabi Free Zone Company Formation",
+        bannerImage:"images/freezone/banners/",
         bannerDescription: "Establish your business in the capital's premier economic zones. Enjoy state-of-the-art logistics and access to key industries.",
         intro: {
             image: "/images/freezone/freezone.png",
@@ -189,6 +191,8 @@ export const freezoneDetailedData = {
         slug: 'sharjah',
         isEmirate: true,
         bannerTitle: "Sharjah Free Zone Company Formation",
+        bannerImage:"images/freezone/banners/",
+
         bannerDescription: "Cost-effective, business-friendly setups in Sharjah's industrial, publishing, and creative free zones.",
         intro: {
             image: "/images/freezone/freezone.png",
@@ -273,6 +277,8 @@ export const freezoneDetailedData = {
         slug: 'ajman',
         isEmirate: false,
         bannerTitle: "Ajman Free Zone Company Setup",
+        bannerImage:"images/freezone/banners/",
+
         bannerDescription: "Establish your company in Ajman Free Zone (AFZ). Enjoy low costs, rapid setup, and strategic maritime location.",
         intro: {
             image: "/images/freezone/Ajman Free Zone (AFZ).jpg",
@@ -356,6 +362,8 @@ export const freezoneDetailedData = {
         slug: 'umm-al-quwain',
         isEmirate: false,
         bannerTitle: "Umm Al Quwain Free Zone Company Setup",
+        bannerImage:"images/freezone/banners/",
+
         bannerDescription: "Setup your business in UAQ Free Trade Zone (UAQFTZ). The ideal choice for micro-businesses and import-export operations.",
         intro: {
             image: "/images/freezone/Umm Al Quwain Free Trade Zone (UAQFTZ).jpg",
@@ -433,6 +441,8 @@ export const freezoneDetailedData = {
         slug: 'ras-al-khaimah',
         isEmirate: false,
         bannerTitle: "Ras Al Khaimah Company Formation",
+        bannerImage:"images/freezone/banners/",
+
         bannerDescription: "Setup in Ras Al Khaimah Economic Zone (RAKEZ). A premier destination for industrial, trading, and service businesses.",
         intro: {
             image: "/images/freezone/Ras Al Khaimah Economic Zone (RAKEZ).jpg",
@@ -517,6 +527,8 @@ export const freezoneDetailedData = {
         slug: 'meydan-free-zone',
         parentEmirate: 'dubai',
         bannerTitle: "Meydan Free Zone Setup in Dubai",
+        bannerImage:"images/freezone/banners/meydan-freezone-banner.jpg",
+
         bannerDescription: "Form your business in Meydan Free Zone. Located inside Meydan Hotel, offering premium setups, e-commerce features, and a prestigious address.",
         intro: {
             image: "/images/freezone/dubai-freezone/meydan.png",
@@ -587,6 +599,8 @@ export const freezoneDetailedData = {
         slug: 'ifza-free-zone',
         parentEmirate: 'dubai',
         bannerTitle: "IFZA Free Zone Company Setup",
+        bannerImage:"images/freezone/banners/ifza-freezone-banner.jpg",
+
         bannerDescription: "Form your business in IFZA (International Free Zone Authority), the most flexible and cost-effective free zone in Dubai.",
         intro: {
             image: "/images/freezone/dubai-freezone/ifza.png",

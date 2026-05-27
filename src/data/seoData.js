@@ -2,9 +2,9 @@ import { governmentApprovalsData } from '@/data/GovernmentApprovalsData';
 import { proServicesData } from '@/data/ProServicesData';
 
 export const defaultSeoData = {
-  title: 'InvestFirst Business Services | Company Formation UAE',
-  description: 'InvestFirst provides expert company formation and business services. Establish your business in the UAE with confidence.',
-  keywords: 'business setup dubai, company formation uae, invest first, dubai visas, trade license uae',
+  title: 'Business Setup in UAE | Invest Firs|t Company Formation Dubai',
+  description: 'Start your business in the UAE with Invest First. We provide end-to-end business setup, company formation, trade license assistance, and PRO services in Dubai and across the UAE for entrepreneurs and investors.',
+  keywords: 'business setup in UAE,business setup in Dubai,company formation UAE,start business in Dubai,Dubai company registration,UAE company formation trade license in Dubai,UAE business license,Dubai business license,company setup in UAE,free zone company formation UAE,mainland company setup Dubai,UAE free zone business setup,Dubai mainland company formation,how to start business in UAE,cost of business setup in Dubai,UAE company registration process,business incorporation in Dubai,UAE trade license cost,Dubai business setup consultants,Pro services UAE',
   alternates: {
     canonical: 'https://investfirst.ae',
   },
@@ -15,7 +15,7 @@ export const defaultSeoData = {
     siteName: 'InvestFirst',
     images: [
       {
-        url: '/images/og-home.jpg',
+        url: '/images/og-home.jpeg',
         width: 1200,
         height: 630,
       },
@@ -26,25 +26,26 @@ export const defaultSeoData = {
     card: 'summary_large_image',
     title: 'InvestFirst Business Services',
     description: 'Expert company formation and business services in the UAE.',
-    images: ['/images/og-home.jpg'],
+    images: ['/images/og-home.jpeg'],
   },
 };
 
 export const seoData = {
   '/': {
-    title: 'InvestFirst Business Services | Company Formation UAE',
-    description: 'InvestFirst provides expert company formation and business services. Establish your business in the UAE with confidence.',
+  title: 'Business Setup in UAE | Invest Firs|t Company Formation Dubai',
+  description: 'Start your business in the UAE with Invest First. We provide end-to-end business setup, company formation, trade license assistance, and PRO services in Dubai and across the UAE for entrepreneurs and investors.',
+  keywords: 'business setup in UAE,business setup in Dubai,company formation UAE,start business in Dubai,Dubai company registration,UAE company formation trade license in Dubai,UAE business license,Dubai business license,company setup in UAE,free zone company formation UAE,mainland company setup Dubai,UAE free zone business setup,Dubai mainland company formation,how to start business in UAE,cost of business setup in Dubai,UAE company registration process,business incorporation in Dubai,UAE trade license cost,Dubai business setup consultants,Pro services UAE',
     alternates: {
       canonical: 'https://investfirst.ae',
     },
     openGraph: {
-      title: 'InvestFirst Business Services',
-      description: 'Expert company formation and business services in the UAE.',
+  title: 'Business Setup in UAE | Invest Firs|t Company Formation Dubai',
+  description: 'Start your business in the UAE with Invest First. We provide end-to-end business setup, company formation, trade license assistance, and PRO services in Dubai and across the UAE for entrepreneurs and investors.',
       url: 'https://investfirst.ae',
       siteName: 'InvestFirst',
       images: [
         {
-          url: '/images/og-home.jpg',
+          url: '/images/og-home.jpeg',
           width: 1200,
           height: 630,
         },
@@ -60,8 +61,9 @@ export const seoData = {
       canonical: 'https://investfirst.ae/about-us',
     },
     openGraph: {
-      title: 'About Us | Invest First Business Setup in UAE & Dubai Company Formation',
-      description: 'Learn about Invest First, a trusted UAE business setup in uae We specialize in company formation, and complete business setup solutions in Dubai.',
+    title: 'About Us | Invest First Business Setup in UAE & Dubai Company Formation',
+    description: 'Learn about Invest First, a trusted UAE business setup in uae We specialize in company formation, and complete business setup solutions in Dubai.',
+    keywords: 'business setup in UAE, business setup in Dubai, company formation UAE, UAE company formation, Dubai company registration, Dubai business setup consultancy, UAE business consultants, trade license in Dubai, UAE trade license, mainland company formation Dubai, free zone company setup UAE, PRO services UAE, visa services UAE, start business in Dubai, company registration UAE, business incorporation Dubai, PRO Services in Dubai',
       url: 'https://investfirst.ae/about-us',
       type: 'website',
     },
@@ -76,6 +78,7 @@ export const seoData = {
     openGraph: {
         title: "Why Choose UAE for Business Setup | Invest First Dubai",
         description: "Discover why the UAE is one of the best destinations for business setup, offering tax benefits, 100% foreign ownership, global market access, and investor-friendly policies.",
+        keywords: "why invest in UAE, business setup UAE, company formation Dubai, UAE business benefits, start business in Dubai, UAE free zone setup, mainland company UAE, Dubai investment opportunities, entrepreneur visa UAE, Invest First UAE",
         url: "https://investfirst.ae/why-uae",
         type: "website",
     },
@@ -83,28 +86,29 @@ export const seoData = {
   '/founders': {
     title: "Founders | Leadership Behind Invest First Business Setup UAE",
     description: "Meet the founders of Invest First, the experts behind trusted business setup and company formation services in Dubai and across the UAE.",
-    keywords: "Invest First founders, business setup experts UAE, company formation consultants Dubai, UAE business consultants, leadership team Invest First, Dubai business setup company, entrepreneurs UAE, business advisors Dubai, company formation experts UAE",
+    keywords: "invest First founders, business setup experts UAE, company formation consultants Dubai, UAE business consultants, leadership team Invest First, Dubai business setup company, entrepreneurs UAE, business advisors Dubai, company formation experts UAE",
     alternates: {
         canonical: "https://investfirst.ae/founders",
     },
     openGraph: {
         title: "Founders | Leadership Behind Invest First Business Setup UAE",
         description: "Meet the founders of Invest First, the experts behind trusted business setup and company formation services in Dubai and across the UAE.",
+        keywords: "invest First founders, business setup experts UAE, company formation consultants Dubai, UAE business consultants, leadership team Invest First, Dubai business setup company, entrepreneurs UAE, business advisors Dubai, company formation experts UAE",
         url: "https://investfirst.ae/founders",
         type: "website",
     },
   },
   '/contact-us': {
-    title: "Contact Us | Business Setup in Dubai",
-    description: "Contact Invest First for expert business setup in UAE and Dubai. Get assistance with company formation, trade licenses, PRO services, and complete UAE business setup solutions.",
-    keywords: "Invest First, business setup in UAE contact, business setup in Dubai, company formation UAE, UAE business consultants, Dubai business setup support, trade license UAE, PRO services UAE, free zone company setup UAE, mainland company formation Dubai, UAE company registration help, start business in Dubai contact, Dubai business setup services",
+    title: "Contact Us |Business Setup in Dubai",
+    description: " Contact Invest First for expert business setup in UAE and Dubai. Get assistance with company formation, trade licenses, PRO services, and complete UAE business setup solutions.",
+    keywords: " Invest First, business setup in UAE contact, business setup in Dubai, company formation UAE, UAE business consultants, Dubai business setup support, trade license UAE, PRO services UAE, free zone company setup UAE, mainland company formation Dubai, UAE company registration help, start business in Dubai contact, Dubai business setup services, ",
     alternates: {
-        canonical: "https://investfirst.ae/contactus/",
+        canonical: "https://investfirst.ae/contactus",
     },
     openGraph: {
-        title: "Contact Us | Business Setup in Dubai",
-        description: "Contact Invest First for expert business setup in UAE and Dubai. Get assistance with company formation, trade licenses, PRO services, and complete UAE business setup solutions.",
-        url: "https://investfirst.ae/contactus/",
+        title: "Contact Us |Business Setup in Dubai",
+        description: " Contact Invest First for expert business setup in UAE and Dubai. Get assistance with company formation, trade licenses, PRO services, and complete UAE business setup solutions.",
+        url: "https://investfirst.ae/contactus",
         type: "website",
     },
   },
@@ -141,17 +145,48 @@ export const seoData = {
     description: "Calculate your business setup cost in UAE with Invest First.",
   },
   '/freezone': {
-    title: "Freezone Company Formation UAE | Invest First",
-    description: "Start your company in a UAE Freezone with Invest First. Explore options across Dubai, Abu Dhabi, Sharjah, and more for 100% ownership and tax benefits.",
+     title: "Free Zone Company Setup in UAE | Dubai Free Zone Business Setup ",
+    description: "Set up your free zone company in UAE with Invest First. Get complete support for company formation, trade license, visa processing, and business registration in Dubai free zones with fast and hassle-free services.",
+    keywords: "free zone company setup UAE, freezone business setup Dubai, Dubai free zone company formation, UAE free zone license, business setup in UAE, company registration Dubai, start business in free zone UAE, Dubai free zone license, UAE company formation services, Invest First UAE, free zone visa services UAE, UAE business consultants, Dubai startup setup, freezone trade license UAE, company incorporation UAE",
+    alternates: {
+        canonical: "http://investfirst.ae/freezone",
+    },
+    openGraph: {
+        title: "Free Zone Company Setup in UAE | Dubai Free Zone Business Setup ",
+        description: "Set up your free zone company in UAE with Invest First. Get complete support for company formation, trade license, visa processing, and business registration in Dubai free zones with fast and hassle-free services.",
+        url: "http://investfirst.ae/freezone",
+        type: "website",
+    },
   },
   '/offshore': {
-    title: "Offshore Company Formation UAE | Invest First",
-    description: "Incorporate your offshore company in the UAE with Invest First. Expert setup services for JAFZA, RAKICC, and Ajman for asset protection and tax efficiency.",
+  title: "Offshore Company Setup in Dubai | Invest first",
+    description: " Start your offshore company setup in Dubai with Invest First. Get expert assistance for offshore company formation, international business registration, UAE offshore services",
+    keywords: "offshore company setup Dubai, offshore company formation UAE, Dubai offshore business setup, UAE offshore company registration, offshore business formation Dubai, international business setup UAE, offshore trade license UAE, company incorporation Dubai, UAE offshore services, business setup consultants UAE, Invest First UAE, offshore banking support Dubai, Dubai business setup services, UAE company formation, offshore company registration UAE",
+    alternates: {
+        canonical: "http://investfirst.ae/offshore",
+    },
+    openGraph: {
+        title: "Offshore Company Setup in Dubai | Invest first",
+        description: " Start your offshore company setup in Dubai with Invest First. Get expert assistance for offshore company formation, international business registration, UAE offshore services",
+        url: "http://investfirst.ae/offshore",
+        type: "website",
+    },
   },
   '/mainland': {
-    title: "Mainland Company Formation Dubai | Invest First",
-    description: "Start your mainland company in Dubai with Invest First. We offer complete business setup services, including 100% ownership and PRO support.",
+ title: "Mainland Company Setup in UAE | Business Setup Dubai | Invest First",
+    description: "Start your mainland company setup in UAE with Invest First. Get expert support for trade license, company registration, visa services, PRO services, and business setup in Dubai and across the UAE.",
+    keywords: "mainland company setup UAE, business setup in UAE, company formation Dubai, mainland business setup Dubai, UAE trade license, Dubai company registration, business setup consultants UAE, mainland license UAE, start business in Dubai, Invest First UAE, UAE business setup services, Dubai mainland company formation, UAE PRO services, company incorporation UAE, Dubai business consultants",
+    alternates: {
+        canonical: "http://investfirst.ae/mainland",
+    },
+    openGraph: {
+ title: "Mainland Company Setup in UAE | Business Setup Dubai | Invest First",
+    description: "Start your mainland company setup in UAE with Invest First. Get expert support for trade license, company registration, visa services, PRO services, and business setup in Dubai and across the UAE.",
+        url: "http://investfirst.ae/mainland",
+        type: "website",
+    },
   },
+  
   '/services/government-approvals': {
     title: governmentApprovalsData.seo.title,
     description: governmentApprovalsData.seo.description,
@@ -182,5 +217,33 @@ export const seoData = {
         description: proServicesData.seo.description,
         images: [proServicesData.seo.image],
     },
+  },
+  '/privacy-policy': {
+    title: "Privacy Policy | Invest First Business Setup UAE",
+    description: "Read the Privacy Policy of Invest First. Learn how we collect, use, and protect your personal data for UAE company formation and business services.",
+    keywords: "privacy policy, invest first, data privacy, business setup dubai",
+    alternates: {
+        canonical: "https://investfirst.ae/privacy-policy",
+    },
+    openGraph: {
+        title: "Privacy Policy | Invest First Business Setup UAE",
+        description: "Read the Privacy Policy of Invest First. Learn how we collect, use, and protect your personal data for UAE company formation and business services.",
+        url: "https://investfirst.ae/privacy-policy",
+        type: "website",
+    }
+  },
+  '/terms-conditions': {
+    title: "Terms and Conditions | Invest First Business Setup UAE",
+    description: "Review the Terms and Conditions of Invest First Business Services. Guidelines and rules for company setup and corporate services in the UAE.",
+    keywords: "terms and conditions, terms of service, invest first, dubai company setup",
+    alternates: {
+        canonical: "https://investfirst.ae/terms-conditions",
+    },
+    openGraph: {
+        title: "Terms and Conditions | Invest First Business Setup UAE",
+        description: "Review the Terms and Conditions of Invest First Business Services. Guidelines and rules for company setup and corporate services in the UAE.",
+        url: "https://investfirst.ae/terms-conditions",
+        type: "website",
+    }
   }
 };

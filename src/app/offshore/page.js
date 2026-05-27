@@ -17,18 +17,13 @@ export async function generateMetadata() {
 const OffshorePage = () => {
     return (
         <main className="">
-            {/* <CommonHerosection
-                title="Offshore Company Formation"
-                description="Expert assistance in setting up your international business presence through UAE's premium offshore jurisdictions, providing maximum privacy and asset protection."
-                cardTitle="Offshore Setup Support"
-                cardDescription="We handle the complete formation process for international business entities in the most respected UAE jurisdictions."
-            /> */}
+ 
 
                <CommonHeroSection
                     highlightedTitle="Offshore Company Formation"
                     plainTitle=" "
                     description="Expert assistance in setting up your international business presence through UAE's premium offshore jurisdictions, providing maximum privacy and asset protection."
-                    imageUrl="/images/about/about-banner.jpg"
+                    imageUrl="/images/offshore/offshore-hero-banner.jpg"
                     imageAlt="Our team at Meydan Free Zone"
                     breadcrumbs={[
                       { label: "Home", href: "/" },
