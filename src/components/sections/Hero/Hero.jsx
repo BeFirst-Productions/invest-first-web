@@ -781,25 +781,25 @@ export default function Hero() {
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
                                   <label className="hero-form-label">Full Name <span className="text-red-400">*</span></label>
-                                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" className={`hero-form-input ${errors.name ? 'has-error' : ''}`} />
+                                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" className={`hero-form-input ${errors.name ? 'has-error' : ''}`} suppressHydrationWarning={true} />
                                   {errors.name && <p className="text-red-400 text-xs mt-1 ml-1">{errors.name}</p>}
                                 </div>
                                 <div>
                                   <label className="hero-form-label">Email <span className="text-red-400">*</span></label>
-                                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@example.com" className={`hero-form-input ${errors.email ? 'has-error' : ''}`} />
-                                  {errors.email && <p className="text-red-400 text-xs mt-1 ml-1">{errors.email}</p>}
+                                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@example.com" className={`hero-form-input ${errors.email ? 'has-error' : ''}`} suppressHydrationWarning={true} />
+                                  {errors.name && <p className="text-red-400 text-xs mt-1 ml-1">{errors.name}</p>}
                                 </div>
                               </div>
                               <div className="grid grid-cols-2 gap-4">
                                 <div>
                                   <label className="hero-form-label">Phone <span className="text-red-400">*</span></label>
-                                  <input type="text" name="phone" value={form.phone} onChange={handleChange} placeholder="+971 50 XXX XXXX" className={`hero-form-input ${errors.phone ? 'has-error' : ''}`} />
+                                  <input type="text" name="phone" value={form.phone} onChange={handleChange} placeholder="+971 50 XXX XXXX" className={`hero-form-input ${errors.phone ? 'has-error' : ''}`} suppressHydrationWarning={true} />
                                   {errors.phone && <p className="text-red-400 text-xs mt-1 ml-1">{errors.phone}</p>}
                                 </div>
                                 <div>
                                   <label className="hero-form-label">Service <span className="text-red-400">*</span></label>
                                   <div className="relative">
-                                    <select name="service" value={form.service} onChange={handleChange} className={`hero-form-input hero-form-select ${errors.service ? 'has-error' : ''}`}>
+                                    <select name="service" value={form.service} onChange={handleChange} className={`hero-form-input hero-form-select ${errors.service ? 'has-error' : ''}`} suppressHydrationWarning={true}>
                                       <option value="" style={{ background: '#0B223E' }}>Select Service</option>
                                       <option value="Company Formation" style={{ background: '#0B223E' }}>Company Formation</option>
                                       <option value="PRO Services" style={{ background: '#0B223E' }}>PRO Services</option>
@@ -818,7 +818,7 @@ export default function Hero() {
                               </div>
                               <div>
                                 <label className="hero-form-label">Message <span className="text-white/30 text-xs">(optional)</span></label>
-                                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={3} className="hero-form-input resize-none" />
+                                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={3} className="hero-form-input resize-none" suppressHydrationWarning={true} />
                               </div>
                               <RedHoverButton type="submit" text="get free consultation" className="w-fit mt-2" />
                             </form>

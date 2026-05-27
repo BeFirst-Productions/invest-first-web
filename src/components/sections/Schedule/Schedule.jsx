@@ -54,47 +54,47 @@ export default function Schedule() {
               Schedule a Call
             </h2>
             <p className="text-white/80 text-[14px] md:text-[15px] leading-[1.6] max-w-[440px]">
-              Make an appointment for a call with our company formation business setup specialists Dubai for guidance. If you are also interested in our mainland company formation in UAE, investor visa services and PRO services in Dubai. We can provide all these services and we are ready to help you!
+              Consult us for your Business Set Up, Visa Processing & PRO services in Dubai. We will be happy to guide you with the reliable experts per your Business requirements.
             </p>
           </div>
 
-    {/* Bottom Area */}
-<div className="mt-auto relative flex items-end justify-end px-[20px] md:px-[30px] pb-[25px] md:pb-[35px]">
-  
-  {/* Person Image - Absolute bottom-left */}
-  <div className="absolute bottom-0 left-0 w-[130px] h-[160px] md:w-[155px] md:h-[185px] rounded-tr-[20px] overflow-hidden shadow-2xl group">
-    <Image
-      src="/images/schedule/person.jpg"
-      alt="Meet Consultants"
-      fill
-      className="object-cover transition-transform duration-700 group-hover:scale-110"
-    />
-    <div className="absolute inset-x-0 bottom-0 bg-[#081131]/95 py-[10px] px-[12px] flex items-center justify-between">
-      <span className="text-white text-[9px] font-semibold uppercase tracking-widest">Consultant</span>
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
-        <path d="M5 12h14M12 5l7 7-7 7" />
-      </svg>
-    </div>
-  </div>
+          {/* Bottom Area */}
+          <div className="mt-auto relative flex items-end justify-end px-[20px] md:px-[30px] pb-[25px] md:pb-[35px]">
 
-  {/* Action Buttons - Right side */}
-  <div className="flex flex-col sm:flex-row gap-[10px] md:gap-[12px] items-center">
-    <button
-      onClick={() => setIsModalOpen(true)}
-      className="flex items-center gap-[8px] bg-[#D9F1F7] hover:bg-white transition-all py-[10px] md:py-[12px] px-[18px] md:px-[22px] rounded-full shadow-lg"
-    >
-      <WhatsAppIcon />
-      <span className="text-[#081131] font-bold text-[13px] md:text-[14px]">Chat Now</span>
-    </button>
-    <button
-      onClick={() => setIsModalOpen(true)}
-      className="flex items-center gap-[8px] bg-[#A10B43] hover:bg-[#8B1D41] transition-all py-[10px] md:py-[12px] px-[18px] md:px-[22px] rounded-full shadow-lg"
-    >
-      <PhoneIcon />
-      <span className="text-white font-bold text-[13px] md:text-[14px]">Call Now</span>
-    </button>
-  </div>
-</div>
+            {/* Person Image - Absolute bottom-left */}
+            <div className="absolute bottom-0 left-0 w-[130px] h-[160px] md:w-[155px] md:h-[185px] rounded-tr-[20px] overflow-hidden shadow-2xl group">
+              <Image
+                src="/images/schedule/person.jpg"
+                alt="Meet Consultants"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-[#081131]/95 py-[10px] px-[12px] flex items-center justify-between">
+                <span className="text-white text-[9px] font-semibold uppercase tracking-widest">Consultant</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Action Buttons - Right side */}
+            <div className="flex flex-col sm:flex-row gap-[10px] md:gap-[12px] items-center">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="flex items-center gap-[8px] bg-[#D9F1F7] hover:bg-white transition-all py-[10px] md:py-[12px] px-[18px] md:px-[22px] rounded-full shadow-lg"
+              >
+                <WhatsAppIcon />
+                <span className="text-[#081131] font-bold text-[13px] md:text-[14px]">Chat Now</span>
+              </button>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="flex items-center gap-[8px] bg-[#A10B43] hover:bg-[#8B1D41] transition-all py-[10px] md:py-[12px] px-[18px] md:px-[22px] rounded-full shadow-lg"
+              >
+                <PhoneIcon />
+                <span className="text-white font-bold text-[13px] md:text-[14px]">Call Now</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Right Card: Schedule Meeting */}
@@ -118,7 +118,9 @@ export default function Schedule() {
                 Schedule Meeting
               </h2>
               <p className="text-white/75 text-[14px] md:text-[15px] leading-[1.65] max-w-[420px]">
-                Book an appointment with our professional consultants to get expert advice on company formation in Dubai, mainland company registration in UAE, investor visa services, and best PRO services you may require for your enterprise.
+                Schedule a meeting with our UAE business setup consultants for expert guidance on company formation, trade license renewal, visa services, and PRO support.
+                We provide reliable and hassle-free solutions to help you start and manage your business smoothly across the UAE. Book your meeting today and get professional grow, and manage your business successfully in UAE.
+
               </p>
             </div>
 

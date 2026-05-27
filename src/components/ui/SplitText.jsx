@@ -37,7 +37,7 @@ const SplitText = ({
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
   const onCompleteRef = useRef(onLetterAnimationComplete);
-  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [ready, setReady] = useState(false);
 
   // Keep callback ref updated
   useEffect(() => {
@@ -45,18 +45,30 @@ const SplitText = ({
   }, [onLetterAnimationComplete]);
 
   useEffect(() => {
+    let timer;
+    const initReady = () => {
+      timer = setTimeout(() => {
+        setReady(true);
+        ScrollTrigger.refresh();
+      }, 500);
+    };
+
     if (document.fonts.status === 'loaded') {
-      setFontsLoaded(true);
+      initReady();
     } else {
       document.fonts.ready.then(() => {
-        setFontsLoaded(true);
+        initReady();
       });
     }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   useGSAP(
     () => {
-      if (!ref.current || !text || !fontsLoaded) return;
+      if (!ref.current || !text || !ready) return;
       // Prevent re-animation if already completed
       if (animationCompletedRef.current) return;
       const el = ref.current;
@@ -126,6 +138,7 @@ const SplitText = ({
         }
       });
       el._rbsplitInstance = splitInstance;
+      ScrollTrigger.refresh();
 
       return () => {
         ScrollTrigger.getAll().forEach(st => {
@@ -150,7 +163,7 @@ const SplitText = ({
         JSON.stringify(to),
         threshold,
         rootMargin,
-        fontsLoaded
+        ready
       ],
       scope: ref
     }

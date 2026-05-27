@@ -32,8 +32,8 @@ export default function OurServices() {
               Solutions in Dubai.
             </>
           }
-          delay={50}
-          duration={1.25}
+          delay={30}
+          duration={0.8}
           ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
@@ -83,11 +83,10 @@ export default function OurServices() {
               {/* Desktop image column — lg: 180×115, xl: 240×155, fades in on hover */}
               <div className="hidden lg:flex lg:w-[190px] lg:shrink-0 xl:w-[260px] items-center justify-end">
                 <div
-                  className={`relative lg:w-[175px] lg:h-[115px] xl:w-[240px] xl:h-[155px] rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.10)] xl:shadow-[0_16px_48px_rgba(0,0,0,0.12)] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-                    hoveredIndex === index
+                  className={`relative lg:w-[175px] lg:h-[115px] xl:w-[240px] xl:h-[155px] rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.10)] xl:shadow-[0_16px_48px_rgba(0,0,0,0.12)] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${hoveredIndex === index
                       ? "opacity-100 scale-100"
                       : "opacity-0 scale-90"
-                  }`}
+                    }`}
                 >
                   <Image
                     src={service.image}

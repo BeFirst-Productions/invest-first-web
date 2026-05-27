@@ -104,9 +104,9 @@ export default function Pricing() {
         <SplitText
           tag="h2"
           className="font-sans text-[28px] md:text-[36px] lg:text-[40px] font-semibold leading-[1.25] text-[#111111] tracking-tight max-w-[620px]"
-          text="License Packages dolor sit amet, consecteturadipiscing elit."
-          delay={50}
-          duration={1.25}
+          text="Choose the right UAE  license package for  business setup "
+          delay={30}
+          duration={0.8}
           ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
