@@ -53,7 +53,7 @@ export const freezoneData = {
                 {
                     id: "d7",
                     title: "Meydan Free Zone",
-                    slug: "meydan-free-zone",
+                    slug: "meydan-freezone-setup-in-dubai",
                     description: "Dynamic free zone located near the racecourse hotel.",
                     image: "/images/freezone/dubai-freezone/meydan.png"
                 }

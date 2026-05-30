@@ -523,8 +523,8 @@ export const freezoneDetailedData = {
     },
 
     // === SPECIFIC SUBZONES (Level 2 Detail Pages) ===
-    'meydan-free-zone': {
-        slug: 'meydan-free-zone',
+    'meydan-freezone-setup-in-dubai': {
+        slug: 'meydan-freezone-setup-in-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "Meydan Free Zone Setup in Dubai",
         bannerImage:"images/freezone/banners/meydan-freezone-banner.jpg",

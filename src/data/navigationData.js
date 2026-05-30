@@ -9,13 +9,13 @@ export const companyFormationItems = [
     },
     {
         name: "Free Zones",
-        href: "/freezone",
+        href: "/dubai-freezone-company-formation",
         children: [
             {
                 name: "Dubai",
                 href: "/freezone/dubai",
                 children: [
-                    { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-free-zone" },
+                    { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
                     { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-free-zone" },
                     { name: "DMCC Free Zone", href: "/freezone/dubai/dmcc-free-zone" },
                     { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jebel-ali-jafza" },

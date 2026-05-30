@@ -140,23 +140,111 @@ export const seoData = {
         type: "website",
     },
   },
+  '/blogs/how-to-start-a-business-in-dubai': {
+    title: "How to Start a Business in Dubai | Company Formation & Business Setup UAE",
+    description: "Learn how to start a business in Dubai with ease. Explore company formation, trade license, visa process, and business setup in UAE with expert guidance for entrepreneurs and investors.",
+    keywords: "business setup in UAE ,company formation in UAE,start business in Dubai,UAEbusiness setup services, Dubai company formation,trade license in Dubai,UAE business license,mainland company formation UAE,free zone company setup UAE,UAE residency visa,business setup in dubai, how to start a business in Dubai,company formation in Dubai,start business in Dubai,Dubai business license, Dubai trade license,Dubai company registration",
+    alternates: {
+        canonical: "https://investfirst.ae/blogs/how-to-start-a-business-in-dubai",
+    },
+    openGraph: {
+        title: "How to Start a Business in Dubai | Company Formation & Business Setup UAE",
+        description: "Learn how to start a business in Dubai with ease. Explore company formation, trade license, visa process, and business setup in UAE with expert guidance for entrepreneurs and investors.",
+        url: "https://investfirst.ae/blogs/how-to-start-a-business-in-dubai",
+        type: "article",
+        images: [
+          {
+            url: "/images/blog/how-to-start-a-business-in-dubai.png",
+            width: 1200,
+            height: 630,
+            alt: "How to Start a Business in Dubai",
+          },
+        ],
+    },
+  },
+  '/blogs/mainland-and-freezone-guide': {
+    title: "Mainland vs Free Zone Dubai Guide | Choose the Right Business Licence in UAE",
+    description: "Compare Mainland vs Free Zone in Dubai and choose the right business licence in UAE. Learn key differences, benefits, costs, and setup process for company formation in Dubai.",
+    keywords: "business setup in Dubai, company formation in UAE, Dubai business license, Dubai mainland company setup, Dubai free zone company setup, UAE business setup, business license in Dubai, UAE company registration, company setup in uae, freezone company setup dubai, mainland uae setup",
+    alternates: {
+        canonical: "https://investfirst.ae/blogs/mainland-and-freezone-guide",
+    },
+    openGraph: {
+        title: "Mainland vs Free Zone Dubai Guide | Choose the Right Business Licence in UAE",
+        description: "Compare Mainland vs Free Zone in Dubai and choose the right business licence in UAE. Learn key differences, benefits, costs, and setup process for company formation in Dubai.",
+        url: "https://investfirst.ae/blogs/mainland-and-freezone-guide",
+        type: "article",
+        images: [
+          {
+            url: "/images/blog/mainland-and-freezone-guide.png",
+            width: 1200,
+            height: 630,
+            alt: "Mainland vs Free Zone Guide",
+          },
+        ],
+    },
+  },
+  '/blogs/understand-uae-visaresidency-guide': {
+    title: "UAE Residency Visas Complete Guide | Types, Requirements & Visa Process UAE",
+    description: "Understand UAE residency visas with this complete guide. Explore visa types, requirements, eligibility, benefits, and step-by-step UAE residency visa process for investors, employees, and families.",
+    keywords: "UAE residency visa, UAE residence visa guide, UAE residency visas, UAE visa requirements, UAE visa process step by step, how to get UAE residency visa, UAE investor visa, UAE employment visa, UAE family visa, UAE Golden Visa, residence visa in Dubai, UAE visa eligibility",
+    alternates: {
+        canonical: "https://investfirst.ae/blogs/understand-uae-visaresidency-guide",
+    },
+    openGraph: {
+        title: "UAE Residency Visas Complete Guide | Types, Requirements & Visa Process UAE",
+        description: "Understand UAE residency visas with this complete guide. Explore visa types, requirements, eligibility, benefits, and step-by-step UAE residency visa process for investors, employees, and families.",
+        url: "https://investfirst.ae/blogs/understand-uae-visaresidency-guide",
+        type: "article",
+        images: [
+          {
+            url: "/images/blog/understand-uae-visaresidency-guide.png",
+            width: 1200,
+            height: 630,
+            alt: "UAE Residency Visas Guide",
+          },
+        ],
+    },
+  },
+  '/blogs/how-to-open-corporate-bank-account-uae': {
+    title: "How to Open a Corporate Bank Account in UAE | Business Banking Guide Dubai",
+    description: "Learn how to open a corporate bank account in UAE with this step-by-step guide. Explore requirements, documents, process, and top banks for business banking in Dubai and UAE.",
+    keywords: "corporate bank account UAE, business bank account opening UAE, how to open corporate bank account in UAE, UAE business banking guide, Business setup in dubai, Company setup in uae, Company formation in dubai, Bank account opening dubai, Mainland company formation",
+    alternates: {
+        canonical: "https://investfirst.ae/blogs/how-to-open-corporate-bank-account-uae",
+    },
+    openGraph: {
+        title: "How to Open a Corporate Bank Account in UAE | Business Banking Guide Dubai",
+        description: "Learn how to open a corporate bank account in UAE with this step-by-step guide. Explore requirements, documents, process, and top banks for business banking in Dubai and UAE.",
+        url: "https://investfirst.ae/blogs/how-to-open-corporate-bank-account-uae",
+        type: "article",
+        images: [
+          {
+            url: "/images/blog/how-to-open-corporate-bank-account-uae.png",
+            width: 1200,
+            height: 630,
+            alt: "How to Open a Corporate Bank Account in UAE",
+          },
+        ],
+    },
+  },
   '/cost-calculator': {
     title: "Cost Calculator | Invest First",
     description: "Calculate your business setup cost in UAE with Invest First.",
   },
-  '/freezone': {
-     title: "Free Zone Company Setup in UAE | Dubai Free Zone Business Setup ",
-    description: "Set up your free zone company in UAE with Invest First. Get complete support for company formation, trade license, visa processing, and business registration in Dubai free zones with fast and hassle-free services.",
-    keywords: "free zone company setup UAE, freezone business setup Dubai, Dubai free zone company formation, UAE free zone license, business setup in UAE, company registration Dubai, start business in free zone UAE, Dubai free zone license, UAE company formation services, Invest First UAE, free zone visa services UAE, UAE business consultants, Dubai startup setup, freezone trade license UAE, company incorporation UAE",
-    alternates: {
-        canonical: "http://investfirst.ae/freezone",
-    },
-    openGraph: {
-        title: "Free Zone Company Setup in UAE | Dubai Free Zone Business Setup ",
-        description: "Set up your free zone company in UAE with Invest First. Get complete support for company formation, trade license, visa processing, and business registration in Dubai free zones with fast and hassle-free services.",
-        url: "http://investfirst.ae/freezone",
-        type: "website",
-    },
+  '/dubai-freezone-company-formation': {
+     title: "Dubai Free Zone Company Formation | Free Zone Business Setup UAE",
+     description: "Start your Dubai Free Zone company with expert business setup services. Get 100% foreign ownership, tax benefits, fast licensing, and hassle-free company formation in the UAE.",
+     keywords: "Dubai Free Zone Company Formation, Free Zone Company Setup Dubai, Dubai Free Zone Business Setup, UAE Free Zone Company Formation, Company Registration Dubai Free Zone, Free Zone License Dubai, Business Setup in Dubai Free Zone, Dubai Free Zone Registration, UAE Company Formation Services, Free Zone Business License UAE, Start a Business in Dubai Free Zone, Dubai Free Zone Consultancy, Free Zone Company Incorporation Dubai, UAE Business Setup Consultants, Dubai Free Zone Startup, 100% Foreign Ownership Dubai, Dubai Business Registration, UAE Free Zone Setup, Entrepreneur Visa Dubai, Free Zone Trade License Dubai, Cost of Free Zone Company Setup Dubai, Business Setup UAE, Dubai Company Formation, UAE Free Zone Business Registration, Best Free Zones in Dubai",
+     alternates: {
+         canonical: "https://investfirst.ae/dubai-freezone-company-formation",
+     },
+     openGraph: {
+         title: "Dubai Free Zone Company Formation | Free Zone Business Setup UAE",
+         description: "Start your Dubai Free Zone company with expert business setup services. Get 100% foreign ownership, tax benefits, fast licensing, and hassle-free company formation in the UAE.",
+         url: "https://investfirst.ae/dubai-freezone-company-formation",
+         type: "website",
+     },
   },
   '/offshore': {
   title: "Offshore Company Setup in Dubai | Invest first",
@@ -242,8 +330,22 @@ export const seoData = {
     openGraph: {
         title: "Terms and Conditions | Invest First Business Setup UAE",
         description: "Review the Terms and Conditions of Invest First Business Services. Guidelines and rules for company setup and corporate services in the UAE.",
-        url: "https://investfirst.ae/terms-conditions",
-        type: "website",
-    }
+         url: "https://investfirst.ae/terms-conditions",
+         type: "website",
+     }
+   },
+  '/freezone/dubai/meydan-freezone-setup-in-dubai': {
+     title: "Meydan Free Zone Setup in Dubai | Company Formation Services UAE",
+     description: "Set up your business in Meydan Free Zone in Dubai with expert guidance. Enjoy 100% foreign ownership, tax benefits, flexible office solutions, and fast company registration in the UAE.",
+     keywords: "Meydan Free Zone Setup Dubai, Meydan Free Zone Company Formation, Meydan Free Zone License, Business Setup in Meydan Free Zone, Company Registration Meydan Dubai, Meydan Free Zone UAE, Dubai Free Zone Business Setup, Meydan Free Zone Consultancy, UAE Company Formation, Meydan Trade License Dubai, Start Business in Meydan Free Zone, Free Zone Company Setup UAE, Dubai Business Registration, Meydan Free Zone Cost, UAE Business Setup Services, 100% Foreign Ownership Dubai, Meydan Free Zone Office Solutions, Dubai Startup Company Formation, Free Zone License Dubai, Meydan Business Setup Services,Company formation dubai",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/meydan-freezone-setup-in-dubai",
+     },
+     openGraph: {
+         title: "Meydan Free Zone Setup in Dubai | Company Formation Services UAE",
+         description: "Set up your business in Meydan Free Zone in Dubai with expert guidance. Enjoy 100% foreign ownership, tax benefits, flexible office solutions, and fast company registration in the UAE.",
+         url: "https://investfirst.ae/freezone/dubai/meydan-freezone-setup-in-dubai",
+         type: "website",
+     },
   }
 };

@@ -15,11 +15,13 @@ import {
     FreezoneDocsAndBenefits
 } from '@/components/sections/Freezone';
 import { getFreezoneData } from '@/data/freezoneDetailedData';
+import { seoData } from '@/data/seoData';
+import { getSeoMetadata } from '@/services/seoService';
 
 const VALID_EMIRATES = ['dubai', 'abu-dhabi', 'sharjah', 'ajman', 'umm-al-quwain', 'ras-al-khaimah'];
 const VALID_SUBZONES = {
     'dubai': [
-        'meydan-free-zone', 'ifza-free-zone', 'dmcc-free-zone', 'jebel-ali-jafza',
+        'meydan-freezone-setup-in-dubai', 'ifza-free-zone', 'dmcc-free-zone', 'jebel-ali-jafza',
         'dda-free-zones', 'dubai-airport-dafza', 'difc', 'dubai-south', 'dubai-healthcare-city'
     ],
     'abu-dhabi': ['masdar-city', 'abu-dhabi-airport-free-zone'],
@@ -70,6 +72,11 @@ export async function generateMetadata({ params }) {
         };
     }
 
+    const path = `/freezone/${slug.join('/')}`;
+    if (seoData[path]) {
+        return await getSeoMetadata(path);
+    }
+
     const emirate = slug[0];
     const subzone = slug[1];
     const lookupKey = subzone || emirate;
@@ -108,7 +115,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
                 imageAlt={`Our team at ${pageData.bannerTitle}`}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
-                    { label: "Freezone", href: "/freezone" },
+                    { label: "Freezone", href: "/dubai-freezone-company-formation" },
                     ...(isLevel2 ? [{ label: emirateLabel, href: `/freezone/${emirateId}` }] : []),
                     { label: pageData.bannerTitle },
                 ]}
