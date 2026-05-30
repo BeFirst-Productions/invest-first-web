@@ -16,14 +16,14 @@ export const companyFormationItems = [
                 href: "/freezone/dubai",
                 children: [
                     { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
-                    { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-free-zone" },
-                    { name: "DMCC Free Zone", href: "/freezone/dubai/dmcc-free-zone" },
-                    { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jebel-ali-jafza" },
-                    { name: "DDA Free Zones", href: "/freezone/dubai/dda-free-zones" },
+                    { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-freezone-company-setup-dubai" },
+                    { name: "DMCC Free Zone", href: "/freezone/dubai/DMCC-company-setup-in-dubai" },
+                    { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jafza-company-formation-dubai" },
+                    { name: "DDA Free Zones", href: "/freezone/dubai/DDA-freezone-company-setup-in-dubai" },
                     { name: "Dubai Airport (DAFZA)", href: "/freezone/dubai/dubai-airport-dafza" },
-                    { name: "DIFC", href: "/freezone/dubai/difc" },
-                    { name: "Dubai South", href: "/freezone/dubai/dubai-south" },
-                    { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city" },
+                    { name: "DIFC", href: "/freezone/dubai/DIFC-setup-in-dubai" },
+                    { name: "Dubai South", href: "/freezone/dubai/dubai-south-setup-in-dubai" },
+                    { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city-company-setup" },
                 ]
             },
             {

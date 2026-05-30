@@ -21,8 +21,8 @@ import { getSeoMetadata } from '@/services/seoService';
 const VALID_EMIRATES = ['dubai', 'abu-dhabi', 'sharjah', 'ajman', 'umm-al-quwain', 'ras-al-khaimah'];
 const VALID_SUBZONES = {
     'dubai': [
-        'meydan-freezone-setup-in-dubai', 'ifza-free-zone', 'dmcc-free-zone', 'jebel-ali-jafza',
-        'dda-free-zones', 'dubai-airport-dafza', 'difc', 'dubai-south', 'dubai-healthcare-city'
+        'meydan-freezone-setup-in-dubai', 'ifza-freezone-company-setup-dubai', 'DMCC-company-setup-in-dubai', 'jafza-company-formation-dubai',
+        'DDA-freezone-company-setup-in-dubai', 'dubai-airport-dafza', 'DIFC-setup-in-dubai', 'dubai-south-setup-in-dubai', 'dubai-healthcare-city-company-setup'
     ],
     'abu-dhabi': ['masdar-city', 'abu-dhabi-airport-free-zone'],
     'sharjah': [

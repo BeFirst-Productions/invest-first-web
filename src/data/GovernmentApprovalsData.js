@@ -8,9 +8,11 @@ export const governmentApprovalsData = {
     bannerTitle: "Government Approvals in UAE",
     bannerDescription: "Fast, reliable, and hassle-free government approvals to start or run your business in the United Arab Emirates.",
     seo: {
-        title: "Government Approvals in UAE | Business Setup Services Dubai",
-        description: "Get quick and dependable government approvals in the UAE. Invest First handles business licenses, municipality permits, and special regulatory clearances.",
-        keywords: "government approvals UAE, business setup Dubai, municipality approvals Dubai, DED approvals UAE, PRO services Dubai",
+        title: "Government Approvals in UAE | invest first",
+        description: "Get fast and reliable government approvals in UAE for smooth business setup, licensing, and compliance support across Dubai and the UAE. ",
+        keywords: "government approvals in uae,government approvals uae,government approvals Dubai,governments approvals in dubai,company formation UAE,UAE trade license approval,Dubai business setup,UAE licensing services,PRO services in Dubai,UAE business registration,how to start a business dubai",
+        canonical: "https://investfirst.ae/services/government-approvals-in-uae",
+        image: "/images/governmentApprovals/government-approvals-banner.png"
     },
     intro: {
         title: "Reliable <span class='text-[#0099CC]'>Government Approvals</span> in the UAE",

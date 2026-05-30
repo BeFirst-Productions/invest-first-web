@@ -44,10 +44,10 @@ const investorVisa = {
         footer: "Each stage is monitored to ensure regulatory compliance and timely completion."
     },
     seo: {
-        title: "UAE Investor Visa Services | Long-Term Residency Dubai",
-        description: "Get your UAE investor visa with professional support. We handle licensing, ownership structures, and immigration approvals for long-term residency.",
-        keywords: "investor visa UAE, Dubai investor visa, 10-year visa UAE, long-term residency Dubai, UAE golden visa investor",
-        canonical: "https://investfirst.ae/services/visa-services/investor-visa",
+        title: "UAE Investor Visa Services | Investor Visa Dubai | Invest First",
+        description: " Apply for UAE investor visa with Invest First. We provide complete support for investor visa processing, documentation, eligibility guidance, and UAE residency solutions in Dubai and across the UAE.",
+        keywords: " UAE investor visa, investor visa Dubai, UAE residency visa for investors, business investor visa UAE, Dubai investor visa services, UAE visa services, company investor visa UAE, investment visa UAE, UAE residence visa support, business setup UAE visa, Pro services in Dubai, Dubai residency visa, investor visa consultants UAE, UAE business visa services",
+        canonical: "http://investfirst.ae/services/visa-services/uae-investor-visa",
         image: "/images/visaServices/investor-visa.png"
     },
     companyFormationTypes: {
@@ -184,10 +184,10 @@ const goldenVisa = {
         footer: "We prioritize efficiency to ensure your long-term residency is secured with zero disruption."
     },
     seo: {
-        title: "UAE Golden Visa Services | 10-Year Residency Dubai",
-        description: "Secure your 10-year UAE Golden Visa with professional guidance. Expert support for investors, entrepreneurs, and talent.",
-        keywords: "golden visa UAE, 10 year visa Dubai, golden visa investor, UAE residency golden visa, long term residency UAE",
-        canonical: "https://investfirst.ae/services/visa-services/golden-visa",
+        title: "UAE Golden Visa  | Golden visa dubai| Invest First",
+        description: "Apply for UAE Golden Visa with Invest First. We provide complete support for eligibility checking, documentation, application processing, and long-term residency solutions in Dubai and across the UAE.",
+        keywords: "UAE Golden Visa, Golden Visa Dubai, UAE long term residency visa, investor Golden Visa UAE, property Golden Visa UAE, 10 year visa UAE, UAE residency visa services, Dubai Golden Visa application, UAE immigration services, business setup UAE visa, UAE visa consultants, Invest First UAE, UAE investor residency, long term visa Dubai, UAE business visa services,visa services in dubai",
+        canonical: "http://investfirst.ae/services/visa-services/uae-golden-visa",
         image: "/images/visaServices/golden-visa.png"
     },
     companyFormationTypes: {
@@ -322,10 +322,10 @@ const employmentVisa = {
         footer: "Each stage is monitored to ensure regulatory compliance and timely completion."
     },
     seo: {
-        title: "UAE Employment Visa Services | Work Permit Dubai",
-        description: "Efficient corporate employment visa and work permit processing in Dubai & UAE. Full MOHRE compliance, contract drafting, and residence stamping support.",
-        keywords: "employment visa UAE, work permit Dubai, MOHRE labor card, employee residency Dubai, corporate visa processing UAE",
-        canonical: "https://investfirst.ae/services/visa-services/employment-visa",
+        title: "UAE Employment Visa Services | Work Visa Dubai | Invest First",
+        description: "Get fast UAE employment visa services with Invest First. We assist with work visa processing, documentation, approvals, medical, and residency support across Dubai and the UAE.",
+        keywords: " UAE employment visa, work visa Dubai, UAE work permit services, employment visa UAE, Dubai job visa, UAE residency visa for employees, work permit UAE processing, visa services Dubai, UAE immigration support, employment visa processing UAE, business setup UAE visa, PRO services UAE, Invest First UAE, Dubai visa assistance, UAE labor visa services",
+        canonical: "http://investfirst.ae/services/visa-services/uae-employment-visa",
         image: "/images/visaServices/employment-visa.png"
     },
     companyFormationTypes: {
@@ -440,10 +440,10 @@ const dependentVisa = {
         footer: "Most dependent visas are stamped within 5 to 7 working days after biometrics."
     },
     seo: {
-        title: "UAE Family & Dependent Visa Services | Dubai Sponsorship",
-        description: "Sponsor your spouse, children, and parents in the UAE. Complete family visa services in Dubai, including document attestation, medicals, and GDRFA approval.",
-        keywords: "family visa Dubai, sponsor spouse UAE, dependent visa Dubai, UAE residency family, child sponsorship Dubai",
-        canonical: "https://investfirst.ae/services/visa-services/dependent-visa",
+        title: "Dependent Visa Services in UAE | Family Visa Dubai | Invest First",
+        description: "Get dependent visa services in the UAE with Invest First. We assist with family visa applications, spouse and child visas, documentation, renewals, and residency support across Dubai and the UAE.",
+        keywords: "dependent visa UAE, family visa Dubai, UAE spouse visa services, child visa UAE, residence visa for family UAE, dependent visa services Dubai, UAE immigration services, visa renewal UAE, family residency UAE, UAE visa processing services, PRO services UAE, Invest First UAE, Dubai visa consultants, UAE residency support, family sponsorship visa UAE",
+        canonical: "http://investfirst.ae/services/visa-services/dependent-visa-uae",
         image: "/images/visaServices/dependent-visa.png"
     },
     companyFormationTypes: {
@@ -558,10 +558,10 @@ const greenVisa = {
         footer: "A highly professional and clean profile ensures faster approvals from immigration."
     },
     seo: {
-        title: "UAE Green Visa Services | 5-Year Self-Sponsored Residency",
-        description: "Apply for the 5-year UAE Green Visa. Self-sponsored residency for freelancers, skilled professionals, and business investors in Dubai & UAE.",
-        keywords: "green visa UAE, 5 year visa Dubai, self sponsored visa UAE, freelancer visa Dubai, skilled employee green visa",
-        canonical: "https://investfirst.ae/services/visa-services/green-visa",
+        title: "UAE Green Visa Services | Green visa UAE| Invest First",
+        description: "Apply for UAE Green Visa with Invest First. We assist with self-sponsored residency, eligibility guidance, documentation, and freelancers, and skilled workers across Dubai and the UAE.",
+        keywords: " UAE Green Visa, Green Visa Dubai, self sponsored visa UAE, UAE residency visa services, freelance visa UAE, skilled worker visa UAE, long term residency UAE, Dubai Green Visa application,company formation in uae, UAE visa consultants, work permit UAE, UAE business setup visa, residence visa Dubai, UAE PRO services,uae golden visa,business setup in dubai,family visa services in dubai",
+        canonical: "http://investfirst.ae/services/visa-services/uae-green-visa",
         image: "/images/visaServices/green-visa.png"
     },
     companyFormationTypes: {
@@ -676,10 +676,10 @@ const blueVisa = {
         footer: "Our team handles the ministerial endorsement tracking on your behalf."
     },
     seo: {
-        title: "UAE Blue Visa Services | 10-Year Sustainability Residency",
-        description: "Secure the 10-year UAE Blue Visa. Long-term self-sponsored residency for environmentalists, clean-tech researchers, and sustainability leaders in Dubai & UAE.",
-        keywords: "blue visa UAE, 10 year visa Dubai, environmental visa UAE, sustainability residency Dubai, green tech visa UAE",
-        canonical: "https://investfirst.ae/services/visa-services/blue-visa",
+        title: "UAE Blue Visa Services | Blue Visa UAE | Invest First",
+        description: "Apply for UAE Blue Visa with Invest First. We provide guidance and support for eligibility, documentation, and application processing for long-term residency focused on sustainability and environmental contributions in the UAE.",
+        keywords: " UAE Blue Visa, Blue Visa UAE, UAE sustainability visa, long term residency UAE, UAE residency visa services, environmental visa UAE, Dubai visa services, UAE immigration support, green initiatives visa UAE, UAE visa consultants, Invest First UAE, UAE residency programs, UAE government visa services, UAE business setup visa, UAE PRO services",
+        canonical: "http://investfirst.ae/services/visa-services/uae-blue-visa",
         image: "/images/visaServices/blue-visa.png"
     },
     companyFormationTypes: {
@@ -794,10 +794,10 @@ const remoteWorkVisa = {
         footer: "The process is completed online, minimizing physical paperwork."
     },
     seo: {
-        title: "UAE Remote Work Visa | Digital Nomad Dubai",
-        description: "Get the 1-year UAE Remote Work Visa. Relocate to Dubai and work legally for your foreign company. Full setup, bank statement review, and medical support.",
-        keywords: "remote work visa UAE, digital nomad visa Dubai, virtual work permit Dubai, live in Dubai work remotely, freelancer visa UAE",
-        canonical: "https://investfirst.ae/services/visa-services/remote-work-visa",
+        title: "UAE Remote Work Visa |  Invest First",
+        description: "Apply for UAE Remote Work Visa with Invest First. We assist with eligibility, documentation, and application processing for digital nomads and remote professionals seeking UAE residency in Dubai and across the Emirates.",
+        keywords: " UAE remote work visa, Dubai digital nomad visa, UAE work from home visa, remote worker visa UAE, UAE residency visa services, UAE immigration services, digital nomad UAE visa, Dubai remote work permit, UAE visa consultants, freelance visa UAE, Invest First UAE, UAE business setup visa, long term stay UAE, UAE PRO services, remote employment visa UAE",
+        canonical: "http://investfirst.ae/services/visa-services/uae-remote-work-visa",
         image: "/images/visaServices/remote-work-visa.png"
     },
     companyFormationTypes: {
@@ -906,10 +906,10 @@ const touristVisitVisa = {
         footer: "No physical stamp is required on the passport for tourist entry."
     },
     seo: {
-        title: "UAE Tourist & Visit Visa Services | Apply Entry Permit Dubai",
-        description: "Apply for 30-day, 60-day, and 5-year multi-entry UAE tourist visas. Fast processing, minimal documentation, and corporate visitor entry support in Dubai.",
-        keywords: "tourist visa UAE, visit visa Dubai, 60-day visa Dubai, 5-year multi-entry visa UAE, Dubai entry permit",
-        canonical: "https://investfirst.ae/services/visa-services/tourist-visit-visa",
+        title: "UUAE Tourist Visa Services | Dubai Visit Visa Assistance | Invest First",
+        description: "We assist UAE tourist visa services  with visit visa applications, documentation, approvals, and travel support for Dubai and across the UAE.",
+        keywords: " UAE tourist visa, Dubai tourist visa services, UAE visit visa, UAE travel visa assistance, Dubai visit visa application, UAE visa processing services, tourist visa Dubai, UAE immigration services, visit visa extension UAE, UAE visa consultants, Invest First UAE, UAE travel support, Dubai visa assistance, UAE PRO services, short term visa UAE",
+        canonical: "http://investfirst.ae/services/visa-services/uae-tourist-visa-services",
         image: "/images/visaServices/tourist-visa.png"
     },
     companyFormationTypes: {

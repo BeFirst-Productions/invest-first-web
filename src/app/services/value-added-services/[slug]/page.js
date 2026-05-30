@@ -19,16 +19,38 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
     const service = valueAddedServicesMap[slug];
 
-    if (!service) {
+    if (!service || !service.seo) {
         return {
-            title: 'Service Not Found | Invest First',
-            description: 'The requested service was not found.',
+            title: 'Value Added Services | Invest First',
+            description: 'Professional business support and value added services in Dubai and UAE.',
         };
     }
 
     return {
-        title: `${service.title} | Invest First`,
-        description: service.bannerDescription,
+        title: service.seo.title,
+        description: service.seo.description,
+        keywords: service.seo.keywords,
+        alternates: {
+            canonical: service.seo.canonical,
+        },
+        openGraph: {
+            title: service.seo.title,
+            description: service.seo.description,
+            images: [
+                {
+                    url: service.seo.image,
+                    width: 1200,
+                    height: 630,
+                    alt: service.seo.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: service.seo.title,
+            description: service.seo.description,
+            images: [service.seo.image],
+        },
     };
 }
 

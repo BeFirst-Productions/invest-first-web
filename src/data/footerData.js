@@ -9,7 +9,7 @@ export const quickLinks = [
 ];
 
 export const trendingServices = [
-  { label: 'Company Formation', href: '/services/company-formation' },
+  // { label: 'Company Formation', href: '/services/company-formation' },
   { label: 'PRO Services', href: '/services/pro-services' },
   { label: 'Family visa for the UAE', href: '/services/family-visa' },
   { label: 'View All Services', href: '/services' },

@@ -63,7 +63,7 @@ const ProServiceDetailPage = async ({ params }) => {
     if (!service) notFound();
 
     const bannerImageMap = {
-        'company-formation': '/images/services/service-banner.png',
+        // 'company-formation': '/images/services/service-banner.png',
         'virtual-pro': '/images/visaServices/virtual-pro-banner.png',
         'local-sponsorships': '/images/visaServices/local-sponsorship-banner.png',
         'license-renewals': '/images/visaServices/licnense-renewals-banner.png',

@@ -279,6 +279,27 @@ export const seoData = {
     title: governmentApprovalsData.seo.title,
     description: governmentApprovalsData.seo.description,
     keywords: governmentApprovalsData.seo.keywords,
+    alternates: {
+        canonical: governmentApprovalsData.seo.canonical,
+    },
+    openGraph: {
+        title: governmentApprovalsData.seo.title,
+        description: governmentApprovalsData.seo.description,
+        images: [
+            {
+                url: governmentApprovalsData.seo.image,
+                width: 1200,
+                height: 630,
+                alt: governmentApprovalsData.seo.title,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: governmentApprovalsData.seo.title,
+        description: governmentApprovalsData.seo.description,
+        images: [governmentApprovalsData.seo.image],
+    },
   },
   '/services/pro-services': {
     title: proServicesData.seo.title,
@@ -345,6 +366,104 @@ export const seoData = {
          title: "Meydan Free Zone Setup in Dubai | Company Formation Services UAE",
          description: "Set up your business in Meydan Free Zone in Dubai with expert guidance. Enjoy 100% foreign ownership, tax benefits, flexible office solutions, and fast company registration in the UAE.",
          url: "https://investfirst.ae/freezone/dubai/meydan-freezone-setup-in-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/ifza-freezone-company-setup-dubai': {
+     title: "IFZA Free Zone Company Setup Dubai | IFZA Business Formation UAE",
+     description: "Launch your business with IFZA Free Zone company setup in Dubai. Benefit from 100% foreign ownership, tax advantages, and fast company registration in the UAE.",
+     keywords: "IFZA Free Zone Company Setup, IFZA Business Setup Dubai, IFZA Company Formation UAE, IFZA Free Zone License, Dubai IFZA Registration, IFZA Company Registration, Business Setup in IFZA Dubai, IFZA Trade License Dubai, UAE Free Zone Company Formation, IFZA Business Consultants, Start a Business in IFZA, IFZA Free Zone UAE, Dubai Company Setup Services, UAE Business Registration, 100% Foreign Ownership UAE, IFZA License Cost, Free Zone Business Setup Dubai, IFZA Incorporation Services, Dubai Startup Business Setup, IFZA Company Formation Consultants.",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/ifza-freezone-company-setup-dubai",
+     },
+     openGraph: {
+         title: "IFZA Free Zone Company Setup Dubai | IFZA Business Formation UAE",
+         description: "Launch your business with IFZA Free Zone company setup in Dubai. Benefit from 100% foreign ownership, tax advantages, and fast company registration in the UAE.",
+         url: "https://investfirst.ae/freezone/dubai/ifza-freezone-company-setup-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/DMCC-company-setup-in-dubai': {
+     title: "DMCC Company Setup in Dubai | Free Zone company setup",
+     description: "Start your business with a DMCC company set up in Dubai. Get expert assistance with company registration, documentation, and compliance in Dubai’s leading free zone.",
+     keywords: "DMCC company setup, DMCC business setup Dubai, DMCC free zone company formation, company registration DMCC, Dubai free zone business setup, DMCC license Dubai, DMCC company formation UAE, business setup in DMCC, Dubai free zone registration, DMCC consultancy,Company Setup in dubai, Business setup in uae,company formation dubai, pro services in dubai,",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/DMCC-company-setup-in-dubai",
+     },
+     openGraph: {
+         title: "DMCC Company Setup in Dubai | Free Zone company setup",
+         description: "Start your business with a DMCC company set up in Dubai. Get expert assistance with company registration, documentation, and compliance in Dubai’s leading free zone.",
+         url: "https://investfirst.ae/freezone/dubai/DMCC-company-setup-in-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/jafza-company-formation-dubai': {
+     title: "JAFZA Company Formation Dubai | Jebel Ali Free Zone Business Setup",
+     description: "Establish your business in Jebel Ali Free Zone (JAFZA), Dubai with expert company formation services. Benefit from 100% foreign ownership, tax advantages, and strategic global trade access.",
+     keywords: "JAFZA Company Formation, Jebel Ali Free Zone Company Setup, JAFZA Business Setup Dubai, JAFZA Company Registration, Jebel Ali Free Zone License, Dubai Free Zone Company Formation, JAFZA Trade License Dubai, Business Setup in JAFZA, UAE Free Zone Company Formation, JAFZA Incorporation Services, Company Registration JAFZA UAE, Start Business in JAFZA, Jebel Ali Business Setup, Dubai Logistics Free Zone, JAFZA Consultancy Services, UAE Business Registration, 100% Foreign Ownership Dubai, Free Zone Business License UAE, JAFZA Corporate Setup, Dubai Company Formation Services.",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/jafza-company-formation-dubai",
+     },
+     openGraph: {
+         title: "JAFZA Company Formation Dubai | Jebel Ali Free Zone Business Setup",
+         description: "Establish your business in Jebel Ali Free Zone (JAFZA), Dubai with expert company formation services. Benefit from 100% foreign ownership, tax advantages, and strategic global trade access.",
+         url: "https://investfirst.ae/freezone/dubai/jafza-company-formation-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/DDA-freezone-company-setup-in-dubai': {
+     title: "DDA Free Zone Company Setup in Dubai | Business Formation Services",
+     description: "set up your company in the Dubai Development Authority (DDA) Free Zone with expert assistance. Enjoy 100% foreign ownership, streamlined licensing, business registration in Dubai.",
+     keywords: "DDA free zone setup Dubai, Dubai Development Authority company setup, DDA company formation, DDA free zone license, business setup DDA Dubai, Dubai free zone company registration, DDA business license, free zone company formation Dubai, DDA consultancy Dubai, Dubai Development Authority business setup,company setup in dubai,Company formation Dubai, Freezone company setup in UAE, Freezone company setup in dubai,",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/DDA-freezone-company-setup-in-dubai",
+     },
+     openGraph: {
+         title: "DDA Free Zone Company Setup in Dubai | Business Formation Services",
+         description: "set up your company in the Dubai Development Authority (DDA) Free Zone with expert assistance. Enjoy 100% foreign ownership, streamlined licensing, business registration in Dubai.",
+         url: "https://investfirst.ae/freezone/dubai/DDA-freezone-company-setup-in-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/DIFC-setup-in-dubai': {
+     title: "DIFC Setup in Dubai | DIFC Company Formation UAE",
+     description: "DIFC Setup in Dubai offers a prestigious business address, 100% foreign ownership, and a world-class financial ecosystem. Get expert assistance with DIFC company formation services in uae",
+     keywords: "DIFC Setup in Dubai, DIFC Company Formation, DIFC Business Setup, Dubai International Financial Centre, DIFC Company Registration, DIFC License Dubai, Business Setup in DIFC, DIFC Consultancy Services, UAE Financial Free Zone, DIFC Corporate Services, Dubai Financial Centre Setup, DIFC Trade License, Company Incorporation DIFC, UAE Business Registration, Start Business in DIFC, DIFC Business Consultants, Dubai Free Zone Company Formation, DIFC Regulatory Compliance, DIFC Office Setup, DIFC Business License UAE, Company Formation in UAE",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/DIFC-setup-in-dubai",
+     },
+     openGraph: {
+         title: "DIFC Setup in Dubai | DIFC Company Formation UAE",
+         description: "DIFC Setup in Dubai offers a prestigious business address, 100% foreign ownership, and a world-class financial ecosystem. Get expert assistance with DIFC company formation services in uae",
+         url: "https://investfirst.ae/freezone/dubai/DIFC-setup-in-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/dubai-south-setup-in-dubai': {
+     title: "Dubai South Setup in Dubai | Dubai South Company Formation UAE",
+     description: "Dubai South Setup in Dubai provides an ideal business environment with 100% foreign ownership, tax benefits, and strategic access to global markets. Get expert support for Dubai South company formation and business registration in the UAE.",
+     keywords: "Dubai South Setup in Dubai, Dubai South Company Formation, Dubai South Business Setup, Dubai South Company Registration, Dubai South License Dubai, Business Setup in Dubai South, Dubai South Free Zone, Dubai South Trade License, UAE Company Formation, Dubai South Consultancy Services, Start Business in Dubai South, Dubai South Business Registration, Free Zone Company Setup Dubai, UAE Business Setup Services, Dubai South Corporate Services, 100% Foreign Ownership UAE, Dubai South Office Setup, Dubai South Incorporation, Dubai South Free Zone License, Dubai South Business License UAE.",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/dubai-south-setup-in-dubai",
+     },
+     openGraph: {
+         title: "Dubai South Setup in Dubai | Dubai South Company Formation UAE",
+         description: "Dubai South Setup in Dubai provides an ideal business environment with 100% foreign ownership, tax benefits, and strategic access to global markets. Get expert support for Dubai South company formation and business registration in the UAE.",
+         url: "https://investfirst.ae/freezone/dubai/dubai-south-setup-in-dubai",
+         type: "website",
+     },
+  },
+  '/freezone/dubai/dubai-healthcare-city-company-setup': {
+     title: "Dubai Healthcare City Company Setup | DHCC Business Formation UAE",
+     description: "Set up your business in Dubai Healthcare City (DHCC) with expert company formation services. Benefit from 100% foreign ownership, healthcare-focused regulations, tax advantages.",
+     keywords: "Dubai Healthcare City, DHCC Company Setup, Dubai Healthcare City Company Formation, DHCC Business Setup, DHCC Company Registration, Healthcare Business Setup Dubai, Medical License Dubai, Dubai Healthcare City License, DHCC Trade License, Healthcare Free Zone UAE, Medical Company Formation Dubai, Clinic Setup in DHCC, Hospital Setup Dubai, Healthcare Business Registration UAE, DHCC Consultancy Services, UAE Healthcare Free Zone, Start Healthcare Business Dubai, Dubai Medical Business Setup, DHCC Corporate Services, Healthcare Company Formation UAE.Company Formation UAE, Business setup in Dubai, PRO Services in Dubai",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/dubai-healthcare-city-company-setup",
+     },
+     openGraph: {
+         title: "Dubai Healthcare City Company Setup | DHCC Business Formation UAE",
+         description: "Set up your business in Dubai Healthcare City (DHCC) with expert company formation services. Benefit from 100% foreign ownership, healthcare-focused regulations, tax advantages.",
+         url: "https://investfirst.ae/freezone/dubai/dubai-healthcare-city-company-setup",
          type: "website",
      },
   }

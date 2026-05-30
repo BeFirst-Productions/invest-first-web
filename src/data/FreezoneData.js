@@ -11,14 +11,14 @@ export const freezoneData = {
                 {
                     id: "d1",
                     title: "Jebel Ali Free Zone (JAFZA)",
-                    slug: "jebel-ali-jafza",
+                    slug: "jafza-company-formation-dubai",
                     description: "The UAE's largest logistics and trade hub.",
                     image: "/images/freezone/dubai-freezone/jafza-freezone.png"
                 },
                 {
                     id: "d2",
                     title: "Dubai Multi Commodities Centre (DMCC)",
-                    slug: "dmcc-free-zone",
+                    slug: "DMCC-company-setup-in-dubai",
                     description: "Ideal for trade, technology, and service firms.",
                     image: "/images/freezone/dubai-freezone/dubai-multi-commodities.png"
                 },
@@ -46,7 +46,7 @@ export const freezoneData = {
                 {
                     id: "d6",
                     title: "IFZA (International Free Zone Authority)",
-                    slug: "ifza-free-zone",
+                    slug: "ifza-freezone-company-setup-dubai",
                     description: "Cost-effective free zone with quick setup.",
                     image: "/images/freezone/dubai-freezone/ifza.png"
                 },

@@ -595,8 +595,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'ifza-free-zone': {
-        slug: 'ifza-free-zone',
+    'ifza-freezone-company-setup-dubai': {
+        slug: 'ifza-freezone-company-setup-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "IFZA Free Zone Company Setup",
         bannerImage:"images/freezone/banners/ifza-freezone-banner.jpg",
@@ -667,8 +667,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'dmcc-free-zone': {
-        slug: 'dmcc-free-zone',
+    'DMCC-company-setup-in-dubai': {
+        slug: 'DMCC-company-setup-in-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "DMCC Company Setup in Dubai",
         bannerDescription: "Set up in the Dubai Multi Commodities Centre (DMCC), voted the global free zone of the year, located in Jumeirah Lakes Towers (JLT).",
@@ -737,8 +737,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'jebel-ali-jafza': {
-        slug: 'jebel-ali-jafza',
+    'jafza-company-formation-dubai': {
+        slug: 'jafza-company-formation-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "Jebel Ali Free Zone (JAFZA) Company Formation",
         bannerDescription: "Setup your industrial or logistics company in JAFZA, the oldest and largest industrial free zone in the UAE, directly connected to Jebel Ali Port.",
@@ -807,6 +807,78 @@ export const freezoneDetailedData = {
                 "Strong global business reputation",
                 "100% foreign ownership with full profit repatriation",
                 "Scalable infrastructure for regional distribution and growth"
+            ]
+        }
+    },
+
+    'DDA-freezone-company-setup-in-dubai': {
+        slug: 'DDA-freezone-company-setup-in-dubai',
+        parentEmirate: 'dubai',
+        bannerTitle: "DDA Free Zone Company Setup",
+        bannerDescription: "Establish your company in the Dubai Development Authority (DDA) Free Zone, regulating Dubai's premier creative and technology clusters.",
+        intro: {
+            image: "/images/freezone/freezone.png",
+            titleHighlight: "DDA Dubai",
+            titleRest: "Company Formation",
+            description1: "Dubai Development Authority (DDA) regulates and manages the establishment of companies across Dubai's most vibrant and dynamic tech, creative, and service free zones. Formerly known as DTCM/TECOM, DDA covers globally renowned districts including Dubai Internet City, Dubai Media City, Dubai Studio City, Dubai Production City, Dubai Science Park, and Dubai Knowledge Park.",
+            description2: "A company setup under the DDA framework offers top-tier corporate status, access to prime office real estate, and a community of leading global brands, innovators, and creative minds."
+        },
+        keyFeatures: [
+            "100% foreign ownership and full profit repatriation",
+            "Access to specialized clusters (tech, media, design, science, and education)",
+            "Simplified corporate registration and unified licensing",
+            "World-class infrastructure, offices, and co-working facilities",
+            "Zero personal and corporate tax environment"
+        ],
+        setupProcess: {
+            titleHighlight: "Steps to Start at",
+            titleRest: "DDA Dubai",
+            steps: [
+                { id: 1, title: "Select District & License", description: "Choose the appropriate industry-specific cluster and business activity." },
+                { id: 2, title: "Submit Registry Forms", description: "Provide passport copies, proposed trade names, and shareholder details." },
+                { id: 3, title: "Sign & Secure Office", description: "Approve corporate documents and secure a smart-desk or office lease within TECOM districts." },
+                { id: 4, title: "License Issuance", description: "Receive your DDA trade license, corporate registry, and start residency visa processing." }
+            ]
+        },
+        licenseTypes: [
+            { id: 1, title: "Free Zone Limited Liability Company (FZ-LLC)", description: "For establishing a new corporate entity under DDA regulations.", image: "/images/freezone/service-license.png" },
+            { id: 2, title: "Branch Office", description: "Establish a branch of an existing local or foreign parent company.", image: "/images/freezone/trading-license.png" }
+        ],
+        whyChoose: {
+            titleHighlight: "Why Choose",
+            titleText: "DDA Dubai?",
+            descriptions: [
+                "DDA is the ultimate destination for businesses in creative, tech, and knowledge sectors. Regulating Dubai's flagship innovation hubs, it provides a highly professional, globally recognized regulatory environment with world-class facilities."
+            ]
+        },
+        faqs: {
+            title: "DDA Dubai Setup FAQ",
+            faqItems: [
+                { question: "What business zones are under DDA?", answer: "DDA regulates Dubai Internet City, Dubai Media City, Dubai Studio City, Dubai Production City, Dubai Science Park, Dubai Knowledge Park, Dubai International Academic City, Dubai Outsource City, and Dubai Design District (d3)." },
+                { question: "Do DDA companies require a local sponsor?", answer: "No, DDA free zone setup grants 100% foreign ownership to international entrepreneurs and corporate shareholders." }
+            ]
+        },
+        costSection: {
+            titleHighlight: "DDA Dubai",
+            titleRest: "Setup Costs",
+            description: "DDA setup costs depend on the specific cluster selected, license activity group, office workspace lease options, and residency visa allocations. Each district has unique workspace specifications and pricing structures.",
+            cards: [
+                "Registry and license fees are tailored to service, commercial, or creative activities.",
+                "Real estate solutions, from smart desks to dedicated corporate spaces, impact the total cost.",
+                "Visa processing and medical fitness insurance fees apply per residency visa slot requested.",
+                "Government administration and channel portal registrations are part of standard setup fees."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: "DDA Dubai",
+            documentsText: "Company setup under DDA requires passport copies of all shareholders, directors, and managers, along with resume/CV copies and a brief description of proposed business activities. A business plan is typically required for creative and media licenses. For branch setups, attested parent company board resolutions, certificate of incorporation, and constitutional documents must be submitted.",
+            benefitsList: [
+                "100% foreign ownership and complete capital repatriation",
+                "Zero corporate and personal tax exemptions",
+                "Prime location across Dubai's most iconic commercial districts",
+                "Unified visa processing and corporate support services",
+                "Access to robust business networking and local talent",
+                "Option for flexible corporate bank account setups"
             ]
         }
     }

@@ -42,6 +42,13 @@ export const valueAddedServicesMap = {
         title: "VAT & Corporate Tax Assistance",
         bannerTitle: "VAT & Corporate Tax Assistance",
         bannerDescription: "Expert guidance for VAT registration and corporate tax compliance in the UAE.",
+        seo: {
+            title: "VAT & Corporate Tax Services in UAE | Tax Registration & Compliance",
+            description: "Simplify your UAE tax obligations with expert VAT and Corporate Tax services. We provide registration,compliance, and advisory support to keep your business fully compliant.",
+            keywords: " VAT services UAE, corporate tax UAE, VAT registration Dubai, corporate tax registration UAE, UAE tax compliance, VAT filing services, corporate tax advisory UAE, tax consultant Dubai, UAE tax reporting, business tax services UAE,company formation in dubai, business setup in dubai, start a business in dubai, mainland business in dubai, freezone company setup in dubai,vat registration uae, vat registration in dubai,",
+            canonical: "http://investfirst.ae/services/value-added-services/vat-corporate-tax-services-uae",
+            image: "/images/valueAddedServices/vat-corporate-banner.png"
+        },
         intro: {
             title: {
                 start: "Complete Solutions",
@@ -116,6 +123,13 @@ export const valueAddedServicesMap = {
         title: "Medical Insurance Assistance",
         bannerTitle: "Medical Insurance Assistance",
         bannerDescription: "Comprehensive medical insurance solutions for individuals and businesses.",
+        seo: {
+            title: "Medical Insurance Assistance in UAE | Health Insurance Support",
+            description: "Get expert medical insurance assistance in the UAE. We help individuals, families, and businesses choose, apply for, and manage health insurance plans with ease.",
+            keywords: "medical insurance UAE, health insurance UAE, medical insurance assistance Dubai, health insurance services UAE, UAE insurance support, family health insurance Dubai, corporate medical insurance UAE, health coverage UAE, insurance consultants Dubai, UAE medical insurance plans,Business setup in dubai,company formation uae,medical insurance in dubai, Mainland company setup in dubai,Freezone company setup uae,",
+            canonical: "http://investfirst.ae/services/value-added-service/medical-insurence-assistence",
+            image: "/images/valueAddedServices/medical-banner.png"
+        },
         intro: {
             title: {
                 start: "Comprehensive",
@@ -188,6 +202,13 @@ export const valueAddedServicesMap = {
         title: "Trademark Registration",
         bannerTitle: "Trademark Registration",
         bannerDescription: "Protect your brand and intellectual property in the UAE market.",
+        seo: {
+            title: "Trademark Registration in UAE | Brand Protection Services",
+            description: "Register your trademark in the UAE with expert assistance. Protect your brand name, logo, and intellectual property through a smooth and reliable registration process.",
+            keywords: "trademark registration UAE, trademark registration Dubai, brand protection UAE, logo registration Dubai, intellectual property UAE, trademark application UAE, brand registration Dubai, trademark services UAE, UAE trademark consultant, trademark filing UAE,Business setup in Dubai, Company Registration in Dubai,Company formation uae, Business setup in UAE, PRO services in Dubai,",
+            canonical: "http://investfirst.ae/services/value-added-services/trademark-registration-in-UAE",
+            image: "/images/valueAddedServices/trademark-banner.png"
+        },
         intro: {
             title: {
                 start: "Complete",
@@ -260,6 +281,13 @@ export const valueAddedServicesMap = {
         title: "Branding and Design Services",
         bannerTitle: "Branding and Design Services",
         bannerDescription: "Elevate your brand with premium design and creative strategy.",
+        seo: {
+            title: "Branding and Design Services in UAE | Creative Business Solutions",
+            description: "Enhance your brand identity with professional branding and design services in the UAE. From logo design to marketing materials, create a strong and memorable brand presence.",
+            keywords: "branding services UAE, design services Dubai, logo design UAE, brand identity design, creative agency Dubai, graphic design UAE, business branding Dubai, marketing design services, corporate branding UAE, brand development Dubai,company setup in uae,company formation in uae,business setup in dubai",
+            canonical: "http://investfirst.ae/services/value-added-services/branding-design-services-uae",
+            image: "/images/valueAddedServices/branding-design-banner.png"
+        },
         intro: {
             title: {
                 start: "Dynamic",
@@ -332,6 +360,13 @@ export const valueAddedServicesMap = {
         title: "Digital Marketing Services",
         bannerTitle: "Digital Marketing Services",
         bannerDescription: "Grow your online presence and reach your target audience effectively.",
+        seo: {
+            title: "Digital Marketing Services in UAE | Digital Marketing Dubai",
+            description: "Grow your business with expert digital marketing services in the UAE. Boost visibility, generate leads, and increase sales through SEO, PPC, and content marketing.",
+            keywords: "digital marketing UAE, digital marketing services Dubai, SEO services UAE, PPC advertising Dubai, social media marketing UAE, online marketing Dubai, lead generation UAE, content marketing services, search engine optimization UAE, digital marketing agency Dubai,seo agency uae, smm agency in dubai, social media marketing company in dubai, social media marketing agency dubai,seo dubai, sem agency in dubai",
+            canonical: "http://investfirst.ae/services/value-added-services/digital-marketing-services-uae",
+            image: "/images/valueAddedServices/digital-marketing-banner.png"
+        },
         intro: {
             title: {
                 start: "Strategic",
@@ -404,6 +439,13 @@ export const valueAddedServicesMap = {
         title: "Web Design & Development",
         bannerTitle: "Web Design & Development",
         bannerDescription: "High-performance websites and custom web applications.",
+        seo: {
+            title: "Web Design Company in UAE| Web development Company Dubai",
+            description: "Professional web design and development services in the UAE. Create responsive, fast, and user-friendly websites that enhance your brand and drive business growth.",
+            keywords: "web design UAE, web development Dubai, website design services UAE, custom website development, responsive web design Dubai, ecommerce website development UAE, web development company Dubai, business website UAE, UI UX design UAE, website development services Dubai,web development company dubai, web design services in dubai,web development uae",
+            canonical: "http://investfirst.ae/services/value-added-services/web-developmet-company-uae",
+            image: "/images/valueAddedServices/web-design-banner.png"
+        },
         intro: {
             title: {
                 start: "High Performance",

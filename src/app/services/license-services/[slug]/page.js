@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
     const service = licenseDetailedData[slug];
 
-    if (!service) {
+    if (!service || !service.seo) {
         return {
             title: 'License Services | Invest First',
             description: 'Professional business licensing services in Dubai and UAE.',
@@ -28,8 +28,30 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-        title: `${service.bannerTitle} | Invest First`,
-        description: `Get your ${service.bannerTitle} in Dubai quickly and easily with Invest First's expert licensing services.`,
+        title: service.seo.title,
+        description: service.seo.description,
+        keywords: service.seo.keywords,
+        alternates: {
+            canonical: service.seo.canonical,
+        },
+        openGraph: {
+            title: service.seo.title,
+            description: service.seo.description,
+            images: [
+                {
+                    url: service.seo.image,
+                    width: 1200,
+                    height: 630,
+                    alt: service.seo.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: service.seo.title,
+            description: service.seo.description,
+            images: [service.seo.image],
+        },
     };
 }
 
