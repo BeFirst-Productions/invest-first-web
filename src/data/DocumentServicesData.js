@@ -82,7 +82,7 @@ const attestationServices = {
         title: "UAE Attestation Services | Document Attestation Dubai | Invest First",
         description: "Get reliable UAE attestation services with Invest First. We provide certificate attestation, document legalization, embassy attestation, and verification services across Dubai and the UAE.",
         keywords: "UAE attestation services, document attestation UAE, certificate attestation Dubai, embassy attestation UAE, educational certificate attestation UAE, marriage certificate attestation UAE, degree attestation Dubai, UAE document legalization, attestation services Dubai, UAE PRO services, Invest First UAE, MOFA attestation UAE, business document attestation UAE, UAE visa document support, company document attestation UAE",
-        canonical: "http://investfirst.ae/services/visa-services/uae-attestation-services",
+        canonical: "http://investfirst.ae/services/document-services/uae-attestation-services",
         image: "/images/documentServices/attestation-services.png"
     },
     details: {
