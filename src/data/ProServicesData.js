@@ -7,103 +7,103 @@
 ───────────────────────────────────────────────────────────────────── */
 
 // ── 1. Company Formation (default / main page) ──────────────────────
-const companyFormation = {
-    slug: 'company-formation',
-intro: {
-        title: "Seamless <span class='text-[#0099CC]'>Company Formation</span> in Dubai & UAE Backed by Authorized Freezone Partnerships",
-        description1: "Starting a business in Dubai or anywhere in the UAE offers unmatched access to global markets, tax advantages, and a stable regulatory environment. However, successful company formation UAE requires expert navigation through licensing authorities, Freezone regulations, and banking procedures.",
-        description2: "Invest First simplifies this journey by offering end-to-end <span class='font-bold'>business setup services UAE</span>, supported by our status as an authorized channel partner of 20 UAE Freezones. This allows us to secure faster approvals, accurate licensing, competitive packages, and direct coordination with Freezone authorities—reducing delays, costs, and risks for our clients.",
-        description3: "From jurisdiction selection and activity classification to approvals, documentation, and license issuance, our Dubai-based consultants ensure every step of your company formation is structured, compliant, and growth-ready.",
-        image: "/images/proServices/pro-services.png"
-    },
-    bannerTitle: "PRO Services",
-    bannerDescription: "Expert government relations and business setup solutions in the UAE.",
-    cardTitle: "Secure Your Business Growth in UAE",
-    cardDescription: "Comprehensive support for your company formation and licensing needs.",
-    seo: {
-        title: "Company Formation in Dubai & UAE | Expert Business Setup Services",
-        description: "Start your business in Dubai with Invest First. Authorized channel partner of 20 UAE Freezones providing seamless company formation, trade licensing, and banking support.",
-        keywords: "company formation UAE, business setup Dubai, Dubai company registration, UAE freezone company formation, mainland business setup UAE",
-        canonical: "https://investfirst.ae/services/pro-services/company-formation",
-        image: "/assets/images/proServices/pro-services.png"
-    },
-    companyFormationTypes: {
-        // "Types of" is STATIC + blue in the component; only supply the changeable rest here
-        headingRest: "Company Formation UAE We Offer",
-        description: "We deliver complete company formation UAE solutions across all jurisdictions:",
-        items: [
-            {
-                id: "01",
-                title: "Mainland Company Formation",
-                description: "Operate freely across the UAE and work with government entities. We manage trade name registration, MOA drafting, DED approvals, and compliance processes."
-            },
-            {
-                id: "02",
-                title: "Holding & Subsidiary Structures",
-                description: "Create holding companies or subsidiaries in the UAE for asset management, expansion, and structured corporate growth."
-            },
-            {
-                id: "03",
-                title: "Freezone Company Formation",
-                description: "Establish your business with 100% foreign ownership in UAE Freezones. As an authorized channel partner of 20 Freezones, we secure faster approvals and optimal setup options."
-            },
-            {
-                id: "04",
-                title: "Offshore Company Formation UAE",
-                description: "Ideal for international trade, asset protection, and global structuring. We handle offshore incorporation, compliance, and corporate banking introductions."
-            },
-            {
-                id: "05",
-                title: "Holding & Subsidiary Structures",
-                description: "Create holding companies or subsidiaries in the UAE for asset management, expansion, and structured corporate growth."
-            }
-        ]
-    },
-    whyChoose: {
-        // "Why Choose" is STATIC + blue in the component; only supply the changeable rest here
-        headingRest: "Dubai & UAE for Company Formation",
-        cardTitle: "Why Invest First Is a Leading Company Formation Consultant UAE",
-        cardTitleHighlight: "Company Formation",
-        paragraphs: [
-            "Dubai and the UAE offer tax-efficient structures, strong investor protection, world-class infrastructure, and global connectivity making them ideal for regional and international expansion.",
-            "With Invest First, your company formation UAE is handled by experts who understand Freezone frameworks, mainland regulations, and offshore compliance ensuring your business launches smoothly, legally, and within budget."
-        ],
-        points: [
-            'Authorized channel partner of 20 UAE Freezones',
-            'Dubai-based consultants with UAE regulatory expertise',
-            'Transparent pricing and fast processing timelines',
-            'Legal documentation, MOA drafting, and PRO services included',
-            'Visa processing, banking support, and office solutions',
-            'Tailored company structures for startups, SMEs, and global investors',
-        ]
-    },
-    faq: {
-        // "Frequently Asked Questions –" is STATIC in the component; only supply the rest here
-        headingRest: "Company Formation UAE",
-        items: [
-            {
-                question: "What is the validity of a UAE investor visa?",
-                answer: "A UAE investor visa is typically valid for 2 to 10 years depending on the type of investment and jurisdiction. Golden Visas for investors are valid for 10 years and are renewable, while standard investor visas issued through Freezone or mainland company formation are generally valid for 2-3 years."
-            },
-            {
-                question: "Can I sponsor my family with a UAE investor visa?",
-                answer: "Yes, as a UAE investor visa holder you can sponsor your spouse, children, and in some cases parents. The sponsorship process requires meeting minimum salary thresholds and providing the necessary documentation such as tenancy contracts and marriage/birth certificates."
-            },
-            {
-                question: "Is a Free Zone company eligible for an investor visa?",
-                answer: "Yes, Free Zone company owners are eligible for investor or partner visas issued by the respective Freezone authority. The number of visas your company can obtain depends on your license type and office space allocation within the Freezone."
-            },
-            {
-                question: "Are there changes to investor visa rules in 2026?",
-                answer: "The UAE government continuously updates its visa regulations to attract global talent and investment. In 2026, several enhancements to the Golden Visa program and investor visa eligibility have been introduced. Our team stays up to date with all regulatory changes to ensure your visa application is compliant."
-            },
-            {
-                question: "Does Invest First handle both business setup and visa processing?",
-                answer: "Yes, Invest First provides end-to-end services covering company formation, trade licensing, banking assistance, and complete visa processing — including investor visas, employment visas, and family sponsorships — all under one roof."
-            }
-        ]
-    }
-};
+// const companyFormation = {
+//     slug: 'company-formation',
+// intro: {
+//         title: "Seamless <span class='text-[#0099CC]'>Company Formation</span> in Dubai & UAE Backed by Authorized Freezone Partnerships",
+//         description1: "Starting a business in Dubai or anywhere in the UAE offers unmatched access to global markets, tax advantages, and a stable regulatory environment. However, successful company formation UAE requires expert navigation through licensing authorities, Freezone regulations, and banking procedures.",
+//         description2: "Invest First simplifies this journey by offering end-to-end <span class='font-bold'>business setup services UAE</span>, supported by our status as an authorized channel partner of 20 UAE Freezones. This allows us to secure faster approvals, accurate licensing, competitive packages, and direct coordination with Freezone authorities—reducing delays, costs, and risks for our clients.",
+//         description3: "From jurisdiction selection and activity classification to approvals, documentation, and license issuance, our Dubai-based consultants ensure every step of your company formation is structured, compliant, and growth-ready.",
+//         image: "/images/proServices/pro-services.png"
+//     },
+//     bannerTitle: "PRO Services",
+//     bannerDescription: "Expert government relations and business setup solutions in the UAE.",
+//     cardTitle: "Secure Your Business Growth in UAE",
+//     cardDescription: "Comprehensive support for your company formation and licensing needs.",
+//     seo: {
+//         title: "Virtual PRO Services in UAE |  PRO Services in Dubai",
+//         description: "Reliable virtual PRO services in UAE for visa processing, document clearing, trade license support, and government approvals across Dubai and the UAE.",
+//         keywords: "virtual PRO services UAE, online PRO services Dubai, UAE PRO services, document clearing services UAE, visa processing Dubai, trade license support UAE, government approval services Dubai, business compliance UAE, online business support UAE, company setup services Dubai, UAE document services, PRO consultants UAE, Invest First UAE, business support services UAE, Dubai PRO assistance",
+//         canonical: "http://investfirst.ae/services/pro-services/virtualpro",
+//         image: "/assets/images/proServices/pro-services.png"
+//     },
+//     companyFormationTypes: {
+//         // "Types of" is STATIC + blue in the component; only supply the changeable rest here
+//         headingRest: "Company Formation UAE We Offer",
+//         description: "We deliver complete company formation UAE solutions across all jurisdictions:",
+//         items: [
+//             {
+//                 id: "01",
+//                 title: "Mainland Company Formation",
+//                 description: "Operate freely across the UAE and work with government entities. We manage trade name registration, MOA drafting, DED approvals, and compliance processes."
+//             },
+//             {
+//                 id: "02",
+//                 title: "Holding & Subsidiary Structures",
+//                 description: "Create holding companies or subsidiaries in the UAE for asset management, expansion, and structured corporate growth."
+//             },
+//             {
+//                 id: "03",
+//                 title: "Freezone Company Formation",
+//                 description: "Establish your business with 100% foreign ownership in UAE Freezones. As an authorized channel partner of 20 Freezones, we secure faster approvals and optimal setup options."
+//             },
+//             {
+//                 id: "04",
+//                 title: "Offshore Company Formation UAE",
+//                 description: "Ideal for international trade, asset protection, and global structuring. We handle offshore incorporation, compliance, and corporate banking introductions."
+//             },
+//             {
+//                 id: "05",
+//                 title: "Holding & Subsidiary Structures",
+//                 description: "Create holding companies or subsidiaries in the UAE for asset management, expansion, and structured corporate growth."
+//             }
+//         ]
+//     },
+//     whyChoose: {
+//         // "Why Choose" is STATIC + blue in the component; only supply the changeable rest here
+//         headingRest: "Dubai & UAE for Company Formation",
+//         cardTitle: "Why Invest First Is a Leading Company Formation Consultant UAE",
+//         cardTitleHighlight: "Company Formation",
+//         paragraphs: [
+//             "Dubai and the UAE offer tax-efficient structures, strong investor protection, world-class infrastructure, and global connectivity making them ideal for regional and international expansion.",
+//             "With Invest First, your company formation UAE is handled by experts who understand Freezone frameworks, mainland regulations, and offshore compliance ensuring your business launches smoothly, legally, and within budget."
+//         ],
+//         points: [
+//             'Authorized channel partner of 20 UAE Freezones',
+//             'Dubai-based consultants with UAE regulatory expertise',
+//             'Transparent pricing and fast processing timelines',
+//             'Legal documentation, MOA drafting, and PRO services included',
+//             'Visa processing, banking support, and office solutions',
+//             'Tailored company structures for startups, SMEs, and global investors',
+//         ]
+//     },
+//     faq: {
+//         // "Frequently Asked Questions –" is STATIC in the component; only supply the rest here
+//         headingRest: "Company Formation UAE",
+//         items: [
+//             {
+//                 question: "What is the validity of a UAE investor visa?",
+//                 answer: "A UAE investor visa is typically valid for 2 to 10 years depending on the type of investment and jurisdiction. Golden Visas for investors are valid for 10 years and are renewable, while standard investor visas issued through Freezone or mainland company formation are generally valid for 2-3 years."
+//             },
+//             {
+//                 question: "Can I sponsor my family with a UAE investor visa?",
+//                 answer: "Yes, as a UAE investor visa holder you can sponsor your spouse, children, and in some cases parents. The sponsorship process requires meeting minimum salary thresholds and providing the necessary documentation such as tenancy contracts and marriage/birth certificates."
+//             },
+//             {
+//                 question: "Is a Free Zone company eligible for an investor visa?",
+//                 answer: "Yes, Free Zone company owners are eligible for investor or partner visas issued by the respective Freezone authority. The number of visas your company can obtain depends on your license type and office space allocation within the Freezone."
+//             },
+//             {
+//                 question: "Are there changes to investor visa rules in 2026?",
+//                 answer: "The UAE government continuously updates its visa regulations to attract global talent and investment. In 2026, several enhancements to the Golden Visa program and investor visa eligibility have been introduced. Our team stays up to date with all regulatory changes to ensure your visa application is compliant."
+//             },
+//             {
+//                 question: "Does Invest First handle both business setup and visa processing?",
+//                 answer: "Yes, Invest First provides end-to-end services covering company formation, trade licensing, banking assistance, and complete visa processing — including investor visas, employment visas, and family sponsorships — all under one roof."
+//             }
+//         ]
+//     }
+// };
 
 // ── 2. Virtual PRO ────────────────────────────────────────────────────
 const virtualPRO = {
@@ -120,10 +120,10 @@ const virtualPRO = {
     cardTitle: "Efficient Government Relations",
     cardDescription: "Dedicated PRO officers handling all your document processing and compliance.",
     seo: {
-        title: "Virtual PRO Services Dubai | Professional Government Relations UAE",
-        description: "Outsource your government relations with our Virtual PRO services. We handle visa processing, trade license renewals, and labor card renewals across all Emirates.",
-        keywords: "virtual PRO Dubai, PRO services UAE, government relations Dubai, visa processing UAE, trade license renewal Dubai",
-        canonical: "https://investfirst.ae/services/pro-services/virtual-pro",
+        title: "Virtual PRO Services in UAE |  PRO Services in Dubai",
+        description: "Reliable virtual PRO services in UAE for visa processing, document clearing, trade license support, and government approvals across Dubai and the UAE.",
+        keywords: "virtual PRO services UAE, online PRO services Dubai, UAE PRO services, document clearing services UAE, visa processing Dubai, trade license support UAE, government approval services Dubai, business compliance UAE, online business support UAE, company setup services Dubai, UAE document services, PRO consultants UAE, Invest First UAE, business support services UAE, Dubai PRO assistance",
+        canonical: "http://investfirst.ae/services/pro-services/virtualpro",
         image: "/images/proServices/virtual-pro.png"
     },
     companyFormationTypes: {
@@ -230,10 +230,10 @@ const localSponsorships = {
     cardTitle: "Trusted UAE Partnerships",
     cardDescription: "Protect your business control and profits with our vetted local sponsors.",
     seo: {
-        title: "Local Sponsorship UAE | Trusted Mainland Business Partnership",
-        description: "Secure reliable local sponsorship solutions for your mainland business in the UAE. Legally structured arrangements that protect your control and profitability.",
-        keywords: "local sponsorship UAE, UAE national sponsor, local service agent Dubai, mainland company sponsor UAE, business partnership Dubai",
-        canonical: "https://investfirst.ae/services/pro-services/local-sponsorships",
+        title: " Local Sponsorship Services in UAE | UAE Local Sponsor Support",
+        description: "Get trusted local sponsorship services in the UAE with Invest First. We provide reliable UAE local sponsor solutions for mainland company formation and business setup in Dubai and across the UAE.",
+        keywords: " local sponsorship UAE, UAE local sponsor services, local sponsor Dubai, mainland company sponsor UAE, UAE business sponsorship, Dubai local sponsorship services, UAE mainland business setup, trade license sponsor UAE, company formation Dubai, UAE business setup services, Invest First UAE, Emirati sponsor UAE, local partner Dubai, mainland license UAE, business setup consultants UAE",
+        canonical: "http://investfirst.ae/services/pro-services/local-sponsership",
         image: "/assets/images/pro-services/local-sponsorship.png"
     },
     companyFormationTypes: {
@@ -339,10 +339,10 @@ const licenseRenewals = {
     cardTitle: "Compliance Made Easy",
     cardDescription: "Never miss a renewal deadline with our proactive tracking and management.",
     seo: {
-        title: "Trade License Renewal UAE | Fast & Compliant Renewal Services",
-        description: "Proactive trade license renewal services for mainland and Freezone businesses across the UAE. Avoid fines and ensure continuous compliance with Invest First.",
-        keywords: "trade license renewal Dubai, UAE license renewal, DED license renewal, freezone license renewal UAE, business license renewal Dubai",
-        canonical: "https://investfirst.ae/services/pro-services/license-renewals",
+        title: "License Renewal Services UAE | Trade License Renewal Dubai | Invest First",
+        description: "Renew your  license renewal uae easily with Invest First. Expert support for documentation, approvals, compliance, and business license renewal in Dubai.",
+        keywords: " license renewal UAE, trade license renewal Dubai, business license renewal UAE, company renewal services Dubai, UAE trade license services, mainland license renewal UAE, free zone license renewal Dubai, business setup services UAE, Dubai company renewal, UAE compliance support, Invest First UAE, PRO services UAE, company formation Dubai, UAE business consultants, renewal services Dubai",
+        canonical: "http://investfirst.ae/services/pro-services/license-renewal",
         image: "/assets/images/pro-services/license-renewals.png"
     },
     companyFormationTypes: {
@@ -448,10 +448,10 @@ const visaRenewals = {
     cardTitle: "Seamless Visa Processing",
     cardDescription: "End-to-end management of renewals for residency and employment visas.",
     seo: {
-        title: "Visa Renewal Services UAE | Investor, Employment & Family Visas",
-        description: "Expert UAE visa renewal management for investors, employees, and families. We handle medical tests, Emirates ID, and authority submissions end-to-end.",
-        keywords: "visa renewal UAE, resonance visa renewal Dubai, investor visa renewal UAE, employment visa renewal Dubai, Emirates ID renewal UAE",
-        canonical: "https://investfirst.ae/services/pro-services/visa-renewals",
+        title: " Visa Renewal Services in UAE | UAE Visa Renewal Dubai",
+        description: "Fast and reliable visa renewal services in UAE for residence, employment, and family visas with complete documentation and immigration support across Dubai and the UAE.",
+        keywords: "visa renewal UAE, UAE visa renewal services, Dubai visa renewal, residence visa renewal UAE, employment visa renewal Dubai, family visa renewal UAE, immigration services Dubai, UAE visa processing services, business visa renewal UAE, PRO services UAE, Invest First UAE, visa consultants Dubai, UAE residency services, Dubai immigration support, visa assistance UAE ",
+        canonical: "http://investfirst.ae/services/pro-services/visa-renewal-uae",
         image: "/assets/images/pro-services/visa-renewals.png"
     },
     companyFormationTypes: {
@@ -556,10 +556,10 @@ const bankingAssistance = {
     cardTitle: "Strategic Banking Support",
     cardDescription: "Optimizing your chances for bank account approval with professional assistance.",
     seo: {
-        title: "Banking Assistance Services in Dubai, UAE | Business & Personal Bank Accounts",
-        description: "Hassle-free corporate and personal bank account opening in the UAE. Expert guidance on KYC, documentation, and relationships with leading UAE banks.",
-        keywords: "corporate banking UAE, business bank account Dubai, UAE bank account opening, banking assistance Dubai, KYC support UAE",
-        canonical: "https://investfirst.ae/services/pro-services/banking-assistance",
+        title: "Banking Assistance in UAE | Corporate Bank Account Support Dubai",
+        description: "Get expert banking assistance in the UAE with Invest First. We help with corporate bank account opening, documentation, compliance, and approvals across top UAE banks in Dubai and the UAE.",
+        keywords: " banking assistance UAE, corporate bank account UAE, business bank account Dubai, UAE banking support services, company bank account opening UAE, Dubai bank account assistance, UAE business banking services, corporate banking Dubai, bank account opening support UAE, business setup UAE banking, Invest First UAE, UAE financial services, company formation banking UAE, PRO banking services Dubai, UAE business consultants",
+        canonical: "http://investfirst.ae/services/pro-services/banking-assistance-uae",
         image: "/assets/images/pro-services/banking-assistance.png"
     },
     companyFormationTypes: {
@@ -664,10 +664,10 @@ const officeSolutions = {
     cardTitle: "Ideal Business Workspaces",
     cardDescription: "Finding the right office setup to support your operations and visa quota.",
     seo: {
-        title: "Office Solutions UAE, Dubai | Virtual & Serviced Workspaces",
-        description: "Find the perfect office space for your UAE business. Virtual addresses, flexi-desks, and dedicated private offices aligned with your licensing needs.",
-        keywords: "office solutions Dubai, virtual office UAE, flexi desk Dubai, serviced office UAE, registered business address Dubai",
-        canonical: "https://investfirst.ae/services/pro-services/office-solutions",
+        title: "Office Solutions UAE | Virtual PRO Invest First",
+        description: "Get complete office solutions in UAE with Invest First. We offer virtual offices, physical office spaces, coworking solutions, and business setup support across Dubai and the UAE.",
+        keywords: "office solutions UAE, virtual office UAE, office space Dubai, coworking spaces UAE, business office setup Dubai, UAE office services, company office solutions UAE, flexible office Dubai, business setup UAE offices, Dubai workspace solutions, Invest First UAE, commercial office rental UAE, office support services Dubai, UAE business setup services, corporate office solutions UAE",
+        canonical: "http://investfirst.ae/services/pro-services/office-solutions-uae",
         image: "/assets/images/pro-services/office-solutions.png"
     },
     companyFormationTypes: {
@@ -765,7 +765,7 @@ const officeSolutions = {
 
 /** Quick lookup by slug */
 export const serviceDataMap = {
-    'company-formation': companyFormation,
+    // 'company-formation': companyFormation,
     'virtual-pro': virtualPRO,
     'local-sponsorships': localSponsorships,
     'license-renewals': licenseRenewals,
@@ -794,12 +794,19 @@ export const proServicesData = {
     services: proServicesList,
     footerText: "Invest First provides comprehensive PRO support to ensure your business remains compliant and operational without the need for an in-house government relations team.",
     // Include the default intro/seo for the main pro-services page
-    ...companyFormation
+    // ...companyFormation
+    seo: {
+        title: "Professional PRO Services in Dubai & UAE | Invest First",
+        description: "Get reliable and cost-effective Virtual PRO services, local sponsorships, trade license renewals, visa renewals, banking assistance, and office solutions in Dubai and the UAE.",
+        keywords: "PRO services Dubai, virtual PRO UAE, government clearing Dubai, local sponsorship UAE, trade license renewal Dubai, visa services UAE",
+        canonical: "https://investfirst.ae/services/pro-services",
+        image: "/images/services/service-banner.png"
+    }
 };
 
 /** Legacy named export kept for backward-compat with FAQAccordion on the page */
-export const proServicesFAQ = {
-    highlight: "Questions",
-    title: companyFormation.faq.headingRest,
-    faqItems: companyFormation.faq.items,
-};
+// export const proServicesFAQ = {
+//     highlight: "Questions",
+//     title: companyFormation.faq.headingRest,
+//     faqItems: companyFormation.faq.items,
+// };

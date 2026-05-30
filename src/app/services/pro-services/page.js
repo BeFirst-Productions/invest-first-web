@@ -30,14 +30,16 @@ const ProServicesPage = () => {
                     { label: 'PRO Services', href: '/services/pro-services' }
                 ]}
             />
-            <ProServicesIntro data={proServicesData.intro} />
-            <CompanyFormationTypes data={proServicesData.companyFormationTypes} />
-            <WhyChooseDubai data={proServicesData.whyChoose} />
-            <AuthorizedPartnerStatus data={proServicesData.authorizedPartnerStatus} />
-            <FAQAccordion
-                title={proServicesData.faq.headingRest}
-                faqItems={proServicesData.faq.items}
-            />
+            {proServicesData.intro && <ProServicesIntro data={proServicesData.intro} />}
+            {proServicesData.companyFormationTypes && <CompanyFormationTypes data={proServicesData.companyFormationTypes} />}
+            {proServicesData.whyChoose && <WhyChooseDubai data={proServicesData.whyChoose} />}
+            {proServicesData.authorizedPartnerStatus && <AuthorizedPartnerStatus data={proServicesData.authorizedPartnerStatus} />}
+            {proServicesData.faq && (
+                <FAQAccordion
+                    title={proServicesData.faq.headingRest}
+                    faqItems={proServicesData.faq.items}
+                />
+            )}
         </main>
     );
 };

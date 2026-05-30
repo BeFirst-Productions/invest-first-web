@@ -82,6 +82,13 @@ export const licenseDetailedData = {
     'professional-license': {
         slug: 'professional-license',
         bannerTitle: "Professional License",
+        seo: {
+            title: "Professional License in Dubai, UAE | | Invest First",
+            description: "Get your professional license in Dubai, UAE with Invest First. We assist with company formation, approvals, and licensing for consultants, and service-based businesses efficiently.",
+            keywords: "professional license UAE, professional license Dubai, UAE professional license, Dubai professional license, professional business license UAE, how to get professional license in Dubai, UAE company license, professional trade license Dubai, service license UAE, consultant license UAE, freelancer license Dubai, business license UAE, professional license requirements UAE, UAE licensing services",
+            canonical: "http://investfirst.ae/services/lisense-services-professional-license-in-uae",
+            image: "/images/licenseServices/professional-license-banner.png"
+        },
         intro: {
             image: "/images/license/professional-license-dubai.png", // Using existing as placeholder
             titleHighlight: "Professional License",
@@ -268,6 +275,13 @@ export const licenseDetailedData = {
     'commercial-license': {
         slug: 'commercial-license',
         bannerTitle: "Commercial License",
+        seo: {
+            title: "Commercial License in Dubai, UAE || Invest First",
+            description: "Get your commercial license in UAE with Invest First. Start trading, importing, and exporting legally with complete business setup support across Dubai and UAE.",
+            keywords: "commercial license UAE, trade license Dubai, business license UAE, commercial trade license Dubai, UAE company formation, import export license UAE, Dubai business license, UAE commercial registration, business setup UAE, commercial activities UAE, trade license renewal UAE, business setup in dubai, mainland company setup uae,freezone company setup uae",
+            canonical: "http://investfirst.ae/services/license-services/commercial-license-in-uae",
+            image: "/images/licenseServices/commercial-license-banner.png"
+        },
         intro: {
             image: "/images/license/commercial-license.png",
             titleHighlight: "Commercial License",
@@ -417,6 +431,13 @@ export const licenseDetailedData = {
     'industrial-license': {
         slug: 'industrial-license',
         bannerTitle: "Industrial License",
+        seo: {
+            title: "Industrial License in Dubai, UAE | Invest First",
+            description: "Industrial License in Dubai, UAE with expert assistance. Start manufacturing, processing, packaging, and industrial activities with fast registration and licensing support.",
+            keywords: "industrial license Dubai, industrial license UAE, manufacturing license Dubai, factory license UAE, industrial business setup Dubai, UAE industrial license, manufacturing company registration UAE, industrial company formation Dubai, factory setup UAE, industrial trade license Dubai,Company formation uae, business setup in dubai, stat a business uae,company licence in dubai",
+            canonical: "http://investfirst.ae/services/license/industrial-license-in-uae",
+            image: "/images/licenseServices/industrial-license-banner.png"
+        },
         intro: {
             image: "/images/license/industrial-license.png",
             titleHighlight: "Industrial License",
@@ -547,6 +568,13 @@ export const licenseDetailedData = {
     'e-trader-license': {
         slug: 'e-trader-license',
         bannerTitle: "E-Trader License",
+        seo: {
+            title: "E-Trader License in Dubai, UAE | Online Business License",
+            description: "Get an E-Trader License in Dubai, UAE and start selling products or services online legally. Fast registration, expert guidance, and hassle-free licensing support.",
+            keywords: "E-Trader License Dubai, E-Trader License UAE, online business license Dubai, ecommerce license UAE, Dubai E-Trader permit, online store license Dubai, home business license UAE, ecommerce business setup Dubai, DED E-Trader License, UAE online business registration,business setup in dubai, company formation uae, mainland company setup in uae, freezone company setup in dubai",
+            canonical: "http://investfirst.ae/services/license/e-trader-license-in-uae",
+            image: "/images/licenseServices/e-trader-license-banner.png"
+        },
         intro: {
             image: "/images/license/e-trader-license.png",
             titleHighlight: "E-Trader License",
@@ -667,6 +695,13 @@ export const licenseDetailedData = {
     'tourism-travel-license': {
         slug: 'tourism-travel-license',
         bannerTitle: "Tourism / Travel License",
+        seo: {
+            title: "Travel License in Dubai,UAE| Investfirst",
+            description: "Obtain a Tourism License in Dubai, UAE with expert support. Start a travel agency, tour operator, or tourism business with fast registration and licensing assistance. ",
+            keywords: " tourism license Dubai, tourism license UAE, travel agency license Dubai, tour operator license UAE, tourism business setup Dubai, travel company registration UAE, Dubai tourism license, UAE travel business license, tourism company formation Dubai, travel agency setup UAE,company setup in dubai, business setup in dubai, mainland company setup in uae",
+            canonical: "http://investfirst.ae/services/license/travel-license-in-uae",
+            image: "/images/licenseServices/tour-travel-license-banner.png"
+        },
         intro: {
             image: "/images/license/travel-tourism-license.png",
             titleHighlight: "Tourism / Travel License",

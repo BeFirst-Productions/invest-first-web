@@ -191,6 +191,27 @@ export const seoData = {
     title: governmentApprovalsData.seo.title,
     description: governmentApprovalsData.seo.description,
     keywords: governmentApprovalsData.seo.keywords,
+    alternates: {
+        canonical: governmentApprovalsData.seo.canonical,
+    },
+    openGraph: {
+        title: governmentApprovalsData.seo.title,
+        description: governmentApprovalsData.seo.description,
+        images: [
+            {
+                url: governmentApprovalsData.seo.image,
+                width: 1200,
+                height: 630,
+                alt: governmentApprovalsData.seo.title,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: governmentApprovalsData.seo.title,
+        description: governmentApprovalsData.seo.description,
+        images: [governmentApprovalsData.seo.image],
+    },
   },
   '/services/pro-services': {
     title: proServicesData.seo.title,
