@@ -1,6 +1,6 @@
 // 1. Investor Visa
 const investorVisa = {
-    slug: 'investor-visa',
+    slug: 'uae-investor-visa',
     bannerTitle: "UAE Investor Visa",
     bannerDescription: "The UAE Investor Visa is a long-term residency option designed for entrepreneurs, shareholders, and business owners who establish or invest in licensed entities.",
     cardTitle: "Long-Term Residency",
@@ -140,7 +140,7 @@ const investorVisa = {
 
 // 2. Golden Visa
 const goldenVisa = {
-    slug: 'golden-visa',
+    slug: 'uae-golden-visa',
     bannerTitle: "UAE Golden Visa",
     bannerDescription: "A long-term, 10-year residency visa for investors, entrepreneurs, and high-net-worth individuals.",
     cardTitle: "10-Year Residency",
@@ -280,7 +280,7 @@ const goldenVisa = {
 
 // 3. Employment Visa
 const employmentVisa = {
-    slug: 'employment-visa',
+    slug: 'uae-employment-visa',
     bannerTitle: "UAE Employment Visa",
     bannerDescription: "A standard residency option sponsored by employers for professionals, managers, and staff working in the UAE.",
     cardTitle: "Employment Residency",
@@ -398,7 +398,7 @@ const employmentVisa = {
 
 // 4. Dependent Visa
 const dependentVisa = {
-    slug: 'dependent-visa',
+    slug: 'dependent-visa-uae',
     bannerTitle: "UAE Dependent Visa (Family Sponsorship)",
     bannerDescription: "Sponsor residency for your spouse, children, parents, and domestic workers under your UAE residency.",
     cardTitle: "Family Sponsorship",
@@ -516,7 +516,7 @@ const dependentVisa = {
 
 // 5. Green Visa
 const greenVisa = {
-    slug: 'green-visa',
+    slug: 'uae-green-visa',
     bannerTitle: "UAE Green Visa (5-Year Self-Sponsorship)",
     bannerDescription: "A 5-year self-sponsored residency for skilled professionals, freelancers, and investors without requiring an employer sponsor.",
     cardTitle: "5-Year Self-Residency",
@@ -634,7 +634,7 @@ const greenVisa = {
 
 // 6. Blue Visa
 const blueVisa = {
-    slug: 'blue-visa',
+    slug: 'uae-blue-visa',
     bannerTitle: "UAE Blue Visa (10-Year Environmental Residency)",
     bannerDescription: "A prestigious 10-year residency program recognizing individuals who make outstanding contributions to environmental protection and sustainability.",
     cardTitle: "Environmental Residency",
@@ -752,7 +752,7 @@ const blueVisa = {
 
 // 7. Remote Work Visa
 const remoteWorkVisa = {
-    slug: 'remote-work-visa',
+    slug: 'uae-remote-work-visa',
     bannerTitle: "UAE Remote Work Visa (Virtual Working Program)",
     bannerDescription: "A 1-year residency program allowing digital nomads, remote employees, and freelancers to live in the UAE while working for employers abroad.",
     cardTitle: "Digital Nomad Residency",
@@ -865,7 +865,7 @@ const remoteWorkVisa = {
 
 // 8. Tourist/Visit Visa
 const touristVisitVisa = {
-    slug: 'tourist-visit-visa',
+    slug: 'uae-tourist-visa-services',
     bannerTitle: "UAE Tourist & Visit Visa (Single & Multi-Entry)",
     bannerDescription: "Short-term and long-term entry permits for tourism, business visits, and family meetings in the UAE.",
     cardTitle: "Entry Permits",
