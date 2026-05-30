@@ -32,8 +32,8 @@ export default function OurServices() {
               Solutions in Dubai.
             </>
           }
-          delay={50}
-          duration={1.25}
+          delay={30}
+          duration={0.8}
           ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
@@ -54,16 +54,16 @@ export default function OurServices() {
             onMouseLeave={() => setHoveredIndex(null)}
           >
             {/* ── Row content ── */}
-            <div className="flex flex-col lg:flex-row lg:items-center py-[24px] md:py-[32px] lg:py-[40px] xl:py-[48px] relative z-10">
+            <div className="flex flex-col lg:flex-row lg:items-center py-[36px] md:py-[48px] lg:py-0 relative z-10">
               {/* Title — 36% on lg, 35% on xl */}
-              <div className="w-full lg:w-[36%] xl:w-[35%] shrink-0 mb-[10px] lg:mb-0 lg:pr-[24px]">
+              <div className="w-full lg:w-[36%] xl:w-[35%] shrink-0 mb-[10px] lg:mb-0 lg:pr-[24px] lg:py-[56px] xl:py-[68px]">
                 <h3 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[32px] font-bold text-[#111111] leading-[1.2] font-sans transition-colors duration-300 group-hover:text-[#660033]">
                   {service.title}
                 </h3>
               </div>
 
               {/* Description — flex-1 fills remaining space, pr prevents bleeding into image */}
-              <div className="w-full lg:flex-1 lg:pr-[24px] xl:pr-[40px]">
+              <div className="w-full lg:flex-1 lg:pr-[24px] xl:pr-[40px] lg:py-[56px] xl:py-[68px]">
                 <p className="text-[14px] lg:text-[14px] xl:text-[15px] text-[#666666] leading-[1.65] font-sans">
                   {service.description}
                 </p>
@@ -80,14 +80,13 @@ export default function OurServices() {
                 />
               </div>
 
-              {/* Desktop image column — lg: 180×115, xl: 240×155, fades in on hover */}
-              <div className="hidden lg:flex lg:w-[190px] lg:shrink-0 xl:w-[260px] items-center justify-end">
+              {/* Desktop image column — stretches to the absolute height of the row */}
+              <div className="hidden lg:flex lg:w-[190px] lg:shrink-0 xl:w-[260px] lg:self-stretch items-stretch justify-end">
                 <div
-                  className={`relative lg:w-[175px] lg:h-[115px] xl:w-[240px] xl:h-[155px] rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.10)] xl:shadow-[0_16px_48px_rgba(0,0,0,0.12)] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-                    hoveredIndex === index
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-50"
-                  }`}
+                  className={`relative lg:w-[175px] xl:w-[240px] h-full rounded-[14px] xl:rounded-[18px] overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.10)] xl:shadow-[0_16px_48px_rgba(0,0,0,0.12)] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${hoveredIndex === index
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-90"
+                    }`}
                 >
                   <Image
                     src={service.image}

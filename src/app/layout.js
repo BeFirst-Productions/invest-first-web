@@ -7,26 +7,19 @@ import Footer from "@/components/layout/Footer";
 import PageLoader from "@/components/ui/PageLoader";
 import SmoothScroller from "@/components/ui/SmoothScroller";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import { Inter, Montserrat, Instrument_Sans } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const geistSans = Geist({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-geist-sans",
 });
 
-const montserrat = Montserrat({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
-});
-
-const instrumentSans = Instrument_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-instrument-sans",
-  axes: ["wdth"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata = {
@@ -39,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${montserrat.variable} ${instrumentSans.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>

@@ -86,11 +86,11 @@ const CoreValues = () => {
                         <div ref={cardsContainerRef} className="w-full relative">
                             <div ref={cardsWrapperRef} className="flex flex-col gap-6">
                                 {/* Card 1: Client Success */}
-                                <ValueCard
+                                {/* <ValueCard
                                     icon={<Target className="w-8 h-8 text-white" />}
                                     title="Client Success"
                                     description="We prioritize client success by understanding unique goals, challenges, and markets, delivering tailored solutions, proactive guidance, and measurable outcomes that help businesses grow confidently, make informed decisions, and achieve sustainable success across UAE competitive environments."
-                                />
+                                /> */}
 
                                 {/* Card 2: Integrity */}
                                 <ValueCard

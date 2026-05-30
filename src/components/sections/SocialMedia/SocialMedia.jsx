@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { socialMediaPosts } from '@/data/socialMediaData';
 import SectionContainer from '@/components/layout/SectionContainer';
+import SplitText from '@/components/ui/SplitText';
 
 export default function SocialMedia() {
   return (
@@ -34,9 +35,20 @@ export default function SocialMedia() {
             Social Media
           </span>
         </div>
-        <h2 className="text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[700px]">
-          Let Your Brand Speak Online
-        </h2>
+        <SplitText
+          tag="h2"
+          className="text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[700px]"
+          text="Let Your Brand Speak Online"
+          delay={30}
+          duration={0.8}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="left"
+        />
       </div>
 
       {/* ── Carousel viewport ── */}

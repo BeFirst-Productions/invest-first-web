@@ -54,8 +54,11 @@ const ContactInfo = () => {
                     </div>
                     <div>
                         <p className="text-sm text-gray-400">Our Location</p>
-                        <p className="text-white font-medium">Al Qusais, Dubai
-                            3rd Floor-Arzoo Building</p>
+                        <p className="text-white font-medium leading-relaxed" style={{ fontSize: '13px' }}>
+                          313, 3rd Floor, Arzoo Building<br />
+                          Nahda street, Al Qusais, Dubai<br />
+                          United Arab Emirates, P.O. Box 7274
+                        </p>
                     </div>
                 </div>
             </div>

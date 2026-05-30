@@ -38,9 +38,9 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
       document.body.style.overflow = 'hidden';
       const tl = gsap.timeline();
       tl.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.3 });
-      tl.fromTo(contentRef.current, 
-        { y: 50, opacity: 0, scale: 0.95 }, 
-        { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' }, 
+      tl.fromTo(contentRef.current,
+        { y: 50, opacity: 0, scale: 0.95 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' },
         '-=0.2'
       );
     } else {
@@ -68,9 +68,9 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const { name, email, phone, service, date, time } = formData;
-    
+
     const message = `Hello InvestFirst, I would like to schedule a meeting.
     
 *Name:* ${name}
@@ -89,19 +89,19 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       ref={modalRef}
       className="fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-6"
     >
       {/* Overlay */}
-      <div 
+      <div
         ref={overlayRef}
         className="absolute inset-0 bg-[#081131]/80 backdrop-blur-md"
         onClick={handleClose}
       />
 
       {/* Modal Content */}
-      <div 
+      <div
         ref={contentRef}
         className="relative bg-white w-full max-w-[550px] rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.4)] overflow-hidden flex flex-col"
       >
@@ -115,8 +115,8 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
           <p className="text-white/60 text-[15px] leading-relaxed max-w-[360px]">
             Please fill in your details and select a preferred time for your consultation.
           </p>
-          
-          <button 
+
+          <button
             onClick={handleClose}
             className="absolute top-8 right-8 w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all group"
           >
@@ -129,14 +129,14 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
 
         {/* Form Content */}
         <form onSubmit={handleSubmit} className="p-8 sm:p-10 pt-6 flex flex-col gap-6 overflow-y-auto max-h-[65vh] scrollbar-hide">
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Name Field */}
             <div className="flex flex-col gap-2.5">
               <label className="text-[11px] font-black uppercase tracking-[2px] text-[#111D59]/60">Full Name</label>
-              <input 
+              <input
                 required
-                type="text" 
+                type="text"
                 name="name"
                 placeholder="John Doe"
                 value={formData.name}
@@ -147,9 +147,9 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
             {/* Phone Field */}
             <div className="flex flex-col gap-2.5">
               <label className="text-[11px] font-black uppercase tracking-[2px] text-[#111D59]/60">Phone Number</label>
-              <input 
+              <input
                 required
-                type="tel" 
+                type="tel"
                 name="phone"
                 placeholder="+971 50 --- ----"
                 value={formData.phone}
@@ -163,9 +163,9 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
             {/* Email Field */}
             <div className="flex flex-col gap-2.5">
               <label className="text-[11px] font-black uppercase tracking-[2px] text-[#111D59]/60">Email Address</label>
-              <input 
+              <input
                 required
-                type="email" 
+                type="email"
                 name="email"
                 placeholder="john@example.com"
                 value={formData.email}
@@ -177,7 +177,7 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
             <div className="flex flex-col gap-2.5">
               <label className="text-[11px] font-black uppercase tracking-[2px] text-[#111D59]/60">Select Service</label>
               <div className="relative">
-                <select 
+                <select
                   required
                   name="service"
                   value={formData.service}
@@ -192,7 +192,7 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
                   <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="#111D59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M1 1l5 5 5-5"/>
+                    <path d="M1 1l5 5 5-5" />
                   </svg>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
           <div className="flex flex-col gap-3.5">
             <div className="flex items-center justify-between">
               <label className="text-[11px] font-black uppercase tracking-[2px] text-[#111D59]/60">Schedule Date</label>
-              <button 
+              <button
                 type="button"
                 onClick={() => setShowFullDatePicker(!showFullDatePicker)}
                 className="text-[11px] font-bold text-[#A10B43] hover:underline uppercase tracking-widest"
@@ -213,8 +213,8 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
             </div>
 
             {showFullDatePicker ? (
-              <input 
-                type="date" 
+              <input
+                type="date"
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
@@ -227,11 +227,10 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
                     key={idx}
                     type="button"
                     onClick={() => selectQuickDate(item.date)}
-                    className={`flex-1 h-[70px] rounded-[16px] flex flex-col items-center justify-center transition-all ${
-                      formData.date === item.date 
-                        ? 'bg-[#111D59] text-white shadow-lg scale-[1.05]' 
+                    className={`flex-1 h-[70px] rounded-[16px] flex flex-col items-center justify-center transition-all ${formData.date === item.date
+                        ? 'bg-[#111D59] text-white shadow-lg scale-[1.05]'
                         : 'bg-[#F8FAFC] text-[#111D59] border border-[#E2E8F0] hover:border-[#111D59]/30'
-                    }`}
+                      }`}
                   >
                     <span className="text-[16px] font-bold leading-none mb-1">{item.day}</span>
                     <span className={`text-[9px] font-black uppercase tracking-tighter ${formData.date === item.date ? 'text-white/60' : 'text-[#888]'}`}>{item.label}</span>
@@ -250,11 +249,10 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
                   key={time}
                   type="button"
                   onClick={() => setFormData(prev => ({ ...prev, time: `${time} AM` }))}
-                  className={`py-2.5 rounded-[10px] text-[13px] font-bold transition-all ${
-                    formData.time.startsWith(time)
+                  className={`py-2.5 rounded-[10px] text-[13px] font-bold transition-all ${formData.time.startsWith(time)
                       ? 'bg-[#A10B43] text-white shadow-md'
                       : 'bg-[#F8FAFC] text-[#111D59] border border-[#E2E8F0] hover:bg-[#E2E8F0]/50'
-                  }`}
+                    }`}
                 >
                   {time}
                 </button>
@@ -262,14 +260,14 @@ export default function BookingModal({ isOpen, onClose, initialDate }) {
             </div>
           </div>
 
-          <button 
+          <button
             type="submit"
             className="group mt-4 w-full bg-[#111D59] hover:bg-[#081131] text-white font-bold py-5 rounded-[20px] shadow-[0_15px_40px_rgba(17,29,89,0.25)] transition-all active:scale-[0.98] flex items-center justify-center gap-4"
           >
             <span className="text-[17px]">Confirm Appointment</span>
             <div className="w-[30px] h-[30px] bg-white/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
           </button>

@@ -1,5 +1,6 @@
 "use client";
 
+
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
@@ -8,11 +9,14 @@ import SectionContainer from "@/components/layout/SectionContainer";
 import PrimaryButton from "@/components/Common/Buttons/PrimaryButton";
 import RedHoverButton from "@/components/Common/Buttons/RedHoverButton";
 
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+
 const WHATSAPP_NUMBER = "971588773753";
+
 
 const initialForm = {
   name: "",
@@ -21,6 +25,7 @@ const initialForm = {
   service: "",
   message: "",
 };
+
 
 const validateHeroForm = (fields) => {
   const errors = {};
@@ -39,6 +44,7 @@ const validateHeroForm = (fields) => {
   return errors;
 };
 
+
 // ─── iOS Safari detection ────────────────────────────────────────────────────
 // We need this to switch the scroll engine. Detection is done once at module
 // level so it's available synchronously in the component.
@@ -53,6 +59,7 @@ const isIOS = () => {
       "ontouchend" in document)
   );
 };
+
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -69,14 +76,17 @@ export default function Hero() {
   const overlayLeftRef = useRef(null);
   const overlayRightRef = useRef(null);
 
+
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -102,6 +112,7 @@ export default function Hero() {
     setErrors({});
   };
 
+
   // ── FIX A: --vh custom property ─────────────────────────────────────────
   // 100dvh is unreliable on iOS Safari (browser chrome changes real height).
   // We set --vh from window.innerHeight and keep it updated.
@@ -121,14 +132,17 @@ export default function Hero() {
     };
   }, []);
 
+
   useEffect(() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (prefersReduced) return;
 
+
     const ios = isIOS();
     let playEntranceFn;
+
 
     // ── FIX B: Pre-promote clip-path layer BEFORE any animation ─────────
     // iOS Safari promotes elements to composited layers lazily. If GSAP
@@ -144,6 +158,7 @@ export default function Hero() {
       bgImgRef.current.style.webkitClipPath = "circle(0px at 50% 100%)";
     }
 
+
     // ── Set initial states ────────────────────────────────────────────────
     gsap.set(archWrapRef.current, {
       xPercent: -50,
@@ -152,22 +167,27 @@ export default function Hero() {
       force3D: true,
     });
 
+
     gsap.set(overlayRef.current, { opacity: 0, pointerEvents: "none" });
     gsap.set(overlayLeftRef.current, { x: -60, opacity: 0 });
     gsap.set(overlayRightRef.current, { x: 60, opacity: 0 });
+
 
     const textElements = heroTextRef.current
       ? Array.from(heroTextRef.current.children)
       : [];
     gsap.set(textElements, { y: 120, opacity: 0 });
 
+
     const buildingImg = buildingRef.current?.querySelector("img");
     if (buildingImg) gsap.set(buildingImg, { y: 320, opacity: 0, scale: 1.03 });
+
 
     const cloudLeftImg = cloudLeftRef.current?.querySelector("img");
     const cloudRightImg = cloudRightRef.current?.querySelector("img");
     if (cloudLeftImg) gsap.set(cloudLeftImg, { y: 160, opacity: 0 });
     if (cloudRightImg) gsap.set(cloudRightImg, { y: 160, opacity: 0 });
+
 
     // ── Entrance animation (unchanged — not scroll-driven) ────────────────
     const playEntrance = () => {
@@ -197,11 +217,13 @@ export default function Hero() {
     };
     playEntranceFn = playEntrance;
 
+
     if (window.__loaderExit) {
       setTimeout(playEntrance, 100);
     } else {
       window.addEventListener("loaderExit", playEntrance);
     }
+
 
     // ─────────────────────────────────────────────────────────────────────
     // THE CORE FIX — two separate scroll engines:
@@ -224,14 +246,18 @@ export default function Hero() {
     //   scroll position that we can map to animation progress.
     // ─────────────────────────────────────────────────────────────────────
 
+
     if (!ios) {
       // ── DESKTOP PATH: GSAP ScrollTrigger (original) ───────────────────
       // DO NOT call ScrollTrigger.normalizeScroll(true) — it fights iOS
       // even on desktop by intercepting pointer events globally.
 
+
       const clipProgress = { radius: 0 };
 
+
       const navbar = document.getElementById("global-navbar");
+
 
       const master = gsap.timeline({
         scrollTrigger: {
@@ -257,6 +283,7 @@ export default function Hero() {
           },
         },
       });
+
 
       master.to(
         heroTextRef.current,
@@ -301,6 +328,7 @@ export default function Hero() {
         0,
       );
 
+
       master.to(
         archWrapRef.current,
         {
@@ -343,6 +371,7 @@ export default function Hero() {
         { y: "-15%", duration: 0.3, ease: "none" },
         0.3,
       );
+
 
       master.to(
         archWrapRef.current,
@@ -403,12 +432,14 @@ export default function Hero() {
         0.86,
       );
 
+
       return () => {
         ScrollTrigger.getAll().forEach((t) => t.kill());
         if (playEntranceFn)
           window.removeEventListener("loaderExit", playEntranceFn);
       };
     }
+
 
     // ── iOS PATH: Manual RAF scroll engine ───────────────────────────────
     //
@@ -423,22 +454,27 @@ export default function Hero() {
     // We apply lerp (linear interpolation with a smoothing factor) to
     // replicate the scrub:2 feel — smooth lag that chases the real scroll.
 
+
     let rafId = null;
     let currentProgress = 0; // lerped progress (what we animate to)
     let targetProgress = 0; // raw scroll-mapped progress
     let lastArchScale = 0;
     let overlayShown = false;
 
+
     // Lerp factor: lower = more lag (smoother), higher = snappier.
     // scrub:2 in GSAP is roughly equivalent to ~0.06 lerp factor at 60fps.
     const LERP = 0.06;
 
+
     // Helper: linear interpolate
     const lerp = (a, b, t) => a + (b - a) * t;
+
 
     // Helper: map progress [0..1] through a sub-range [start..end] → [0..1]
     const mapRange = (p, start, end) =>
       Math.max(0, Math.min(1, (p - start) / (end - start)));
+
 
     // Helper: ease functions matching GSAP eases
     const easeOut3 = (t) => 1 - Math.pow(1 - t, 3); // power3.out
@@ -446,8 +482,10 @@ export default function Hero() {
     const easeIn2 = (t) => t * t; // power2.in
     const easeInOut1 = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t); // power1.inOut
 
+
     // Cache the navbar element
     const navbar = document.getElementById("global-navbar");
+
 
     // We need the section's scroll range. We read it in the RAF loop
     // so it's always fresh after any reflow.
@@ -459,12 +497,15 @@ export default function Hero() {
       return { start, total: Math.max(total, 1) };
     };
 
+
     // Apply all animation values for a given lerped progress (0→1)
     const applyProgress = (p) => {
       const isMobile = window.innerWidth <= 768;
 
+
       // ── STAGE 1: 0 → 0.30 ───────────────────────────────────────────
       const s1 = mapRange(p, 0, 0.3);
+
 
       if (heroTextRef.current) {
         heroTextRef.current.style.transform = `translateY(${-120 * s1}px) translateZ(0)`;
@@ -520,13 +561,16 @@ export default function Hero() {
         }
       }
 
+
       // ── STAGE 2: 0.30 → 0.60 ─────────────────────────────────────────
       const s2 = mapRange(p, 0.3, 0.6);
       const s2ease = easeOut3(s2);
 
+
       // Arch scale
       const archTargetS2 = isMobile ? 1.5 : 1.0;
       const archScaleS2 = s2ease * archTargetS2;
+
 
       // Clip radius (matches arch inner hole)
       const clipTargetS2 = isMobile
@@ -534,9 +578,11 @@ export default function Hero() {
         : window.innerWidth * 0.497;
       const clipRadiusS2 = s2ease * clipTargetS2;
 
+
       // ── STAGE 3: 0.60 → 1.0 ──────────────────────────────────────────
       const s3 = mapRange(p, 0.6, 1.0);
       const s3ease = easeInOut1(s3);
+
 
       const archTargetS3 = isMobile ? 6.0 : 3.0;
       // Stage 3 arch adds on top of stage 2 final value
@@ -544,12 +590,14 @@ export default function Hero() {
         (s2 >= 1 ? archTargetS2 : archScaleS2) +
         s3ease * (archTargetS3 - archTargetS2);
 
+
       const clipTargetS3 = isMobile
         ? window.innerWidth * 2.5
         : window.innerWidth * 1.5;
       const clipFinalRadius =
         (s2 >= 1 ? clipTargetS2 : clipRadiusS2) +
         s3ease * (clipTargetS3 - clipTargetS2);
+
 
       // Apply arch transform (only if changed to avoid thrashing)
       const newArchScale = p <= 0.3 ? 0 : archFinalScale;
@@ -563,6 +611,7 @@ export default function Hero() {
         archWrapRef.current.style.webkitTransform = `translateX(-50%) scale(${newArchScale}) translateZ(0)`;
       }
 
+
       // Apply clip-path
       const finalRadius = p <= 0.3 ? 0 : clipFinalRadius;
       if (bgImgRef.current) {
@@ -571,11 +620,13 @@ export default function Hero() {
         bgImgRef.current.style.webkitClipPath = `circle(${val} at 50% 100%)`;
       }
 
+
       // Arch frame fade (0.82 → 0.97)
       if (archFrameRef.current) {
         const fadeP = mapRange(p, 0.82, 0.97);
         archFrameRef.current.style.opacity = `${1 - easeIn2(fadeP)}`;
       }
+
 
       // ── STAGE 4: 0.82 → 1.0 — overlay fade in ────────────────────────
       if (p >= 0.82 && !overlayShown) {
@@ -605,29 +656,37 @@ export default function Hero() {
       }
     };
 
+
     // The RAF loop — runs every frame, reads pageYOffset directly
     const tick = () => {
       const { start, total } = getScrollRange();
       const scrollY = window.pageYOffset;
 
+
       // Map raw scroll to 0→1
       targetProgress = Math.max(0, Math.min(1, (scrollY - start) / total));
 
+
       // Lerp toward target (smooth lag = scrub feel)
       currentProgress = lerp(currentProgress, targetProgress, LERP);
+
 
       // Only apply if meaningfully different (perf: skip micro updates)
       if (Math.abs(currentProgress - targetProgress) < 0.0001) {
         currentProgress = targetProgress; // snap when close enough
       }
 
+
       applyProgress(currentProgress);
+
 
       rafId = requestAnimationFrame(tick);
     };
 
+
     // Start the loop
     rafId = requestAnimationFrame(tick);
+
 
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
@@ -635,6 +694,7 @@ export default function Hero() {
         window.removeEventListener("loaderExit", playEntranceFn);
     };
   }, []);
+
 
   return (
     <>
@@ -715,6 +775,7 @@ export default function Hero() {
         }
       `}</style>
 
+
       <section
         ref={containerRef}
         className="relative h-[500vh] w-full"
@@ -754,6 +815,7 @@ export default function Hero() {
                   />
                 </div>
 
+
                 {/* ── z-[1] Hero Text ── */}
                 <div
                   ref={heroTextRef}
@@ -776,6 +838,7 @@ export default function Hero() {
                   </p>
                 </div>
 
+
                 {/* ── z-[3] Left Cloud ── */}
                 <div
                   ref={cloudLeftRef}
@@ -796,6 +859,7 @@ export default function Hero() {
                     className="object-contain object-center"
                   />
                 </div>
+
 
                 {/* ── z-[3] Right Cloud ── */}
                 <div
@@ -818,6 +882,7 @@ export default function Hero() {
                   />
                 </div>
 
+
                 {/* ── z-[2] Buildings ── */}
                 <div
                   ref={buildingRef}
@@ -835,6 +900,7 @@ export default function Hero() {
                     loading="eager"
                   />
                 </div>
+
 
                 {/* ── z-[5] Reveal image (clip-path animated) ── */}
                 <div
@@ -859,6 +925,7 @@ export default function Hero() {
                     className="object-cover object-center"
                   />
                 </div>
+
 
                 {/* ── z-[8] Overlay: Heading + Contact Form ── */}
                 <div
@@ -916,6 +983,7 @@ export default function Hero() {
                             </div>
                           </div>
                         </div>
+
 
                         {/* RIGHT: Contact Form */}
                         <div
@@ -1104,6 +1172,7 @@ export default function Hero() {
                   </div>
                 </div>
 
+
                 {/* ── z-[6] Arch Wrapper ── */}
                 {/* Centered at bottom natively via percent transform-origin */}
                 <div
@@ -1164,3 +1233,6 @@ export default function Hero() {
     </>
   );
 }
+
+
+

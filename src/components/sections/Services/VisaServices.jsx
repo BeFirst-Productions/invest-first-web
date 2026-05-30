@@ -169,8 +169,8 @@ export default function VisaServices() {
               Your Global Ambitions
             </>
           }
-          delay={80}
-          duration={1.25}
+          delay={30}
+          duration={0.8}
           ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
