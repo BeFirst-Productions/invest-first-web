@@ -11,7 +11,7 @@ import { governmentApprovalsData } from '@/data/GovernmentApprovalsData';
 import { getSeoMetadata } from '@/services/seoService';
 
 export async function generateMetadata() {
-    const seo = await getSeoMetadata('/services/government-approvals');
+    const seo = await getSeoMetadata('/services/government-approvals-in-uae');
     return seo;
 }
 

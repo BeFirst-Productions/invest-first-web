@@ -5,6 +5,7 @@
    ───────────────────────────────────────────────────────────────────── */
 
 export const governmentApprovalsData = {
+    slug: 'government-approvals-in-uae',
     bannerTitle: "Government Approvals in UAE",
     bannerDescription: "Fast, reliable, and hassle-free government approvals to start or run your business in the United Arab Emirates.",
     seo: {
