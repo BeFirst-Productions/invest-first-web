@@ -6,7 +6,7 @@ export const freezoneDetailedData = {
         isEmirate: true,
         bannerTitle: "Dubai Free Zone Company Formation",
         bannerDescription: "Expert assistance in establishing your company in Dubai's premier free zones with 100% ownership and full tax benefits.",
-        bannerImage:"images/freezone/banners/dubai-international-city-banner.jpg",
+        bannerImage: "images/freezone/banners/dubai-international-city-banner.jpg",
         intro: {
             image: "/images/freezone/freezone.png",
             titleHighlight: "Dubai Free Zones",
@@ -106,7 +106,92 @@ export const freezoneDetailedData = {
         slug: 'abu-dhabi',
         isEmirate: true,
         bannerTitle: "Abu Dhabi Free Zone Company Formation",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
+        bannerDescription: "Establish your business in the capital's premier economic zones. Enjoy state-of-the-art logistics and access to key industries.",
+        intro: {
+            image: "/images/freezone/freezone.png",
+            titleHighlight: "Abu Dhabi Free Zones",
+            titleRest: "Overview",
+            description1: "Abu Dhabi's free zones offer strategic hubs for technology, finance, heavy industries, media, and green energy. Being the capital of the UAE, setting up here places your business close to federal government entities, key industry leaders, and sovereign wealth funds.",
+            description2: "From the financial hub of ADGM to the sustainability ecosystem of Masdar City, Abu Dhabi free zones are built to foster long-term growth and innovation."
+        },
+        keyFeatures: [
+            "100% foreign ownership",
+            "100% exemption from corporate and personal income taxes",
+            "Proximity to government ministries and capital markets",
+            "Strategic locations near deep-water ports and airports",
+            "Advanced industrial and manufacturing infrastructure"
+        ],
+        setupProcess: {
+            titleHighlight: "Setup Steps in",
+            titleRest: "Abu Dhabi Free Zones",
+            description: "Establishing a business in the capital follows a structured framework designed for security and speed:",
+            steps: [
+                {
+                    id: 1,
+                    title: "Identify Free Zone",
+                    description: "Select from Masdar City, ADGM, or Abu Dhabi Airport Free Zone based on your business type."
+                },
+                {
+                    id: 2,
+                    title: "Submit Initial Application",
+                    description: "Prepare and submit required application forms, passport copies, and initial business outlines."
+                },
+                {
+                    id: 3,
+                    title: "Legal Structure & MOA",
+                    description: "Draft and sign the Memorandum of Association (MOA) and other legal documents."
+                },
+                {
+                    id: 4,
+                    title: "License Issuance",
+                    description: "Complete lease agreement for office space and receive your active trade license."
+                }
+            ]
+        },
+        licenseTypes: [
+            {
+                id: 1,
+                title: "Financial License",
+                description: "Available in ADGM for banks, wealth management, asset management, and fintech firms.",
+                image: "/images/freezone/service-license.png"
+            },
+            {
+                id: 2,
+                title: "Service & Consultancy License",
+                description: "For professionals, corporate service providers, and technology consultants.",
+                image: "/images/freezone/service-license.png"
+            },
+            {
+                id: 3,
+                title: "Trading License",
+                description: "For import, export, and distribution of physical goods.",
+                image: "/images/freezone/trading-license.png"
+            }
+        ],
+        whyChoose: {
+            titleHighlight: "Why Choose",
+            titleText: "Abu Dhabi Free Zones?",
+            descriptions: [
+                "Abu Dhabi offers unmatched stability, premium infrastructure, and direct access to state-sponsored projects and capital. It is ideal for larger corporate entities, technology pioneers, and industrial businesses."
+            ]
+        },
+        faqs: {
+            title: "Abu Dhabi Free Zone FAQ",
+            faqItems: [
+                {
+                    question: "What is the difference between ADGM and other free zones?",
+                    answer: "ADGM is a financial free zone operating under its own English Common Law court system, making it unique for financial structures, holdings, and asset management."
+                }
+            ]
+        }
+    },
+
+    'abudhabi-freezone-company-formation': {
+        slug: 'abudhabi-freezone-company-formation',
+        isEmirate: true,
+        bannerTitle: "Abu Dhabi Free Zone Company Formation",
+        bannerImage: "images/freezone/banners/",
         bannerDescription: "Establish your business in the capital's premier economic zones. Enjoy state-of-the-art logistics and access to key industries.",
         intro: {
             image: "/images/freezone/freezone.png",
@@ -191,7 +276,7 @@ export const freezoneDetailedData = {
         slug: 'sharjah',
         isEmirate: true,
         bannerTitle: "Sharjah Free Zone Company Formation",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Cost-effective, business-friendly setups in Sharjah's industrial, publishing, and creative free zones.",
         intro: {
@@ -277,7 +362,7 @@ export const freezoneDetailedData = {
         slug: 'ajman',
         isEmirate: false,
         bannerTitle: "Ajman Free Zone Company Setup",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Establish your company in Ajman Free Zone (AFZ). Enjoy low costs, rapid setup, and strategic maritime location.",
         intro: {
@@ -362,7 +447,7 @@ export const freezoneDetailedData = {
         slug: 'umm-al-quwain',
         isEmirate: false,
         bannerTitle: "Umm Al Quwain Free Zone Company Setup",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Setup your business in UAQ Free Trade Zone (UAQFTZ). The ideal choice for micro-businesses and import-export operations.",
         intro: {
@@ -441,7 +526,7 @@ export const freezoneDetailedData = {
         slug: 'ras-al-khaimah',
         isEmirate: false,
         bannerTitle: "Ras Al Khaimah Company Formation",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Setup in Ras Al Khaimah Economic Zone (RAKEZ). A premier destination for industrial, trading, and service businesses.",
         intro: {
@@ -527,7 +612,7 @@ export const freezoneDetailedData = {
         slug: 'meydan-freezone-setup-in-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "Meydan Free Zone Setup in Dubai",
-        bannerImage:"images/freezone/banners/meydan-freezone-banner.jpg",
+        bannerImage: "images/freezone/banners/meydan-freezone-banner.jpg",
 
         bannerDescription: "Form your business in Meydan Free Zone. Located inside Meydan Hotel, offering premium setups, e-commerce features, and a prestigious address.",
         intro: {
@@ -599,7 +684,7 @@ export const freezoneDetailedData = {
         slug: 'ifza-freezone-company-setup-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "IFZA Free Zone Company Setup",
-        bannerImage:"images/freezone/banners/ifza-freezone-banner.jpg",
+        bannerImage: "images/freezone/banners/ifza-freezone-banner.jpg",
 
         bannerDescription: "Form your business in IFZA (International Free Zone Authority), the most flexible and cost-effective free zone in Dubai.",
         intro: {
@@ -902,7 +987,7 @@ export function getFreezoneData(slug) {
     // Guess parent emirate from slug or default to Dubai
     let parentEmirate = 'Dubai';
     let shortName = formattedTitle;
-    
+
     if (slug.includes('sharjah') || slug.includes('shams') || slug.includes('spcfz')) {
         parentEmirate = 'Sharjah';
     } else if (slug.includes('abu-dhabi') || slug.includes('masdar') || slug.includes('adgm')) {

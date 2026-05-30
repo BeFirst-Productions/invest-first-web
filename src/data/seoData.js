@@ -466,5 +466,47 @@ export const seoData = {
          url: "https://investfirst.ae/freezone/dubai/dubai-healthcare-city-company-setup",
          type: "website",
      },
+  },
+  '/freezone/abudhabi-freezone-company-formation': {
+     title: "Abu Dhabi Free Zone Company Formation | Business Setup Services UAE",
+     description: "Start your business with Abu Dhabi Free Zone Company Formation services . Enjoy 100% foreign ownership, tax benefits, streamlined licensing and business setup in the UAE.",
+     keywords: "Abu Dhabi Free Zone Company Formation, Abu Dhabi Free Zone Business Setup, Abu Dhabi Company Registration, Free Zone License Abu Dhabi, Business Setup Abu Dhabi, UAE Free Zone Company Formation, Abu Dhabi Free Zone Registration, Company Formation UAE, Abu Dhabi Trade License, Free Zone Business Setup UAE, Start Business in Abu Dhabi Free Zone, Abu Dhabi Business Consultants, UAE Company Incorporation, 100% Foreign Ownership UAE, Abu Dhabi Free Zone Consultancy, Business Registration Abu Dhabi, Free Zone Company Setup Abu Dhabi, UAE Business Setup Services, Abu Dhabi Corporate Services, Abu Dhabi Free Zone License.",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/abudhabi-freezone-company-formation",
+     },
+     openGraph: {
+         title: "Abu Dhabi Free Zone Company Formation | Business Setup Services UAE",
+         description: "Start your business with Abu Dhabi Free Zone Company Formation services . Enjoy 100% foreign ownership, tax benefits, streamlined licensing and business setup in the UAE.",
+         url: "https://investfirst.ae/freezone/abudhabi-freezone-company-formation",
+         type: "website",
+     },
+  },
+  '/freezone/abu-dhabi/masdar-city-company-setup-in-abudhabi': {
+     title: "Masdar City Company Setup in Abu Dhabi | Free Zone Business Formation",
+     description: "Set up your company in Masdar City, Abu Dhabi with expert business formation services. Enjoy 100% foreign ownership, cost-effective licensing, company registration in a leading UAE free zone.",
+     keywords: "Masdar City company setup, Masdar City business setup, Abu Dhabi free zone company formation, Masdar City license, company registration Masdar City, Abu Dhabi business setup, free zone company formation UAE, Masdar City free zone, business license Abu Dhabi, Masdar City consultancy,Business setup in dubai, Company Formation UAE, Company formation in Dubai, Business in Dubai, Freezone Company setup in UAE,",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/abu-dhabi/masdar-city-company-setup-in-abudhabi",
+     },
+     openGraph: {
+         title: "Masdar City Company Setup in Abu Dhabi | Free Zone Business Formation",
+         description: "Set up your company in Masdar City, Abu Dhabi with expert business formation services. Enjoy 100% foreign ownership, cost-effective licensing, company registration in a leading UAE free zone.",
+         url: "https://investfirst.ae/freezone/abu-dhabi/masdar-city-company-setup-in-abudhabi",
+         type: "website",
+     },
+  },
+  '/freezone/abu-dhabi/abudhabi-airport-freezone-setup': {
+     title: "Abu Dhabi Airport Free Zone Setup | ADAFZ Company Formation UAE",
+     description: "Establish your business with Abu Dhabi Airport Free Zone Setup services. Benefit from 100% foreign ownership, tax advantages, strategic airport connectivity, and fast company formation in ADAFZ, Abu Dhabi.",
+     keywords: "Abu Dhabi Airport Free Zone Setup, ADAFZ Company Formation, Abu Dhabi Airport Free Zone Company Setup, ADAFZ Business Setup, ADAFZ Company Registration, Abu Dhabi Free Zone License, Business Setup in ADAFZ, Abu Dhabi Airport Business Setup, UAE Free Zone Company Formation, ADAFZ Trade License, Company Registration Abu Dhabi Airport Free Zone, Start Business in ADAFZ, Abu Dhabi Airport Free Zone License, UAE Business Setup Services, 100% Foreign Ownership UAE, Abu Dhabi Free Zone Consultancy, Airport Free Zone Company Formation, ADAFZ Incorporation Services, Abu Dhabi Business Registration, ADAFZ Corporate Services.",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/abu-dhabi/abudhabi-airport-freezone-setup",
+     },
+     openGraph: {
+         title: "Abu Dhabi Airport Free Zone Setup | ADAFZ Company Formation UAE",
+         description: "Establish your business with Abu Dhabi Airport Free Zone Setup services. Benefit from 100% foreign ownership, tax advantages, strategic airport connectivity, and fast company formation in ADAFZ, Abu Dhabi.",
+         url: "https://investfirst.ae/freezone/abu-dhabi/abudhabi-airport-freezone-setup",
+         type: "website",
+     },
   }
 };

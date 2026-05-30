@@ -9,21 +9,21 @@ export const companyFormationItems = [
     },
     {
         name: "Free Zones",
-        href: "/dubai-freezone-company-formation",
+        href: "/freezone",
         children: [
             {
                 name: "Dubai",
                 href: "/freezone/dubai",
                 children: [
-                    { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
-                    { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-freezone-company-setup-dubai" },
-                    { name: "DMCC Free Zone", href: "/freezone/dubai/DMCC-company-setup-in-dubai" },
-                    { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jafza-company-formation-dubai" },
-                    { name: "DDA Free Zones", href: "/freezone/dubai/DDA-freezone-company-setup-in-dubai" },
+                    { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-free-zone" },
+                    { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-free-zone" },
+                    { name: "DMCC Free Zone", href: "/freezone/dubai/dmcc-free-zone" },
+                    { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jebel-ali-jafza" },
+                    { name: "DDA Free Zones", href: "/freezone/dubai/dda-free-zones" },
                     { name: "Dubai Airport (DAFZA)", href: "/freezone/dubai/dubai-airport-dafza" },
-                    { name: "DIFC", href: "/freezone/dubai/DIFC-setup-in-dubai" },
-                    { name: "Dubai South", href: "/freezone/dubai/dubai-south-setup-in-dubai" },
-                    { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city-company-setup" },
+                    { name: "DIFC", href: "/freezone/dubai/difc" },
+                    { name: "Dubai South", href: "/freezone/dubai/dubai-south" },
+                    { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city" },
                 ]
             },
             {
@@ -74,47 +74,47 @@ export const navLinks = [
                 name: "PRO Services",
                 href: "/services/pro-services/virtual-pro",
                 children: [
-                    { name: "Virtual PRO", href: "/services/pro-services/virtualpro" },
-                    { name: "Local Sponsorships", href: "/services/pro-services/local-sponsership" },
-                    { name: "License Renewals", href: "/services/pro-services/license-renewal" },
-                    { name: "Visa Renewals", href: "/services/pro-services/visa-renewal-uae" },
-                    { name: "Banking Assistance", href: "/services/pro-services/banking-assistance-uae" },
-                    { name: "Office Solutions", href: "/services/pro-services/office-solutions-uae" },
+                    { name: "Virtual PRO", href: "/services/pro-services/virtual-pro" },
+                    { name: "Local Sponsorships", href: "/services/pro-services/local-sponsorships" },
+                    { name: "License Renewals", href: "/services/pro-services/license-renewals" },
+                    { name: "Visa Renewals", href: "/services/pro-services/visa-renewals" },
+                    { name: "Banking Assistance", href: "/services/pro-services/banking-assistance" },
+                    { name: "Office Solutions", href: "/services/pro-services/office-solutions" },
                 ]
             },
             {
                 name: "Visa Services",
                 href: "/services/visa-services/investor-visa",
                 children: [
-                    { name: "Investor Visa", href: "/services/visa-services/uae-investor-visa" },
-                    { name: "Employment Visa", href: "/services/visa-services/uae-employment-visa" },
-                    { name: "Dependent Visa", href: "/services/visa-services/dependent-visa-uae" },
-                    { name: "Golden Visa", href: "/services/visa-services/uae-golden-visa" },
-                    { name: "Green Visa", href: "/services/visa-services/uae-green-visa" },
-                    { name: "Blue Visa", href: "/services/visa-services/uae-blue-visa" },
-                    { name: "Remote Work Visa", href: "/services/visa-services/uae-remote-work-visa" },
-                    { name: "Tourist/Visit Visa", href: "/services/visa-services/uae-tourist-visa-services" },
+                    { name: "Investor Visa", href: "/services/visa-services/investor-visa" },
+                    { name: "Employment Visa", href: "/services/visa-services/employment-visa" },
+                    { name: "Dependent Visa", href: "/services/visa-services/dependent-visa" },
+                    { name: "Golden Visa", href: "/services/visa-services/golden-visa" },
+                    { name: "Green Visa", href: "/services/visa-services/green-visa" },
+                    { name: "Blue Visa", href: "/services/visa-services/blue-visa" },
+                    { name: "Remote Work Visa", href: "/services/visa-services/remote-work-visa" },
+                    { name: "Tourist/Visit Visa", href: "/services/visa-services/tourist-visit-visa" },
                 ]
             },
-            { name: "Government Approvals", href: "/services/government-approvals-in-uae" },
+            { name: "Government Approvals", href: "/services/government-approvals" },
             {
                 name: "Document Services",
                 href: "/services/document-services/attestation-services",
                 children: [
-                    { name: "Attestation Services", href: "/services/document-services/uae-attestation-services" },
-                    { name: "Legal Translation", href: "/services/document-services/legal-transalation-dubai" },
-                    { name: "Typing Services", href: "/services/document-services/typing-services-uae" },
+                    { name: "Attestation Services", href: "/services/document-services/attestation-services" },
+                    { name: "Legal Translation", href: "/services/document-services/legal-translation" },
+                    { name: "Typing Services", href: "/services/document-services/typing-services" },
                 ]
             },
             {
                 name: "License Services",
                 href: "/services/license-services/professional-license",
                 children: [
-                    { name: "Professional License", href: "/services/license-services/professional-license-in-uae" },
-                    { name: "Commercial License", href: "/services/license-services/commercial-license-in-uae" },
-                    { name: "Industrial License", href: "/services/license-services/industrial-license-in-uae" },
-                    { name: "E-Trader License", href: "/services/license-services/e-trader-license-in-uae" },
-                    { name: "Tourism / Travel License", href: "/services/license-services/travel-license-in-uae" },
+                    { name: "Professional License", href: "/services/license-services/professional-license" },
+                    { name: "Commercial License", href: "/services/license-services/commercial-license" },
+                    { name: "Industrial License", href: "/services/license-services/industrial-license" },
+                    { name: "E-Trader License", href: "/services/license-services/e-trader-license" },
+                    { name: "Tourism / Travel License", href: "/services/license-services/tourism-travel-license" },
                 ]
             },
             {
