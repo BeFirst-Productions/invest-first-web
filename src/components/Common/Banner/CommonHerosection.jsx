@@ -157,7 +157,7 @@ const CommonHeroSection = ({
         <div ref={textBlockRef} className="flex-shrink-0">
 
           {/* Breadcrumb */}
-          <div ref={breadcrumbRef} style={{ opacity: 0 }}>
+          <div className=' pt-0 md:pt-8' ref={breadcrumbRef} style={{ opacity: 0 }}>
             {breadcrumbs.length > 0 && (
               <nav aria-label="Breadcrumb" className="py-3">
                 <ol className="flex flex-wrap items-center gap-1.5 text-[13px] md:text-[14px] font-medium">
