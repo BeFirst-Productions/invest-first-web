@@ -34,7 +34,7 @@ const STATIC_PATHS = [
   '/freezone/dubai/DMCC-company-setup-in-dubai',
   '/freezone/dubai/jafza-company-formation-dubai',
   '/freezone/dubai/DDA-freezone-company-setup-in-dubai',
-  '/freezone/dubai/dubai-airport-dafza',
+  '/freezone/dubai/dafza-company-setup-in-dubai',
   '/freezone/dubai/DIFC-setup-in-dubai',
   '/freezone/dubai/dubai-south-setup-in-dubai',
   '/freezone/dubai/dubai-healthcare-city-company-setup',
