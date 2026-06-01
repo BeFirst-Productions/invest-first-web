@@ -628,10 +628,5 @@ export const documentServicesOverview = {
     description: "We provide professional document services in the UAE, including document clearing, attestation, translation, notarization, and government approvals.",
     services: documentServicesList,
     footerText: "Invest First streamlines the paperwork process, providing accurate translations and fast attestations to keep your personal and professional affairs on track.",
-<<<<<<< HEAD
     ...attestationServices
 };
-=======
-    ...attestationServices // default
-};
->>>>>>> 806df38654a49e972e6a484c558a71fc1e8613dc
