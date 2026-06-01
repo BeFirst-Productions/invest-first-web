@@ -19,9 +19,9 @@ const MainlandPage = () => {
                  <CommonHeroSection
                 highlightedTitle="Mainland"
                 plainTitle=""
-                description="Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim"
+                description="Start your Mainland Business Setup in UAE with expert support, fast approvals, licensing, and complete company formation solutions for growth. "
                 imageUrl="/images/mainland/mainland-hero-banner.jpg"
-                imageAlt="Our team at Meydan Free Zone"
+                imageAlt="Our team at Mainland"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Mainland' },

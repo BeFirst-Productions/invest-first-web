@@ -13,7 +13,7 @@ import FAQAccordion from "@/components/Common/FAQAccordion";
 import WhyChooseSection from "@/components/Common/WhyChoose";
 
 
-const VALID_SLUGS = ["dubai", "abu-dhabi"];
+const VALID_SLUGS = ["mainland-company-formation-in-dubai", "mainland-company-formation-in-abudabhi"];
 
 export async function generateStaticParams() {
   return VALID_SLUGS.map((slug) => ({ slug }));
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const service = mainlandDetailedData[slug];
 
-  if (!service) {
+  if (!service || !service.seo) {
     return {
       title: "Mainland Company Formation | Invest First",
       description:
@@ -31,9 +31,34 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const seo = service.seo;
   return {
-    title: `${service.bannerTitle} | Invest First`,
-    description: `Get your ${service.bannerTitle} in the UAE quickly and easily with Invest First's expert setup services.`,
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    alternates: {
+      canonical: seo.canonical,
+    },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      url: seo.canonical,
+      images: [
+        {
+          url: seo.image,
+          width: 1200,
+          height: 630,
+          alt: seo.title,
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.title,
+      description: seo.description,
+      images: [seo.image],
+    },
   };
 }
 

@@ -16,7 +16,7 @@ const STATIC_PATHS = [
   '/services/pro-services',
   '/investor-visa',
   '/mainland-company-formation-uae',
-  '/mainland/dubai',
+  '/mainland/mainland-company-formation-in-dubai',
   '/mainland/abu-dhabi',
   '/dubai-freezone-company-formation',
   '/freezone/dubai',

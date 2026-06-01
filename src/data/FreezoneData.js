@@ -3,6 +3,13 @@ export const freezoneData = {
     heading: "Explore UAE Freezones across Dubai, Abu Dhabi, and Northern Emirates offering flexible, cost-effective business setup options.",
     leftBgImage: "/images/shapes/left-lines.png",
     rightBgImage: "/images/shapes/right-lines.png",
+    seo: {
+        title: "Free Zone Company Setup in UAE | Dubai Free Zone Business Setup ",
+        description: "Set up your free zone company in UAE with Invest First. Get complete support for company formation, trade license, visa processing, and business registration in Dubai free zones with fast and hassle-free services.",
+        keywords: " free zone company setup UAE, freezone business setup Dubai, Dubai free zone company formation, UAE free zone license, business setup in UAE, company registration Dubai, start business in free zone UAE, Dubai free zone license, UAE company formation services, Invest First UAE, free zone visa services UAE, UAE business consultants, Dubai startup setup, freezone trade license UAE, company incorporation UAE",
+        canonical: "https://investfirst.ae/freezone-company-formation-uae",
+        image: "/images/freezone/freezone-banner.jpg"
+    },
     categories: [
         {
             id: "dubai",

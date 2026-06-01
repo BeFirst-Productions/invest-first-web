@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-const WORDS = ['Start Smart.', 'Grow Fast.', 'Build Your Business'];
+const WORDS = ['Start Smart', 'Grow Fast', 'Build Your Business'];
 
 // Timing constants (fraction of total scroll)
 const WORDS_COUNT  = WORDS.length;

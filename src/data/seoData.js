@@ -232,17 +232,17 @@ export const seoData = {
     title: "Cost Calculator | Invest First",
     description: "Calculate your business setup cost in UAE with Invest First.",
   },
-  '/dubai-freezone-company-formation': {
+  '/freezone-company-formation-uae': {
      title: "Dubai Free Zone Company Formation | Free Zone Business Setup UAE",
      description: "Start your Dubai Free Zone company with expert business setup services. Get 100% foreign ownership, tax benefits, fast licensing, and hassle-free company formation in the UAE.",
      keywords: "Dubai Free Zone Company Formation, Free Zone Company Setup Dubai, Dubai Free Zone Business Setup, UAE Free Zone Company Formation, Company Registration Dubai Free Zone, Free Zone License Dubai, Business Setup in Dubai Free Zone, Dubai Free Zone Registration, UAE Company Formation Services, Free Zone Business License UAE, Start a Business in Dubai Free Zone, Dubai Free Zone Consultancy, Free Zone Company Incorporation Dubai, UAE Business Setup Consultants, Dubai Free Zone Startup, 100% Foreign Ownership Dubai, Dubai Business Registration, UAE Free Zone Setup, Entrepreneur Visa Dubai, Free Zone Trade License Dubai, Cost of Free Zone Company Setup Dubai, Business Setup UAE, Dubai Company Formation, UAE Free Zone Business Registration, Best Free Zones in Dubai",
      alternates: {
-         canonical: "https://investfirst.ae/dubai-freezone-company-formation",
+         canonical: "https://investfirst.ae/freezone-company-formation-uae",
      },
      openGraph: {
          title: "Dubai Free Zone Company Formation | Free Zone Business Setup UAE",
          description: "Start your Dubai Free Zone company with expert business setup services. Get 100% foreign ownership, tax benefits, fast licensing, and hassle-free company formation in the UAE.",
-         url: "https://investfirst.ae/dubai-freezone-company-formation",
+         url: "https://investfirst.ae/freezone-company-formation-uae",
          type: "website",
      },
   },
