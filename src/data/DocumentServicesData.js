@@ -609,15 +609,15 @@ const typingServices = {
 ───────────────────────────────────────────────────────────────────── */
 
 export const documentServicesList = [
-    { id: '01', title: "Typing Services", slug: "typing-services", href: "/services/document-services/typing-services", image: "/images/documentServices/typing-services.png", description: "Professional typing for Emirates ID, Visas, and Labor contracts." },
-    { id: '02', title: "Legal Translation", slug: "legal-translation", href: "/services/document-services/legal-translation", image: "/images/documentServices/legal-translation.png", description: "Certified translations recognized by all UAE ministries." },
-    { id: '03', title: "Attestation Services", slug: "attestation-services", href: "/services/document-services/attestation-services", image: "/images/documentServices/attestation-services.png", description: "Reliable document attestation from MOFA and embassies." },
+    { id: '01', title: "Typing Services", slug: "typing-services-uae", href: "/services/document-services/typing-services-uae", image: "/images/documentServices/typing-services.png", description: "Professional typing for Emirates ID, Visas, and Labor contracts." },
+    { id: '02', title: "Legal Translation", slug: "legal-transalation-dubai", href: "/services/document-services/legal-transalation-dubai", image: "/images/documentServices/legal-translation.png", description: "Certified translations recognized by all UAE ministries." },
+    { id: '03', title: "Attestation Services", slug: "uae-attestation-services", href: "/services/document-services/uae-attestation-services", image: "/images/documentServices/attestation-services.png", description: "Reliable document attestation from MOFA and embassies." },
 ];
 
 export const documentDataMap = {
-    'attestation-services': attestationServices,
-    'legal-translation': legalTranslation,
-    'typing-services': typingServices,
+    'uae-attestation-services': attestationServices,
+    'legal-transalation-dubai': legalTranslation,
+    'typing-services-uae': typingServices,
 };
 
 export const documentServicesOverview = {
@@ -628,5 +628,5 @@ export const documentServicesOverview = {
     description: "We provide professional document services in the UAE, including document clearing, attestation, translation, notarization, and government approvals.",
     services: documentServicesList,
     footerText: "Invest First streamlines the paperwork process, providing accurate translations and fast attestations to keep your personal and professional affairs on track.",
-    ...attestationServices // default
+    ...attestationServices
 };

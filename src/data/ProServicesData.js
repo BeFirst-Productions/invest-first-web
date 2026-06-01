@@ -889,61 +889,69 @@ const officeSolutions = {
 
 /** Quick lookup by slug */
 export const serviceDataMap = {
-  // 'company-formation': companyFormation,
-  "virtual-pro": virtualPRO,
-  "local-sponsorships": localSponsorships,
-  "license-renewals": licenseRenewals,
-  "visa-renewals": visaRenewals,
-  "banking-assistance": bankingAssistance,
-  "office-solutions": officeSolutions,
+  "virtualpro":               virtualPRO,
+  "local-sponsership":        localSponsorships,   // note: typo in canonical is intentional — keep it
+  "license-renewal":          licenseRenewals,
+  "visa-renewal-uae":         visaRenewals,
+  "banking-assistance-uae":   bankingAssistance,
+  "office-solutions-uae":     officeSolutions,
 };
 
 /** Sidebar / navbar listing */
-export const proServicesList = [
-  {
-    id: 1,
-    title: "Virtual PRO",
-    slug: "virtual-pro",
-    href: "/services/pro-services/virtual-pro",
-    image: "/images/proServices/virtual-pro.png",
-  },
-  {
-    id: 2,
-    title: "Local Sponsorships",
-    slug: "local-sponsorships",
-    href: "/services/pro-services/local-sponsorships",
-    image: "/images/proServices/local-sponsorship.png",
-  },
-  {
-    id: 3,
-    title: "License Renewals",
-    slug: "license-renewals",
-    href: "/services/pro-services/license-renewals",
-    image: "/images/proServices/license-renewals.png",
-  },
-  {
-    id: 4,
-    title: "Visa Renewals",
-    slug: "visa-renewals",
-    href: "/services/pro-services/visa-renewals",
-    image: "/images/proServices/visa-renewals.png",
-  },
-  {
-    id: 5,
-    title: "Banking Assistance",
-    slug: "banking-assistance",
-    href: "/services/pro-services/banking-assistance",
-    image: "/images/proServices/banking-assistance.png",
-  },
-  {
-    id: 6,
-    title: "Office Solutions",
-    slug: "office-solutions",
-    href: "/services/pro-services/office-solutions",
-    image: "/images/proServices/office-solutions.png",
-  },
-];
+// export const proServicesList = [
+//   {
+//     id: 1,
+//     title: "Virtual PRO",
+//     slug: "virtual-pro",
+//     href: "/services/pro-services/virtual-pro",
+//     image: "/images/proServices/virtual-pro.png",
+//   },
+//   {
+//     id: 2,
+//     title: "Local Sponsorships",
+//     slug: "local-sponsorships",
+//     href: "/services/pro-services/local-sponsorships",
+//     image: "/images/proServices/local-sponsorship.png",
+//   },
+//   {
+//     id: 3,
+//     title: "License Renewals",
+//     slug: "license-renewals",
+//     href: "/services/pro-services/license-renewals",
+//     image: "/images/proServices/license-renewals.png",
+//   },
+//   {
+//     id: 4,
+//     title: "Visa Renewals",
+//     slug: "visa-renewals",
+//     href: "/services/pro-services/visa-renewals",
+//     image: "/images/proServices/visa-renewals.png",
+//   },
+//   {
+//     id: 5,
+//     title: "Banking Assistance",
+//     slug: "banking-assistance",
+//     href: "/services/pro-services/banking-assistance",
+//     image: "/images/proServices/banking-assistance.png",
+//   },
+//   {
+//     id: 6,
+//     title: "Office Solutions",
+//     slug: "office-solutions",
+//     href: "/services/pro-services/office-solutions",
+//     image: "/images/proServices/office-solutions.png",
+//   },
+// ];
 
+
+export const proServicesList = [
+  { id: 1, title: "Virtual PRO",        slug: "virtualpro",             href: "/services/pro-services/virtualpro",             image: "/images/proServices/virtual-pro.png" },
+  { id: 2, title: "Local Sponsorships", slug: "local-sponsership",      href: "/services/pro-services/local-sponsership",      image: "/images/proServices/local-sponsorship.png" },
+  { id: 3, title: "License Renewals",   slug: "license-renewal",        href: "/services/pro-services/license-renewal",        image: "/images/proServices/license-renewals.png" },
+  { id: 4, title: "Visa Renewals",      slug: "visa-renewal-uae",       href: "/services/pro-services/visa-renewal-uae",       image: "/images/proServices/visa-renewals.png" },
+  { id: 5, title: "Banking Assistance", slug: "banking-assistance-uae", href: "/services/pro-services/banking-assistance-uae", image: "/images/proServices/banking-assistance.png" },
+  { id: 6, title: "Office Solutions",   slug: "office-solutions-uae",   href: "/services/pro-services/office-solutions-uae",   image: "/images/proServices/office-solutions.png" },
+];
 /** Overview data used by the main services page listing section */
 export const proServicesData = {
   title: {

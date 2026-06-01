@@ -980,72 +980,77 @@ const touristVisitVisa = {
     }
 };
 
+
+
+
 export const visaServiceDataMap = {
-    'investor-visa': investorVisa,
-    'golden-visa': goldenVisa,
-    'employment-visa': employmentVisa,
-    'dependent-visa': dependentVisa,
-    'green-visa': greenVisa,
-    'blue-visa': blueVisa,
-    'remote-work-visa': remoteWorkVisa,
-    'tourist-visit-visa': touristVisitVisa,
+    'uae-investor-visa': investorVisa,
+    'uae-golden-visa': goldenVisa,
+    'uae-employment-visa': employmentVisa,
+    'dependent-visa-uae': dependentVisa,
+    'uae-green-visa': greenVisa,
+    'uae-blue-visa': blueVisa,
+    'uae-remote-work-visa': remoteWorkVisa,
+    'uae-tourist-visa-services': touristVisitVisa,
 };
+
+
 
 export const visaServicesList = [
     {
         id: 1,
         title: "Investor Visa",
-        slug: "investor-visa",
-        href: "/services/visa-services/investor-visa",
+        slug: "uae-investor-visa",
+        href: "/services/visa-services/uae-investor-visa",
         image: "/images/visaServices/investor-visa.png"
     },
     {
         id: 2,
         title: "Golden Visa",
-        slug: "golden-visa",
-        href: "/services/visa-services/golden-visa",
+        slug: "uae-golden-visa",
+        href: "/services/visa-services/uae-golden-visa",
         image: "/images/visaServices/golden-visa.png"
     },
     {
         id: 3,
         title: "Employment Visa",
-        slug: "employment-visa",
-        href: "/services/visa-services/employment-visa",
+        slug: "uae-employment-visa",
+        href: "/services/visa-services/uae-employment-visa",
         image: "/images/visaServices/employment-visa.png"
     },
     {
         id: 4,
         title: "Dependent Visa",
-        slug: "dependent-visa",
-        href: "/services/visa-services/dependent-visa",
+        slug: "dependent-visa-uae",
+        href: "/services/visa-services/dependent-visa-uae",
         image: "/images/visaServices/dependent-visa.png"
     },
     {
         id: 5,
         title: "Green Visa",
-        slug: "green-visa",
-        href: "/services/visa-services/green-visa",
+        slug: "uae-green-visa",
+        href: "/services/visa-services/uae-green-visa",
         image: "/images/visaServices/green-visa.png"
     },
     {
         id: 6,
         title: "Blue Visa",
-        slug: "blue-visa",
-        href: "/services/visa-services/blue-visa",
+        slug: "uae-blue-visa",
+        href: "/services/visa-services/uae-blue-visa",
         image: "/images/visaServices/blue-visa.png"
     },
     {
         id: 7,
         title: "Remote Work Visa",
-        slug: "remote-work-visa",
-        href: "/services/visa-services/remote-work-visa",
+        slug: "uae-remote-work-visa",
+        href: "/services/visa-services/uae-remote-work-visa",
         image: "/images/visaServices/remote-work-visa.png"
     },
     {
         id: 8,
         title: "Tourist/Visit Visa",
-        slug: "tourist-visit-visa",
-        href: "/services/visa-services/tourist-visit-visa",
+        slug: "uae-tourist-visa-services",
+        href: "/services/visa-services/uae-tourist-visa-services",
         image: "/images/visaServices/tourist-visa.png"
     },
 ];

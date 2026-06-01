@@ -70,9 +70,9 @@ export const navLinks = [
         name: "Services",
         href: "/services",
         children: [
-            {
+ {
                 name: "PRO Services",
-                href: "/services/pro-services/virtual-pro",
+                href: "/services/pro-services/virtualpro",
                 children: [
                     { name: "Virtual PRO", href: "/services/pro-services/virtualpro" },
                     { name: "Local Sponsorships", href: "/services/pro-services/local-sponsership" },
