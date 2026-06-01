@@ -25,7 +25,7 @@ export const freezoneData = {
                 {
                     id: "d3",
                     title: "Dubai Airport Freezone (DAFZA)",
-                    slug: "dubai-airport-dafza",
+                    slug: "dafza-company-setup-in-dubai",
                     description: "Premier free zone near Dubai International Airport.",
                     image: "/images/freezone/dubai-freezone/dafza.png"
                 },

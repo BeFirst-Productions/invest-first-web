@@ -425,6 +425,20 @@ export const seoData = {
          type: "website",
      },
   },
+  '/freezone/dubai/dafza-company-setup-in-dubai': {
+     title: "DAFZA Company Setup in Dubai | Dubai Airport Freezone Business Formation UAE",
+     description: "Set up your company in the Dubai Airport Freezone (DAFZA) with expert guidance. Enjoy 100% foreign ownership, tax benefits, fast licensing, and a strategic location near Dubai International Airport.",
+     keywords: "DAFZA company setup, Dubai Airport Freezone setup, DAFZA business setup Dubai, DAFZA company formation, DAFZA license Dubai, Business Setup in DAFZA, Dubai Airport Freezone company registration, DAFZA free zone UAE, Company Formation Dubai Airport, DAFZA trade license, start business in DAFZA, Dubai free zone company setup, UAE free zone company formation, 100% foreign ownership UAE, DAFZA corporate services, DAFZA consultancy Dubai, UAE company registration, Dubai Airport Free Zone license, DAFZA incorporation, free zone business setup Dubai",
+     alternates: {
+         canonical: "https://investfirst.ae/freezone/dubai/dafza-company-setup-in-dubai",
+     },
+     openGraph: {
+         title: "DAFZA Company Setup in Dubai | Dubai Airport Freezone Business Formation UAE",
+         description: "Set up your company in the Dubai Airport Freezone (DAFZA) with expert guidance. Enjoy 100% foreign ownership, tax benefits, fast licensing, and a strategic location near Dubai International Airport.",
+         url: "https://investfirst.ae/freezone/dubai/dafza-company-setup-in-dubai",
+         type: "website",
+     },
+  },
   '/freezone/dubai/DIFC-setup-in-dubai': {
      title: "DIFC Setup in Dubai | DIFC Company Formation UAE",
      description: "DIFC Setup in Dubai offers a prestigious business address, 100% foreign ownership, and a world-class financial ecosystem. Get expert assistance with DIFC company formation services in uae",

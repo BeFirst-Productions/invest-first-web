@@ -22,7 +22,7 @@ const VALID_EMIRATES = ['dubai', 'abudhabi-freezone-company-formation', 'abu-dha
 const VALID_SUBZONES = {
     'dubai': [
         'meydan-freezone-setup-in-dubai', 'ifza-freezone-company-setup-dubai', 'DMCC-company-setup-in-dubai', 'jafza-company-formation-dubai',
-        'DDA-freezone-company-setup-in-dubai', 'dubai-airport-dafza', 'DIFC-setup-in-dubai', 'dubai-south-setup-in-dubai', 'dubai-healthcare-city-company-setup'
+        'DDA-freezone-company-setup-in-dubai', 'dafza-company-setup-in-dubai', 'DIFC-setup-in-dubai', 'dubai-south-setup-in-dubai', 'dubai-healthcare-city-company-setup'
     ],
     'abu-dhabi': ['masdar-city-company-setup-in-abudhabi', 'abudhabi-airport-freezone-setup'],
     'abudhabi-freezone-company-formation': [],

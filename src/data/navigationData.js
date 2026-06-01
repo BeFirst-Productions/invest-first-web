@@ -28,7 +28,7 @@ export const companyFormationItems = [
           { name: "DDA Free Zones", href: "/freezone/dubai/dda-free-zones" },
           {
             name: "Dubai Airport (DAFZA)",
-            href: "/freezone/dubai/dubai-airport-dafza",
+            href: "/freezone/dubai/dafza-company-setup-in-dubai",
           },
           { name: "DIFC", href: "/freezone/dubai/difc" },
           { name: "Dubai South", href: "/freezone/dubai/dubai-south" },
@@ -51,7 +51,7 @@ export const companyFormationItems = [
                     { name: "DMCC Free Zone", href: "/freezone/dubai/DMCC-company-setup-in-dubai" },
                     { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jafza-company-formation-dubai" },
                     { name: "DDA Free Zones", href: "/freezone/dubai/DDA-freezone-company-setup-in-dubai" },
-                    { name: "Dubai Airport (DAFZA)", href: "/freezone/dubai/dubai-airport-dafza" },
+                    { name: "Dubai Airport (DAFZA)", href: "/freezone/dubai/dafza-company-setup-in-dubai" },
                     { name: "DIFC", href: "/freezone/dubai/DIFC-setup-in-dubai" },
                     { name: "Dubai South", href: "/freezone/dubai/dubai-south-setup-in-dubai" },
                     { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city-company-setup" },
