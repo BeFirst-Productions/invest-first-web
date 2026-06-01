@@ -1076,7 +1076,7 @@ const touristVisitVisa = {
   },
   seo: {
     title:
-      "UUAE Tourist Visa Services | Dubai Visit Visa Assistance | Invest First",
+      "UAE Tourist Visa Services | Dubai Visit Visa Assistance | Invest First",
     description:
       "We assist UAE tourist visa services  with visit visa applications, documentation, approvals, and travel support for Dubai and across the UAE.",
     keywords:

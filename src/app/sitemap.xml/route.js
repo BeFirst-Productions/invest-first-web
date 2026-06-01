@@ -18,7 +18,7 @@ const STATIC_PATHS = [
   '/mainland-company-formation-uae',
   '/mainland/dubai',
   '/mainland/abu-dhabi',
-  '/dubai-freezone-company-formation',
+  '/freezone-company-formation-uae',
   '/freezone/dubai',
   '/freezone/abudhabi-freezone-company-formation',
   '/freezone/sharjah-freezone-company-formation',

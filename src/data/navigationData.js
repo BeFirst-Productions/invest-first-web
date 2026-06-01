@@ -9,11 +9,11 @@ export const companyFormationItems = [
   },
   {
     name: "Free Zones",
-    href: "/freezone",
+    href: "/freezone-company-formation-uae",
     children: [
       {
         name: "Dubai",
-        href: "/freezone/dubai",
+        href: "/freezone-company-formation-uae",
         children: [
           {
             name: "Meydan Free Zone",
@@ -44,7 +44,7 @@ export const companyFormationItems = [
         children: [
             {
                 name: "Dubai",
-                href: "/dubai-freezone-company-formation",
+                href: "/freezone-company-formation-uae",
                 children: [
                     { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
                     { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-freezone-company-setup-dubai" },
@@ -84,7 +84,7 @@ export const companyFormationItems = [
   },
   {
     name: "Offshore",
-    href: "/offshore",
+    href: "/offshore-company-formation-uae",
   }
 ];
 
@@ -222,27 +222,27 @@ export const navLinks = [
         children: [
           {
             name: "VAT & Corporate Tax Assistance",
-            href: "/services/value-added-services/vat-corporate-tax",
+            href: "/services/value-added-services/vat-corporate-tax-assistence-in-uae",
           },
           {
             name: "Medical Insurance Assistance",
-            href: "/services/value-added-services/medical-insurance",
+            href: "/services/value-added-services/medical-insurence-assistence-in-uae",
           },
           {
             name: "Trademark Registration",
-            href: "/services/value-added-services/trademark-registration",
+            href: "/services/value-added-services/trademark-registration-in-uae",
           },
           {
             name: "Branding and Design Services",
-            href: "/services/value-added-services/branding-design",
+            href: "/services/value-added-services/branding-design-services-in-uae",
           },
           {
             name: "Digital Marketing Services",
-            href: "/services/value-added-services/digital-marketing",
+            href: "/services/value-added-services/digital-marketing-services-in-uae",
           },
           {
             name: "Web Design & Development",
-            href: "/services/value-added-services/web-development",
+            href: "/services/value-added-services/web-developmet-company-in-uae",
           },
         ],
       },

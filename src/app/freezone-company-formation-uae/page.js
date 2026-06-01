@@ -1,5 +1,44 @@
-import { redirect } from 'next/navigation';
+import React from 'react';
+import { freezoneData } from '@/data/FreezoneData';
+import WhyChoose from '@/components/Common/WhyChoose';
+import FAQAccordion from '@/components/Common/FAQAccordion';
+import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
+import { FreezoneCategorySection, FreezoneFeatures, FreezoneLicenseTypes, FreezoneOverview, FreezoneSetupProcess } from '@/components/sections/Freezone';
 
-export default function FreezoneRedirectPage() {
-    redirect('/dubai-freezone-company-formation');
+import { getSeoMetadata } from '@/services/seoService';
+
+export async function generateMetadata() {
+    const seo = await getSeoMetadata('/freezone-company-formation-uae');
+    return seo;
 }
+
+const FreezonePage = () => {
+    return (
+        <main className="">
+            <CommonHeroSection
+                highlightedTitle="Freezone"
+                plainTitle=""
+                description="Launch your Free Zone company in the UAE with 100% foreign ownership, tax exemptions, and full capital repatriation under expert guidance."
+                imageUrl="/images/freezone/freezone-banner.jpg"
+                imageAlt="Our team at Meydan Free Zone"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Freezone', href: '/freezone-company-formation-uae' },
+                ]}
+            />
+            
+            <FreezoneOverview />
+            <FreezoneFeatures />
+            <FreezoneCategorySection />
+            <FreezoneSetupProcess />
+            <FreezoneLicenseTypes />
+            <WhyChoose data={freezoneData.whyChoose} />
+            <FAQAccordion 
+                title={freezoneData.faqs.title} 
+                faqItems={freezoneData.faqs.faqItems} 
+            />
+        </main>
+    );
+};
+
+export default FreezonePage;

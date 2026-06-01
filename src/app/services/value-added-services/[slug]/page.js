@@ -62,12 +62,12 @@ const ValueAddedServiceDetailPage = async ({ params }) => {
     if (!service) notFound();
 
     const bannerImageMap = {
-        'vat-corporate-tax': '/images/valueAddedServices/vat-corporate-banner.png',
-        'medical-insurance': '/images/valueAddedServices/medical-banner.png',
-        'trademark-registration': '/images/valueAddedServices/trademark-banner.png',
-        'branding-design': '/images/valueAddedServices/branding-design-banner.png',
-        'digital-marketing': '/images/valueAddedServices/digital-marketing-banner.png',
-        'web-development': '/images/valueAddedServices/web-design-banner.png',
+        'vat-corporate-tax-assistence-in-uae': '/images/valueAddedServices/vat-corporate-banner.png',
+        'medical-insurence-assistence-in-uae': '/images/valueAddedServices/medical-banner.png',
+        'trademark-registration-in-uae': '/images/valueAddedServices/trademark-banner.png',
+        'branding-design-services-in-uae': '/images/valueAddedServices/branding-design-banner.png',
+        'digital-marketing-services-in-uae': '/images/valueAddedServices/digital-marketing-banner.png',
+        'web-developmet-company-in-uae': '/images/valueAddedServices/web-design-banner.png',
     };
 
     const imageUrl = bannerImageMap[slug] || '/images/valueAddedServices/vat-corporate-banner.png';

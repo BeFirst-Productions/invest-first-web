@@ -75,7 +75,7 @@ export async function generateMetadata({ params }) {
         if (slug[0] === 'ajman') redirect('/freezone/ajman-freezone-company-setup');
         if (slug[0] === 'umm-al-quwain') redirect('/freezone/umm-al-quwain-freezone-company-setup');
         if (slug[0] === 'ras-al-khaimah') redirect('/freezone/ras-al-khaimah-company-formation');
-        if (slug[0] === 'dubai') redirect('/dubai-freezone-company-formation');
+        if (slug[0] === 'dubai') redirect('/freezone-company-formation-uae');
         if (slug[0] === 'abu-dhabi') redirect('/freezone/abudhabi-freezone-company-formation');
     }
     if (slug && slug.length === 2) {
@@ -136,7 +136,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
         if (slug[0] === 'ajman') redirect('/freezone/ajman-freezone-company-setup');
         if (slug[0] === 'umm-al-quwain') redirect('/freezone/umm-al-quwain-freezone-company-setup');
         if (slug[0] === 'ras-al-khaimah') redirect('/freezone/ras-al-khaimah-company-formation');
-        if (slug[0] === 'dubai') redirect('/dubai-freezone-company-formation');
+        if (slug[0] === 'dubai') redirect('/freezone-company-formation-uae');
         if (slug[0] === 'abu-dhabi') redirect('/freezone/abudhabi-freezone-company-formation');
     }
     if (slug && slug.length === 2) {
@@ -190,7 +190,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
                 imageAlt={`Our team at ${pageData.bannerTitle}`}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
-                    { label: "Freezone", href: "/dubai-freezone-company-formation" },
+                    { label: "Freezone", href: "/freezone-company-formation-uae" },
                     ...(isLevel2 && subzoneId !== 'ajman-freezone-company-setup' ? [{ 
                         label: emirateLabel, 
                         href: emirateId === 'sharjah' 
