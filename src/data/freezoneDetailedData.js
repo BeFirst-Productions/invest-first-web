@@ -990,7 +990,7 @@ export function getFreezoneData(slug) {
     } else if (slug.includes('spcfz')) {
         formattedTitle = "Sharjah Publishing City (SPCFZ)";
         parentEmirate = 'Sharjah';
-    } else if (slug.includes('strip')) {
+    } else if (slug.toLowerCase().includes('srtip')) {
         formattedTitle = "SRTIP Free Zone";
         parentEmirate = 'Sharjah';
     } else if (slug.includes('hamriyah')) {

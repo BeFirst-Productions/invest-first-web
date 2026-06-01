@@ -523,17 +523,17 @@ export const seoData = {
          type: "website",
      },
   },
-  '/freezone/sharjah-freezone-company-formation': {
+  '/freezone/sharjah/sharjah-freezone-company-formation': {
     title: "Sharjah Free Zone Company Formation | Business Setup  Sharjah UAE",
     description: "Start your Sharjah Free Zone company formation with expert support. Enjoy 100% foreign ownership, tax benefits, fast licensing, and affordable business setup solutions in Sharjah, UAE.",
     keywords: "Sharjah Free Zone Company Formation, Sharjah Business Setup, Company Formation Sharjah, Free Zone Company Setup UAE, Business Setup in Sharjah, Sharjah Free Zone License, UAE Company Formation, Sharjah Business License, Free Zone Registration Sharjah, Start Business in Sharjah",
     alternates: {
-      canonical: "https://investfirst.ae/freezone/sharjah-freezone-company-formation",
+      canonical: "https://investfirst.ae/freezone/sharjah/sharjah-freezone-company-formation",
     },
     openGraph: {
       title: "Sharjah Free Zone Company Formation | Business Setup  Sharjah UAE",
       description: "Start your Sharjah Free Zone company formation with expert support. Enjoy 100% foreign ownership, tax benefits, fast licensing, and affordable business setup solutions in Sharjah, UAE.",
-      url: "https://investfirst.ae/freezone/sharjah-freezone-company-formation",
+      url: "https://investfirst.ae/freezone/sharjah/sharjah-freezone-company-formation",
       type: "website",
     },
   },
@@ -565,17 +565,17 @@ export const seoData = {
       type: "website",
     },
   },
-  '/freezone/sharjah/strip-freezone-setup-in-dubai': {
+  '/freezone/sharjah/SRTIP-freezone-setup-in-sharjah': {
     title: "Srtip Free Zone Setup in Dubai| SRTIP Company Formation UAE",
     description: "SRTIP Free Zone Setup in Dubai offers 100% foreign ownership, tax benefits, innovation-focused facilities, and fast company formation services.",
     keywords: "SRTIP Free Zone Setup, SRTIP Company Formation, SRTIP Business Setup Sharjah, Sharjah Research Technology and Innovation Park, SRTIP Company Registration, SRTIP Free Zone License, Business Setup in SRTIP, Sharjah Free Zone Company Formation, UAE Company Formation, SRTIP Trade License, SRTIP Consultancy Services, Start Business in SRTIP, Innovation Park Business Setup UAE, Free Zone Business Registration Sharjah, 100% Foreign Ownership UAE, SRTIP Corporate Services, UAE Business Setup Services, SRTIP Incorporation Services, Sharjah Technology Park Setup, SRTIP Business License UAE.Freezone company setup in uae,business setup in dubai, company formation in uae,",
     alternates: {
-      canonical: "https://investfirst.ae/freezone/sharjah/strip-freezone-setup-in-dubai",
+      canonical: "https://investfirst.ae/freezone/sharjah/SRTIP-freezone-setup-in-sharjah",
     },
     openGraph: {
       title: "Srtip Free Zone Setup in Dubai| SRTIP Company Formation UAE",
       description: "SRTIP Free Zone Setup in Dubai offers 100% foreign ownership, tax benefits, innovation-focused facilities, and fast company formation services.",
-      url: "https://investfirst.ae/freezone/sharjah/strip-freezone-setup-in-dubai",
+      url: "https://investfirst.ae/freezone/sharjah/SRTIP-freezone-setup-in-sharjah",
       type: "website",
     },
   },

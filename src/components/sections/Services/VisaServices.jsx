@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { visaServices } from '@/data/serviceData';
 import SectionBadge from '@/components/ui/SectionBadge';
 import SplitText from '@/components/ui/SplitText';
@@ -229,9 +230,13 @@ export default function VisaServices() {
 
                   {/* Content Area */}
                   <div className="p-[16px] md:p-[28px] flex flex-col flex-grow justify-start bg-[#660033]">
-                    <h3 className="text-[15px] md:text-[22px] font-bold text-white mb-[4px] md:mb-[10px] font-sans tracking-tight">
+                    <Link
+                      href={service.href}
+                      onClick={(e) => { if (isDraggingRef.current) e.preventDefault(); }}
+                      className="text-[15px] md:text-[22px] font-bold text-white mb-[4px] md:mb-[10px] font-sans tracking-tight hover:underline underline-offset-2 cursor-pointer"
+                    >
                       {service.title}
-                    </h3>
+                    </Link>
                     <p className="text-[11px] md:text-[14px] text-white/80 leading-[1.5] font-sans font-medium line-clamp-3">
                       {service.description}
                     </p>
