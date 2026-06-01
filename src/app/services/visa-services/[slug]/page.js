@@ -92,7 +92,7 @@ const VisaServiceDetailPage = async ({ params }) => {
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Services', href: '/services' },
-                    { label: 'PRO Services', href: '/services/pro-services' },
+                    { label: 'Visa Services', href: '' },
                     { label: service.bannerTitle }
                 ]}
             />

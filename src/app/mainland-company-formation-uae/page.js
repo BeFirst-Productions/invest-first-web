@@ -4,8 +4,6 @@ import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { MainlandFeatures, MainlandOverview } from '@/components/sections/Mainland';
 import WhyChooseSection from '@/components/Common/WhyChoose';
 import FAQAccordion from '@/components/Common/FAQAccordion';
-
-
 import { getSeoMetadata } from '@/services/seoService';
 
 export async function generateMetadata() {
@@ -16,7 +14,6 @@ export async function generateMetadata() {
 
 const MainlandPage = () => {
     const service = mainlandDetailedData['main-land'];
-
     return (
         <main className="">
                  <CommonHeroSection

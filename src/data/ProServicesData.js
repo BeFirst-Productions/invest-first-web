@@ -104,10 +104,6 @@
 //     }
 // };
 
-
-
-
-
 // ── 2. Virtual PRO ────────────────────────────────────────────────────
 const virtualPRO = {
   slug: "virtual-pro-uae",
@@ -265,7 +261,8 @@ const localSponsorships = {
       "Get trusted local sponsorship services in the UAE with Invest First. We provide reliable UAE local sponsor solutions for mainland company formation and business setup in Dubai and across the UAE.",
     keywords:
       " local sponsorship UAE, UAE local sponsor services, local sponsor Dubai, mainland company sponsor UAE, UAE business sponsorship, Dubai local sponsorship services, UAE mainland business setup, trade license sponsor UAE, company formation Dubai, UAE business setup services, Invest First UAE, Emirati sponsor UAE, local partner Dubai, mainland license UAE, business setup consultants UAE",
-    canonical: "http://investfirst.ae/services/pro-services/local-sponsership-uae",
+    canonical:
+      "http://investfirst.ae/services/pro-services/local-sponsership-uae",
     image: "/assets/images/pro-services/local-sponsorship.png",
   },
   companyFormationTypes: {
@@ -398,7 +395,8 @@ const licenseRenewals = {
       "Renew your  license renewal uae easily with Invest First. Expert support for documentation, approvals, compliance, and business license renewal in Dubai.",
     keywords:
       " license renewal UAE, trade license renewal Dubai, business license renewal UAE, company renewal services Dubai, UAE trade license services, mainland license renewal UAE, free zone license renewal Dubai, business setup services UAE, Dubai company renewal, UAE compliance support, Invest First UAE, PRO services UAE, company formation Dubai, UAE business consultants, renewal services Dubai",
-    canonical: "http://investfirst.ae/services/pro-services/license-renewal-uae",
+    canonical:
+      "http://investfirst.ae/services/pro-services/license-renewal-uae",
     image: "/assets/images/pro-services/license-renewals.png",
   },
   companyFormationTypes: {
@@ -893,12 +891,12 @@ const officeSolutions = {
 
 /** Quick lookup by slug */
 export const serviceDataMap = {
-  "virtual-pro-uae":               virtualPRO,
-  "local-sponsership-uae":        localSponsorships,
-  "license-renewal-uae":          licenseRenewals,
-  "visa-renewal-uae":         visaRenewals,
-  "banking-assistance-uae":   bankingAssistance,
-  "office-solutions-uae":     officeSolutions,
+  "virtual-pro-uae": virtualPRO,
+  "local-sponsership-uae": localSponsorships,
+  "license-renewal-uae": licenseRenewals,
+  "visa-renewal-uae": visaRenewals,
+  "banking-assistance-uae": bankingAssistance,
+  "office-solutions-uae": officeSolutions,
 };
 
 /** Sidebar / navbar listing */
@@ -947,14 +945,49 @@ export const serviceDataMap = {
 //   },
 // ];
 
-
 export const proServicesList = [
-  { id: 1, title: "Virtual PRO",        slug: "virtual-pro-uae",             href: "/services/pro-services/virtual-pro-uae",             image: "/images/proServices/virtual-pro.png" },
-  { id: 2, title: "Local Sponsorships", slug: "local-sponsership-uae",      href: "/services/pro-services/local-sponsership-uae",      image: "/images/proServices/local-sponsorship.png" },
-  { id: 3, title: "License Renewals",   slug: "license-renewal-uae",        href: "/services/pro-services/license-renewal-uae",        image: "/images/proServices/license-renewals.png" },
-  { id: 4, title: "Visa Renewals",      slug: "visa-renewal-uae",       href: "/services/pro-services/visa-renewal-uae",       image: "/images/proServices/visa-renewals.png" },
-  { id: 5, title: "Banking Assistance", slug: "banking-assistance-uae", href: "/services/pro-services/banking-assistance-uae", image: "/images/proServices/banking-assistance.png" },
-  { id: 6, title: "Office Solutions",   slug: "office-solutions-uae",   href: "/services/pro-services/office-solutions-uae",   image: "/images/proServices/office-solutions.png" },
+  {
+    id: 1,
+    title: "Virtual PRO",
+    slug: "virtual-pro-uae",
+    href: "/services/pro-services/virtual-pro-uae",
+    image: "/images/proServices/virtual-pro.png",
+  },
+  {
+    id: 2,
+    title: "Local Sponsorships",
+    slug: "local-sponsership-uae",
+    href: "/services/pro-services/local-sponsership-uae",
+    image: "/images/proServices/local-sponsorship.png",
+  },
+  {
+    id: 3,
+    title: "License Renewals",
+    slug: "license-renewal-uae",
+    href: "/services/pro-services/license-renewal-uae",
+    image: "/images/proServices/license-renewals.png",
+  },
+  {
+    id: 4,
+    title: "Visa Renewals",
+    slug: "visa-renewal-uae",
+    href: "/services/pro-services/visa-renewal-uae",
+    image: "/images/proServices/visa-renewals.png",
+  },
+  {
+    id: 5,
+    title: "Banking Assistance",
+    slug: "banking-assistance-uae",
+    href: "/services/pro-services/banking-assistance-uae",
+    image: "/images/proServices/banking-assistance.png",
+  },
+  {
+    id: 6,
+    title: "Office Solutions",
+    slug: "office-solutions-uae",
+    href: "/services/pro-services/office-solutions-uae",
+    image: "/images/proServices/office-solutions.png",
+  },
 ];
 /** Overview data used by the main services page listing section */
 export const proServicesData = {
