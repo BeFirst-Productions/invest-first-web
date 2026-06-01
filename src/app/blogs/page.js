@@ -2,6 +2,7 @@ import React from 'react';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { blogPosts } from '@/data/blogData';
 import Image from 'next/image';
+import Link from 'next/link';
 import Schedule from '@/components/sections/Schedule';
 
 import { getSeoMetadata } from '@/services/seoService';
@@ -31,7 +32,8 @@ export default function BlogsPage() {
                 <div className="max-w-[1400px] mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[24px] gap-y-[48px] md:gap-y-[64px]">
                         {blogPosts.map((post) => (
-                            <div
+                            <Link
+                                href={`/blogs/${post.slug}`}
                                 key={post.id}
                                 className="group cursor-pointer flex flex-col"
                             >
@@ -67,7 +69,7 @@ export default function BlogsPage() {
                                 <p className="text-[12px] md:text-[14px] text-[#666666] leading-[1.6] font-sans line-clamp-2">
                                     {post.description}
                                 </p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

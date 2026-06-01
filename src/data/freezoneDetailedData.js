@@ -6,7 +6,7 @@ export const freezoneDetailedData = {
         isEmirate: true,
         bannerTitle: "Dubai Free Zone Company Formation",
         bannerDescription: "Expert assistance in establishing your company in Dubai's premier free zones with 100% ownership and full tax benefits.",
-        bannerImage:"images/freezone/banners/dubai-international-city-banner.jpg",
+        bannerImage: "images/freezone/banners/dubai-international-city-banner.jpg",
         intro: {
             image: "/images/freezone/freezone.png",
             titleHighlight: "Dubai Free Zones",
@@ -106,7 +106,92 @@ export const freezoneDetailedData = {
         slug: 'abu-dhabi',
         isEmirate: true,
         bannerTitle: "Abu Dhabi Free Zone Company Formation",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
+        bannerDescription: "Establish your business in the capital's premier economic zones. Enjoy state-of-the-art logistics and access to key industries.",
+        intro: {
+            image: "/images/freezone/freezone.png",
+            titleHighlight: "Abu Dhabi Free Zones",
+            titleRest: "Overview",
+            description1: "Abu Dhabi's free zones offer strategic hubs for technology, finance, heavy industries, media, and green energy. Being the capital of the UAE, setting up here places your business close to federal government entities, key industry leaders, and sovereign wealth funds.",
+            description2: "From the financial hub of ADGM to the sustainability ecosystem of Masdar City, Abu Dhabi free zones are built to foster long-term growth and innovation."
+        },
+        keyFeatures: [
+            "100% foreign ownership",
+            "100% exemption from corporate and personal income taxes",
+            "Proximity to government ministries and capital markets",
+            "Strategic locations near deep-water ports and airports",
+            "Advanced industrial and manufacturing infrastructure"
+        ],
+        setupProcess: {
+            titleHighlight: "Setup Steps in",
+            titleRest: "Abu Dhabi Free Zones",
+            description: "Establishing a business in the capital follows a structured framework designed for security and speed:",
+            steps: [
+                {
+                    id: 1,
+                    title: "Identify Free Zone",
+                    description: "Select from Masdar City, ADGM, or Abu Dhabi Airport Free Zone based on your business type."
+                },
+                {
+                    id: 2,
+                    title: "Submit Initial Application",
+                    description: "Prepare and submit required application forms, passport copies, and initial business outlines."
+                },
+                {
+                    id: 3,
+                    title: "Legal Structure & MOA",
+                    description: "Draft and sign the Memorandum of Association (MOA) and other legal documents."
+                },
+                {
+                    id: 4,
+                    title: "License Issuance",
+                    description: "Complete lease agreement for office space and receive your active trade license."
+                }
+            ]
+        },
+        licenseTypes: [
+            {
+                id: 1,
+                title: "Financial License",
+                description: "Available in ADGM for banks, wealth management, asset management, and fintech firms.",
+                image: "/images/freezone/service-license.png"
+            },
+            {
+                id: 2,
+                title: "Service & Consultancy License",
+                description: "For professionals, corporate service providers, and technology consultants.",
+                image: "/images/freezone/service-license.png"
+            },
+            {
+                id: 3,
+                title: "Trading License",
+                description: "For import, export, and distribution of physical goods.",
+                image: "/images/freezone/trading-license.png"
+            }
+        ],
+        whyChoose: {
+            titleHighlight: "Why Choose",
+            titleText: "Abu Dhabi Free Zones?",
+            descriptions: [
+                "Abu Dhabi offers unmatched stability, premium infrastructure, and direct access to state-sponsored projects and capital. It is ideal for larger corporate entities, technology pioneers, and industrial businesses."
+            ]
+        },
+        faqs: {
+            title: "Abu Dhabi Free Zone FAQ",
+            faqItems: [
+                {
+                    question: "What is the difference between ADGM and other free zones?",
+                    answer: "ADGM is a financial free zone operating under its own English Common Law court system, making it unique for financial structures, holdings, and asset management."
+                }
+            ]
+        }
+    },
+
+    'abudhabi-freezone-company-formation': {
+        slug: 'abudhabi-freezone-company-formation',
+        isEmirate: true,
+        bannerTitle: "Abu Dhabi Free Zone Company Formation",
+        bannerImage: "images/freezone/banners/",
         bannerDescription: "Establish your business in the capital's premier economic zones. Enjoy state-of-the-art logistics and access to key industries.",
         intro: {
             image: "/images/freezone/freezone.png",
@@ -191,7 +276,7 @@ export const freezoneDetailedData = {
         slug: 'sharjah',
         isEmirate: true,
         bannerTitle: "Sharjah Free Zone Company Formation",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Cost-effective, business-friendly setups in Sharjah's industrial, publishing, and creative free zones.",
         intro: {
@@ -277,7 +362,7 @@ export const freezoneDetailedData = {
         slug: 'ajman',
         isEmirate: false,
         bannerTitle: "Ajman Free Zone Company Setup",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Establish your company in Ajman Free Zone (AFZ). Enjoy low costs, rapid setup, and strategic maritime location.",
         intro: {
@@ -362,7 +447,7 @@ export const freezoneDetailedData = {
         slug: 'umm-al-quwain',
         isEmirate: false,
         bannerTitle: "Umm Al Quwain Free Zone Company Setup",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Setup your business in UAQ Free Trade Zone (UAQFTZ). The ideal choice for micro-businesses and import-export operations.",
         intro: {
@@ -441,7 +526,7 @@ export const freezoneDetailedData = {
         slug: 'ras-al-khaimah',
         isEmirate: false,
         bannerTitle: "Ras Al Khaimah Company Formation",
-        bannerImage:"images/freezone/banners/",
+        bannerImage: "images/freezone/banners/",
 
         bannerDescription: "Setup in Ras Al Khaimah Economic Zone (RAKEZ). A premier destination for industrial, trading, and service businesses.",
         intro: {
@@ -523,11 +608,11 @@ export const freezoneDetailedData = {
     },
 
     // === SPECIFIC SUBZONES (Level 2 Detail Pages) ===
-    'meydan-free-zone': {
-        slug: 'meydan-free-zone',
+    'meydan-freezone-setup-in-dubai': {
+        slug: 'meydan-freezone-setup-in-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "Meydan Free Zone Setup in Dubai",
-        bannerImage:"images/freezone/banners/meydan-freezone-banner.jpg",
+        bannerImage: "images/freezone/banners/meydan-freezone-banner.jpg",
 
         bannerDescription: "Form your business in Meydan Free Zone. Located inside Meydan Hotel, offering premium setups, e-commerce features, and a prestigious address.",
         intro: {
@@ -595,11 +680,11 @@ export const freezoneDetailedData = {
         }
     },
 
-    'ifza-free-zone': {
-        slug: 'ifza-free-zone',
+    'ifza-freezone-company-setup-dubai': {
+        slug: 'ifza-freezone-company-setup-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "IFZA Free Zone Company Setup",
-        bannerImage:"images/freezone/banners/ifza-freezone-banner.jpg",
+        bannerImage: "images/freezone/banners/ifza-freezone-banner.jpg",
 
         bannerDescription: "Form your business in IFZA (International Free Zone Authority), the most flexible and cost-effective free zone in Dubai.",
         intro: {
@@ -667,8 +752,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'dmcc-free-zone': {
-        slug: 'dmcc-free-zone',
+    'DMCC-company-setup-in-dubai': {
+        slug: 'DMCC-company-setup-in-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "DMCC Company Setup in Dubai",
         bannerDescription: "Set up in the Dubai Multi Commodities Centre (DMCC), voted the global free zone of the year, located in Jumeirah Lakes Towers (JLT).",
@@ -737,8 +822,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'jebel-ali-jafza': {
-        slug: 'jebel-ali-jafza',
+    'jafza-company-formation-dubai': {
+        slug: 'jafza-company-formation-dubai',
         parentEmirate: 'dubai',
         bannerTitle: "Jebel Ali Free Zone (JAFZA) Company Formation",
         bannerDescription: "Setup your industrial or logistics company in JAFZA, the oldest and largest industrial free zone in the UAE, directly connected to Jebel Ali Port.",
@@ -809,6 +894,78 @@ export const freezoneDetailedData = {
                 "Scalable infrastructure for regional distribution and growth"
             ]
         }
+    },
+
+    'DDA-freezone-company-setup-in-dubai': {
+        slug: 'DDA-freezone-company-setup-in-dubai',
+        parentEmirate: 'dubai',
+        bannerTitle: "DDA Free Zone Company Setup",
+        bannerDescription: "Establish your company in the Dubai Development Authority (DDA) Free Zone, regulating Dubai's premier creative and technology clusters.",
+        intro: {
+            image: "/images/freezone/freezone.png",
+            titleHighlight: "DDA Dubai",
+            titleRest: "Company Formation",
+            description1: "Dubai Development Authority (DDA) regulates and manages the establishment of companies across Dubai's most vibrant and dynamic tech, creative, and service free zones. Formerly known as DTCM/TECOM, DDA covers globally renowned districts including Dubai Internet City, Dubai Media City, Dubai Studio City, Dubai Production City, Dubai Science Park, and Dubai Knowledge Park.",
+            description2: "A company setup under the DDA framework offers top-tier corporate status, access to prime office real estate, and a community of leading global brands, innovators, and creative minds."
+        },
+        keyFeatures: [
+            "100% foreign ownership and full profit repatriation",
+            "Access to specialized clusters (tech, media, design, science, and education)",
+            "Simplified corporate registration and unified licensing",
+            "World-class infrastructure, offices, and co-working facilities",
+            "Zero personal and corporate tax environment"
+        ],
+        setupProcess: {
+            titleHighlight: "Steps to Start at",
+            titleRest: "DDA Dubai",
+            steps: [
+                { id: 1, title: "Select District & License", description: "Choose the appropriate industry-specific cluster and business activity." },
+                { id: 2, title: "Submit Registry Forms", description: "Provide passport copies, proposed trade names, and shareholder details." },
+                { id: 3, title: "Sign & Secure Office", description: "Approve corporate documents and secure a smart-desk or office lease within TECOM districts." },
+                { id: 4, title: "License Issuance", description: "Receive your DDA trade license, corporate registry, and start residency visa processing." }
+            ]
+        },
+        licenseTypes: [
+            { id: 1, title: "Free Zone Limited Liability Company (FZ-LLC)", description: "For establishing a new corporate entity under DDA regulations.", image: "/images/freezone/service-license.png" },
+            { id: 2, title: "Branch Office", description: "Establish a branch of an existing local or foreign parent company.", image: "/images/freezone/trading-license.png" }
+        ],
+        whyChoose: {
+            titleHighlight: "Why Choose",
+            titleText: "DDA Dubai?",
+            descriptions: [
+                "DDA is the ultimate destination for businesses in creative, tech, and knowledge sectors. Regulating Dubai's flagship innovation hubs, it provides a highly professional, globally recognized regulatory environment with world-class facilities."
+            ]
+        },
+        faqs: {
+            title: "DDA Dubai Setup FAQ",
+            faqItems: [
+                { question: "What business zones are under DDA?", answer: "DDA regulates Dubai Internet City, Dubai Media City, Dubai Studio City, Dubai Production City, Dubai Science Park, Dubai Knowledge Park, Dubai International Academic City, Dubai Outsource City, and Dubai Design District (d3)." },
+                { question: "Do DDA companies require a local sponsor?", answer: "No, DDA free zone setup grants 100% foreign ownership to international entrepreneurs and corporate shareholders." }
+            ]
+        },
+        costSection: {
+            titleHighlight: "DDA Dubai",
+            titleRest: "Setup Costs",
+            description: "DDA setup costs depend on the specific cluster selected, license activity group, office workspace lease options, and residency visa allocations. Each district has unique workspace specifications and pricing structures.",
+            cards: [
+                "Registry and license fees are tailored to service, commercial, or creative activities.",
+                "Real estate solutions, from smart desks to dedicated corporate spaces, impact the total cost.",
+                "Visa processing and medical fitness insurance fees apply per residency visa slot requested.",
+                "Government administration and channel portal registrations are part of standard setup fees."
+            ]
+        },
+        docsAndBenefits: {
+            subzoneName: "DDA Dubai",
+            documentsText: "Company setup under DDA requires passport copies of all shareholders, directors, and managers, along with resume/CV copies and a brief description of proposed business activities. A business plan is typically required for creative and media licenses. For branch setups, attested parent company board resolutions, certificate of incorporation, and constitutional documents must be submitted.",
+            benefitsList: [
+                "100% foreign ownership and complete capital repatriation",
+                "Zero corporate and personal tax exemptions",
+                "Prime location across Dubai's most iconic commercial districts",
+                "Unified visa processing and corporate support services",
+                "Access to robust business networking and local talent",
+                "Option for flexible corporate bank account setups"
+            ]
+        }
     }
 };
 
@@ -830,7 +987,7 @@ export function getFreezoneData(slug) {
     // Guess parent emirate from slug or default to Dubai
     let parentEmirate = 'Dubai';
     let shortName = formattedTitle;
-    
+
     if (slug.includes('sharjah') || slug.includes('shams') || slug.includes('spcfz')) {
         parentEmirate = 'Sharjah';
     } else if (slug.includes('abu-dhabi') || slug.includes('masdar') || slug.includes('adgm')) {

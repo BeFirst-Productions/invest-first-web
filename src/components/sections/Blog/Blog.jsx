@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { blogPosts } from '@/data/blogData';
 import SectionBadge from '@/components/ui/SectionBadge';
 import SectionContainer from '@/components/layout/SectionContainer';
@@ -25,6 +26,151 @@ export default function Blog() {
   const scrollRef = useRef(null);
   const rafRef = useRef(0);
   const pausedRef = useRef(false);
+
+  if (blogPosts.length <= 2) {
+    return (
+      <SectionContainer
+        id="blog"
+        className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
+        containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
+      >
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-[24px] mb-[32px] md:mb-[48px] lg:mb-[64px]">
+          <div>
+            <SectionBadge label="Blog & News" className="mb-[16px] md:mb-[20px]" />
+            <SplitText
+              tag="h2"
+              className="font-sans text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#111111] tracking-[-0.03em] max-w-[800px]"
+              text="Expert Insights & Business Tips"
+              delay={30}
+              duration={0.8}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="left"
+            />
+          </div>
+          <ViewMoreButton
+            label="View All"
+            href="/blogs"
+            wrapperClassName="!mt-0 !justify-end"
+          />
+        </div>
+
+        {blogPosts.length === 1 ? (
+          <Link 
+            href={`/blogs/${blogPosts[0].slug}`}
+            className="group block bg-[#FAF9F6] rounded-[24px] overflow-hidden border border-[#F0EFEA] hover:border-[#A2064F]/30 shadow-sm hover:shadow-md transition-all duration-500"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+              <div className="lg:col-span-7 relative w-full h-[260px] md:h-[400px] lg:h-[480px] overflow-hidden">
+                <Image
+                  src={blogPosts[0].image}
+                  alt={blogPosts[0].title}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+              </div>
+
+              <div className="lg:col-span-5 p-[28px] md:p-[40px] lg:p-[48px] flex flex-col justify-between">
+                <div>
+                  <div className="flex flex-wrap items-center gap-[12px] mb-[20px]">
+                    {blogPosts[0].tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-[12px] py-[4.5px] bg-[#A2064F]/10 rounded-full text-[11px] font-bold text-[#A2064F] tracking-wider uppercase font-sans"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    <span className="w-[4px] h-[4px] rounded-full bg-[#CCCCCC]" />
+                    <span className="text-[12px] text-[#666666] font-medium font-sans">
+                      {blogPosts[0].date}
+                    </span>
+                  </div>
+
+                  <h3 className="text-[20px] md:text-[26px] lg:text-[32px] font-bold text-[#111111] leading-[1.25] tracking-tight mb-[16px] font-sans group-hover:text-[#A2064F] transition-colors duration-300">
+                    {blogPosts[0].title}
+                  </h3>
+
+                  <p className="text-[13px] md:text-[15px] text-[#555555] leading-[1.65] mb-[32px] font-sans line-clamp-4">
+                    {blogPosts[0].description}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-[8px] text-[14px] font-bold text-[#A2064F] group-hover:translate-x-2 transition-transform duration-300">
+                  Read Full Article
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] lg:gap-[32px]">
+            {blogPosts.map((post) => (
+              <Link 
+                key={post.id}
+                href={`/blogs/${post.slug}`}
+                className="group flex flex-col bg-[#FAF9F6] rounded-[24px] overflow-hidden border border-[#F0EFEA] hover:border-[#A2064F]/30 shadow-sm hover:shadow-md transition-all duration-500"
+              >
+                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[320px] overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+                </div>
+
+                <div className="p-[24px] md:p-[32px] flex flex-col justify-between flex-grow">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-[12px] mb-[16px]">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-[10px] py-[3.5px] bg-[#A2064F]/10 rounded-full text-[10px] font-bold text-[#A2064F] tracking-wider uppercase font-sans"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      <span className="w-[4px] h-[4px] rounded-full bg-[#CCCCCC]" />
+                      <span className="text-[11px] text-[#666666] font-medium font-sans">
+                        {post.date}
+                      </span>
+                    </div>
+
+                    <h3 className="text-[18px] md:text-[22px] lg:text-[24px] font-bold text-[#111111] leading-[1.3] mb-[12px] font-sans group-hover:text-[#A2064F] transition-colors duration-300 line-clamp-2">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-[13px] text-[#555555] leading-[1.6] mb-[24px] font-sans line-clamp-3">
+                      {post.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-[8px] text-[13px] font-bold text-[#A2064F] group-hover:translate-x-2 transition-transform duration-300">
+                    Read Article
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </SectionContainer>
+    );
+  }
 
   const displayPosts = [...blogPosts, ...blogPosts, ...blogPosts];
 

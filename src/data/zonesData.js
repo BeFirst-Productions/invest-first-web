@@ -11,7 +11,7 @@ export const ZONES = [
     id    : 'freezone',
     label : 'Freezone',
     icon  : '/images/main/freezone-icon.png',
-    href  : '/freezone',
+    href  : '/dubai-freezone-company-formation',
     desc  : 'Launch your freezone company in the UAE with 100% foreign ownership, affordable setup packages, tax benefits, and fast business registration solutions.',
     active: true,
   },
