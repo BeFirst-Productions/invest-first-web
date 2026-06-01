@@ -6,6 +6,7 @@ export const licenses = [
     description:
       "Start your professional business setup in the UAE with complete support for licensing, approvals, and legal documentation. Ideal for consultants, freelancers, and service providers looking for reliable and hassle-free company formation solutions in Dubai and across the UAE.",
     image: "/images/licenses/professional.png",
+    href: "/services/license-services/professional-license-in-uae",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const licenses = [
     description:
       "Set up your trading business in Dubai with a commercial license designed for import, export, retail, and general trading activities. We provide fast company formation, trade license approvals, and complete UAE business setup support for entrepreneurs and investors.",
     image: "/images/licenses/commercial.png",
+    href: "/services/license-services/commercial-license-in-uae",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const licenses = [
     description:
       "Establish your manufacturing and industrial business in the UAE with expert assistance for industrial licensing, approvals, and documentation. We help businesses complete the setup process efficiently with reliable support for factory and production-based company formation.",
     image: "/images/licenses/industrial.png",
+    href: "/services/license-services/industrial-license-in-uae",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const licenses = [
     description:
       "Start your travel and tourism business in Dubai with complete assistance for tourism licenses, approvals, and company registration. We provide professional UAE business setup solutions for travel agencies, tour operators, and tourism-related business activities",
     image: "/images/licenses/tourism.png",
+    href: "/services/license-services/travel-license-in-uae",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const licenses = [
     description:
       "Start your online business in the UAE with an E-Trader License, ideal for freelancers, home-based businesses, social media sellers, and e-commerce entrepreneurs. and grow your digital business with a cost-effective UAE trade license solution. ",
     image: "/images/licenses/freelance.png",
+    href: "/services/license-services/e-trader-license-in-uae",
   },
 ];
 

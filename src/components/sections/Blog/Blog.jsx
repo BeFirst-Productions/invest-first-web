@@ -296,9 +296,11 @@ export default function Blog() {
               </div>
 
               {/* Title */}
-              <h3 className="text-[15px] md:text-[20px] lg:text-[22px] font-bold text-[#111111] leading-[1.3] mb-[6px] md:mb-[10px] font-sans group-hover:text-[#660033] transition-colors line-clamp-2">
-                {post.title}
-              </h3>
+              <Link href={`/blogs/${post.slug}`} className="block">
+                <h3 className="text-[15px] md:text-[20px] lg:text-[22px] font-bold text-[#111111] leading-[1.3] mb-[6px] md:mb-[10px] font-sans group-hover:text-[#660033] transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+              </Link>
 
               {/* Description */}
               <p className="text-[12px] md:text-[14px] text-[#666666] leading-[1.6] font-sans line-clamp-2">

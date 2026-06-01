@@ -2,22 +2,26 @@ export const visaServices = [
   {
     title: 'Investor Visa',
     description: 'UAE Visa solutions end to end for investor professional employees and family with quick and dependable processing support.',
-    image: '/images/services/visa-services.png'
+    image: '/images/services/visa-services.png',
+    href: '/services/visa-services/uae-investor-visa',
   },
   {
     title: 'Employment Visa',
     description: 'Business and Employee friendly employment visa services with hassle free application, renewal and compliance support.',
-    image: '/images/services/business-setup.png'
+    image: '/images/services/business-setup.png',
+    href: '/services/visa-services/uae-employment-visa',
   },
   {
     title: 'Green Visa',
     description: 'Enjoy Abu Dhabi residency and Dubai residence benefits with Green Visa programs specialized visa services created for entrepreneurs freelancers investors, skilled individuals, and IT professionals.',
-    image: '/images/services/pro-services.png'
+    image: '/images/services/pro-services.png',
+    href: '/services/visa-services/uae-green-visa',
   },
   {
     title: 'Blue Visa',
     description: 'Dedicated support for claim services for all the services under obtaining UAE Blue Visa with expert support & approval.',
-    image: '/images/services/trade-license.png'
+    image: '/images/services/trade-license.png',
+    href: '/services/visa-services/uae-blue-visa',
   },
 ];
 

@@ -18,7 +18,7 @@ import { getFreezoneData } from '@/data/freezoneDetailedData';
 import { seoData } from '@/data/seoData';
 import { getSeoMetadata } from '@/services/seoService';
 
-const VALID_EMIRATES = ['dubai', 'abudhabi-freezone-company-formation', 'abu-dhabi', 'sharjah-freezone-company-formation', 'sharjah', 'ajman', 'umm-al-quwain', 'ras-al-khaimah', 'umm-al-quwain-freezone-company-setup', 'ras-al-khaimah-company-formation', 'ajman-freezone-company-setup'];
+const VALID_EMIRATES = ['dubai', 'abudhabi-freezone-company-formation', 'abu-dhabi', 'sharjah', 'ajman', 'umm-al-quwain', 'ras-al-khaimah', 'umm-al-quwain-freezone-company-setup', 'ras-al-khaimah-company-formation', 'ajman-freezone-company-setup'];
 const VALID_SUBZONES = {
     'dubai': [
         'meydan-freezone-setup-in-dubai', 'ifza-freezone-company-setup-dubai', 'DMCC-company-setup-in-dubai', 'jafza-company-formation-dubai',
@@ -26,10 +26,9 @@ const VALID_SUBZONES = {
     ],
     'abu-dhabi': ['masdar-city-company-setup-in-abudhabi', 'abudhabi-airport-freezone-setup'],
     'abudhabi-freezone-company-formation': [],
-    'sharjah-freezone-company-formation': [],
     'sharjah': [
-        'sharjah-media-city-shams-setup-in-sharjah', 'SPCFZ-company-setup-in-sharjah',
-        'strip-freezone-setup-in-dubai', 'hamriyah-freezone-setup-in-dubai'
+        'sharjah-freezone-company-formation', 'sharjah-media-city-shams-setup-in-sharjah', 'SPCFZ-company-setup-in-sharjah',
+        'SRTIP-freezone-setup-in-sharjah', 'hamriyah-freezone-setup-in-dubai'
     ],
     'umm-al-quwain-freezone-company-setup': [],
     'ras-al-khaimah-company-formation': [],
@@ -71,7 +70,7 @@ export async function generateMetadata({ params }) {
     const { slug } = resolvedParams;
 
     if (slug && slug.length === 1) {
-        if (slug[0] === 'sharjah') redirect('/freezone/sharjah-freezone-company-formation');
+        if (slug[0] === 'sharjah') redirect('/freezone/sharjah/sharjah-freezone-company-formation');
         if (slug[0] === 'ajman') redirect('/freezone/ajman-freezone-company-setup');
         if (slug[0] === 'umm-al-quwain') redirect('/freezone/umm-al-quwain-freezone-company-setup');
         if (slug[0] === 'ras-al-khaimah') redirect('/freezone/ras-al-khaimah-company-formation');
@@ -84,7 +83,7 @@ export async function generateMetadata({ params }) {
         if (emirate === 'sharjah') {
             if (sub === 'sharjah-media-city-shams') redirect('/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah');
             if (sub === 'sharjah-publishing-city-spcfz') redirect('/freezone/sharjah/SPCFZ-company-setup-in-sharjah');
-            if (sub === 'srtip-free-zone') redirect('/freezone/sharjah/strip-freezone-setup-in-dubai');
+            if (sub === 'srtip-free-zone') redirect('/freezone/sharjah/SRTIP-freezone-setup-in-sharjah');
             if (sub === 'hamriyah-free-zone') redirect('/freezone/sharjah/hamriyah-freezone-setup-in-dubai');
             if (sub === 'ajman-freezone-company-setup') redirect('/freezone/ajman-freezone-company-setup');
         }
@@ -132,7 +131,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
     const { slug } = resolvedParams;
 
     if (slug && slug.length === 1) {
-        if (slug[0] === 'sharjah') redirect('/freezone/sharjah-freezone-company-formation');
+        if (slug[0] === 'sharjah') redirect('/freezone/sharjah/sharjah-freezone-company-formation');
         if (slug[0] === 'ajman') redirect('/freezone/ajman-freezone-company-setup');
         if (slug[0] === 'umm-al-quwain') redirect('/freezone/umm-al-quwain-freezone-company-setup');
         if (slug[0] === 'ras-al-khaimah') redirect('/freezone/ras-al-khaimah-company-formation');
@@ -145,7 +144,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
         if (emirate === 'sharjah') {
             if (sub === 'sharjah-media-city-shams') redirect('/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah');
             if (sub === 'sharjah-publishing-city-spcfz') redirect('/freezone/sharjah/SPCFZ-company-setup-in-sharjah');
-            if (sub === 'srtip-free-zone') redirect('/freezone/sharjah/strip-freezone-setup-in-dubai');
+            if (sub === 'srtip-free-zone') redirect('/freezone/sharjah/SRTIP-freezone-setup-in-sharjah');
             if (sub === 'hamriyah-free-zone') redirect('/freezone/sharjah/hamriyah-freezone-setup-in-dubai');
             if (sub === 'ajman-freezone-company-setup') redirect('/freezone/ajman-freezone-company-setup');
         }
@@ -194,7 +193,7 @@ const FreezoneLocationDetailPage = async ({ params }) => {
                     ...(isLevel2 && subzoneId !== 'ajman-freezone-company-setup' ? [{ 
                         label: emirateLabel, 
                         href: emirateId === 'sharjah' 
-                            ? '/freezone/sharjah-freezone-company-formation' 
+                            ? '/freezone/sharjah/sharjah-freezone-company-formation' 
                             : emirateId === 'abu-dhabi' 
                                 ? '/freezone/abudhabi-freezone-company-formation' 
                                 : `/freezone/${emirateId}` 

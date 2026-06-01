@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import SectionBadge from '@/components/ui/SectionBadge';
 import SectionContainer from '@/components/layout/SectionContainer';
 import { ArrowUpRight } from 'lucide-react';
@@ -239,7 +240,10 @@ export default function LicenseCategory() {
                         {license.description}
                       </p>
 
-                      <button className="group flex items-center gap-[10px] md:gap-[16px] w-fit transition-all duration-300 flex-shrink-0">
+                      <Link
+                        href={license.href}
+                        className="group flex items-center gap-[10px] md:gap-[16px] w-fit transition-all duration-300 flex-shrink-0"
+                      >
                         <span
                           className="font-sans font-bold text-white tracking-tight"
                           style={{ fontSize: 'clamp(13px, 1.5vw, 18px)' }}
@@ -263,7 +267,7 @@ export default function LicenseCategory() {
                             }}
                           />
                         </div>
-                      </button>
+                      </Link>
                     </div>
 
                     {/* Right: Image */}

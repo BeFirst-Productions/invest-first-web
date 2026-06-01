@@ -67,11 +67,11 @@ export const companyFormationItems = [
             },
             {
                 name: "Sharjah",
-                href: "/freezone/sharjah-freezone-company-formation",
+                href: "/freezone/sharjah/sharjah-freezone-company-formation",
                 children: [
                     { name: "Sharjah Media City (SHAMS)", href: "/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah" },
                     { name: "Sharjah Publishing City (SPCFZ)", href: "/freezone/sharjah/SPCFZ-company-setup-in-sharjah" },
-                    { name: "SRTIP Free Zone", href: "/freezone/sharjah/strip-freezone-setup-in-dubai" },
+                    { name: "SRTIP Free Zone", href: "/freezone/sharjah/SRTIP-freezone-setup-in-sharjah" },
                     { name: "Hamriyah Free Zone", href: "/freezone/sharjah/hamriyah-freezone-setup-in-dubai" },
                 ]
             },
