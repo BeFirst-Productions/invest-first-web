@@ -42,44 +42,50 @@ export const companyFormationItems = [
         name: "Abu Dhabi",
         href: "/freezone/abu-dhabi",
         children: [
-          { name: "Masdar City", href: "/freezone/abu-dhabi/masdar-city" },
-          {
-            name: "Abu Dhabi Airport Free Zone",
-            href: "/freezone/abu-dhabi/abu-dhabi-airport-free-zone",
-          },
-        ],
-      },
-      {
-        name: "Sharjah",
-        href: "/freezone/sharjah",
-        children: [
-          {
-            name: "Sharjah Media City (SHAMS)",
-            href: "/freezone/sharjah/sharjah-media-city-shams",
-          },
-          {
-            name: "Sharjah Publishing City (SPCFZ)",
-            href: "/freezone/sharjah/sharjah-publishing-city-spcfz",
-          },
-          {
-            name: "SRTIP Free Zone",
-            href: "/freezone/sharjah/srtip-free-zone",
-          },
-          {
-            name: "Hamriyah Free Zone",
-            href: "/freezone/sharjah/hamriyah-free-zone",
-          },
-        ],
-      },
-      { name: "Ajman", href: "/freezone/ajman" },
-      { name: "Umm Al Quwain", href: "/freezone/umm-al-quwain" },
-      { name: "Ras Al Khaimah", href: "/freezone/ras-al-khaimah" },
-    ],
+            {
+                name: "Dubai",
+                href: "/dubai-freezone-company-formation",
+                children: [
+                    { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
+                    { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-freezone-company-setup-dubai" },
+                    { name: "DMCC Free Zone", href: "/freezone/dubai/DMCC-company-setup-in-dubai" },
+                    { name: "Jebel Ali (JAFZA)", href: "/freezone/dubai/jafza-company-formation-dubai" },
+                    { name: "DDA Free Zones", href: "/freezone/dubai/DDA-freezone-company-setup-in-dubai" },
+                    { name: "Dubai Airport (DAFZA)", href: "/freezone/dubai/dubai-airport-dafza" },
+                    { name: "DIFC", href: "/freezone/dubai/DIFC-setup-in-dubai" },
+                    { name: "Dubai South", href: "/freezone/dubai/dubai-south-setup-in-dubai" },
+                    { name: "Dubai Healthcare City", href: "/freezone/dubai/dubai-healthcare-city-company-setup" },
+                ]
+            },
+            {
+                name: "Abu Dhabi",
+                href: "/freezone/abudhabi-freezone-company-formation",
+                children: [
+                    { name: "Masdar City", href: "/freezone/abu-dhabi/masdar-city-company-setup-in-abudhabi" },
+                    { name: "Abu Dhabi Airport Free Zone", href: "/freezone/abu-dhabi/abudhabi-airport-freezone-setup" },
+                ]
+            },
+            {
+                name: "Sharjah",
+                href: "/freezone/sharjah-freezone-company-formation",
+                children: [
+                    { name: "Sharjah Media City (SHAMS)", href: "/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah" },
+                    { name: "Sharjah Publishing City (SPCFZ)", href: "/freezone/sharjah/SPCFZ-company-setup-in-sharjah" },
+                    { name: "SRTIP Free Zone", href: "/freezone/sharjah/strip-freezone-setup-in-dubai" },
+                    { name: "Hamriyah Free Zone", href: "/freezone/sharjah/hamriyah-freezone-setup-in-dubai" },
+                ]
+            },
+            { name: "Ajman", href: "/freezone/ajman-freezone-company-setup" },
+            { name: "Umm Al Quwain", href: "/freezone/umm-al-quwain-freezone-company-setup" },
+            { name: "Ras Al Khaimah", href: "/freezone/ras-al-khaimah-company-formation" },
+        ]
+      }
+    ]
   },
   {
     name: "Offshore",
     href: "/offshore",
-  },
+  }
 ];
 
 export const navLinks = [

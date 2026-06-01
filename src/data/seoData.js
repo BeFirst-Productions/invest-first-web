@@ -260,22 +260,22 @@ export const seoData = {
         type: "website",
     },
   },
-  '/mainland': {
- title: "Mainland Company Setup in UAE | Business Setup Dubai | Invest First",
+  '/mainland-company-formation-uae': {
+  title: "Mainland Company Setup in UAE | Business Setup Dubai | Invest First",
     description: "Start your mainland company setup in UAE with Invest First. Get expert support for trade license, company registration, visa services, PRO services, and business setup in Dubai and across the UAE.",
     keywords: "mainland company setup UAE, business setup in UAE, company formation Dubai, mainland business setup Dubai, UAE trade license, Dubai company registration, business setup consultants UAE, mainland license UAE, start business in Dubai, Invest First UAE, UAE business setup services, Dubai mainland company formation, UAE PRO services, company incorporation UAE, Dubai business consultants",
     alternates: {
-        canonical: "http://investfirst.ae/mainland",
+        canonical: "https://investfirst.ae/mainland-company-formation-uae",
     },
     openGraph: {
- title: "Mainland Company Setup in UAE | Business Setup Dubai | Invest First",
+  title: "Mainland Company Setup in UAE | Business Setup Dubai | Invest First",
     description: "Start your mainland company setup in UAE with Invest First. Get expert support for trade license, company registration, visa services, PRO services, and business setup in Dubai and across the UAE.",
-        url: "http://investfirst.ae/mainland",
+        url: "https://investfirst.ae/mainland-company-formation-uae",
         type: "website",
     },
   },
   
-  '/services/government-approvals': {
+  '/services/government-approvals-in-uae': {
     title: governmentApprovalsData.seo.title,
     description: governmentApprovalsData.seo.description,
     keywords: governmentApprovalsData.seo.keywords,
@@ -508,5 +508,117 @@ export const seoData = {
          url: "https://investfirst.ae/freezone/abu-dhabi/abudhabi-airport-freezone-setup",
          type: "website",
      },
-  }
+  },
+  '/freezone/sharjah-freezone-company-formation': {
+    title: "Sharjah Free Zone Company Formation | Business Setup  Sharjah UAE",
+    description: "Start your Sharjah Free Zone company formation with expert support. Enjoy 100% foreign ownership, tax benefits, fast licensing, and affordable business setup solutions in Sharjah, UAE.",
+    keywords: "Sharjah Free Zone Company Formation, Sharjah Business Setup, Company Formation Sharjah, Free Zone Company Setup UAE, Business Setup in Sharjah, Sharjah Free Zone License, UAE Company Formation, Sharjah Business License, Free Zone Registration Sharjah, Start Business in Sharjah",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/sharjah-freezone-company-formation",
+    },
+    openGraph: {
+      title: "Sharjah Free Zone Company Formation | Business Setup  Sharjah UAE",
+      description: "Start your Sharjah Free Zone company formation with expert support. Enjoy 100% foreign ownership, tax benefits, fast licensing, and affordable business setup solutions in Sharjah, UAE.",
+      url: "https://investfirst.ae/freezone/sharjah-freezone-company-formation",
+      type: "website",
+    },
+  },
+  '/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah': {
+    title: "Sharjah Media City SHAMS Setup | SHAMS Company Formation UAE",
+    description: "Start your business in Sharjah Media City (SHAMS) with 100% foreign ownership, affordable licenses, tax benefits, and fast company setup services in the UAE.",
+    keywords: "Sharjah Media City SHAMS Setup, SHAMS Company Formation, SHAMS Business Setup Sharjah, SHAMS Company Registration, Sharjah Media City License, Business Setup in SHAMS, SHAMS Free Zone Company Formation, SHAMS Trade License, Sharjah Free Zone Business Setup, UAE Company Formation, SHAMS Consultancy Services, Start Business in SHAMS, Company Registration Sharjah Media City, UAE Business Setup Services, 100% Foreign Ownership UAE, SHAMS Free Zone License, Sharjah Startup Company Formation, SHAMS Corporate Services, Sharjah Media City Business Setup, SHAMS Business License UAE.",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah",
+    },
+    openGraph: {
+      title: "Sharjah Media City SHAMS Setup | SHAMS Company Formation UAE",
+      description: "Start your business in Sharjah Media City (SHAMS) with 100% foreign ownership, affordable licenses, tax benefits, and fast company setup services in the UAE.",
+      url: "https://investfirst.ae/freezone/sharjah/sharjah-media-city-shams-setup-in-sharjah",
+      type: "website",
+    },
+  },
+  '/freezone/sharjah/SPCFZ-company-setup-in-sharjah': {
+    title: "SPCFZ Company Setup in Sharjah | Sharjah Publishing City Free Zone",
+    description: "Start your business in Sharjah Publishing City Free Zone (SPCFZ) with expert company setup services. Benefit from 100% foreign ownership, fast registration cost-effective business solutions.",
+    keywords: "SPCFZ company setup, Sharjah Publishing City setup, SPC Free Zone company formation, Sharjah free zone business setup, SPCFZ license, company registration Sharjah, free zone company formation UAE, business setup SPCFZ, Sharjah Publishing City company registration, UAE free zone business setup",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/sharjah/SPCFZ-company-setup-in-sharjah",
+    },
+    openGraph: {
+      title: "SPCFZ Company Setup in Sharjah | Sharjah Publishing City Free Zone",
+      description: "Start your business in Sharjah Publishing City Free Zone (SPCFZ) with expert company setup services. Benefit from 100% foreign ownership, fast registration cost-effective business solutions.",
+      url: "https://investfirst.ae/freezone/sharjah/SPCFZ-company-setup-in-sharjah",
+      type: "website",
+    },
+  },
+  '/freezone/sharjah/strip-freezone-setup-in-dubai': {
+    title: "Srtip Free Zone Setup in Dubai| SRTIP Company Formation UAE",
+    description: "SRTIP Free Zone Setup in Dubai offers 100% foreign ownership, tax benefits, innovation-focused facilities, and fast company formation services.",
+    keywords: "SRTIP Free Zone Setup, SRTIP Company Formation, SRTIP Business Setup Sharjah, Sharjah Research Technology and Innovation Park, SRTIP Company Registration, SRTIP Free Zone License, Business Setup in SRTIP, Sharjah Free Zone Company Formation, UAE Company Formation, SRTIP Trade License, SRTIP Consultancy Services, Start Business in SRTIP, Innovation Park Business Setup UAE, Free Zone Business Registration Sharjah, 100% Foreign Ownership UAE, SRTIP Corporate Services, UAE Business Setup Services, SRTIP Incorporation Services, Sharjah Technology Park Setup, SRTIP Business License UAE.Freezone company setup in uae,business setup in dubai, company formation in uae,",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/sharjah/strip-freezone-setup-in-dubai",
+    },
+    openGraph: {
+      title: "Srtip Free Zone Setup in Dubai| SRTIP Company Formation UAE",
+      description: "SRTIP Free Zone Setup in Dubai offers 100% foreign ownership, tax benefits, innovation-focused facilities, and fast company formation services.",
+      url: "https://investfirst.ae/freezone/sharjah/strip-freezone-setup-in-dubai",
+      type: "website",
+    },
+  },
+  '/freezone/sharjah/hamriyah-freezone-setup-in-dubai': {
+    title: "Hamriyah Free Zone Setup in Dubai | Hamriyah Company Formation UAE",
+    description: "Hamriyah Free Zone Setup in Dubai  offers 100% foreign ownership, tax benefits, flexible licensing, and fast company formation services in the UAE.",
+    keywords: "Hamriyah Free Zone Setup, Hamriyah Free Zone Company Formation, Hamriyah Business Setup, Hamriyah Company Registration, Hamriyah Free Zone License, Business Setup in Hamriyah Free Zone, UAE Free Zone Company Formation, Hamriyah Trade License, Sharjah Free Zone Business Setup, Hamriyah Consultancy Services, Start Business in Hamriyah Free Zone, UAE Business Registration, 100% Foreign Ownership UAE, Hamriyah Corporate Services, Free Zone Business Setup UAE, Hamriyah Incorporation Services, Sharjah Company Formation, Hamriyah Industrial License, Hamriyah Business License UAE, Hamriyah Free Zone Registration.",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/sharjah/hamriyah-freezone-setup-in-dubai",
+    },
+    openGraph: {
+      title: "Hamriyah Free Zone Setup in Dubai | Hamriyah Company Formation UAE",
+      description: "Hamriyah Free Zone Setup in Dubai  offers 100% foreign ownership, tax benefits, flexible licensing, and fast company formation services in the UAE.",
+      url: "https://investfirst.ae/freezone/sharjah/hamriyah-freezone-setup-in-dubai",
+      type: "website",
+    },
+  },
+  '/freezone/ajman-freezone-company-setup': {
+    title: "Ajman Free Zone Company Setup | Freezone Company Formation UAE",
+    description: "Ajman Free Zone Company Setup offers 100% foreign ownership, affordable packages, fast licensing, flexible offices, and expert UAE support.",
+    keywords: "Ajman Free Zone Company Setup, Ajman Free Zone Company Formation, Ajman Business Setup, Ajman Free Zone License, Company Registration Ajman Free Zone, Business Setup in Ajman Free Zone, UAE Free Zone Company Formation, Ajman Trade License, Start Business in Ajman Free Zone, Ajman Free Zone Registration, UAE Business Setup Services, Ajman Company Formation, 100% Foreign Ownership UAE, Ajman Free Zone Consultancy, Free Zone Business Setup UAE, Ajman Corporate Services, Ajman Free Zone Incorporation, Business Registration Ajman, Ajman Free Zone Office Solutions, Ajman Business License UAE,UAE company setup, Freezone company setup in dubai,Business setup in dubai, Company formation UAE",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/ajman-freezone-company-setup",
+    },
+    openGraph: {
+      title: "Ajman Free Zone Company Setup | Freezone Company Formation UAE",
+      description: "Ajman Free Zone Company Setup offers 100% foreign ownership, affordable packages, fast licensing, flexible offices, and expert UAE support.",
+      url: "https://investfirst.ae/freezone/ajman-freezone-company-setup",
+      type: "website",
+    },
+  },
+  '/freezone/umm-al-quwain-freezone-company-setup': {
+    title: "Umm Al Quwain Free Zone Company Setup |Invest first",
+    description: "Umm Al Quwain Free Zone Company Setup offers 100% foreign ownership, affordable licensing, tax benefits, and fast business registration.",
+    keywords: "Umm Al Quwain Free Zone Company Setup, UAQ Free Zone Company Formation, UAQ Business Setup, Umm Al Quwain Company Registration, UAQ Free Zone License, Business Setup in UAQ Free Zone, UAE Free Zone Company Formation, UAE Trade License, Start Business in Umm Al Quwain Free Zone, UAE Free Zone Registration, UAE Business Setup Services, 100% Foreign Ownership UAE, UAQ Company Formation, Free Zone Business Setup UAE, Umm Al Quwain Business License, UAE Consultancy Services, Company Incorporation UAQ, UAE Company Registration, UAE Corporate Services, UAE Free Zone Business Setup,UAE  company formation dubai,business setup in dubai,company setup freezone dubai,",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/umm-al-quwain-freezone-company-setup",
+    },
+    openGraph: {
+      title: "Umm Al Quwain Free Zone Company Setup |Invest first",
+      description: "Umm Al Quwain Free Zone Company Setup offers 100% foreign ownership, affordable licensing, tax benefits, and fast business registration.",
+      url: "https://investfirst.ae/freezone/umm-al-quwain-freezone-company-setup",
+      type: "website",
+    },
+  },
+  '/freezone/ras-al-khaimah-company-formation': {
+    title: "Ras Al Khaimah Company Formation |Freezone Business setup UAE",
+    description: "Ras Al Khaimah Company Formation offers 100% foreign ownership, tax benefits, fast licensing, and expert business setup support in the UAE.",
+    keywords: "Ras Al Khaimah Company Formation, RAK Company Formation, RAK Business Setup, Company Registration Ras Al Khaimah, Business Setup in RAK, RAK Free Zone Company Formation, Ras Al Khaimah Trade License, UAE Company Formation, RAK Company Registration, Start Business in Ras Al Khaimah, RAK Business License, UAE Business Setup Services, 100% Foreign Ownership UAE, RAK Free Zone Setup, Ras Al Khaimah Business Registration, Company Incorporation RAK, RAK Corporate Services, UAE Business Registration, RAK Consultancy Services, Ras Al Khaimah Business Setup, Business setup in dubai, Business setup in UAE",
+    alternates: {
+      canonical: "https://investfirst.ae/freezone/ras-al-khaimah-company-formation",
+    },
+    openGraph: {
+      title: "Ras Al Khaimah Company Formation |Freezone Business setup UAE",
+      description: "Ras Al Khaimah Company Formation offers 100% foreign ownership, tax benefits, fast licensing, and expert business setup support in the UAE.",
+      url: "https://investfirst.ae/freezone/ras-al-khaimah-company-formation",
+      type: "website",
+    },
+  },
 };

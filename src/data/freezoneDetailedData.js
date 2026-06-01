@@ -272,8 +272,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'sharjah': {
-        slug: 'sharjah',
+    'sharjah-freezone-company-formation': {
+        slug: 'sharjah-freezone-company-formation',
         isEmirate: true,
         bannerTitle: "Sharjah Free Zone Company Formation",
         bannerImage: "images/freezone/banners/",
@@ -358,8 +358,8 @@ export const freezoneDetailedData = {
     },
 
     // === 1-LEVEL EMIRATES (No submenus, direct detail pages) ===
-    'ajman': {
-        slug: 'ajman',
+    'ajman-freezone-company-setup': {
+        slug: 'ajman-freezone-company-setup',
         isEmirate: false,
         bannerTitle: "Ajman Free Zone Company Setup",
         bannerImage: "images/freezone/banners/",
@@ -443,8 +443,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'umm-al-quwain': {
-        slug: 'umm-al-quwain',
+    'umm-al-quwain-freezone-company-setup': {
+        slug: 'umm-al-quwain-freezone-company-setup',
         isEmirate: false,
         bannerTitle: "Umm Al Quwain Free Zone Company Setup",
         bannerImage: "images/freezone/banners/",
@@ -522,8 +522,8 @@ export const freezoneDetailedData = {
         }
     },
 
-    'ras-al-khaimah': {
-        slug: 'ras-al-khaimah',
+    'ras-al-khaimah-company-formation': {
+        slug: 'ras-al-khaimah-company-formation',
         isEmirate: false,
         bannerTitle: "Ras Al Khaimah Company Formation",
         bannerImage: "images/freezone/banners/",
@@ -980,24 +980,48 @@ export function getFreezoneData(slug) {
 
     // Otherwise, generate it dynamically based on the slug to make it look professional and real!
     // We break the slug into a human-readable title
-    const cleanSlug = slug.replace(/-/g, ' ');
-    const titleWords = cleanSlug.split(' ');
-    const formattedTitle = titleWords.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-
-    // Guess parent emirate from slug or default to Dubai
+    let formattedTitle = '';
     let parentEmirate = 'Dubai';
-    let shortName = formattedTitle;
 
-    if (slug.includes('sharjah') || slug.includes('shams') || slug.includes('spcfz')) {
+    // Map specific subzones to their formal names
+    if (slug.includes('shams')) {
+        formattedTitle = "Sharjah Media City (SHAMS)";
         parentEmirate = 'Sharjah';
-    } else if (slug.includes('abu-dhabi') || slug.includes('masdar') || slug.includes('adgm')) {
-        parentEmirate = 'Abu Dhabi';
-    } else if (slug.includes('ajman')) {
-        parentEmirate = 'Ajman';
-    } else if (slug.includes('rak') || slug.includes('ras-al')) {
-        parentEmirate = 'Ras Al Khaimah';
-    } else if (slug.includes('umm-al') || slug.includes('uaq')) {
-        parentEmirate = 'Umm Al Quwain';
+    } else if (slug.includes('spcfz')) {
+        formattedTitle = "Sharjah Publishing City (SPCFZ)";
+        parentEmirate = 'Sharjah';
+    } else if (slug.includes('strip')) {
+        formattedTitle = "SRTIP Free Zone";
+        parentEmirate = 'Sharjah';
+    } else if (slug.includes('hamriyah')) {
+        formattedTitle = "Hamriyah Free Zone";
+        parentEmirate = 'Sharjah';
+    } else {
+        // Fallback title formatting
+        let cleanSlug = slug;
+        if (cleanSlug.endsWith('-setup-in-sharjah')) {
+            cleanSlug = cleanSlug.replace('-setup-in-sharjah', '');
+        } else if (cleanSlug.endsWith('-setup-in-dubai')) {
+            cleanSlug = cleanSlug.replace('-setup-in-dubai', '');
+        } else if (cleanSlug.endsWith('-setup-in-abudhabi')) {
+            cleanSlug = cleanSlug.replace('-setup-in-abudhabi', '');
+        }
+        cleanSlug = cleanSlug.replace(/-/g, ' ');
+        const titleWords = cleanSlug.split(' ');
+        formattedTitle = titleWords.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+        // Guess parent emirate from slug or default to Dubai
+        if (slug.includes('sharjah')) {
+            parentEmirate = 'Sharjah';
+        } else if (slug.includes('abu-dhabi') || slug.includes('masdar') || slug.includes('adgm')) {
+            parentEmirate = 'Abu Dhabi';
+        } else if (slug.includes('ajman')) {
+            parentEmirate = 'Ajman';
+        } else if (slug.includes('rak') || slug.includes('ras-al')) {
+            parentEmirate = 'Ras Al Khaimah';
+        } else if (slug.includes('umm-al') || slug.includes('uaq')) {
+            parentEmirate = 'Umm Al Quwain';
+        }
     }
 
     // Setup beautiful, real-world copy dynamically

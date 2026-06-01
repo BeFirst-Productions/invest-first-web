@@ -7,7 +7,7 @@ import FAQAccordion from '@/components/Common/FAQAccordion';
 import { getSeoMetadata } from '@/services/seoService';
 
 export async function generateMetadata() {
-    const seo = await getSeoMetadata('/mainland');
+    const seo = await getSeoMetadata('/mainland-company-formation-uae');
     return seo;
 }
 
