@@ -54,7 +54,7 @@ export default function Schedule() {
               Schedule a Call
             </h2>
             <p className="text-white/80 text-[14px] md:text-[15px] leading-[1.6] max-w-[440px]">
-              Consult us for your Business Set Up, Visa Processing & PRO services in Dubai. We will be happy to guide you with the reliable experts per your Business requirements.
+          Schedule a call with our business setup experts for trusted guidance on company formation, visa processing, and PRO services in Dubai and across the UAE.Book your call today and take the first step toward starting your business in the UAE.
             </p>
           </div>
 
@@ -80,14 +80,14 @@ export default function Schedule() {
             {/* Action Buttons - Right side */}
             <div className="flex flex-col sm:flex-row gap-[10px] md:gap-[12px] items-center">
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => window.open("https://wa.me/971588773753", "_blank")}
                 className="flex items-center gap-[8px] bg-[#D9F1F7] hover:bg-white transition-all py-[10px] md:py-[12px] px-[18px] md:px-[22px] rounded-full shadow-lg"
               >
                 <WhatsAppIcon />
                 <span className="text-[#081131] font-bold text-[13px] md:text-[14px]">Chat Now</span>
               </button>
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => window.location.href = "tel:971588773753"}
                 className="flex items-center gap-[8px] bg-[#A10B43] hover:bg-[#8B1D41] transition-all py-[10px] md:py-[12px] px-[18px] md:px-[22px] rounded-full shadow-lg"
               >
                 <PhoneIcon />

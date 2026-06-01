@@ -148,11 +148,18 @@ export const mainlandDetailedData = {
             ]
         }
     },
-    'dubai': {
-        slug: 'dubai',
+    'mainland-company-formation-in-dubai': {
+        slug: 'mainland-company-formation-in-dubai',
         bannerTitle: "Mainland Company Formation in Dubai",
         bannerImage:"/images/mainland/dubai-mainland-banner.jpg",
-        bannerDescription:"Expert assistance in establishing your presence in and across the UAE.",
+        bannerDescription:"Mainland Company Formation in Dubai made simple with expert support, fast approvals, licensing assistance, and complete business setup solutions. ",
+        seo: {
+            title: "Mainland Company Formation in Dubai,UAE | Invest first",
+            description: "Set up your mainland company in Dubai with expert guidance. Benefit from 100% foreign ownership, flexible business activities, UAE-wide market access, and fast company registration services.",
+            keywords: "Mainland Company Formation in Dubai, Dubai Mainland Company Setup, Business Setup Dubai, Company Formation Dubai, Dubai Business License, Mainland Business Setup UAE, Start Business in Dubai, Dubai Company Registration, UAE Mainland License, Dubai Entrepreneur Services,Freezone company setup UAE,freezone company formation, business setup uae",
+            canonical: "https://investfirst.ae/mainland/mainland-company-formation-in-dubai",
+            image: "/images/mainland/dubai-mainland-banner.jpg"
+        },
         intro: {
             image: "/images/mainland/dubai-mainland-intro.png",
             titleHighlight: "Dubai Mainland",
@@ -255,15 +262,26 @@ export const mainlandDetailedData = {
         faqs: {
             title: "Dubai Mainland FAQ",
             faqItems: [
-                { question: "Can I open a mainland company in Dubai with 100% ownership?", answer: "Yes, 100% foreign ownership is now available for many activities in Dubai Mainland." }
+                { question: "Can I open a mainland company in Dubai with 100% ownership?", answer: "Yes, 100% foreign ownership is now available for many activities in Dubai Mainland." },
+                { question: "What is the Mainland Company Formation in Dubai?", answer: "Mainland Company Formation in Dubai is the process of registering a business with the Dubai Department of Economy and Tourism (DET), allowing companies to operate throughout the UAE and internationally." },
+                { question: "How much does Mainland Company Formation in Dubai cost?", answer: "The cost of Mainland Company Formation in Dubai depends on the business activity, license type, office requirements, and government fees. Costs vary based on specific business needs." },
+                { question: "How long does it take to complete Mainland Company Formation in Dubai?", answer: " Most Mainland Company Formation in Dubai processes can be completed within a few business days, provided all required documents and approvals are in place." },
+                { question: "Can foreigners own 100% of a mainland company in Dubai?", answer: " Yes, many business activities now allow 100% foreign ownership, making Mainland Company Formation in Dubai an attractive option for international investors and entrepreneurs." },
             ]
         }
     },
-    'abu-dhabi': {
-        slug: 'abu-dhabi',
+    'mainland-company-formation-in-abudabhi': {
+        slug: 'mainland-company-formation-in-abudabhi',
         bannerTitle: "Mainland Company Formation in Abu Dhabi",
         bannerImage:"/images/mainland/adu-dhabi-mainland-banner.jpg",
-        bannerDescription:"Expert assistance in establishing your presence in and across the UAE.",
+        bannerDescription:"Mainland Company Formation in Abu Dhabi with expert guidance, fast approvals, licensing support, and seamless business setup solutions. ",
+        seo: {
+            title: "Mainland Company Formation in Abu Dhabi | Mainland Company Setup",
+            description: "Set up your mainland company in Abu Dhabi with expert support. Get fast licensing, 100% foreign ownership, and UAE-wide business access.",
+            keywords: "Mainland Company Formation in Abu Dhabi, Abu Dhabi Business Setup, Company Formation Abu Dhabi, Mainland Business Setup UAE, Abu Dhabi Company Registration, Business License Abu Dhabi, Start Business in Abu Dhabi, UAE Mainland Company Setup, Abu Dhabi Trade License, Company Incorporation Abu Dhabi",
+            canonical: "https://investfirst.ae/mainland/mainland-company-formation-in-abudabhi",
+            image: "/images/mainland/adu-dhabi-mainland-banner.jpg"
+        },
 
         intro: {
             image: "/images/mainland/abu-dhabi-mainland-intro.png",
@@ -367,7 +385,10 @@ export const mainlandDetailedData = {
         faqs: {
             title: "Abu Dhabi Mainland FAQ",
             faqItems: [
-                { question: "Is Abu Dhabi mainland different from Dubai?", answer: "While the overall goal is similar, the specific regulatory authority is the Abu Dhabi DED, which may have slightly different activity lists." }
+                { question: "What business activities are permitted under Mainland Company Formation in Abu Dhabi?", answer: "Businesses can engage in commercial, professional, industrial, and service-related activities, subject to licensing regulations and approvals." },
+                { question: "Is a physical office required for Mainland Company Formation in Abu Dhabi?", answer: "Yes, most mainland companies must have a registered office address to obtain and maintain their trade license." },
+                { question: "What is Mainland Company Formation in Abu Dhabi?", answer: " Mainland Company Formation in Abu Dhabi is the process of registering a business with the relevant authorities, allowing companies to operate across the UAE and engage in local and international trade." },
+                { question: "How much does Mainland Company Formation in Abu Dhabi cost?", answer: "The cost of Mainland Company Formation in Abu Dhabi varies depending on the business activity, license type, office requirements, and government fees." },
             ]
         }
     }

@@ -24,7 +24,7 @@ const OffshorePage = () => {
                     plainTitle=" "
                     description="Expert assistance in setting up your international business presence through UAE's premium offshore jurisdictions, providing maximum privacy and asset protection."
                     imageUrl="/images/offshore/offshore-hero-banner.jpg"
-                    imageAlt="Our team at Meydan Free Zone"
+                    imageAlt="Our team at offshore"
                     breadcrumbs={[
                       { label: "Home", href: "/" },
                       { label: "Offshore" }

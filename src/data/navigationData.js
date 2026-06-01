@@ -3,8 +3,8 @@ export const companyFormationItems = [
     name: "Mainland",
     href: "/mainland-company-formation-uae",
     children: [
-      { name: "Dubai", href: "/mainland/dubai" },
-      { name: "Abu Dhabi", href: "/mainland/abu-dhabi" },
+      { name: "Dubai", href: "/mainland/mainland-company-formation-in-dubai" },
+      { name: "Abu Dhabi", href: "/mainland/mainland-company-formation-in-abudabhi" },
     ],
   },
   {

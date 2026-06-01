@@ -5,11 +5,38 @@ import FAQAccordion from '@/components/Common/FAQAccordion';
 import CommonHeroSection from '@/components/Common/Banner/CommonHerosection';
 import { FreezoneCategorySection, FreezoneFeatures, FreezoneLicenseTypes, FreezoneOverview, FreezoneSetupProcess } from '@/components/sections/Freezone';
 
-import { getSeoMetadata } from '@/services/seoService';
+
 
 export async function generateMetadata() {
-    const seo = await getSeoMetadata('/freezone-company-formation-uae');
-    return seo;
+    const seo = freezoneData.seo;
+    return {
+        title: seo.title,
+        description: seo.description,
+        keywords: seo.keywords,
+        alternates: {
+            canonical: seo.canonical,
+        },
+        openGraph: {
+            title: seo.title,
+            description: seo.description,
+            url: seo.canonical,
+            images: [
+                {
+                    url: seo.image,
+                    width: 1200,
+                    height: 630,
+                    alt: seo.title,
+                },
+            ],
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: seo.title,
+            description: seo.description,
+            images: [seo.image],
+        },
+    };
 }
 
 const FreezonePage = () => {
@@ -20,7 +47,7 @@ const FreezonePage = () => {
                 plainTitle=""
                 description="Launch your Free Zone company in the UAE with 100% foreign ownership, tax exemptions, and full capital repatriation under expert guidance."
                 imageUrl="/images/freezone/freezone-banner.jpg"
-                imageAlt="Our team at Meydan Free Zone"
+                imageAlt="Our team at Free Zone"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Freezone', href: '/freezone-company-formation-uae' },
@@ -42,3 +69,5 @@ const FreezonePage = () => {
 };
 
 export default FreezonePage;
+
+
