@@ -64,11 +64,11 @@ const LicenseServiceDetailPage = async ({ params }) => {
     }
 
     const bannerImageMap = {
-        'professional-license': '/images/licenseServices/professional-license-banner.png',
-        'commercial-license': '/images/licenseServices/commercial-license-banner.png',
-        'industrial-license': '/images/licenseServices/industrial-license-banner.png',
-        'e-trader-license': '/images/licenseServices/e-trader-license-banner.png',
-        'tourism-travel-license': '/images/licenseServices/tour-travel-license-banner.png',
+        'professional-license-in-uae': '/images/licenseServices/professional-license-banner.png',
+        'commercial-license-in-uae': '/images/licenseServices/commercial-license-banner.png',
+        'industrial-license-in-uae': '/images/licenseServices/industrial-license-banner.png',
+        'e-trader-license-in-uae': '/images/licenseServices/e-trader-license-banner.png',
+        'travel-license-in-uae': '/images/licenseServices/tour-travel-license-banner.png',
     };
 
     const imageUrl = bannerImageMap[slug] || '/images/licenseServices/professional-license-banner.png';

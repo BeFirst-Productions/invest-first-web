@@ -58,18 +58,18 @@ export async function generateMetadata({ params }) {
 const ProServiceDetailPage = async ({ params }) => {
     const { slug } = await params;
     const service = serviceDataMap[slug];
-
+console.log(service,"serviceee")
     // 404 for unknown slugs
     if (!service) notFound();
 
     const bannerImageMap = {
         // 'company-formation': '/images/services/service-banner.png',
-        'virtual-pro': '/images/visaServices/virtual-pro-banner.png',
-        'local-sponsorships': '/images/visaServices/local-sponsorship-banner.png',
-        'license-renewals': '/images/visaServices/licnense-renewals-banner.png',
-        'visa-renewals': '/images/visaServices/visa-renewals-banner.png',
-        'banking-assistance': '/images/visaServices/banking-assistance-banner.png',
-        'office-solutions': '/images/visaServices/office-solutions-banner.png',
+        'virtualpro': '/images/visaServices/virtual-pro-banner.png',
+        'local-sponsership': '/images/visaServices/local-sponsorship-banner.png',
+        'license-renewal': '/images/visaServices/licnense-renewals-banner.png',
+        'visa-renewal-uae': '/images/visaServices/visa-renewals-banner.png',
+        'banking-assistance-uae': '/images/visaServices/banking-assistance-banner.png',
+        'office-solutions-uae': '/images/visaServices/office-solutions-banner.png',
     };
 
     const imageUrl = bannerImageMap[slug] || '/images/services/service-banner.png';

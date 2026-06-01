@@ -86,7 +86,7 @@ export const licenseSectionData = {
 };
 
 export const licenseDetailedData = {
-  "professional-license": {
+  "professional-license-in-uae": {
     slug: "professional-license-in-uae",
     bannerTitle: "Professional License",
     seo: {
@@ -304,7 +304,7 @@ export const licenseDetailedData = {
       ],
     },
   },
-  "commercial-license": {
+  "commercial-license-in-uae": {
     slug: "commercial-license-in-uae",
     bannerTitle: "Commercial License",
     seo: {
@@ -484,7 +484,7 @@ export const licenseDetailedData = {
       ],
     },
   },
-  "industrial-license": {
+  "industrial-license-in-uae": {
     slug: "industrial-license-in-uae",
     bannerTitle: "Industrial License",
     seo: {
@@ -640,7 +640,7 @@ export const licenseDetailedData = {
       ],
     },
   },
-  "e-trader-license": {
+  "e-trader-license-in-uae": {
     slug: "e-trader-license-in-uae",
     bannerTitle: "E-Trader License",
     seo: {
@@ -776,7 +776,7 @@ export const licenseDetailedData = {
       ],
     },
   },
-  "tourism-travel-license": {
+  "travel-license-in-uae": {
     slug: "travel-license-in-uae",
     bannerTitle: "Tourism / Travel License",
     seo: {

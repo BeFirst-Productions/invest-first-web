@@ -5,7 +5,7 @@
 ───────────────────────────────────────────────────────────────────── */
 
 const attestationServices = {
-    slug: 'attestation-services',
+    slug: 'uae-attestation-services',
     bannerTitle: "Attestation Services",
     bannerDescription: "Professional document attestation services for UAE residency, employment, and business needs.",
     cardTitle: "Secure Document Attestation",
@@ -205,7 +205,7 @@ const attestationServices = {
 };
 
 const legalTranslation = {
-    slug: 'legal-translation',
+    slug: 'legal-transalation-dubai',
     bannerTitle: "Legal Translation",
     bannerDescription: "Accurate and certified legal translation services accepted by all UAE ministries and courts.",
     cardTitle: "Certified Legal Translation",
@@ -279,10 +279,10 @@ const legalTranslation = {
         ]
     },
     seo: {
-        title: "UAE Attestation Services | Document Attestation Dubai | Invest First",
-        description: "Get reliable UAE attestation services with Invest First. We provide certificate attestation, document legalization, embassy attestation, and verification services across Dubai and the UAE.",
-        keywords: "UAE attestation services, document attestation UAE, certificate attestation Dubai, embassy attestation UAE, educational certificate attestation UAE, marriage certificate attestation UAE, degree attestation Dubai, UAE document legalization, attestation services Dubai, UAE PRO services, Invest First UAE, MOFA attestation UAE, business document attestation UAE, UAE visa document support, company document attestation UAE",
-        canonical: "http://investfirst.ae/services/visa-services/uae-attestation-services",
+        title: "Legal Translation Dubai, UAE| Invest first",
+        description: "Get accurate and certified legal translation services in Dubai, UAE. We translate contracts, agreements, and official documents approved by UAE.",
+        keywords: "legal translation Dubai, UAE legal translation services, certified translation UAE, document translation Dubai, sworn translation UAE, legal document translation, contract translation services Dubai, professional translation UAE, attested translation Dubai, Arabic translation services UAE, Invest First translation services,business setup in dubai,company setup in uae,",
+        canonical: "http://investfirst.ae/services/visa-services/legal-transalation-dubai",
         image: "/images/documentServices/legal-translation.png"
     },
     details: {
@@ -405,7 +405,7 @@ const legalTranslation = {
 };
 
 const typingServices = {
-    slug: 'typing-services',
+    slug: 'typing-services-uae',
     bannerTitle: "Typing Services",
     bannerDescription: "Fast and accurate typing services for all UAE government applications and forms.",
     cardTitle: "Professional Typing Services",
@@ -482,7 +482,7 @@ const typingServices = {
         title: "Typing services in Dubai,UAE| invest first",
         description: "Get certified legal translation services in Dubai, UAE with Invest First. We translate contracts and official documents approved by UAE authorities quickly and reliably.",
         keywords: "legal translation Dubai, UAE legal translation services, certified translation UAE, document translation Dubai, sworn translation UAE, legal document translation, contract translation services Dubai, professional translation UAE, attested translation Dubai, Arabic translation services UAE, Invest First translation services,business setup in dubai, business setup in uae, company formation uae, mainland company formation uae,freezone company setup in uae",
-        canonical: "http://investfirst.ae/services/document-services/typing-services-uae",
+        canonical: "http://investfirst.ae/services/document-services//typing-services-uae",
         image: "/images/documentServices/typing-services.png"
     },
     details: {
@@ -609,15 +609,15 @@ const typingServices = {
 ───────────────────────────────────────────────────────────────────── */
 
 export const documentServicesList = [
-    { id: '01', title: "Typing Services", slug: "typing-services", href: "/services/document-services/typing-services", image: "/images/documentServices/typing-services.png", description: "Professional typing for Emirates ID, Visas, and Labor contracts." },
-    { id: '02', title: "Legal Translation", slug: "legal-translation", href: "/services/document-services/legal-translation", image: "/images/documentServices/legal-translation.png", description: "Certified translations recognized by all UAE ministries." },
-    { id: '03', title: "Attestation Services", slug: "attestation-services", href: "/services/document-services/attestation-services", image: "/images/documentServices/attestation-services.png", description: "Reliable document attestation from MOFA and embassies." },
+    { id: '01', title: "Typing Services", slug: "typing-services-uae", href: "/services/document-services/typing-services-uae", image: "/images/documentServices/typing-services.png", description: "Professional typing for Emirates ID, Visas, and Labor contracts." },
+    { id: '02', title: "Legal Translation", slug: "legal-transalation-dubai", href: "/services/document-services/legal-transalation-dubai", image: "/images/documentServices/legal-translation.png", description: "Certified translations recognized by all UAE ministries." },
+    { id: '03', title: "Attestation Services", slug: "uae-attestation-services", href: "/services/document-services/uae-attestation-services", image: "/images/documentServices/attestation-services.png", description: "Reliable document attestation from MOFA and embassies." },
 ];
 
 export const documentDataMap = {
-    'attestation-services': attestationServices,
-    'legal-translation': legalTranslation,
-    'typing-services': typingServices,
+    'uae-attestation-services': attestationServices,
+    'legal-transalation-dubai': legalTranslation,
+    'typing-services-uae': typingServices,
 };
 
 export const documentServicesOverview = {
@@ -628,5 +628,5 @@ export const documentServicesOverview = {
     description: "We provide professional document services in the UAE, including document clearing, attestation, translation, notarization, and government approvals.",
     services: documentServicesList,
     footerText: "Invest First streamlines the paperwork process, providing accurate translations and fast attestations to keep your personal and professional affairs on track.",
-    ...attestationServices // default
+    ...attestationServices
 };
