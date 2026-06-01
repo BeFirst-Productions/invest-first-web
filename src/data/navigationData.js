@@ -13,7 +13,7 @@ export const companyFormationItems = [
     children: [
       {
         name: "Dubai",
-        href: "/freezone-company-formation-uae",
+        href: "/freezone/dubai",
         children: [
           {
             name: "Meydan Free Zone",
@@ -44,7 +44,7 @@ export const companyFormationItems = [
         children: [
             {
                 name: "Dubai",
-                href: "/freezone-company-formation-uae",
+                href: "/dubai-freezone-company-formation",
                 children: [
                     { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
                     { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-freezone-company-setup-dubai" },
