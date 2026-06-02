@@ -5,7 +5,7 @@ export const quickLinks = [
   { label: 'News/Blog', href: '/blogs' },
   { label: 'Contact Us', href: '/contact-us' },
   { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms & Conditions', href: '/terms-conditions' },
+  { label: 'Terms & Conditions', href: '/terms-and-conditions' },
 ];
 
 export const trendingServices = [

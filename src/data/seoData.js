@@ -328,30 +328,44 @@ export const seoData = {
     },
   },
   '/privacy-policy': {
-    title: "Privacy Policy | Invest First Business Setup UAE",
-    description: "Read the Privacy Policy of Invest First. Learn how we collect, use, and protect your personal data for UAE company formation and business services.",
-    keywords: "privacy policy, invest first, data privacy, business setup dubai",
+    title: "Privacy Policy | Invest First UAE",
+    description: "Invest First's Privacy Policy to learn how we collect, use, protect, and manage your personal information when using our business setup and corporate services in the UAE.",
+    keywords: " Privacy Policy UAE, Invest First Privacy Policy, Data Protection UAE, Personal Information Policy, Website Privacy Policy, UAE Business Services Privacy, Data Security UAE, GDPR Compliance UAE.Business setup in uae, company formation in uae",
     alternates: {
         canonical: "https://investfirst.ae/privacy-policy",
     },
     openGraph: {
-        title: "Privacy Policy | Invest First Business Setup UAE",
-        description: "Read the Privacy Policy of Invest First. Learn how we collect, use, and protect your personal data for UAE company formation and business services.",
+        title: "Privacy Policy | Invest First UAE",
+        description: "Invest First's Privacy Policy to learn how we collect, use, protect, and manage your personal information when using our business setup and corporate services in the UAE.",
         url: "https://investfirst.ae/privacy-policy",
         type: "website",
+        images: [
+          {
+            url: "/images/documents/privacy-policy-banner.jpg",
+            width: 1200,
+            height: 630,
+            alt: "Invest First Privacy Policy",
+          }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Privacy Policy | Invest First UAE",
+    description: "Invest First's Privacy Policy to learn how we collect, use, protect, and manage your personal information when using our business setup and corporate services in the UAE.",
+        images: ["/images/documents/privacy-policy-banner.jpg"],
     }
   },
-  '/terms-conditions': {
-    title: "Terms and Conditions | Invest First Business Setup UAE",
-    description: "Review the Terms and Conditions of Invest First Business Services. Guidelines and rules for company setup and corporate services in the UAE.",
-    keywords: "terms and conditions, terms of service, invest first, dubai company setup",
+  '/terms-and-conditions': {
+    title: "Terms & Conditions | Invest First UAE Business Setup Services",
+    description: "Read Invest First's Terms & Conditions covering service usage, payments, liabilities, website access, and legal compliance in the UAE.",
+    keywords: "Terms and Conditions UAE, Invest First Terms and Conditions, UAE Business Setup Terms, Website Terms of Use, Service Agreement UAE, Business Consultancy Terms, UAE Legal Terms, Invest First UAE.",
     alternates: {
-        canonical: "https://investfirst.ae/terms-conditions",
+        canonical: "https://investfirst.ae/terms-and-conditions",
     },
     openGraph: {
-        title: "Terms and Conditions | Invest First Business Setup UAE",
-        description: "Review the Terms and Conditions of Invest First Business Services. Guidelines and rules for company setup and corporate services in the UAE.",
-         url: "https://investfirst.ae/terms-conditions",
+        title: "Terms & Conditions | Invest First UAE Business Setup Services",
+        description: "Read Invest First's Terms & Conditions covering service usage, payments, liabilities, website access, and legal compliance in the UAE.",
+         url: "https://investfirst.ae/terms-and-conditions",
          type: "website",
      }
    },
