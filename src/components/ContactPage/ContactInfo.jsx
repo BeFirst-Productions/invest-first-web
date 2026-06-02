@@ -2,6 +2,7 @@ import React from 'react';
 import SectionContainer from '../layout/SectionContainer';
 import SectionTag from '../Common/SectionTag';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 const ContactInfo = () => {
     return (
@@ -19,7 +20,7 @@ const ContactInfo = () => {
                     </h2>
                 </div>
                 <p className="text-black max-w-md text-left lg:text-right pb-2">
-                    Contact our consulting team for expert guidance on company setup in Dubai, mainland business formation in UAE, investor visa services, trade licensing, and professional PRO support to help your business succeed.
+                    Contact our consulting team for expert guidance on company setup in Dubai, <Link href="https://investfirst.ae/mainland-company-formation-uae" className='font-bold' target="_blank" rel="noopener noreferrer"> mainland company formation in UAE</Link> , investor visa services, trade licensing, and professional PRO support to help your business succeed.
                 </p>
             </div>
 

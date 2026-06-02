@@ -3,10 +3,8 @@ import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ContactInfo from './ContactInfo';
-import ContactBottomCTA from './ContactBottomCTA';
 import ContactFormMap from './ContactFormMap';
 import CommonBanner from '../Common/Banner/CommonBanner';
-import InnerHero from '../Common/InnerHero';
 import CommonHeroSection from '../Common/Banner/CommonHerosection';
 
 const ContactPage = () => {

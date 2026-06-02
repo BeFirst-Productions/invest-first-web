@@ -8,7 +8,7 @@ const MissionVision = () => {
         <section className="relative py-10 md:py-20  overflow-hidden">
             <SectionContainer
                 id="mission"
-                className="py-[48px] md:py-[80px] lg:py-[120px] bg-white"
+                className="py-[28px] md:py-[40px] lg:py-[60px] bg-white"
                 containerClassName="px-[20px] md:px-[60px] lg:px-[100px]"
             >
 
