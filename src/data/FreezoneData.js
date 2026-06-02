@@ -281,20 +281,24 @@ export const freezoneData = {
         title: "Freezone Setup in UAE",
         faqItems: [
             {
-                question: "What is a UAE Freezone Company?",
-                answer: "A Freezone company is a business entity incorporated in a specific economic zone that offers 100% foreign ownership, tax exemptions, and full profit repatriation."
+                question: "What is Free Zone Company Setup in UAE?",
+                answer: "Free Zone Company Setup in UAE is the process of establishing a business in a designated free zone, offering benefits such as 100% foreign ownership, tax advantages, and simplified company registration."
             },
             {
-                question: "Can I trade in the UAE mainland with a Freezone license?",
-                answer: "Freezone companies are generally restricted to trading within their zone or internationally. To trade in the mainland, you can work with a local distributor or obtain a specific permit."
+                question: "What are the benefits of Free Zone Company Setup in UAE?",
+                answer: "Free Zone Company Setup in UAE provides 100% foreign ownership, full profit repatriation, customs benefits, flexible office solutions, and streamlined business setup procedures."
             },
             {
-                question: "Do I need a local partner for a Freezone company setup?",
-                answer: "No, one of the main advantages of a Freezone setup is that it allows for 100% foreign ownership without the need for a UAE national as a partner."
+                question: "How much does Free Zone Company Setup in UAE cost?",
+                answer: "The cost of Free Zone Company Setup in UAE depends on the chosen free zone, business activity, license type, visa requirements, and office package selected."
             },
             {
-                question: "What are the visa benefits of a Freezone company?",
-                answer: "Freezone companies can sponsor residency visas for investors and employees. The number of visas available usually depends on the size of the office space leased."
+                question: "How long does Free Zone Company Setup in UAE take?",
+                answer: "Most Free Zone Company Setup in UAE processes can be completed within a few days to a few weeks, depending on the jurisdiction and documentation requirements."
+            },
+            {
+                question: "Can foreigners own 100% of a free zone company in the UAE?",
+                answer: "Yes, Free Zone Company Setup in UAE allows 100% foreign ownership without the need for a local sponsor in most free zones."
             }
         ]
     }
