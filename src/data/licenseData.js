@@ -306,6 +306,11 @@ export const licenseDetailedData = {
           answer:
             "Yes, having a physical office or a virtual office (Ejari) is generally a requirement for license issuance and renewal in Dubai, although some free zones offer 'flexi-desk' options.",
         },
+        {
+          question: "What are the benefits of obtaining a professional license?",
+          answer:
+            "A professional license allows you to legally offer services in the UAE, establish a business presence, apply for residency visas, open a corporate bank account, and access local and international markets.",
+        }
       ],
     },
   },
@@ -472,19 +477,29 @@ export const licenseDetailedData = {
       title: "Commercial License in Dubai",
       faqItems: [
         {
-          question: "Can I trade multiple items under one commercial license?",
+          question: "What is a Commercial License in Dubai?",
           answer:
-            "Yes, you can include multiple related trading activities. For unrelated items, a General Trading License is recommended.",
+            "A Commercial License allows businesses to engage in trading activities, including buying, selling, importing, exporting, and distributing goods within the UAE and internationally.",
         },
         {
-          question: "Do I need an office for a commercial license?",
+          question: "What business activities are covered under a Commercial License?",
           answer:
-            "Yes, a physical office or warehouse space with a valid Ejari is a mandatory requirement for DED commercial licenses.",
+            "Commercial licenses cover general trading, retail, wholesale trading, e-commerce, import-export, logistics, and various product-based business activities.",
         },
         {
-          question: "Can I import goods from outside the UAE?",
+          question: "Can foreign investors own 100% of a Commercial License company?",
           answer:
-            "Yes, with a commercial license and a customs code, you can import goods from anywhere in the world.",
+            "Yes. Many commercial activities in Dubai now allow 100% foreign ownership, subject to the applicable regulations and business activity.",
+        },
+        {
+          question: "How long does it take to obtain a Commercial License?",
+          answer: 
+            "The process can often be completed within a few business days, depending on approvals, documentation, and the selected business activity.",
+        },
+        {
+          question: "What are the benefits of a Commercial License in Dubai?",
+          answer:
+            "Benefits include legal trading operations, access to local and international markets, eligibility for residence visas, corporate banking facilities, and business expansion opportunities.",
         },
       ],
     },
@@ -633,14 +648,29 @@ export const licenseDetailedData = {
       title: "Industrial License in Dubai",
       faqItems: [
         {
-          question: "Is environmental approval mandatory?",
+          question: "What is an Industrial License in Dubai?",
           answer:
-            "Yes, all industrial activities must receive clearance from the environment department to ensure safety and sustainability.",
+            "An Industrial License allows businesses to manufacture, assemble, process, package, or produce goods within Dubai and the UAE.",
         },
         {
-          question: "Can I get 100% ownership for an industrial company?",
+          question: "Who needs an Industrial License?",
           answer:
-            "Yes, under the updated UAE Commercial Companies Law, many industrial sectors now allow for 100% foreign ownership.",
+            "Manufacturers, factories, food processing companies, textile producers, packaging businesses, and industrial enterprises generally require an Industrial License.",
+        },
+        {
+          question: "What are the requirements for obtaining an Industrial License?",
+          answer:
+            "Businesses typically need a physical facility or warehouse, regulatory approvals, business plans, and compliance with environmental and safety requirements.",
+        },
+         {
+          question: "Can foreign investors own an industrial company in Dubai?",
+          answer:
+            "Yes. Many industrial activities permit 100% foreign ownership, subject to regulatory approvals and licensing requirements.",
+        },
+        {
+          question: "What are the benefits of an Industrial License?",
+          answer:
+            "An Industrial License enables manufacturing operations, access to industrial zones, import of raw materials, export opportunities, government incentives, and participation in the UAE's growing industrial sector.",
         },
       ],
     },
@@ -769,14 +799,29 @@ export const licenseDetailedData = {
       title: "E-Trader License in Dubai",
       faqItems: [
         {
-          question: "Who can apply for an E-Trader license?",
+          question: "What is an E-Trader License in Dubai?",
           answer:
-            "Currently, the E-Trader license is primarily for UAE and GCC nationals. However, certain nationalities can also apply for professional service activities.",
+            "An E-Trader License is a permit issued by Dubai's Department of Economy and Tourism (DET) that allows individuals to legally conduct online business activities, including selling products and services through websites, social media platforms, and digital marketplaces without a physical office.",
         },
         {
-          question: "Can I sell on social media without a license?",
+          question: "Who can apply for an E-Trader License in Dubai?",
           answer:
-            "No, selling products on social media without a valid license is illegal in the UAE and can lead to heavy fines.",
+            "The E-Trader License is generally available to UAE residents, including UAE nationals, GCC nationals, and eligible expatriates with a valid UAE residence visa, depending on the approved business activity.",
+        },
+        {
+          question: " What business activities are permitted under an E-Trader License?",
+          answer:
+            "The license allows individuals to conduct various online commercial and professional activities, including social media selling, online consulting, digital marketing, handmade products, and other approved e-commerce services.",
+        },
+        {
+          question: " Do I need office space to obtain an E-Trader License?",
+          answer:
+            "No. One of the key benefits of the E-Trader License is that it allows entrepreneurs to operate from home without renting office space or obtaining an Ejari tenancy contract.",
+        },
+        {
+          question: "Can expatriates apply for an E-Trader License in Dubai?",
+          answer:
+            "Yes. Eligible expatriates with a valid UAE residence visa can apply for certain professional and service-based E-Trader activities, subject to DET regulations and activity approvals.",
         },
       ],
     },
@@ -915,15 +960,31 @@ export const licenseDetailedData = {
       faqItems: [
         {
           question:
-            "What is the difference between inbound and outbound operators?",
+            "What is a Tour and Travel License in Dubai?",
           answer:
-            "Inbound operators focus on tourists visiting the UAE, while outbound operators manage UAE residents traveling abroad.",
+            "A Tour and Travel License allows businesses to legally provide travel-related services such as tour packages, hotel bookings, flight reservations, visa assistance, travel planning, and tourism activities in Dubai and the UAE.",
         },
         {
-          question: "Is a bank guarantee required?",
+          question: "Who needs a Tour and Travel License in the UAE?",
           answer:
-            "Yes, certain tourism categories may require a bank guarantee ranging from AED 100,000 to AED 200,000 depending on the activities.",
+            "Entrepreneurs and companies offering tourism services, travel agency operations, tour organizing, holiday packages, inbound tourism, or outbound travel services require a valid Tour and Travel License.",
         },
+        {
+          question: "What services can be offered under a Tour and Travel License?",
+          answer:
+            "A Tour and Travel License allows businesses to offer a wide range of travel-related services, including holiday and tour packages, flight ticket booking, hotel reservations, travel insurance, visa assistance, cruise bookings, corporate travel management, and tourism consultancy.",
+        },
+        {
+          question: "Can foreign investors own 100% of a travel agency in Dubai?",
+          answer:
+            "Yes. Many jurisdictions in Dubai and the UAE allow 100% foreign ownership for travel and tourism businesses, subject to licensing authority regulations.",
+        },
+        {
+          question: "How long does it take to obtain a Tour and Travel License in Dubai?",
+          answer:
+            "The licensing process generally takes a few days to a few weeks, depending on approvals, documentation, and tourism authority requirements.",
+        },
+
       ],
     },
   },

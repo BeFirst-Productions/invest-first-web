@@ -4,18 +4,7 @@ import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import SectionContainer from "../layout/SectionContainer";
 
-/**
- * Reusable FAQ Accordion Component
- *
- * Props:
- *  - title     {string}  Service-specific heading tail (e.g. "Company Formation UAE").
- *              Rendered after the static "Frequently Asked Questions –" prefix.
- *  - faqItems  {Array}   Array of { question, answer } objects
- *  - className {string}  Optional extra class for the section wrapper
- *
- * NOTE: "highlight" prop is still accepted for backward-compat but is no longer
- *       displayed — the heading prefix is now fully static.
- */
+
 const FAQAccordion = ({
     title = "Company Formation UAE",
     highlight = "Questions",

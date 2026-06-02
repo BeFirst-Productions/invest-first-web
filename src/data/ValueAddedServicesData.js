@@ -113,6 +113,9 @@ export const valueAddedServicesMap = {
         faqs: {
             title: "VAT & Corporate Tax UAE",
             items: [
+                { question: "What is VAT and Corporate Tax assistance in the UAE?", answer: "VAT and Corporate Tax assistance helps businesses comply with UAE tax regulations, including tax registration, return filing, record keeping, tax planning, and compliance with the Federal Tax Authority (FTA) requirements." },
+                { question: "Do I need to register my business for VAT or Corporate Tax in the UAE?", answer: "Businesses meeting the applicable revenue thresholds or tax obligations may be required to register for VAT and Corporate Tax. Professional tax assistance helps determine eligibility and ensures timely registration and compliance." },
+                { question: "What services are included in VAT and Corporate Tax assistance?", answer: "VAT and Corporate Tax services typically include tax registration, return filing, tax assessment, bookkeeping support, compliance reviews, tax planning, FTA correspondence, and ongoing advisory services to help businesses avoid penalties and maintain compliance." },
                 { question: "What is the VAT rate in the UAE?", answer: "The standard VAT rate in the UAE is 5%." },
                 { question: "When do I need to register for VAT?", answer: "Registration is mandatory for businesses with taxable supplies exceeding AED 375,000 in a year." },
                 { question: "What is the Corporate Tax rate?", answer: "The Corporate Tax rate is 9% for taxable income exceeding AED 375,000." }
@@ -193,8 +196,11 @@ export const valueAddedServicesMap = {
         faqs: {
             title: "Medical Insurance UAE",
             items: [
-                { question: "Is medical insurance mandatory in UAE?", answer: "Yes, it is mandatory for all residents in Dubai and Abu Dhabi." },
-                { question: "Can I add family members to my corporate plan?", answer: "Yes, most insurers allow dependent coverage as part of corporate policies." }
+                { question: " What is Medical Insurance Assistance in the UAE?", answer: "Medical Insurance Assistance helps individuals and businesses obtain, renew, and manage health insurance policies that meet UAE regulatory requirements." },
+                { question: "Who needs medical insurance in the UAE?", answer: "Employees, business owners, residents, and sponsored family members may require health insurance coverage based on UAE regulations." },
+                { question: "What services are included in Medical Insurance Assistance?", answer: "Services include policy selection, renewals, claims support, employee coverage, family insurance plans, and compliance guidance." },
+                { question: " Can Medical Insurance Assistance help with policy renewals?", answer: "Yes. Insurance consultants can assist with policy renewals, coverage upgrades, and insurer coordination." },
+                { question: "Why should I use professional Medical Insurance Assistance?", answer: "Professional assistance helps you compare plans, ensure compliance, save time, and select suitable coverage based on your needs and budget." },
             ]
         }
     },
@@ -272,8 +278,11 @@ export const valueAddedServicesMap = {
         faqs: {
             title: "Trademark & Intellectual Property",
             items: [
-                { question: "How long is a trademark valid in the UAE?", answer: "A trademark registration is valid for 10 years and is renewable indefinitely." },
-                { question: "Can I register a trademark globally through you?", answer: "We specialize in UAE registration but can assist with Madrid Protocol filings for international coverage." }
+                { question: "What is trademark registration in the UAE?", answer: "Trademark registration protects a business name, logo, slogan, or brand identity from unauthorized use." },
+                { question: "Why is trademark registration important?", answer: "It provides legal protection, strengthens brand value, and helps prevent trademark infringement." },
+                { question: "What can be registered as a trademark?", answer: "Business names, logos, slogans, symbols, and unique brand elements can typically be registered as trademarks." },
+                { question: "How long does the trademark registration process take?", answer: "The timeline varies depending on approvals and examination procedures by the relevant authorities." },
+                { question: "What services are included in trademark registration?", answer: "Services include trademark search, application filing, documentation support, registration assistance, and renewal guidance." }
             ]
         }
     },
@@ -351,8 +360,11 @@ export const valueAddedServicesMap = {
         faqs: {
             title: "Design & Brand Identity",
             items: [
-                { question: "How long does a branding project take?", answer: "Typically 2 to 4 weeks depending on the complexity and revisions." },
-                { question: "Do I get full ownership of the designs?", answer: "Yes, once final payment is made, all rights to the final designs belong to you." }
+                { question: "What are branding and design services?", answer: "Branding and design services help businesses create a strong visual identity and professional brand image." },
+                { question: "Why is branding important for business growth?", answer: "Effective branding increases recognition, builds customer trust, and differentiates a business from competitors." },
+                { question: "What services are included in branding and design?", answer: "Services include logo design, brand identity creation, business cards, brochures, packaging design, and marketing materials." },
+                { question: " Can branding services help new businesses?", answer: "Yes. Branding services help startups establish a professional image and create a consistent market presence." },
+                { question: " How does professional design improve brand visibility?", answer: "Professional design enhances brand consistency, customer engagement, and overall marketing effectiveness." }
             ]
         }
     },
@@ -430,8 +442,11 @@ export const valueAddedServicesMap = {
         faqs: {
             title: "Performance & Social Marketing",
             items: [
-                { question: "How much should I spend on ads?", answer: "Budgeting depends on your industry and goals; we help you set a target based on desired ROI." },
-                { question: "When will I see results from SEO?", answer: "SEO is a long-term play, typically showing significant growth in 3 to 6 months." }
+                { question: "What are digital marketing services?", answer: "Digital marketing services help businesses promote their products and services through online channels." },
+                { question: "What digital marketing solutions are available?", answer: "Services typically include SEO, social media marketing, Google Ads, content marketing, email marketing, and PPC advertising." },
+                { question: "How can digital marketing help my business?", answer: "Digital marketing improves online visibility, generates leads, increases website traffic, and boosts sales." },
+                { question: "Is digital marketing suitable for small businesses?", answer: "Yes. Digital marketing can be customized to fit businesses of all sizes and budgets." },
+                { question: "How long does it take to see results from digital marketing?", answer: "Results vary depending on the strategy, industry, competition, and marketing objectives." }
             ]
         }
     },
@@ -509,8 +524,11 @@ export const valueAddedServicesMap = {
         faqs: {
             title: "Web Tech & Maintenance",
             items: [
-                { question: "Is the website mobile friendly?", answer: "Yes, every site we build is 100% responsive for all screen sizes." },
-                { question: "Do you offer web maintenance?", answer: "Yes, we provide monthly maintenance plans for security updates and performance tweaks." }
+                { question: "What is web design and development?", answer: "Web design and development involve creating responsive, user-friendly, and professionally designed websites." },
+                { question: "Why does my business need a professional website?", answer: "A website helps establish credibility, attract customers, showcase services, and generate business inquiries online." },
+                { question: "What types of websites can be developed?", answer: "Businesses can create corporate websites, e-commerce stores, landing pages, portals, and custom web applications." },
+                { question: "Is mobile-friendly website design important?", answer: "Yes. Mobile-responsive websites improve user experience and help achieve better search engine rankings." },
+                { question: "What services are included in web design and development?", answer: "Services typically include website design, development, e-commerce solutions, website maintenance, SEO optimization, and performance enhancements." }
             ]
         }
     }

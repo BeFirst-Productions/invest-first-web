@@ -69,7 +69,7 @@ const MeetFounders = () => {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative py-24 md:py-40 overflow-hidden bg-[#ffffff]">
+        <section ref={containerRef} className="relative pt-24 md:pt-40 pb-14 md:pb-10 overflow-hidden bg-[#ffffff]">
             {/* Advanced Cinematic Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full opacity-30"

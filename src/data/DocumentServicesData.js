@@ -189,17 +189,25 @@ const attestationServices = {
         headingRest: "Document Attestation",
         items: [
             {
-                question: "What is document attestation?",
-                answer: "Attestation is the process of verifying a document's authenticity by relevant government authorities. In the UAE, this typically involves the Ministry of Foreign Affairs (MOFA) and often the embassy of the country where the document originated."
+                question: "What are attestation services in the UAE?",
+                answer: "Attestation services involve verifying and authenticating documents issued in another country so they are legally recognized by UAE government authorities, educational institutions, employers, and other organizations."
             },
             {
-                question: "How long does the attestation process take?",
-                answer: "The duration depends on the document type and origin. Standard UAE MOFA attestation can take 1-3 business days. If international embassy attestation is required, it can take 7-15 business days."
+                question: "Why is document attestation required in the UAE?",
+                answer: "Document attestation is required for employment visas, family sponsorship, higher education admissions, business setup, residency applications, and other legal procedures to confirm the authenticity of documents."
             },
             {
-                question: "Do I need to be present for the attestation?",
-                answer: "In most cases, no. We can handle the entire process on your behalf. You simply need to provide the original documents and a copy of your passport/Emirates ID."
-            }
+                question: "Which documents can be attested in the UAE?",
+                answer: "Educational certificates, marriage certificates, birth certificates, commercial documents, power of attorney documents, experience certificates, and police clearance certificates can all be attested for official use in the UAE. Attestation confirms the authenticity of documents for employment, visa, education, business, and legal purposes."
+            },
+            {
+                question: "How long does the attestation process take in the UAE?",
+                answer: "The processing time depends on the document type and issuing country. In most cases, attestation can take anywhere from a few days to several weeks."
+            },
+            {
+                question: "What is the process for document attestation in the UAE?",
+                answer: "The process typically includes notarization (if required), authentication by the issuing country's authorities, attestation by the UAE Embassy, and final verification by the UAE Ministry of Foreign Affairs (MOFA)."
+            },
         ]
     }
 };
@@ -389,17 +397,29 @@ const legalTranslation = {
         headingRest: "Legal Translation",
         items: [
             {
-                question: "Which languages do you translate?",
-                answer: "We specialize in Arabic and English, but we also provide translation services for French, German, Russian, Chinese, Hindi, and many other global languages."
+                question: "What is legal translation in the UAE?",
+                answer: "Legal translation is the process of translating official and legal documents from one language to another while preserving their legal meaning and validity. In the UAE, legal translations are often required for government, court, immigration, and business purposes."
             },
             {
-                question: "Is your translation accepted by UAE courts?",
-                answer: "Yes, our legal translations are certified and stamped by translators licensed by the UAE Ministry of Justice, making them valid for use in all UAE courts and government offices."
+                question: "Why is legal translation required in the UAE?",
+                answer: "Legal translation is required to ensure that foreign-language documents are officially recognized by UAE courts, government authorities, embassies, immigration departments, and other institutions."
             },
             {
-                question: "What is the typical turnaround time?",
-                answer: "Standard documents (1-3 pages) are typically translated within 24 hours. Larger projects or highly technical documents may require more time."
-            }
+                question: "Which documents can be legally translated?",
+                answer: "Common documents that require legal translation include,. Legal translation services cover a wide range of personal, educational, legal, and commercial documents. Commonly translated documents include contracts and agreements, birth certificates, marriage certificates, educational certificates, power of attorney documents, court papers,"
+            },
+            {
+                question: "Who can provide legal translation services in the UAE?",
+                answer: "Legal translation must be performed by translators or translation companies approved by the UAE Ministry of Justice to ensure acceptance by official authorities."
+            },
+            {
+                question: "Is legal translation accepted by UAE courts and government authorities?",
+                answer: "Yes. Legal translations completed by authorized translators and certified according to UAE regulations are generally accepted by courts, ministries, embassies, and government departments."
+            },
+            {
+                question: "What languages are commonly used for legal translation in the UAE?",
+                answer: "Arabic is the official language of the UAE. Legal translations are commonly provided between Arabic and English, as well as other languages such as French, German, Russian, Chinese, Hindi, and Urdu."
+            },
         ]
     }
 };
@@ -599,6 +619,14 @@ const typingServices = {
             {
                 question: "Can you help with medical test bookings too?",
                 answer: "Yes, as part of our typing and visa support services, we can book your medical fitness test appointments at various centers across the UAE."
+            },
+                    {
+                question: "Why should I use professional typing services in Dubai?",
+                answer: "Professional typing services ensure that applications are completed accurately, comply with UAE government requirements, reduce processing errors, and help speed up approvals."
+            },
+            {
+                question: "Can typing centers assist with visa and immigration applications?",
+                answer: "Yes. Authorized typing centers can prepare and submit documentation for employment visas, investor visas, family visas, tourist visas, and other immigration-related services."
             }
         ]
     }

@@ -35,7 +35,7 @@ const page = () => {
                      imageSrc="/images/about/uae.png"
                      imageAlt="Contact Us"
                  />
-            <OurTeamsSection />
+            {/* <OurTeamsSection /> */}
             <Schedule />
 
         </>

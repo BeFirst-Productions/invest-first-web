@@ -442,19 +442,29 @@ const employmentVisa = {
     headingRest: "Employment Visa FAQ",
     items: [
       {
-        question: "How long is a UAE employment visa valid?",
+        question: "What is a UAE Employment Visa?",
         answer:
-          "Typically valid for 2 years for mainland DED companies and free zone companies, renewable indefinitely.",
+          "A UAE Employment Visa is a residence permit issued to foreign nationals who have secured a job with a UAE-based employer. It allows individuals to legally live and work in the UAE.",
       },
       {
-        question: "What is a labor card in the UAE?",
+        question: "Who is eligible for a UAE Employment Visa?",
         answer:
-          "The labor card (or work permit) is issued by MOHRE, allowing you to legally work for your sponsoring employer.",
+          "Anyone who receives a valid job offer from a UAE company and meets the requirements set by the UAE immigration and labor authorities may be eligible for an Employment Visa.",
       },
       {
-        question: "Can an employee work before the visa is stamped?",
+        question: "What documents are required for a UAE Employment Visa?",
         answer:
-          "An employee can start work once the entry permit is issued and status change is completed, but residency stamping must be finalized.",
+          "Required documents typically include a valid passport, passport-sized photographs, educational certificates (if applicable), employment contract, entry permit, medical fitness certificate, and Emirates ID application.",
+      },
+      {
+        question: " How long does it take to process a UAE Employment Visa?",
+        answer:
+          "The processing time generally ranges from 7 to 15 working days, depending on document verification, medical testing, and government approvals.",
+      },
+      {
+        question: "What is the validity of a UAE Employment Visa?",
+        answer:
+          "A UAE Employment Visa is usually valid for 2 years for mainland companies and up to 3 years for certain free zone companies, subject to employer sponsorship.",
       },
     ],
   },
@@ -582,19 +592,34 @@ const dependentVisa = {
     headingRest: "Dependent Visa FAQ",
     items: [
       {
-        question: "Can a female resident sponsor her family?",
+        question: "What is a Dependent Visa in the UAE?",
         answer:
-          "Yes, under specific professions and salary requirements (typically higher than male sponsors).",
+          "A Dependent Visa allows UAE residents to sponsor eligible family members, including spouses, children, and parents, to live legally in the UAE. The sponsor must meet the minimum salary and residency requirements set by UAE authorities.",
       },
       {
-        question: "Up to what age can I sponsor my children?",
+        question: "Who can sponsor a dependent visa in the UAE?",
         answer:
-          "Sons can be sponsored up to the age of 25, while unmarried daughters can be sponsored indefinitely.",
+          "UAE residents holding a valid residence visa can sponsor their spouse, children, and in some cases, parents. The sponsor must meet the required income criteria and provide proof of accommodation and relationship documents.",
       },
       {
-        question: "Is health insurance mandatory for family visas?",
+        question: "What documents are required for a UAE Dependent Visa?",
         answer:
-          "Yes, basic health insurance is mandatory to complete family residency stamping in Dubai and Abu Dhabi.",
+          "Common documents include the sponsor's passport and visa copy, Emirates ID, salary certificate or labor contract, tenancy contract, marriage certificate, birth certificates for children, passport copies of dependents, and passport-sized photographs.",
+      },
+      {
+        question: " How long does it take to process a UAE Dependent Visa?",
+        answer:
+          "Dependent Visa processing typically takes 5 to 15 working days, depending on document verification, medical fitness tests, Emirates ID processing, and immigration approvals.",
+      },
+      {
+        question: "Can I sponsor my spouse and children on a UAE Dependent Visa?",
+        answer:
+          "Yes, UAE residents can sponsor their spouse and children if they meet the eligibility requirements and submit the necessary supporting documents",
+      },
+      {
+        question: "What is the validity of a UAE Dependent Visa?",
+        answer:
+          "A UAE Dependent Visa is generally issued for 1, 2, or 3 years, depending on the sponsor's residence visa validity and immigration regulations",
       },
     ],
   },
@@ -719,19 +744,29 @@ const greenVisa = {
     headingRest: "Green Visa FAQ",
     items: [
       {
-        question: "Is an employer sponsor required for a Green Visa?",
+        question: "What is the UAE Green Visa?",
         answer:
-          "No. The Green Visa is self-sponsored, allowing you to reside and work independently.",
+          "The UAE Green Visa is a 5-year residence visa that allows eligible individuals to live and work in the UAE without requiring sponsorship from an employer or UAE national. It offers greater flexibility and long-term residency benefits.",
       },
       {
-        question: "What happens if I lose my job on a Green Visa?",
+        question: "Who is eligible for a UAE Green Visa?",
         answer:
-          "You have a flexible grace period of up to 6 months to find new opportunities without cancelling your residency.",
+          "The Green Visa is available to skilled employees, freelancers, self-employed professionals, investors, and entrepreneurs who meet the eligibility criteria established by UAE authorities.",
       },
       {
-        question: "Can I sponsor my family under a Green Visa?",
+        question: " What are the benefits of a UAE Green Visa?",
         answer:
-          "Yes, Green Visa holders can sponsor their first-degree relatives for the same 5-year duration.",
+          "The Green Visa provides a 5-year residency period, self-sponsorship, simplified family sponsorship options, flexible grace periods after visa expiry, and greater independence from employer sponsorship.",
+      },
+      {
+        question: "Can freelancers apply for a UAE Green Visa?",
+        answer:
+          "Yes, freelancers and self-employed individuals can apply for a Green Visa if they hold the necessary permits, meet income requirements, and provide proof of professional qualifications and work experience.",
+      },
+      {
+        question: "Can Green Visa holders sponsor their family members?",
+        answer:
+          "Yes, Green Visa holders can sponsor their spouse, children, and eligible family members under UAE family sponsorship regulations.",
       },
     ],
   },
@@ -858,19 +893,29 @@ const blueVisa = {
     headingRest: "Blue Visa FAQ",
     items: [
       {
-        question: "Who is eligible for the Blue Visa?",
+        question: "What is the UAE Blue Visa?",
         answer:
-          "Individuals working in sustainability, environmental protection, renewable energy, and circular economy sectors with proven achievements.",
+          "The UAE Blue Visa is a 10-year renewable residency visa designed for individuals who have made exceptional contributions to environmental protection, sustainability, climate action, renewable energy, and related fields. It was introduced to attract global environmental experts and sustainability leaders to the UAE.",
       },
       {
-        question: "Is the Blue Visa different from the Golden Visa?",
+        question: "Who is eligible for the UAE Blue Visa?",
         answer:
-          "Yes, the Blue Visa specifically recognizes environmental and sustainability contributions, but offers a similar 10-year self-sponsored validity.",
+          "Eligible applicants include environmental scientists, researchers, sustainability experts, climate change specialists, investors in green initiatives, environmental activists, award winners, and members of international organizations working in sustainability and environmental protection",
       },
       {
-        question: "How can I get nominated for the Blue Visa?",
+        question: "What are the benefits of the UAE Blue Visa?",
         answer:
-          "You can apply through the Ministry of Climate Change and Environment (MOCCAE) with proof of your environmental work.",
+          "Blue Visa holders receive a 10-year renewable residency, the ability to sponsor eligible family members, access to long-term residency without a local sponsor, and opportunities to live and work in the UAE while contributing to sustainability initiatives.",
+      },
+      {
+        question: "Is a local sponsor required for the UAE Blue Visa?",
+        answer:
+          "No. The UAE Blue Visa is a self-sponsored residency program for qualified individuals who meet the eligibility criteria, eliminating the need for a UAE national sponsor.",
+      },
+      {
+        question: "How can I apply for a UAE Blue Visa?",
+        answer:
+          "Applicants can apply through the UAE Federal Authority for Identity, Citizenship, Customs and Port Security (ICP) or receive a nomination from a competent UAE authority involved in environmental and sustainability sectors.",
       },
     ],
   },
@@ -991,18 +1036,23 @@ const remoteWorkVisa = {
     headingRest: "Remote Work Visa FAQ",
     items: [
       {
-        question: "Is my remote income taxed in the UAE?",
-        answer: "No, the UAE does not impose personal income tax on residents.",
+        question: "What is the UAE Remote Work Visa?",
+        answer: "The UAE Remote Work Visa, also known as the Virtual Work Residence Visa, allows foreign professionals to live in the UAE while working remotely for an employer or business located outside the UAE. The visa is typically issued for one year and can be renewed.",
       },
       {
-        question: "Can I open a local bank account on a Remote Work Visa?",
+        question: " Who is eligible for a UAE Remote Work Visa?",
         answer:
-          "Yes, once your residency is stamped and you get your Emirates ID, you can open a UAE personal bank account.",
+          "You may qualify if you work remotely for a company based outside the UAE or operate your own business abroad and meet the minimum income requirements set by UAE authorities.",
       },
       {
-        question: "Is the Remote Work Visa renewable?",
+        question: "What is the minimum salary requirement for a UAE Remote Work Visa?",
         answer:
-          "Yes, you can renew the visa annually by re-submitting updated salary proof and bank statements.",
+          "Applicants must generally demonstrate a monthly income of at least USD 3,500 (or the equivalent in another currency) and provide supporting financial documentation.",
+      },
+      {
+        question: "How long is the UAE Remote Work Visa valid?",
+        answer:
+          "The UAE Remote Work Visa is generally valid for one year and can be renewed if the applicant continues to meet the eligibility requirements.",
       },
     ],
   },
@@ -1160,6 +1210,8 @@ const touristVisitVisa = {
       "Plan your travel or business visits to the UAE with guaranteed entry support.",
   },
 };
+
+
 
 export const visaServiceDataMap = {
   "uae-investor-visa": investorVisa,

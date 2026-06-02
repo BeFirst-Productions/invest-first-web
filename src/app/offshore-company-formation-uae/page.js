@@ -22,7 +22,7 @@ const OffshorePage = () => {
                <CommonHeroSection
                     highlightedTitle="Offshore Company Formation"
                     plainTitle=" "
-                    description="Expert assistance in setting up your international business presence through UAE's premium offshore jurisdictions, providing maximum privacy and asset protection."
+                    description="Get expert Offshore Setup in Dubai services for international business expansion.protection, tax benefits, company formation."
                     imageUrl="/images/offshore/offshore-hero-banner.jpg"
                     imageAlt="Our team at offshore"
                     breadcrumbs={[

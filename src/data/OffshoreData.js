@@ -106,6 +106,10 @@ export const offshoreData = {
             {
                 question: "Do offshore companies need an audit?",
                 answer: "RAKICC and Ajman offshore companies are generally not required to file audited financial statements, though they must maintain proper accounting records."
+            },
+            {
+                question: "What are the benefits of offshore company setup in UAE?",
+                answer: "Key benefits include tax efficiency, 100% foreign ownership, asset protection, privacy, simplified company management, and access to international banking services."
             }
         ]
     },
