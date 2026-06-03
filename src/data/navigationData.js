@@ -13,7 +13,7 @@ export const companyFormationItems = [
     children: [
       {
           name: "Dubai",
-          href: "/dubai-freezone-company-formation",
+          href: "/freezone-company-formation-uae",
           children: [
               { name: "Meydan Free Zone", href: "/freezone/dubai/meydan-freezone-setup-in-dubai" },
               { name: "IFZA Free Zone", href: "/freezone/dubai/ifza-freezone-company-setup-dubai" },
@@ -72,7 +72,7 @@ export const navLinks = [
     children: [
       {
         name: "PRO Services",
-        href: "/services/pro-services/virtualpro",
+        href: "/services/pro-services/virtual-pro-uae",
         children: [
           {
             name: "Virtual PRO",
@@ -102,7 +102,7 @@ export const navLinks = [
       },
       {
         name: "Visa Services",
-        href: "/services/visa-services/investor-visa",
+        href: "/services/visa-services/uae-investor-visa",
         children: [
           {
             name: "Investor Visa",
@@ -141,7 +141,7 @@ export const navLinks = [
       },
       {
         name: "Document Services",
-        href: "/services/document-services/attestation-services",
+        href: "/services/document-services/uae-attestation-services",
         children: [
           {
             name: "Attestation Services",
@@ -159,7 +159,7 @@ export const navLinks = [
       },
       {
         name: "License Services",
-        href: "/services/license-services/professional-license",
+        href: "/services/license-services/professional-license-in-uae",
         children: [
           {
             name: "Professional License",
@@ -185,7 +185,7 @@ export const navLinks = [
       },
       {
         name: "Value-Added Services",
-        href: "/services/value-added-services",
+        href: "/services/value-added-services/vat-corporate-tax-assistence-in-uae",
         children: [
           {
             name: "VAT & Corporate Tax Assistance",

@@ -832,7 +832,7 @@ export default function Hero() {
                       in Dubai &amp; UAE
                     </span>
                   </h1>
-                  <p className="hero-desc mt-[clamp(12px,2vh,24px)] text-[clamp(14px,1.6vw,20px)] font-medium tracking-wide max-w-[800px] leading-relaxed">
+                  <p className="hero-desc mt-1 md:mt-2 text-[clamp(14px,1.6vw,20px)] font-medium tracking-wide max-w-[800px] leading-relaxed">
                     Business setup in Dubai made it simple for startups &amp;
                     entrepreneurs.
                   </p>

@@ -3,7 +3,7 @@ export  const founders = [
             id: 1,
             name: "Mr. Rasheeq Abdurahman",
             title: "Founder",
-            image: "/images/founders/founder1.svg",
+            image: "/images/founders/Rasheeq.jpg",
             description: [
                 "Mr. Rasheeq Abdurahman brings a wealth of knowledge and dedication to the forefront of company formation services in the UAE. Specializing in Free Zone company formation, Rasheeq has successfully guided hundreds of entrepreneurs, startups, and SMEs through the complexities of launching and scaling their businesses in some of the UAE's most dynamic free zones.",
                 "Known for his strategic mindset and innovative approach, he has built a strong reputation for simplifying processes, ensuring transparency, and providing solutions tailored to each client's unique business goals. His vision for Invest First Business Services is to create a one-stop destination where entrepreneurs can find everything they need—from setup to growth—under one trusted roof."
