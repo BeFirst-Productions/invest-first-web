@@ -27,7 +27,8 @@ export const metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://investfirst.ae",
   ),
   title: "Business Setup in UAE | Invest First Company Formation Dubai",
-  description: "Start your business in the UAE with Invest First. We provide end-to-end business setup, company formation, trade license assistance, and PRO services in Dubai and across the UAE for entrepreneurs and investors.",
+  description:
+    "Start your business in the UAE with Invest First. We provide end-to-end business setup, company formation, trade license assistance, and PRO services in Dubai and across the UAE for entrepreneurs and investors.",
   openGraph: {
     title: "Invest First Business Services",
     description: "Expert company formation and business services in the UAE.",
