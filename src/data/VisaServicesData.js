@@ -1054,6 +1054,11 @@ const remoteWorkVisa = {
         answer:
           "The UAE Remote Work Visa is generally valid for one year and can be renewed if the applicant continues to meet the eligibility requirements.",
       },
+      {
+        question: "What are the benefits of a UAE Remote Work Visa?",
+        answer:
+          "The visa allows professionals to enjoy the UAE's lifestyle, infrastructure, connectivity, and tax-friendly environment while continuing to work for clients or employers located abroad.",
+      },
     ],
   },
   authorizedPartnerStatus: {
@@ -1178,6 +1183,16 @@ const touristVisitVisa = {
   faq: {
     headingRest: "Tourist Visa FAQ",
     items: [
+      {
+        question: "What is a UAE Tourist Visa?",
+        answer:
+          "A UAE Tourist Visa allows foreign nationals to visit the UAE for tourism, leisure, family visits, or short-term travel. Depending on nationality, visitors may qualify for visa-free entry, visa on arrival, or a pre-arranged tourist visa.",
+      },
+      {
+        question: "Who can apply for a UAE Tourist Visa?",
+        answer:
+          "Travelers who are not eligible for visa-free entry or visa on arrival can apply for a UAE Tourist Visa through approved airlines, licensed travel agencies, hotels, or other authorized sponsors",
+      },
       {
         question: "Can a tourist visa be extended inside the UAE?",
         answer:

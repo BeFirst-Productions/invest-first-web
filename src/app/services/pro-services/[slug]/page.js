@@ -64,9 +64,9 @@ console.log(service,"serviceee")
 
     const bannerImageMap = {
         // 'company-formation': '/images/services/service-banner.png',
-        'virtualpro': '/images/visaServices/virtual-pro-banner.png',
-        'local-sponsership': '/images/visaServices/local-sponsorship-banner.png',
-        'license-renewal': '/images/visaServices/licnense-renewals-banner.png',
+        'virtual-pro-uae': '/images/visaServices/virtual-pro-banner.png',
+        'local-sponsership-uae': '/images/visaServices/local-sponsorship-banner.png',
+        'license-renewal-uae': '/images/visaServices/licnense-renewals-banner.png',
         'visa-renewal-uae': '/images/visaServices/visa-renewals-banner.png',
         'banking-assistance-uae': '/images/visaServices/banking-assistance-banner.png',
         'office-solutions-uae': '/images/visaServices/office-solutions-banner.png',

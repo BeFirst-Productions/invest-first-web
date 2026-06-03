@@ -64,9 +64,9 @@ const DocumentServiceDetailPage = async ({ params }) => {
     if (!service) notFound();
 
     const bannerImageMap = {
-        'attestation-services': '/images/documentServices/attestation-services-banner.png',
-        'legal-translation': '/images/documentServices/legal-translation-banner.png',
-        'typing-services': '/images/documentServices/typing-services-banner.png',
+        'uae-attestation-services': '/images/documentServices/attestation-services-banner.png',
+        'legal-transalation-dubai': '/images/documentServices/legal-translation-banner.png',
+        'typing-services-uae': '/images/documentServices/typing-services-banner.png',
     };
 
     const imageUrl = bannerImageMap[slug] || '/images/documentServices/attestation-services-banner.png';

@@ -144,7 +144,8 @@ export const mainlandDetailedData = {
                 {
                     question: "What are the visa advantages of a mainland setup?",
                     answer: "Mainland companies generally have no fixed cap on the number of visas they can apply for; it's mostly determined by the size of their office space (typically 1 visa per 8-10 square meters)."
-                }
+                },
+
             ]
         }
     },
@@ -389,6 +390,10 @@ export const mainlandDetailedData = {
                 { question: "Is a physical office required for Mainland Company Formation in Abu Dhabi?", answer: "Yes, most mainland companies must have a registered office address to obtain and maintain their trade license." },
                 { question: "What is Mainland Company Formation in Abu Dhabi?", answer: " Mainland Company Formation in Abu Dhabi is the process of registering a business with the relevant authorities, allowing companies to operate across the UAE and engage in local and international trade." },
                 { question: "How much does Mainland Company Formation in Abu Dhabi cost?", answer: "The cost of Mainland Company Formation in Abu Dhabi varies depending on the business activity, license type, office requirements, and government fees." },
+                {
+                    question: "What documents are required to set up a mainland company in Abu Dhabi?",
+                    answer: "Typical requirements include passport copies of shareholders, visa copies (if applicable), Emirates ID copies for residents, business activity details, and other documents requested by the licensing authority."
+                }
             ]
         }
     }

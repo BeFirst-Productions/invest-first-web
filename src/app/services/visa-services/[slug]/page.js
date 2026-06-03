@@ -64,14 +64,14 @@ const VisaServiceDetailPage = async ({ params }) => {
     if (!service) notFound();
 
     const bannerImageMap = {
-        'investor-visa': '/images/visaServices/investor-banner.png',
-        'golden-visa': '/images/visaServices/golden-visa-banner.png',
-        'employment-visa': '/images/visaServices/employment-visa-banner.png',
-        'dependent-visa': '/images/visaServices/dependent-visa-banner.png',
-        'green-visa': '/images/visaServices/green-visa-banner.png',
-        'blue-visa': '/images/visaServices/blue-visa-banner.png',
-        'remote-work-visa': '/images/visaServices/remote-visa-banner.png',
-        'tourist-visit-visa': '/images/visaServices/tourist-banner.png',
+        'uae-investor-visa': '/images/visaServices/investor-banner.png',
+        'uae-golden-visa': '/images/visaServices/golden-visa-banner.png',
+        'uae-employment-visa': '/images/visaServices/employment-visa-banner.png',
+        'dependent-visa-uae': '/images/visaServices/dependent-visa-banner.png',
+        'uae-green-visa': '/images/visaServices/green-visa-banner.png',
+        'uae-blue-visa': '/images/visaServices/blue-visa-banner.png',
+        'uae-remote-work-visa': '/images/visaServices/remote-visa-banner.png',
+        'uae-tourist-visa-services': '/images/visaServices/tourist-banner.png',
     };
 
     const imageUrl = bannerImageMap[slug] || '/images/visaServices/investor-banner.png';
