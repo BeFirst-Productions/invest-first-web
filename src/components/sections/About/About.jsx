@@ -210,45 +210,47 @@ export default function About() {
         </div>
 
         {/* Row 2: Stats + Images */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] items-end gap-[40px]">
-          <div className="flex flex-col md:flex-row overflow-visible items-center md:items-end gap-[30px] md:gap-[30px] lg:gap-[20px] xl:gap-[35px] about-reveal">
-            {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col gap-[3px] md:gap-[6px]">
-                <span
-                  className="stat-number font-sans text-xl md:text-4xl lg:text-[30px] xl:text-5xl font-semibold text-black leading-none tracking-tighter text-center"
-                  data-target={stat.number.replace("+", "")}
-                  data-suffix={stat.number.includes("+") ? "+" : ""}
-                >
-                  0
-                </span>
-                <span className="text-[11px] md:text-[12px] lg:text-[8px] xl:text-[12px] font-bold text-[#888888] uppercase tracking-widest font-sans">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
+     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] xl:grid-cols-[1.2fr_2fr] items-end gap-[30px] lg:gap-[40px]">
+  {/* Left Side: Stats Container */}
+  <div className="flex flex-row flex-wrap lg:flex-nowrap overflow-visible items-center md:items-end gap-[20px] md:gap-[30px] xl:gap-[35px] about-reveal">
+    {stats.map((stat, index) => (
+      <div key={index} className="flex flex-col gap-[3px] md:gap-[6px] min-w-0">
+        <span
+          className="stat-number font-sans text-2xl md:text-4xl lg:text-[32px] xl:text-5xl font-semibold text-black leading-none tracking-tighter text-center whitespace-nowrap"
+          data-target={stat.number.replace("+", "")}
+          data-suffix={stat.number.includes("+") ? "+" : ""}
+        >
+          0
+        </span>
+        <span className="text-[11px] md:text-[12px] lg:text-[10px] xl:text-[12px] font-bold text-[#888888] uppercase tracking-widest font-sans whitespace-nowrap">
+          {stat.label}
+        </span>
+      </div>
+    ))}
+  </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-[24px] w-full">
-            {[0, 1].map((i) => (
-              <div
-                key={i}
-                ref={(el) => (imageContainersRef.current[i] = el)}
-                className="relative w-[38px] md:w-[54px] lg:w-[68px] h-[100px] md:h-[180px] lg:h-[300px] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-gray-100 transition-transform duration-700 hover:translate-y-[-5px]"
-              >
-                <Image
-                  src={`/images/about/about-img${i + 1}.jpg`}
-                  alt="Business"
-                  fill
-                  className={`object-cover transition-opacity duration-700 ease-in-out ${
-                    imagesLoaded[i] ? "opacity-100" : "opacity-0"
-                  }`}
-                  onLoad={() => handleImageLoad(i)}
-                  sizes="(max-width: 1024px) 300px, 320px"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+  {/* Right Side: Images Container */}
+  <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-[24px] w-full">
+    {[0, 1].map((i) => (
+      <div
+        key={i}
+        ref={(el) => (imageContainersRef.current[i] = el)}
+        className="relative w-[38px] md:w-[54px] lg:w-[68px] h-[100px] md:h-[180px] lg:h-[300px] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-gray-100 transition-transform duration-700 hover:translate-y-[-5px]"
+      >
+        <Image
+          src={`/images/about/about-img${i + 1}.jpg`}
+          alt="Business"
+          fill
+          className={`object-cover transition-opacity duration-700 ease-in-out ${
+            imagesLoaded[i] ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => handleImageLoad(i)}
+          sizes="(max-width: 1024px) 300px, 320px"
+        />
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </SectionContainer>
   );

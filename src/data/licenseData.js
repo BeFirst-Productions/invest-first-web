@@ -328,7 +328,7 @@ export const licenseDetailedData = {
       image: "/images/licenseServices/commercial-license-banner.png",
     },
     intro: {
-      image: "/images/license/commercial-license.png",
+      image: "/images/license/Commercial License in Dubai.png",
       titleHighlight: "Commercial License",
       titleRest: "in Dubai | Business Licensing Services UAE",
       description1:
@@ -518,7 +518,7 @@ export const licenseDetailedData = {
       image: "/images/licenseServices/industrial-license-banner.png",
     },
     intro: {
-      image: "/images/license/industrial-license.png",
+      image: "/images/license/Industrial License in Dubai.png",
       titleHighlight: "Industrial License",
       titleRest: "in Dubai | Business Licensing Services UAE",
       description1:
@@ -689,7 +689,7 @@ export const licenseDetailedData = {
       image: "/images/licenseServices/e-trader-license-banner.png",
     },
     intro: {
-      image: "/images/license/e-trader-license.png",
+      image: "/images/license/E-Trader License in Dubai.png",
       titleHighlight: "E-Trader License",
       titleRest: "in Dubai | Business Licensing Services UAE",
       description1:
@@ -839,7 +839,7 @@ export const licenseDetailedData = {
       image: "/images/licenseServices/tour-travel-license-banner.png",
     },
     intro: {
-      image: "/images/license/travel-tourism-license.png",
+      image: "/images/license/Tourism  Travel License in Dubai Business Licensing Services UAE.png",
       titleHighlight: "Tourism / Travel License",
       titleRest: "in Dubai | Business Licensing Services UAE",
       description1:

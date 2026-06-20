@@ -43,7 +43,7 @@ export default function SetupCost() {
             </div>
 
             {/* Right Side: Information & Action */}
-            <div className="w-full md:w-[50%] flex flex-col justify-center px-[32px] md:px-[60px] lg:pr-[80px] py-[40px] md:py-0 text-center md:text-left">
+            <div className="w-full md:w-[50%] flex flex-col justify-center px-[32px] md:px-[60px] lg:pr-[80px] py-[40px] md:py-[60px] text-center md:text-left">
               
               <h2 className="font-sans font-semibold text-white tracking-normal mb-[16px] md:mb-[24px]"
                   style={{ 

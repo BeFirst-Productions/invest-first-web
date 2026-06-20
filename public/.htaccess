@@ -1,0 +1,135 @@
+# ----------------------------------------------------------------------
+# | Apache Configuration File for Next.js Static Export                 |
+# | Website: https://investfirst.ae                                     |
+# ----------------------------------------------------------------------
+
+# ----------------------------------------------------------------------
+# | Rewrite Engine Configuration                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Redirect WWW to Non-WWW
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # 2. Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# Ensure directory queries default to index.html
+DirectoryIndex index.html
+DirectorySlash On
+
+# Custom 404 page redirect (Next.js generates 404.html at the root)
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# | Security Headers                                                    |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # Prevents browser from mime-sniffing a response away from the declared content-type
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevents other sites from embedding this site in frames (clickjacking protection)
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Cross-site scripting (XSS) filter protection for older browsers
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Control how much referrer information is sent with requests
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Performance: Compression (Gzip)                                    |
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+
+    # Remove browser bugs for very old browsers
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Performance: Cache-Control & Expires Headers                        |
+# ----------------------------------------------------------------------
+
+# Using mod_expires for older browsers
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # Next.js build files (assets inside _next/static contain hashes and are immutable)
+    # These will be matched more specifically via Headers below, but we set standard defaults here.
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Web Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+    # Images
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+
+    # Data files & Documents
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Using mod_headers for modern caching control
+<IfModule mod_headers.c>
+    # 1. Target Next.js immutable build assets specifically
+    # Next.js compiles static files inside /_next/static/ with hashes
+    <If "%{REQUEST_URI} =~ m#^/_next/static/#">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </If>
+
+    # 2. Prevent caching for HTML and JSON files so users get updates instantly
+    <FilesMatch "\.(html|json)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+
+    # 3. Cache fonts for 1 year
+    <FilesMatch "\.(woff|woff2|eot|ttf|otf)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+</IfModule>
