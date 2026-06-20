@@ -66,7 +66,7 @@ export default function Testimonials() {
         <div className="flex flex-col lg:flex-row gap-[32px] lg:gap-[60px] items-stretch">
 
           {/* Left Image */}
-          <div className="w-full lg:w-[300px] xl:w-[340px] flex-shrink-0 flex">
+          {/* <div className="w-full lg:w-[300px] xl:w-[340px] flex-shrink-0 flex">
             <div className={`relative w-full rounded-[18px] overflow-hidden bg-[#EAEAEA] transition-all duration-500 ease-in-out ${fadeState}`}
               style={{ aspectRatio: '1 / 1' }}
             >
@@ -78,7 +78,7 @@ export default function Testimonials() {
                 sizes="(max-width: 1024px) 100vw, 340px"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Right Content — progress bar spans full column height to match image */}
           <div className="flex-1 flex">
@@ -95,7 +95,7 @@ export default function Testimonials() {
 
             {/* Text content */}
             <div className={`flex-1 flex flex-col justify-center transition-all duration-500 ease-in-out ${fadeState}`}>
-              <p className="text-[15px] md:text-[17px] lg:text-[18px] text-[#333333] leading-[1.7] md:leading-[1.8] font-medium mb-[28px] md:mb-[40px]">
+              <p className="text-[15px] md:text-[17px] lg:text-[18px] text-[#333333] leading-[1.7] md:leading-[1.8] font-medium mb-[28px] md:mb-[40px] min-h-[290px] sm:min-h-[220px] md:min-h-[180px] lg:min-h-[130px]">
                 {activeTestimonial.text}
               </p>
 
@@ -103,11 +103,11 @@ export default function Testimonials() {
                 {/* Author Info */}
                 <div>
                   <h4 className="text-[14px] md:text-[15px] font-bold text-[#111111] mb-[3px]">{activeTestimonial.name}</h4>
-                  <p className="text-[12px] md:text-[13px] text-[#888888]">{activeTestimonial.role}</p>
+                  {/* <p className="text-[12px] md:text-[13px] text-[#888888]">{activeTestimonial.role}</p> */}
                 </div>
 
                 {/* Avatars */}
-                <div className="flex items-center -space-x-3">
+                {/* <div className="flex items-center -space-x-3">
                   {testimonialsData.map((t, i) => (
                     <button
                       key={t.id}
@@ -128,11 +128,28 @@ export default function Testimonials() {
                       />
                     </button>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center items-center gap-[8px] mt-[32px]">
+          {testimonialsData.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => changeSlide(i)}
+              disabled={isAnimating}
+              className={`h-[8px] rounded-full transition-all duration-300 ${
+                currentIndex === i
+                  ? 'w-[24px] bg-[#8B1D41]'
+                  : 'w-[8px] bg-[#D1D1D6] hover:bg-[#8B1D41]/50 cursor-pointer'
+              }`}
+              aria-label={`Go to testimonial ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
